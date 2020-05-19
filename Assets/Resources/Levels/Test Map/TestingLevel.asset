@@ -1,0 +1,659 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a598e8f8415514cb46cd2ad10bcb73, type: 3}
+  m_Name: TestingLevel
+  m_EditorClassIdentifier: 
+  levelName: TestingLevel
+  battle:
+    enemy:
+      name: Anexar Flotics
+      uuid:
+        value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+      ownerUUID:
+        value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+      prefab: {fileID: 0}
+      personality: 0
+      viceCommander:
+        name: 
+        uuid:
+          value: bd4004c0-635b-4570-9748-1d1ee2edaedd
+        ownerUUID:
+          value: 
+        prefab: {fileID: 0}
+        allowMove: 0
+        x: 0
+        y: 0
+        stats:
+          list: []
+        career: 0
+        leadingArmyUUID:
+          value: 
+        isViceCommander: 0
+        level: 0
+        bounes: []
+      legion:
+        armiesUUID: []
+        leaderUUID:
+          value: 
+        eventCardUUID: []
+      maxArmyCount: 0
+      actionPoint: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+      campus: {fileID: 0}
+    thirdParties: []
+    waveInfo:
+    - battleArmies:
+      - name: BetaArmy
+        uuid:
+          value: e1781edc-91f8-477a-b664-b5828509f73a
+        ownerUUID:
+          value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+        prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+          type: 3}
+        allowMove: 1
+        x: 8
+        y: 8
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 3
+          moveRange: 4
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          attackArea: 0
+          targetCount: 1
+          specialCell: []
+          skill:
+            uuid:
+              value: 3d42853a-6c30-44c0-96fc-2558a8d87621
+            specialName: 
+            type: 0
+            count: 0
+            parameter: 0
+            sourceEntity:
+              value: 
+            targetEntities: []
+            args:
+              list: []
+        localLeader:
+          name: 
+          uuid:
+            value: c3397712-4282-41fb-8cf4-4b8ae27e57b3
+          ownerUUID:
+            value: 
+          prefab: {fileID: 0}
+          allowMove: 0
+          x: 0
+          y: 0
+          stats:
+            list: []
+          career: 0
+          leadingArmyUUID:
+            value: 
+          isViceCommander: 0
+          level: 0
+          bounes: []
+        skillPack:
+          uuid:
+            value: 66587e5c-60b0-46e4-a699-cd915ca25239
+          specialName: 
+          type: 0
+          count: 0
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        anger: 0
+        maxHealth: 1000
+        health: 1000
+        defense: 0
+        armor: 0
+        damage: 0
+        type: 1
+      - name: BetaArmy
+        uuid:
+          value: 73f4431e-9479-4cc3-a93d-f90ad68f7362
+        ownerUUID:
+          value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+        prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+          type: 3}
+        allowMove: 1
+        x: 8
+        y: 6
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 3
+          moveRange: 4
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          attackArea: 0
+          targetCount: 0
+          specialCell: []
+          skill:
+            uuid:
+              value: 83e01a04-6239-4960-837c-ec36b3b01195
+            specialName: 
+            type: 0
+            count: 0
+            parameter: 0
+            sourceEntity:
+              value: 
+            targetEntities: []
+            args:
+              list: []
+        localLeader:
+          name: 
+          uuid:
+            value: 52b789b0-6e23-4b34-8673-799b64c189b4
+          ownerUUID:
+            value: 
+          prefab: {fileID: 0}
+          allowMove: 0
+          x: 0
+          y: 0
+          stats:
+            list: []
+          career: 0
+          leadingArmyUUID:
+            value: 
+          isViceCommander: 0
+          level: 0
+          bounes: []
+        skillPack:
+          uuid:
+            value: 07b66778-a0eb-4552-970c-9a18785b5e33
+          specialName: 
+          type: 0
+          count: 0
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        anger: 0
+        maxHealth: 1000
+        health: 100
+        defense: 0
+        armor: 0
+        damage: 0
+        type: 1
+      - name: BetaArmy
+        uuid:
+          value: 10b8d6be-8bfb-4a85-bf9e-5ff3db4d002a
+        ownerUUID:
+          value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+        prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+          type: 3}
+        allowMove: 1
+        x: 7
+        y: 7
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 3
+          moveRange: 4
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          attackArea: 0
+          targetCount: 0
+          specialCell: []
+          skill:
+            uuid:
+              value: 83e01a04-6239-4960-837c-ec36b3b01195
+            specialName: 
+            type: 0
+            count: 0
+            parameter: 0
+            sourceEntity:
+              value: 
+            targetEntities: []
+            args:
+              list: []
+        localLeader:
+          name: 
+          uuid:
+            value: 52b789b0-6e23-4b34-8673-799b64c189b4
+          ownerUUID:
+            value: 
+          prefab: {fileID: 0}
+          allowMove: 0
+          x: 0
+          y: 0
+          stats:
+            list: []
+          career: 0
+          leadingArmyUUID:
+            value: 
+          isViceCommander: 0
+          level: 0
+          bounes: []
+        skillPack:
+          uuid:
+            value: 07b66778-a0eb-4552-970c-9a18785b5e33
+          specialName: 
+          type: 0
+          count: 0
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        anger: 0
+        maxHealth: 1000
+        health: 100
+        defense: 0
+        armor: 0
+        damage: 0
+        type: 1
+      battleBuildings:
+      - name: Campus
+        uuid:
+          value: 0caf9f5e-3c29-4123-ad13-cb38d1a1f65a
+        ownerUUID:
+          value: 63c5918a-5aad-45ae-8bab-1b681601289b
+        prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
+          type: 3}
+        allowMove: 0
+        x: 3
+        y: 0
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 0
+          moveRange: 0
+          standPosition: 0
+          attackPosition: 0
+          attackType: 0
+          attackArea: 0
+          targetCount: 0
+          specialCell: []
+          skill:
+            uuid:
+              value: 82a4fdf4-08dd-4712-9f41-a78457f483fb
+            specialName: 
+            type: 0
+            count: 0
+            parameter: 0
+            sourceEntity:
+              value: 
+            targetEntities: []
+            args:
+              list: []
+        localLeader:
+          name: 
+          uuid:
+            value: 1fc91ee3-8a61-4fec-8018-db82c1577b7b
+          ownerUUID:
+            value: 
+          prefab: {fileID: 0}
+          allowMove: 0
+          x: 0
+          y: 0
+          stats:
+            list: []
+          career: 0
+          leadingArmyUUID:
+            value: 
+          isViceCommander: 0
+          level: 0
+          bounes: []
+        skillPack:
+          uuid:
+            value: 225d21f0-d0c5-4f2c-9757-8a55889983e2
+          specialName: 
+          type: 0
+          count: 0
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 0
+        anger: 0
+        maxHealth: -1
+        health: -1
+        defense: 0
+        armor: 0
+      - name: Campus
+        uuid:
+          value: d7ba28e4-9bab-432a-9b11-fdb6c116ba44
+        ownerUUID:
+          value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+        prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
+          type: 3}
+        allowMove: 0
+        x: 9
+        y: 12
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 0
+          moveRange: 0
+          standPosition: 0
+          attackPosition: 0
+          attackType: 0
+          attackArea: 0
+          targetCount: 0
+          specialCell: []
+          skill:
+            uuid:
+              value: d1f1f693-9ba9-4354-b8f4-94c31d2f221a
+            specialName: 
+            type: 0
+            count: 0
+            parameter: 0
+            sourceEntity:
+              value: 
+            targetEntities: []
+            args:
+              list: []
+        localLeader:
+          name: 
+          uuid:
+            value: 23acdc8b-bdb7-4cf8-915e-ad4fde334379
+          ownerUUID:
+            value: 
+          prefab: {fileID: 0}
+          allowMove: 0
+          x: 0
+          y: 0
+          stats:
+            list: []
+          career: 0
+          leadingArmyUUID:
+            value: 
+          isViceCommander: 0
+          level: 0
+          bounes: []
+        skillPack:
+          uuid:
+            value: 39091852-df76-47f1-80ac-cb047f17f7f8
+          specialName: 
+          type: 0
+          count: 0
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 0
+        anger: 0
+        maxHealth: -1
+        health: -1
+        defense: 0
+        armor: 0
+    - battleArmies:
+      - name: BetaArmy
+        uuid:
+          value: edd3ac92-3e1e-4393-bb48-a14ab41e5379
+        ownerUUID:
+          value: 
+        prefab: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
+          type: 3}
+        allowMove: 1
+        x: 5
+        y: 5
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 0
+          moveRange: 0
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          attackArea: 0
+          targetCount: 0
+          specialCell: []
+          skill:
+            uuid:
+              value: 3a8c267d-6418-4058-816f-6b7279407b47
+            specialName: 
+            type: 0
+            count: 0
+            parameter: 0
+            sourceEntity:
+              value: 
+            targetEntities: []
+            args:
+              list: []
+        localLeader:
+          name: 
+          uuid:
+            value: f2f54dbe-0663-4db7-82fc-e7f564e83e2e
+          ownerUUID:
+            value: 
+          prefab: {fileID: 0}
+          allowMove: 0
+          x: 0
+          y: 0
+          stats:
+            list: []
+          career: 0
+          leadingArmyUUID:
+            value: 
+          isViceCommander: 0
+          level: 0
+          bounes: []
+        skillPack:
+          uuid:
+            value: e6ed7aa0-0f1b-4dd8-b891-c70dc34fda53
+          specialName: 
+          type: 0
+          count: 0
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        anger: 0
+        maxHealth: 1000
+        health: 1000
+        defense: 0
+        armor: 0
+        damage: 0
+        type: 1
+      - name: BetaArmy
+        uuid:
+          value: bb41e800-1734-4446-852f-0039976716ba
+        ownerUUID:
+          value: 
+        prefab: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
+          type: 3}
+        allowMove: 1
+        x: 5
+        y: 3
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 0
+          moveRange: 0
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          attackArea: 0
+          targetCount: 0
+          specialCell: []
+          skill:
+            uuid:
+              value: bdc1ad8f-5f29-4a5b-b0e1-a698019ca8a4
+            specialName: 
+            type: 0
+            count: 0
+            parameter: 0
+            sourceEntity:
+              value: 
+            targetEntities: []
+            args:
+              list: []
+        localLeader:
+          name: 
+          uuid:
+            value: f2a560f9-451d-4dcd-b5f9-1bfbc341420a
+          ownerUUID:
+            value: 
+          prefab: {fileID: 0}
+          allowMove: 0
+          x: 0
+          y: 0
+          stats:
+            list: []
+          career: 0
+          leadingArmyUUID:
+            value: 
+          isViceCommander: 0
+          level: 0
+          bounes: []
+        skillPack:
+          uuid:
+            value: 418e2282-9574-4ec1-a9f2-19aeb3ed2d50
+          specialName: 
+          type: 0
+          count: 0
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        anger: 0
+        maxHealth: 1000
+        health: 1000
+        defense: 0
+        armor: 0
+        damage: 0
+        type: 1
+      battleBuildings: []
+    prize:
+      goldPrize:
+        type: 0
+        count: 0
+      popPrize:
+        type: 0
+        count: 0
+      floatExp: 0
+    mapPrefab: {fileID: 30391003033006947, guid: 242184252f9810f4882f951688835156,
+      type: 3}
+    player:
+      name: 
+      uuid:
+        value: 5efc6246-76fe-4458-919a-2aba018089fe
+      ownerUUID:
+        value: 
+      prefab: {fileID: 0}
+      personality: 0
+      viceCommander:
+        name: 
+        uuid:
+          value: fcfaaff6-04c0-4cd6-8c8b-c3e229a3f631
+        ownerUUID:
+          value: 
+        prefab: {fileID: 0}
+        allowMove: 0
+        x: 0
+        y: 0
+        stats:
+          list: []
+        career: 0
+        leadingArmyUUID:
+          value: 
+        isViceCommander: 0
+        level: 0
+        bounes: []
+      legion:
+        armiesUUID: []
+        leaderUUID:
+          value: 
+        eventCardUUID: []
+      maxArmyCount: 0
+      actionPoint: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+      campus: {fileID: 0}
+    round:
+      wave: 0
+      round: 0
+      turn: 0
+      stat: 0
+      currentPlayerUUID:
+        value: 
+    stat: 0
+    centralDeck:
+      list:
+      - name: 
+        uuid:
+          value: b3a8cd14-dd01-4822-b96a-901460b5d3af
+        ownerUUID:
+          value: 
+        prefab: {fileID: 0}
+        effect:
+          uuid:
+            value: 9dd2bebc-95e6-478a-a964-2e0bb7e9d73f
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 0
+        type: 0
+        target: 0
+        actionPoint: 0
+    ongoingAnimation: []
+    armies: []
+    buildings: []
+    passingEffect: []
+    mapEntity: {fileID: 0}

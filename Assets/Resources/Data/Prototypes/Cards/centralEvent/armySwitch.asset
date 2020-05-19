@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfe71976b3ae0749b54319090c018b9, type: 3}
+  m_Name: armySwitch
+  m_EditorClassIdentifier: 
+  prototype:
+    name: armySwitch
+    rarity: 0
+    icon: {fileID: 0}
+    sprite: {fileID: 0}
+    protrait: {fileID: 0}
+    prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+      type: 3}
+    count: 0
+    cost: 1
+    targetTypes: 9
+    eventCardProperty:
+      effects:
+      - type: 13
+        specialName: armySwitch
+        count: 1
+        parameter: 0
+        args:
+          args:
+          - key: name
+            value: armySwitch

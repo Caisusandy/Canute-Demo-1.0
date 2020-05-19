@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4154cae96aafe14daf275218b5a96cf, type: 3}
+  m_Name: Shop
+  m_EditorClassIdentifier: 
+  army:
+  - itemName: Basic Mage
+    weight: 10
+  - itemName: Basic Infantry
+    weight: 20
+  - itemName: Basic Shielder
+    weight: 10
+  - itemName: Basic WarMachine
+    weight: 10
+  - itemName: Basic Cavalry
+    weight: 10
+  - itemName: Basic Rifleman
+    weight: 10
+  leader: []
+  equipment: []
+  nextRefreshTime:
+    value: 
+  onShopArmies:
+    list:
+    - name: dfadsaf
+      weight: 0
+      price:
+        type: 0
+        count: 100
+    - name: 
+      weight: 0
+      price:
+        type: 0
+        count: 0
+    - name: 
+      weight: 0
+      price:
+        type: 0
+        count: 0
+    - name: 
+      weight: 0
+      price:
+        type: 0
+        count: 0
+    - name: 
+      weight: 0
+      price:
+        type: 0
+        count: 0
+  onShopLeaders:
+    list:
+    - name: Canute
+      weight: 0
+      price:
+        type: 0
+        count: 100000
+  onShopEquipments:
+    list: []
+  ArmyPriceList:
+    list:
+    - name: 
+      weight: 0
+      price:
+        type: 0
+        count: 0
+  LeaderPriceList:
+    list: []
+  EquipementPriceList:
+    list: []

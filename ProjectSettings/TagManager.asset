@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BG
+    uniqueID: 2904486441
+    locked: 0
+  - name: Map
+    uniqueID: 3622826195
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Buildings
+    uniqueID: 4060356613
+    locked: 0
+  - name: Armies
+    uniqueID: 611963417
+    locked: 0
+  - name: Card
+    uniqueID: 57148027
+    locked: 0
+  - name: UI
+    uniqueID: 318277481
+    locked: 0
+  - name: StoryDisplayer
+    uniqueID: 1909586239
+    locked: 0

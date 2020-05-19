@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8226b46305ea994a850d9d5346ed16a, type: 3}
+  m_Name: Lang
+  m_EditorClassIdentifier: 
+  dictionary:
+    list:
+    - key: Canute.Career.Scholar
+      value: "\u5B66\u8005\r"
+    - key: Canute.Career.Politician
+      value: "\u653F\u5BA2\r"
+    - key: Canute.Career.General
+      value: "\u519B\u4EBA\r"
+    - key: Canute.Career.Merchant
+      value: "\u5546\u4EBA\r"
+    - key: Canute.Career.None
+      value: "\u65E0\r"
+    - key: Canute.Shops.Currency+Type.gold
+      value: "Gold\r"
+    - key: Canute.Shops.Currency+Type.manpower
+      value: "Manpower\r"
+    - key: Canute.Shops.Currency+Type.mantleAlloy
+      value: "Mantle Alloy\r"
+    - key: Canute.BattleSystem.Army.AlphaArmy.name
+      value: "A\r"
+    - key: Canute.BattleSystem.Army.BetaArmy.name
+      value: "B\r"
+    - key: Canute.BattleSystem.Army.Basic Mage.name
+      value: "Basic Mage\r"
+    - key: Canute.BattleSystem.Army.Basic WarMachine.name
+      value: "Basic WarMachine\r"
+    - key: Canute.BattleSystem.Army.Basic Infantry.name
+      value: "Basic Infantry\r"
+    - key: Canute.BattleSystem.Army.Basic Shielder.name
+      value: "Basic Shielder\r"
+    - key: Canute.BattleSystem.Building.Campus.name
+      value: "Campus\r"
+    - key: Canute.BattleSystem.Terrain.Plain
+      value: "Plain\r"
+    - key: Canute.BattleSystem.Terrain.Forest
+      value: "Forest\r"
+    - key: Canute.BattleSystem.Terrain.Hills
+      value: "Hills\r"
+    - key: Canute.BattleSystem.Terrain.Mountains
+      value: "Mountains\r"
+    - key: Canute.BattleSystem.Terrain.River
+      value: "River\r"
+    - key: Canute.BattleSystem.Terrain.Ocean
+      value: "Ocean\r"
+    - key: Canute.BattleSystem.Terrain.Sand
+      value: "Sand\r"
+    - key: Canute.BattleSystem.Terrain.Swamp
+      value: "Swamp\r"
+    - key: Canute.BattleSystem.Status.Turn
+      value: "Turn\r"
+    - key: Canute.BattleSystem.Status.Count
+      value: "Count\r"
+    - key: Canute.BattleSystem.Effect+Types.none
+      value: "None\r"
+    - key: Canute.BattleSystem.Effect+Types.none.info
+      value: " \r"
+    - key: Canute.BattleSystem.Effect+Types.move
+      value: "Move\r"
+    - key: Canute.BattleSystem.Effect+Types.move.info
+      value: "Move army in an area of @param\r"
+    - key: Canute.BattleSystem.Effect+Types.enterMove
+      value: "Move Army\r"
+    - key: Canute.BattleSystem.Effect+Types.enterMove.info
+      value: "Move army in an area of @param\r"
+    - key: Canute.BattleSystem.Effect+Types.enterAttack
+      value: "Attack\r"
+    - key: Canute.BattleSystem.Effect+Types.enterAttack.info
+      value: "attack other army\r"
+    - key: Canute.BattleSystem.Effect+Types.drawCard
+      value: "Draw Card\r"
+    - key: Canute.BattleSystem.Effect+Types.drawCard.info
+      value: "Draw @param Card\r"
+    - key: Canute.BattleSystem.Effect+Types.armySwitch
+      value: "Switch Position\r"
+    - key: Canute.BattleSystem.Effect+Types.armySwitch.info
+      value: "Switch two army's Position\r"
+    - key: Canute.BattleSystem.Effect+Types.damageIncreasePercentage
+      value: "Increase Damage\r"
+    - key: Canute.BattleSystem.Effect+Types.damageIncreasePercentage.info
+      value: "Increase @param% of the damage\r"
+    - key: Canute.BattleSystem.Effect+Types.damageDecreasePercentage
+      value: "Decrease Damage\r"
+    - key: Canute.BattleSystem.Effect+Types.damageDecreasePercentage.info
+      value: "Decrease @param% of the damage\r"
+    - key: Canute.BattleSystem.Effect+Types.createArmy
+      value: "Send army\r"
+    - key: Canute.BattleSystem.Effect+Types.createArmy.info
+      value: "Send @name to select position\r"
+    - key: Canute.BattleSystem.Effect+Types.attackRange
+      value: "Attack range bounes\r"
+    - key: Canute.BattleSystem.Effect+Types.attackRange.info
+      value: "Attack range bounes by @param\r"
+    - key: Canute.BattleSystem.Effect+Types.damage
+      value: "Attack range bounes\r"
+    - key: Canute.BattleSystem.Effect+Types.damage.info
+      value: "damage bounes by @param\r"
+    - key: Canute.BattleSystem.Effect+Types.cardMinusPoint
+      value: "\u8865\u7ED9\r"
+    - key: Canute.BattleSystem.Effect+Types.cardMinusPoint.info
+      value: "\u4F7F\u4E00\u5F20\u724C\u9700\u8981\u7684\u884C\u52A8\u70B9\u6570-@param\r"
+    - key: Canute.BattleSystem.Effect+Types.confusion
+      value: "Event: Confusion\r"
+    - key: Canute.BattleSystem.Effect+Types.confusion.info
+      value: "\u4F7F\u4E00\u53EA\u519B\u961F\u79FB\u52A8\u8DDD\u79BB\u4E0E\u653B\u51FB\u8DDD\u79BB\u964D\u4F4E@param%\r"
+    - key: Canute.BattleSystem.Effect+Types.shielderPenetrate
+      value: "Resonance: Penetrate\r"
+    - key: Canute.BattleSystem.Effect+Types.shielderPenetrate.info
+      value: "Ignore other army's defense (except for shielder), cause a another
+        @param% of enemy's current HP's real damage (except for shielder).\r"
+    - key: 'Canute.BattleSystem.BattleEventError. '
+      value: " \r"
+    - key: Canute.BattleSystem.BattleEventError.notValidTarget
+      value: "the target is not a valid target\r"
+    - key: Canute.BattleSystem.BattleEventError.noTarget
+      value: "no target was selected\r"
+    - key: Canute.BattleSystem.BattleEventError.noAvailableTarget
+      value: "no target can be attack \r"
+    - key: Canute.BattleSystem.BattleEventError.armyCannotAttack
+      value: "it can't attack anyone\r"
+    - key: Canute.BattleSystem.BattleEventError.armyNoTarget
+      value: "no enemy is in attack range\r"
+    - key: Canute.Language.EventError.UnmatchedCareer
+      value: "\u4F60\u9700\u8981\u4F7F\u7528\u76F8\u5BF9\u5E94\u804C\u4E1A\u7684\u624B\u724C\r"
+    - key: Canute.Language.EventError.NoDestination
+      value: "\u6CA1\u6709\u8BBE\u7F6E\u76EE\u7684\u5730\r"
+    - key: Canute.Language.EventError.TooFarFromCamp
+      value: "\u8DDD\u79BB\u5927\u672C\u8425\u592A\u8FDC\r"
+    - key: Canute.Language.EventError.InBattle
+      value: "\u90E8\u961F\u5728\u6307\u6325\u6240\u72B6\u6001\r"
+    - key: Canute.Language.EventError.CannotStrengthArmy
+      value: "\u4E0D\u5141\u8BB8\u52A0\u5F3A\u90E8\u961F\r"
+    - key: Canute.Language.EventError.OutOfBorder
+      value: "\u4E0D\u5728\u6218\u6597\u8303\u56F4\u5185\r"
+    - key: Canute.Language.EventError.TooFar
+      value: "\u592A\u8FDC\u4E86\r"
+    - key: Canute.Language.EventError.NotAValidDestination
+      value: "\u4E0D\u80FD\u5230\u8FBE\u8FD9\u4E2A\u4F4D\u7F6E\r"
+    - key: Canute.Language.EventError.NotInYourTurn
+      value: "\u4E0D\u5728\u73A9\u5BB6\u56DE\u5408\r"
+    - key: Canute.Language.EventError.CannotAttackFort
+      value: "\u4E0D\u80FD\u653B\u51FB\u5821\u5792\r"
+    - key: Canute.Language.EventError.CannotBuildArmy
+      value: "\u65E0\u6CD5\u5EFA\u9020\u90E8\u961F\r"
+    - key: Canute.Language.EventError.ActionUndone
+      value: "\u4E0D\u80FD\u540C\u65F6\u8FDB\u884C\u591A\u6B21\u4EFB\u52A1\r"
+    - key: Canute.Language.EventError.NoActionRemain
+      value: "\u6CA1\u6709\u884C\u52A8\u70B9\u6570\u4E86\r"
+    - key: Canute.Language.EventError.NoEnoughMovePoint
+      value: "\u6CA1\u6709\u8DB3\u591F\u591A\u7684\u884C\u52A8\u70B9\u6570\u4E86\r"
+    - key: Canute.Language.EventError.HasBuildingAlready
+      value: "\u8FD9\u4E2A\u4F4D\u7F6E\u6216\u8005\u5468\u56F4\u5DF2\u7ECF\u6709\u5EFA\u7B51\r"
+    - key: Canute.Language.EventError.NoResourRemainForNewTeam
+      value: "\u4E0D\u80FD\u518D\u5EFA\u9020\u8FD9\u4E2A\u90E8\u961F\u4E86"
+  dicLang: 10

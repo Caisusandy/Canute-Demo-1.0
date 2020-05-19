@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ArmyTypeIcon
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: c97289b09dc831d4481a5a4220ca63a2, type: 3}
+    totalSpriteSurfaceArea: 5471432
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 0f5cbac202517894698b7878c1799824, type: 3}
+  - {fileID: 21300000, guid: e5739af4198a1464aacaab25ee84f42c, type: 3}
+  - {fileID: 21300000, guid: 336e1909d0fa1e34cac7ab07f4078e78, type: 3}
+  - {fileID: 21300000, guid: 880586395aee14b42bf47402c166100a, type: 3}
+  - {fileID: 21300000, guid: 624fe4e92a4884b43b1e8db927bd9ee9, type: 3}
+  - {fileID: 21300000, guid: 47382f5c4942d604db5ea44151202475, type: 3}
+  - {fileID: 21300000, guid: 0968209db6c69524c8c06a6fea9fabd5, type: 3}
+  - {fileID: 21300000, guid: 69a22c4e33b601b45912268841eb1dd1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - shielderWBG
+  - mage
+  - warMachineWBG
+  - warMachine
+  - infantryWBG
+  - mageWBG
+  - shielder
+  - infantry
+  m_Tag: ArmyTypeIcon
+  m_IsVariant: 0

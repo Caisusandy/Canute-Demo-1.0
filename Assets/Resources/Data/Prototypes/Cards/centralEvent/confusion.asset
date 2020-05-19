@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfe71976b3ae0749b54319090c018b9, type: 3}
+  m_Name: confusion
+  m_EditorClassIdentifier: 
+  prototype:
+    name: confusion
+    rarity: 0
+    icon: {fileID: 0}
+    sprite: {fileID: 0}
+    protrait: {fileID: 0}
+    prefab: {fileID: 0}
+    count: 0
+    cost: 1
+    targetTypes: 10
+    eventCardProperty:
+      effects:
+      - type: 11
+        specialName: confusion
+        count: 1
+        parameter: 50
+        args:
+          args:
+          - key: tc
+            value: 1
+          - key: sc
+            value: 0
+          - key: onMove
+            value: true
+          - key: propertyBounes
+            value: attackRange, moveRange
+          - key: bounesType
+            value: percentage
+          - key: name
+            value: confusion
+          - key: effectType
+            value: propertyPanalty

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9da5f2bfa868b409e19743ad430374, type: 3}
+  m_Name: Game
+  m_EditorClassIdentifier: 
+  version:
+    major: 0
+    minor: 0
+    build: 0
+    revision: 0
+  playerData: {fileID: 11400000, guid: 7267f4b81fffe0241a86446be1fa8f63, type: 2}
+  lastSaveName: JDJJ8ZX20840
+  playerDatas:
+  - {fileID: 11400000, guid: 7267f4b81fffe0241a86446be1fa8f63, type: 2}
+  - {fileID: 11400000, guid: 9ec3b06c7385d5749a90745cb665aff0, type: 2}
+  - {fileID: 11400000, guid: ea4a74bec4d9a2349b546f2e568b03bb, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 9259f995cd6fa1240956f14512a2b687, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: e90ecfeeb8c13e24bb6e2800169b2ff9, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: e90ecfeeb8c13e24bb6e2800169b2ff9, type: 2}
+  - {fileID: 11400000, guid: e90ecfeeb8c13e24bb6e2800169b2ff9, type: 2}
+  - {fileID: 11400000, guid: f411c98ed6055ce4195222d58716f338, type: 2}
+  - {fileID: 11400000, guid: ae3fcd9c38d4c2644bab1e4b21b1df58, type: 2}
+  - {fileID: 11400000, guid: e90ecfeeb8c13e24bb6e2800169b2ff9, type: 2}
+  - {fileID: 11400000, guid: 274741c81c32e2d4090e3c92dc715397, type: 2}
+  prototypeFactory: {fileID: 11400000, guid: ee95c71a6e8e34e4a89f10073d0bc405, type: 2}
+  entityPrefabs: {fileID: 11400000, guid: 934f48eb78b90474e9826f8a953f0d94, type: 2}
+  spriteLoader: {fileID: 11400000, guid: 4bd7520eeb39dfa489ff77c9e2981688, type: 2}
+  technology: {fileID: 11400000, guid: fcfd1f70776947b41bb5db362bb87846, type: 2}
+  shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
+  buildSetting: {fileID: 11400000, guid: 03e055900e4b7f046a255fcac9251a02, type: 2}
+  chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
+  stories: {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
+  language: {fileID: 11400000, guid: 16f3df5f3ea0e0e459b5991cd466258a, type: 2}
+  storyPacks:
+    list:
+    - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
