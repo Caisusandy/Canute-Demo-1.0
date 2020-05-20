@@ -15,24 +15,19 @@ MonoBehaviour:
   prototype:
     name: AlphaCard
     rarity: 2
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: b366c574d9ed2bb4aaf12a496e99f8b1, type: 3}
     sprite: {fileID: 0}
     protrait: {fileID: 0}
     prefab: {fileID: 0}
     count: 4
     cost: 0
     targetTypes: 9
+    career: 0
     eventCardProperty:
       effects:
-      - uuid:
-          value: 21518dcb-a730-425e-a108-48f266640494
+      - type: 1
         specialName: 
-        type: 1
         count: 1
         parameter: 1
-        sourceEntity:
-          value: 
-        targetEntities:
-        - value: 
         args:
-          list: []
+          args: []

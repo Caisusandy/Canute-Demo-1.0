@@ -16,7 +16,7 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/4/22 18:30:01
+      value: 2020/5/20 20:54:08
     federgram: 0
     manpower: 1000000
     mantleAlloy: 1000000
@@ -24,11 +24,11 @@ MonoBehaviour:
     aethium: 1000000
     legions:
     - armiesUUID:
-      - value: ca74d413-d28a-4d56-a700-38944c197165
+      - value: 2537f87a-0b5c-400e-be78-5568373e63bf
       - value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
       - value: 25ee4ff2-2f46-496a-a119-a4f9c55c277d
-      - value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
-      - value: 2537f87a-0b5c-400e-be78-5568373e63bf
+      - value: 826c6717-7099-4429-a4fe-93a427845a31
+      - value: 5471b989-7bb1-4a99-82cf-9822db0d954a
     - armiesUUID:
       - value: 2be597d2-643f-4040-8c59-a6fd0b42c900
       - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
@@ -372,6 +372,16 @@ MonoBehaviour:
     - protoName: AlphaCard
       uuid:
         value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
+      exp: 0
+      floatExp: 0
+    - protoName: Trick
+      uuid:
+        value: f67edbd2-19ab-4297-8696-330f63af2b48
+      exp: 0
+      floatExp: 0
+    - protoName: Oppotunity
+      uuid:
+        value: 275c835b-f1bb-4fa4-be54-b6ad43e45595
       exp: 0
       floatExp: 0
     gameProgree:

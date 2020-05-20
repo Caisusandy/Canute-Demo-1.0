@@ -18,6 +18,11 @@ namespace Canute.UI
 
         [HideInInspector] public EventCardItem displayingEventCard;
 
+        public void Awake()
+        {
+            GetComponent<Canvas>().sortingLayerName = "UI";
+        }
+
         public void Display(EventCardItem eventCardItem)
         {
             displayingEventCard = eventCardItem;

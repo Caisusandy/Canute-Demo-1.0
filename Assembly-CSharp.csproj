@@ -218,6 +218,7 @@
     <Compile Include="Assets\Script\Module\DataList.cs" />
     <Compile Include="Assets\Script\Module\Extensions.cs" />
     <Compile Include="Assets\Script\Module\Follow.cs" />
+    <Compile Include="Assets\Script\Module\FollowMouseMove.cs" />
     <Compile Include="Assets\Script\Module\GameObjectTransform\LinearMotion.cs" />
     <Compile Include="Assets\Script\Module\GameObjectTransform\Motion.cs" />
     <Compile Include="Assets\Script\Module\GameObjectTransform\Rotation.cs" />
@@ -245,8 +246,11 @@
     <Compile Include="Assets\Script\UI\Armies\AttackPostionIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\AttackTypeIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\StandPostionIcon.cs" />
+    <Compile Include="Assets\Script\UI\EventCardPile\ECPAddCard.cs" />
+    <Compile Include="Assets\Script\UI\EventCardPile\ECPCardScroll.cs" />
     <Compile Include="Assets\Script\UI\EventCardPile\ECPPileDisplay.cs" />
     <Compile Include="Assets\Script\UI\EventCardPile\ECPPileSmallIcon.cs" />
+    <Compile Include="Assets\Script\UI\EventCardPile\ECPRemoveCard.cs" />
     <Compile Include="Assets\Script\UI\EventCardPile\ECPSingleCardPanel.cs" />
     <Compile Include="Assets\Script\UI\EventCards\EventCardList.cs" />
     <Compile Include="Assets\Script\UI\EventCards\EventCardUI.cs" />
@@ -268,6 +272,7 @@
     <Compile Include="Assets\Script\UI\PlayerCurrencyDisplayer.cs" />
     <Compile Include="Assets\Script\UI\Testing\Army Generator\ArmyGenerator.cs" />
     <Compile Include="Assets\Script\UI\Testing\Army Generator\PrototypeLoader.cs" />
+    <Compile Include="Assets\Script\_temp\NewBehaviourScript.cs" />
     <None Include="Assets\Script\Module\NewUnlitShader.shader" />
     <None Include="Assets\Resources\Lang\zh_cn.txt" />
     <None Include="Assets\Script\Module\NewUnlitShader 1.shader" />

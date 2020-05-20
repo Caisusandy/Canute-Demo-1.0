@@ -15,23 +15,19 @@ MonoBehaviour:
   prototype:
     name: Trick
     rarity: 0
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 9dd7184dda6bc5b4f9d1a73b06166081, type: 3}
     sprite: {fileID: 0}
     protrait: {fileID: 0}
     prefab: {fileID: 0}
     count: 4
     cost: 3
     targetTypes: 2
+    career: 0
     eventCardProperty:
       effects:
-      - uuid:
-          value: 0154d66d-d0b4-4733-9903-417eed255d75
+      - type: 3
         specialName: trick
-        type: 3
         count: 1
         parameter: 0
-        sourceEntity:
-          value: 
-        targetEntities: []
         args:
-          list: []
+          args: []

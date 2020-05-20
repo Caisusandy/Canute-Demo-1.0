@@ -116,16 +116,25 @@ namespace Canute
         public void Left(EventCardItem eventCardItem)
         {
             eventCardUUID.Remove(eventCardItem.UUID);
+            PlayerFile.SaveCurrentData();
         }
 
         public bool Add(EventCardItem eventCardItem)
         {
             if (CardCount + eventCardItem.Prototype.Count > CardLimit)
             {
+                Debug.Log(CardCount);
+                return false;
+            }
+
+            if (eventCardUUID.Contains(eventCardItem.UUID))
+            {
+                Debug.Log(CardCount);
                 return false;
             }
 
             eventCardUUID.Add(eventCardItem.UUID);
+            PlayerFile.SaveCurrentData();
             return true;
         }
 

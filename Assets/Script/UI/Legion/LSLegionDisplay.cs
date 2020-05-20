@@ -19,7 +19,7 @@ namespace Canute.UI
         public void Awake()
         {
             instance = this;
-            LSLegionSmallIcon.SelectEvent += LoadLegion;
+            LSLegionSmallIcon.SelectEvent = LoadLegion;
         }
 
         public void OnDestroy()

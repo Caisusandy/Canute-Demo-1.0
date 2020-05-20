@@ -39,6 +39,13 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 92be2c6c9e1bffb488db9dfd873c8940, type: 2}
     - {fileID: 11400000, guid: 3ad86eb5ad9c8974b8a72a889476c5b8, type: 2}
     - {fileID: 11400000, guid: 1f9fdf9f95a4bef49a522df12aba0956, type: 2}
+    - {fileID: 11400000, guid: b4f2c02ec81ebd845a26442a8260a9ca, type: 2}
+    - {fileID: 11400000, guid: 6b76571e73ff8e547b703e4885c8765a, type: 2}
   buildingPrototypes:
     list:
     - {fileID: 11400000, guid: 3c89cfb6209195d48b215c0c00af3005, type: 2}
+  defaultArmy: {fileID: 11400000, guid: ac71141c62b8df0468970d4841fda0b8, type: 2}
+  defaultBuilding: {fileID: 11400000, guid: 60b76e19f9aed8d4faec5d751a142796, type: 2}
+  defaultEventCard: {fileID: 11400000, guid: 6b76571e73ff8e547b703e4885c8765a, type: 2}
+  defaultEquipment: {fileID: 0}
+  defaultLeader: {fileID: 0}

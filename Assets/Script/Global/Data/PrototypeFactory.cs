@@ -9,9 +9,16 @@ namespace Canute.BattleSystem
     {
         [SerializeField] private ArmyPrototypes armyPrototypes = new ArmyPrototypes();
         [SerializeField] private LeaderPrototypes leaderPrototypes = new LeaderPrototypes();
-        [SerializeField] private EquipmenPrototypes equipmentPrototypes = new EquipmenPrototypes();
+        [SerializeField] private EquipmentPrototypes equipmentPrototypes = new EquipmentPrototypes();
         [SerializeField] private EventCardPrototypes eventCardPrototypes = new EventCardPrototypes();
         [SerializeField] private BuildingPrototypes buildingPrototypes = new BuildingPrototypes();
+
+        [Header("Default")]
+        [SerializeField] private ArmyPrototypeContainer defaultArmy;
+        [SerializeField] private BuildingPrototypeContainer defaultBuilding;
+        [SerializeField] private EventCardPrototypeContainer defaultEventCard;
+        [SerializeField] private EquipmentPrototypeContainer defaultEquipment;
+        [SerializeField] private LeaderPrototypeContainer defaultLeader;
 
 
         public Prototype GetPrototype(string name)
@@ -52,7 +59,7 @@ namespace Canute.BattleSystem
 
         public ArmyPrototypes Armies => armyPrototypes;
         public LeaderPrototypes Leaders => leaderPrototypes;
-        public EquipmenPrototypes Equipments => equipmentPrototypes;
+        public EquipmentPrototypes Equipments => equipmentPrototypes;
         public EventCardPrototypes EventCards => eventCardPrototypes;
         public BuildingPrototypes Buildings => buildingPrototypes;
 
@@ -63,7 +70,7 @@ namespace Canute.BattleSystem
             {
                 return Armies.Get(name) ?? TestingArmies.Get(name);
             }
-            return Armies.Get(name);
+            return Armies.Get(name) ?? defaultArmy;
         }
 
         public List<Army> GetArmyPrototypes(string[] names)
@@ -82,7 +89,7 @@ namespace Canute.BattleSystem
             {
                 return Buildings.Get(name) ?? TestingBuildings.Get(name);
             }
-            return Buildings.Get(name);
+            return Buildings.Get(name) ?? defaultBuilding;
         }
 
         public List<Building> GetBuildingPrototypes(string[] names)
@@ -101,7 +108,7 @@ namespace Canute.BattleSystem
             {
                 return Leaders.Get(name) ?? TestingLeaders.Get(name);
             }
-            return Leaders.Get(name);
+            return Leaders.Get(name) ?? defaultLeader;
         }
 
         public List<Leader> GetLeaderPrototypes(string[] names)
@@ -120,7 +127,7 @@ namespace Canute.BattleSystem
             {
                 return Equipments.Get(name) ?? TestingEquipments.Get(name);
             }
-            return Equipments.Get(name);
+            return Equipments.Get(name) ?? defaultEquipment;
         }
 
         public List<Equipment> GetEquipmentPPrototypes(string[] names)
@@ -139,7 +146,7 @@ namespace Canute.BattleSystem
             {
                 return EventCards.Get(name) ?? TestingEventCards.Get(name);
             }
-            return EventCards.Get(name);
+            return EventCards.Get(name) ?? defaultEventCard;
         }
 
         public void Add<T1, T2>(T1 item) where T1 : PrototypeContainer<T2> where T2 : Prototype

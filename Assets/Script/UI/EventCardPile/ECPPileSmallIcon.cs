@@ -41,14 +41,15 @@ namespace Canute.UI.EventCardPile
             cardIcons[id].GetComponent<Image>().sprite = armyItem.Icon;
         }
 
-        public void ChangeLegion(int id)
+        public void ChangePile(int id)
         {
             this.id = id;
             LoadIcon();
         }
 
-        public void SelectLegion()
+        public void SelectPile()
         {
+            Debug.Log("Select Pile " + id);
             SelectEvent?.Invoke(id);
         }
     }

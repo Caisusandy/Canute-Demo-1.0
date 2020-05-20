@@ -15,23 +15,19 @@ MonoBehaviour:
   prototype:
     name: Oppotunity
     rarity: 1
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: bb0dce32469614847b3235e702ec710d, type: 3}
     sprite: {fileID: 0}
     protrait: {fileID: 0}
     prefab: {fileID: 0}
-    count: 5
+    count: 4
     cost: 2
     targetTypes: 1
+    career: 0
     eventCardProperty:
       effects:
-      - uuid:
-          value: 4d0da47c-a9e9-46db-95b8-07e48fff6376
+      - type: 12
         specialName: Oppotunity
-        type: 12
         count: 1
         parameter: 3
-        sourceEntity:
-          value: 
-        targetEntities: []
         args:
-          list: []
+          args: []

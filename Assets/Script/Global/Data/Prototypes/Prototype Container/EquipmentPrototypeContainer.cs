@@ -10,7 +10,7 @@ namespace Canute.BattleSystem
 
     }
     [Serializable]
-    public class EquipmenPrototypes : DataList<EquipmentPrototypeContainer>
+    public class EquipmentPrototypes : DataList<EquipmentPrototypeContainer>
     {
 
     }

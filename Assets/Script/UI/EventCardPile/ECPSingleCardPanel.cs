@@ -78,7 +78,7 @@ namespace Canute.UI.EventCardPile
         {
             Debug.Log("Left EventCard");
             ECPPileDisplay.instance.EventCardPile.Left(SelectingEventCard);
-            ECPPileDisplay.instance.ReloadPile();
+            ECPPileDisplay.instance.Reload();
             PlayerFile.SaveCurrentData();
 
         }

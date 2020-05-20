@@ -24,10 +24,12 @@ namespace Canute.BattleSystem
         [SerializeField] protected Stat stat;
         [SerializeField] protected CentralDeck centralDeck;
         [SerializeField] protected List<Animator> ongoingAnimation = new List<Animator>();
+
         [SerializeField] protected List<BattleArmy> armies = new List<BattleArmy>();
         [SerializeField] protected List<BattleBuilding> buildings = new List<BattleBuilding>();
+        [SerializeField] protected List<Status> globalStatus = new List<Status>();
 
-        [SerializeField] protected List<Effect> passingEffect = new List<Effect>();
+        [SerializeField] protected List<Effect> passedEffect = new List<Effect>();
         [SerializeField] protected MapEntity mapEntity;
 
 
@@ -41,7 +43,7 @@ namespace Canute.BattleSystem
         public List<BattleArmy> Armies => armies;
         public List<BattleBuilding> Buildings => buildings;
         public List<Animator> OngoingAnimation => ongoingAnimation;
-        public List<Effect> PassingEffect { get => passingEffect; set => passingEffect = value; }
+        public List<Effect> PassingEffect { get => passedEffect; set => passedEffect = value; }
         public CentralDeck CentralDeck { get => centralDeck; set => centralDeck = value; }
         public GameObject MapPrefab { get => mapPrefab; set => mapPrefab = value; }
         public MapEntity MapEntity { get => mapEntity; set => mapEntity = value; }
@@ -445,7 +447,7 @@ namespace Canute.BattleSystem
 
         /// <summary> 获取手牌 </summary>
         /// <param name="player"></param>
-        /// <param name="amount"></param>
+        /// <param name="count"></param>
         public void GetHandCard(Player player, int count)
         {
             Debug.Log(player.Name + ", " + count);

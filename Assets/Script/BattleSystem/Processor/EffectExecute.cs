@@ -672,7 +672,6 @@ namespace Canute.BattleSystem
             return true;
         }
 
-
         private static bool Event(Effect effect)
         {
             string name = effect[Effect.name];
@@ -950,86 +949,6 @@ namespace Canute.BattleSystem
         //}
 
         #endregion
-
-        //#region Add Status
-
-        //private static bool AddConfusion(Effect effect)
-        //{
-        //    if (effect.Type != Effect.Types.confusion)
-        //    {
-        //        return false;
-        //    }
-
-        //    foreach (var item in effect.Targets)
-        //    {
-        //        if (!(item is IBattleableEntity))
-        //        {
-        //            return false;
-        //        }
-        //    }
-
-        //    foreach (var item in effect.Targets)
-        //    {
-        //        IStatusContainer statusContainer = item as IStatusContainer;
-        //        Status status = effect.ToStatus();
-        //        statusContainer.Stats.Add(status);
-        //    }
-
-        //    return true;
-        //}
-
-        //private static bool AddMoveRangeIncrease(Effect effect)
-        //{
-        //    if (effect.Type != Effect.Types.moveRangeIncrease)
-        //    {
-        //        return false;
-        //    }
-
-        //    foreach (var item in effect.Targets)
-        //    {
-        //        if (!(item is IBattleableEntity))
-        //        {
-        //            return false;
-        //        }
-        //    }
-
-        //    foreach (var target in effect.Targets)
-        //    {
-        //        IStatusContainer statusContainer = target as IStatusContainer;
-        //        Status status = effect.ToStatus();
-        //        statusContainer.Stats.Add(status);
-        //    }
-
-        //    return true;
-        //}
-
-        //private static bool AddAttackRangeIncrease(Effect effect)
-        //{
-        //    if (effect.Type != Effect.Types.attackRangeIncrease)
-        //    {
-        //        return false;
-        //    }
-
-        //    foreach (var item in effect.Targets)
-        //    {
-        //        if (!(item is IBattleableEntity))
-        //        {
-        //            return false;
-        //        }
-        //    }
-
-        //    foreach (var target in effect.Targets)
-        //    {
-        //        IStatusContainer statusContainer = target as IStatusContainer;
-        //        Status status = effect.ToStatus();
-        //        statusContainer.Stats.Add(status);
-        //    }
-
-        //    return true;
-        //}
-
-        //#endregion
-
     }
 
 }

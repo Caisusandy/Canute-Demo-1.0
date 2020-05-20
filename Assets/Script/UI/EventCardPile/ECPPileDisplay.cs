@@ -1,150 +1,94 @@
 ﻿using Canute.BattleSystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Canute.UI.EventCardPile
 {
-
-    //public class ECPScroll : MonoBehaviour
-    //{
-    //    public static ECPScroll instance;
-
-    //    public GameObject armyIconPrefab;
-    //    public GameObject leaderIconPrefab;
-    //    public GameObject scroll;
-    //    public Item.Type currentType;
-
-    //    private void Awake()
-    //    {
-    //        instance = this;
-    //    }
-
-    //    // Start is called before the first frame update
-    //    private void Start()
-    //    {
-
-    //    }
-
-    //    // Update is called once per frame
-    //    private void Update()
-    //    {
-
-    //    }
-
-    //    public void Create(ArmyItem item)
-    //    {
-    //        GameObject icon = Instantiate(armyIconPrefab, scroll.transform);
-    //        ArmyIcon armyIcon = icon.GetComponent<ArmyIcon>();
-    //        armyIcon.displayingArmy = item;
-    //    }
-
-    //    public void Create(LeaderItem item)
-    //    {
-    //        GameObject icon = Instantiate(leaderIconPrefab, scroll.transform);
-    //        LeaderIcon leaderIcon = icon.GetComponent<LeaderIcon>();
-    //        leaderIcon.displayingLeader = item;
-    //    }
-
-    //    public void LoadScroll(Item.Type type)
-    //    {
-    //        if (currentType != type)
-    //        {
-    //            ClearScroll();
-    //        }
-    //        else
-    //        {
-    //            return;
-    //        }
-
-    //        switch (type)
-    //        {
-    //            case Item.Type.army:
-
-    //                foreach (ArmyItem item in Game.PlayerData.Armies)
-    //                {
-    //                    Create(item);
-    //                }
-    //                break;
-    //            case Item.Type.leader:
-    //                foreach (LeaderItem item in Game.PlayerData.Leaders)
-    //                {
-    //                    Create(item);
-    //                }
-    //                break;
-    //            default:
-    //                break;
-    //        }
-    //    }
-
-    //    public void ClearScroll()
-    //    {
-    //        foreach (Transform item in scroll.transform)
-    //        {
-    //            Destroy(item.gameObject);
-    //        }
-    //    }
-    //}
-
+    /// <summary>
+    /// event card pile
+    /// </summary>
     public class ECPPileDisplay : MonoBehaviour
     {
         public static ECPPileDisplay instance;
-        public List<GameObject> eventCards;
+
+        public GameObject eventCardPrefab;
+        private int pileID;
+        public Transform cardsParent;
+        public Text cardCount;
+        public List<GameObject> cardsInPile;
         public List<ECPPileSmallIcon> cardIcons;
 
-        public int legionId;
+        public int PileID { get => pileID; set => pileID = value; }
         public int lastId { get; set; }
 
-        public Canute.EventCardPile EventCardPile => Game.PlayerData.EventCardPiles[legionId];
-        public ECPPileSmallIcon PileSmallIcon => cardIcons[legionId];
+        public Canute.EventCardPile EventCardPile => Game.PlayerData.EventCardPiles[PileID];
+
+
+        public ECPPileSmallIcon PileSmallIcon => cardIcons[PileID];
 
         public void Awake()
         {
             instance = this;
-            ECPPileSmallIcon.SelectEvent += LoadPile;
+            ECPPileSmallIcon.SelectEvent = SelectPile;
         }
 
-        public void OnDestroy()
+        public void Start()
         {
-            instance = null;
+            LoadPile(pileID);
         }
 
-        // Start is called before the first frame update
-        void Start()
+        public GameObject InstantiateCardEventCardUI(EventCardItem item)
         {
-            LoadPile(0);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        public void SelectArmy(int id)
-        {
-            ECPSingleCardPanel.instance.Display(EventCardPile.EventCards[id]);
-            ECPSingleCardPanel.instance.selectingEventCard = eventCards[id].GetComponent<EventCardUI>();
-        }
-
-        public void ReloadPile()
-        {
-            LoadPile(legionId);
+            var cardUIObject = Instantiate(eventCardPrefab, cardsParent);
+            var UI = cardUIObject.GetComponent<EventCardUI>();
+            UI.gameObject.AddComponent<ECPRemoveCard>();
+            UI.Display(item);
+            return cardUIObject;
         }
 
         public void LoadPile(int id)
         {
-            var pile = Game.PlayerData.EventCardPiles[id];
-            legionId = id;
-
-            foreach (var item in pile.EventCards)
+            Debug.Log("Load Pile " + id);
+            PileID = id;
+            foreach (var item in Game.PlayerData.EventCardPiles[id].EventCards)
             {
-
+                var gameObject = InstantiateCardEventCardUI(item);
+                cardsInPile.Add(gameObject);
             }
+            LoadCardCount();
+        }
 
-            SelectArmy(0);
+        public void UnloadPile()
+        {
+            foreach (var item in cardsInPile)
+            {
+                Destroy(item);
+            }
+            cardsInPile.Clear();
+        }
+
+
+        public void Reload()
+        {
+            UnloadPile();
+            LoadPile(pileID);
+        }
+
+        public void SelectPile(int id)
+        {
+            UnloadPile();
+            LoadPile(id);
+            ECPCardScroll.instance.Reload();
+        }
+
+        public void LoadCardCount()
+        {
+            cardCount.text = EventCardPile.CardCount + "/24";
         }
     }
 }
