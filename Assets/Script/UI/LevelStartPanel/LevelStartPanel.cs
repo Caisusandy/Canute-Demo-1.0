@@ -1,6 +1,8 @@
 ﻿using Canute.BattleSystem;
 using Canute.Languages;
 using Canute.LevelTree;
+using Canute.UI.Legion;
+using Canute.UI.EventCardPile;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +17,10 @@ namespace Canute.UI.LevelStart
         public Text title;
         public Text subtitle;
         public LeaderScroll leaderScroll;
+
         public LSLegionSmallIcon selectingLegion;
+        public ECPPileSmallIcon selectingPile;
+        [Header("Button")]
         public Button startButton;
         public Button last;
         public Button next;
@@ -23,16 +28,21 @@ namespace Canute.UI.LevelStart
         public GameObject leaderCard;
 
 
-        private Legion legion;
+        private Canute.Legion legion;
+        private Canute.EventCardPile pile;
 
-        private Canute.EventCardPile eventCardItems = new Canute.EventCardPile();
+
         private LeaderItem LeaderItem => Game.PlayerData.Leaders[leaderScroll.selectingId];
-        private LegionSet LegionSet => new LegionSet(legion, eventCardItems, LeaderItem.UUID, "Canute Svensson");
-        private LevelTree.Level Level => GameData.Chapters.ChapterTree.GetLevel(levelName);
+        public Canute.Legion Legion { get => legion; set => legion = value; }
+        public Canute.EventCardPile Pile { get => pile; set => pile = value; }
+        private LegionSet LegionSet => new LegionSet(Legion, Pile, LeaderItem.UUID, "Canute Svensson");
+        private Level Level => GameData.Chapters.ChapterTree.GetLevel(levelName);
+
 
         private void Awake()
         {
             LSLegionSmallIcon.SelectEvent = SelectLegion;
+            ECPPileSmallIcon.SelectEvent = SelectPile;
         }
 
         // Start is called before the first frame update
@@ -64,9 +74,21 @@ namespace Canute.UI.LevelStart
 
         public void SelectLegion(int id)
         {
-            legion = Game.PlayerData.Legions[id];
+            Legion = Game.PlayerData.Legions[id];
             selectingLegion.ChangeLegion(id);
-            startButton.interactable = true;
+            UpdateStartButton();
+        }
+
+        public void SelectPile(int id)
+        {
+            Pile = Game.PlayerData.EventCardPiles[id];
+            selectingPile.ChangePile(id);
+            UpdateStartButton();
+        }
+
+        public void UpdateStartButton()
+        {
+            startButton.interactable = !(legion is null) && !(pile is null);
         }
 
         public void Close()

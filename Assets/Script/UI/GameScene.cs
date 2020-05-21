@@ -8,6 +8,7 @@ namespace Canute.UI
     public class GameScene : MonoBehaviour
     {
         public GameData game;
+        public List<ScriptableObject> loadingScriptableObject;
 
         public void Awake()
         {

@@ -14,6 +14,7 @@ namespace Canute.BattleSystem
         [SerializeField] protected AIEntity.PersonalityType personality;
         [SerializeField] protected BattleLeader viceCommander;
         [SerializeField] protected Legion legion;
+        [SerializeField] protected EventCardPile pile;
 
         [Header("Items")]
         [SerializeField] protected int maxArmyCount;
@@ -40,22 +41,22 @@ namespace Canute.BattleSystem
         public List<BattleArmy> BattleArmies => Game.CurrentBattle.GetArmies(this);
         public List<BattleBuilding> Buildings => Game.CurrentBattle.GetBuildings(this);
         public BattleLeader ViceCommander { get => viceCommander; set => viceCommander = value; }
-        public Legion Legion { get => legion; set => legion = value; }
-
         public StatusList StatList { get => stats; set => stats = value; }
         public StatusList GetAllStatus() => StatList;
 
 
-        public double Morale => (BattleArmies.Count + HasCampus) / (double)(MaxArmyCount + HasCampus);
+
         public int ActionPoint { get => actionPoint; set => actionPoint = value; }
         public int HasCampus => Campus ? 1 : 0;
         public int MaxArmyCount { get => maxArmyCount; set => maxArmyCount = value; }
+        public double Morale => (BattleArmies.Count + HasCampus) / (double)(MaxArmyCount + HasCampus);
+        public bool IsInTurn => this == Game.CurrentBattle?.Round?.CurrentPlayer;
         public CampusEntity Campus { get => campus; set => campus = value; }
         public AIEntity AI => Entity as AIEntity;
         public AIEntity.PersonalityType Personality { get => personality; set => personality = value; }
-        public bool IsInTurn => this == Game.CurrentBattle?.Round?.CurrentPlayer;
 
 
+        public Legion Legion { get => legion; set => legion = value; }
 
 
         /// <summary>
@@ -64,30 +65,32 @@ namespace Canute.BattleSystem
         /// <param name="legion"></param>
         public Player(string name, LegionSet playerLegionSet) : this()
         {
-            Legion legion = playerLegionSet.legion;
+            Legion legion = playerLegionSet.Legion;
             LeaderItem leaderItem = playerLegionSet.Leader;
-            EventCardPile EventCardPile = playerLegionSet.eventCardPile;
+            EventCardPile pile = playerLegionSet.EventCardPile;
 
             this.name = name;
             this.legion = legion;
+            this.pile = pile;
 
             viceCommander = new BattleLeader(leaderItem);
-            eventCardPile = Card.ToCards(EventCardPile);
+
+            eventCardPile = Card.ToCards(pile);
+            foreach (var item in eventCardPile)
+            {
+                item.Owner = this;
+            }
 
             List<BattleArmy> battleArmies = new List<BattleArmy>();
-
             foreach (ArmyItem item in legion.Armies)
             {
                 BattleArmy army = new BattleArmy(item, this);
                 battleArmies.Add(army);
             }
 
-            foreach (var item in eventCardPile)
-            {
-                item.Owner = this;
-            }
 
             Resonance.Resonate(ref battleArmies);
+
             Game.CurrentBattle.Armies.AddRange(battleArmies);
             maxArmyCount = battleArmies.Count;
         }
@@ -97,27 +100,33 @@ namespace Canute.BattleSystem
         /// To Setup a Game Player
         /// </summary>
         /// <param name="LegionSet"></param> 
-        public Player(string name, LegionSet LegionSet, UUID uUID)
+        public Player(string name, LegionSet LegionSet, UUID uuid)
         {
-            this.uuid = uUID;
+            Legion legion = LegionSet.Legion;
+            LeaderItem leaderItem = LegionSet.Leader;
+            EventCardPile pile = LegionSet.EventCardPile;
+
+            this.uuid = uuid;
             this.name = name;
-            this.legion = LegionSet.legion;
-            viceCommander = new BattleLeader(LegionSet.Leader);
+            this.legion = legion;
+            this.pile = pile;
+
+            viceCommander = new BattleLeader(leaderItem);
+
+            eventCardPile = Card.ToCards(pile);
+            foreach (var item in eventCardPile)
+            {
+                item.Owner = this;
+            }
 
             List<BattleArmy> battleArmies = new List<BattleArmy>();
-
-            foreach (ArmyItem item in LegionSet.legion.Armies)
+            foreach (ArmyItem item in LegionSet.Legion.Armies)
             {
                 BattleArmy army = new BattleArmy(item, this);
                 battleArmies.Add(army);
             }
-
             Resonance.Resonate(ref battleArmies);
-
-            foreach (BattleArmy item in battleArmies)
-            {
-                Game.CurrentBattle.Armies.Add(item);
-            }
+            Game.CurrentBattle.Armies.AddRange(battleArmies);
 
             maxArmyCount = battleArmies.Count;
         }

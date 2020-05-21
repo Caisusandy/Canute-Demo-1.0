@@ -22,25 +22,51 @@ namespace Canute.UI.EventCardPile
             LoadIcon();
         }
 
-        private void LoadIcon()
+        public void LoadIcon()
         {
             if (id == -1)
             {
                 return;
             }
 
+            Debug.Log(id);
             for (int i = 0; i < Game.PlayerData.EventCardPiles[id].EventCards.Count; i++)
             {
+                if (i > 4)
+                {
+                    break;
+                }
+                Debug.Log(id + "," + i);
                 EventCardItem item = Game.PlayerData.EventCardPiles[id].EventCards[i];
-                Change(i, item);
+                UpdateIcon(i, item);
+            }
+
+            for (int i = Game.PlayerData.EventCardPiles[id].EventCards.Count; i < 5; i++)
+            {
+                Hide(i);
             }
         }
 
-        public void Change(int id, EventCardItem armyItem)
+        /// <summary>
+        /// update single icon
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="armyItem"></param>
+        public void UpdateIcon(int id, EventCardItem armyItem)
         {
+            cardIcons[id].SetActive(true);
             cardIcons[id].GetComponent<Image>().sprite = armyItem.Icon;
         }
 
+        public void Hide(int id)
+        {
+            cardIcons[id].SetActive(false);
+        }
+
+        /// <summary>
+        /// change the displaying pile
+        /// </summary>
+        /// <param name="id"></param>
         public void ChangePile(int id)
         {
             this.id = id;

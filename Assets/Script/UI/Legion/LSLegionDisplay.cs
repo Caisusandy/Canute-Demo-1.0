@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Canute.UI
+namespace Canute.UI.Legion
 {
     public class LSLegionDisplay : MonoBehaviour, IMonoinstanceMonoBehaviour
     {
@@ -13,7 +13,7 @@ namespace Canute.UI
         public int legionId;
         public int lastId { get; set; }
 
-        public Legion Legion => Game.PlayerData.Legions[legionId];
+        public Canute.Legion Legion => Game.PlayerData.Legions[legionId];
         public LSLegionSmallIcon LSLegionSmallIcon => legionSmallIcons[legionId];
 
         public void Awake()
@@ -52,7 +52,7 @@ namespace Canute.UI
 
         public void LoadLegion(int id)
         {
-            Legion legion = Game.PlayerData.Legions[id];
+            var legion = Game.PlayerData.Legions[id];
             legionId = id;
 
             for (int i = 0; i < 5; i++)
@@ -60,7 +60,7 @@ namespace Canute.UI
                 GameObject item = armyCards[i];
                 ArmyItem armyItem = i < legion.Armies.Count ? legion.Armies[i] : ArmyItem.Empty;
                 item.GetComponent<ArmyCardUI>().Exist()?.Display(armyItem);
-                LSLegionSmallIcon.Change(i, armyItem);
+                LSLegionSmallIcon.UpdateIcon(i, armyItem);
             }
 
             SelectArmy(0);

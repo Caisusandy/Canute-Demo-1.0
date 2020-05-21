@@ -77,6 +77,7 @@ namespace Canute.UI.EventCardPile
         {
             UnloadPile();
             LoadPile(pileID);
+            PileSmallIcon.LoadIcon();
         }
 
         public void SelectPile(int id)

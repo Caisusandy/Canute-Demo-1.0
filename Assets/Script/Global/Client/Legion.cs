@@ -162,12 +162,12 @@ namespace Canute
 
 namespace Canute.BattleSystem
 {
-    public struct LegionSet
+    public struct LegionSet : INameable
     {
-        public string name;
-        public Legion legion;
-        public EventCardPile eventCardPile;
-        public UUID leaderUUID;
+        private string name;
+        private Legion legion;
+        private EventCardPile eventCardPile;
+        private UUID leaderUUID;
 
         public LegionSet(Legion legion, EventCardPile eventCardPile, UUID leaderUUID, string name)
         {
@@ -178,7 +178,13 @@ namespace Canute.BattleSystem
         }
 
         public LeaderItem Leader => Game.PlayerData.GetLeaderItem(leaderUUID);
+        public string Name => name;
+        public Legion Legion { get => legion; set => legion = value; }
+        public EventCardPile EventCardPile { get => eventCardPile; set => eventCardPile = value; }
 
-
+        public override string ToString()
+        {
+            return "name: " + name;
+        }
     }
 }

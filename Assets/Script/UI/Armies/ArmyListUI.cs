@@ -28,7 +28,7 @@ namespace Canute.UI
         public static PropertyType listType;
         public static bool reverseArrangement;
         public static object currentSortTypeParam;
-        public static Legion legion;
+        public static Canute.Legion legion;
         public static List<ArmyItem> currentDisplayingArmy;
 
         public static List<ArmyItem> GetPlayerArmiesDisplayed()

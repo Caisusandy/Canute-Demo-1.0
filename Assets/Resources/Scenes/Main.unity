@@ -4343,3 +4343,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game: {fileID: 11400000, guid: 460c8e612ce430a44882b7d2403d35de, type: 2}
+  loadingScriptableObject: []

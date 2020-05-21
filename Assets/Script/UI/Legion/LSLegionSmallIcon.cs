@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Canute.UI
+namespace Canute.UI.Legion
 {
     public delegate void LegionSelectEvent(int id);
-
     public class LSLegionSmallIcon : MonoBehaviour
     {
         public int id;
@@ -34,11 +33,11 @@ namespace Canute.UI
             for (int i = 0; i < Game.PlayerData.Legions[id].Armies.Count; i++)
             {
                 ArmyItem item = Game.PlayerData.Legions[id].Armies[i];
-                Change(i, item);
+                UpdateIcon(i, item);
             }
         }
 
-        public void Change(int id, ArmyItem armyItem)
+        public void UpdateIcon(int id, ArmyItem armyItem)
         {
             armyIcons[id].GetComponent<Image>().sprite = armyItem.Icon;
         }

@@ -68,9 +68,9 @@ namespace Canute.BattleSystem
         {
             if (GameData.BuildSetting.IsInDebugMode)
             {
-                return Armies.Get(name) ?? TestingArmies.Get(name);
+                return Armies.Get(name).Exist()?.Prototype ?? TestingArmies.Get(name) ?? defaultArmy;
             }
-            return Armies.Get(name) ?? defaultArmy;
+            return Armies.Get(name).Exist()?.Prototype ?? defaultArmy;
         }
 
         public List<Army> GetArmyPrototypes(string[] names)
@@ -87,9 +87,9 @@ namespace Canute.BattleSystem
         {
             if (GameData.BuildSetting.IsInDebugMode)
             {
-                return Buildings.Get(name) ?? TestingBuildings.Get(name);
+                return Buildings.Get(name).Exist()?.Prototype ?? TestingBuildings.Get(name) ?? defaultBuilding;
             }
-            return Buildings.Get(name) ?? defaultBuilding;
+            return Buildings.Get(name).Exist()?.Prototype ?? defaultBuilding;
         }
 
         public List<Building> GetBuildingPrototypes(string[] names)
@@ -106,9 +106,9 @@ namespace Canute.BattleSystem
         {
             if (GameData.BuildSetting.IsInDebugMode)
             {
-                return Leaders.Get(name) ?? TestingLeaders.Get(name);
+                return Leaders.Get(name).Exist().Prototype ?? TestingLeaders.Get(name);
             }
-            return Leaders.Get(name) ?? defaultLeader;
+            return Leaders.Get(name).Exist().Prototype ?? defaultLeader;
         }
 
         public List<Leader> GetLeaderPrototypes(string[] names)
@@ -125,9 +125,9 @@ namespace Canute.BattleSystem
         {
             if (GameData.BuildSetting.IsInDebugMode)
             {
-                return Equipments.Get(name) ?? TestingEquipments.Get(name);
+                return Equipments.Get(name).Exist()?.Prototype ?? TestingEquipments.Get(name) ?? defaultEquipment;
             }
-            return Equipments.Get(name) ?? defaultEquipment;
+            return Equipments.Get(name).Exist()?.Prototype ?? defaultEquipment;
         }
 
         public List<Equipment> GetEquipmentPPrototypes(string[] names)
@@ -144,9 +144,9 @@ namespace Canute.BattleSystem
         {
             if (GameData.BuildSetting.IsInDebugMode)
             {
-                return EventCards.Get(name) ?? TestingEventCards.Get(name);
+                return EventCards.Get(name).Exist()?.Prototype ?? TestingEventCards.Get(name) ?? defaultEventCard;
             }
-            return EventCards.Get(name) ?? defaultEventCard;
+            return EventCards.Get(name).Exist()?.Prototype ?? defaultEventCard;
         }
 
         public void Add<T1, T2>(T1 item) where T1 : PrototypeContainer<T2> where T2 : Prototype

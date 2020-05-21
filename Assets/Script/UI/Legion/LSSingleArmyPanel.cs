@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.UI.Legion;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -119,7 +120,7 @@ namespace Canute.UI
             {
                 Debug.Log("Change Army");
                 SceneControl.RemoveScene(MainScene.playerArmyList);
-                Legion legion = LSLegionDisplay.instance.Legion;
+                var legion = LSLegionDisplay.instance.Legion;
                 legion.Replace(SelectingArmy, armyCardUI.displayingArmy);
                 LSLegionDisplay.instance.ReloadLegion();
                 PlayerFile.SaveCurrentData();
