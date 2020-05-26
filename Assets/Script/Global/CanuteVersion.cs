@@ -36,7 +36,7 @@ namespace Canute
 
         public override string ToString()
         {
-            return major + "." + minor + "." + build + (GameData.BuildSetting.IsInDebugMode ? "." + revision : "");
+            return major + "." + minor + "." + build + (Game.Configuration.IsDebugMode ? "." + revision : "");
         }
     }
 }

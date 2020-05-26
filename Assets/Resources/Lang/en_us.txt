@@ -38,6 +38,9 @@ Canute.BattleSystem.Army+Types.mage=Mage
 Canute.BattleSystem.Army+Types.warMachine=War Machine
 Canute.BattleSystem.Army+Types.infantry=Infantry
 Canute.BattleSystem.Army+Types.shielder=Shielder
+Canute.BattleSystem.Army+Types.Cavalry=Cavalry
+Canute.BattleSystem.Army+Types.Rifleman=Rifleman
+Canute.BattleSystem.Army+Types.AircraftFighter=AircraftFighter
 #
 Canute.BattleSystem.Army.AlphaArmy.name=A
 Canute.BattleSystem.Army.BetaArmy.name=B
@@ -45,6 +48,10 @@ Canute.BattleSystem.Army.Basic Mage.name=Basic Mage
 Canute.BattleSystem.Army.Basic WarMachine.name=Basic WarMachine
 Canute.BattleSystem.Army.Basic Infantry.name=Basic Infantry
 Canute.BattleSystem.Army.Basic Shielder.name=Basic Shielder
+Canute.BattleSystem.Army.Basic Infantry.name=Basic Infantry
+Canute.BattleSystem.Army.Basic Cavalry.name=Basic Cavalry
+Canute.BattleSystem.Army.Basic Rifleman.name=Basic Rifleman
+Canute.BattleSystem.Army.Basic AircraftFighter.name=Basic AircraftFighter
 #
 Canute.BattleSystem.Building.Campus.name=Campus
 #地形
@@ -94,6 +101,8 @@ Canute.BattleSystem.Effect+Types.infantryLightness=Resonance: Lightness
 Canute.BattleSystem.Effect+Types.infantryLightness.info=No action point cost when moving
 Canute.BattleSystem.Effect+Types.shielderPenetrate=Resonance: Penetrate
 Canute.BattleSystem.Effect+Types.shielderPenetrate.info=Ignore other army's defense (except for shielder), cause a another @param% of enemy's current HP's real damage (except for shielder).
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn=Returning position
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn.info=Returning position: @x,@y
 
 
 #错误事件

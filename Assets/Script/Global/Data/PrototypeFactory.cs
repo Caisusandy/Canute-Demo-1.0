@@ -66,9 +66,9 @@ namespace Canute.BattleSystem
 
         public Army GetArmyPrototype(string name)
         {
-            if (GameData.BuildSetting.IsInDebugMode)
+            if (Game.Configuration.IsDebugMode)
             {
-                return Armies.Get(name).Exist()?.Prototype ?? TestingArmies.Get(name) ?? defaultArmy;
+                return TestingArmies.Get(name) ?? defaultArmy;
             }
             return Armies.Get(name).Exist()?.Prototype ?? defaultArmy;
         }
@@ -85,9 +85,9 @@ namespace Canute.BattleSystem
 
         public Building GetBuildingPrototype(string name)
         {
-            if (GameData.BuildSetting.IsInDebugMode)
+            if (Game.Configuration.IsDebugMode)
             {
-                return Buildings.Get(name).Exist()?.Prototype ?? TestingBuildings.Get(name) ?? defaultBuilding;
+                return TestingBuildings.Get(name) ?? defaultBuilding;
             }
             return Buildings.Get(name).Exist()?.Prototype ?? defaultBuilding;
         }
@@ -104,9 +104,9 @@ namespace Canute.BattleSystem
 
         public Leader GetLeaderPrototype(string name)
         {
-            if (GameData.BuildSetting.IsInDebugMode)
+            if (Game.Configuration.IsDebugMode)
             {
-                return Leaders.Get(name).Exist().Prototype ?? TestingLeaders.Get(name);
+                return TestingLeaders.Get(name) ?? defaultLeader;
             }
             return Leaders.Get(name).Exist().Prototype ?? defaultLeader;
         }
@@ -123,9 +123,9 @@ namespace Canute.BattleSystem
 
         public Equipment GetEquipmentPrototype(string name)
         {
-            if (GameData.BuildSetting.IsInDebugMode)
+            if (Game.Configuration.IsDebugMode)
             {
-                return Equipments.Get(name).Exist()?.Prototype ?? TestingEquipments.Get(name) ?? defaultEquipment;
+                return TestingEquipments.Get(name) ?? defaultEquipment;
             }
             return Equipments.Get(name).Exist()?.Prototype ?? defaultEquipment;
         }
@@ -142,9 +142,9 @@ namespace Canute.BattleSystem
 
         public EventCard GetEventCardPrototype(string name)
         {
-            if (GameData.BuildSetting.IsInDebugMode)
+            if (Game.Configuration.IsDebugMode)
             {
-                return EventCards.Get(name).Exist()?.Prototype ?? TestingEventCards.Get(name) ?? defaultEventCard;
+                return TestingEventCards.Get(name) ?? defaultEventCard;
             }
             return EventCards.Get(name).Exist()?.Prototype ?? defaultEventCard;
         }

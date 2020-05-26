@@ -36,7 +36,6 @@ namespace Canute
         [SerializeField] protected SpriteLoader spriteLoader;
         [SerializeField] protected Technology technology;
         [SerializeField] protected Shop shop;
-        [SerializeField] protected BuildSetting buildSetting;
         [SerializeField] protected Levels levelStart;
         [SerializeField] protected Chapters chapters;
         [SerializeField] protected Stories stories;
@@ -59,8 +58,6 @@ namespace Canute
         public static Shop Shop => instance.shop;
         /// <summary> Sprite获取器 </summary>
         public static SpriteLoader SpriteLoader => instance.spriteLoader;
-        /// <summary> 玩家设置 </summary>
-        public static BuildSetting BuildSetting => instance.buildSetting;
         /// <summary> 语言包 </summary>
         public static Language Language => instance.language;
         /// <summary> 故事 </summary>
@@ -88,7 +85,7 @@ namespace Canute
         {
             instance = this;
             Language.ForceLoadLang();
-            stories = storyPacks.Get(BuildSetting.Language.ToString());
+            stories = storyPacks.Get(Game.Language.ToString());
         }
 
         public void SavePlayerFile()

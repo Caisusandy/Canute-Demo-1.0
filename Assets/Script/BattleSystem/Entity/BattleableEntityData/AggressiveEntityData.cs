@@ -13,7 +13,7 @@ namespace Canute.BattleSystem
         public virtual int RawDamage => damage;
         public virtual BattleProperty.AttackType AttackType => Properties.Attack;
         public virtual BattleProperty.Position AttackPosition => Properties.AttackPosition;
-        public virtual Damage Damage => this.GetDamage();
+        public virtual int Damage => this.GetDamage();
 
         protected override void AddBounes(params IBattleBounesItem[] bouneses)
         {
@@ -51,9 +51,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public List<CellEntity> GetAttackArea() => MapEntity.CurrentMap.GetAttackArea(MapEntity.CurrentMap[Position], Properties.AttackRange, this);
-
-        public List<CellEntity> GetAttackRange() => GetAttackArea().Except(MapEntity.CurrentMap.GetAttackArea(MapEntity.CurrentMap[Position], Properties.AttackRange - 1, this)).ToList();
+        public List<CellEntity> GetAttackArea() => MapEntity.CurrentMap.GetAttackArea(MapEntity.CurrentMap[Coordinate], Properties.AttackRange, this);
 
         protected AggressiveEntityData() : base() { }
 
@@ -66,14 +64,12 @@ namespace Canute.BattleSystem
         /// <summary> 军队基础的伤害点数 </summary>
         int RawDamage { get; }
         /// <summary> 获取一次军队可造成的伤害点数（不计算Status的加成） </summary>
-        Damage Damage { get; }
+        int Damage { get; }
 
         /// <summary> 攻击方式（选择目标的方式）</summary>
         //ArmyProperty.TargetTypes TargetType { get; }
 
         List<CellEntity> GetAttackArea();
-
-        List<CellEntity> GetAttackRange();
 
         void PerformSkill();
     }
@@ -84,16 +80,17 @@ namespace Canute.BattleSystem
         /// Get Raw Damage of this Army (without any buff, but may with crit)
         /// </summary>
         /// <returns>Raw Damage</returns>
-        public static Damage GetDamage(this IAggressiveEntityData agressiveEntity)
+        public static int GetDamage(this IAggressiveEntityData agressiveEntity)
         {
             int damage = agressiveEntity.RawDamage;
             bool isCritical = UnityEngine.Random.Range(0, 100) <= agressiveEntity.Properties.CritRate * agressiveEntity.Owner.Morale;
+
             if (isCritical)
             {
                 damage = damage.Bounes(agressiveEntity.Properties.CritBounes);
             }
 
-            return new Damage(value: damage, isCritical);
+            return damage;
         }
 
         public static bool CanAttack(this IAggressiveEntityData data, IPassiveEntityData target)
@@ -102,34 +99,34 @@ namespace Canute.BattleSystem
         }
     }
 
-    public struct Damage
-    {
-        int value;
-        bool isCritical;
+    //public struct Damage
+    //{
+    //    int value;
+    //    bool isCritical;
 
-        public int Value { get => value; set => this.value = value; }
-        public bool IsCritical { get => isCritical; set => isCritical = value; }
+    //    public int Value { get => value; set => this.value = value; }
+    //    public bool IsCritical { get => isCritical; set => isCritical = value; }
 
-        public Damage(int value, bool isCritical)
-        {
-            this.value = value;
-            this.isCritical = isCritical;
-        }
+    //    public Damage(int value, bool isCritical)
+    //    {
+    //        this.value = value;
+    //        this.isCritical = isCritical;
+    //    }
 
-        public static implicit operator int(Damage damage)
-        {
-            return damage.value;
-        }
+    //    public static implicit operator int(Damage damage)
+    //    {
+    //        return damage.value;
+    //    }
 
 
-        public static bool operator ==(Damage left, Damage right)
-        {
-            return left.Equals(right);
-        }
+    //    public static bool operator ==(Damage left, Damage right)
+    //    {
+    //        return left.Equals(right);
+    //    }
 
-        public static bool operator !=(Damage left, Damage right)
-        {
-            return !(left == right);
-        }
-    }
+    //    public static bool operator !=(Damage left, Damage right)
+    //    {
+    //        return !(left == right);
+    //    }
+    //}
 }

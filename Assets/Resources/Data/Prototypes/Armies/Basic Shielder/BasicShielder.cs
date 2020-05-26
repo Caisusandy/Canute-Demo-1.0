@@ -48,7 +48,7 @@ namespace Canute.BattleSystem.Armies
         protected void RemoveProtection()
         {
             foreach (var (item, stat) in from item in GetProtectCell()
-                                         from stat in item.StatList.GetStatus(Effect.Types.tag, "name:protection")
+                                         from stat in item.StatList.GetAllStatus(Effect.Types.tag, "name:protection")
                                          where stat.Effect.Source == this
                                          select (item, stat))
             {

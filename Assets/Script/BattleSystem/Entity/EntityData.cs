@@ -78,17 +78,17 @@ namespace Canute.BattleSystem
         [Header("Status List")]
         [SerializeField] protected StatusList stats = new StatusList();
 
-        public virtual Vector2Int Position { get => new Vector2Int(x, y); set { x = value.x; y = value.y; } }
+        public virtual Vector2Int Coordinate { get => new Vector2Int(x, y); set { x = value.x; y = value.y; } }
         public virtual Vector3Int HexCoord => new Vector3Int(x - y / 2, y, x - y / 2 + y);
         public virtual bool AllowMove { get => allowMove; set => allowMove = value; }
-        public virtual Cell OnCellOf => Game.CurrentBattle.MapEntity[Position].data;
+        public virtual Cell OnCellOf => Game.CurrentBattle.MapEntity[Coordinate].data;
 
         public virtual StatusList StatList => stats;
         public virtual StatusList GetAllStatus() => StatList.Union(OnCellOf.StatList).ToStatList();
 
         public override string ToString()
         {
-            return base.ToString() + ";\nPosition: " + Position;
+            return base.ToString() + ";\nPosition: " + Coordinate;
         }
 
         protected OnMapEntityData() : base() { }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Canute.UI
 {
-    public class Main : GameScene
+    public class Main : GameServer
     {
 
         //private void Start()

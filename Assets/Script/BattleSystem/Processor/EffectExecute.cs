@@ -144,6 +144,12 @@ namespace Canute.BattleSystem
                     case "damageDecreasePercentage":
                         DamageDecrease(ref sourceEffect, status);
                         break;
+                    case "aircraftFighterReturnPositionRecorder":
+                        FighterAircraftChangeReturnPos(ref sourceEffect, status);
+                        break;
+                    case "aircreaftFighterTowardEnemy":
+                        AircreaftFighterTowardEnemy(ref sourceEffect, status);
+                        break;
                     default:
                         status.Execute();
                         return;
@@ -190,7 +196,7 @@ namespace Canute.BattleSystem
 
         private static BattleProperty SinglePropertyBounes(BattleProperty property, Status stat)
         {
-            PropertyType propertyType = stat.Effect.GetParam<PropertyType>(Effect.propertyBounes);
+            PropertyType propertyType = stat.Effect.GetParam<PropertyType>(Effect.propertyBounesType);
             BounesType bounesType = stat.Effect.GetParam<BounesType>(Effect.bounesType);
             var checkTypeValues = Enum.GetValues(typeof(PropertyType));
 
@@ -222,7 +228,7 @@ namespace Canute.BattleSystem
 
         private static BattleProperty SinglePropertyPanalty(BattleProperty property, Status stat)
         {
-            PropertyType propertyType = stat.Effect.GetParam<PropertyType>(Effect.propertyBounes);
+            PropertyType propertyType = stat.Effect.GetParam<PropertyType>(Effect.propertyBounesType);
             BounesType bounesType = stat.Effect.GetParam<BounesType>(Effect.bounesType);
             var checkTypeValues = Enum.GetValues(typeof(PropertyType));
 
@@ -398,14 +404,7 @@ namespace Canute.BattleSystem
                 battleEntityData.Data.Trigger(TriggerCondition.Conditions.beforeAttack, ref effect);
             }
 
-            foreach (var item in effect.Targets)
-            {
-                Effect attackEffect = effect.Clone();
-                attackEffect.UUID = effect.UUID;
-                attackEffect.Target = item;
-                InAttack(attackEffect);
-            }
-
+            InAttack(effect);
             AfterDefence(effect);
 
             return true;
@@ -415,16 +414,23 @@ namespace Canute.BattleSystem
         {
             IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
             agressiveEntity.Data.Trigger(TriggerCondition.Conditions.attack, ref effect);
-            Defence(effect);
+
+            foreach (var item in effect.Targets)
+            {
+                Effect attackEffect = effect.Clone();
+                attackEffect.UUID = effect.UUID;
+                attackEffect.Target = item;
+                Defence(attackEffect);
+            }
         }
 
         private static void Defence(Effect effect)
         {
-            Debug.Log(effect.ToString());
-
             IAggressiveEntity source = effect.Source as IAggressiveEntity;
             IPassiveEntity target = effect.Target as IPassiveEntity;
+
             target.Data.Trigger(TriggerCondition.Conditions.defense, ref effect);
+
             string type = effect["type"];
             if (string.IsNullOrEmpty(type))
             {
@@ -448,7 +454,7 @@ namespace Canute.BattleSystem
                             List<CellEntity> cellEntities = MapEntity.CurrentMap.GetBorderCell(centerCell, i + 1, BattleProperty.AttackType.projectile);
 
                             CellEntity standOn = null;
-                            foreach (var cell in cellEntities.Where(cell => target.Position == cell.Position).Select(cell => cell))
+                            foreach (var cell in cellEntities.Where(cell => target.Coordinate == cell.Coordinate).Select(cell => cell))
                             {
                                 standOn = cell;
                             }
@@ -486,24 +492,26 @@ namespace Canute.BattleSystem
         {
             foreach (Entity entity in effect.AllEntities)
             {
-                IBattleableEntity battleEntity = entity.Data as IBattleableEntity;
+                IBattleableEntity battleEntity = entity as IBattleableEntity;
                 if (battleEntity is null)
                 {
                     continue;
                 }
                 battleEntity.Data.Trigger(TriggerCondition.Conditions.afterDefence, ref effect);
             }
+
             Debug.Log("Attack End");
 
-            IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
-            agressiveEntity.Data.Anger += 40;
+            {
+                IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
+                agressiveEntity.Data.Anger += 40;
+            }
 
             foreach (Entity item in effect.Targets)
             {
                 IPassiveEntity passiveEntity = item as IPassiveEntity;
                 passiveEntity.Data.Anger += 20;
             }
-
         }
 
         #endregion
@@ -527,6 +535,79 @@ namespace Canute.BattleSystem
                 sourceEffect.Parameter = (int)(sourceEffect.Parameter / (1 + status.Effect.Parameter / 100f));
             }
         }
+
+        private static void FighterAircraftChangeReturnPos(ref Effect sourceEffect, Status status)
+        {
+            ArmyEntity armyEntity = status.Effect.Source as ArmyEntity;
+
+            if (!armyEntity)
+            {
+                return;
+            }
+
+            if (armyEntity.data.Type != Army.Types.aircraftFighter)
+            {
+                return;
+            }
+
+            var stat = armyEntity.StatList.GetEvent("name:aircraftFighterReturn");
+            if (stat is null)
+            {
+                Effect moveEffect = new Effect(Effect.Types.@event, armyEntity, armyEntity, 1, 0, "name:aircraftFighterReturn");
+                stat = new Status(moveEffect, -1, -1, Status.StatType.perminant, TriggerCondition.OnTurnEnd, false);
+                armyEntity.StatList.Add(stat);
+            }
+            else
+            {
+                stat.Effect.GetCellParam().data.canStandOn = true;
+            }
+            stat.Effect.SetCellParam(sourceEffect.Target as CellEntity);
+            stat.Effect.GetCellParam().data.canStandOn = false;
+            Debug.Log("record original pos");
+
+            return;
+        }
+
+        private static void AircreaftFighterTowardEnemy(ref Effect sourceEffect, Status status)
+        {
+            Entity source = status.Effect.Target;
+            Entity target = sourceEffect.Target;
+            CellEntity destination = null;
+            destination = GetCloseDestination(source, target);
+
+            Effect moveToward = new Effect(Effect.Types.@event, source, destination, 1, 0, "name:move");
+            var s = moveToward.Execute();
+            if (!s) Debug.Log("failed to move");
+        }
+
+        private static CellEntity GetCloseDestination(Entity source, Entity target)
+        {
+            CellEntity destination = null;
+            int minDist = 1000;
+            foreach (var item in (target as OnMapEntity).OnCellOf.NearByCells)
+            {
+                if (!destination)
+                {
+                    destination = item;
+                }
+
+                if (item.HasArmyStandOn)
+                {
+                    continue;
+                }
+
+                int newDist = (source as OnMapEntity).GetRealDistanceOf(item, source as OnMapEntity);
+                Debug.Log(newDist);
+                if (newDist < minDist && newDist != 0)
+                {
+                    destination = item;
+                    minDist = newDist;
+                }
+            }
+
+            return destination;
+        }
+
 
 
 
@@ -574,7 +655,7 @@ namespace Canute.BattleSystem
                 return false;
             }
 
-            battleArmy.Position = cellEntity.Position;
+            battleArmy.Coordinate = cellEntity.Coordinate;
 
             return ArmyEntity.Create(battleArmy);
         }
@@ -699,11 +780,42 @@ namespace Canute.BattleSystem
                 case "protection":
                     result = Protection(effect);
                     break;
+                case "move":
+                    result = EventMove(effect);
+                    break;
+                case "aircraftFighterReturn":
+                    result = FighterAircraftReturn(effect);
+                    break;
+                //case "":
+                //    result =
+                //    break;
                 default:
                     break;
             }
 
             return result;
+        }
+
+        private static bool FighterAircraftReturn(Effect effect)
+        {
+            ArmyEntity armyEntity = effect.Source as ArmyEntity;
+
+            if (!armyEntity)
+            {
+                return false;
+            }
+
+            if (armyEntity.data.Type != Army.Types.aircraftFighter)
+            {
+                return false;
+            }
+
+            CellEntity cellEntity = effect.GetCellParam();
+            cellEntity.data.canStandOn = true;
+            Effect returnEffect = new Effect(Effect.Types.@event, armyEntity, cellEntity, 1, 0, "name:move");
+            returnEffect.Execute();
+
+            return true;
         }
 
         private static bool RealDamage(Effect effect)
@@ -782,8 +894,8 @@ namespace Canute.BattleSystem
             {
                 ArmyEntity source = effect.Source as ArmyEntity;
 
-                List<CellEntity> path1 = PathFinder.GetPath(source.OnCellOf, target.OnCellOf, source, false, true);
-                List<CellEntity> path2 = PathFinder.GetPath(target.OnCellOf, source.OnCellOf, source, false, true);
+                List<CellEntity> path1 = PathFinder.GetPath(source.OnCellOf, target.OnCellOf, -1, PathFinder.FinderParam.ignoreAirArmy & PathFinder.FinderParam.ignoreLandArmy);
+                List<CellEntity> path2 = PathFinder.GetPath(target.OnCellOf, source.OnCellOf, -1, PathFinder.FinderParam.ignoreAirArmy & PathFinder.FinderParam.ignoreLandArmy);
 
                 if (path1.Count == 0 || path2.Count == 0)
                 {
@@ -818,7 +930,7 @@ namespace Canute.BattleSystem
 
             void Switch(Entity entity)
             {
-                if (new Effect(Effect.Types.@event, ArmyMovement.movingArmy, entity, 1, 0, new Arg("name", "armySwitch")).Execute())
+                if (new Effect(Effect.Types.@event, ArmyMovement.movingArmy, entity, 1, 0, "name:armySwitch").Execute())
                 {
                     RemoveSelectEvent(Switch);
                     ArmyMovement.EndShowMoveRange();
@@ -869,6 +981,64 @@ namespace Canute.BattleSystem
             }
 
             return true;
+        }
+
+        private static bool EventMove(Effect effect)
+        {
+            IBattleableEntity movingEntity = effect.Source as IBattleableEntity;
+            CellEntity destination = (effect.Target as OnMapEntity)?.OnCellOf;
+
+            //Debug.Log(movingArmy);
+            //Debug.Log(destination);
+
+            if (movingEntity is null || destination is null)
+            {
+                Debug.Log("invalid effect");
+                return false;
+            }
+            else if (!movingEntity.AllowMove)
+            {
+                Debug.LogWarning("the moving entity should not moving but it is trying to move");
+                return false;
+            }
+            else if (destination.HasArmyStandOn && movingEntity is ArmyEntity)
+            {
+                Debug.Log("Army tried to move to a place has army stand on");
+                return false;
+            }
+            else if (destination.HasBuildingStandOn && movingEntity is BuildingEntity)
+            {
+                Debug.Log("Building tried to move to a place has building stand on");
+                return false;
+            }
+
+            PathFinder.FinderParam finderParam = PathFinder.FinderParam.ignoreDestinationArmy | PathFinder.FinderParam.ignoreDestinationBuilding;
+            if (movingEntity is ArmyEntity)
+            {
+                finderParam |= PathFinder.FinderParam.ignoreBuilding;
+            }
+            else if (movingEntity is BuildingEntity)
+            {
+                finderParam |= PathFinder.FinderParam.ignoreArmy;
+            }
+
+            List<CellEntity> path = PathFinder.GetPath(movingEntity.OnCellOf, destination, -1, finderParam);
+
+            if (path is null)
+            {
+                Debug.Log(destination);
+                return false;
+            }
+            else if (path.Count == 0)
+            {
+                Debug.Log(destination);
+                return false;
+            }
+            else
+            {
+                movingEntity.Move(path, effect);
+                return true;
+            }
         }
         //private static bool CardMinusPoint(Effect effect)
         //{

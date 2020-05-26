@@ -29,7 +29,6 @@ namespace Canute.UI.EventCardPile
                 return;
             }
 
-            Debug.Log(id);
             for (int i = 0; i < Game.PlayerData.EventCardPiles[id].EventCards.Count; i++)
             {
                 if (i > 4)

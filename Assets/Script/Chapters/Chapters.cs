@@ -89,7 +89,7 @@ namespace Canute.LevelTree
 
         public bool OpenBGStory()
         {
-            if (!GameData.BuildSetting.ShowStory)
+            if (!Game.Configuration.ShowStory)
             {
                 return false;
             }
@@ -104,7 +104,7 @@ namespace Canute.LevelTree
 
         public bool OpenEndStory()
         {
-            if (!GameData.BuildSetting.ShowStory)
+            if (!Game.Configuration.ShowStory)
             {
                 return false;
             }

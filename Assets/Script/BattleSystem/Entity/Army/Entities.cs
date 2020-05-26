@@ -7,14 +7,29 @@ namespace Canute.BattleSystem
     {
         public static void Damage(this IPassiveEntity passiveEntity, int damage)
         {
-            damage = (int)(damage * Random.Range(0.95f, 1.05f));
+            int flow = (int)(damage * Random.Range(0.95f, 1.05f));
+            int armorHit = passiveEntity.Data.DamageArmor(flow);
 
-            int armorHit = passiveEntity.Data.DamageArmor(damage);
-            damage -= armorHit;
-            damage = passiveEntity.Data.GetDamageAfterDefensePoint(damage);
+            flow -= armorHit;
+            flow = passiveEntity.Data.GetDamageAfterDefensePoint(flow);
 
-            passiveEntity.Data.Damage(damage);
-            passiveEntity.DisplayDamage(damage);
+            passiveEntity.Data.Damage(flow);
+            passiveEntity.DisplayDamage(flow);
+
+            if (armorHit != 0) passiveEntity.DisplayDamage(armorHit);
+        }
+
+        public static void Damage(this IPassiveEntity passiveEntity, int damage, IAggressiveEntity sourceEntity)
+        {
+            int finalDamageIfCrit = damage.Bounes(Random.value < sourceEntity.Data.Properties.CritRate ? 0 : sourceEntity.Data.Properties.CritBounes, BounesType.percentage);
+            int flow = (int)(finalDamageIfCrit * Random.Range(0.95f, 1.05f));
+            int armorHit = passiveEntity.Data.DamageArmor(flow);
+
+            flow -= armorHit;
+            flow = passiveEntity.Data.GetDamageAfterDefensePoint(flow);
+
+            passiveEntity.Data.Damage(flow);
+            passiveEntity.DisplayDamage(flow);
 
             if (armorHit != 0) passiveEntity.DisplayDamage(armorHit);
         }
@@ -22,7 +37,7 @@ namespace Canute.BattleSystem
         public static void DisplayDamage(this IPassiveEntity passiveEntity, int damage)
         {
             Debug.Log(damage);
-            GameObject displayer = Object.Instantiate(GameData.Prefabs.ArmyDamageDisplayer, passiveEntity.transform);
+            GameObject displayer = Object.Instantiate(GameData.Prefabs.Get("armyDamageDisplayer"), passiveEntity.transform);
             displayer.GetComponent<ArmyDamageDisplayer>().damage = damage;
             Debug.Log("Display Damage");
         }
@@ -63,6 +78,7 @@ namespace Canute.BattleSystem
         float SkillDuration { get; }
         float WinningDuration { get; }
 
+        void Move(params object[] vs);
         void Winning(params object[] vs);
     }
 
@@ -79,7 +95,7 @@ namespace Canute.BattleSystem
     {
         CellEntity OnCellOf { get; }
         Vector3Int HexCoord { get; }
-        Vector2Int Position { get; }
+        Vector2Int Coordinate { get; }
         int x { get; }
         int y { get; }
         OnMapEntityData OnMapData { get; }

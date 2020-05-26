@@ -122,6 +122,10 @@ namespace Canute.BattleSystem
         public static TriggerCondition OnEnterCell => new TriggerCondition(Conditions.entityArrive, true, ConditionGroups.or);
         /// <summary> when entity leave a cell </summary>
         public static TriggerCondition OnExitCell => new TriggerCondition(Conditions.entityLeft, true, ConditionGroups.or);
+        /// <summary> when turn begin </summary>
+        public static TriggerCondition OnTurnBegin => new TriggerCondition(Conditions.turnBegin, true, ConditionGroups.or);
+        /// <summary> when turn end </summary>
+        public static TriggerCondition OnTurnEnd => new TriggerCondition(Conditions.turnEnd, true, ConditionGroups.or);
         public static TriggerCondition Parse(Arg arg)
         {
             return (TriggerCondition)arg;

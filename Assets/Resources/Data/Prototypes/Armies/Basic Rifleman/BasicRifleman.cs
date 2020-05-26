@@ -64,7 +64,7 @@ namespace Canute.BattleSystem.Armies
         {
             IEnumerable<Entity> entities = effect.Targets;
 
-            Vector2Int d = (effect.Target as OnMapEntity).Position - Position;
+            Vector2Int d = (effect.Target as OnMapEntity).Coordinate - Coordinate;
 
             var cellEntities = Game.CurrentBattle.MapEntity.GetRay(OnCellOf, (effect.Target as OnMapEntity).OnCellOf);
             Debug.Log("Cell Count: " + cellEntities.Count);
@@ -81,16 +81,23 @@ namespace Canute.BattleSystem.Armies
             }
 
             d /= GetCommonDivisor(d.x, d.y);
-            for (; true;)
+            for (int i = 0; i < 10; i++)
             {
-                CellEntity item = Game.CurrentBattle.MapEntity[Position + d];
-                if (item.GetPointDistanceOf(this) > 2 * data.Properties.AttackRange)
+                try
                 {
-                    break;
+                    CellEntity item = Game.CurrentBattle.MapEntity[Coordinate + d * i];
+                    if (item.GetPointDistanceOf(this) > 2 * data.Properties.AttackRange)
+                    {
+                        break;
+                    }
+                    if (item.HasArmyStandOn)
+                        if (item.HasArmyStandOn.Owner == effect.Target.Owner)
+                            entities = entities.Union(new List<Entity>() { item.HasArmyStandOn });
                 }
-                if (item.HasArmyStandOn)
-                    if (item.HasArmyStandOn.Owner == effect.Target.Owner)
-                        entities = entities.Union(new List<Entity>() { item.HasArmyStandOn });
+                catch
+                {
+
+                }
             }
 
 

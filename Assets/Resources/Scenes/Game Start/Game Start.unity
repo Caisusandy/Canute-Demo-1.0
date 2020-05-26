@@ -1181,6 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game: {fileID: 11400000, guid: 460c8e612ce430a44882b7d2403d35de, type: 2}
+  loadingScriptableObject: []
 --- !u!1 &1148096063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1567,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 754949739}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: bc3cc874724cc7b45a3f22d6becaf0e0, type: 2}
+        m_MethodName: GotoScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Settings
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1268698202
 MonoBehaviour:
   m_ObjectHideFlags: 0

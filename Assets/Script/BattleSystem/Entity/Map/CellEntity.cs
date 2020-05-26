@@ -24,8 +24,8 @@ namespace Canute.BattleSystem
         public virtual CellEntity RightDown => Game.CurrentBattle.MapEntity.GetCell(x + 1, y - 1);
         public override BattleProperty.Position StandPostion => BattleProperty.Position.land;
 
-        public virtual ArmyEntity HasArmyStandOn => Game.CurrentBattle?.GetArmy(Position)?.Entity;
-        public virtual BuildingEntity HasBuildingStandOn => Game.CurrentBattle?.GetBuilding(Position)?.Entity;
+        public virtual ArmyEntity HasArmyStandOn => Game.CurrentBattle?.GetArmy(Coordinate)?.Entity;
+        public virtual BuildingEntity HasBuildingStandOn => Game.CurrentBattle?.GetBuilding(Coordinate)?.Entity;
 
 
         public static bool WasOnDrag { get; private set; }
@@ -34,7 +34,7 @@ namespace Canute.BattleSystem
         {
             base.Awake();
             this.NewUUID();
-            data.Position = Game.CurrentBattle.MapEntity.GetPosition(this);
+            data.Coordinate = Game.CurrentBattle.MapEntity.GetPosition(this);
             GetComponent<SpriteRenderer>().sortingLayerName = "Map";
             GetComponent<SpriteRenderer>().sortingOrder = -y;
         }
@@ -107,7 +107,7 @@ namespace Canute.BattleSystem
         public virtual void Enter(OnMapEntity onMapEntity, Effect effect)
         {
             onMapEntity.transform.SetParent(transform);
-            onMapEntity.OnMapData.Position = Position;
+            onMapEntity.OnMapData.Coordinate = Coordinate;
 
             this.Trigger(TriggerCondition.Conditions.entityArrive, ref effect);
             onMapEntity.Trigger(TriggerCondition.Conditions.entityArrive, ref effect);
@@ -144,7 +144,7 @@ namespace Canute.BattleSystem
 
         public override string ToString()
         {
-            return Name + ": " + Position;
+            return Name + ": " + Coordinate;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Canute
         public const string gameStart = "Game Start";
         public const string armyList = "Army List";
 
+        public static string lastScene;
 
         public static string GetName(MainScene scene)
         {
@@ -70,12 +71,13 @@ namespace Canute
         /// <param name="ans"></param>
         public void GotoScene(string ans) => SceneJumper.Goto(ans);
 
+        /// <summary>
+        /// (used in UnityEditor) Goto another scene
+        /// </summary>
+        /// 
+        /// <param name="ans"></param>
+        public void GotoSceneImmediate(string ans) => SceneManager.LoadScene(ans);
 
-        [Temporary]
-        public void OpenLegionSetting()
-        {
-            GotoScene(MainScene.legionSetting);
-        }
 
         [Temporary]
         public void OpenMain()

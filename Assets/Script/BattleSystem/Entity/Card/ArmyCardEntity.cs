@@ -28,7 +28,7 @@ namespace Canute.BattleSystem
             {
                 Game.CurrentBattle.Start();
             }
-            else if (Owner == Game.CurrentBattle.Player && Owner.Entity.Cards.Count == 0 && GameData.BuildSetting.PvP)
+            else if (Owner == Game.CurrentBattle.Player && Owner.Entity.Cards.Count == 0 && Game.Configuration.PvP)
             {
                 BattleUI.SendMessage("Open Card Pile For Second Player");
                 Reorganize(Game.CurrentBattle.Enemy.Entity.Cards, BattleUI.HandCardBar);

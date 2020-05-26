@@ -24,7 +24,7 @@ namespace Canute.BattleSystem
         public virtual int Armor { get => armor; set => armor = value < 0 ? 0 : (value > MaxHealth ? MaxHealth : value); }
         public virtual bool CanBeTargeted { get => canBeTargeted; set => canBeTargeted = value; }
 
-        public virtual Damage Damage => this.GetDamage();
+        public virtual int Damage => this.GetDamage();
 
         public virtual double CritRate => Properties.CritRate;
         public virtual BattleProperty.AttackType AttackType => Properties.Attack;
@@ -139,10 +139,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public List<CellEntity> GetAttackArea() => MapEntity.CurrentMap.GetAttackArea(MapEntity.CurrentMap[Position], Properties.AttackRange, this);
-
-        public List<CellEntity> GetAttackRange() => GetAttackArea().Except(MapEntity.CurrentMap.GetAttackArea(MapEntity.CurrentMap[Position], Properties.AttackRange - 1, this)).ToList();
-
+        public List<CellEntity> GetAttackArea() => MapEntity.CurrentMap.GetAttackArea(MapEntity.CurrentMap[Coordinate], Properties.AttackRange, this);
     }
 
     /// <summary> 完备的上战场的接口 </summary>
@@ -206,6 +203,7 @@ namespace Canute.BattleSystem
                     goto case BounesType.additive;
             }
         }
+
         public static int RemoveBounes(this int @base, int rate, BounesType type = BounesType.percentage)
         {
             switch (type)

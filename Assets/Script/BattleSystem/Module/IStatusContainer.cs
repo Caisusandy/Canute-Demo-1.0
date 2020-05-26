@@ -52,7 +52,7 @@ namespace Canute.BattleSystem
         public static void Trigger(this IStatusContainer statusContainer, TriggerCondition.Conditions condition, ref Effect effect)
         {
             StatusList stats = statusContainer.StatList?.GetByCondition(condition);
-            Debug.Log(statusContainer.Name + " triggered its effect in condition of " + condition.ToString() + "; status count:" + stats.Count);
+            Debug.Log(condition.ToString() + " triggered. " + statusContainer.Name + "; status count:" + stats.Count);
 
             if (stats is null)
             {

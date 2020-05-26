@@ -32,7 +32,7 @@ namespace Canute.BattleSystem
         public BattleArmy LeadingArmy => Game.CurrentBattle.GetArmy(leadingArmyUUID);
         public OnMapEntityData ControllingEntityData => isViceCommander ? Owner.Campus.data : LeadingArmy as OnMapEntityData;
 
-        public override Vector2Int Position { get => ControllingEntityData.Position; set { ControllingEntityData.x = value.x; ControllingEntityData.y = value.y; } }
+        public override Vector2Int Coordinate { get => ControllingEntityData.Coordinate; set { ControllingEntityData.x = value.x; ControllingEntityData.y = value.y; } }
         public override Vector3Int HexCoord => ControllingEntityData.HexCoord;
         public override bool AllowMove { get => ControllingEntityData.AllowMove; set => ControllingEntityData.AllowMove = value; }
         public override Cell OnCellOf => ControllingEntityData.OnCellOf;

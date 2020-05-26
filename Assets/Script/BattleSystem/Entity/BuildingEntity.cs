@@ -27,19 +27,19 @@ namespace Canute.BattleSystem
 
         public virtual void Defeated(params object[] vs)
         {
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isDefeated, true);
             Action(new EntityEventPack(IdleDelay, DefeatedDuration), new EntityEventPack(Remove), new EntityEventPack(data.CheckPotentialAction));
         }
         public virtual void Skill(params object[] vs)
         {
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isPerformingSkill, true);
             SkillAction();
         }
         public virtual void Winning(params object[] vs)
         {
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isWinning, true);
             Action(new EntityEventPack(IdleDelay, WinningDuration));
         }
@@ -68,13 +68,50 @@ namespace Canute.BattleSystem
         public virtual void Hurt(params object[] vs)
         {
             int damage = (int)vs[0];
-            this.Damage(damage);
+            var damageSource = vs[1] as IAggressiveEntity;
 
-            PerformingAnimation();
+            if (damageSource is null)
+            {
+                this.Damage(damage);
+            }
+            else
+            {
+                this.Damage(damage, damageSource);
+            }
+
+            InPerformingAnimation();
             animator.SetBool(isDefencing, true);
 
             Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction));
             Debug.Log(Data.ToString() + " Hurt");
+        }
+        public virtual void Move(params object[] vs)
+        {
+            List<CellEntity> path = vs[0] as List<CellEntity>;
+            Effect effect = vs[1] as Effect;
+
+            InPerformingAnimation();
+            animator.SetBool(isMoving, true);
+
+            EntityOnCellMotion.SetMotion(this, path, effect);
+            Action(TryEndMoveAction, new EntityEventPack(data.CheckPotentialAction));
+
+            IEnumerator TryEndMoveAction(params object[] a)
+            {
+                while (true)
+                {
+                    if (GetComponent<EntityOnCellMotion>())
+                    {
+                        yield return new WaitForSeconds(0.1f);
+                        continue;
+                    }
+                    else
+                    {
+                        yield return Idle();
+                        break;
+                    }
+                }
+            }
         }
 
 
@@ -93,7 +130,7 @@ namespace Canute.BattleSystem
             BuildingEntity buildingEntity;
 
             prefab = item.Prefab;
-            gameObject = Instantiate(prefab, Game.CurrentBattle.MapEntity[item.Position].transform);
+            gameObject = Instantiate(prefab, Game.CurrentBattle.MapEntity[item.Coordinate].transform);
 
             buildingEntity = gameObject.GetComponent<BuildingEntity>();
             buildingEntity.data = item;

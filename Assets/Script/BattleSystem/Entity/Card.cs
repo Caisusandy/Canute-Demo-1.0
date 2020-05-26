@@ -133,11 +133,11 @@ namespace Canute.BattleSystem
 
             if (!(statusContainer is null))
             {
-                foreach (var item in statusContainer.StatList.GetByCondition(TriggerCondition.Conditions.playCard).GetStatus(Effect.Types.@event, "name:noActionPointRequire"))
+                foreach (var item in statusContainer.StatList.GetByCondition(TriggerCondition.Conditions.playCard).GetAllStatus(Effect.Types.@event, "name:noActionPointRequire"))
                     if (item.TriggerConditions.IsValid())
                         return true;
             }
-            foreach (var item in Effect.Source.Owner.StatList.GetByCondition(TriggerCondition.Conditions.playCard).GetStatus(Effect.Types.@event, "name:noActionPointRequire"))
+            foreach (var item in Effect.Source.Owner.StatList.GetByCondition(TriggerCondition.Conditions.playCard).GetAllStatus(Effect.Types.@event, "name:noActionPointRequire"))
                 if (item.TriggerConditions.IsValid())
                     return true;
 

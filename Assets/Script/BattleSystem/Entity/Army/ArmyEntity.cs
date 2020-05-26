@@ -46,7 +46,7 @@ namespace Canute.BattleSystem
         public override void Update()
         {
             OnCellOf.Highlight(Mark.Type.owner);
-            if (transform.localPosition != Vector3.zero && !GetComponent<ArmyMotion>())
+            if (transform.localPosition != Vector3.zero && !GetComponent<EntityOnCellMotion>())
             {
                 Module.Motion.SetMotion(gameObject, Vector3.zero, Space.Self);
             }
@@ -98,23 +98,27 @@ namespace Canute.BattleSystem
         public abstract float WinningDuration { get; }
         public abstract float HurtDuration { get; }
 
+        /// <summary>
+        /// Animation when entity is defeated
+        /// </summary>
+        /// <param name="vs"></param>
         public virtual void Defeated(params object[] vs)
         {
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isDefeated, true);
             Action(new EntityEventPack(IdleDelay, DefeatedDuration), new EntityEventPack(Remove));
         }
         public virtual void Skill(params object[] vs)
         {
             Effect effect = vs[0] as Effect;
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isPerformingSkill, true);
             SkillExecute(effect);
             SkillAction(effect);
         }
         public virtual void Winning(params object[] vs)
         {
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isWinning, true);
             Action(new EntityEventPack(IdleDelay, WinningDuration));
         }
@@ -144,7 +148,7 @@ namespace Canute.BattleSystem
         {
             Effect effect = vs[0] as Effect;
 
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isAttacking, true);
 
             AttackExecute(effect);
@@ -154,17 +158,19 @@ namespace Canute.BattleSystem
             List<CellEntity> path = vs[0] as List<CellEntity>;
             Effect effect = vs[1] as Effect;
 
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isMoving, true);
 
-            ArmyMotion.SetMotion(this, path, effect);
+            EntityOnCellMotion.SetMotion(this, path, effect);
             Action(TryEndMoveAction, new EntityEventPack(data.CheckPotentialAction));
+            Unselect();
+
 
             IEnumerator TryEndMoveAction(params object[] a)
             {
                 while (true)
                 {
-                    if (GetComponent<ArmyMotion>())
+                    if (GetComponent<EntityOnCellMotion>())
                     {
                         yield return new WaitForSeconds(0.1f);
                         continue;
@@ -180,9 +186,18 @@ namespace Canute.BattleSystem
         public virtual void Hurt(params object[] vs)
         {
             int damage = (int)vs[0];
-            this.Damage(damage);
+            var damageSource = vs[1] as IAggressiveEntity;
 
-            PerformingAnimation();
+            if (damageSource is null)
+            {
+                this.Damage(damage);
+            }
+            else
+            {
+                this.Damage(damage, damageSource);
+            }
+
+            InPerformingAnimation();
             animator.SetBool(isDefencing, true);
 
             Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction));
@@ -197,6 +212,7 @@ namespace Canute.BattleSystem
                 IPassiveEntity target = item as IPassiveEntity;
                 for (int i = 0; i < effect.Count; i++)
                 {
+
                     AttackAction(target, effect.Parameter);
                 }
             }
@@ -208,7 +224,7 @@ namespace Canute.BattleSystem
 
         protected virtual void AttackAction(IPassiveEntity attackingEntity, int damage)
         {
-            Action(new EntityEventPack(IdleDelay, AttackAtionDuration), new EntityEventPack(data.CheckPotentialAction), new EntityEventPack(attackingEntity.Hurt, damage));
+            Action(new EntityEventPack(IdleDelay, AttackAtionDuration), new EntityEventPack(data.CheckPotentialAction), new EntityEventPack(attackingEntity.Hurt, damage, this));
         }
         protected virtual void SkillAction(Effect effect)
         {
@@ -224,11 +240,11 @@ namespace Canute.BattleSystem
 
         public virtual List<CellEntity> GetMoveArea() => data.GetMoveArea();
 
-        public virtual List<CellEntity> GetMoveRange() => data.GetMoveRange();
+        public virtual List<CellEntity> GetMoveRange() => MapEntity.GetBorderCell(GetMoveArea());
 
         public virtual List<CellEntity> GetAttackArea() => data.GetAttackArea();
 
-        public virtual List<CellEntity> GetAttackRange() => data.GetAttackRange();
+        public virtual List<CellEntity> GetAttackRange() => MapEntity.GetBorderCell(GetAttackArea());
 
         public virtual bool CanAttack(IPassiveEntity other)
         {
@@ -244,7 +260,7 @@ namespace Canute.BattleSystem
             GameObject gameObject;
             ArmyEntity armyEntity;
 
-            CellEntity cellEntity = Game.CurrentBattle.MapEntity.GetCell(battleArmy.Position);
+            CellEntity cellEntity = Game.CurrentBattle.MapEntity.GetCell(battleArmy.Coordinate);
             gameObject = Instantiate(battleArmy.Prefab, cellEntity.transform);
             armyEntity = gameObject.GetComponent<ArmyEntity>();
             armyEntity.data = battleArmy;

@@ -15,11 +15,11 @@ namespace Canute.BattleSystem
         /// <summary> 六边形坐标 <para> Coordinate for hex-map </para></summary>
         public virtual Vector3Int HexCoord => OnCellOf.data.HexCoord;
         /// <summary> 坐标 <para> Coordinate </para></summary>
-        public virtual Vector2Int Position => OnCellOf.data.Position;
+        public virtual Vector2Int Coordinate => OnCellOf.data.Coordinate;
         /// <summary> x <para></para></summary>
-        public virtual int x => OnCellOf.data.Position.x;
+        public virtual int x => OnCellOf.data.Coordinate.x;
         /// <summary> y <para></para></summary>
-        public virtual int y => OnCellOf.data.Position.y;
+        public virtual int y => OnCellOf.data.Coordinate.y;
         /// <summary>  <para></para></summary>
         public virtual OnMapEntityData OnMapData => Data as OnMapEntityData;
         /// <summary> 允许移动 <para> Determine whether the entity allows to move</para></summary>
@@ -30,11 +30,21 @@ namespace Canute.BattleSystem
         public virtual StatusList GetAllStatus() => OnMapData.GetAllStatus();
         public abstract BattleProperty.Position StandPostion { get; }
 
-        public int GetPointDistanceOf(OnMapEntity other)
+        /// <summary>
+        /// Get the straight distance to <paramref name="destination"/>
+        /// </summary>
+        /// <param name="destination"></param>
+        /// <returns></returns>
+        public int GetPointDistanceOf(OnMapEntity destination)
         {
-            return GetPointDistanceOf(other.HexCoord);
+            return GetPointDistanceOf(destination.HexCoord);
         }
 
+        /// <summary>
+        /// Get the straight distance to hexcoord
+        /// </summary>
+        /// <param name="v3"></param>
+        /// <returns></returns>
         public int GetPointDistanceOf(Vector3Int v3)
         {
             int dx = Mathf.Abs(HexCoord.x - v3.x);
@@ -46,9 +56,15 @@ namespace Canute.BattleSystem
             return Mathf.Max(dx, dy, dz);
         }
 
-        public int GetRealDistanceOf(OnMapEntity onMapEntity2, OnMapEntity movingEntity = null)
+        /// <summary>
+        /// Get the real distance to <paramref name="destination"/>
+        /// </summary>
+        /// <param name="destination"></param>
+        /// <param name="movingEntity"></param>
+        /// <returns></returns>
+        public int GetRealDistanceOf(OnMapEntity destination, OnMapEntity movingEntity = null)
         {
-            return GetRealDistanceOf(OnCellOf, onMapEntity2, movingEntity);
+            return GetRealDistanceOf(OnCellOf, destination, movingEntity);
         }
 
         public override void Select()
@@ -64,9 +80,26 @@ namespace Canute.BattleSystem
             base.Unselect();
         }
 
+        /// <summary>
+        /// Get the real distance between two on map object
+        /// </summary>
+        /// <param name="onMapEntity">start point</param>
+        /// <param name="onMapEntity2">end point</param>
+        /// <param name="movingEntity">a moving on map entity</param>
+        /// <returns></returns>
         public static int GetRealDistanceOf(OnMapEntity onMapEntity, OnMapEntity onMapEntity2, OnMapEntity movingEntity = null)
         {
-            return PathFinder.GetPath(onMapEntity.OnCellOf, onMapEntity2.OnCellOf, movingEntity as ArmyEntity, false, movingEntity is ArmyEntity).Count;
+            PathFinder.FinderParam finderParam = PathFinder.FinderParam.ignoreDestinationArmy | PathFinder.FinderParam.ignoreDestinationBuilding;
+            if (movingEntity is ArmyEntity)
+            {
+                finderParam |= PathFinder.FinderParam.ignoreBuilding;
+            }
+            else if (movingEntity is BuildingEntity)
+            {
+                finderParam |= PathFinder.FinderParam.ignoreArmy;
+            }
+
+            return PathFinder.GetPath(onMapEntity.OnCellOf, onMapEntity2.OnCellOf, -1, finderParam).Count;
         }
     }
 }

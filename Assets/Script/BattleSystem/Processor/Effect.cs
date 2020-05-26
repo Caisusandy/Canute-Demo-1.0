@@ -25,7 +25,7 @@ namespace Canute.BattleSystem
 
         public UUID UUID { get => uuid; set => uuid = value; }
 
-        public string Name => string.IsNullOrEmpty(specialName) ? type.ToString() : specialName;
+        public string Name => GetName();
         public Types Type { get => type; set => type = value; }
         public int Count { get => count; set => count = value; }
         public int Parameter { get => parameter; set => parameter = value; }
@@ -64,7 +64,7 @@ namespace Canute.BattleSystem
             type = Types.propertyBounes;
             count = c;
             parameter = p;
-            this[propertyBounes] = i.ToString();
+            this[propertyBounesType] = i.ToString();
             this[bounesType] = bt.ToString();
         }
         public Effect(Types i, int c, int p = 0, params Arg[] args) : this(i, c, p)
@@ -102,6 +102,24 @@ namespace Canute.BattleSystem
             args = new Args(vs);
         }
 
+
+        private string GetName()
+        {
+            if (string.IsNullOrEmpty(specialName))
+            {
+                if (type == Types.@event || type == Types.effectRelated || type == Types.tag)
+                {
+                    return this[name];
+                }
+                else if (type == Types.propertyBounes || type == Types.propertyPanalty)
+                {
+                    return this[propertyBounesType];
+                }
+                return type.ToString();
+            }
+            return specialName;
+
+        }
 
 
         private void SetTargets(List<Entity> value)
@@ -180,7 +198,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public void SetParam(params Arg[] args)
+        public void SetParams(params Arg[] args)
         {
             foreach (var item in args)
             {
@@ -204,6 +222,16 @@ namespace Canute.BattleSystem
                 Debug.LogError(e.Message);
                 return default;
             }
+        }
+
+        public bool HasParam(string key)
+        {
+            return string.IsNullOrEmpty(this[key]);
+        }
+
+        public bool HasParam(string key, string value)
+        {
+            return this[key] == value;
         }
 
         public CellEntity GetCellParam()
@@ -254,18 +282,6 @@ namespace Canute.BattleSystem
 
         public Status ToStatus()
         {
-            //Effect e = new Effect(type, Source.Owner.Entity, Targets, Count, Parameter, Args.ToArray());
-            //e.SetSpecialName(specialName);
-            //Debug.Log(e.specialName);
-            //e[isStatus] = "true";
-            //e[statusAddingEffect] = null;
-            //TriggerConditions cd = TriggerConditions.GetTriggerCondition(this);
-            //int sc = GetParam("sc");
-            //int tc = GetParam("tc");
-            //Status.StatType st = GetParam<Status.StatType>(statType);
-            //Status status = new Status(e, tc, sc, st, cd);
-            //Debug.Log(status);
-            //return status;
             Effect e = Clone();
             e[isStatus] = "true";
             e.type = e.GetParam<Types>("effectType");
@@ -282,18 +298,6 @@ namespace Canute.BattleSystem
 
         public Status ToStatus(params TriggerCondition[] args)
         {
-            //Effect e = new Effect(type, Source.Owner.Entity, Targets, Count, Parameter, Args.ToArray());
-            //e.specialName = specialName;
-            //e[isStatus] = "true";
-            //e[statusAddingEffect] = null;
-            //TriggerConditions cd = TriggerConditions.GetTriggerCondition(this);
-            //cd.AddRange(args);
-            //int sc = GetParam("sc");
-            //int tc = GetParam("tc");
-            //Status.StatType st = GetParam<Status.StatType>(statType);
-            //Status status = new Status(e, tc, sc, st, cd);
-            //Debug.Log(status);
-            //return status;           
             Effect e = Clone();
             e[isStatus] = "true";
             e.type = e.GetParam<Types>("effectType");

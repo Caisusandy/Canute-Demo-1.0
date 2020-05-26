@@ -22,8 +22,17 @@ MonoBehaviour:
     type: 3}
   armyCardPrefab: {fileID: 4382801775652925750, guid: b38eed8f3f5804442860b940ee4845df,
     type: 3}
-  armyDamageDisplayer: {fileID: 277045494684249564, guid: 6ba1a6e330dc8494dbfc52f5799e95b0,
-    type: 3}
-  floatPanelSmall: {fileID: 3538510198041171531, guid: 9f257bc6f3d67ab41aa6e0b70d44f497,
-    type: 3}
-  label: {fileID: 6433049452998537299, guid: 2ee32deede5ea0c42a36bb57701f8608, type: 3}
+  prefabPairs:
+    list:
+    - key: armyDamageDisplayer
+      value: {fileID: 277045494684249564, guid: 6ba1a6e330dc8494dbfc52f5799e95b0,
+        type: 3}
+    - key: floatPanelSmall
+      value: {fileID: 3538510198041171531, guid: 9f257bc6f3d67ab41aa6e0b70d44f497,
+        type: 3}
+    - key: label
+      value: {fileID: 6433049452998537299, guid: 2ee32deede5ea0c42a36bb57701f8608,
+        type: 3}
+    - key: console
+      value: {fileID: 9022011466294989705, guid: 55a5428b6f3332c4384ae5d22b0e8f20,
+        type: 3}

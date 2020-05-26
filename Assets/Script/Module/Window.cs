@@ -54,7 +54,7 @@ namespace Canute
 
         public virtual void Close()
         {
-            OuterWindow?.InnerWindowClosed();
+            OuterWindow.Exist()?.InnerWindowClosed();
             gameObject.SetActive(false);
         }
         public virtual void Open()

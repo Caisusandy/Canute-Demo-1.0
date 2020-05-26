@@ -33,13 +33,22 @@ namespace Canute.BattleSystem
 
         public static event SelectEvent SelectEvent;
         public static event SelectEvent UnselectEvent;
+
+        /// <summary> Data of the entity </summary>
         public abstract EntityData Data { get; }
+        /// <summary> Name of the entity </summary>
         public virtual string Name => Data?.Name;
+        /// <summary> Owner(a player) of the entity (actually store in Data)</summary>
         public virtual Player Owner { get => Data?.Owner; set => Data.Owner = value; }
+        /// <summary> UUID of the entity (actually store in Data)</summary>
         public virtual UUID UUID { get => Data is null ? UUID.Empty : Data.UUID; set => Data.UUID = value; }
+        /// <summary> Animator of the entity</summary>
         public virtual Animator Animator { get => animator; set => animator = value; }
+        /// <summary> entity</summary>
         public virtual Entity entity => this;
 
+
+        /// <summary> is any action is occuring </summary>
         public bool IsIdle => animator.GetBool(isIdle);
 
         public virtual void Awake()
@@ -82,6 +91,10 @@ namespace Canute.BattleSystem
             Destroy(gameObject);
         }
 
+        /// <summary>
+        /// Triggerer of the Entity Select Event
+        /// </summary>
+        /// <param name="IsSelected"></param>
         public virtual void TriggerSelectEvent(bool IsSelected)
         {
             if (CellEntity.WasOnDrag)
@@ -119,6 +132,11 @@ namespace Canute.BattleSystem
             return coroutine;
         }
 
+        /// <summary>
+        /// Transfer a EntityEventPack to a Enumerator
+        /// </summary>
+        /// <param name="funcs"></param>
+        /// <returns></returns>
         protected IEnumerator AsIEnumerator(IEnumerable<EntityEventPack> funcs)
         {
             yield return null;
@@ -129,6 +147,11 @@ namespace Canute.BattleSystem
             yield return null;
         }
 
+        /// <summary>
+        /// Allow the coroutine to sleep
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
         protected IEnumerator Sleep(params object[] param)
         {
             float second = float.Parse(param[0].ToString());
@@ -147,12 +170,19 @@ namespace Canute.BattleSystem
             yield return enumerator;
         }
 
-        protected virtual void PerformingAnimation()
+        /// <summary>
+        /// Change Entity to a state of Performing Animation
+        /// </summary>
+        protected virtual void InPerformingAnimation()
         {
             animator.SetBool(isIdle, false);
             animator.AddToBattle();
         }
 
+        /// <summary>
+        /// Change Entity to a normal state
+        /// </summary>
+        /// <param name="vs"></param>
         protected virtual void Idle(params object[] vs)
         {
             foreach (var item in animator.parameters)
@@ -167,6 +197,10 @@ namespace Canute.BattleSystem
 
         }
 
+        /// <summary>
+        /// Change Entity to a normal state
+        /// </summary>
+        /// <param name="vs"></param>
         protected virtual IEnumerator IdleDelay(params object[] vs)
         {
             float seconds = (float)vs[0];
@@ -174,6 +208,10 @@ namespace Canute.BattleSystem
             yield return new EntityEventPack(Idle).Execute();
         }
 
+        /// <summary>
+        /// Change Entity to a normal state
+        /// </summary>
+        /// <param name="vs"></param>
         protected virtual IEnumerator Idle()
         {
             return IdleDelay(0f);
@@ -305,6 +343,10 @@ namespace Canute.BattleSystem
             catch { }
         }
 
+        /// <summary>
+        /// toggle the selection status of the entity
+        /// </summary>
+        /// <returns></returns>
         public virtual bool ToggleSelect()
         {
             if (IsSelected)
@@ -345,11 +387,14 @@ namespace Canute.BattleSystem
         public override UUID UUID { get => UUID.Empty; set => Debug.LogError("trying to assign a decorative entity a UUID is incorrect"); }
     }
 
+    /// <summary>
+    /// an advanced coroutine pack
+    /// </summary>
     public struct EntityEventPack
     {
-        public EntityEvent entityEvent;
-        public Func<object[], IEnumerator> enumerator;
-        public object[] vs;
+        private EntityEvent entityEvent;
+        private Func<object[], IEnumerator> enumerator;
+        private object[] vs;
 
         public IEnumerator Execute()
         {

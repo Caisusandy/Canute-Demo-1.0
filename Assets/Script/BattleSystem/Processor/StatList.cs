@@ -91,7 +91,7 @@ namespace Canute.BattleSystem
             return false;
         }
 
-        public StatusList GetStatus(Effect.Types types)
+        public List<Status> GetStatus(Effect.Types types)
         {
             StatusList statuses = new StatusList();
             foreach (var item in this)
@@ -104,7 +104,7 @@ namespace Canute.BattleSystem
             return statuses;
         }
 
-        public List<Status> GetStatus(Effect.Types types, params Arg[] args)
+        public List<Status> GetAllStatus(Effect.Types types, params Arg[] args)
         {
             List<Status> statuses = new List<Status>();
             foreach (var item in this)
@@ -152,17 +152,47 @@ namespace Canute.BattleSystem
             return pStats;
         }
 
-        public List<Status> GetAllTags()
+        public List<Status> GetAllTags() => GetStatus(Effect.Types.tag);
+
+        public List<Status> GetAllEvent() => GetStatus(Effect.Types.@event);
+
+        public Status GetTag(params Arg[] args)
         {
-            List<Status> list = new StatusList();
-            foreach (var item in this)
+            foreach (var item in GetAllTags())
             {
-                if (item.Effect.Type == Effect.Types.tag)
+                bool match = true;
+                foreach (var arg in args)
                 {
-                    list.Add(item);
+                    if (!item.Effect.HasParam(arg.Key, arg.Value))
+                    {
+                        match = false;
+                    }
+                }
+                if (match)
+                {
+                    return item;
                 }
             }
-            return list;
+            return default;
+        }
+        public Status GetEvent(params Arg[] args)
+        {
+            foreach (var item in GetAllEvent())
+            {
+                bool match = true;
+                foreach (var arg in args)
+                {
+                    if (!item.Effect.HasParam(arg.Key, arg.Value))
+                    {
+                        match = false;
+                    }
+                }
+                if (match)
+                {
+                    return item;
+                }
+            }
+            return default;
         }
 
         public void TotalClear()
@@ -186,7 +216,8 @@ namespace Canute.BattleSystem
                 }
                 else
                 {
-                    Debug.Log(this[i].ToString());
+                    //effect is valid
+                    //Debug.Log(this[i].ToString());
                 }
             }
         }

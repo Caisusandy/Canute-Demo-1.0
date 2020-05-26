@@ -8,7 +8,7 @@
         public const string turnCount = "tc";
         public const string statusCount = "sc";
         public const string value = "value";
-        public const string propertyBounes = "propertyBounes";
+        public const string propertyBounesType = "propertyBounes";
         public const string bounesType = "bounesType";
         public const string triggerCondition = "triggerCondition";
         public const string statType = "statType";

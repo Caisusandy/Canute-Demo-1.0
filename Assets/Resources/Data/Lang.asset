@@ -74,6 +74,12 @@ MonoBehaviour:
       value: "Infantry\r"
     - key: Canute.BattleSystem.Army+Types.shielder
       value: "Shielder\r"
+    - key: Canute.BattleSystem.Army+Types.Cavalry
+      value: "Cavalry\r"
+    - key: Canute.BattleSystem.Army+Types.Rifleman
+      value: "Rifleman\r"
+    - key: Canute.BattleSystem.Army+Types.AircraftFighter
+      value: "AircraftFighter\r"
     - key: Canute.BattleSystem.Army.AlphaArmy.name
       value: "A\r"
     - key: Canute.BattleSystem.Army.BetaArmy.name
@@ -86,6 +92,12 @@ MonoBehaviour:
       value: "Basic Infantry\r"
     - key: Canute.BattleSystem.Army.Basic Shielder.name
       value: "Basic Shielder\r"
+    - key: Canute.BattleSystem.Army.Basic Cavalry.name
+      value: "Basic Cavalry\r"
+    - key: Canute.BattleSystem.Army.Basic Rifleman.name
+      value: "Basic Rifleman\r"
+    - key: Canute.BattleSystem.Army.Basic AircraftFighter.name
+      value: "Basic AircraftFighter\r"
     - key: Canute.BattleSystem.Building.Campus.name
       value: "Campus\r"
     - key: Canute.BattleSystem.Terrain.Plain
@@ -173,6 +185,10 @@ MonoBehaviour:
     - key: Canute.BattleSystem.Effect+Types.shielderPenetrate.info
       value: "Ignore other army's defense (except for shielder), cause a another
         @param% of enemy's current HP's real damage (except for shielder).\r"
+    - key: Canute.BattleSystem.Effect+Types.aircraftFighterReturn
+      value: "Returning position\r"
+    - key: Canute.BattleSystem.Effect+Types.aircraftFighterReturn.info
+      value: "Returning position: @x,@y\r"
     - key: 'Canute.BattleSystem.BattleEventError. '
       value: " \r"
     - key: Canute.BattleSystem.BattleEventError.notValidTarget

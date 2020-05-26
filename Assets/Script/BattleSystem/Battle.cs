@@ -103,7 +103,7 @@ namespace Canute.BattleSystem
             List<BattleArmy> armies = new List<BattleArmy>();
             foreach (BattleArmy item in Armies)
             {
-                if (item.Position == position)
+                if (item.Coordinate == position)
                 {
                     armies.Add(item);
                 }
@@ -115,7 +115,7 @@ namespace Canute.BattleSystem
         {
             foreach (BattleArmy item in Armies)
             {
-                if (item.Position == position)
+                if (item.Coordinate == position)
                 {
                     return item;
                 }
@@ -156,7 +156,7 @@ namespace Canute.BattleSystem
             List<BattleBuilding> buildings = new List<BattleBuilding>();
             foreach (BattleBuilding item in Buildings)
             {
-                if (item.Position == position)
+                if (item.Coordinate == position)
                 {
                     buildings.Add(item);
                 }
@@ -168,7 +168,7 @@ namespace Canute.BattleSystem
         {
             foreach (BattleBuilding item in Buildings)
             {
-                if (item.Position == position)
+                if (item.Coordinate == position)
                 {
                     return item;
                 }
@@ -231,7 +231,7 @@ namespace Canute.BattleSystem
                 ArmyCardEntity.Create(card, item);
             }
 
-            if (GameData.BuildSetting.PvP)
+            if (Game.Configuration.PvP)
             {
                 enemy = new Player("Anexar", new LegionSet(Game.PlayerData.Legions[1], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, " "), enemy.UUID);
 
@@ -258,7 +258,7 @@ namespace Canute.BattleSystem
                 BuildingEntity.Create(item);
             }
 
-            if (GameData.BuildSetting.PvP)
+            if (Game.Configuration.PvP)
             {
                 return;
             }

@@ -1,4 +1,5 @@
 ﻿using Canute.BattleSystem.UI;
+using Canute.Testing;
 using System;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Canute.BattleSystem
         public Canvas UICanvas;
 
         public static Testing.GameDebug DebugPanel => BattleUI.DebugWindow;
-        public static UI.Console Console => BattleUI.Console;
+        public static Testing.Console Console => BattleUI.Console;
         public static PausePanel GamePausePanel => BattleUI.PausePanel;
         public static MapEntity Map => Game.CurrentBattle.MapEntity;
         public static Vector3 UserInputPosition => Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -36,11 +37,11 @@ namespace Canute.BattleSystem
             {
                 ToggleUICanvas();
             }
-            if (Input.GetKeyDown(KeyCode.F3) && GameData.BuildSetting.IsInDebugMode)
+            if (Input.GetKeyDown(KeyCode.F3) && Game.Configuration.IsDebugMode)
             {
                 ToggleDebugWindow();
             }
-            if (Input.GetKeyDown(KeyCode.Slash) && GameData.BuildSetting.IsInDebugMode)
+            if (Input.GetKeyDown(KeyCode.Slash) && Game.Configuration.IsDebugMode)
             {
                 ToggleConsole();
             }
@@ -58,14 +59,14 @@ namespace Canute.BattleSystem
         private void TryCloseCurrentWindow()
         {
             Debug.Log("Esc");
-            if (BattleUI.window is null)
+            if (BattleUI.currentWindow is null)
             {
-                Debug.Log("Open Pause");
+                Debug.Log("Open pause");
                 BattleUI.ToggleWindow(GamePausePanel);
             }
             else
             {
-                Debug.Log("Close Current");
+                Debug.Log("Close current window");
                 BattleUI.CloseCurrentWindow();
             }
         }

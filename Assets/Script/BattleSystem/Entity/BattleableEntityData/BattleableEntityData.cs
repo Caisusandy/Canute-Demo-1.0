@@ -63,9 +63,7 @@ namespace Canute.BattleSystem
             Anger = 0;
         }
 
-        public List<CellEntity> GetMoveArea() => MapEntity.CurrentMap.GetMoveArea(MapEntity.CurrentMap[Position], Properties.MoveRange, this);
-
-        public List<CellEntity> GetMoveRange() => GetMoveArea().Except(MapEntity.CurrentMap.GetMoveArea(MapEntity.CurrentMap[Position], Properties.MoveRange - 1, this)).ToList();
+        public List<CellEntity> GetMoveArea() => MapEntity.CurrentMap.GetMoveArea(MapEntity.CurrentMap[Coordinate], Properties.MoveRange, this);
 
         protected abstract void AddBounes(params IBattleBounesItem[] bouneses);
 
@@ -84,7 +82,6 @@ namespace Canute.BattleSystem
         BattleProperty.Position StandPosition { get; }
 
         List<CellEntity> GetMoveArea();
-        List<CellEntity> GetMoveRange();
     }
 
 }

@@ -13,7 +13,7 @@ namespace Canute.Testing
 
         public override void Awake()
         {
-            enabled = GameData.BuildSetting.IsInDebugMode;
+            enabled = Game.Configuration.IsDebugMode;
             base.Awake();
 #if !UNITY_EDITOR
             Destroy(gameObject);

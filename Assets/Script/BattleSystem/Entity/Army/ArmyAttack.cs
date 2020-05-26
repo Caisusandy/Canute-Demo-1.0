@@ -59,14 +59,13 @@ namespace Canute.BattleSystem
         public static void TryAttack()
         {
             Debug.Log("Try to attack " + targets.Count + " entity");
-            Damage damage = attackingArmy.data.Damage;
+            int damage = attackingArmy.data.Damage;
 
             Card.LastCard.Effect.Type = Effect.Types.attack;
             Card.LastCard.Effect.Source = attackingArmy;
             Card.LastCard.Effect.Targets = targets;
             Card.LastCard.Effect.Count = 1;
             Card.LastCard.Effect.Parameter = damage;
-            Card.LastCard.Effect["isCritical"] = damage.IsCritical ? "true" : null;
 
             if (attackingArmy.data.Properties.Attack.IsTypeOf(BattleProperty.AttackType.area) || attackingArmy.data.Properties.Attack.IsTypeOf(BattleProperty.AttackType.splash))
             {
@@ -205,7 +204,7 @@ namespace Canute.BattleSystem
                 }
 
                 ArmyEntity possibleTarget = cellEntity.transform.Find("Army").GetComponent<ArmyEntity>();
-                if ((possibleTarget.data.StandPosition & armyEntity.data.StandPosition) == BattleProperty.Position.none)
+                if ((possibleTarget.data.StandPosition & armyEntity.data.AttackPosition) == BattleProperty.Position.none)
                 {
                     cellEntities.RemoveAt(i);
                     continue;
@@ -225,17 +224,17 @@ namespace Canute.BattleSystem
             return possibleTargets;
         }
 
-        public static List<ArmyEntity> GetTargetAfterMove(this ArmyEntity armyEntity)
-        {
-            List<ArmyEntity> armyEntities = armyEntity.GetTargets();
-            foreach (var item in armyEntity.GetMoveRange())
-            {
-                armyEntities = armyEntities.Union(armyEntity.GetTargets(item, armyEntity.data.Properties.AttackRange)).ToList();
-            }
-            return armyEntities;
-        }
+        //public static List<ArmyEntity> GetTargetAfterMove(this ArmyEntity armyEntity)
+        //{
+        //    List<ArmyEntity> armyEntities = armyEntity.GetTargets();
+        //    foreach (var item in armyEntity.GetMoveRange())
+        //    {
+        //        armyEntities = armyEntities.Union(armyEntity.GetTargets(item, armyEntity.data.Properties.AttackRange)).ToList();
+        //    }
+        //    return armyEntities;
+        //}
 
-        public static List<ArmyEntity> GetTargets(this ArmyEntity armyEntity, CellEntity origin, int range)
+        public static List<ArmyEntity> GetEnemyInRange(this ArmyEntity armyEntity, CellEntity origin, int range)
         {
             List<ArmyEntity> possibleTargets = new List<ArmyEntity>();
             List<CellEntity> cellEntities = Game.CurrentBattle.MapEntity.GetNearbyCell(origin, range);

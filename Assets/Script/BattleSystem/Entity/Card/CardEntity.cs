@@ -38,7 +38,7 @@ namespace Canute.BattleSystem
         public static float times = 0;
 
         public static bool IsDelayEnded => times > PlayCardDelay;
-        public static float PlayCardDelay => GameData.BuildSetting.PlayCardDelay;
+        public static float PlayCardDelay => Game.Configuration.PlayCardDelay;
         public static List<CardEntity> CurrentCards { get => currentCards is null ? Game.CurrentBattle.Player.Entity.Cards : currentCards; set => currentCards = value; }
 
         public static InteractableEntity SelectingEntity { get => selectingEntity; set { selectingEntity = value; } }

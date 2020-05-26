@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Commands
   m_EditorClassIdentifier: 
   commands:
-    list: []
+    list:
+    - name: print
+      params:
+      - type: 5
+        key: message
+        value: 

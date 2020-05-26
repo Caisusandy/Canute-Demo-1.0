@@ -89,29 +89,19 @@ namespace Canute.BattleSystem
     {
         /// <summary> 生命值 </summary>
         int Health { get; set; }
-
         /// <summary> 最高生命值 </summary>
         int MaxHealth { get; }
-
         /// <summary> 防御值 </summary>
         int Defense { get; }
-
-        float HealthPercent { get; }
-
+        /// <summary> 护甲值 </summary>
         int Armor { get; set; }
+        /// <summary>  </summary>
+        float HealthPercent { get; }
         bool CanBeTargeted { get; set; }
     }
 
     public static class PassiveEntitiesData
     {
-        public static int GetFinalDamage(this IPassiveEntityData passiveEntity, int initial)
-        {
-            initial = (int)(initial * UnityEngine.Random.Range(0.95f, 1.05f));
-            int final = Math.Max(1, initial - passiveEntity.Defense);
-            Debug.Log(initial + " , " + final);
-            return final;
-        }
-
         public static int Damage(this IPassiveEntityData passiveEntity, int damagePoint)
         {
             passiveEntity.Health -= damagePoint;

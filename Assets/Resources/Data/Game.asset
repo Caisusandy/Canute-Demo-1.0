@@ -16,7 +16,7 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/5/20 20:54:08
+      value: 2020/5/23 20:30:56
     federgram: 0
     manpower: 1000000
     mantleAlloy: 1000000
@@ -42,9 +42,13 @@ MonoBehaviour:
       - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
       - value: bbfa6c3d-7064-49ef-ba61-2d9d285b72cd
     eventCardPiles:
+    - eventCardUUID:
+      - value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
+      - value: 275c835b-f1bb-4fa4-be54-b6ad43e45595
+      - value: f67edbd2-19ab-4297-8696-330f63af2b48
     - eventCardUUID: []
-    - eventCardUUID: []
-    - eventCardUUID: []
+    - eventCardUUID:
+      - value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
     armies:
     - protoName: AlphaArmy
       uuid:
@@ -326,6 +330,46 @@ MonoBehaviour:
       equipments:
         equipmentUUID: []
         equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: a59032d1-b9fb-4359-ae7a-74150cfe0c47933-8760-58a88831f6a9
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: dc25bffa-3f71-4b37-9f53-f62a1907990c
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: fb5b2cbd-d1d1-4ae5-8dc3-75e6612241af
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
     leaders:
     - protoName: Aether Erinope
       uuid:
@@ -402,7 +446,6 @@ MonoBehaviour:
   spriteLoader: {fileID: 11400000, guid: 4bd7520eeb39dfa489ff77c9e2981688, type: 2}
   technology: {fileID: 11400000, guid: fcfd1f70776947b41bb5db362bb87846, type: 2}
   shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
-  buildSetting: {fileID: 11400000, guid: 03e055900e4b7f046a255fcac9251a02, type: 2}
   levelStart: {fileID: 11400000, guid: dc6a04b2b485dfc439489ed59b0f9e62, type: 2}
   chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
   stories: {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}

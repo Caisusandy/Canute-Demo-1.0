@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/EventCardPile/EventCardPile.unity
     guid: 8981877da0fe9dc47b33ddd1f440892f
+  - enabled: 1
+    path: Assets/Resources/Scenes/Settings/Settings.unity
+    guid: 055048da7dbf05d40a3856da34709c4a
   m_configObjects: {}

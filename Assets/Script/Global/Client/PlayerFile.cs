@@ -14,9 +14,9 @@ namespace Canute
 
         public static string DataPath => Application.persistentDataPath + "/Saves/";
 
-        public static Data Data { get => GetData(); private set { data = value; Game.Configuration.LastGame = value.uuid; Game.SaveConfig(); GameData.instance.data = value; } }
+        public static Data Data { get => GetData(); private set { data = value; Game.Configuration.LastGame = value.UUID; Game.SaveConfig(); GameData.instance.data = value; } }
 
-        public static Data GetData()
+        private static Data GetData()
         {
             return data ?? ContinueLastSaved();
         }
@@ -26,12 +26,12 @@ namespace Canute
         /// </summary>
         public static bool SaveCurrentData()
         {
-            Data.playerLastOperationTime = DateTime.UtcNow;
+            Data.PlayerLastOperationTime = DateTime.UtcNow;
             string json = JsonUtility.ToJson(Data);
-            string filePath = DataPath + data.uuid;
+            string filePath = DataPath + data.UUID;
             string savePath = filePath + "/Data.json";
 
-            if (!Directory.Exists(DataPath + data.uuid))
+            if (!Directory.Exists(DataPath + data.UUID))
             {
                 Directory.CreateDirectory(filePath);
             }
@@ -51,12 +51,12 @@ namespace Canute
         /// </summary>
         public static bool SaveData(Data data)
         {
-            data.playerLastOperationTime = DateTime.UtcNow;
+            data.PlayerLastOperationTime = DateTime.UtcNow;
             string json = JsonUtility.ToJson(data);
-            string filePath = DataPath + data.uuid;
+            string filePath = DataPath + data.UUID;
             string savePath = filePath + "/Data.json";
 
-            if (!Directory.Exists(DataPath + data.uuid))
+            if (!Directory.Exists(DataPath + data.UUID))
             {
                 Directory.CreateDirectory(filePath);
             }
@@ -94,6 +94,8 @@ namespace Canute
             if (Data is null)
                 return false;
 
+            Game.Configuration.LastGame = Data.UUID;
+            Game.SaveConfig();
             return true;
         }
 
@@ -105,7 +107,7 @@ namespace Canute
         {
             Debug.Log("try create player file");
             Data = new Data();
-            string filePath = DataPath + data.uuid;
+            string filePath = DataPath + data.UUID;
             Directory.CreateDirectory(filePath);
             Debug.Log(filePath);
             File.Create(filePath + "/Data.json").Dispose();
@@ -145,8 +147,8 @@ namespace Canute
     [Serializable]
     public class Data : IUUIDLabeled
     {
-        public UUID uuid;
-        public WorldTime playerLastOperationTime;
+        [SerializeField] private UUID uuid;
+        [SerializeField] private WorldTime playerLastOperationTime;
 
         #region Curency 
         [SerializeField] private int federgram;
@@ -249,6 +251,7 @@ namespace Canute
         public CheckList EventCardUnlocked => GetEventTree();
 
         public UUID UUID { get => uuid; set => uuid = value; }
+        public WorldTime PlayerLastOperationTime { get => playerLastOperationTime; set => playerLastOperationTime = value; }
 
         public bool IsArmyUnlocked(string name)
         {

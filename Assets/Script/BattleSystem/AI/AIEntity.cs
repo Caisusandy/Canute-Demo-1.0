@@ -14,7 +14,7 @@ namespace Canute.BattleSystem.AI
 
         public override void Start()
         {
-            if (GameData.BuildSetting.PvP)
+            if (Game.Configuration.PvP)
             {
                 enabled = false;
             }

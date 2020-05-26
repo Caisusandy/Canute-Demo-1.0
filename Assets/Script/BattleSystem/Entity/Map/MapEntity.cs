@@ -473,6 +473,7 @@ namespace Canute.BattleSystem
 
             return cellEntities;
         }
+
         public List<CellEntity> GetRay(CellEntity origin, CellEntity direction)
         {
             if (!origin || !direction)
@@ -588,6 +589,26 @@ namespace Canute.BattleSystem
         public Vector2Int GetPosition(CellEntity cellEntity)
         {
             return new Vector2Int(columnEntities[InColumnOf(cellEntity)].cellEntities.IndexOf(cellEntity), InColumnOf(cellEntity));
+        }
+
+
+        public static List<CellEntity> GetBorderCell(List<CellEntity> cellEntities)
+        {
+            List<CellEntity> cells = cellEntities.ShallowClone();
+            foreach (var item in cellEntities)
+            {
+                int count = 0;
+                foreach (var neighbor in item.NearByCells)
+                {
+                    if (cellEntities.Contains(neighbor))
+                        count++;
+                }
+                if (count == 6)
+                {
+                    cells.Remove(item);
+                }
+            }
+            return cells;
         }
 
     }

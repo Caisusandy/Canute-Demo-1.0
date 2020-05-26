@@ -12,7 +12,7 @@ public static class LanguageAddress
 
 namespace Canute.Languages
 {
-    public enum LanguageSetting
+    public enum LanguageName
     {
         zh_cn = SystemLanguage.ChineseSimplified,
         en_us = SystemLanguage.English,
@@ -24,9 +24,9 @@ namespace Canute.Languages
 
         [ContextMenuItem("Reload language pack", "ForceLoadLang")]
         [SerializeField] protected Args dictionary;
-        [SerializeField] protected LanguageSetting dicLang;
+        [SerializeField] protected LanguageName dicLang;
 
-        public LanguageSetting GameLanguage => GameData.BuildSetting.Language;
+        public LanguageName GameLanguage => Game.Configuration is null ? LanguageName.en_us : Game.Language;
         public Args Dictionary { get => dictionary; set => dictionary = value; }
 
         /// <summary>
@@ -67,11 +67,7 @@ namespace Canute.Languages
         /// </summary>
         public void ForceLoadLang()
         {
-            if (dicLang == GameLanguage && !(dictionary == null || dictionary?.Count == 0))
-            {
-                return;
-            }
-
+            dictionary.Clear();
             dicLang = GameLanguage;
             Debug.Log("loading language pack " + dicLang);
             TextAsset LanguagePack = Resources.Load("Lang/" + GameLanguage.ToString()) as TextAsset;
@@ -99,7 +95,7 @@ namespace Canute.Languages
 
     public static class Languages
     {
-        public static LanguageSetting Language => GameData.BuildSetting.Language;
+        public static LanguageName Language => Game.Language;
         public static Args Dictionary => GameData.Language.Dictionary;
 
         #region »ù±¾

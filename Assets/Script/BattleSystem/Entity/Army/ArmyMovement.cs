@@ -89,17 +89,17 @@ namespace Canute.BattleSystem
         public static void ShowMoveRange()
         {
             border = movingArmy.GetMoveRange();
-            Game.CurrentBattle.MapEntity.StartCoroutine(new EntityEventPack(Draw).GetEnumerator());
+            //Game.CurrentBattle.MapEntity.StartCoroutine(new EntityEventPack(Draw).GetEnumerator());
 
-            IEnumerator Draw(params object[] vs)
-            {
-                while (Game.CurrentBattle.CurrentStat == Battle.Stat.move)
-                {
-                    Mark.Load(Mark.Type.moveRange, border);
-                    yield return new WaitForFixedUpdate();
-                }
-                yield return null;
-            }
+            //IEnumerator Draw(params object[] vs)
+            //{
+            //    while (Game.CurrentBattle.CurrentStat == Battle.Stat.move)
+            //    {
+            //        Mark.Load(Mark.Type.moveRange, border);
+            //        yield return new WaitForFixedUpdate();
+            //    }
+            //    yield return null;
+            //}
         }
 
 
@@ -222,7 +222,7 @@ namespace Canute.BattleSystem
             }
             else
             {
-                List<CellEntity> between = PathFinder.GetPath(path[path.Count - 1], cell, movingArmy);
+                List<CellEntity> between = PathFinder.GetPath(path[path.Count - 1], cell, movingArmy.data.Properties.MoveRange, PathFinder.FinderParam.ignoreBuilding);
                 path.AddRange(movingArmy.data.Properties.MoveRange - 1 >= path.Count + between.Count ? between : new List<CellEntity>());
             }
             ShowMovePath();

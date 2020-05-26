@@ -20,7 +20,7 @@ MonoBehaviour:
     protrait: {fileID: 0}
     prefab: {fileID: 6470687005625561500, guid: 3831f74a46416314b8365aad0ca689f8,
       type: 3}
-    health: 3
+    health: 2
     damage: 10
     defense: 450
     type: 3
@@ -37,8 +37,8 @@ MonoBehaviour:
       targetCount: 1
       attackType: 5
       skill:
-        specialName: 
         type: 0
+        specialName: 
         count: 0
         parameter: 0
         args:
@@ -62,8 +62,8 @@ MonoBehaviour:
       targetCount: 1
       attackType: 5
       skill:
-        specialName: 
         type: 0
+        specialName: 
         count: 0
         parameter: 0
         args:
@@ -87,8 +87,8 @@ MonoBehaviour:
       targetCount: 1
       attackType: 5
       skill:
-        specialName: 
         type: 0
+        specialName: 
         count: 0
         parameter: 0
         args:

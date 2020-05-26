@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\BasicAircraftFighter.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic Cavalry\BasicCavalry.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic Infantry\BasicInfantry.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic Mage\BasicMage.cs" />
@@ -82,9 +83,9 @@
     <Compile Include="Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Army\ArmyDamageDisplayer.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Army\ArmyEntity.cs" />
-    <Compile Include="Assets\Script\BattleSystem\Entity\Army\ArmyMotion.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Army\ArmyMovement.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Army\Entities.cs" />
+    <Compile Include="Assets\Script\BattleSystem\Entity\Army\EntityOnCellMotion.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Army\PathSelector.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Assets\Script\BattleSystem\UI\BattleUI.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\BattleUIBase.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\CardInfoDisplayer.cs" />
+    <Compile Include="Assets\Script\BattleSystem\UI\Command.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\CommandList.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\CommandSheet.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\Console.cs" />
@@ -157,6 +159,7 @@
     <Compile Include="Assets\Script\BattleSystem\UI\RightPanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\StatusDetailDisplayer.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\StatusDisplayer.cs" />
+    <Compile Include="Assets\Script\BattleSystem\UI\WindowManager.cs" />
     <Compile Include="Assets\Script\BuildSetting.cs" />
     <Compile Include="Assets\Script\Chapters\ChapterPanel.cs" />
     <Compile Include="Assets\Script\Chapters\Chapters.cs" />
@@ -254,7 +257,7 @@
     <Compile Include="Assets\Script\UI\EventCardPile\ECPSingleCardPanel.cs" />
     <Compile Include="Assets\Script\UI\EventCards\EventCardList.cs" />
     <Compile Include="Assets\Script\UI\EventCards\EventCardUI.cs" />
-    <Compile Include="Assets\Script\UI\GameScene.cs" />
+    <Compile Include="Assets\Script\UI\GameServer.cs" />
     <Compile Include="Assets\Script\UI\GameStart\GameStartMenu.cs" />
     <Compile Include="Assets\Script\UI\GameStart\GameStartSavesInfo.cs" />
     <Compile Include="Assets\Script\UI\GameStart\GameStartSavesMenu.cs" />
@@ -270,6 +273,9 @@
     <Compile Include="Assets\Script\UI\LevelStartPanel\LevelStartPanel.cs" />
     <Compile Include="Assets\Script\UI\LevelStartPanel\Levels.cs" />
     <Compile Include="Assets\Script\UI\PlayerCurrencyDisplayer.cs" />
+    <Compile Include="Assets\Script\UI\Settings\SettingUI.cs" />
+    <Compile Include="Assets\Script\UI\Settings\SettingUIBasic.cs" />
+    <Compile Include="Assets\Script\UI\Settings\SettingUIDebug.cs" />
     <Compile Include="Assets\Script\UI\Testing\Army Generator\ArmyGenerator.cs" />
     <Compile Include="Assets\Script\UI\Testing\Army Generator\PrototypeLoader.cs" />
     <Compile Include="Assets\Script\_temp\NewBehaviourScript.cs" />

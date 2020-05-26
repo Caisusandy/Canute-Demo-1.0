@@ -1,4 +1,5 @@
 ﻿using Canute.BattleSystem;
+using Canute.Module;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,11 +17,8 @@ namespace Canute
         [SerializeField] protected GameObject centralDeckCardPrefab;
         [SerializeField] protected GameObject eventCardPrefab;
         [SerializeField] protected GameObject armyCardPrefab;
-        [Header("UI")]
-        [SerializeField] protected GameObject armyDamageDisplayer;
-        [SerializeField] protected GameObject floatPanelSmall;
-        [SerializeField] protected GameObject label;
-
+        [Header("Other")]
+        [SerializeField] protected PrefabPairList prefabPairs;
 
         public GameObject DefaultArmy => defaultArmy;
         public GameObject DefaultBuilding => defaultBuilding;
@@ -28,8 +26,26 @@ namespace Canute
         public GameObject CentralDeckCard => centralDeckCardPrefab;
         public GameObject EventCard => eventCardPrefab;
         public GameObject ArmyCard => armyCardPrefab;
-        public GameObject ArmyDamageDisplayer => armyDamageDisplayer;
-        public GameObject FloatPanelSmall => floatPanelSmall;
-        public GameObject Label => label;
+
+
+        public GameObject Get(string index)
+        {
+            return prefabPairs.Get(index)?.Value;
+        }
+
+    }
+
+    [Serializable]
+    public class PrefabPair : ArgType<GameObject>
+    {
+        public PrefabPair(string key, GameObject value) : base(key, value)
+        {
+        }
+    }
+
+    [Serializable]
+    public class PrefabPairList : DataList<PrefabPair>
+    {
+
     }
 }

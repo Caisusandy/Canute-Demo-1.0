@@ -110,7 +110,7 @@ namespace Canute.UI
                 armies.Add(armyCardUI);
                 armyCardUI.transform.localScale = Vector3.one;
                 armyCardUI.Display(item);
-                Label label = Instantiate(GameData.Prefabs.Label, armyCardUI.transform).GetComponent<Label>();
+                Label label = Instantiate(GameData.Prefabs.Get("label"), armyCardUI.transform).GetComponent<Label>();
                 label.image.color = new Color(0, 0, 0, 0);
                 switch (listType)
                 {

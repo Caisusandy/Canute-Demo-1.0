@@ -1,4 +1,5 @@
 //using Chronicle.Language;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,34 +12,61 @@ namespace Canute.BattleSystem
     {
         public const int MaxiumPath = 10;
 
+        [Flags]
+        public enum FinderParam
+        {
+            none = 0,
+            containOrgin = 1,
+            ignoreLandArmy = 2,
+            ignoreAirArmy = 4,
+            ignoreArmy = ignoreAirArmy + ignoreLandArmy,
+            ignoreBuilding = 8,
+            ignoreDestinationArmy = 16,
+            ignoreDestinationBuilding = 32
+        }
+
         /// <summary>
         /// 以层次寻找路径的寻路算法
         /// </summary>
         /// <param name="startCell">the cell start from</param>
-        /// <param name="endCell"> the destination </param>
-        /// <param name="armyEntity"> the <paramref name="armyEntity"/> that try to move (only use for army find path)</param>
-        /// <param name="containOrigin"> does the path contain the origin</param>
-        /// <param name="ignoreOtherArmy"> whether ignore the army on the path or walk around it </param>
-        /// 
+        /// <param name="endCell"> the destination </param> 
+        /// <param name="moveRange"></param>
+        /// <param name="finderParam"></param>
         /// <returns></returns>
-        public static List<CellEntity> GetPath(CellEntity startCell, CellEntity endCell, ArmyEntity armyEntity, bool containOrigin = false, bool ignoreOtherArmy = false)
+        public static List<CellEntity> GetPath(CellEntity startCell, CellEntity endCell, int moveRange, FinderParam finderParam)
         {
             List<CellEntity> currentLevel = new List<CellEntity> { startCell };
             List<List<CellEntity>> cellLevel = new List<List<CellEntity>> { new List<CellEntity>(currentLevel) };
             List<CellEntity> allCells = new List<CellEntity> { startCell };
             List<CellEntity> path = new List<CellEntity> { endCell };
 
-            if (endCell.HasArmyStandOn && !ignoreOtherArmy)
+            if (endCell.HasArmyStandOn && !finderParam.HasFlag(FinderParam.ignoreDestinationArmy))
             {
+                if (!finderParam.HasFlag(FinderParam.ignoreAirArmy) && endCell.HasArmyStandOn.data.StandPosition == BattleProperty.Position.air)
+                {
+                    Debug.Log("Has army on end point");
+                    return new List<CellEntity>();
+                }
+                else if (!finderParam.HasFlag(FinderParam.ignoreLandArmy) && endCell.HasArmyStandOn.data.StandPosition == BattleProperty.Position.land)
+                {
+                    Debug.Log("Has army on end point");
+                    return new List<CellEntity>();
+                }
+            }
+
+            if (endCell.HasBuildingStandOn && !finderParam.HasFlag(FinderParam.ignoreBuilding) && !finderParam.HasFlag(FinderParam.ignoreDestinationBuilding))
+            {
+                Debug.Log("Has building on end point");
                 return new List<CellEntity>();
             }
 
             if (!endCell.data.canStandOn)
             {
+                Debug.Log("can't stand on end point");
                 return new List<CellEntity>();
             }
 
-            while (!cellLevel[cellLevel.Count - 1].Contains(endCell) && cellLevel.Count <= armyEntity?.data.Properties.MoveRange)
+            while (!cellLevel[cellLevel.Count - 1].Contains(endCell) && (cellLevel.Count <= moveRange || moveRange == -1))
             {
                 List<CellEntity> nextLevel = new List<CellEntity>();    //下一层
                 foreach (CellEntity cellEntity in currentLevel)             //浏览当前层
@@ -47,13 +75,36 @@ namespace Canute.BattleSystem
 
                     for (int j = nearbyCells.Count - 1; j > -1; j--)
                     {
-                        if (nearbyCells[j].HasArmyStandOn && !ignoreOtherArmy)
+                        CellEntity curCell = nearbyCells[j];
+                        if (curCell == endCell)
                         {
-                            nearbyCells.Remove(nearbyCells[j]);
+                            break;
                         }
-                        else if (!nearbyCells[j].data.canStandOn)
+                        if (curCell.HasArmyStandOn)
                         {
-                            nearbyCells.Remove(nearbyCells[j]);
+                            if (!finderParam.HasFlag(FinderParam.ignoreAirArmy) && curCell.HasArmyStandOn.data.StandPosition == BattleProperty.Position.air)
+                            {
+                                nearbyCells.Remove(curCell);
+                                continue;
+                            }
+                            else if (!finderParam.HasFlag(FinderParam.ignoreLandArmy) && curCell.HasArmyStandOn.data.StandPosition == BattleProperty.Position.land)
+                            {
+                                nearbyCells.Remove(curCell);
+                                continue;
+                            }
+                        }
+                        if (curCell.HasBuildingStandOn)
+                        {
+                            if (!finderParam.HasFlag(FinderParam.ignoreBuilding))
+                            {
+                                nearbyCells.Remove(curCell);
+                                continue;
+                            }
+                        }
+                        else if (!curCell.data.canStandOn)
+                        {
+                            nearbyCells.Remove(curCell);
+                            continue;
                         }
                     }
 
@@ -108,28 +159,13 @@ namespace Canute.BattleSystem
                             predictCell = cell;
                         }
                     }
-
-                    //float distance = Vector3.Distance(cell.transform.position, endCell.transform.position);
-                    //if (distance < smallestDistance)
-                    //{
-                    //    smallestDistance = distance;
-                    //    predictCell = cell;
-                    //}
-                    //else if (distance == smallestDistance)
-                    //{
-                    //    if (cell.GetPointDistanceOf(endCell) < predictCell.GetPointDistanceOf(endCell))
-                    //    {
-                    //        smallestDistance = distance;
-                    //        predictCell = cell;
-                    //    }
-                    //}
                 }
                 path.Add(predictCell);
             }
 
             path.Reverse();
 
-            if (containOrigin)
+            if (finderParam.HasFlag(FinderParam.containOrgin))
             {
                 path = new List<CellEntity> { startCell }.Union(path).ToList();
             }
@@ -138,10 +174,6 @@ namespace Canute.BattleSystem
                 path.Remove(startCell);
             }
 
-            //foreach (CellEntity item in path)
-            //{
-            //    Debug.Log(item.Position);
-            //}
 
             return path;
         }

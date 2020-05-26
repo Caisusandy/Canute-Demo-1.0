@@ -22,6 +22,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 16be7192c52379d47b7c378814c97677, type: 2}
     - {fileID: 11400000, guid: db935c5c70a47e14f8987d4bf10c472f, type: 2}
     - {fileID: 11400000, guid: 7ce54b3a9a0ce3d40a37fb9949ff1498, type: 2}
+    - {fileID: 11400000, guid: 597c8f22020cc0a409d88c2e3441b41d, type: 2}
     - {fileID: 11400000, guid: 8923e98bd8ffc1b4aa71bad8e9f415e3, type: 2}
   leaderPrototypes:
     list:

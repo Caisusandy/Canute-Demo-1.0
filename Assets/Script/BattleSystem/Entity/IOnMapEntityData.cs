@@ -7,6 +7,6 @@ namespace Canute.BattleSystem
         bool AllowMove { get; set; }
         Vector3Int HexCoord { get; }
         Cell OnCellOf { get; }
-        Vector2Int Position { get; set; }
+        Vector2Int Coordinate { get; set; }
     }
 }

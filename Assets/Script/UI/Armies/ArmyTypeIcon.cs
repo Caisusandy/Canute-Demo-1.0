@@ -55,7 +55,7 @@ namespace Canute.UI
         {
             if (!label)
             {
-                label = Instantiate(GameData.Prefabs.Label, transform);
+                label = Instantiate(GameData.Prefabs.Get("label"), transform);
                 label.transform.localPosition = new Vector3(30, 30, 0);
             }
             label.SetActive(true);

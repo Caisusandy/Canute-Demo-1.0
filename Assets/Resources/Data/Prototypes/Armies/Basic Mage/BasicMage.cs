@@ -68,7 +68,7 @@ namespace Canute.BattleSystem.Armies
                 if (item)
                 {
                     var data = (effect.Source as ArmyEntity).data;
-                    List<ArmyEntity> posibleArmy = (effect.Source as ArmyEntity).GetTargets(item as CellEntity, data.Properties.AttackArea);
+                    List<ArmyEntity> posibleArmy = (effect.Source as ArmyEntity).GetEnemyInRange(item as CellEntity, data.Properties.AttackArea);
                     passiveEntities = passiveEntities.Union(posibleArmy).ToList();
                 }
                 if (!(item is IPassiveEntity))

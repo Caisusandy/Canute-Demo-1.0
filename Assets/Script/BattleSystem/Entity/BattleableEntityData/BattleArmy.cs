@@ -41,7 +41,7 @@ namespace Canute.BattleSystem
             skillPack = army.skillPack;
             properties = army.properties;
             prefab = army.prefab;
-            Position = army.Position;
+            Coordinate = army.Coordinate;
             stats = army.stats.Clone() as StatusList;
 
             Health = army.Health;

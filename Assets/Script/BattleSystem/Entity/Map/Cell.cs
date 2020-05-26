@@ -11,12 +11,12 @@ namespace Canute.BattleSystem
         public bool hide = false;
         public string terrain;
 
-        public override string Name => base.Name + Position;
+        public override string Name => base.Name + Coordinate;
         public override Cell OnCellOf => this;
         public override StatusList GetAllStatus() => StatList;
 
-        public List<BattleBuilding> Buildings => Game.CurrentBattle.GetBuildings(Position);
-        public List<BattleArmy> Armies => Game.CurrentBattle.GetArmies(Position);
+        public List<BattleBuilding> Buildings => Game.CurrentBattle.GetBuildings(Coordinate);
+        public List<BattleArmy> Armies => Game.CurrentBattle.GetArmies(Coordinate);
         public Terrain Terrain => (Terrain)Enum.Parse(typeof(Terrain), terrain);
 
         public static Vector2Int V32V2(Vector3Int pos)
