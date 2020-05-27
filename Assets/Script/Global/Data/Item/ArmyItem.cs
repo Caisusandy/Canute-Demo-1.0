@@ -36,7 +36,6 @@ namespace Canute
 
         public int MaxHealth => Prototype.Health.Bounes(LevelBounes);
         public int MaxDamage => Prototype.Damage.Bounes(LevelBounes);
-        public int MaxDefense => Prototype.Defense.Bounes(LevelBounes);
 
         public new Army.Types Type => Prototype.Type;
         public Career Career => Prototype.Career;
@@ -44,6 +43,7 @@ namespace Canute
 
 
 
+        public int Defense => PrototypeProperty.Defense.Bounes(LevelBounes);
         public double CritRate => PrototypeProperty.CritRate;
         public double CritBounes => PrototypeProperty.CritBounes;
         public int AttackRange => PrototypeProperty.AttackRange;
@@ -147,7 +147,7 @@ namespace Canute
             return equipmentItems;
         }
 
-        public int GetBounesOf(PropertyType type, BounesType bounesTypes)
+        public int GetBounesOf(PropertyType type, BonusType bounesTypes)
         {
             int bounes = 0;
             foreach (var equipmentItem in Equipments)

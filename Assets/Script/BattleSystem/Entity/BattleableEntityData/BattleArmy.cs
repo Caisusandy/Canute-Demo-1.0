@@ -35,11 +35,11 @@ namespace Canute.BattleSystem
 
             maxHealth = army.maxHealth;
             damage = army.damage;
-            defense = army.defense;
+            properties = army.properties;
+            properties.Defense = army.Defense;
             type = army.Type;
             career = army.Career;
             skillPack = army.skillPack;
-            properties = army.properties;
             prefab = army.prefab;
             Coordinate = army.Coordinate;
             stats = army.stats.Clone() as StatusList;
@@ -54,10 +54,10 @@ namespace Canute.BattleSystem
             localLeader = new BattleLeader(army.Leader);
             maxHealth = army.MaxHealth;
             damage = army.MaxDamage;
-            defense = army.MaxDefense;
+            properties = army.ArmyProperty;
+            properties.Defense = army.Defense;
             type = army.Type;
             career = army.Career;
-            properties = army.ArmyProperty;
             skillPack = army.SkillPack;
             prefab = army.Prototype.Prefab;
             AddBounes(army.Equipments.ToArray());

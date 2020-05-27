@@ -40,6 +40,7 @@ namespace Canute.BattleSystem
         }
 
         [Header("Properties")]
+        [Tooltip("暴击概率")] [SerializeField] private double defense;
         [Tooltip("暴击概率")] [SerializeField] private double critRate;
         [Tooltip("暴击加成")] [SerializeField] private double critBounes;
         [Tooltip("军队人口")] [SerializeField] private int pop;
@@ -57,6 +58,7 @@ namespace Canute.BattleSystem
 
 
 
+        public double Defense { get => defense; set => defense = value; }
         public double CritRate { get => critRate; set => critRate = value; }
         public double CritBounes { get => critBounes; set => critBounes = value; }
         public int Pop { get => pop; set => pop = value; }
@@ -70,9 +72,9 @@ namespace Canute.BattleSystem
         public HalfEffect Skill => skill;
         public ArgList Addition { get => addition; set => addition = value; }
 
-
         public BattleProperty(Army army)
         {
+            defense = 0;
             critRate = 20;
             critBounes = 50;
             attackRange = 3;
@@ -91,6 +93,7 @@ namespace Canute.BattleSystem
 
         public BattleProperty(ArmyItem armyItem)
         {
+            defense = armyItem.Defense;
             critRate = armyItem.CritRate;
             critBounes = armyItem.CritBounes;
             attackRange = armyItem.AttackRange;

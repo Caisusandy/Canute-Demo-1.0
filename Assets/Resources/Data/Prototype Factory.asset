@@ -23,6 +23,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: db935c5c70a47e14f8987d4bf10c472f, type: 2}
     - {fileID: 11400000, guid: 7ce54b3a9a0ce3d40a37fb9949ff1498, type: 2}
     - {fileID: 11400000, guid: 597c8f22020cc0a409d88c2e3441b41d, type: 2}
+    - {fileID: 11400000, guid: 3d9a47407e54cf8499a4118119b35f5e, type: 2}
     - {fileID: 11400000, guid: 8923e98bd8ffc1b4aa71bad8e9f415e3, type: 2}
   leaderPrototypes:
     list:
@@ -44,6 +45,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c0bcf74570785dd4a90ae080cd358f08, type: 2}
     - {fileID: 11400000, guid: ef049599fca0d5b41a34c5ad6c9a0ce4, type: 2}
     - {fileID: 11400000, guid: 6b76571e73ff8e547b703e4885c8765a, type: 2}
+    - {fileID: 11400000, guid: 3790a5998a1f15a44bcdc34687caf8e9, type: 2}
   buildingPrototypes:
     list:
     - {fileID: 11400000, guid: 3c89cfb6209195d48b215c0c00af3005, type: 2}

@@ -16,6 +16,7 @@ MonoBehaviour:
     list:
     - name: print
       params:
-      - type: 5
-        key: message
-        value: 
+      - key: string
+        type: 2
+        default: 
+        possibleValue: []

@@ -10,24 +10,24 @@ namespace Canute.BattleSystem
         [SerializeField] private ResonanceList resoncancePairs;
         private ResonanceList ResoncancePairs { get => resoncancePairs; set => resoncancePairs = value; }
 
-        public List<Resonance> GetResonance(Army.Types types, int count)
+        public List<ResonancePair> GetResonance(Army.Types types, int count)
         {
-            List<Resonance> resoncances = new List<Resonance>();
+            List<ResonancePair> resoncances = new List<ResonancePair>();
             foreach (var item in resoncancePairs)
             {
-                if (item.Types != types || item.count > count)
+                if (item.ArmyType != types || item.Count > count)
                 {
                     continue;
                 }
-                resoncances.Add(item.resonance);
+                resoncances.Add(item);
             }
             return resoncances;
         }
 
         [Serializable]
-        class ResonanceList : DataList<ResoncancePair>
+        class ResonanceList : DataList<ResonancePair>
         {
-            public ResoncancePair Get(Army.Types types)
+            public ResonancePair Get(Army.Types types)
             {
                 return Get(types.ToString());
             }

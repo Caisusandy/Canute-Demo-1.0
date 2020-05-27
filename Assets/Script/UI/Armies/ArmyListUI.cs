@@ -121,7 +121,7 @@ namespace Canute.UI
                         label.text.text = item.MaxHealth.ToString();
                         break;
                     case PropertyType.defense:
-                        label.text.text = item.MaxDefense.ToString();
+                        label.text.text = item.Defense.ToString();
                         break;
                     case PropertyType.moveRange:
                         break;
@@ -348,7 +348,7 @@ namespace Canute.UI
                 }
                 for (int j = 0; j < organizedList.Count; j++)
                 {
-                    if (organizedList[j].MaxDefense <= armyItem.MaxDefense)
+                    if (organizedList[j].Defense <= armyItem.Defense)
                     {
                         organizedList.Insert(j, armyItem);
                         break;

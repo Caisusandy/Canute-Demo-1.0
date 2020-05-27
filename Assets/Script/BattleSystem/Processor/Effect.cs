@@ -25,26 +25,36 @@ namespace Canute.BattleSystem
 
         public UUID UUID { get => uuid; set => uuid = value; }
 
+        /// <summary> name of the effect </summary>
         public string Name => GetName();
+        /// <summary> type of the effect </summary>
         public Types Type { get => type; set => type = value; }
+        /// <summary> count of the effect </summary>
         public int Count { get => count; set => count = value; }
+        /// <summary> parameter of the effect </summary>
         public int Parameter { get => parameter; set => parameter = value; }
+        /// <summary> args of the effect </summary>
         public Args Args { get => args; set => args = value; }
-
-        public Entity Source { get => Entity.Get(sourceEntity); set => sourceEntity = value?.UUID == null ? UUID.Empty : value.UUID; }
-        public Entity Target { get => GetUniTarget(); set => SetTarget(value); }
+        /// <summary> source of the effect (attacker)</summary>
+        public Entity Source { get => GetSource(); set => SetSource(value); }
+        /// <summary> target of the effect (defender)<para>When there are more than 1 target, target return </para></summary>
+        public Entity Target { get => GetTarget(); set => SetTarget(value); }
+        /// <summary> targets of the effect (defender)<para>always return all the targets </para> </summary>
         public List<Entity> Targets { get => Entity.Get(targetEntities); set => SetTargets(value); }
 
-
-        public string this[string index]
+        /// <summary> Get the arg value of the effect by <paramref name="key"/></summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public string this[string key]
         {
-            get { try { return args[index]; } catch { return null; } }
-            set { SetParam(index, value); }
+            get { try { return args[key]; } catch { return null; } }
+            set { SetParam(key, value); }
         }
 
-
+        /// <summary> (Readonly) all entity involved in the effect </summary>
         public IEnumerable<Entity> AllEntities => new List<Entity>(Targets).Union(new List<Entity> { Source });
         public bool IsCompleteEffect => type != Types.none && targetEntities != null && sourceEntity != UUID.Empty && count != 0;
+        /// <summary> Get Icon of the effect </summary>
         public Sprite Icon => GameData.SpriteLoader.GetIcon(name: Name);
 
 
@@ -59,47 +69,49 @@ namespace Canute.BattleSystem
             count = c;
             parameter = p;
         }
-        public Effect(PropertyType i, BounesType bt, int c, int p = 0) : this()
+        public Effect(PropertyType i, BonusType bt, int c, int p = 0) : this()
         {
-            type = Types.propertyBounes;
+            type = Types.propertyBonus;
             count = c;
             parameter = p;
-            this[propertyBounesType] = i.ToString();
-            this[bounesType] = bt.ToString();
+            this[propertyBonusType] = i.ToString();
+            this[bonusType] = bt.ToString();
         }
         public Effect(Types i, int c, int p = 0, params Arg[] args) : this(i, c, p)
         {
             this.args = new Args(args);
         }
-        public Effect(PropertyType i, BounesType bt, int c, int p = 0, params Arg[] args) : this(i, bt, c, p)
+        public Effect(PropertyType i, BonusType bt, int c, int p = 0, params Arg[] args) : this(i, bt, c, p)
         {
             this.args.AddRange(args);
         }
-        public Effect(Types i, Entity s, List<Entity> te, int c, int p = 0) : this(i, c, p)
-        {
-            Source = s;
-            Targets = te;
-        }
-        public Effect(Types i, Entity s, Entity te, int c, int p = 0) : this(i, c, p)
+        public Effect(Types i, Entity s, Entity te, int c, int p = 0, params Arg[] vs) : this(i, c, p)
         {
             Source = s;
             Target = te;
-        }
-        public Effect(Types i, Entity s, Entity te, int c, int p, params Arg[] vs) : this(i, s, te, c, p)
-        {
             args = new Args();
             foreach (var item in vs)
             {
                 args.Add(item);
             }
         }
-        public Effect(Types i, Entity s, List<Entity> te, int c, int p, params Arg[] vs) : this(i, s, te, c, p)
+        public Effect(PropertyType i, BonusType bt, Entity s, Entity te, int c, int p = 0, params Arg[] args) : this(i, bt, c, p)
         {
+            Source = s;
+            Target = te;
+            this.args.AddRange(args);
+        }
+        public Effect(Types i, Entity s, List<Entity> te, int c, int p, params Arg[] vs) : this(i, c, p)
+        {
+            Source = s;
+            Targets = te;
             args = new Args(vs);
         }
-        public Effect(Types i, Entity s, List<Entity> te, int c, int p, Args vs) : this(i, s, te, c, p)
+        public Effect(PropertyType i, BonusType bt, Entity s, List<Entity> te, int c, int p = 0, params Arg[] args) : this(i, bt, c, p)
         {
-            args = new Args(vs);
+            Source = s;
+            Targets = te;
+            this.args.AddRange(args);
         }
 
 
@@ -111,16 +123,15 @@ namespace Canute.BattleSystem
                 {
                     return this[name];
                 }
-                else if (type == Types.propertyBounes || type == Types.propertyPanalty)
+                else if (type == Types.propertyBonus || type == Types.propertyPanalty)
                 {
-                    return this[propertyBounesType];
+                    return this[propertyBonusType];
                 }
                 return type.ToString();
             }
             return specialName;
 
         }
-
 
         private void SetTargets(List<Entity> value)
         {
@@ -135,50 +146,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        private Entity GetUniTarget()
-        {
-            if (targetEntities is null)
-            {
-                return null;
-            }
-            else if (targetEntities.Count == 1)
-            {
-                return Entity.Get(targetEntities[0]);
-            }
-            return null;
-        }
-
-        public void SetUniTarget(IUUIDLabeled value)
-        {
-            Debug.Log("set unitarget");
-            targetEntities = new List<UUID> { value.UUID };
-        }
-
-        public void SetTarget(params IUUIDLabeled[] value)
-        {
-            targetEntities = new List<UUID>();
-            foreach (var item in value)
-            {
-                targetEntities.Add(item.UUID);
-            }
-        }
-
-        public void SetSource(IUUIDLabeled value)
-        {
-            sourceEntity = value.UUID;
-        }
-
-        public void RemoveTarget(Entity entity)
-        {
-            targetEntities.Remove(entity.UUID);
-        }
-
-        public void SetSpecialName(string name)
-        {
-            specialName = name;
-        }
-
-        public void SetParam(string key, string value)
+        private void SetParam(string key, string value)
         {
             if (args.ContainsKey(key))
             {
@@ -198,47 +166,78 @@ namespace Canute.BattleSystem
             }
         }
 
-        public void SetParams(params Arg[] args)
+        private Entity GetSource()
         {
-            foreach (var item in args)
+            return Entity.Get(sourceEntity);
+        }
+
+        private Entity GetTarget()
+        {
+            if (targetEntities is null)
             {
-                SetParam(item.Key, item.Value);
+                return null;
+            }
+            else if (targetEntities.Count == 1)
+            {
+                return Entity.Get(targetEntities[0]);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// set source
+        /// </summary>
+        /// <param name="value"></param>
+        public void SetSource(IUUIDLabeled value)
+        {
+            sourceEntity = value?.UUID == null ? UUID.Empty : value.UUID;
+        }
+
+        /// <summary>
+        /// set target of the effect
+        /// </summary>
+        /// <param name="value"></param>
+        public void SetTarget(params IUUIDLabeled[] value)
+        {
+            targetEntities = new List<UUID>();
+            foreach (var item in value)
+            {
+                targetEntities.Add(item.UUID);
             }
         }
 
-        public int GetParam(string key)
+        /// <summary>
+        /// remove <paramref name="entity"/> from targets
+        /// </summary>
+        /// <param name="entity"></param>
+        public void RemoveTarget(Entity entity)
         {
-            return int.Parse(string.IsNullOrEmpty(this[key]) ? "0" : this[key]);
+            targetEntities.Remove(entity.UUID);
         }
 
-        public T GetParam<T>(string key) where T : Enum
+        /// <summary>
+        /// set the special name to <paramref name="newSpecialName"/>
+        /// </summary>
+        /// <param name="newSpecialName">new special name</param>
+        public void SetSpecialName(string newSpecialName)
         {
-            try
-            {
-                return (T)Enum.Parse(typeof(T), this[key]);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e.Message);
-                return default;
-            }
+            specialName = newSpecialName;
         }
 
-        public bool HasParam(string key)
-        {
-            return string.IsNullOrEmpty(this[key]);
-        }
-
-        public bool HasParam(string key, string value)
-        {
-            return this[key] == value;
-        }
-
+        /// <summary>
+        /// Get the cell parameter in the effect
+        /// <para>the cell parameter formed by arg {x: value} and {y: value}</para>
+        /// </summary>
+        /// <returns>cellEntity in the effect args</returns>
         public CellEntity GetCellParam()
         {
-            return Game.CurrentBattle.MapEntity.GetCell(GetParam("x"), GetParam("y"));
+            return Game.CurrentBattle.MapEntity.GetCell(Args.GetIntParam("x"), Args.GetIntParam("y"));
         }
 
+        /// <summary>
+        /// Set the cell parameter
+        /// </summary>
+        /// <param name="cellEntity"></param>
         public void SetCellParam(CellEntity cellEntity)
         {
             this["x"] = cellEntity.x.ToString();
@@ -280,32 +279,45 @@ namespace Canute.BattleSystem
             return type == effect.type && parameter == effect.parameter && sourceEntity == effect.sourceEntity;
         }
 
+        /// <summary>
+        /// Convert the effect to a status
+        /// <para>require parameter of {tc}, {sc}, {effectType}, {statType}</para>
+        /// <para>use when effect is type of addStatus</para>
+        /// </summary>
+        /// <returns></returns>
         public Status ToStatus()
         {
             Effect e = Clone();
             e[isStatus] = "true";
-            e.type = e.GetParam<Types>("effectType");
+            e.type = e.Args.GetEnumParam<Types>("effectType");
 
-            int sc = GetParam("sc");
-            int tc = GetParam("tc");
+            int sc = Args.GetIntParam("sc");
+            int tc = Args.GetIntParam("tc");
             TriggerConditions cd = TriggerConditions.GetTriggerCondition(this);
-            Status.StatType st = GetParam<Status.StatType>(statType);
+            Status.StatType st = Args.GetEnumParam<Status.StatType>(statType);
 
             Status status = new Status(e, tc, sc, st, cd);
             Debug.Log(status);
             return status;
         }
 
+        /// <summary>
+        /// Convert the effect to a status with <paramref name="args"/>
+        /// <para>require parameter of {tc}, {sc}, {effectType}, {statType}</para>
+        /// <para>use when effect is type of addStatus</para>
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public Status ToStatus(params TriggerCondition[] args)
         {
             Effect e = Clone();
             e[isStatus] = "true";
-            e.type = e.GetParam<Types>("effectType");
+            e.type = e.Args.GetEnumParam<Types>("effectType");
 
-            int sc = GetParam("sc");
-            int tc = GetParam("tc");
+            int sc = Args.GetIntParam("sc");
+            int tc = Args.GetIntParam("tc");
             TriggerConditions cd = TriggerConditions.GetTriggerCondition(this); cd.AddRange(args);
-            Status.StatType st = GetParam<Status.StatType>(statType);
+            Status.StatType st = Args.GetEnumParam<Status.StatType>(statType);
 
             Status status = new Status(e, tc, sc, st, cd);
             Debug.Log(status);
@@ -319,9 +331,14 @@ namespace Canute.BattleSystem
         /// <returns>The new effect clone from the original</returns>
         public Effect Clone()
         {
-            Effect effect = new Effect(type, Source, Targets, count, parameter, args);
+            Effect effect = new Effect(type, Source, Targets, count, parameter, args.ToArray());
             effect.SetSpecialName(specialName);
             return effect;
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
         }
 
         public override string ToString()
@@ -356,11 +373,6 @@ namespace Canute.BattleSystem
                 + "Target names: " + GetTargetName() + "\n"
                 + (args is null ? "" : "Args: " + args.ToString());
         }
-
-        object ICloneable.Clone()
-        {
-            return Clone();
-        }
     }
 
     public interface IEffect : INameable
@@ -372,7 +384,7 @@ namespace Canute.BattleSystem
     }
 
     [Serializable]
-    public struct HalfEffect : IEffect
+    public struct HalfEffect : IEffect, ICloneable
     {
         [SerializeField] private Effect.Types type;
         [SerializeField] private string specialName;
@@ -401,6 +413,16 @@ namespace Canute.BattleSystem
             Effect effect = new Effect(Type, count, parameter, args.ToArray());
             effect.SetSpecialName(specialName);
             return effect;
+        }
+
+        public HalfEffect Clone()
+        {
+            return new HalfEffect(specialName, type, count, parameter, args);
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
         }
 
         public static implicit operator Effect(HalfEffect effect)

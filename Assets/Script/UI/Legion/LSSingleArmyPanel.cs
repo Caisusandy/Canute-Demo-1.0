@@ -76,7 +76,7 @@ namespace Canute.UI
 
             damage.text = "A: " + armyItem.MaxDamage.ToString();
             health.text = "H: " + armyItem.MaxHealth.ToString();
-            defense.text = "D: " + armyItem.MaxDefense.ToString();
+            defense.text = "D: " + armyItem.Defense.ToString();
 
             moveRange.text = armyItem.ArmyProperty.MoveRange.ToString();
             attackRange.text = armyItem.ArmyProperty.AttackRange.ToString();

@@ -38,7 +38,7 @@ namespace Canute.BattleSystem
         {
             this.type = type;
             this.career = career;
-            this.prefab = type == Types.eventCard ? GameData.Prefabs.EventCard : GameData.Prefabs.CentralDeckCard;
+            this.prefab = type == Types.eventCard ? GameData.Prefabs.NormalEventCard : GameData.Prefabs.CentralDeckCard;
             name = type.ToString() + "-" + career.ToString();
         }
 
@@ -57,12 +57,33 @@ namespace Canute.BattleSystem
             this.target = targetType;
         }
 
-        public Card(EventCardItem eventCard) : this(Types.eventCard, Career.none, eventCard.Effect.Clone(), eventCard.Prototype.Cost, eventCard.Prototype.Target) { }
-
-        public Card(EventCard eventCard) : this(Types.centerEvent, Career.none, eventCard.EventCardProperty[0].Clone(), eventCard.Cost, eventCard.Target)
+        public Card(EventCardItem eventCard) : this(Types.eventCard, Career.none, eventCard.Effect.Clone(), eventCard.Prototype.Cost, eventCard.Prototype.Target)
         {
-
+            if (type == Types.eventCard)
+            {
+                switch (eventCard.Prototype.CardType)
+                {
+                    case EventCard.Type.@event:
+                        prefab = GameData.Prefabs.NormalEventCard;
+                        break;
+                    case EventCard.Type.building:
+                        prefab = GameData.Prefabs.BuildingEventCard;
+                        break;
+                    case EventCard.Type.dragon:
+                        prefab = GameData.Prefabs.DragonEventCard;
+                        break;
+                    default:
+                        prefab = GameData.Prefabs.NormalEventCard;
+                        break;
+                }
+            }
+            else
+            {
+                this.prefab = GameData.Prefabs.CentralDeckCard;
+            }
         }
+
+        public Card(EventCard eventCard) : this(Types.centerEvent, Career.none, eventCard.EventCardProperty[0].Clone(), eventCard.Cost, eventCard.Target) { }
 
         public bool IsValidTarget(Entity entity)
         {
@@ -133,11 +154,11 @@ namespace Canute.BattleSystem
 
             if (!(statusContainer is null))
             {
-                foreach (var item in statusContainer.StatList.GetByCondition(TriggerCondition.Conditions.playCard).GetAllStatus(Effect.Types.@event, "name:noActionPointRequire"))
+                foreach (var item in statusContainer.StatList.GetAllStatus(Effect.Types.@event, TriggerCondition.Conditions.playCard, "name:noActionPointRequire"))
                     if (item.TriggerConditions.IsValid())
                         return true;
             }
-            foreach (var item in Effect.Source.Owner.StatList.GetByCondition(TriggerCondition.Conditions.playCard).GetAllStatus(Effect.Types.@event, "name:noActionPointRequire"))
+            foreach (var item in Effect.Source.Owner.StatList.GetAllStatus(Effect.Types.@event, TriggerCondition.Conditions.playCard, "name:noActionPointRequire"))
                 if (item.TriggerConditions.IsValid())
                     return true;
 
@@ -221,7 +242,7 @@ namespace Canute.BattleSystem
     {
         public List<HalfEffect> effects;
 
-        public Effect this[int index]
+        public HalfEffect this[int index]
         {
             get => effects[index];
             set => effects[index] = value;

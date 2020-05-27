@@ -227,7 +227,7 @@ namespace Canute.BattleSystem
             {
                 BattleArmy item = Player.BattleArmies[i];
                 Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, TargetType.cellEntity) { Owner = player };
-                card.Effect.SetParam("name", item.Name);
+                card.Effect["name"] = item.Name;
                 ArmyCardEntity.Create(card, item);
             }
 
@@ -240,7 +240,7 @@ namespace Canute.BattleSystem
                 {
                     BattleArmy item = Enemy.BattleArmies[i];
                     Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, TargetType.cellEntity) { Owner = enemy };
-                    card.Effect.SetParam("name", item.Name);
+                    card.Effect["name"] = item.Name;
                     ArmyCardEntity.Create(card, item);
                 }
             }

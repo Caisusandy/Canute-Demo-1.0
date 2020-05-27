@@ -51,6 +51,13 @@ namespace Canute.BattleSystem
         public static Effect LastEffect => Game.CurrentBattle.PassingEffect.Count == 0 ? null : Game.CurrentBattle.PassingEffect[Game.CurrentBattle.PassingEffect.Count - 1];
 
         #region Framework
+        /// <summary>
+        /// Execute a effect pack
+        /// <para>if is a primary effect, it will be recorded</para>
+        /// </summary>
+        /// <param name="effect"></param>
+        /// <param name="isPrimaryEffect"></param>
+        /// <returns></returns>
         public static bool Execute(this Effect effect, bool isPrimaryEffect = true)
         {
             bool result = false;
@@ -144,11 +151,17 @@ namespace Canute.BattleSystem
                     case "damageDecreasePercentage":
                         DamageDecrease(ref sourceEffect, status);
                         break;
+
+
+                    //special
                     case "aircraftFighterReturnPositionRecorder":
                         FighterAircraftChangeReturnPos(ref sourceEffect, status);
                         break;
                     case "aircreaftFighterTowardEnemy":
                         AircreaftFighterTowardEnemy(ref sourceEffect, status);
+                        break;
+                    case "dragonCardAcceptance":
+                        DragonCardAcceptance(ref sourceEffect, status);
                         break;
                     default:
                         status.Execute();
@@ -173,7 +186,7 @@ namespace Canute.BattleSystem
 
 
 
-        public static BattleProperty GetArmyProperty(IBattleableEntityData battleableEntity)
+        public static BattleProperty GetProperty(IBattleableEntityData battleableEntity)
         {
             BattleProperty property = battleableEntity.RawProperties;
 
@@ -181,12 +194,22 @@ namespace Canute.BattleSystem
             {
                 for (int i = 0; i < stat.Effect.Count; i++)
                 {
-                    if (stat.Effect.Type == Effect.Types.propertyBounes)
+                    if (stat.Effect.Type == Effect.Types.propertyBonus)
                     {
-                        property = SinglePropertyBounes(property, stat);
+                        string type = stat.Effect[Effect.propertyBonusType];
+                        if (!Enum.TryParse<PropertyType>(type, out _))
+                        {
+                            property = PropertyBonus(property, stat);
+                        }
+                        else property = SinglePropertyBonus(property, stat);
                     }
                     else if (stat.Effect.Type == Effect.Types.propertyPanalty)
                     {
+                        string type = stat.Effect[Effect.propertyBonusType];
+                        if (!Enum.TryParse<PropertyType>(type, out _))
+                        {
+                            property = PropertyPanalty(property, stat);
+                        }
                         property = SinglePropertyPanalty(property, stat);
                     }
                 }
@@ -194,16 +217,37 @@ namespace Canute.BattleSystem
             return property;
         }
 
-        private static BattleProperty SinglePropertyBounes(BattleProperty property, Status stat)
+        private static BattleProperty PropertyBonus(BattleProperty property, Status stat)
         {
-            PropertyType propertyType = stat.Effect.GetParam<PropertyType>(Effect.propertyBounesType);
-            BounesType bounesType = stat.Effect.GetParam<BounesType>(Effect.bounesType);
+            string type = stat.Effect[Effect.propertyBonusType];
+            switch (type)
+            {
+                case "dragonDefense":
+                    property.Defense *= 8;
+                    break;
+                case "dragonAttack":
+                    property.AttackRange += 2;
+                    property.MoveRange += 2;
+                    break;
+                default:
+                    break;
+            }
+            return property;
+        }
+
+        private static BattleProperty SinglePropertyBonus(BattleProperty property, Status stat)
+        {
+            PropertyType propertyType = stat.Effect.Args.GetEnumParam<PropertyType>(Effect.propertyBonusType);
+            BonusType bounesType = stat.Effect.Args.GetEnumParam<BonusType>(Effect.bonusType);
             var checkTypeValues = Enum.GetValues(typeof(PropertyType));
 
             foreach (PropertyType item in checkTypeValues)
             {
                 switch (propertyType & item)
                 {
+                    case PropertyType.defense:
+                        property.Defense = property.Defense.Bounes(stat.Effect.Parameter, bounesType);
+                        break;
                     case PropertyType.moveRange:
                         property.MoveRange = property.MoveRange.Bounes(stat.Effect.Parameter, bounesType);
                         break;
@@ -226,10 +270,16 @@ namespace Canute.BattleSystem
             return property;
         }
 
+        private static BattleProperty PropertyPanalty(BattleProperty property, Status stat)
+        {
+            string type = stat.Effect[Effect.propertyBonusType];
+            return property;
+        }
+
         private static BattleProperty SinglePropertyPanalty(BattleProperty property, Status stat)
         {
-            PropertyType propertyType = stat.Effect.GetParam<PropertyType>(Effect.propertyBounesType);
-            BounesType bounesType = stat.Effect.GetParam<BounesType>(Effect.bounesType);
+            PropertyType propertyType = stat.Effect.Args.GetEnumParam<PropertyType>(Effect.propertyBonusType);
+            BonusType bounesType = stat.Effect.Args.GetEnumParam<BonusType>(Effect.bonusType);
             var checkTypeValues = Enum.GetValues(typeof(PropertyType));
 
             foreach (PropertyType item in checkTypeValues)
@@ -283,7 +333,7 @@ namespace Canute.BattleSystem
             {
                 if (!(item.Data is IStatusContainer))
                 {
-                    Debug.Log("not a scontainer");
+                    Debug.Log("not a status container");
                     return false;
                 }
             }
@@ -291,6 +341,7 @@ namespace Canute.BattleSystem
             foreach (var item in effect.Targets)
             {
                 IStatusContainer statusContainer = item as IStatusContainer;
+                statusContainer.Trigger(TriggerCondition.Conditions.addingStatus, ref effect);
                 Status status = effect.ToStatus();
                 statusContainer.StatList.Add(status);
             }
@@ -578,36 +629,53 @@ namespace Canute.BattleSystem
             Effect moveToward = new Effect(Effect.Types.@event, source, destination, 1, 0, "name:move");
             var s = moveToward.Execute();
             if (!s) Debug.Log("failed to move");
+
+            CellEntity GetCloseDestination(Entity start, Entity end)
+            {
+                CellEntity pDestination = null;
+                int minDist = 1000;
+                foreach (var item in (end as OnMapEntity).OnCellOf.NearByCells)
+                {
+                    if (!pDestination)
+                    {
+                        pDestination = item;
+                    }
+
+                    if (item.HasArmyStandOn)
+                    {
+                        continue;
+                    }
+
+                    int newDist = (start as OnMapEntity).GetRealDistanceOf(item, start as OnMapEntity);
+                    Debug.Log(newDist);
+                    if (newDist < minDist && newDist != 0)
+                    {
+                        pDestination = item;
+                        minDist = newDist;
+                    }
+                }
+
+                return pDestination;
+            }
         }
 
-        private static CellEntity GetCloseDestination(Entity source, Entity target)
+        private static void DragonCardAcceptance(ref Effect sourceEffect, Status status)
         {
-            CellEntity destination = null;
-            int minDist = 1000;
-            foreach (var item in (target as OnMapEntity).OnCellOf.NearByCells)
+            if (!status.Effect.Args.HasParam("isEffectFromDragon"))
             {
-                if (!destination)
-                {
-                    destination = item;
-                }
-
-                if (item.HasArmyStandOn)
-                {
-                    continue;
-                }
-
-                int newDist = (source as OnMapEntity).GetRealDistanceOf(item, source as OnMapEntity);
-                Debug.Log(newDist);
-                if (newDist < minDist && newDist != 0)
-                {
-                    destination = item;
-                    minDist = newDist;
-                }
+                return;
             }
 
-            return destination;
+            SwitchDragonStatus(sourceEffect);
+            sourceEffect = new Effect(Effect.Types.none, 0, 0);
+
         }
 
+        private static void DragonDualAttack(ref Effect sourceEffect, Status status)
+        {
+            sourceEffect.Count *= 2;
+            sourceEffect.Parameter = (int)(sourceEffect.Parameter * 0.45f);
+        }
 
 
 
@@ -783,6 +851,8 @@ namespace Canute.BattleSystem
                 case "move":
                     result = EventMove(effect);
                     break;
+
+                //special
                 case "aircraftFighterReturn":
                     result = FighterAircraftReturn(effect);
                     break;
@@ -1040,6 +1110,45 @@ namespace Canute.BattleSystem
                 return true;
             }
         }
+
+        private static bool SwitchDragonStatus(Effect effect)
+        {
+            var dragon = effect.Target as ArmyEntity;
+            if (dragon.data.Type != Army.Types.dragon)
+            {
+                return false;
+            }
+
+            Status dragonBonus = dragon.StatList.GetStatus(Effect.Types.propertyBonus, "name:dragonBonus");
+            string stat = dragonBonus.Effect["dragonStatus"];
+            dragon.Remove(dragonBonus);
+
+
+            if (stat == "defense")
+            {
+                dragon.StatList.Add(GetStatusOnFast(dragon));
+            }
+            else
+            {
+                dragon.StatList.Add(GetStatusOnSlow(dragon));
+            }
+
+            return true;
+            Status GetStatusOnFast(ArmyEntity armyEntity)
+            {
+                Effect attack = new Effect(PropertyType.attackRange, BonusType.additive, armyEntity, armyEntity, 1, 2, "name:dragonBonus", "dragonStatus:attack");
+                attack[Effect.propertyBonusType] = "dragonAttack";
+                return new Status(attack, -1, -1, Status.StatType.resonance, true);
+            }
+
+            Status GetStatusOnSlow(ArmyEntity armyEntity)
+            {
+                Effect defense = new Effect(PropertyType.defense, BonusType.percentage, armyEntity, armyEntity, 1, 800, "name:dragonBonus", "dragonStatus:defense");
+                defense[Effect.propertyBonusType] = "dragonDefense";
+                return new Status(defense, -1, -1, Status.StatType.resonance, true);
+            }
+        }
+
         //private static bool CardMinusPoint(Effect effect)
         //{
         //    if (effect.Target is CardEntity)

@@ -2,6 +2,9 @@
 {
     public interface IUUIDLabeled
     {
+        /// <summary>
+        /// UUID of the object
+        /// </summary>
         UUID UUID { get; set; }
     }
     public static class UUIDLabeled

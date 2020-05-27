@@ -33,7 +33,7 @@ namespace Canute.BattleSystem.Armies
 
                 }
             }
-            Effect attack = new Effect(Effect.Types.attack, this, targets, 1, data.GetDamage(), data.SkillPack.Args);
+            Effect attack = new Effect(Effect.Types.attack, this, targets, 1, data.GetDamage(), data.SkillPack.Args.ToArray());
             attack.Execute();
         }
 

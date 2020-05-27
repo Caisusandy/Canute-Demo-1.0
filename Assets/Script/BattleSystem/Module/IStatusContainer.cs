@@ -20,7 +20,7 @@ namespace Canute.BattleSystem
         {
             foreach (IStatusContainer container in Game.CurrentBattle.StatusContainers)
             {
-                StatusList stats = container.StatList.GetByCondition(conditions);
+                StatusList stats = container.StatList.GetAllStatus(conditions);
                 for (int i = stats.Count - 1; i >= 0; i--)
                 {
                     Status stat = stats[i];
@@ -51,7 +51,7 @@ namespace Canute.BattleSystem
 
         public static void Trigger(this IStatusContainer statusContainer, TriggerCondition.Conditions condition, ref Effect effect)
         {
-            StatusList stats = statusContainer.StatList?.GetByCondition(condition);
+            StatusList stats = statusContainer.StatList?.GetAllStatus(condition);
             Debug.Log(condition.ToString() + " triggered. " + statusContainer.Name + "; status count:" + stats.Count);
 
             if (stats is null)
@@ -76,7 +76,7 @@ namespace Canute.BattleSystem
 
         public static void Trigger(this IStatusContainer statusContainer, TriggerCondition.Conditions condition)
         {
-            StatusList stats = statusContainer.StatList?.GetByCondition(condition);
+            StatusList stats = statusContainer.StatList?.GetAllStatus(condition);
             Debug.Log(statusContainer.Name + " triggered its effect in condition of " + condition.ToString() + "; status count:" + stats.Count);
 
             if (stats is null)

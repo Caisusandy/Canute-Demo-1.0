@@ -370,6 +370,46 @@ MonoBehaviour:
       equipments:
         equipmentUUID: []
         equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: ec651cad-f113-4aef-83ae-ea817093f79c
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: 84f0b70f-5b39-4d27-9cf4-ecbf4481890e
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
     leaders:
     - protoName: Aether Erinope
       uuid:

@@ -17,6 +17,8 @@ namespace Canute
         [SerializeField] protected GameObject centralDeckCardPrefab;
         [SerializeField] protected GameObject eventCardPrefab;
         [SerializeField] protected GameObject armyCardPrefab;
+        [SerializeField] protected GameObject dragonEventCardPrefab;
+        [SerializeField] protected GameObject buildingEventCardPrefab;
         [Header("Other")]
         [SerializeField] protected PrefabPairList prefabPairs;
 
@@ -24,8 +26,11 @@ namespace Canute
         public GameObject DefaultBuilding => defaultBuilding;
 
         public GameObject CentralDeckCard => centralDeckCardPrefab;
-        public GameObject EventCard => eventCardPrefab;
+        public GameObject NormalEventCard => eventCardPrefab;
         public GameObject ArmyCard => armyCardPrefab;
+        public GameObject DragonEventCard => dragonEventCardPrefab;
+        public GameObject BuildingEventCard => buildingEventCardPrefab;
+
 
 
         public GameObject Get(string index)

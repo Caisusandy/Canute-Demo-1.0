@@ -8,8 +8,8 @@
         public const string turnCount = "tc";
         public const string statusCount = "sc";
         public const string value = "value";
-        public const string propertyBounesType = "propertyBounes";
-        public const string bounesType = "bounesType";
+        public const string propertyBonusType = "propertyBounes";
+        public const string bonusType = "bonusType";
         public const string triggerCondition = "triggerCondition";
         public const string statType = "statType";
         public const string name = "name";
@@ -31,8 +31,8 @@
 
             createArmy,             //-     create an army on the field 
 
-            propertyBounes,         //param ["bounesType"] ["propertyType"]    a bounes to the properties (not directly add in, but as a status)
-            propertyPanalty,        //param ["bounesType"] ["propertyType"]
+            propertyBonus,         //param ["bonusType"] ["propertyType"]    a bonus to the properties (not directly add in, but as a status)
+            propertyPanalty,        //param ["bonusType"] ["propertyType"]
 
             weather,                //param ["weather"] not impliment right now
 

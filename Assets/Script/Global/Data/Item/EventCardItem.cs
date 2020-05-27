@@ -13,6 +13,5 @@ namespace Canute
         public override Prototype Proto => Prototype;
         public override int Level => 1;
         public Career Career => Prototype.Career;
-
     }
 }

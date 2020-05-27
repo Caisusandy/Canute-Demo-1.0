@@ -100,8 +100,8 @@ namespace Canute.Testing
     {
         private const char parameterSeparator = ',';
 
-        private string name;
-        private CommandParameter[] @params;
+        [SerializeField] private string name;
+        [SerializeField] private CommandParameter[] @params;
 
         public string Name => name;
         public CommandParameter[] Params { get => @params; set => @params = value; }
@@ -174,10 +174,10 @@ namespace Canute.Testing
             json,
         }
 
-        /// <summary> type of the parameter </summary>
-        [SerializeField] private ParameterType type;
         /// <summary> name of the parameter </summary>
         [SerializeField] private string key;
+        /// <summary> type of the parameter </summary>
+        [SerializeField] private ParameterType type;
         /// <summary> default value of the parameter </summary>
         [SerializeField] private string @default;
         /// <summary> default value of the parameter </summary>
@@ -223,6 +223,7 @@ namespace Canute.Testing
         {
             return !(left == right);
         }
+
         private static string Brackets(CommandParameter item, int side)
         {
             string intType = "[]";

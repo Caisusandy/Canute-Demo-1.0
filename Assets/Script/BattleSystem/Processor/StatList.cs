@@ -6,23 +6,16 @@ namespace Canute.BattleSystem
     [Serializable]
     public class StatusList : DataList<Status>
     {
-        public StatusList GetByCondition(TriggerCondition.Conditions conditions)
-        {
-            ClearInvalid();
-            List<Status> stats = new List<Status>();
-            for (int i = 0; i < Count; i++)
-            {
-                Status item = this[i];
-                if (item.TriggerConditions?.HasCondition(conditions) == true)
-                {
-                    stats.Add(item);
-                }
-            }
-            return stats;
-        }
-
+        /// <summary>
+        /// add a status
+        /// </summary>
+        /// <param name="item"></param>
         public override void Add(Status item)
         {
+            if (item.Effect.Type == Effect.Types.none)
+            {
+                return;
+            }
             //Debug.Log("add " + item.ToString());
             foreach (var stat in this)
             {
@@ -37,10 +30,12 @@ namespace Canute.BattleSystem
                 }
             }
             base.Add(item);
+            ClearInvalid();
         }
 
         /// <summary>
-        /// will not clear permanent status and resonance
+        /// Clear the status list
+        /// <para>: will not clear permanent status and resonance</para>
         /// </summary>
         public override void Clear()
         {
@@ -55,6 +50,34 @@ namespace Canute.BattleSystem
                     continue;
                 }
                 RemoveAt(i);
+            }
+        }
+
+        /// <summary>
+        /// Clear the status list
+        /// <para>: clear permanent status and resonance depend on <paramref name="clearPermanent"/></para>
+        /// </summary>
+        /// <param name="clearPermanent"></param>
+        public void Clear(bool clearPermanent = false)
+        {
+            if (clearPermanent)
+            {
+                base.Clear();
+            }
+            else
+            {
+                for (int i = Count - 1; i >= 0; i--)
+                {
+                    if (this[i].IsPermanentStatus)
+                    {
+                        continue;
+                    }
+                    if (this[i].IsResonance)
+                    {
+                        continue;
+                    }
+                    RemoveAt(i);
+                }
             }
         }
 
@@ -91,7 +114,12 @@ namespace Canute.BattleSystem
             return false;
         }
 
-        public List<Status> GetStatus(Effect.Types types)
+        /// <summary>
+        /// Get all status that have <paramref name="types"/>
+        /// </summary>
+        /// <param name="types"></param>
+        /// <returns></returns>
+        public List<Status> GetAllStatus(Effect.Types types)
         {
             StatusList statuses = new StatusList();
             foreach (var item in this)
@@ -104,6 +132,31 @@ namespace Canute.BattleSystem
             return statuses;
         }
 
+        /// <summary>
+        /// Get all status that have <paramref name="conditions"/>
+        /// </summary>
+        /// <param name="conditions"></param>
+        /// <returns></returns>
+        public List<Status> GetAllStatus(TriggerCondition.Conditions conditions)
+        {
+            List<Status> stats = new List<Status>();
+            for (int i = 0; i < Count; i++)
+            {
+                Status item = this[i];
+                if (item.TriggerConditions?.HasCondition(conditions) == true)
+                {
+                    stats.Add(item);
+                }
+            }
+            return stats;
+        }
+
+        /// <summary>
+        /// Get all status that have <paramref name="types"/> and <paramref name="args"/>
+        /// </summary> 
+        /// <param name="types"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public List<Status> GetAllStatus(Effect.Types types, params Arg[] args)
         {
             List<Status> statuses = new List<Status>();
@@ -126,6 +179,140 @@ namespace Canute.BattleSystem
             return statuses;
         }
 
+        /// <summary>
+        /// Get all status that have <paramref name="types"/>, <paramref name="conditions"/>, and <paramref name="args"/>
+        /// </summary> 
+        /// <param name="types"></param>
+        /// <param name="conditions"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public List<Status> GetAllStatus(Effect.Types types, TriggerCondition.Conditions conditions, params Arg[] args)
+        {
+            List<Status> statuses = new List<Status>();
+            foreach (var item in this)
+            {
+                if (item.TriggerConditions?.HasCondition(conditions) != true)
+                {
+                    continue;
+                }
+
+                if (item.Effect.Type == types)
+                {
+                    foreach (var arg in args)
+                    {
+                        if (item.Effect[arg.Key] != arg.Value)
+                        {
+                            goto next;
+                        }
+                    }
+                    statuses.Add(item);
+                }
+                next:
+                continue;
+            }
+            return statuses;
+        }
+
+        /// <summary>
+        /// Get the first status that have <paramref name="types"/>
+        /// </summary>
+        /// <param name="types"></param>
+        /// <returns></returns>
+        public Status GetStatus(Effect.Types types)
+        {
+            foreach (var item in this)
+            {
+                if (item.Effect.Type == types)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Get the first status that have <paramref name="conditions"/>
+        /// </summary>
+        /// <param name="conditions"></param>
+        /// <returns></returns>
+        public Status GetStatus(TriggerCondition.Conditions conditions)
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                Status item = this[i];
+                if (item.TriggerConditions?.HasCondition(conditions) == true)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Get the first status that have <paramref name="types"/> and <paramref name="args"/>
+        /// </summary> 
+        /// <param name="types"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public Status GetStatus(Effect.Types types, params Arg[] args)
+        {
+            foreach (var item in this)
+            {
+                if (item.Effect.Type == types)
+                {
+                    foreach (var arg in args)
+                    {
+                        if (item.Effect[arg.Key] != arg.Value)
+                        {
+                            goto next;
+                        }
+                    }
+                    return item;
+                }
+                next:
+                continue;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Get the first status that have <paramref name="types"/>, <paramref name="conditions"/>, and <paramref name="args"/>
+        /// </summary> 
+        /// <param name="types"></param>
+        /// <param name="conditions"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public Status GetStatus(Effect.Types types, TriggerCondition.Conditions conditions, params Arg[] args)
+        {
+            List<Status> statuses = new List<Status>();
+            foreach (var item in this)
+            {
+                if (item.TriggerConditions?.HasCondition(conditions) != true)
+                {
+                    continue;
+                }
+
+                if (item.Effect.Type == types)
+                {
+                    foreach (var arg in args)
+                    {
+                        if (item.Effect[arg.Key] != arg.Value)
+                        {
+                            goto next;
+                        }
+                    }
+                    return item;
+                }
+                next:
+                continue;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Get all permanent status (the effect that will not be cleared)
+        /// </summary>
+        /// <returns></returns>
         public List<Status> GetAllPermanentStatus()
         {
             List<Status> pStats = new StatusList();
@@ -139,6 +326,10 @@ namespace Canute.BattleSystem
             return pStats;
         }
 
+        /// <summary>
+        /// Get all temporary status (the effect that can be cleared)
+        /// </summary>
+        /// <returns></returns>
         public List<Status> GetAllTemporaryStatus()
         {
             List<Status> pStats = new StatusList();
@@ -152,10 +343,23 @@ namespace Canute.BattleSystem
             return pStats;
         }
 
-        public List<Status> GetAllTags() => GetStatus(Effect.Types.tag);
+        /// <summary>
+        /// Get all status(tag)
+        /// </summary>
+        /// <returns></returns>
+        public List<Status> GetAllTags() => GetAllStatus(Effect.Types.tag);
 
-        public List<Status> GetAllEvent() => GetStatus(Effect.Types.@event);
+        /// <summary>
+        /// Get all status(event)
+        /// </summary>
+        /// <returns></returns>
+        public List<Status> GetAllEvent() => GetAllStatus(Effect.Types.@event);
 
+        /// <summary>
+        /// Return the first status(tag) in the list that matches <paramref name="args"/>
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public Status GetTag(params Arg[] args)
         {
             foreach (var item in GetAllTags())
@@ -163,26 +367,7 @@ namespace Canute.BattleSystem
                 bool match = true;
                 foreach (var arg in args)
                 {
-                    if (!item.Effect.HasParam(arg.Key, arg.Value))
-                    {
-                        match = false;
-                    }
-                }
-                if (match)
-                {
-                    return item;
-                }
-            }
-            return default;
-        }
-        public Status GetEvent(params Arg[] args)
-        {
-            foreach (var item in GetAllEvent())
-            {
-                bool match = true;
-                foreach (var arg in args)
-                {
-                    if (!item.Effect.HasParam(arg.Key, arg.Value))
+                    if (!item.Effect.Args.HasParam(arg.Key, arg.Value))
                     {
                         match = false;
                     }
@@ -195,9 +380,29 @@ namespace Canute.BattleSystem
             return default;
         }
 
-        public void TotalClear()
+        /// <summary>
+        /// Return the first status(event) in the list that matches <paramref name="args"/>
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public Status GetEvent(params Arg[] args)
         {
-            base.Clear();
+            foreach (var item in GetAllEvent())
+            {
+                bool match = true;
+                foreach (Arg arg in args)
+                {
+                    if (!item.Effect.Args.HasParam(arg.Key, arg.Value))
+                    {
+                        match = false;
+                    }
+                }
+                if (match)
+                {
+                    return item;
+                }
+            }
+            return default;
         }
 
         public void ClearInvalid()
@@ -224,7 +429,7 @@ namespace Canute.BattleSystem
 
         public bool HasCondition(TriggerCondition.Conditions conditions)
         {
-            return !(GetByCondition(conditions) is null);
+            return !(GetAllStatus(conditions) is null);
         }
 
 

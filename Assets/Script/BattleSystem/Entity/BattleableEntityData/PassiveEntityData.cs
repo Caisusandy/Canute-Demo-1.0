@@ -97,7 +97,6 @@ namespace Canute.BattleSystem
         int Armor { get; set; }
         /// <summary>  </summary>
         float HealthPercent { get; }
-        bool CanBeTargeted { get; set; }
     }
 
     public static class PassiveEntitiesData

@@ -7,12 +7,12 @@ namespace Canute.BattleSystem
     public struct PropertyBounes
     {
         [SerializeField] private PropertyType type;
-        [SerializeField] private BounesType bounesType;
+        [SerializeField] private BonusType bounesType;
         [SerializeField] private float value;
         [SerializeField] private float growth;
 
         public PropertyType Type => type;
-        public BounesType BounesType => bounesType;
+        public BonusType BounesType => bounesType;
         public int GetValue(int level) => (int)(Mathf.Pow(1 + growth / 100, level) * value);
 
         public static bool operator ==(PropertyBounes a, PropertyBounes b)
@@ -25,7 +25,7 @@ namespace Canute.BattleSystem
             return !(a == b);
         }
 
-        public PropertyBounes(PropertyType type, BounesType bounesType, int value, float growth)
+        public PropertyBounes(PropertyType type, BonusType bounesType, int value, float growth)
         {
             this.type = type;
             this.bounesType = bounesType;

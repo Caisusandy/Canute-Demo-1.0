@@ -18,7 +18,7 @@ namespace Canute.BattleSystem
 
         public Career Career => !IsNullOrEmpty(localLeader) ? (LocalLeader.Career != Career.none ? LocalLeader.Career : career) : career;
         public virtual BattleProperty RawProperties => properties;
-        public virtual BattleProperty Properties => EffectExecute.GetArmyProperty(this);
+        public virtual BattleProperty Properties => EffectExecute.GetProperty(this);
         public virtual BattleProperty.Position StandPosition => Properties.StandPosition;
 
 

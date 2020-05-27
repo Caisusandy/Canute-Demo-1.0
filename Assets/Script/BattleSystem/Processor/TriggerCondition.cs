@@ -10,6 +10,11 @@ namespace Canute.BattleSystem
     [Serializable]
     public class TriggerCondition : Args, INameable, ICloneable, IEquatable<TriggerCondition>
     {
+        /// <summary>
+        /// has Status
+        /// </summary>
+        public const string HasStatus = "hasStatus";
+
         public enum Conditions
         {
             /// <summary> When turn begin </summary> 
@@ -20,18 +25,20 @@ namespace Canute.BattleSystem
             playCard,
             /// <summary> When moved </summary>
             move,
-            /// <summary> attack(When attack just begin) </summary>
+            /// <summary> When attack(When attack just begin) </summary>
             beforeAttack,
-            /// <summary> attack(When tried changes attack's value) </summary>
+            /// <summary> When attack(When tried changes attack's value) </summary>
             attack,
-            /// <summary> defense(When tried changes attack's value) </summary>
+            /// <summary> When defense(When tried changes attack's value) </summary>
             defense,
-            /// <summary> defense(When attack ended) </summary>
+            /// <summary> When defense(When attack ended) </summary>
             afterDefence,
             /// <summary> when entity arrive a cell </summary>
             entityArrive,
             /// <summary> when entity leave a cell </summary>
             entityLeft,
+            /// <summary> when entity is adding status </summary>
+            addingStatus,
         }
 
         public enum ConditionGroups
@@ -126,6 +133,8 @@ namespace Canute.BattleSystem
         public static TriggerCondition OnTurnBegin => new TriggerCondition(Conditions.turnBegin, true, ConditionGroups.or);
         /// <summary> when turn end </summary>
         public static TriggerCondition OnTurnEnd => new TriggerCondition(Conditions.turnEnd, true, ConditionGroups.or);
+        /// <summary> when turn end </summary>
+        public static TriggerCondition OnAddingStatus => new TriggerCondition(Conditions.addingStatus, true, ConditionGroups.or);
         public static TriggerCondition Parse(Arg arg)
         {
             return (TriggerCondition)arg;
@@ -304,10 +313,10 @@ namespace Canute.BattleSystem
                 switch (item.Group)
                 {
                     case TriggerCondition.ConditionGroups.and:
-                        andGroup = andGroup && (item.IsValid() == item.ExpectValue);
+                        andGroup = andGroup && result;
                         break;
                     case TriggerCondition.ConditionGroups.or:
-                        orGroup = orGroup || (item.IsValid() == item.ExpectValue);
+                        orGroup = orGroup || result;
                         break;
                 }
             }
@@ -321,32 +330,48 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         public static bool IsValid(this TriggerCondition condition, Effect refEffect = null)
         {
+            bool ans = false;
             switch (condition.Condition)
             {
                 //These conditions will be require a specific check
                 case TriggerCondition.Conditions.turnBegin:
-                    return IsTurnBegin();
+                    ans = IsTurnBegin();
+                    break;
                 case TriggerCondition.Conditions.turnEnd:
-                    return IsTurnEnd();
+                    ans = IsTurnEnd();
+                    break;
                 case TriggerCondition.Conditions.playCard:
-                    return IsPlayingCard(condition);
+                    ans = IsPlayingCard(condition);
+                    break;
                 case TriggerCondition.Conditions.entityArrive:
-                    return IsEntityArriving(refEffect);
+                    ans = IsEntityArriving(refEffect);
+                    break;
                 case TriggerCondition.Conditions.entityLeft:
-                    return IsEntityLeaving(refEffect);
+                    ans = IsEntityLeaving(refEffect);
+                    break;
                 //These conditions will be automatically recognize when the time is right
                 case TriggerCondition.Conditions.beforeAttack:
                 case TriggerCondition.Conditions.attack:
                 case TriggerCondition.Conditions.defense:
                 case TriggerCondition.Conditions.afterDefence:
-                    return IsAttacking(refEffect);
+                    ans = IsAttacking(refEffect);
+                    break;
                 case TriggerCondition.Conditions.move:
-                    return IsMoving(refEffect);
+                    ans = IsMoving(refEffect);
+                    break;
+                case TriggerCondition.Conditions.addingStatus:
+                    ans = IsAddingStatus(refEffect);
+                    break;
                 default:
                     break;
             }
 
-            return false;
+            return ans;
+        }
+
+        private static bool IsAddingStatus(Effect refEffect)
+        {
+            return refEffect.Type == Effect.Types.addStatus;
         }
 
         private static bool IsMoving(Effect refEffect)

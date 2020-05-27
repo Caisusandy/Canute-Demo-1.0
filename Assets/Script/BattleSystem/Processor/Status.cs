@@ -28,24 +28,47 @@ namespace Canute.BattleSystem
         [SerializeField] private StatType type;
         [SerializeField] private bool showToPlayer;
 
-
+        /// <summary> effect in the status </summary>
         public Effect Effect { get => effect; set => effect = value; }
+        /// <summary> Trigger Conditions of the status </summary>
         public TriggerConditions TriggerConditions { get => triggerConditions; set => triggerConditions = value; }
+        /// <summary> turn count of the status </summary>
         public int TurnCount { get => turnCount; set => turnCount = value; }
+        /// <summary> count of the status </summary>
         public int StatCount { get => statCount; set => statCount = value; }
+        /// <summary> status count type of the status </summary>
         public StatType Type { get => type; set => type = value; }
+        /// <summary> show status to player in the status </summary>
         public bool ShowToPlayer { get => showToPlayer; set => showToPlayer = value; }
 
+
+        /// <summary> is status a resonance </summary>
         public bool IsResonance => type == StatType.resonance;
+        /// <summary> is status permanent </summary>
         public bool IsPermanentStatus => type == StatType.perminant;
+        /// <summary> is status base on turn </summary>
         public bool IsBaseOnTurn => type == StatType.turnBase;
+        /// <summary> is status base on count </summary>
         public bool IsBaseOnCount => type == StatType.countBase;
+        /// <summary> is status base on turn & count </summary>
         public bool IsDualBase => type == StatType.dualBase;
+        /// <summary> is status run out </summary>
         public bool NoMore => !HasMore();
         public UUID UUID { get => Effect.UUID; set => Effect.UUID = value; }
+        /// <summary>
+        /// Name of the status
+        /// </summary>
         public string Name => Effect.Name;
 
-
+        /// <summary>
+        /// Check two status similarity
+        /// <para>status is similar when:</para>
+        /// <para>1. statuses is base on the same count system</para>
+        /// <para>2. statuses' effect is similar to each other</para>
+        /// <para>3. statuses' have same trigger condition</para>
+        /// </summary>
+        /// <param name="other">other status</param>
+        /// <returns></returns>
         public bool SimilarTo(Status other)
         {
             bool sameCount = ((IsBaseOnCount == other.IsBaseOnCount == true) || (IsBaseOnTurn == other.IsBaseOnTurn == true) || (IsDualBase == other.IsDualBase == true)) && !IsPermanentStatus && !other.IsPermanentStatus;
@@ -55,7 +78,7 @@ namespace Canute.BattleSystem
         public Status(Effect e, bool showToPlayer = true)
         {
             this.effect = e;
-            this.effect.SetParam(Effect.isStatus, "true");
+            this.effect[Effect.isStatus] = "true";
             this.showToPlayer = showToPlayer;
         }
 
@@ -87,8 +110,25 @@ namespace Canute.BattleSystem
             return status?.Effect;
         }
 
+        private bool HasMore()
+        {
+            switch (type)
+            {
+                case StatType.turnBase:
+                    return TurnCount > 0;
+                case StatType.countBase:
+                    return StatCount > 0;
+                case StatType.dualBase:
+                    return StatCount > 0 && TurnCount > 0;
+                case StatType.perminant:
+                case StatType.resonance:
+                    return true;
+                default: return false;
+            }
+        }
+
         /// <summary>
-        /// 
+        /// Merge two status together
         /// </summary>
         /// <param name="other"></param>
         /// <returns>Whether merge is successful or not</returns>
@@ -122,9 +162,14 @@ namespace Canute.BattleSystem
             return false;
         }
 
-        public object Clone()
+        public Status Clone()
         {
             return new Status(Effect.Clone(), TurnCount, StatCount, Type, TriggerConditions.Clone() as TriggerConditions);
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
         }
 
         public override string ToString()
@@ -139,22 +184,6 @@ namespace Canute.BattleSystem
                 Effect?.ToString();
         }
 
-        private bool HasMore()
-        {
-            switch (type)
-            {
-                case StatType.turnBase:
-                    return TurnCount > 0;
-                case StatType.countBase:
-                    return StatCount > 0;
-                case StatType.dualBase:
-                    return StatCount > 0 && TurnCount > 0;
-                case StatType.perminant:
-                case StatType.resonance:
-                    return true;
-                default: return false;
-            }
-        }
     }
 
     [Serializable]

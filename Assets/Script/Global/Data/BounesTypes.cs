@@ -1,6 +1,6 @@
 ﻿namespace Canute.BattleSystem
 {
-    public enum BounesType
+    public enum BonusType
     {
         /// <summary>
         /// a + b

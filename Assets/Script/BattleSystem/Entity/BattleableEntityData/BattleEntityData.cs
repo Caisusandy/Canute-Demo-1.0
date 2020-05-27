@@ -11,18 +11,15 @@ namespace Canute.BattleSystem
     {
         [Tooltip("军队最大血量")] [SerializeField] protected int maxHealth;
         [Tooltip("军队当前血量")] [SerializeField] protected int health;
-        [Tooltip("防御值")] [SerializeField] protected int defense;
         [Tooltip("护甲值")] [SerializeField] protected int armor;
         [Tooltip("攻击值")] [SerializeField] protected int damage;
-        [Tooltip("可被攻击")] [SerializeField] protected bool canBeTargeted;
 
         public virtual int MaxHealth => maxHealth;
-        public virtual int Defense => defense;
+        public virtual int Defense => (int)Properties.Defense;
         public virtual int RawDamage => damage;
         public virtual float HealthPercent => ((float)health) / MaxHealth;
         public virtual int Health { get => health; set => health = value < 0 ? 0 : (value > MaxHealth ? MaxHealth : value); }
         public virtual int Armor { get => armor; set => armor = value < 0 ? 0 : (value > MaxHealth ? MaxHealth : value); }
-        public virtual bool CanBeTargeted { get => canBeTargeted; set => canBeTargeted = value; }
 
         public virtual int Damage => this.GetDamage();
 
@@ -78,7 +75,7 @@ namespace Canute.BattleSystem
                         maxHealth = property.Bounes(maxHealth, item.Level);
                         break;
                     case PropertyType.defense:
-                        defense = property.Bounes(defense, item.Level);
+                        properties.Defense = property.Bounes(properties.Defense, item.Level);
                         break;
                     case PropertyType.moveRange:
                         properties.MoveRange = property.Bounes(properties.MoveRange, item.Level);
@@ -121,7 +118,7 @@ namespace Canute.BattleSystem
                         maxHealth = property.RemoveBounes(maxHealth, item.Level);
                         break;
                     case PropertyType.defense:
-                        defense = property.RemoveBounes(defense, item.Level);
+                        properties.Defense = property.Bounes(properties.Defense, item.Level);
                         break;
                     case PropertyType.attackRange:
                         properties.AttackRange = property.RemoveBounes(properties.AttackRange, item.Level);
@@ -152,108 +149,108 @@ namespace Canute.BattleSystem
 
     public static class EntityDatas
     {
-        public static int Bounes(this int @base, int rate, BounesType type = BounesType.percentage)
+        public static int Bounes(this int @base, int rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
-                case BounesType.percentage:
+                case BonusType.percentage:
                     return (int)(@base * (1 + rate / 100d));
-                case BounesType.additive:
+                case BonusType.additive:
                     return (int)(@base + rate);
                 default:
-                    goto case BounesType.additive;
+                    goto case BonusType.additive;
             }
         }
 
-        public static int Bounes(this int @base, double rate, BounesType type = BounesType.percentage)
+        public static int Bounes(this int @base, double rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
-                case BounesType.percentage:
+                case BonusType.percentage:
                     return (int)(@base * (1 + rate / 100d));
-                case BounesType.additive:
+                case BonusType.additive:
                     return (int)(@base + rate);
                 default:
-                    goto case BounesType.additive;
+                    goto case BonusType.additive;
             }
         }
 
-        public static int Bounes(this double @base, int rate, BounesType type = BounesType.percentage)
+        public static int Bounes(this double @base, int rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
-                case BounesType.percentage:
+                case BonusType.percentage:
                     return (int)(@base * (1 + rate / 100d));
-                case BounesType.additive:
+                case BonusType.additive:
                     return (int)(@base + rate);
                 default:
-                    goto case BounesType.additive;
+                    goto case BonusType.additive;
             }
         }
 
-        public static int Bounes(this double @base, double rate, BounesType type = BounesType.percentage)
+        public static int Bounes(this double @base, double rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
-                case BounesType.percentage:
+                case BonusType.percentage:
                     return (int)(@base * (1 + rate / 100d));
-                case BounesType.additive:
+                case BonusType.additive:
                     return (int)(@base + rate);
                 default:
-                    goto case BounesType.additive;
+                    goto case BonusType.additive;
             }
         }
 
-        public static int RemoveBounes(this int @base, int rate, BounesType type = BounesType.percentage)
+        public static int RemoveBounes(this int @base, int rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
-                case BounesType.percentage:
+                case BonusType.percentage:
                     return (int)(@base / (1 + rate / 100d));
-                case BounesType.additive:
+                case BonusType.additive:
                     return (int)(@base - rate);
                 default:
-                    goto case BounesType.additive;
+                    goto case BonusType.additive;
             }
         }
 
-        public static int RemoveBounes(this int @base, double rate, BounesType type = BounesType.percentage)
+        public static int RemoveBounes(this int @base, double rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
-                case BounesType.percentage:
+                case BonusType.percentage:
                     return (int)(@base / (1 + rate / 100d));
-                case BounesType.additive:
+                case BonusType.additive:
                     return (int)(@base - rate);
                 default:
-                    goto case BounesType.additive;
+                    goto case BonusType.additive;
             }
         }
 
-        public static int RemoveBounes(this double @base, int rate, BounesType type = BounesType.percentage)
+        public static int RemoveBounes(this double @base, int rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
-                case BounesType.percentage:
+                case BonusType.percentage:
                     return (int)(@base / (1 + rate / 100d));
-                case BounesType.additive:
+                case BonusType.additive:
                     return (int)(@base - rate);
                 default:
-                    goto case BounesType.additive;
+                    goto case BonusType.additive;
             }
         }
 
-        public static int RemoveBounes(this double @base, double rate, BounesType type = BounesType.percentage)
+        public static int RemoveBounes(this double @base, double rate, BonusType type = BonusType.percentage)
         {
             Debug.Log(@base + "-" + rate);
             switch (type)
             {
-                case BounesType.percentage:
+                case BonusType.percentage:
                     return (int)(@base / (1 + rate / 100d));
-                case BounesType.additive:
+                case BonusType.additive:
                     return (int)(@base - rate);
                 default:
-                    goto case BounesType.additive;
+                    goto case BonusType.additive;
             }
         }
     }

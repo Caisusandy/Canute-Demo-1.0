@@ -8,6 +8,16 @@ namespace Canute.BattleSystem
     [Serializable]
     public class Resonance : Status
     {
+        [Flags]
+        public enum ResonanceTarget
+        {
+            selfType = 1,
+            legion = 2,
+            player = 4,
+            landArmy = 8,
+            airArmy = 16
+        }
+
         public Resonance(Effect e) : base(e, -1, -1, StatType.resonance) { }
         public Resonance(Effect e, TriggerConditions tc) : base(e, -1, -1, StatType.resonance, tc) { }
         public Resonance(Effect e, TriggerCondition tc) : base(e, -1, -1, StatType.resonance, tc) { }
@@ -47,13 +57,66 @@ namespace Canute.BattleSystem
                 }
             }
 
-            foreach ((BattleArmy army, Resonance item) in from army in battleArmies
-                                                          from item in GameData.ResonanceSheet.GetResonance(army.Type, resonanceInfo[army.Type])
-                                                          select (army, item))
+            foreach (var info in resonanceInfo)
             {
-                item.Effect.SetSource(army);
-                item.Effect.SetTarget(army);
-                army.StatList.Add(item);
+                foreach (var resonancePair in GameData.ResonanceSheet.GetResonance(info.Key, info.Value))
+                {
+                    Resonance resonance = resonancePair.Resonance;
+                    switch (resonancePair.Target)
+                    {
+                        case ResonanceTarget.selfType:
+                            foreach (var army in battleArmies)
+                            {
+                                if (army.Type != resonancePair.ArmyType)
+                                {
+                                    continue;
+                                }
+                                resonance.Effect.SetSource(army);
+                                resonance.Effect.SetTarget(army);
+                                army.StatList.Add(resonance);
+                            }
+                            break;
+                        case ResonanceTarget.legion:
+                            foreach (var army in battleArmies)
+                            {
+                                resonance.Effect.SetSource(army);
+                                resonance.Effect.SetTarget(army);
+                                army.StatList.Add(resonance);
+                            }
+                            break;
+                        case ResonanceTarget.player:
+                            resonance.Effect.SetSource(battleArmies[0].Owner.Entity);
+                            resonance.Effect.SetTarget(battleArmies[0].Owner.Entity);
+                            battleArmies[0].Owner.StatList.Add(resonance);
+                            break;
+                        case ResonanceTarget.landArmy:
+                            foreach (var battleArmy in battleArmies)
+                            {
+                                if (battleArmy.StandPosition != BattleProperty.Position.land)
+                                {
+                                    continue;
+                                }
+                                resonance.Effect.SetSource(battleArmy);
+                                resonance.Effect.SetTarget(battleArmy);
+                                battleArmy.StatList.Add(resonance);
+                            }
+                            break;
+                        case ResonanceTarget.airArmy:
+                            foreach (var battleArmy in battleArmies)
+                            {
+                                if (battleArmy.StandPosition != BattleProperty.Position.air)
+                                {
+                                    continue;
+                                }
+                                resonance.Effect.SetSource(battleArmy);
+                                resonance.Effect.SetTarget(battleArmy);
+                                battleArmy.StatList.Add(resonance);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
         }
     }
