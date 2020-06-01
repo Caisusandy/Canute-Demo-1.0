@@ -12,11 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9da5f2bfa868b409e19743ad430374, type: 3}
   m_Name: Game
   m_EditorClassIdentifier: 
+  version:
+    major: 0
+    minor: 0
+    build: 0
+    revision: 0
+  prototypeFactory: {fileID: 11400000, guid: ee95c71a6e8e34e4a89f10073d0bc405, type: 2}
+  entityPrefabs: {fileID: 11400000, guid: 934f48eb78b90474e9826f8a953f0d94, type: 2}
+  spriteLoader: {fileID: 11400000, guid: 4bd7520eeb39dfa489ff77c9e2981688, type: 2}
+  technology: {fileID: 11400000, guid: fcfd1f70776947b41bb5db362bb87846, type: 2}
+  shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
+  levelStart: {fileID: 11400000, guid: dc6a04b2b485dfc439489ed59b0f9e62, type: 2}
+  chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
+  stories: {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
+  language: {fileID: 11400000, guid: 16f3df5f3ea0e0e459b5991cd466258a, type: 2}
+  resonanceSheet: {fileID: 11400000, guid: 2b9677566fe85b94f863baa16160a92c, type: 2}
+  storyPacks:
+    list:
+    - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
   data:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/5/23 20:30:56
+      value: 2020/6/1 8:32:41
     federgram: 0
     manpower: 1000000
     mantleAlloy: 1000000
@@ -24,9 +42,9 @@ MonoBehaviour:
     aethium: 1000000
     legions:
     - armiesUUID:
-      - value: 2537f87a-0b5c-400e-be78-5568373e63bf
-      - value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
-      - value: 25ee4ff2-2f46-496a-a119-a4f9c55c277d
+      - value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+      - value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
+      - value: ec651cad-f113-4aef-83ae-ea817093f79c
       - value: 826c6717-7099-4429-a4fe-93a427845a31
       - value: 5471b989-7bb1-4a99-82cf-9822db0d954a
     - armiesUUID:
@@ -458,16 +476,25 @@ MonoBehaviour:
         value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
       exp: 0
       floatExp: 0
+      level: 0
     - protoName: Trick
       uuid:
         value: f67edbd2-19ab-4297-8696-330f63af2b48
       exp: 0
       floatExp: 0
+      level: 0
     - protoName: Oppotunity
       uuid:
         value: 275c835b-f1bb-4fa4-be54-b6ad43e45595
       exp: 0
       floatExp: 0
+      level: 0
+    - protoName: addActionPoint
+      uuid:
+        value: 9a5f367a-319b-4c5e-9ad5-ce605e5f6452
+      exp: 0
+      floatExp: 0
+      level: 2
     gameProgree:
       list: []
     gameStatistic:
@@ -476,21 +503,3 @@ MonoBehaviour:
       - T2
       equipmentsUnlocked: []
       leadersUnlocked: []
-  version:
-    major: 0
-    minor: 0
-    build: 0
-    revision: 0
-  prototypeFactory: {fileID: 11400000, guid: ee95c71a6e8e34e4a89f10073d0bc405, type: 2}
-  entityPrefabs: {fileID: 11400000, guid: 934f48eb78b90474e9826f8a953f0d94, type: 2}
-  spriteLoader: {fileID: 11400000, guid: 4bd7520eeb39dfa489ff77c9e2981688, type: 2}
-  technology: {fileID: 11400000, guid: fcfd1f70776947b41bb5db362bb87846, type: 2}
-  shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
-  levelStart: {fileID: 11400000, guid: dc6a04b2b485dfc439489ed59b0f9e62, type: 2}
-  chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
-  stories: {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
-  language: {fileID: 11400000, guid: 16f3df5f3ea0e0e459b5991cd466258a, type: 2}
-  resonanceSheet: {fileID: 11400000, guid: 2b9677566fe85b94f863baa16160a92c, type: 2}
-  storyPacks:
-    list:
-    - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}

@@ -204,7 +204,11 @@ namespace Canute.BattleSystem
                 }
 
                 ArmyEntity possibleTarget = cellEntity.transform.Find("Army").GetComponent<ArmyEntity>();
-                if ((possibleTarget.data.StandPosition & armyEntity.data.AttackPosition) == BattleProperty.Position.none)
+                bool v = (possibleTarget.data.StandPosition & armyEntity.data.AttackPosition) == BattleProperty.Position.none;
+                //Debug.Log(possibleTarget.data.StandPosition);
+                //Debug.Log(armyEntity.data.AttackPosition);
+                //Debug.Log(v);
+                if (v)
                 {
                     cellEntities.RemoveAt(i);
                     continue;

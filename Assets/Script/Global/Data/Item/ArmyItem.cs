@@ -34,8 +34,8 @@ namespace Canute
         private BattleProperty PrototypeProperty => Prototype.Properties[Star - 1];
 
 
-        public int MaxHealth => Prototype.Health.Bounes(LevelBounes);
-        public int MaxDamage => Prototype.Damage.Bounes(LevelBounes);
+        public int MaxHealth => Prototype.Health.Bonus(LevelBounes);
+        public int MaxDamage => Prototype.Damage.Bonus(LevelBounes);
 
         public new Army.Types Type => Prototype.Type;
         public Career Career => Prototype.Career;
@@ -43,7 +43,7 @@ namespace Canute
 
 
 
-        public int Defense => PrototypeProperty.Defense.Bounes(LevelBounes);
+        public int Defense => PrototypeProperty.Defense.Bonus(LevelBounes);
         public double CritRate => PrototypeProperty.CritRate;
         public double CritBounes => PrototypeProperty.CritBounes;
         public int AttackRange => PrototypeProperty.AttackRange;

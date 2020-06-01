@@ -24,10 +24,11 @@ MonoBehaviour:
     targetTypes: 1
     career: 0
     eventCardProperty:
-      effects:
-      - type: 12
-        specialName: Oppotunity
-        count: 1
-        parameter: 3
-        args:
-          args: []
+      properties:
+      - effect:
+          type: 12
+          specialName: Oppotunity
+          count: 1
+          parameter: 3
+          args:
+            args: []

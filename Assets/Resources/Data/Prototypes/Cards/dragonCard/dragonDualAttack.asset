@@ -18,29 +18,37 @@ MonoBehaviour:
     icon: {fileID: 0}
     sprite: {fileID: 0}
     protrait: {fileID: 0}
-    prefab: {fileID: 0}
+    prefab: {fileID: 4382801775652925750, guid: 7f8b6b23fb7522d4c9a5ae8a73a9816a,
+      type: 3}
     count: 1
-    cost: 1
-    targetTypes: 384
     cardType: 2
     career: 0
     eventCardProperty:
-      effects:
-      - type: 11
-        specialName: addDragonDualAttack
-        count: 1
-        parameter: 0
-        args:
+      properties:
+      - targetTypes: 8
+        cost: 1
+        effect:
+          type: 11
+          specialName: addDragonDualAttack
+          count: 1
+          parameter: 0
           args:
-          - key: effectType
-            value: effectRelated
-          - key: tc
-            value: -1
-          - key: sc
-            value: 1
-          - key: statType
-            value: turnBase
-          - key: name
-            value: dragonDualAttack
-          - key: isEffectFromDragon
-            value: true
+            args:
+            - key: effectType
+              value: effectRelated
+            - key: tc
+              value: 1
+            - key: sc
+              value: -1
+            - key: statType
+              value: turnBase
+            - key: name
+              value: dragonDualAttack
+            - key: specialName
+              value: dragonDualAttack
+            - key: propertyBonus
+              value: dragonDualAttack
+            - key: onAttack
+              value: true
+            - key: isEffectFromDragon
+              value: true

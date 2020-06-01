@@ -85,7 +85,7 @@ namespace Canute.BattleSystem.AI
 
             yield return Sleep(1);
 
-            bool success = effect.Execute();
+            bool success = effect.Execute(true);
             if (success)
             {
                 Owner.RemoveHandCard(card);

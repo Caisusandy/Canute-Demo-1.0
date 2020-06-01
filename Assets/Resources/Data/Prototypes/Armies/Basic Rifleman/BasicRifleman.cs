@@ -52,10 +52,12 @@ namespace Canute.BattleSystem.Armies
             {
                 IPassiveEntity target = item as IPassiveEntity;
                 int d = GetPointDistanceOf(target as OnMapEntity);
-                double damageDecayPerLevel = 0.8 / (data.Properties.AttackRange - 1);
+                double damageDecayPerLevel = 0.8 / (2 * data.Properties.AttackRange - 1);
                 for (int i = 0; i < effect.Count; i++)
                 {
-                    AttackAction(target, (int)(effect.Parameter * damageDecayPerLevel * (data.Properties.AttackRange - d)));
+                    Debug.Log(effect.Parameter);
+                    Debug.Log((int)(effect.Parameter * (0.2 + damageDecayPerLevel * (2 * data.Properties.AttackRange - d))));
+                    AttackAction(target, (int)(effect.Parameter * (0.2 + damageDecayPerLevel * (2 * data.Properties.AttackRange - d))));
                 }
             }
         }
@@ -64,14 +66,14 @@ namespace Canute.BattleSystem.Armies
         {
             IEnumerable<Entity> entities = effect.Targets;
 
-            Vector2Int d = (effect.Target as OnMapEntity).Coordinate - Coordinate;
+            Vector3Int d = (effect.Target as OnMapEntity).HexCoord - HexCoord;
 
             var cellEntities = Game.CurrentBattle.MapEntity.GetRay(OnCellOf, (effect.Target as OnMapEntity).OnCellOf);
             Debug.Log("Cell Count: " + cellEntities.Count);
 
             foreach (var item in cellEntities)
             {
-                if (item.GetPointDistanceOf(this) > 2 * data.Properties.AttackRange)
+                if (item.GetPointDistanceOf(this) > (2 * data.Properties.AttackRange))
                 {
                     continue;
                 }
@@ -85,7 +87,7 @@ namespace Canute.BattleSystem.Armies
             {
                 try
                 {
-                    CellEntity item = Game.CurrentBattle.MapEntity[Coordinate + d * i];
+                    CellEntity item = Game.CurrentBattle.MapEntity[HexCoord + d * i];
                     if (item.GetPointDistanceOf(this) > 2 * data.Properties.AttackRange)
                     {
                         break;
@@ -106,6 +108,10 @@ namespace Canute.BattleSystem.Armies
 
             int GetCommonDivisor(int num1, int num2)
             {
+                if (num1 == 0 || num2 == 0)
+                {
+                    return 1;
+                }
                 //辗转相除法
                 int remainder = 0;
                 while (num1 % num2 > 0)

@@ -186,16 +186,15 @@ namespace Canute.BattleSystem
         public virtual void Hurt(params object[] vs)
         {
             int damage = (int)vs[0];
-            var damageSource = vs[1] as IAggressiveEntity;
+            IAggressiveEntity damageSource;
+            try { damageSource = vs[1] as IAggressiveEntity; }
+            catch { damageSource = null; }
 
             if (damageSource is null)
-            {
                 this.Damage(damage);
-            }
             else
-            {
                 this.Damage(damage, damageSource);
-            }
+
 
             InPerformingAnimation();
             animator.SetBool(isDefencing, true);

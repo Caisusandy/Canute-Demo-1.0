@@ -12,6 +12,11 @@ namespace Canute.BattleSystem
         /// <param name="item"></param>
         public override void Add(Status item)
         {
+            if (item is null)
+            {
+                return;
+            }
+
             if (item.Effect.Type == Effect.Types.none)
             {
                 return;
@@ -27,6 +32,10 @@ namespace Canute.BattleSystem
                         Debug.LogWarning("Trying to merge 2 status result a failure " + stat.ToString() + "\n" + item.ToString());
                     }
                     return;
+                }
+                else
+                {
+                    Debug.Log("Not similar");
                 }
             }
             base.Add(item);

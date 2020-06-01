@@ -21,10 +21,7 @@ namespace Canute
     //[CreateAssetMenu(fileName = "Game Data", menuName = "Game Data/Main", order = 1)]
     public class GameData : ScriptableObject
     {
-        [ContextMenuItem("Save", "SavePlayerFile")]
-        public Data data;
         public static GameData instance;
-
         [Header("Version")]
         [SerializeField] protected CanuteVersion version;
         //[Header("Current Player Data")]
@@ -44,6 +41,9 @@ namespace Canute
         [Header("Story Packs")]
         [SerializeField] protected StoryPacks storyPacks;
 
+        [ContextMenuItem("Save", "SavePlayerFile")]
+        [Header("Player File (please save after edit)")]
+        public Data data;
 
 
         /// <summary> 原型工厂，访问所有游戏内物品的原型 </summary>

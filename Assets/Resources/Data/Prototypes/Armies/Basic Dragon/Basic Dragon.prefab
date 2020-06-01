@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acb19bad8494c1449e823cb52c2544e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 6494768576080503992}
   isHighlighted: 0
   isSelected: 0
   data:
@@ -268,6 +268,7 @@ MonoBehaviour:
     stats:
       list: []
     properties:
+      defense: 0
       critRate: 0
       critBounes: 0
       pop: 0
@@ -316,10 +317,8 @@ MonoBehaviour:
         args: []
     maxHealth: 0
     health: 0
-    defense: 0
     armor: 0
     damage: 0
-    canBeTargeted: 0
     type: 0
   attackRange: []
   moveRange: []

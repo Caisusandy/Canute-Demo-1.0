@@ -18,7 +18,8 @@ namespace Canute.BattleSystem
 
         /*
          * 对于所有的stat：
-         * 1.应该是瞬时的效果
+         * 1. 应该是瞬时的效果
+         * 2. target 的Statlist应该有这个status
          */
 
         [SerializeField] private Effect effect;
@@ -71,7 +72,7 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         public bool SimilarTo(Status other)
         {
-            bool sameCount = ((IsBaseOnCount == other.IsBaseOnCount == true) || (IsBaseOnTurn == other.IsBaseOnTurn == true) || (IsDualBase == other.IsDualBase == true)) && !IsPermanentStatus && !other.IsPermanentStatus;
+            bool sameCount = ((IsBaseOnCount == other.IsBaseOnCount == true) || (IsBaseOnTurn == other.IsBaseOnTurn == true) || (IsDualBase == other.IsDualBase == true) || (IsResonance == other.IsResonance == true)) && !IsPermanentStatus && !other.IsPermanentStatus;
             return sameCount && effect.SimilarTo(other.effect) && triggerConditions.Equals(other.TriggerConditions);
         }
 
@@ -157,6 +158,11 @@ namespace Canute.BattleSystem
                 this.StatusMerge(other);
                 return true;
             }
+            if (IsResonance)
+            {
+                this.StatusMerge(other);
+                return true;
+            }
 
 
             return false;
@@ -226,6 +232,8 @@ namespace Canute.BattleSystem
         {
             return ToStatus().ToString();
         }
+
+
     }
 
     [Serializable]

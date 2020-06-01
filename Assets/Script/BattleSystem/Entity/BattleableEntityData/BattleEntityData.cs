@@ -64,8 +64,8 @@ namespace Canute.BattleSystem
                                                    from PropertyType type in PropertyTypes.Types
                                                    select (item, property, type))
             {
-                Debug.Log(property);
-                Debug.Log(item.Bounes.Count);
+                //Debug.Log(property);
+                //Debug.Log(item.Bounes.Count);
                 switch (property.Type & type)
                 {
                     case PropertyType.damage:
@@ -149,7 +149,7 @@ namespace Canute.BattleSystem
 
     public static class EntityDatas
     {
-        public static int Bounes(this int @base, int rate, BonusType type = BonusType.percentage)
+        public static int Bonus(this int @base, int rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
@@ -162,7 +162,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public static int Bounes(this int @base, double rate, BonusType type = BonusType.percentage)
+        public static int Bonus(this int @base, double rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
@@ -175,7 +175,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public static int Bounes(this double @base, int rate, BonusType type = BonusType.percentage)
+        public static int Bonus(this double @base, int rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
@@ -188,7 +188,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public static int Bounes(this double @base, double rate, BonusType type = BonusType.percentage)
+        public static int Bonus(this double @base, double rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
@@ -201,7 +201,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public static int RemoveBounes(this int @base, int rate, BonusType type = BonusType.percentage)
+        public static int RemoveBonus(this int @base, int rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
@@ -214,7 +214,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public static int RemoveBounes(this int @base, double rate, BonusType type = BonusType.percentage)
+        public static int RemoveBonus(this int @base, double rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
@@ -227,7 +227,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public static int RemoveBounes(this double @base, int rate, BonusType type = BonusType.percentage)
+        public static int RemoveBonus(this double @base, int rate, BonusType type = BonusType.percentage)
         {
             switch (type)
             {
@@ -240,7 +240,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public static int RemoveBounes(this double @base, double rate, BonusType type = BonusType.percentage)
+        public static int RemoveBonus(this double @base, double rate, BonusType type = BonusType.percentage)
         {
             Debug.Log(@base + "-" + rate);
             switch (type)

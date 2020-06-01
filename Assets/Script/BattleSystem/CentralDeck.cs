@@ -26,27 +26,19 @@ namespace Canute.BattleSystem
             }
             for (int j = 0; j < 8; j++)
             {
-                Add(new Card(GameData.Prototypes.GetEventCardPrototype("armySwitch")));
-                //Add(new Card(Card.Types.centerEvent, Career.none, new Effect(Effect.Types.armySwitch, 1), 1, TargetType.self | TargetType.armyEntity));
+                Add(new Card(Card.Types.centerEvent, GameData.Prototypes.GetEventCardPrototype("armySwitch")));
             }
             for (int j = 0; j < 8; j++)
             {
-                Add(new Card(GameData.Prototypes.GetEventCardPrototype("drawCard")));
-                //Add(new Card(Card.Types.centerEvent, Career.none, new Effect(Effect.Types.drawCard, 1, 2), 1, TargetType.self));
+                Add(new Card(Card.Types.centerEvent, GameData.Prototypes.GetEventCardPrototype("drawCard")));
             }
             for (int j = 0; j < 8; j++)
             {
-                Add(new Card(GameData.Prototypes.GetEventCardPrototype("cardMinusPoint")));
-                //Effect effect = new Effect(Effect.Types.addActionPoint, 1, -3);
-                //effect.SetSpecialName("cardMinusPoint");
-                //base.Add(new Card(Card.Types.centerEvent, Career.none, effect, 1, TargetType.cardEntity));
+                Add(new Card(Card.Types.centerEvent, GameData.Prototypes.GetEventCardPrototype("cardMinusPoint")));
             }
             for (int j = 0; j < 8; j++)
             {
-                Add(new Card(GameData.Prototypes.GetEventCardPrototype("confusion")));
-                //Effect effect = new Effect(PropertyType.attackRange | PropertyType.moveRange, BounesType.percentage, 1, -50, Effect.tc + ",1", Effect.statusAddingEffect + ",true", "onMove,true");
-                //effect.SetSpecialName("confusion");
-                //base.Add(new Card(Card.Types.centerEvent, Career.none, effect, 1, TargetType.enemy | TargetType.armyEntity));
+                Add(new Card(Card.Types.centerEvent, GameData.Prototypes.GetEventCardPrototype("confusion")));
             }
             Refresh();
         }

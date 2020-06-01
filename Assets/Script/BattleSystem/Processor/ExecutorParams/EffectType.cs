@@ -4,16 +4,17 @@
     {
         #region Basic Arg of Effect/Status
 
-        public const string isStatus = "isStatus";
-        public const string turnCount = "tc";
-        public const string statusCount = "sc";
-        public const string value = "value";
-        public const string propertyBonusType = "propertyBounes";
         public const string bonusType = "bonusType";
-        public const string triggerCondition = "triggerCondition";
-        public const string statType = "statType";
-        public const string name = "name";
         public const string effectType = "effectType";
+        public const string effectSpecialName = "specialName";
+        public const string isStatus = "isStatus";
+        public const string name = "name";
+        public const string propertyBonusType = "propertyBonus";
+        public const string statusCount = "sc";
+        public const string turnCount = "tc";
+        public const string triggerCondition = "triggerCondition";
+        public const string statusType = "statType";
+        public const string value = "value";
 
         #endregion
 

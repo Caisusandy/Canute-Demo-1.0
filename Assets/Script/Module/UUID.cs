@@ -71,6 +71,7 @@ namespace Canute
 
 
         public static UUID Empty = Guid.Empty;
+        /// <summary> A special UUID for player's object </summary>
         public static UUID Player = new UUID("63c5918a-5aad-45ae-8bab-1b681601289b");
 
         public static UUID NewUUID()

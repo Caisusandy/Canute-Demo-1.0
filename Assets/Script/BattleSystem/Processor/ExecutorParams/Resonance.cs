@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Canute.BattleSystem
 {
@@ -41,8 +42,9 @@ namespace Canute.BattleSystem
 
         }
 
-        public static void Resonate(ref List<BattleArmy> battleArmies)
+        public static void Resonate(List<BattleArmy> battleArmies)
         {
+            Debug.Log(battleArmies.Count);
             Dictionary<Army.Types, int> resonanceInfo = new Dictionary<Army.Types, int>();
 
             foreach (BattleArmy army in battleArmies)
@@ -85,8 +87,8 @@ namespace Canute.BattleSystem
                             }
                             break;
                         case ResonanceTarget.player:
-                            resonance.Effect.SetSource(battleArmies[0].Owner.Entity);
-                            resonance.Effect.SetTarget(battleArmies[0].Owner.Entity);
+                            resonance.Effect.SetSource(battleArmies[0].Owner);
+                            resonance.Effect.SetTarget(battleArmies[0].Owner);
                             battleArmies[0].Owner.StatList.Add(resonance);
                             break;
                         case ResonanceTarget.landArmy:

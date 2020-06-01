@@ -87,7 +87,7 @@ namespace Canute.BattleSystem
 
             if (isCritical)
             {
-                damage = damage.Bounes(agressiveEntity.Properties.CritBounes);
+                damage = damage.Bonus(agressiveEntity.Properties.CritBounes);
             }
 
             return damage;

@@ -235,6 +235,7 @@ namespace Canute.BattleSystem
             {
                 enemy = new Player("Anexar", new LegionSet(Game.PlayerData.Legions[1], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, " "), enemy.UUID);
 
+                Resonance.Resonate(enemy.BattleArmies);
                 //generate player's army card
                 for (int i = 0; i < Enemy.BattleArmies.Count; i++)
                 {
@@ -290,6 +291,7 @@ namespace Canute.BattleSystem
         public void SetPlayer(LegionSet playerLegion)
         {
             player = new Player("Canute Svensson", playerLegion);
+            Resonance.Resonate(player.BattleArmies);
         }
 
         #endregion
@@ -415,6 +417,7 @@ namespace Canute.BattleSystem
         {
             Round.TurnEnd();
             Round.CurrentPlayer.StatTurnDecay();
+            Round.CurrentPlayer.Discard();
             NextPlayer();
         }
 

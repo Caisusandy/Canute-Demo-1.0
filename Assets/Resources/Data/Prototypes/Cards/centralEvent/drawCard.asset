@@ -20,15 +20,18 @@ MonoBehaviour:
     protrait: {fileID: 0}
     prefab: {fileID: 0}
     count: 0
-    cost: 1
-    targetTypes: 1
+    cardType: 0
+    career: 0
     eventCardProperty:
-      effects:
-      - type: 13
-        specialName: drawCard
-        count: 1
-        parameter: 2
-        args:
+      properties:
+      - targetTypes: 4
+        cost: 1
+        effect:
+          type: 13
+          specialName: drawCard
+          count: 1
+          parameter: 2
           args:
-          - key: name
-            value: drawCard
+            args:
+            - key: name
+              value: drawCard

@@ -82,20 +82,26 @@ namespace Canute.BattleSystem
             Debug.Log(other);
             if (other is null)
             {
+                Debug.Log("a null trigger condition");
                 return false;
             }
             if (Count != other.Count)
             {
+                Debug.Log("Arg have different count");
                 return false;
             }
             if (condition != other.condition || group != other.group || expectValue != other.expectValue)
             {
+                Debug.Log(condition != other.condition);
+                Debug.Log(group != other.group);
+                Debug.Log(expectValue != other.expectValue);
                 return false;
             }
             foreach (var item in this)
             {
                 if (!other.Contains(item))
                 {
+                    Debug.Log("different param: " + item);
                     return false;
                 }
             }
@@ -155,7 +161,7 @@ namespace Canute.BattleSystem
         }
         public static bool operator ==(TriggerCondition a, TriggerCondition b)
         {
-            return a?.Equals(b) is true;
+            return a?.Equals(b) == true;
         }
 
         public static explicit operator TriggerCondition(Arg arg)
@@ -183,6 +189,9 @@ namespace Canute.BattleSystem
                     case "onDefenseEnd":
                         condition = OnDefenseEnd;
                         break;
+                    case "onArrive":
+                        condition = OnEnterCell;
+                        break;
                     default:
                         throw new Exception();
                 }
@@ -194,7 +203,7 @@ namespace Canute.BattleSystem
             {
                 if (condition != null)
                 {
-                    Debug.LogWarning("Trigger Condition Converted Failed " + arg);
+                    //Debug.LogWarning("Trigger Condition Converted Failed " + arg);
                 }
                 return null;
             }
@@ -294,6 +303,10 @@ namespace Canute.BattleSystem
                 {
                     args.Add(TriggerCondition.Parse(item));
                 }
+            }
+            if (args.Count == 0)
+            {
+                Debug.LogWarning("Trigger Condition Converted Failed");
             }
             return new TriggerConditions(args);
         }

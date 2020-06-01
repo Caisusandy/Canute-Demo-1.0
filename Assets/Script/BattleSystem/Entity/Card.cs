@@ -14,7 +14,8 @@ namespace Canute.BattleSystem
         {
             normal,
             centerEvent,
-            eventCard
+            eventCard,
+            special
         }
 
         [SerializeField] protected Effect effect;
@@ -29,27 +30,19 @@ namespace Canute.BattleSystem
         public TargetType Target { get => target; set => target = value; }
         public int ActionPoint { get => actionPoint; set => actionPoint = value > 0 ? value : 0; }
 
-        public Card() : base()
-        {
-            prefab = GameData.Prefabs?.CentralDeckCard;
-        }
-
-        public Card(Types type, Career career) : this()
+        private Card(Types type, Career career, Effect effect) : base()
         {
             this.type = type;
             this.career = career;
-            this.prefab = type == Types.eventCard ? GameData.Prefabs.NormalEventCard : GameData.Prefabs.CentralDeckCard;
-            name = type.ToString() + "-" + career.ToString();
-        }
+            this.prefab = (type == Types.normal) || (type == Types.centerEvent) ? GameData.Prefabs.CentralDeckCard : GameData.Prefabs.NormalEventCard;
 
-        public Card(Types type, Career career, Effect effect) : this(type, career)
-        {
+            this.name = type.ToString() + "-" + career.ToString();
             this.effect = effect;
         }
 
-        public Card(Types type, Career career, Effect effect, int actionPointRequire) : this(type, career, effect)
+        public Card(Types type, Career career, Effect effect, int actionPoint) : this(type, career, effect)
         {
-            this.actionPoint = actionPointRequire;
+            this.actionPoint = actionPoint;
         }
 
         public Card(Types type, Career career, Effect effect, int actionPointRequire, TargetType targetType) : this(type, career, effect, actionPointRequire)
@@ -57,11 +50,40 @@ namespace Canute.BattleSystem
             this.target = targetType;
         }
 
-        public Card(EventCardItem eventCard) : this(Types.eventCard, Career.none, eventCard.Effect.Clone(), eventCard.Prototype.Cost, eventCard.Prototype.Target)
+        public Card(EventCardItem eventCard) : this(Types.eventCard, Career.none, eventCard.Effect.Clone(), eventCard.Cost, eventCard.Target)
         {
             if (type == Types.eventCard)
             {
                 switch (eventCard.Prototype.CardType)
+                {
+                    case EventCard.Type.@event:
+                        prefab = GameData.Prefabs.NormalEventCard;
+                        break;
+                    case EventCard.Type.building:
+                        prefab = GameData.Prefabs.BuildingEventCard;
+                        type = Types.special;
+                        break;
+                    case EventCard.Type.dragon:
+                        prefab = GameData.Prefabs.DragonEventCard;
+                        type = Types.special;
+                        break;
+                    default:
+                        prefab = GameData.Prefabs.NormalEventCard;
+                        break;
+                }
+            }
+            else
+            {
+                this.prefab = GameData.Prefabs.CentralDeckCard;
+            }
+        }
+
+
+        public Card(Types types, EventCard eventCard, int level) : this(types, Career.none, eventCard.EventCardProperty[level - 1].Effect.Clone(), eventCard.EventCardProperty[level - 1].Cost, eventCard.EventCardProperty[level - 1].TargetType)
+        {
+            if (type != Types.normal)
+            {
+                switch (eventCard.CardType)
                 {
                     case EventCard.Type.@event:
                         prefab = GameData.Prefabs.NormalEventCard;
@@ -83,7 +105,15 @@ namespace Canute.BattleSystem
             }
         }
 
-        public Card(EventCard eventCard) : this(Types.centerEvent, Career.none, eventCard.EventCardProperty[0].Clone(), eventCard.Cost, eventCard.Target) { }
+        /// <summary>
+        /// Only for central deck
+        /// </summary>
+        /// <param name="types"></param>
+        /// <param name="eventCard"></param>
+        public Card(Types types, EventCard eventCard) : this(types, Career.none, eventCard.EventCardProperty[0].Effect.Clone(), eventCard.EventCardProperty[0].Cost, eventCard.EventCardProperty[0].TargetType)
+        {
+            prefab = GameData.Prefabs.NormalEventCard;
+        }
 
         public bool IsValidTarget(Entity entity)
         {
@@ -109,7 +139,7 @@ namespace Canute.BattleSystem
                 UI.BattleUI.SendMessage("Card did not played: no enough action point");
                 return false;
             }
-            bool ret = effect.Execute();
+            bool ret = effect.Execute(true);
             if (ret)
             {
                 LastCard = this;
@@ -237,15 +267,5 @@ namespace Canute.BattleSystem
 
     }
 
-    [Serializable]
-    public class EventCardProperty
-    {
-        public List<HalfEffect> effects;
 
-        public HalfEffect this[int index]
-        {
-            get => effects[index];
-            set => effects[index] = value;
-        }
-    }
 }

@@ -5,7 +5,7 @@
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Label.text = Languages.Languages.Lang(armyItem.StandPosition);
+            Label.text = Languages.LanguageSystem.Lang(armyItem.StandPosition);
         }
 
         public override void SetArmyItem(ArmyItem armyItem)

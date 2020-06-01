@@ -420,7 +420,7 @@ namespace Canute.BattleSystem
 
             CardEntity cardEntity;
             GameObject cardObject;
-            GameObject cardPrefab = card.Type == Card.Types.eventCard ? card.Prefab : GameData.Prefabs.CentralDeckCard;
+            GameObject cardPrefab = card.Prefab;
 
             cardObject = Instantiate(cardPrefab, handCardBar.transform);
             cardEntity = cardObject.GetComponent<CardEntity>();

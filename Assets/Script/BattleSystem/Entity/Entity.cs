@@ -81,6 +81,7 @@ namespace Canute.BattleSystem
         {
             animator.RemoveFromBattle();
             entities?.Remove(this);
+            Debug.Log("the entity is destroyed " + this);
         }
 
         /// <summary>

@@ -21,15 +21,18 @@ MonoBehaviour:
     prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
       type: 3}
     count: 0
-    cost: 1
-    targetTypes: 65
+    cardType: 0
+    career: 0
     eventCardProperty:
-      effects:
-      - type: 13
-        specialName: cardMinusPoint
-        count: 1
-        parameter: -3
-        args:
+      properties:
+      - targetTypes: 65
+        cost: 1
+        effect:
+          type: 13
+          specialName: cardMinusPoint
+          count: 1
+          parameter: -3
           args:
-          - key: name
-            value: addActionPoint
+            args:
+            - key: name
+              value: addActionPoint

@@ -11,6 +11,7 @@ namespace Canute.BattleSystem
         [SerializeField] private LeaderPrototypes leaderPrototypes = new LeaderPrototypes();
         [SerializeField] private EquipmentPrototypes equipmentPrototypes = new EquipmentPrototypes();
         [SerializeField] private EventCardPrototypes eventCardPrototypes = new EventCardPrototypes();
+        [SerializeField] private EventCardPrototypes dragonEventCardPrototypes = new EventCardPrototypes();
         [SerializeField] private BuildingPrototypes buildingPrototypes = new BuildingPrototypes();
 
         [Header("Default")]
@@ -61,6 +62,7 @@ namespace Canute.BattleSystem
         public LeaderPrototypes Leaders => leaderPrototypes;
         public EquipmentPrototypes Equipments => equipmentPrototypes;
         public EventCardPrototypes EventCards => eventCardPrototypes;
+        public EventCardPrototypes DragonEventCards => dragonEventCardPrototypes;
         public BuildingPrototypes Buildings => buildingPrototypes;
 
 

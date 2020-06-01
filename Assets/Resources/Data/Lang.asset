@@ -97,7 +97,9 @@ MonoBehaviour:
     - key: Canute.BattleSystem.Army.Basic Rifleman.name
       value: "Basic Rifleman\r"
     - key: Canute.BattleSystem.Army.Basic AircraftFighter.name
-      value: "Basic AircraftFighter\r"
+      value: "Basic Aircraft Fighter\r"
+    - key: Canute.BattleSystem.Army.Basic Dragon.name
+      value: "Basic Dragon\r"
     - key: Canute.BattleSystem.Building.Campus.name
       value: "Campus\r"
     - key: Canute.BattleSystem.Terrain.Plain
@@ -180,6 +182,54 @@ MonoBehaviour:
       value: "Resonance: Lightness\r"
     - key: Canute.BattleSystem.Effect+Types.infantryLightness.info
       value: "No action point cost when moving\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonAirAttack
+      value: "Air Attack\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonAirAttack.info
+      value: "Air Attack\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonAttackBonus
+      value: "Attack Range Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonAttackBonus.info
+      value: "Attack Range Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonCritAttack
+      value: "Attack Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonCritAttack.info
+      value: "Attack Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonDualAttack
+      value: "Dual Attack\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonDualAttack.info
+      value: "Dual Attack\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonMoveBonus
+      value: "Move Range Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonMoveBonus.info
+      value: "Move Range Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonStrike
+      value: "Strike\r"
+    - key: Canute.BattleSystem.Effect+Types.dragonStrike.info
+      value: "Strike\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonAirAttack
+      value: "Add Air Attack\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonAirAttack.info
+      value: "Increase army damage by 10%, switch army attack position to air.\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonAttackBonus
+      value: "Add Attack Range Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonAttackBonus.info
+      value: "army attack range +1, army's move range -2\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonCritAttack
+      value: "Attack Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonCritAttack.info
+      value: "Hp -10% (Current), damage +20%, crit rate +100%\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonDualAttack
+      value: "Dual Attack\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonDualAttack.info
+      value: "damage -45%, every attack will have a bonus attack with it. \r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonMoveBonus
+      value: "Move Range Bonus\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonMoveBonus.info
+      value: "army move range +1, army's attack range -2\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonStrike
+      value: "Strike\r"
+    - key: Canute.BattleSystem.Effect+Types.addDragonStrike.info
+      value: "enemy army will go back 2 grid when the army stand by.\r"
     - key: Canute.BattleSystem.Effect+Types.shielderPenetrate
       value: "Resonance: Penetrate\r"
     - key: Canute.BattleSystem.Effect+Types.shielderPenetrate.info

@@ -12,16 +12,16 @@ namespace Canute.BattleSystem
 
         public List<ResonancePair> GetResonance(Army.Types types, int count)
         {
-            List<ResonancePair> resoncances = new List<ResonancePair>();
+            List<ResonancePair> resonances = new List<ResonancePair>();
             foreach (var item in resoncancePairs)
             {
                 if (item.ArmyType != types || item.Count > count)
                 {
                     continue;
                 }
-                resoncances.Add(item);
+                resonances.Add(item);
             }
-            return resoncances;
+            return resonances;
         }
 
         [Serializable]

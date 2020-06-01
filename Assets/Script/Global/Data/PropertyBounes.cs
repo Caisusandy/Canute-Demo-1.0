@@ -58,22 +58,22 @@ namespace Canute.BattleSystem
 
         public int Bounes(double @base, int level)
         {
-            return @base.Bounes(GetValue(level), BounesType);
+            return @base.Bonus(GetValue(level), BounesType);
         }
 
         public void Bounes(ref double @base, int level)
         {
-            @base = @base.Bounes(GetValue(level), BounesType);
+            @base = @base.Bonus(GetValue(level), BounesType);
         }
 
         public int RemoveBounes(double @base, int level)
         {
-            return @base.RemoveBounes(GetValue(level), BounesType);
+            return @base.RemoveBonus(GetValue(level), BounesType);
         }
 
         public void RemoveBounes(ref double @base, int level)
         {
-            @base = @base.RemoveBounes(GetValue(level), BounesType);
+            @base = @base.RemoveBonus(GetValue(level), BounesType);
         }
     }
 

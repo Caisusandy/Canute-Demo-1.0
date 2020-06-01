@@ -20,27 +20,30 @@ MonoBehaviour:
     protrait: {fileID: 0}
     prefab: {fileID: 0}
     count: 0
-    cost: 1
-    targetTypes: 10
+    cardType: 0
+    career: 0
     eventCardProperty:
-      effects:
-      - type: 11
-        specialName: confusion
-        count: 1
-        parameter: 50
-        args:
+      properties:
+      - targetTypes: 10
+        cost: 1
+        effect:
+          type: 11
+          specialName: confusion
+          count: 1
+          parameter: 50
           args:
-          - key: tc
-            value: 1
-          - key: sc
-            value: 0
-          - key: onMove
-            value: true
-          - key: propertyBounes
-            value: attackRange, moveRange
-          - key: bounesType
-            value: percentage
-          - key: name
-            value: confusion
-          - key: effectType
-            value: propertyPanalty
+            args:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyBonus
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty

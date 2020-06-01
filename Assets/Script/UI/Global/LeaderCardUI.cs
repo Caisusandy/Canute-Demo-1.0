@@ -29,6 +29,7 @@ namespace Canute.UI
         public void Display(LeaderItem leaderItem)
         {
             leaderName.text = leaderItem.DisplayingName;
+            this.leaderItem = leaderItem;
 
         }
     }

@@ -31,7 +31,7 @@ MonoBehaviour:
       critBounes: 50
       pop: 1
       attackRange: 1
-      moveRange: 5
+      moveRange: 1
       standPosition: 2
       attackPosition: 3
       attackArea: 1
@@ -51,7 +51,7 @@ MonoBehaviour:
       critBounes: 50
       pop: 1
       attackRange: 1
-      moveRange: 5
+      moveRange: 1
       standPosition: 2
       attackPosition: 3
       attackArea: 1
@@ -71,7 +71,7 @@ MonoBehaviour:
       critBounes: 50
       pop: 1
       attackRange: 1
-      moveRange: 5
+      moveRange: 1
       standPosition: 2
       attackPosition: 3
       attackArea: 1

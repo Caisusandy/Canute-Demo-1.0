@@ -24,10 +24,11 @@ MonoBehaviour:
     targetTypes: 10
     career: 0
     eventCardProperty:
-      effects:
-      - type: 1
-        specialName: EnemyMove
-        count: 1
-        parameter: 0
-        args:
-          args: []
+      properties:
+      - effect:
+          type: 1
+          specialName: EnemyMove
+          count: 1
+          parameter: 0
+          args:
+            args: []

@@ -74,7 +74,7 @@ namespace Canute.BattleSystem.Armies
 
         public override void SkillExecute(Effect effect)
         {
-            new Effect(Effect.Types.@event, this, this, 2, 1, "name:addAmor").Execute();
+            new Effect(Effect.Types.@event, this, this, 2, 1, "name:addAmor").Execute(false);
         }
 
         public override void AttackExecute(Effect effect)

@@ -42,10 +42,24 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 3ad86eb5ad9c8974b8a72a889476c5b8, type: 2}
     - {fileID: 11400000, guid: 1f9fdf9f95a4bef49a522df12aba0956, type: 2}
     - {fileID: 11400000, guid: b4f2c02ec81ebd845a26442a8260a9ca, type: 2}
-    - {fileID: 11400000, guid: c0bcf74570785dd4a90ae080cd358f08, type: 2}
     - {fileID: 11400000, guid: ef049599fca0d5b41a34c5ad6c9a0ce4, type: 2}
     - {fileID: 11400000, guid: 6b76571e73ff8e547b703e4885c8765a, type: 2}
     - {fileID: 11400000, guid: 3790a5998a1f15a44bcdc34687caf8e9, type: 2}
+    - {fileID: 11400000, guid: d2dd394b0e3b5564a971863fe9e8ab69, type: 2}
+    - {fileID: 11400000, guid: 15bbe79afeb1b0f448ab22f21eeb40ca, type: 2}
+    - {fileID: 11400000, guid: c843ce5ce90b9684bb022c4a61f47a14, type: 2}
+    - {fileID: 11400000, guid: 4c305d83382adbd4b9bd9231e708db4d, type: 2}
+    - {fileID: 11400000, guid: 6f76a305f0f580042b5afb7d969f7771, type: 2}
+    - {fileID: 11400000, guid: 62da6d3288e869747a46ff219e5a216c, type: 2}
+    - {fileID: 11400000, guid: 7740fbaedb1a3414f8f2c3e38a83c9d2, type: 2}
+  dragonEventCardPrototypes:
+    list:
+    - {fileID: 11400000, guid: 6f76a305f0f580042b5afb7d969f7771, type: 2}
+    - {fileID: 11400000, guid: c843ce5ce90b9684bb022c4a61f47a14, type: 2}
+    - {fileID: 11400000, guid: 4c305d83382adbd4b9bd9231e708db4d, type: 2}
+    - {fileID: 11400000, guid: 3790a5998a1f15a44bcdc34687caf8e9, type: 2}
+    - {fileID: 11400000, guid: d2dd394b0e3b5564a971863fe9e8ab69, type: 2}
+    - {fileID: 11400000, guid: 15bbe79afeb1b0f448ab22f21eeb40ca, type: 2}
   buildingPrototypes:
     list:
     - {fileID: 11400000, guid: 3c89cfb6209195d48b215c0c00af3005, type: 2}

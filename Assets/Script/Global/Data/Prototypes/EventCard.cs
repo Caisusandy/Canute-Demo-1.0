@@ -15,19 +15,41 @@ namespace Canute.BattleSystem
         }
 
         [SerializeField] protected int count;
-        [SerializeField] protected int cost;
-        [SerializeField] protected TargetType targetTypes;
         [SerializeField] protected Type cardType;
         [SerializeField] protected Career career;
-        [SerializeField] protected EventCardProperty eventCardProperty = new EventCardProperty();
+        [SerializeField] protected EventCardPropertyList eventCardProperty = new EventCardPropertyList();
 
         public int Count => count;
-        public int Cost => cost;
-        public Effect Effect => EventCardProperty[0];
-        public EventCardProperty EventCardProperty => eventCardProperty;
+        public Effect Effect => EventCardProperty[0].Effect;
+        public EventCardPropertyList EventCardProperty => eventCardProperty;
         public override GameObject Prefab => prefab ?? GameData.Prefabs.NormalEventCard;
-        public TargetType Target { get => targetTypes; set => targetTypes = value; }
         public Type CardType { get => cardType; set => cardType = value; }
         public Career Career { get => career; set => career = value; }
     }
+
+
+    [Serializable]
+    public class EventCardPropertyList
+    {
+        public List<EventCardProperty> properties;
+
+        public EventCardProperty this[int index]
+        {
+            get => properties[index];
+            set => properties[index] = value;
+        }
+    }
+
+    [Serializable]
+    public struct EventCardProperty
+    {
+        [SerializeField] private TargetType targetTypes;
+        [SerializeField] private int cost;
+        [SerializeField] private HalfEffect effect;
+
+        public HalfEffect Effect { get => effect; set => effect = value; }
+        public int Cost { get => cost; set => cost = value; }
+        public TargetType TargetType { get => targetTypes; set => targetTypes = value; }
+    }
+
 }

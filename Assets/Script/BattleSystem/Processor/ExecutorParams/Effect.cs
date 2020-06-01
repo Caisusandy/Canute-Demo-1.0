@@ -287,14 +287,23 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         public Status ToStatus()
         {
+            if (type != Types.addStatus)
+            {
+                return null;
+            }
+
             Effect e = Clone();
             e[isStatus] = "true";
+            e.SetSpecialName(e[effectSpecialName]);
             e.type = e.Args.GetEnumParam<Types>("effectType");
 
             int sc = Args.GetIntParam("sc");
             int tc = Args.GetIntParam("tc");
             TriggerConditions cd = TriggerConditions.GetTriggerCondition(this);
-            Status.StatType st = Args.GetEnumParam<Status.StatType>(statType);
+            Status.StatType st = Args.GetEnumParam<Status.StatType>(statusType);
+
+            e[effectSpecialName] = null;
+            e[effectType] = null;
 
             Status status = new Status(e, tc, sc, st, cd);
             Debug.Log(status);
@@ -310,14 +319,23 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         public Status ToStatus(params TriggerCondition[] args)
         {
+            if (type != Types.addStatus)
+            {
+                return null;
+            }
+
             Effect e = Clone();
             e[isStatus] = "true";
+            e.SetSpecialName(e[effectSpecialName]);
             e.type = e.Args.GetEnumParam<Types>("effectType");
 
             int sc = Args.GetIntParam("sc");
             int tc = Args.GetIntParam("tc");
             TriggerConditions cd = TriggerConditions.GetTriggerCondition(this); cd.AddRange(args);
-            Status.StatType st = Args.GetEnumParam<Status.StatType>(statType);
+            Status.StatType st = Args.GetEnumParam<Status.StatType>(statusType);
+
+            e[effectSpecialName] = null;
+            e[effectType] = null;
 
             Status status = new Status(e, tc, sc, st, cd);
             Debug.Log(status);
@@ -373,6 +391,17 @@ namespace Canute.BattleSystem
                 + "Target names: " + GetTargetName() + "\n"
                 + (args is null ? "" : "Args: " + args.ToString());
         }
+
+
+#if UNITY_EDITOR
+        public void SetAsStatusAddingEffect()
+        {
+            this[turnCount] = "1";
+            this[statusCount] = "1";
+            this[statusType] = "turnCount";
+            this[effectType] = "none";
+        }
+#endif
     }
 
     public interface IEffect : INameable

@@ -63,19 +63,20 @@ namespace Canute.BattleSystem
         /// To Setup a Game Player
         /// </summary>
         /// <param name="legion"></param>
-        public Player(string name, LegionSet playerLegionSet) : this()
+        public Player(string name, LegionSet playerLegionSet)
         {
             Legion legion = playerLegionSet.Legion;
             LeaderItem leaderItem = playerLegionSet.Leader;
             EventCardPile pile = playerLegionSet.EventCardPile;
 
+            this.uuid = UUID.Player;
             this.name = name;
             this.legion = legion;
             this.pile = pile;
 
             viceCommander = new BattleLeader(leaderItem);
-
             eventCardPile = Card.ToCards(pile);
+
             foreach (var item in eventCardPile)
             {
                 item.Owner = this;
@@ -87,9 +88,6 @@ namespace Canute.BattleSystem
                 BattleArmy army = new BattleArmy(item, this);
                 battleArmies.Add(army);
             }
-
-
-            Resonance.Resonate(ref battleArmies);
 
             Game.CurrentBattle.Armies.AddRange(battleArmies);
             maxArmyCount = battleArmies.Count;
@@ -125,7 +123,6 @@ namespace Canute.BattleSystem
                 BattleArmy army = new BattleArmy(item, this);
                 battleArmies.Add(army);
             }
-            Resonance.Resonate(ref battleArmies);
             Game.CurrentBattle.Armies.AddRange(battleArmies);
 
             maxArmyCount = battleArmies.Count;
@@ -146,8 +143,7 @@ namespace Canute.BattleSystem
             return cards;
         }
 
-        /// <summary> 补充手牌 </summary>
-        public void RefillCard()
+        public void Discard()
         {
             //Send player event card back
             foreach (Card item in GetCard(Card.Types.eventCard))
@@ -168,6 +164,17 @@ namespace Canute.BattleSystem
                 BattleSystem.Entity.Get(item.UUID).Destroy();
             }
 
+            //clear all player card
+            foreach (Card item in GetCard(Card.Types.special))
+            {
+                BattleSystem.Entity.Get(item.UUID).Destroy();
+            }
+
+        }
+
+        /// <summary> 补充手牌 </summary>
+        public void RefillCard()
+        {
             int normalCount = GetCard(Card.Types.normal).Count + GetCard(Card.Types.centerEvent).Count;
             if (normalCount < 5)
             {

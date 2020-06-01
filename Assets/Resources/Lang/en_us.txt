@@ -12,7 +12,7 @@ Canute.Career.None=无
 Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
 #
-Canute.Shops.Currency+Type.gold=Gold
+Canute.Shops.Currency+Type.federgram=Federgram
 Canute.Shops.Currency+Type.manpower=Manpower
 Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
 #
@@ -51,7 +51,8 @@ Canute.BattleSystem.Army.Basic Shielder.name=Basic Shielder
 Canute.BattleSystem.Army.Basic Infantry.name=Basic Infantry
 Canute.BattleSystem.Army.Basic Cavalry.name=Basic Cavalry
 Canute.BattleSystem.Army.Basic Rifleman.name=Basic Rifleman
-Canute.BattleSystem.Army.Basic AircraftFighter.name=Basic AircraftFighter
+Canute.BattleSystem.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
+Canute.BattleSystem.Army.Basic Dragon.name=Basic Dragon
 #
 Canute.BattleSystem.Building.Campus.name=Campus
 #地形
@@ -99,6 +100,42 @@ Canute.BattleSystem.Effect+Types.protection=Protection
 Canute.BattleSystem.Effect+Types.protection.info=Under $sourceName's Protection (Enemy cannot attack)
 Canute.BattleSystem.Effect+Types.infantryLightness=Resonance: Lightness
 Canute.BattleSystem.Effect+Types.infantryLightness.info=No action point cost when moving
+
+Canute.BattleSystem.Effect+Types.addActionPoint=Action Point
+Canute.BattleSystem.Effect+Types.addActionPoint.info=Add @param Action Point
+Canute.BattleSystem.Effect+Types.addActionPoint=Decrease Action Point
+Canute.BattleSystem.Effect+Types.addActionPoint.info=Decrease enemy @param Action Point next turn
+Canute.BattleSystem.Effect+Types.addActionPoint=Decrease Action Point
+Canute.BattleSystem.Effect+Types.addArmor=Add Armor
+Canute.BattleSystem.Effect+Types.addArmor.info=Add @param Armor to select army
+
+Canute.BattleSystem.Effect+Types.dragonAirAttack=Air Attack
+Canute.BattleSystem.Effect+Types.dragonAirAttack.info=Increase army damage by 10%, switch army attack position to air.
+Canute.BattleSystem.Effect+Types.dragonAttackBonus=Attack Range Bonus
+Canute.BattleSystem.Effect+Types.dragonAttackBonus.info=army attack range +1, army's move range -2
+Canute.BattleSystem.Effect+Types.dragonCritAttack=Attack Bonus
+Canute.BattleSystem.Effect+Types.dragonCritAttack.info=Hp -10% (Current), damage +20%, crit rate +100%
+Canute.BattleSystem.Effect+Types.dragonDualAttack=Dual Attack
+Canute.BattleSystem.Effect+Types.dragonDualAttack.info=damage -45%, every attack will have a bonus attack with it. 
+Canute.BattleSystem.Effect+Types.dragonMoveBonus=Move Range Bonus
+Canute.BattleSystem.Effect+Types.dragonMoveBonus.info=army move range +1, army's attack range -2
+Canute.BattleSystem.Effect+Types.dragonStrike=Strike
+Canute.BattleSystem.Effect+Types.dragonStrike.info=enemy army will go back 2 grid when the army stand by.
+
+Canute.BattleSystem.Effect+Types.addDragonAirAttack=Add Air Attack
+Canute.BattleSystem.Effect+Types.addDragonAirAttack.info=Increase army damage by 10%, switch army attack position to air.
+Canute.BattleSystem.Effect+Types.addDragonAttackBonus=Add Attack Range Bonus
+Canute.BattleSystem.Effect+Types.addDragonAttackBonus.info=army attack range +1, army's move range -2
+Canute.BattleSystem.Effect+Types.addDragonCritAttack=Add Attack Bonus
+Canute.BattleSystem.Effect+Types.addDragonCritAttack.info=Hp -10% (Current), damage +20%, crit rate +100%
+Canute.BattleSystem.Effect+Types.addDragonDualAttack=Add Dual Attack
+Canute.BattleSystem.Effect+Types.addDragonDualAttack.info=damage -45%, every attack will have a bonus attack with it. 
+Canute.BattleSystem.Effect+Types.addDragonMoveBonus=Add Move Range Bonus
+Canute.BattleSystem.Effect+Types.addDragonMoveBonus.info=army move range +1, army's attack range -2
+Canute.BattleSystem.Effect+Types.addDragonStrike=Add Strike
+Canute.BattleSystem.Effect+Types.addDragonStrike.info=enemy army will go back 2 grid when the army stand by.
+
+
 Canute.BattleSystem.Effect+Types.shielderPenetrate=Resonance: Penetrate
 Canute.BattleSystem.Effect+Types.shielderPenetrate.info=Ignore other army's defense (except for shielder), cause a another @param% of enemy's current HP's real damage (except for shielder).
 Canute.BattleSystem.Effect+Types.aircraftFighterReturn=Returning position

@@ -10,7 +10,7 @@ namespace Canute.UI
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Label.text = Languages.Languages.Lang(armyItem.AttackType);
+            Label.text = Languages.LanguageSystem.Lang(armyItem.AttackType);
         }
 
         public override void SetArmyItem(ArmyItem armyItem)

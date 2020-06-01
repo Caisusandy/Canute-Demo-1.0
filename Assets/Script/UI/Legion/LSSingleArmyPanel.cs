@@ -189,7 +189,7 @@ namespace Canute.UI
                     {
                         armySkillCardUI.gameObject.SetActive(false);
                         armyCardUI.gameObject.SetActive(true);
-                        Debug.Log(armyCardUI.transform.eulerAngles.y);
+                        //Debug.Log(armyCardUI.transform.eulerAngles.y);
                         if (Math.Abs(armyCardUI.transform.eulerAngles.y) > 0.1)
                         {
                             armyCardUI.transform.eulerAngles -= d;

@@ -39,7 +39,7 @@ namespace Canute
             ESCClose();
         }
 
-        protected virtual void OnDestory()
+        protected virtual void OnDestroy()
         {
             windows.Remove(this);
         }

@@ -59,7 +59,7 @@ namespace Canute.BattleSystem
             effect.Source = entity;
             effect.Target = entity;
 
-            effect.Execute();
+            effect.Execute(true);
             Anger = 0;
         }
 

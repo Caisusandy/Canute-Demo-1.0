@@ -9,10 +9,15 @@ namespace Canute.BattleSystem.Armies
     {
         public override void Start()
         {
-            Effect effect = new Effect(Effect.Types.effectRelated, this, this, 1, 0, "name:dragonCardAcceptance");
-            var status = new Status(effect, -1, -1, Status.StatType.perminant, false);
-            StatList.Add(status);
+            StatList.Add(GetDragonCardAcceptance());
             StatList.Add(GetStatusOnFast());
+        }
+
+        private Status GetDragonCardAcceptance()
+        {
+            Effect effect = new Effect(Effect.Types.effectRelated, this, this, 1, 0, "name:dragonCardAcceptance");
+            var status = new Status(effect, -1, -1, Status.StatType.resonance, false, TriggerCondition.OnAddingStatus);
+            return status;
         }
 
         public override float AttackAtionDuration => 2;
@@ -27,20 +32,24 @@ namespace Canute.BattleSystem.Armies
 
 
 
-        public Status GetStatusOnFast()
+        protected Status GetStatusOnFast()
         {
-            Effect effect = new Effect(PropertyType.attackRange, BonusType.additive, this, this, 1, 4);
-            return new Status(effect, -1, -1, Status.StatType.resonance, true);
+            Effect attack = new Effect(PropertyType.attackRange, BonusType.additive, this, this, 1, 2, "name:dragonBonus", "dragonStatus:attack");
+            attack[Effect.propertyBonusType] = "dragonAttack";
+            return new Status(attack, -1, -1, Status.StatType.resonance, true);
         }
 
-        public Status GetStatusOnSlow()
+
+        protected Status GetStatusOnSlow()
         {
-            Effect effect = new Effect(PropertyType.defense, BonusType.percentage, this, this, 1, 800);
-            return new Status(effect, -1, -1, Status.StatType.resonance, true);
+            Effect defense = new Effect(PropertyType.defense, BonusType.percentage, this, this, 1, 800, "name:dragonBonus", "dragonStatus:defense");
+            defense[Effect.propertyBonusType] = "dragonDefense";
+            return new Status(defense, -1, -1, Status.StatType.resonance, true);
         }
 
         public override void SkillExecute(Effect effect)
         {
+
         }
     }
 }
