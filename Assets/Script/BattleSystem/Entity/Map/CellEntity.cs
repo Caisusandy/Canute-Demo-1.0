@@ -142,6 +142,30 @@ namespace Canute.BattleSystem
             WasOnDrag = true;
         }
 
+        public bool IsValidDestination(IOnMapEntity movingEntity)
+        {
+            if (this.HasArmyStandOn && movingEntity is ArmyEntity)
+            {
+                Debug.Log("Army tried to move to a place has army stand on");
+                return false;
+            }
+            else if (this.HasBuildingStandOn && movingEntity is BuildingEntity)
+            {
+                Debug.Log("Building tried to move to a place has building stand on");
+                return false;
+            }
+            else if (!data.canStandOn)
+            {
+                return false;
+            }
+            else if (data.hide)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
         public override string ToString()
         {
             return Name + ": " + Coordinate;

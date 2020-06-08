@@ -48,7 +48,7 @@ namespace Canute.BattleSystem.UI
             health.SetProgress(ArmyEntity.data.Health / (float)ArmyEntity.data.MaxHealth);
             angerInfo.text = ArmyEntity.data.Anger + "/100";
             anger.SetProgress(ArmyEntity.data.Anger / 100f);
-            icon.sprite = ArmyEntity.data.DisplayingIcon;
+            icon.sprite = ArmyEntity.data.Icon;
         }
 
         public void Reassign()

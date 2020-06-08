@@ -31,7 +31,7 @@ namespace System.Collections.Generic
         {
             try
             {
-                return int.Parse(string.IsNullOrEmpty(this[key]) ? "0" : this[key]);
+                return int.Parse(string.IsNullOrEmpty(this[key]) ? "-1" : this[key]);
             }
             catch
             {
@@ -67,7 +67,7 @@ namespace System.Collections.Generic
         {
             try
             {
-                return double.Parse(string.IsNullOrEmpty(this[key]) ? "0" : this[key]);
+                return double.Parse(string.IsNullOrEmpty(this[key]) ? "-1" : this[key]);
             }
             catch
             {

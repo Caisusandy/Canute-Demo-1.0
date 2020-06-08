@@ -21,7 +21,7 @@ namespace Canute
 
             Debug.Log(positionalString);
         }
-        public TemporaryAttribute()
+        private TemporaryAttribute()
         {
             Debug.Log(positionalString);
         }

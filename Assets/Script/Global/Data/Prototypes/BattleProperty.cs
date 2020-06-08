@@ -60,7 +60,7 @@ namespace Canute.BattleSystem
 
         public double Defense { get => defense; set => defense = value; }
         public double CritRate { get => critRate; set => critRate = value; }
-        public double CritBounes { get => critBounes; set => critBounes = value; }
+        public double CritBonus { get => critBounes; set => critBounes = value; }
         public int Pop { get => pop; set => pop = value; }
         public int AttackRange { get => attackRange; set => attackRange = value; }
         public int MoveRange { get => moveRange; set => moveRange = value; }
@@ -113,7 +113,7 @@ namespace Canute.BattleSystem
         public bool Equals(BattleProperty obj)
         {
             return CritRate == obj.CritRate &&
-                CritBounes == obj.CritBounes &&
+                CritBonus == obj.CritBonus &&
                 AttackRange == obj.AttackRange &&
                 MoveRange == obj.MoveRange &&
                 Pop == obj.Pop &&

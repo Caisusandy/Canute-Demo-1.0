@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Canute.Languages;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Canute.BattleSystem
 {
-
     public abstract class BuildingEntity : OnMapEntity, IBattleableEntity, IPassiveEntity
     {
         public BattleBuilding data;
@@ -146,5 +146,18 @@ namespace Canute.BattleSystem
         public override GameObject Prefab { get => prefab ?? GameData.Prefabs.DefaultBuilding; set => prefab = value; }
         public override Prototype Prototype { get => GameData.Prototypes.GetBuildingPrototype(name); set => base.Prototype = value; }
         public new BuildingEntity Entity => base.Entity as BuildingEntity;
+
+
+        protected override string GetDisplayingName()
+        {
+            if (HasPrototype)
+            {
+                return base.GetDisplayingName();
+            }
+            else
+            {
+                return ("Canute.BattleSystem.Building." + name + ".name").Lang();
+            }
+        }
     }
 }

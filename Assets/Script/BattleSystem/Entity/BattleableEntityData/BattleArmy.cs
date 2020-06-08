@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.Languages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace Canute.BattleSystem
         public Army.Types Type => type;
         #endregion
 
-        private BattleArmy() : base()
+        public BattleArmy() : base()
         {
             allowMove = true;
         }
@@ -60,7 +61,7 @@ namespace Canute.BattleSystem
             career = army.Career;
             skillPack = army.SkillPack;
             prefab = army.Prototype.Prefab;
-            AddBounes(army.Equipments.ToArray());
+            AddBounes(army.Equipments?.ToArray());
             AddBounes(localLeader);
             health = maxHealth;
             allowMove = true;
@@ -79,6 +80,19 @@ namespace Canute.BattleSystem
         public override object Clone()
         {
             return new BattleArmy(this);
+        }
+
+
+        protected override string GetDisplayingName()
+        {
+            if (HasPrototype)
+            {
+                return base.GetDisplayingName();
+            }
+            else
+            {
+                return ("Canute.BattleSystem.Army." + name + ".name").Lang();
+            }
         }
     }
 }

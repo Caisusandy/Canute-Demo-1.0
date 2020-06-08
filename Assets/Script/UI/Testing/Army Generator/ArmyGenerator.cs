@@ -81,24 +81,27 @@ namespace Canute.Testing
 
                     BattleProperty property1 = army.Properties[0];
                     property1.CritRate = critRate;
-                    property1.CritBounes = critBounes;
+                    property1.CritBonus = critBounes;
                     property1.MoveRange = moveRange;
                     property1.AttackRange = attackRange;
+                    property1.Defense = defense;
 
                     BattleProperty property2 = army.Properties[1];
                     property2.CritRate = critRate;
-                    property2.CritBounes = critBounes;
+                    property2.CritBonus = critBounes;
                     property2.MoveRange = moveRange;
                     property2.AttackRange = attackRange;
+                    property2.Defense = defense;
 
                     BattleProperty property3 = army.Properties[2];
                     property3.CritRate = critRate;
-                    property3.CritBounes = critBounes;
+                    property3.CritBonus = critBounes;
                     property3.MoveRange = moveRange;
                     property3.AttackRange = attackRange;
+                    property3.Defense = defense;
 
 
-                    army = new Army(armyName.text, health, damage, defense, army.Type, army.Career, new List<BattleProperty>() { property1, property2, property3 });
+                    army = new Army(armyName.text, health, damage, army.Type, army.Career, new List<BattleProperty>() { property1, property2, property3 });
                 }
                 catch { }
                 finally
@@ -108,12 +111,12 @@ namespace Canute.Testing
         public void SelectCareer(int value)
         {
             Career career = (Career)value;
-            army = new Army(army.Name, army.Health, army.Damage, army.Defense, army.Type, career, army.Properties);
+            army = new Army(army.Name, army.Health, army.Damage, army.Type, career, army.Properties);
         }
         public void SelectArmyType(int value)
         {
             Army.Types type = (Army.Types)value;
-            army = new Army(army.Name, army.Health, army.Damage, army.Defense, type, army.Career, army.Properties);
+            army = new Army(army.Name, army.Health, army.Damage, type, army.Career, army.Properties);
         }
         public void SelectArmyPosition(int value)
         {
@@ -125,7 +128,7 @@ namespace Canute.Testing
             BattleProperty property3 = army.Properties[2];
             property3.StandPosition = type;
 
-            army = new Army(army.Name, army.Health, army.Damage, army.Defense, army.Type, army.Career, new List<BattleProperty>() { property1, property2, property3 });
+            army = new Army(army.Name, army.Health, army.Damage, army.Type, army.Career, new List<BattleProperty>() { property1, property2, property3 });
         }
         public void SelectAttackPosition(int value)
         {
@@ -137,7 +140,7 @@ namespace Canute.Testing
             BattleProperty property3 = army.Properties[2];
             property3.AttackPosition = type;
 
-            army = new Army(army.Name, army.Health, army.Damage, army.Defense, army.Type, army.Career, new List<BattleProperty>() { property1, property2, property3 });
+            army = new Army(army.Name, army.Health, army.Damage, army.Type, army.Career, new List<BattleProperty>() { property1, property2, property3 });
         }
         public void SelectAttackType(int value)
         {
@@ -149,7 +152,7 @@ namespace Canute.Testing
             BattleProperty property3 = army.Properties[2];
             property3.Attack = type;
 
-            army = new Army(army.Name, army.Health, army.Damage, army.Defense, army.Type, army.Career, new List<BattleProperty>() { property1, property2, property3 });
+            army = new Army(army.Name, army.Health, army.Damage, army.Type, army.Career, new List<BattleProperty>() { property1, property2, property3 });
         }
 
         public void IsAnswerANumber(InputField input)

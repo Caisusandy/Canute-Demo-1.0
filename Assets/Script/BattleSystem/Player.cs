@@ -31,8 +31,8 @@ namespace Canute.BattleSystem
         public override Player Owner { get => this; set { Debug.LogError("A player cannot be owned!"); } }
         public override GameObject Prefab { get => null; set { } }
         public override string DisplayingName => this.Lang(Name, "name");
-        public override Sprite DisplayingIcon => null;
-        public override Sprite DisplayingPortrait => null;
+        public override Sprite Icon => null;
+        public override Sprite Portrait => null;
         public new PlayerEntity Entity => BattleSystem.Entity.Get<PlayerEntity>(uuid);
 
 

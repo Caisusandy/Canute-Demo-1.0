@@ -34,7 +34,7 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/6/1 8:32:41
+      value: 2020/6/8 0:20:44
     federgram: 0
     manpower: 1000000
     mantleAlloy: 1000000
@@ -61,9 +61,10 @@ MonoBehaviour:
       - value: bbfa6c3d-7064-49ef-ba61-2d9d285b72cd
     eventCardPiles:
     - eventCardUUID:
+      - value: f67edbd2-19ab-4297-8696-330f63af2b48
       - value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
       - value: 275c835b-f1bb-4fa4-be54-b6ad43e45595
-      - value: f67edbd2-19ab-4297-8696-330f63af2b48
+      - value: 9a5f367a-319b-4c5e-9ad5-ce605e5f6452
     - eventCardUUID: []
     - eventCardUUID:
       - value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
@@ -428,6 +429,16 @@ MonoBehaviour:
       equipments:
         equipmentUUID: []
         equipmentLimit: 
+    - protoName: Basic Airship
+      uuid:
+        value: 1ae6066c-8c0d-4f4a-9689-1405aa073c4f
+      exp: 250000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
     leaders:
     - protoName: Aether Erinope
       uuid:
@@ -501,5 +512,6 @@ MonoBehaviour:
       armiesUnlocked:
       - T1
       - T2
+      - Empty
       equipmentsUnlocked: []
       leadersUnlocked: []

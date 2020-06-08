@@ -27,6 +27,17 @@ namespace Canute.Testing
                     Console.WriteLine(commandParams[1]);
                     Debug.Log(commandParams[1]);
                     return true;
+                case "getArmyItem":
+                    string name = commandParams[1];
+                    BattleSystem.Army army = GameData.Prototypes.GetArmyPrototype(name);
+                    if (!army)
+                    {
+                        Console.WriteLine("the army prototype is not exist!");
+                    }
+                    ArmyItem armyItem = new ArmyItem(army, 250000);
+                    Game.PlayerData.AddArmyItem(armyItem);
+                    PlayerFile.SaveCurrentData();
+                    return true;
                 default:
                     Console.WriteLine("Command not found: " + commandParams[0]);
                     break;

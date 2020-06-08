@@ -29,6 +29,23 @@ namespace Canute
         {
 
         }
+
+        public static implicit operator bool(Prototype prototype)
+        {
+            if (prototype is null)
+            {
+                return false;
+            }
+            else if (prototype.name is null)
+            {
+                return false;
+            }
+            else if (prototype.name == "Empty")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 
     public abstract class PrototypeContainer<T> : ScriptableObject, INameable where T : Prototype, IPrototype, INameable

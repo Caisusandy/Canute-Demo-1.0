@@ -19,6 +19,7 @@ namespace Canute
         public Army Prototype { get => GameData.Prototypes.GetArmyPrototype(protoName); private set => protoName = value?.Name; }
         public override Prototype Proto => Prototype;
         public override int Level => GetLevel(100, 1.1f, Exp);
+        public override Type ItemType => Item.Type.Army;
 
         public int Star => star < 1 ? 1 : star > 3 ? 3 : star;
         public bool HasLeader => !(Leader is null);
@@ -45,7 +46,7 @@ namespace Canute
 
         public int Defense => PrototypeProperty.Defense.Bonus(LevelBounes);
         public double CritRate => PrototypeProperty.CritRate;
-        public double CritBounes => PrototypeProperty.CritBounes;
+        public double CritBounes => PrototypeProperty.CritBonus;
         public int AttackRange => PrototypeProperty.AttackRange;
         public int MoveRange => PrototypeProperty.MoveRange;
         public int Pop => PrototypeProperty.Pop;
@@ -82,7 +83,32 @@ namespace Canute
         }
 
 
-        #endregion
+        #endregion 
+
+        protected override Sprite GetIcon()
+        {
+            if (HasPrototype)
+            {
+                return Proto.Icon;
+            }
+            else
+            {
+                return GameData.SpriteLoader.Get(SpriteAtlases.armyIcon, protoName);
+            }
+        }
+
+        protected override Sprite GetPortrait()
+        {
+            if (HasPrototype)
+            {
+                return Proto.Portrait;
+            }
+            else
+            {
+                return GameData.SpriteLoader.Get(SpriteAtlases.armyPortrait, protoName);
+            }
+        }
+
 
 
         public void AddFloatExp(int floatExp)
@@ -93,7 +119,6 @@ namespace Canute
         {
             this.exp += exp;
         }
-
 
         public void AddStar()
         {

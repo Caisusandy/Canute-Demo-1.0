@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.Languages;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Canute.BattleSystem
     {
         public override Prototype Proto => Prototype;
         public override int Level => GetLevel(100, 1.1f, Exp);
+        public override Type ItemType => Type.Leader;
         public List<PropertyBounes> Bounes => Prototype.Bounes;
         public Leader Prototype { get => GameData.Prototypes.GetLeaderPrototype(protoName); private set => protoName = value?.Name; }
         public Career Career => Prototype.Career;
@@ -55,6 +57,18 @@ namespace Canute.BattleSystem
             level = leaderItem.Level;
             name = leaderItem.Name;
             bounes = leaderItem.Bounes.Clone();
+        }
+
+        protected override string GetDisplayingName()
+        {
+            if (HasPrototype)
+            {
+                return base.GetDisplayingName();
+            }
+            else
+            {
+                return ("Canute.BattleSystem.Leader." + name + ".name").Lang();
+            }
         }
 
         #region Bounes

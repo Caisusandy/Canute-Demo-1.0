@@ -148,7 +148,6 @@ namespace Canute.BattleSystem
             {
                 Debug.LogError("No idea why a effect with type of " + effect.Type + " comes here. " + effect.ToString());
                 return false;
-
             }
 
             IAggressiveEntity source = effect.Source as IAggressiveEntity;
@@ -170,6 +169,12 @@ namespace Canute.BattleSystem
             {
                 Debug.Log("The position for multiple target is illegal");
                 return false;
+            }
+
+
+            if (effect.Type != Effect.Types.attack)
+            {
+                return effect.Execute();
             }
 
             Debug.Log(effect.Targets.Count);

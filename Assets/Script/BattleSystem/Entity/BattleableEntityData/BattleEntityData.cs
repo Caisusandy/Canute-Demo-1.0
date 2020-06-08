@@ -87,7 +87,7 @@ namespace Canute.BattleSystem
                         properties.CritRate = property.Bounes(properties.CritRate, item.Level);
                         break;
                     case PropertyType.critBounes:
-                        properties.CritBounes = property.Bounes(properties.CritBounes, item.Level);
+                        properties.CritBonus = property.Bounes(properties.CritBonus, item.Level);
                         break;
                     default:
                         break;
@@ -127,7 +127,7 @@ namespace Canute.BattleSystem
                         properties.CritRate = property.RemoveBounes(properties.CritRate, item.Level);
                         break;
                     case PropertyType.critBounes:
-                        properties.CritBounes = property.RemoveBounes(properties.CritBounes, item.Level);
+                        properties.CritBonus = property.RemoveBounes(properties.CritBonus, item.Level);
                         break;
                     default:
                         break;

@@ -21,7 +21,7 @@ namespace Canute.BattleSystem
 
         public static void Damage(this IPassiveEntity passiveEntity, int damage, IAggressiveEntity sourceEntity)
         {
-            int finalDamageIfCrit = damage.Bonus(Random.value < sourceEntity.Data.Properties.CritRate ? 0 : sourceEntity.Data.Properties.CritBounes, BonusType.percentage);
+            int finalDamageIfCrit = damage.Bonus(Random.value < sourceEntity.Data.Properties.CritRate ? 0 : sourceEntity.Data.Properties.CritBonus, BonusType.percentage);
             int flow = (int)(finalDamageIfCrit);//* Random.Range(0.95f, 1.05f));
             int armorHit = passiveEntity.Data.DamageArmor(flow);
 

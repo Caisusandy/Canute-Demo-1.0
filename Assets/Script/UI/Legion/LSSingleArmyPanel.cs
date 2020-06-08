@@ -80,7 +80,7 @@ namespace Canute.UI
 
             moveRange.text = armyItem.ArmyProperty.MoveRange.ToString();
             attackRange.text = armyItem.ArmyProperty.AttackRange.ToString();
-            critBounes.text = armyItem.ArmyProperty.CritBounes.ToString() + "%";
+            critBounes.text = armyItem.ArmyProperty.CritBonus.ToString() + "%";
             critRate.text = armyItem.ArmyProperty.CritRate.ToString() + "%";
 
             career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, (armyItem.HasLeader ? armyItem.Leader.Career : armyItem.Career).ToString());

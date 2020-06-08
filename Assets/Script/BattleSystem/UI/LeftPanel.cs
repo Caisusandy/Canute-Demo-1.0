@@ -110,7 +110,7 @@ namespace Canute.BattleSystem.UI
             }
 
             iconDisplayer.enabled = true;
-            iconDisplayer.sprite = SelectingEntity.Data.DisplayingIcon;
+            iconDisplayer.sprite = SelectingEntity.Data.Icon;
             nameDisplayer.text = SelectingEntity?.Data.DisplayingName;
         }
 

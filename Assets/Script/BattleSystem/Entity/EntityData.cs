@@ -18,10 +18,10 @@ namespace Canute.BattleSystem
         public virtual Prototype Prototype { get => GameData.Prototypes.GetPrototype(name); set => name = value?.Name; }
         public virtual bool HasPrototype => !string.IsNullOrEmpty(name);
 
-        public virtual string DisplayingName => Prototype.DisplayingName;
-        public virtual Sprite DisplayingIcon => Prototype?.Icon;
-        public virtual Sprite DisplayingPortrait => Prototype?.Portrait;
         public virtual string Name => name;
+        public virtual string DisplayingName => GetDisplayingName();
+        public virtual Sprite Icon => GetIcon();
+        public virtual Sprite Portrait => GetPortrait();
         public virtual Player Owner { get => Game.CurrentBattle?.GetPlayer(ownerUUID); set => ownerUUID = value is null ? UUID.Empty : value.UUID; }
         public virtual UUID UUID { get => uuid; set => uuid = value; }
         public virtual GameObject Prefab { get => prefab; set => prefab = value; }
@@ -52,9 +52,24 @@ namespace Canute.BattleSystem
             Prototype = prototype;
         }
 
-        protected void NewUUID()
+        private Sprite GetIcon()
+        {
+            return Prototype?.Icon;
+        }
+
+        private Sprite GetPortrait()
+        {
+            return Prototype?.Portrait;
+        }
+
+        protected virtual void NewUUID()
         {
             (this as IUUIDLabeled).NewUUID();
+        }
+
+        protected virtual string GetDisplayingName()
+        {
+            return Prototype.DisplayingName;
         }
 
         public static bool IsNullOrEmpty(EntityData entityData)

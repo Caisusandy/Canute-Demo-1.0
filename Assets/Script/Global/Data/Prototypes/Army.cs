@@ -29,7 +29,6 @@ namespace Canute.BattleSystem
 
         [SerializeField] private double health;
         [SerializeField] private double damage;
-        [SerializeField] private double defense;
         [SerializeField] private Types type;
         [SerializeField] private Career career = Career.none;
 
@@ -38,20 +37,29 @@ namespace Canute.BattleSystem
 
         public Army() { properties = new List<BattleProperty>() { new BattleProperty(), new BattleProperty(), new BattleProperty() }; }
 
-        public Army(string name, double health, double damage, double defense, Types type, Career career, List<BattleProperty> properties)
+
+        public Army(string name, double health, double damage, Types type, Career career, List<BattleProperty> properties)
         {
             this.name = name;
             this.health = health;
             this.damage = damage;
-            this.defense = defense;
             this.type = type;
+            this.career = career;
+            this.properties = properties;
+        }
+        public Army(string name, double health, double damage, Types type, Career career, GameObject prefab, List<BattleProperty> properties)
+        {
+            this.name = name;
+            this.health = health;
+            this.damage = damage;
+            this.type = type;
+            this.prefab = prefab;
             this.career = career;
             this.properties = properties;
         }
 
         public double Health => health;
         public double Damage => damage;
-        public double Defense => defense;
         public Types Type => type;
         public Career Career => career;
         public List<BattleProperty> Properties => properties;

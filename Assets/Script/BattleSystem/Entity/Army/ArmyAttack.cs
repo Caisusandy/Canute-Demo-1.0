@@ -39,7 +39,7 @@ namespace Canute.BattleSystem
             expectedTargets = armyEntity.GetTargets().ToList<Entity>();
             currentAttackingEffect = effect;
 
-            if (expectedTargets.Count == 0)
+            if (expectedTargets.Count == 0 && armyEntity.data.Type != Army.Types.airship)
             {
                 BattleUI.SendMessage("No enemy is in attack range");
                 return false;
@@ -80,30 +80,52 @@ namespace Canute.BattleSystem
 
         public static void SelecteAttackTarget(Entity onMapEntity)
         {
-            Entity target = onMapEntity as IPassiveEntity as Entity ?? onMapEntity.transform.Find("Army")?.GetComponent<Entity>() ?? onMapEntity.transform.Find("Building")?.GetComponent<Entity>();
+            Entity target;
 
-            if (!(target is IPassiveEntity))
+            if (!(onMapEntity is CellEntity))
             {
-                Debug.Log("not a passive target");
-                return;
+                target = onMapEntity;
             }
-            if (!expectedTargets.Contains(target))
+            else
             {
-                Debug.Log("not a expected target");
-                return;
-            }
-            if (targets.Contains(target))
-            {
-                bool s = targets.Remove(target);
-                Debug.Log("target remove " + s);
-                return;
-            }
-            if ((target as IPassiveEntity).Data.StatList.HasStatus(Effect.Types.tag, "protection"))
-            {
-                BattleUI.SendMessage("Cannot attack: target is under protection");
-                return;
+                if ((onMapEntity as CellEntity).HasArmyStandOn)
+                {
+                    target = (onMapEntity as CellEntity).HasArmyStandOn;
+                }
+                else if ((onMapEntity as CellEntity).HasBuildingStandOn)
+                {
+                    target = (onMapEntity as CellEntity).HasBuildingStandOn;
+                }
+                else
+                {
+                    target = onMapEntity;
+                }
             }
 
+            if (!(target is CellEntity))
+            {
+                if (!(target is IPassiveEntity))
+                {
+                    Debug.Log("not a passive target");
+                    return;
+                }
+                if (!expectedTargets.Contains(target))
+                {
+                    Debug.Log("not a expected target");
+                    return;
+                }
+                if (targets.Contains(target))
+                {
+                    bool s = targets.Remove(target);
+                    Debug.Log("target remove " + s);
+                    return;
+                }
+                if ((target as IPassiveEntity).Data.StatList.HasStatus(Effect.Types.tag, "protection"))
+                {
+                    BattleUI.SendMessage("Cannot attack: target is under protection");
+                    return;
+                }
+            }
             //if (attackingArmy.data.Properties.TargetType == ArmyProperty.TargetTypes.single)
             if (attackingArmy.data.Properties.Attack.IsTypeOf(BattleProperty.AttackType.single))
             {

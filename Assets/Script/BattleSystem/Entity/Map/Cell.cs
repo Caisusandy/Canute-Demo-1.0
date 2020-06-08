@@ -19,6 +19,7 @@ namespace Canute.BattleSystem
         public List<BattleArmy> Armies => Game.CurrentBattle.GetArmies(Coordinate);
         public Terrain Terrain => (Terrain)Enum.Parse(typeof(Terrain), terrain);
 
+
         public static Vector2Int V32V2(Vector3Int pos)
         {
             return new Vector2Int(pos.x + pos.y / 2, pos.y);

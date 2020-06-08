@@ -19,7 +19,7 @@ namespace Canute.BattleSystem
             containOrgin = 1,
             ignoreLandArmy = 2,
             ignoreAirArmy = 4,
-            ignoreArmy = ignoreAirArmy + ignoreLandArmy,
+            ignoreArmy = ignoreAirArmy | ignoreLandArmy,
             ignoreBuilding = 8,
             ignoreDestinationArmy = 16,
             ignoreDestinationBuilding = 32

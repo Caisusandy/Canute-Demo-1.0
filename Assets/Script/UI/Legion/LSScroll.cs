@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Canute.UI
 {
+    [System.Obsolete]
     public class LSScroll : MonoBehaviour
     {
         public static LSScroll instance;
@@ -56,14 +57,14 @@ namespace Canute.UI
 
             switch (type)
             {
-                case Item.Type.army:
+                case Item.Type.Army:
 
                     foreach (ArmyItem item in Game.PlayerData.Armies)
                     {
                         Create(item);
                     }
                     break;
-                case Item.Type.leader:
+                case Item.Type.Leader:
                     foreach (LeaderItem item in Game.PlayerData.Leaders)
                     {
                         Create(item);

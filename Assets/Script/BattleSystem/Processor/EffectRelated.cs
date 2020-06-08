@@ -39,7 +39,6 @@ namespace Canute.BattleSystem
                         statusExecutor = AircreaftFighterTowardEnemy;
                         break;
                     case "dragonCardAcceptance":
-
                         statusExecutor = DragonCardAcceptance;
                         break;
                     case "dragonAirAttack":
@@ -53,6 +52,9 @@ namespace Canute.BattleSystem
                         break;
                     case "dragonCritAttack":
                         statusExecutor = DragonCritAttackBonus;
+                        break;
+                    case "MoveChildren":
+                        statusExecutor = MoveChildren;
                         break;
                     default:
                         status.Execute();
@@ -287,7 +289,38 @@ namespace Canute.BattleSystem
             }
         }
 
+        private static void MoveChildren(ref Effect sourceEffect, Status status)
+        {
+            ArmyEntity mother = sourceEffect.Target as ArmyEntity;
+            List<Status> childRecord = mother.StatList.GetAllTags();
 
+            foreach (var item in childRecord)
+            {
+                if (item.Effect[Effect.name] != "motherOf")
+                {
+                    continue;
+                }
+
+                ArmyEntity child = item.Effect.Source as ArmyEntity;
+                Vector3Int d = child.HexCoord - mother.HexCoord;
+                CellEntity destination = Game.CurrentBattle.MapEntity[(status.Effect.Target as OnMapEntity).HexCoord + d];
+
+                if (!destination)
+                {
+                    child.Remove();
+                }
+                else if (!destination.IsValidDestination(child as OnMapEntity))
+                {
+                    child.Remove();
+                }
+
+                var move = new Effect(Effect.Types.@event, child, destination, 1, 0, "name:move");
+                move.Execute();
+
+                var curStat = child.StatList.GetEvent("name:aircraftFighterReturn");
+                curStat.Effect.Target = destination;
+            }
+        }
 
         #endregion
 

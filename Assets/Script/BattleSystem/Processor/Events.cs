@@ -25,6 +25,7 @@ namespace Canute.BattleSystem
         public const string aircraftFighterReturn = "aircraftFighterReturn";
         public const string addDragonCard = "addDragonCard";
         public const string dragonCritAttack = "dragonCritAttack";
+        public const string createArmy = "createArmy";
     }
 
 
@@ -67,6 +68,9 @@ namespace Canute.BattleSystem
                 case EventName.protection:
                     result = Protection(effect);
                     break;
+                case EventName.createArmy:
+                    result = EventCreateArmy(effect);
+                    break;
 
                 //special
                 case EventName.aircraftFighterReturn:
@@ -77,6 +81,9 @@ namespace Canute.BattleSystem
                     break;
                 case EventName.dragonCritAttack:
                     result = DragonCritAttack(effect);
+                    break;
+                case "airship" + EventName.createArmy:
+                    result = EventCreateArmy(effect);
                     break;
                 //case "":
                 //    result =
@@ -250,14 +257,8 @@ namespace Canute.BattleSystem
                 Debug.LogWarning("the moving entity should not moving but it is trying to move");
                 return false;
             }
-            else if (destination.HasArmyStandOn && movingEntity is ArmyEntity)
+            else if (destination.IsValidDestination(movingEntity))
             {
-                Debug.Log("Army tried to move to a place has army stand on");
-                return false;
-            }
-            else if (destination.HasBuildingStandOn && movingEntity is BuildingEntity)
-            {
-                Debug.Log("Building tried to move to a place has building stand on");
                 return false;
             }
 
@@ -289,6 +290,7 @@ namespace Canute.BattleSystem
                 return true;
             }
         }
+
 
         private static bool ArmySwitch(Effect effect)
         {
@@ -470,6 +472,89 @@ namespace Canute.BattleSystem
                 BuildingEntity buildingEntity = item as BuildingEntity;
                 buildingEntity.Owner = effect.Source.Owner;
             }
+
+            return true;
+        }
+
+        private static bool EventCreateArmy(Effect effect)
+        {
+            /* 
+             *  CellParam ["armyName"]["armyType"]["career"]["attackPosition"]["attackType"]["prefabPath"]
+             *  ["attack"]["health"]["defense"]["critRate"]["critBonus"]["moveRange"]["moveRange"] 
+             */
+            CellEntity cellEntity = effect.GetCellParam();
+            string armyName = effect["armyName"];
+
+
+            int damage = effect.Args.GetIntParam("attack");
+            int health = effect.Args.GetIntParam("health");
+            int defense = effect.Args.GetIntParam("defense");
+            int critRate = effect.Args.GetIntParam("critRate");
+            int critBonus = effect.Args.GetIntParam("critBonus");
+            int moveRange = effect.Args.GetIntParam("moveRange");
+            int attackRange = effect.Args.GetIntParam("moveRange");
+
+            damage = damage != -1 ? damage : 0;
+            health = health != -1 ? health : 0;
+            defense = defense != -1 ? defense : 0;
+            critRate = critRate != -1 ? critRate : 20;
+            critBonus = critBonus != -1 ? critBonus : 20;
+            moveRange = moveRange != -1 ? moveRange : 2;
+            attackRange = attackRange != -1 ? attackRange : 4;
+
+            Army.Types type = effect.Args.GetEnumParam<Army.Types>("armyType");
+            Career career = effect.Args.GetEnumParam<Career>("career");
+
+            BattleProperty.Position attackPosition = effect.Args.GetEnumParam<BattleProperty.Position>("attackPosition");
+            BattleProperty.Position standPosition = effect.Args.GetEnumParam<BattleProperty.Position>("standPosition");
+            BattleProperty.AttackType attackType = effect.Args.GetEnumParam<BattleProperty.AttackType>("attackType");
+
+            GameObject prefab = Resources.Load<GameObject>(effect["prefabPath"]);
+
+            if (cellEntity is null)
+            {
+                return false;
+            }
+
+
+            BattleProperty battleProperty = new BattleProperty()
+            {
+                StandPosition = standPosition,
+                AttackPosition = attackPosition,
+
+                CritBonus = critBonus,
+                CritRate = critRate,
+
+                Attack = attackType,
+                Defense = defense,
+
+                AttackRange = attackRange,
+                MoveRange = moveRange,
+            };
+
+            var army = new Army(armyName, health, damage, type, career, prefab, new List<BattleProperty>() { battleProperty });
+            var armyItem = new ArmyItem(army, 0);
+            var battleArmy = new BattleArmy(armyItem, effect.Source.Owner) { Coordinate = cellEntity.Coordinate, Prefab = prefab };
+
+
+            Game.CurrentBattle.Armies.Add(battleArmy);
+            ArmyEntity.Create(battleArmy);
+
+            return true;
+        }
+
+        private static bool AirshipCreateArmy(Effect effect)
+        {
+            bool ans = EventCreateArmy(effect);
+            if (!ans)
+            {
+                return ans;
+            }
+
+            ArmyEntity armyEntity = effect.Source as ArmyEntity;
+            var motherStat = new Effect(Effect.Types.tag, effect.GetCellParam().HasArmyStandOn, armyEntity, 1, 0, "name:motherOf");
+            var status = new Status(motherStat, -1, -1, Status.StatType.perminant, false);
+            armyEntity.StatList.Add(status);
 
             return true;
         }

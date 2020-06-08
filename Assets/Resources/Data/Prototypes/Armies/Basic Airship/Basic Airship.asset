@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42519a9a9bfe564f9f663cf1d552d44, type: 3}
+  m_Name: Basic Airship
+  m_EditorClassIdentifier: 
+  prototype:
+    name: Basic Airship
+    rarity: 1
+    icon: {fileID: 21300000, guid: 336e1909d0fa1e34cac7ab07f4078e78, type: 3}
+    sprite: {fileID: 21300000, guid: 880586395aee14b42bf47402c166100a, type: 3}
+    protrait: {fileID: 0}
+    prefab: {fileID: 6470687005625561500, guid: e008f1b3c1be05742a6e3ea729228007,
+      type: 3}
+    health: 15
+    damage: 24.57
+    type: 7
+    career: 3
+    properties:
+    - defense: 0
+      critRate: 20
+      critBounes: 50
+      pop: 1
+      attackRange: 2
+      moveRange: 5
+      standPosition: 2
+      attackPosition: 1
+      attackArea: 1
+      targetCount: 1
+      attackType: 6
+      skill:
+        type: 0
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []
+    - defense: 0
+      critRate: 20
+      critBounes: 50
+      pop: 1
+      attackRange: 2
+      moveRange: 5
+      standPosition: 2
+      attackPosition: 1
+      attackArea: 1
+      targetCount: 1
+      attackType: 6
+      skill:
+        type: 0
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []
+    - defense: 0
+      critRate: 20
+      critBounes: 50
+      pop: 1
+      attackRange: 2
+      moveRange: 5
+      standPosition: 2
+      attackPosition: 1
+      attackArea: 1
+      targetCount: 1
+      attackType: 6
+      skill:
+        type: 0
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []

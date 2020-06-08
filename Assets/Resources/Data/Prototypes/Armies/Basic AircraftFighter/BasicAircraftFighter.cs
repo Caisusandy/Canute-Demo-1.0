@@ -30,7 +30,7 @@ namespace Canute.BattleSystem.Armies
             Status towardStatus = new Status(towardEffect, -1, -1, Status.StatType.perminant, TriggerCondition.OnDefenseEnd);
             StatList.Add(towardStatus);
 
-            Effect maximizeAttackArea = new Effect(Effect.Types.addStatus, this, this, 1, 0, "effectType:tag", "tc:1", "sc:1", "statType:dualBase");
+            Effect maximizeAttackArea = new Effect(Effect.Types.addStatus, this, this, 1, 0, "name:areaBuffer", "effectType:tag", "tc:1", "sc:1", "statType:dualBase");
             Status areaBuffer = new Status(maximizeAttackArea, -1, -1, Status.StatType.resonance, TriggerCondition.OnTurnBegin);
             StatList.Add(areaBuffer);
         }

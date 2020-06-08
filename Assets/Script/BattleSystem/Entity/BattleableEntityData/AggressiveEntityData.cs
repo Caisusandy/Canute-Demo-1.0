@@ -43,7 +43,7 @@ namespace Canute.BattleSystem
                         properties.CritRate = property.Bounes(properties.CritRate, item.Level);
                         break;
                     case PropertyType.critBounes:
-                        properties.CritBounes = property.Bounes(properties.CritBounes, item.Level);
+                        properties.CritBonus = property.Bounes(properties.CritBonus, item.Level);
                         break;
                     default:
                         break;
@@ -87,7 +87,7 @@ namespace Canute.BattleSystem
 
             if (isCritical)
             {
-                damage = damage.Bonus(agressiveEntity.Properties.CritBounes);
+                damage = damage.Bonus(agressiveEntity.Properties.CritBonus);
             }
 
             return damage;
