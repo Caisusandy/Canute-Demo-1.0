@@ -1,12 +1,15 @@
 ﻿using Canute.BattleSystem.UI;
 using Canute.Testing;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Canute.BattleSystem
 {
     public class Control : MonoBehaviour
     {
+        private const double maxMapScale = 3;
+        private const double minMaxScale = 0.5;
         public static Control instance;
         public Vector3 inputPos;
 
@@ -30,6 +33,36 @@ namespace Canute.BattleSystem
             FunctionKeys();
         }
 
+        /// <summary>
+        /// Get Target
+        /// </summary> 
+        public void GetRaycastTarget()
+        {
+            // Cast a ray straight down.
+            List<RaycastHit2D> hitObj = new List<RaycastHit2D>(10);
+            ContactFilter2D contactFilter2D = new ContactFilter2D();
+            Physics2D.Raycast(transform.position, -Vector2.zero, contactFilter2D.NoFilter(), hitObj);
+            // If it hits something...
+
+            for (int i = 0; i < hitObj.Count; i++)
+            {
+                RaycastHit2D hit = hitObj[i];
+                if (hit.collider == null) //if collider found nothing
+                {
+                    continue;
+                }
+
+                Transform hitTransform = hit.transform;
+
+                CardEntity possibleCardEntity = hitTransform.GetComponent<CardEntity>();
+
+                if (possibleCardEntity) //if it is not a CellEntity, ignore
+                {
+                    //possibleCardEntity.OnMouseDown();
+                    //possibleCardEntity.OnMouseUp();
+                }
+            }
+        }
 
         public void FunctionKeys()
         {
@@ -73,11 +106,27 @@ namespace Canute.BattleSystem
 
         public void ScaleMap(float v)
         {
-            if (Map.transform.localScale.x > 3 && v > 0)
+            ////Zoom out
+            //if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            //{
+            //    if (Camera.main.orthographicSize <= 7)
+            //    {
+            //        Camera.main.orthographicSize += 0.1f;
+            //    }
+            //}
+            ////Zoom in
+            //if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            //{
+            //    if (Camera.main.orthographicSize >= 3)
+            //    {
+            //        Camera.main.orthographicSize -= 0.1f;
+            //    }
+            //}
+            if (Camera.main.transform.localScale.x > maxMapScale && v > 0)
             {
                 return;
             }
-            if (Map.transform.localScale.x < 0.5 && v < 0)
+            if (Map.transform.localScale.x < minMaxScale && v < 0)
             {
                 return;
             }

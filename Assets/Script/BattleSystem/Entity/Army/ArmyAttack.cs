@@ -10,6 +10,7 @@ namespace Canute.BattleSystem
     {
         public static ArmyEntity attackingArmy;
         public static List<CellEntity> border = new List<CellEntity>();
+        public static MarkController borderController = new MarkController();
         public static List<Entity> expectedTargets = new List<Entity>();
         public static List<Entity> targets = new List<Entity>();
         public static Effect currentAttackingEffect;
@@ -18,6 +19,7 @@ namespace Canute.BattleSystem
         {
             attackingArmy = null;
             border = new List<CellEntity>();
+            borderController = new MarkController(CellMark.Type.attackRange);
             targets = new List<Entity>();
             expectedTargets = new List<Entity>();
             currentAttackingEffect = new Effect();
@@ -36,7 +38,7 @@ namespace Canute.BattleSystem
                 return false;
             }
 
-            expectedTargets = armyEntity.GetTargets().ToList<Entity>();
+            expectedTargets = armyEntity.GetPossibleTargets().Select((IPassiveEntity a) => { return a.entity as Entity; }).ToList();
             currentAttackingEffect = effect;
 
             if (expectedTargets.Count == 0 && armyEntity.data.Type != Army.Types.airship)
@@ -196,7 +198,9 @@ namespace Canute.BattleSystem
             {
                 while (Game.CurrentBattle.CurrentStat == Battle.Stat.attack)
                 {
-                    Mark.Load(Mark.Type.attackRange, border);
+                    borderController.Refresh(border);
+                    borderController.Display();
+
                     yield return new WaitForFixedUpdate();
                 }
                 yield return null;
@@ -205,17 +209,23 @@ namespace Canute.BattleSystem
 
         public static void EndShowAttackRange()
         {
-            Mark.Unload(Mark.Type.attackRange, border);
+            borderController.ClearDisplay();
             border = null;
         }
 
 
         #endregion
-
-        public static List<ArmyEntity> GetTargets(this ArmyEntity armyEntity)
+        /// <summary>
+        /// Get all the possible target for the aggressive entity
+        /// (return should be passive
+        /// )
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public static List<IPassiveEntity> GetPossibleTargets(this IAggressiveEntity entity, bool AllowSearchBuilding = false)
         {
-            List<ArmyEntity> possibleTargets = new List<ArmyEntity>();
-            List<CellEntity> cellEntities = armyEntity.GetAttackArea();
+            List<IPassiveEntity> possibleTargets = new List<IPassiveEntity>();
+            List<CellEntity> cellEntities = entity.GetAttackArea();
             for (int i = cellEntities.Count - 1; i >= 0; i--)
             {
                 CellEntity cellEntity = cellEntities[i];
@@ -225,17 +235,13 @@ namespace Canute.BattleSystem
                     continue;
                 }
 
-                ArmyEntity possibleTarget = cellEntity.transform.Find("Army").GetComponent<ArmyEntity>();
-                bool v = (possibleTarget.data.StandPosition & armyEntity.data.AttackPosition) == BattleProperty.Position.none;
-                //Debug.Log(possibleTarget.data.StandPosition);
-                //Debug.Log(armyEntity.data.AttackPosition);
-                //Debug.Log(v);
-                if (v)
+                IPassiveEntity possibleTarget = cellEntity.HasArmyStandOn;
+                if (!entity.Data.AttackPosition.HasFlag(possibleTarget.Data.StandPosition))
                 {
                     cellEntities.RemoveAt(i);
                     continue;
                 }
-                else if (possibleTarget.Owner == armyEntity.Owner)
+                else if (possibleTarget.Owner == entity.Owner)
                 {
                     cellEntities.RemoveAt(i);
                     continue;
@@ -244,10 +250,105 @@ namespace Canute.BattleSystem
                 {
                     possibleTargets.Add(possibleTarget);
                 }
+
+                if (AllowSearchBuilding && cellEntity.HasBuildingStandOn)
+                {
+                    possibleTarget = cellEntity.HasBuildingStandOn;
+                    if (!entity.Data.AttackPosition.HasFlag(possibleTarget.Data.StandPosition))
+                    {
+                        cellEntities.RemoveAt(i);
+                        continue;
+                    }
+                    else if (possibleTarget.Owner == entity.Owner)
+                    {
+                        cellEntities.RemoveAt(i);
+                        continue;
+                    }
+                    else
+                    {
+                        possibleTargets.Add(possibleTarget);
+                    }
+
+                }
             }
 
             Debug.Log(possibleTargets.Count);
             return possibleTargets;
+        }
+
+        /// <summary>
+        /// Get the target which is closest to the aggressive entity
+        /// </summary>
+        /// <param name="aggressiveEntity"></param>
+        /// <returns></returns>
+        public static IPassiveEntity GetClosestTarget(this IAggressiveEntity aggressiveEntity)
+        {
+            IPassiveEntity closestTarget = null;
+            IEnumerable<IPassiveEntityData> enumerable = Game.CurrentBattle.Armies.Select((BattleArmy e) => { return e as IPassiveEntityData; }).Union(Game.CurrentBattle.Buildings.Select((BattleBuilding e) => { return e as IPassiveEntityData; }));
+            foreach (var target in enumerable)
+            {
+                IPassiveEntity possibleTarget = target.Entity as IPassiveEntity;
+                if (!aggressiveEntity.Data.Properties.AttackPosition.HasFlag(possibleTarget.Data.StandPosition))
+                {
+                    continue;
+                }
+                else if (target.Owner == aggressiveEntity.Owner || target.Owner == null)
+                {
+                    continue;
+                }
+                else if (closestTarget is null)
+                {
+                    closestTarget = possibleTarget;
+                    continue;
+                }
+                if (possibleTarget.GetPointDistanceOf(aggressiveEntity.entity) < closestTarget.GetPointDistanceOf(aggressiveEntity.entity))
+                {
+                    closestTarget = possibleTarget;
+                }
+            }
+            return closestTarget;
+        }
+
+        public static IPassiveEntity GetLowestHealthPointTarget(this IAggressiveEntity aggressiveEntity, bool mustInAttackRange = true, bool isAllowSearchBuilding = false)
+        {
+            IPassiveEntity lowest = null;
+            IEnumerable<IPassiveEntityData> enumerable;
+            if (mustInAttackRange)
+            {
+                enumerable = aggressiveEntity.GetPossibleTargets(isAllowSearchBuilding).Select((IPassiveEntity e) => { return e.Data; });
+            }
+            else
+            {
+                enumerable = Game.CurrentBattle.Armies.Select((BattleArmy e) => { return e as IPassiveEntityData; });
+                if (isAllowSearchBuilding)
+                {
+                    enumerable.Union(Game.CurrentBattle.Buildings.Select((BattleBuilding e) => { return e as IPassiveEntityData; }));
+                }
+            }
+
+
+            foreach (var target in enumerable)
+            {
+                IPassiveEntity possibleTarget = target.Entity as IPassiveEntity;
+                if (!aggressiveEntity.Data.Properties.AttackPosition.HasFlag(possibleTarget.Data.StandPosition))
+                {
+                    continue;
+                }
+                else if (target.Owner == aggressiveEntity.Owner || target.Owner == null)
+                {
+                    continue;
+                }
+                else if (lowest is null)
+                {
+                    lowest = possibleTarget;
+                    continue;
+                }
+                if (lowest.Data.Health > possibleTarget.Data.Health)
+                {
+                    lowest = possibleTarget;
+                }
+            }
+            return lowest;
         }
 
         //public static List<ArmyEntity> GetTargetAfterMove(this ArmyEntity armyEntity)

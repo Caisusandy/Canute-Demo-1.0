@@ -83,7 +83,7 @@ namespace Canute.BattleSystem
                     result = DragonCritAttack(effect);
                     break;
                 case "airship" + EventName.createArmy:
-                    result = EventCreateArmy(effect);
+                    result = AirshipCreateArmy(effect);
                     break;
                 //case "":
                 //    result =
@@ -141,23 +141,24 @@ namespace Canute.BattleSystem
             CellEntity cellEntity = effect.GetCellParam();
             cellEntity.data.canStandOn = true;
             Effect returnEffect = new Effect(Effect.Types.@event, armyEntity, cellEntity, 1, 0, "name:move");
-            returnEffect.Execute(false);
+            returnEffect.Execute();
 
             return true;
         }
 
         private static bool RealDamage(Effect effect)
         {
+            IBattleableEntity source = effect.Source as IBattleableEntity;
             for (int i = 0; i < effect.Count; i++)
             {
                 foreach (Entity item in effect.Targets)
                 {
-                    IPassiveEntityData passiveEntity = item.Data as IPassiveEntityData;
+                    IPassiveEntity passiveEntity = item as IPassiveEntity;
                     if (passiveEntity is null)
                     {
                         continue;
                     }
-                    passiveEntity.RealDamage(effect.Parameter);
+                    passiveEntity.FinalDamage(effect.Parameter, source);
                 }
             }
             return true;
@@ -191,7 +192,6 @@ namespace Canute.BattleSystem
 
         private static bool AddArmor(Effect effect)
         {
-
             foreach (var item in effect.Targets)
             {
                 if (!(item is IPassiveEntity))
@@ -206,6 +206,7 @@ namespace Canute.BattleSystem
                 for (int i = 0; i < effect.Count; i++)
                 {
                     passiveEntity.Data.Armor += effect.Parameter;
+                    Debug.Log("add armor");
                 }
             }
             return true;
@@ -221,21 +222,50 @@ namespace Canute.BattleSystem
                 }
             }
 
+            if (!effect.Args.HasParam("avoidTrigger"))
+            {
+                foreach (Entity entity in effect.AllEntities)
+                {
+                    IBattleableEntity battleEntityData = entity as IBattleableEntity;
+                    if (battleEntityData is null)
+                    {
+                        continue;
+                    }
+                    battleEntityData.Data.Trigger(TriggerCondition.Conditions.beforeAttack, ref effect);
+                }
+                IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
+                agressiveEntity.Data.Trigger(TriggerCondition.Conditions.attack, ref effect);
+            }
+
             IAggressiveEntity aggressiveEntity = effect.Source as IAggressiveEntity;
             foreach (var item in effect.Targets)
             {
-                IPassiveEntity passiveEntity = item as IPassiveEntity;
+                IPassiveEntity target = item as IPassiveEntity;
+                if (!effect.Args.HasParam("avoidTrigger")) target.Data.Trigger(TriggerCondition.Conditions.defense, ref effect);
                 var executingEffect = effect.Clone();
                 executingEffect.Target = item;
                 RewriteAttackEffect(ref executingEffect);
 
                 for (int i = 0; i < executingEffect.Count; i++)
                 {
-                    if (aggressiveEntity is null) passiveEntity.Hurt(executingEffect.Parameter);
-                    else passiveEntity.Hurt(executingEffect.Parameter, aggressiveEntity);
+                    if (aggressiveEntity is null) target.Hurt(executingEffect.Parameter);
+                    else target.Hurt(executingEffect.Parameter, aggressiveEntity);
                 }
             }
 
+
+            if (!effect.Args.HasParam("avoidTrigger"))
+            {
+                foreach (Entity entity in effect.AllEntities)
+                {
+                    IBattleableEntity battleEntity = entity as IBattleableEntity;
+                    if (battleEntity is null)
+                    {
+                        continue;
+                    }
+                    battleEntity.Data.Trigger(TriggerCondition.Conditions.afterDefence, ref effect);
+                }
+            }
             return true;
         }
 
@@ -257,8 +287,9 @@ namespace Canute.BattleSystem
                 Debug.LogWarning("the moving entity should not moving but it is trying to move");
                 return false;
             }
-            else if (destination.IsValidDestination(movingEntity))
+            else if (!destination.IsValidDestination(movingEntity))
             {
+                Debug.Log("not a valid destination");
                 return false;
             }
 
@@ -303,8 +334,8 @@ namespace Canute.BattleSystem
             {
                 ArmyEntity source = effect.Source as ArmyEntity;
 
-                List<CellEntity> path1 = PathFinder.GetPath(source.OnCellOf, target.OnCellOf, -1, PathFinder.FinderParam.ignoreAirArmy & PathFinder.FinderParam.ignoreLandArmy);
-                List<CellEntity> path2 = PathFinder.GetPath(target.OnCellOf, source.OnCellOf, -1, PathFinder.FinderParam.ignoreAirArmy & PathFinder.FinderParam.ignoreLandArmy);
+                List<CellEntity> path1 = PathFinder.GetPath(source.OnCellOf, target.OnCellOf, -1, PathFinder.FinderParam.ignoreArmy | PathFinder.FinderParam.ignoreDestinationEntity);
+                List<CellEntity> path2 = PathFinder.GetPath(target.OnCellOf, source.OnCellOf, -1, PathFinder.FinderParam.ignoreArmy | PathFinder.FinderParam.ignoreDestinationEntity);
 
                 if (path1.Count == 0 || path2.Count == 0)
                 {
@@ -382,7 +413,6 @@ namespace Canute.BattleSystem
 
                     Effect removeProtection = new Effect(Effect.Types.removeStatus, effect.Source, cellEntity.HasArmyStandOn, 1);
                     removeProtection["uuid"] = protection.UUID.ToString();
-
                     Status item = new Status(removeProtection, 0, 1, Status.StatType.countBase, false, TriggerCondition.OnExitCell);
                     cellEntity.HasArmyStandOn.StatList.Add(item);
                     (effect.Source as IStatusContainer)?.StatList.Add(item);
@@ -394,7 +424,7 @@ namespace Canute.BattleSystem
 
         private static bool SwitchDragonStatus(Effect effect)
         {
-            Debug.Log("Siwtch status");
+            Debug.Log("Switch status");
             var dragon = effect.Target as ArmyEntity;
             if (dragon.data.Type != Army.Types.dragon)
             {
@@ -446,7 +476,7 @@ namespace Canute.BattleSystem
             var v = damage.Execute();
             Debug.Log(v);
 
-            Effect addStatus = new Effect(Effect.Types.addStatus, effect.Source, armyEntity, 1, 10, effect.Args.ToArray());
+            Effect addStatus = new Effect(Effect.Types.addStatus, effect.Source, armyEntity, 1, 10, effect.Args.ToArray().Union(new Arg[] { "showToPlayer,true" }).ToArray());
             addStatus.Execute();
 
             return true;
@@ -545,15 +575,20 @@ namespace Canute.BattleSystem
 
         private static bool AirshipCreateArmy(Effect effect)
         {
-            bool ans = EventCreateArmy(effect);
-            if (!ans)
-            {
-                return ans;
-            }
-
             ArmyEntity armyEntity = effect.Source as ArmyEntity;
-            var motherStat = new Effect(Effect.Types.tag, effect.GetCellParam().HasArmyStandOn, armyEntity, 1, 0, "name:motherOf");
-            var status = new Status(motherStat, -1, -1, Status.StatType.perminant, false);
+            CellEntity target = effect.Target as CellEntity;
+            string protoName = effect["prototype"];
+            int level = effect.Args.GetIntParam("level");
+            int star = effect.Args.GetIntParam("star");
+
+            var prototype = GameData.Prototypes.GetArmyPrototype(protoName);
+            var battleArmy = new BattleArmy(prototype, armyEntity.Owner, level, star);
+            Game.CurrentBattle.Armies.Add(battleArmy);
+            battleArmy.Coordinate = target.Coordinate;
+
+            var child = ArmyEntity.Create(battleArmy, false);
+            var motherStat = new Effect(Effect.Types.tag, armyEntity, child, 1, 0, "name:motherOf");
+            var status = new Status(motherStat, -1, -1, Status.StatType.perminant);
             armyEntity.StatList.Add(status);
 
             return true;

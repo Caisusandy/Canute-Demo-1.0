@@ -13,9 +13,3804 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 3
-  lastUpdatedAtString: 2020-05-26T14:46:09.111-04:00
-  initializedAtString: 2020-05-26T04:31:05.266-04:00
+  lastUpdatedAtString: 2020-08-26T00:13:03.273-04:00
+  initializedAtString: 2020-08-26T00:13:03.116-04:00
   log:
+  - commitID: 8499a4b113541697946875f1cd96ffe3f56ce8fa
+    mergeA: 
+    mergeB: 
+    authorName: Caisusandy
+    authorEmail: 164040662@qq.com
+    commitEmail: 164040662@qq.com
+    commitName: Caisusandy
+    summary: airship pt.1
+    description: 
+    timeString: 2020-06-07T21:07:28.000-04:00
+    commitTimeString: 2020-06-07T21:07:28.000-04:00
+    changes:
+    - path: Assets\Resources\Data\Game.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Game.asset
+      projectPath: Assets\Resources\Data\Game.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototype Factory.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototype Factory.asset
+      projectPath: Assets\Resources\Data\Prototype Factory.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\BasicAircraftFighter.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\BasicAircraftFighter.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\BasicAircraftFighter.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Attack.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Attack.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Attack.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Attack.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Attack.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Attack.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Basic Airship.asset
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Basic Airship.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.controller
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Basic Airship.controller
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.controller
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.controller.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Basic Airship.controller.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.controller.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.prefab
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Basic Airship.prefab
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.prefab.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Basic Airship.prefab.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic Airship.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic AirshipAircraftFighter.prefab
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Basic AirshipAircraftFighter.prefab
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic AirshipAircraftFighter.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic AirshipAircraftFighter.prefab.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Basic AirshipAircraftFighter.prefab.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Basic AirshipAircraftFighter.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\BasicAirship.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\BasicAirship.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\BasicAirship.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\BasicAirship.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\BasicAirship.cs.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\BasicAirship.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\BasicAirshipAircraftFighter.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\BasicAirshipAircraftFighter.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\BasicAirshipAircraftFighter.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\BasicAirshipAircraftFighter.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\BasicAirshipAircraftFighter.cs.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\BasicAirshipAircraftFighter.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Idle.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Idle.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Idle.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Idle.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Idle.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Idle.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Move.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Move.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Move.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Move.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\Move.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\Move.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\PerformSkill.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\PerformSkill.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\PerformSkill.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Airship\PerformSkill.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Airship\PerformSkill.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Airship\PerformSkill.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BuildingEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BuildingEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BuildingEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\EntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\EntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\EntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Map\Cell.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Map\Cell.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Map\Cell.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Map\CellEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Map\CellEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Map\CellEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Module\PathFinder.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Module\PathFinder.cs
+      projectPath: Assets\Script\BattleSystem\Module\PathFinder.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Player.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Player.cs
+      projectPath: Assets\Script\BattleSystem\Player.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      projectPath: Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectRelated.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectRelated.cs
+      projectPath: Assets\Script\BattleSystem\Processor\EffectRelated.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Events.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Events.cs
+      projectPath: Assets\Script\BattleSystem\Processor\Events.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Properties.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Properties.cs
+      projectPath: Assets\Script\BattleSystem\Processor\Properties.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\ArmyInfoIcon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\ArmyInfoIcon.cs
+      projectPath: Assets\Script\BattleSystem\UI\ArmyInfoIcon.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\Command.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\Command.cs
+      projectPath: Assets\Script\BattleSystem\UI\Command.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\LeftPanel.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\LeftPanel.cs
+      projectPath: Assets\Script\BattleSystem\UI\LeftPanel.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item.cs
+      projectPath: Assets\Script\Global\Data\Item.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\ArmyItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\ArmyItem.cs
+      projectPath: Assets\Script\Global\Data\Item\ArmyItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\EquipmentItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\EquipmentItem.cs
+      projectPath: Assets\Script\Global\Data\Item\EquipmentItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\EventCardItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\EventCardItem.cs
+      projectPath: Assets\Script\Global\Data\Item\EventCardItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\LeaderItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\LeaderItem.cs
+      projectPath: Assets\Script\Global\Data\Item\LeaderItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Prototype.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Prototype.cs
+      projectPath: Assets\Script\Global\Data\Prototype.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Prototypes\Army.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Prototypes\Army.cs
+      projectPath: Assets\Script\Global\Data\Prototypes\Army.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Prototypes\BattleProperty.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Prototypes\BattleProperty.cs
+      projectPath: Assets\Script\Global\Data\Prototypes\BattleProperty.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\SpriteLoader.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\SpriteLoader.cs
+      projectPath: Assets\Script\Global\SpriteLoader.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Module\Args.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Module\Args.cs
+      projectPath: Assets\Script\Module\Args.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Module\Extensions.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Module\Extensions.cs
+      projectPath: Assets\Script\Module\Extensions.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Module\TemporaryAttribute.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Module\TemporaryAttribute.cs
+      projectPath: Assets\Script\Module\TemporaryAttribute.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Legion\LSScroll.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Legion\LSScroll.cs
+      projectPath: Assets\Script\UI\Legion\LSScroll.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      projectPath: Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Testing\Army Generator\ArmyGenerator.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Testing\Army Generator\ArmyGenerator.cs
+      projectPath: Assets\Script\UI\Testing\Army Generator\ArmyGenerator.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: d13aa0951714a77920f0365426622e8e3f03441e
+    mergeA: 
+    mergeB: 
+    authorName: Caisusandy
+    authorEmail: 164040662@qq.com
+    commitEmail: 164040662@qq.com
+    commitName: Caisusandy
+    summary: event card fix
+    description: 
+    timeString: 2020-06-01T04:49:07.000-04:00
+    commitTimeString: 2020-06-01T04:49:07.000-04:00
+    changes:
+    - path: Assets\Resources\Data\Game.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Game.asset
+      projectPath: Assets\Resources\Data\Game.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Lang.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Lang.asset
+      projectPath: Assets\Resources\Data\Lang.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prefabs.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prefabs.asset
+      projectPath: Assets\Resources\Data\Prefabs.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototype Factory.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototype Factory.asset
+      projectPath: Assets\Resources\Data\Prototype Factory.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Basic Dragon.asset
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.prefab
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Basic Dragon.prefab
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.prefab
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\BasicDragon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\BasicDragon.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\BasicDragon.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Rifleman\BasicRifleman.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Rifleman\BasicRifleman.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Rifleman\BasicRifleman.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Shielder\BasicShielder.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Shielder\BasicShielder.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Shielder\BasicShielder.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\AlphaCard(Testing).asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\AlphaCard(Testing).asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\AlphaCard(Testing).asset
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\Empty.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\Empty.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\Empty.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\EnemyMove.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\EnemyMove.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\EnemyMove.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\Oppotunity.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\Oppotunity.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\Oppotunity.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\Trick.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\Trick.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\Trick.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\addActionPoint.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\addActionPoint.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\addActionPoint.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\addActionPoint.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\addActionPoint.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Cards\addActionPoint.asset.meta
+      originalPath: Assets\Resources\Data\Prototypes\Cards\AlphaCard(Testing).asset.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\centralEvent\armySwitch.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\centralEvent\armySwitch.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\centralEvent\armySwitch.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\centralEvent\cardMinusPoint.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\centralEvent\cardMinusPoint.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\centralEvent\cardMinusPoint.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\centralEvent\confusion.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\centralEvent\confusion.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\centralEvent\confusion.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\centralEvent\drawCard.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\centralEvent\drawCard.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\centralEvent\drawCard.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAirAttack.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAirAttack.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAirAttack.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAirAttack.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAirAttack.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAirAttack.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAttackBonus.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAttackBonus.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAttackBonus.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAttackBonus.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAttackBonus.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonAttackBonus.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonCritAttack.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonCritAttack.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonCritAttack.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonCritAttack.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonCritAttack.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonCritAttack.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonMoveBonus.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonMoveBonus.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonMoveBonus.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonMoveBonus.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonMoveBonus.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonMoveBonus.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonStrike.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonStrike.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonStrike.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonStrike.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonStrike.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonStrike.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\AircraftFighter.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\AircraftFighter.asset
+      projectPath: Assets\Resources\Data\Resonance\AircraftFighter.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 1.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        1.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 1.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 2.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        2.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 2.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 3.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        3.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 3.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 4.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        4.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 4.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 5.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        5.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 5.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 6.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        6.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 6.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Resonance Sheet.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Resonance
+        Sheet.asset
+      projectPath: Assets\Resources\Data\Resonance\Resonance Sheet.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Sheider 1.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Sheider
+        1.asset
+      projectPath: Assets\Resources\Data\Resonance\Sheider 1.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Lang\en_us.txt
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Lang\en_us.txt
+      projectPath: Assets\Resources\Lang\en_us.txt
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Levels\Test Map\TestingLevel.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Levels\Test Map\TestingLevel.asset
+      projectPath: Assets\Resources\Levels\Test Map\TestingLevel.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Prefabs\Card\DragonEventCard.prefab
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Prefabs\Card\DragonEventCard.prefab
+      projectPath: Assets\Resources\Prefabs\Card\DragonEventCard.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Prefabs\Card\DragonEventCard.prefab.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Prefabs\Card\DragonEventCard.prefab.meta
+      projectPath: Assets\Resources\Prefabs\Card\DragonEventCard.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\BattleUI.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\BattleUI.unity
+      projectPath: Assets\Resources\Scenes\BattleUI.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Legion Setting\Legion Setting.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Legion Setting\Legion
+        Setting.unity
+      projectPath: Assets\Resources\Scenes\Legion Setting\Legion Setting.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Legion\Legion.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Legion\Legion.unity
+      projectPath: Assets\Resources\Scenes\Legion\Legion.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Main.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Main.unity
+      projectPath: Assets\Resources\Scenes\Main.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\AI\AIEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\AI\AIEntity.cs
+      projectPath: Assets\Script\BattleSystem\AI\AIEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Battle.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Battle.cs
+      projectPath: Assets\Script\BattleSystem\Battle.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\CentralDeck.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\CentralDeck.cs
+      projectPath: Assets\Script\BattleSystem\CentralDeck.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\ArmyEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\ArmyEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\ArmyEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Card.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Card.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Card.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Card\CardEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Card\CardEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Card\CardEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Entity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Entity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Entity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\TargetType.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\TargetType.cs
+      projectPath: Assets\Script\BattleSystem\Entity\TargetType.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Player.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Player.cs
+      projectPath: Assets\Script\BattleSystem\Player.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      projectPath: Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectRelated.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectRelated.cs
+      projectPath: Assets\Script\BattleSystem\Processor\EffectRelated.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectRelated.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectRelated.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\EffectRelated.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Events.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Events.cs
+      projectPath: Assets\Script\BattleSystem\Processor\Events.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Events.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Events.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\Events.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams.meta
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams.meta
+      originalPath: Assets\Resources\Data\Saves.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\ArgType.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\ArgType.cs
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\ArgType.cs
+      originalPath: Assets\Script\BattleSystem\Processor\ArgType.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\ArgType.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\ArgType.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\ArgType.cs.meta
+      originalPath: Assets\Script\BattleSystem\Processor\ArgType.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\Effect.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\Effect.cs
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\Effect.cs
+      originalPath: Assets\Script\BattleSystem\Processor\Effect.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\Effect.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\Effect.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\Effect.cs.meta
+      originalPath: Assets\Script\BattleSystem\Processor\Effect.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\EffectType.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\EffectType.cs
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\EffectType.cs
+      originalPath: Assets\Script\BattleSystem\Processor\EffectType.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\EffectType.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\EffectType.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\EffectType.cs.meta
+      originalPath: Assets\Script\BattleSystem\Processor\EffectType.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\Resonance.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\Resonance.cs
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\Resonance.cs
+      originalPath: Assets\Script\BattleSystem\Processor\Resonance.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\Resonance.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\Resonance.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\Resonance.cs.meta
+      originalPath: Assets\Script\BattleSystem\Processor\Resonance.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\StatList.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\StatList.cs
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\StatList.cs
+      originalPath: Assets\Script\BattleSystem\Processor\StatList.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\StatList.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\StatList.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\StatList.cs.meta
+      originalPath: Assets\Script\BattleSystem\Processor\StatList.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\Status.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\Status.cs
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\Status.cs
+      originalPath: Assets\Script\BattleSystem\Processor\Status.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\Status.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\Status.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\Status.cs.meta
+      originalPath: Assets\Script\BattleSystem\Processor\Status.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\TriggerCondition.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\TriggerCondition.cs
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\TriggerCondition.cs
+      originalPath: Assets\Script\BattleSystem\Processor\TriggerCondition.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\ExecutorParams\TriggerCondition.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\ExecutorParams\TriggerCondition.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\ExecutorParams\TriggerCondition.cs.meta
+      originalPath: Assets\Script\BattleSystem\Processor\TriggerCondition.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Properties.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Properties.cs
+      projectPath: Assets\Script\BattleSystem\Processor\Properties.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Properties.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Properties.cs.meta
+      projectPath: Assets\Script\BattleSystem\Processor\Properties.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\GameData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\GameData.cs
+      projectPath: Assets\Script\Global\Data\GameData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\ArmyItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\ArmyItem.cs
+      projectPath: Assets\Script\Global\Data\Item\ArmyItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\EventCardItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\EventCardItem.cs
+      projectPath: Assets\Script\Global\Data\Item\EventCardItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\PropertyBounes.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\PropertyBounes.cs
+      projectPath: Assets\Script\Global\Data\PropertyBounes.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\PrototypeFactory.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\PrototypeFactory.cs
+      projectPath: Assets\Script\Global\Data\PrototypeFactory.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Prototypes\EventCard.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Prototypes\EventCard.cs
+      projectPath: Assets\Script\Global\Data\Prototypes\EventCard.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\ResonanceSheet.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\ResonanceSheet.cs
+      projectPath: Assets\Script\Global\Data\ResonanceSheet.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Interface\IPrototypeCopy.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Interface\IPrototypeCopy.cs
+      projectPath: Assets\Script\Global\Interface\IPrototypeCopy.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\ResonancePair.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\ResonancePair.cs
+      projectPath: Assets\Script\Global\ResonancePair.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Language\Language.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Language\Language.cs
+      projectPath: Assets\Script\Language\Language.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Language\LanguageSystem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Language\LanguageSystem.cs
+      projectPath: Assets\Script\Language\LanguageSystem.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\Language\LanguageSystem.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Language\LanguageSystem.cs.meta
+      projectPath: Assets\Script\Language\LanguageSystem.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\Module\UUID.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Module\UUID.cs
+      projectPath: Assets\Script\Module\UUID.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Module\Window.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Module\Window.cs
+      projectPath: Assets\Script\Module\Window.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Armies\ArmyTypeIcon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Armies\ArmyTypeIcon.cs
+      projectPath: Assets\Script\UI\Armies\ArmyTypeIcon.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Armies\AttackPostionIcon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Armies\AttackPostionIcon.cs
+      projectPath: Assets\Script\UI\Armies\AttackPostionIcon.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Armies\AttackTypeIcon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Armies\AttackTypeIcon.cs
+      projectPath: Assets\Script\UI\Armies\AttackTypeIcon.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Armies\StandPostionIcon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Armies\StandPostionIcon.cs
+      projectPath: Assets\Script\UI\Armies\StandPostionIcon.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Global\LeaderCardUI.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Global\LeaderCardUI.cs
+      projectPath: Assets\Script\UI\Global\LeaderCardUI.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      projectPath: Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: b4405f96e07397fd74e414a6f27ee8362d2bba36
+    mergeA: 
+    mergeB: 
+    authorName: Caisusandy
+    authorEmail: 164040662@qq.com
+    commitEmail: 164040662@qq.com
+    commitName: Caisusandy
+    summary: dragon pt.1
+    description: 
+    timeString: 2020-05-27T03:49:54.000-04:00
+    commitTimeString: 2020-05-27T03:49:54.000-04:00
+    changes:
+    - path: Assets\Resources\Data\Commands.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Commands.asset
+      projectPath: Assets\Resources\Data\Commands.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Game.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Game.asset
+      projectPath: Assets\Resources\Data\Game.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototype Factory.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototype Factory.asset
+      projectPath: Assets\Resources\Data\Prototype Factory.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Attack.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Attack.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Attack.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Attack.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Attack.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Attack.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Basic Dragon.asset
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Basic Dragon.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.controller
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Basic Dragon.controller
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.controller
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.controller.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Basic Dragon.controller.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.controller.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.prefab
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Basic Dragon.prefab
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.prefab.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Basic Dragon.prefab.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Basic Dragon.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\BasicDragon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\BasicDragon.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\BasicDragon.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\BasicDragon.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\BasicDragon.cs.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\BasicDragon.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Idle.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Idle.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Idle.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Idle.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Idle.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Idle.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Move.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Move.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Move.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Move.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\Move.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\Move.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\PerformSkill.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\PerformSkill.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\PerformSkill.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\PerformSkill.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Dragon\PerformSkill.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Dragon\PerformSkill.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Mage\BasicMage.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Mage\BasicMage.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Mage\BasicMage.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Shielder\Basic Shielder.controller
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Shielder\Basic Shielder.controller
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Shielder\Basic Shielder.controller
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard.meta
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Cards\dragonCard\dragonDualAttack.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 1.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        1.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 1.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 1.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        1.asset.meta
+      projectPath: Assets\Resources\Data\Resonance\Dragon 1.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 2.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        2.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 2.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 2.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        2.asset.meta
+      projectPath: Assets\Resources\Data\Resonance\Dragon 2.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 3.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        3.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 3.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 3.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        3.asset.meta
+      projectPath: Assets\Resources\Data\Resonance\Dragon 3.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 4.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        4.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 4.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 4.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        4.asset.meta
+      projectPath: Assets\Resources\Data\Resonance\Dragon 4.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 5.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        5.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 5.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 5.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        5.asset.meta
+      projectPath: Assets\Resources\Data\Resonance\Dragon 5.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 6.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        6.asset
+      projectPath: Assets\Resources\Data\Resonance\Dragon 6.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Dragon 6.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Dragon
+        6.asset.meta
+      projectPath: Assets\Resources\Data\Resonance\Dragon 6.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\Resonance Sheet.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\Resonance
+        Sheet.asset
+      projectPath: Assets\Resources\Data\Resonance\Resonance Sheet.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Prefabs\Console.prefab
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Prefabs\Console.prefab
+      projectPath: Assets\Resources\Prefabs\Console.prefab
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Battle.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Battle.cs
+      projectPath: Assets\Script\BattleSystem\Battle.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\PassiveEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\PassiveEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\PassiveEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Card.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Card.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Card.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\OnMapEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\OnMapEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\OnMapEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Module\IStatusContainer.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Module\IStatusContainer.cs
+      projectPath: Assets\Script\BattleSystem\Module\IStatusContainer.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Effect.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Effect.cs
+      projectPath: Assets\Script\BattleSystem\Processor\Effect.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      projectPath: Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectType.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectType.cs
+      projectPath: Assets\Script\BattleSystem\Processor\EffectType.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Resonance.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Resonance.cs
+      projectPath: Assets\Script\BattleSystem\Processor\Resonance.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\StatList.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\StatList.cs
+      projectPath: Assets\Script\BattleSystem\Processor\StatList.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Status.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Status.cs
+      projectPath: Assets\Script\BattleSystem\Processor\Status.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\TriggerCondition.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\TriggerCondition.cs
+      projectPath: Assets\Script\BattleSystem\Processor\TriggerCondition.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\Command.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\Command.cs
+      projectPath: Assets\Script\BattleSystem\UI\Command.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\BounesTypes.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\BounesTypes.cs
+      projectPath: Assets\Script\Global\Data\BounesTypes.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\ArmyItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\ArmyItem.cs
+      projectPath: Assets\Script\Global\Data\Item\ArmyItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\EventCardItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\EventCardItem.cs
+      projectPath: Assets\Script\Global\Data\Item\EventCardItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Prefabs.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Prefabs.cs
+      projectPath: Assets\Script\Global\Data\Prefabs.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\PropertyBounes.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\PropertyBounes.cs
+      projectPath: Assets\Script\Global\Data\PropertyBounes.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Prototypes\BattleProperty.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Prototypes\BattleProperty.cs
+      projectPath: Assets\Script\Global\Data\Prototypes\BattleProperty.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Prototypes\EventCard.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Prototypes\EventCard.cs
+      projectPath: Assets\Script\Global\Data\Prototypes\EventCard.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\ResonanceSheet.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\ResonanceSheet.cs
+      projectPath: Assets\Script\Global\Data\ResonanceSheet.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Interface\IUUIDLabeled.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Interface\IUUIDLabeled.cs
+      projectPath: Assets\Script\Global\Interface\IUUIDLabeled.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\ResonancePair.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\ResonancePair.cs
+      projectPath: Assets\Script\Global\ResonancePair.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\Global\ResonancePair.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\ResonancePair.cs.meta
+      projectPath: Assets\Script\Global\ResonancePair.cs.meta
+      originalPath: Assets\Script\Global\ResoncancePair.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\Global\ResoncancePair.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\ResoncancePair.cs
+      projectPath: Assets\Script\Global\ResoncancePair.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Assets\Script\Module\Args.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Module\Args.cs
+      projectPath: Assets\Script\Module\Args.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Armies\ArmyListUI.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Armies\ArmyListUI.cs
+      projectPath: Assets\Script\UI\Armies\ArmyListUI.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      projectPath: Assets\Script\UI\Legion\LSSingleArmyPanel.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 6eb4c2c9d748d66800eef517f260223a34976206
+    mergeA: 
+    mergeB: 
+    authorName: Caisusandy
+    authorEmail: 164040662@qq.com
+    commitEmail: 164040662@qq.com
+    commitName: Caisusandy
+    summary: Create .gitignore
+    description: 
+    timeString: 2020-05-26T14:51:07.000-04:00
+    commitTimeString: 2020-05-26T14:51:07.000-04:00
+    changes:
+    - path: .gitignore
+      fullPath: C:\Users\wende\Documents\Canute\.gitignore
+      projectPath: .gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 4401f3c5e258c5e7da89dfecea1148220be4c772
+    mergeA: 
+    mergeB: 
+    authorName: Caisusandy
+    authorEmail: 164040662@qq.com
+    commitEmail: 164040662@qq.com
+    commitName: Caisusandy
+    summary: Console UI
+    description: 
+    timeString: 2020-05-26T14:47:36.000-04:00
+    commitTimeString: 2020-05-26T14:47:36.000-04:00
+    changes:
+    - path: .vs\Canute\v16\.suo
+      fullPath: C:\Users\wende\Documents\Canute\.vs\Canute\v16\.suo
+      projectPath: .vs\Canute\v16\.suo
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: .vs\Canute\v16\Server\sqlite3\storage.ide
+      fullPath: C:\Users\wende\Documents\Canute\.vs\Canute\v16\Server\sqlite3\storage.ide
+      projectPath: .vs\Canute\v16\Server\sqlite3\storage.ide
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: .vs\Canute\v16\Server\sqlite3\storage.ide-shm
+      fullPath: C:\Users\wende\Documents\Canute\.vs\Canute\v16\Server\sqlite3\storage.ide-shm
+      projectPath: .vs\Canute\v16\Server\sqlite3\storage.ide-shm
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: .vs\Canute\v16\Server\sqlite3\storage.ide-wal
+      fullPath: C:\Users\wende\Documents\Canute\.vs\Canute\v16\Server\sqlite3\storage.ide-wal
+      projectPath: .vs\Canute\v16\Server\sqlite3\storage.ide-wal
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assembly-CSharp-Editor-firstpass.csproj
+      fullPath: C:\Users\wende\Documents\Canute\Assembly-CSharp-Editor-firstpass.csproj
+      projectPath: Assembly-CSharp-Editor-firstpass.csproj
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assembly-CSharp.csproj
+      fullPath: C:\Users\wende\Documents\Canute\Assembly-CSharp.csproj
+      projectPath: Assembly-CSharp.csproj
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Commands.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Commands.asset
+      projectPath: Assets\Resources\Data\Commands.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Game.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Game.asset
+      projectPath: Assets\Resources\Data\Game.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Lang.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Lang.asset
+      projectPath: Assets\Resources\Data\Lang.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prefabs.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prefabs.asset
+      projectPath: Assets\Resources\Data\Prefabs.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototype Factory.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototype Factory.asset
+      projectPath: Assets\Resources\Data\Prototype Factory.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter.meta
+      originalPath: Assets\Resources\Scenes\EventCard List.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Attack.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Attack.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Attack.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Attack.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Attack.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Attack.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic AircraftFighter.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Basic AircraftFighter.asset
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic
+        AircraftFighter.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic AircraftFighter.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Basic AircraftFighter.asset.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic
+        AircraftFighter.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic AircraftFighter.controller
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Basic AircraftFighter.controller
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic
+        AircraftFighter.controller
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic AircraftFighter.controller.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Basic AircraftFighter.controller.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic
+        AircraftFighter.controller.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic AircraftFighter.prefab
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Basic AircraftFighter.prefab
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic
+        AircraftFighter.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic AircraftFighter.prefab.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Basic AircraftFighter.prefab.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Basic
+        AircraftFighter.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\BasicAircraftFighter.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\BasicAircraftFighter.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\BasicAircraftFighter.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\BasicAircraftFighter.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\BasicAircraftFighter.cs.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\BasicAircraftFighter.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Idle.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Idle.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Idle.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Idle.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Idle.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Idle.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Move.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Move.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Move.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Move.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\Move.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\Move.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\PerformSkill.anim
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\PerformSkill.anim
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\PerformSkill.anim
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\PerformSkill.anim.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        AircraftFighter\PerformSkill.anim.meta
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic AircraftFighter\PerformSkill.anim.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Mage\BasicMage.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Mage\BasicMage.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Mage\BasicMage.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Rifleman\BasicRifleman.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Rifleman\BasicRifleman.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Rifleman\BasicRifleman.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Shielder\BasicShielder.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Shielder\BasicShielder.cs
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Shielder\BasicShielder.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Armies\Basic Shielder\Shielder.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Armies\Basic
+        Shielder\Shielder.asset
+      projectPath: Assets\Resources\Data\Prototypes\Armies\Basic Shielder\Shielder.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Prototypes\Leaders\Aether Erinope.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Prototypes\Leaders\Aether
+        Erinope.asset
+      projectPath: Assets\Resources\Data\Prototypes\Leaders\Aether Erinope.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\AircraftFighter.asset
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\AircraftFighter.asset
+      projectPath: Assets\Resources\Data\Resonance\AircraftFighter.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Data\Resonance\AircraftFighter.asset.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Data\Resonance\AircraftFighter.asset.meta
+      projectPath: Assets\Resources\Data\Resonance\AircraftFighter.asset.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Lang\en_us.txt
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Lang\en_us.txt
+      projectPath: Assets\Resources\Lang\en_us.txt
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Prefabs\Console.prefab
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Prefabs\Console.prefab
+      projectPath: Assets\Resources\Prefabs\Console.prefab
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Prefabs\Console.prefab.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Prefabs\Console.prefab.meta
+      projectPath: Assets\Resources\Prefabs\Console.prefab.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\BattleUI.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\BattleUI.unity
+      projectPath: Assets\Resources\Scenes\BattleUI.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\EventCardList\EventCardList.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\EventCardList\EventCardList.unity
+      projectPath: Assets\Resources\Scenes\EventCardList\EventCardList.unity
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\EventCardPile\EventCardPile.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\EventCardPile\EventCardPile.unity
+      projectPath: Assets\Resources\Scenes\EventCardPile\EventCardPile.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Game Start\Game Start.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Game Start\Game
+        Start.unity
+      projectPath: Assets\Resources\Scenes\Game Start\Game Start.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Legion\Legion.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Legion\Legion.unity
+      projectPath: Assets\Resources\Scenes\Legion\Legion.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Main.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Main.unity
+      projectPath: Assets\Resources\Scenes\Main.unity
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Main\Main.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Main\Main.cs
+      projectPath: Assets\Resources\Scenes\Main\Main.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Settings.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Settings.meta
+      projectPath: Assets\Resources\Scenes\Settings.meta
+      originalPath: Assets\Resources\Scenes\EventCardList.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Settings\Settings.unity
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Settings\Settings.unity
+      projectPath: Assets\Resources\Scenes\Settings\Settings.unity
+      originalPath: Assets\Resources\Scenes\EventCard List\EventCard List.unity
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Resources\Scenes\Settings\Settings.unity.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Resources\Scenes\Settings\Settings.unity.meta
+      projectPath: Assets\Resources\Scenes\Settings\Settings.unity.meta
+      originalPath: Assets\Resources\Scenes\EventCardList\EventCardList.unity.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\AI\AIAction.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\AI\AIAction.cs
+      projectPath: Assets\Script\BattleSystem\AI\AIAction.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\AI\AIEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\AI\AIEntity.cs
+      projectPath: Assets\Script\BattleSystem\AI\AIEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Battle.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Battle.cs
+      projectPath: Assets\Script\BattleSystem\Battle.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\ArmyAttack.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\ArmyEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\ArmyEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\ArmyEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\ArmyMovement.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\ArmyMovement.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\ArmyMovement.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\Entities.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\EntityOnCellMotion.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\EntityOnCellMotion.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Army\EntityOnCellMotion.cs
+      originalPath: Assets\Script\BattleSystem\Entity\Army\ArmyMotion.cs
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Army\EntityOnCellMotion.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Army\EntityOnCellMotion.cs.meta
+      projectPath: Assets\Script\BattleSystem\Entity\Army\EntityOnCellMotion.cs.meta
+      originalPath: Assets\Script\BattleSystem\Entity\Army\ArmyMotion.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\AggressiveEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleArmy.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\BattleableEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BattleableEntityData\PassiveEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BattleableEntityData\PassiveEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BattleableEntityData\PassiveEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\BuildingEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\BuildingEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\BuildingEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Card.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Card.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Card.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Card\ArmyCardEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Card\ArmyCardEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Card\ArmyCardEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Card\CardEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Card\CardEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Card\CardEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Entity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Entity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Entity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\EntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\EntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\EntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\IOnMapEntityData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\IOnMapEntityData.cs
+      projectPath: Assets\Script\BattleSystem\Entity\IOnMapEntityData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Map\Cell.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Map\Cell.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Map\Cell.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Map\CellEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Map\CellEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Map\CellEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\Map\MapEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\Map\MapEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\Map\MapEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Entity\OnMapEntity.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Entity\OnMapEntity.cs
+      projectPath: Assets\Script\BattleSystem\Entity\OnMapEntity.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Module\IStatusContainer.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Module\IStatusContainer.cs
+      projectPath: Assets\Script\BattleSystem\Module\IStatusContainer.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Module\PathFinder.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Module\PathFinder.cs
+      projectPath: Assets\Script\BattleSystem\Module\PathFinder.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\Effect.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\Effect.cs
+      projectPath: Assets\Script\BattleSystem\Processor\Effect.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      projectPath: Assets\Script\BattleSystem\Processor\EffectExecute.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\EffectType.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\EffectType.cs
+      projectPath: Assets\Script\BattleSystem\Processor\EffectType.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\StatList.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\StatList.cs
+      projectPath: Assets\Script\BattleSystem\Processor\StatList.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\Processor\TriggerCondition.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\Processor\TriggerCondition.cs
+      projectPath: Assets\Script\BattleSystem\Processor\TriggerCondition.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\BattleUI.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\BattleUI.cs
+      projectPath: Assets\Script\BattleSystem\UI\BattleUI.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\Command.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\Command.cs
+      projectPath: Assets\Script\BattleSystem\UI\Command.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\Command.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\Command.cs.meta
+      projectPath: Assets\Script\BattleSystem\UI\Command.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\CommandList.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\CommandList.cs
+      projectPath: Assets\Script\BattleSystem\UI\CommandList.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\Console.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\Console.cs
+      projectPath: Assets\Script\BattleSystem\UI\Console.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\Control.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\Control.cs
+      projectPath: Assets\Script\BattleSystem\UI\Control.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\GameDebug.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\GameDebug.cs
+      projectPath: Assets\Script\BattleSystem\UI\GameDebug.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\WindowManager.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\WindowManager.cs
+      projectPath: Assets\Script\BattleSystem\UI\WindowManager.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BattleSystem\UI\WindowManager.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BattleSystem\UI\WindowManager.cs.meta
+      projectPath: Assets\Script\BattleSystem\UI\WindowManager.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\BuildSetting.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\BuildSetting.cs
+      projectPath: Assets\Script\BuildSetting.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Chapters\Chapters.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Chapters\Chapters.cs
+      projectPath: Assets\Script\Chapters\Chapters.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Chapters\Stories.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Chapters\Stories.cs
+      projectPath: Assets\Script\Chapters\Stories.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\CanuteVersion.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\CanuteVersion.cs
+      projectPath: Assets\Script\Global\CanuteVersion.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Client\PlayerFile.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Client\PlayerFile.cs
+      projectPath: Assets\Script\Global\Client\PlayerFile.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\GameData.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\GameData.cs
+      projectPath: Assets\Script\Global\Data\GameData.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Item\LeaderItem.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Item\LeaderItem.cs
+      projectPath: Assets\Script\Global\Data\Item\LeaderItem.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\Prefabs.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\Prefabs.cs
+      projectPath: Assets\Script\Global\Data\Prefabs.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Data\PrototypeFactory.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Data\PrototypeFactory.cs
+      projectPath: Assets\Script\Global\Data\PrototypeFactory.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\Game.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\Game.cs
+      projectPath: Assets\Script\Global\Game.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Global\SceneControl.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Global\SceneControl.cs
+      projectPath: Assets\Script\Global\SceneControl.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Language\Language.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Language\Language.cs
+      projectPath: Assets\Script\Language\Language.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\Module\Window.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\Module\Window.cs
+      projectPath: Assets\Script\Module\Window.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Armies\ArmyListUI.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Armies\ArmyListUI.cs
+      projectPath: Assets\Script\UI\Armies\ArmyListUI.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Armies\ArmyTypeIcon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Armies\ArmyTypeIcon.cs
+      projectPath: Assets\Script\UI\Armies\ArmyTypeIcon.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\EventCardPile\ECPPileSmallIcon.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\EventCardPile\ECPPileSmallIcon.cs
+      projectPath: Assets\Script\UI\EventCardPile\ECPPileSmallIcon.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Assets\Script\UI\GameScene.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\GameScene.cs
+      projectPath: Assets\Script\UI\GameScene.cs
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Assets\Script\UI\GameServer.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\GameServer.cs
+      projectPath: Assets\Script\UI\GameServer.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\UI\GameServer.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\GameServer.cs.meta
+      projectPath: Assets\Script\UI\GameServer.cs.meta
+      originalPath: Assets\Script\UI\GameScene.cs.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Settings.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Settings.meta
+      projectPath: Assets\Script\UI\Settings.meta
+      originalPath: Assets\Resources\Scenes\EventCard List\EventCard List.unity.meta
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Settings\SettingUI.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Settings\SettingUI.cs
+      projectPath: Assets\Script\UI\Settings\SettingUI.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Settings\SettingUI.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Settings\SettingUI.cs.meta
+      projectPath: Assets\Script\UI\Settings\SettingUI.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Settings\SettingUIBasic.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Settings\SettingUIBasic.cs
+      projectPath: Assets\Script\UI\Settings\SettingUIBasic.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Settings\SettingUIBasic.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Settings\SettingUIBasic.cs.meta
+      projectPath: Assets\Script\UI\Settings\SettingUIBasic.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Settings\SettingUIDebug.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Settings\SettingUIDebug.cs
+      projectPath: Assets\Script\UI\Settings\SettingUIDebug.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Settings\SettingUIDebug.cs.meta
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Settings\SettingUIDebug.cs.meta
+      projectPath: Assets\Script\UI\Settings\SettingUIDebug.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Assets\Script\UI\Testing\Army Generator\PrototypeLoader.cs
+      fullPath: C:\Users\wende\Documents\Canute\Assets\Script\UI\Testing\Army Generator\PrototypeLoader.cs
+      projectPath: Assets\Script\UI\Testing\Army Generator\PrototypeLoader.cs
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\APIUpdater\project-dependencies.graph
+      fullPath: C:\Users\wende\Documents\Canute\Library\APIUpdater\project-dependencies.graph
+      projectPath: Library\APIUpdater\project-dependencies.graph
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ArtifactDB
+      fullPath: C:\Users\wende\Documents\Canute\Library\ArtifactDB
+      projectPath: Library\ArtifactDB
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\Artifacts\02\0234107f45193baa840127ddfc4d22d6
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\02\0234107f45193baa840127ddfc4d22d6
+      projectPath: Library\Artifacts\02\0234107f45193baa840127ddfc4d22d6
+      originalPath: Library\Artifacts\5b\5b92027b2ef8b20c6e95060c1ea9680f
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\04\0434329369df5074072efd3af42f2cc3
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\04\0434329369df5074072efd3af42f2cc3
+      projectPath: Library\Artifacts\04\0434329369df5074072efd3af42f2cc3
+      originalPath: Library\Artifacts\55\55627b62bb417e829865cbc79a143ac3
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\04\045bb381c8938a8ddb30ffa5626b0589
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\04\045bb381c8938a8ddb30ffa5626b0589
+      projectPath: Library\Artifacts\04\045bb381c8938a8ddb30ffa5626b0589
+      originalPath: Library\Artifacts\e4\e4a04626969c1ff0ccc0623e5a113cf7
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\06\063d52433f0054f21d93384e68825813
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\06\063d52433f0054f21d93384e68825813
+      projectPath: Library\Artifacts\06\063d52433f0054f21d93384e68825813
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\07\07144fc55cf069e642c57366494800f2
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\07\07144fc55cf069e642c57366494800f2
+      projectPath: Library\Artifacts\07\07144fc55cf069e642c57366494800f2
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\07\077d490c7688c0ce3fb833beeef049ca
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\07\077d490c7688c0ce3fb833beeef049ca
+      projectPath: Library\Artifacts\07\077d490c7688c0ce3fb833beeef049ca
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\0c\0c761e122f7c68954539cf420695e0fa
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\0c\0c761e122f7c68954539cf420695e0fa
+      projectPath: Library\Artifacts\0c\0c761e122f7c68954539cf420695e0fa
+      originalPath: Library\Artifacts\60\601ecff9f06c21564879dd0b66a4e180
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\0d\0d4708837da668bab1394a2074cb93a1
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\0d\0d4708837da668bab1394a2074cb93a1
+      projectPath: Library\Artifacts\0d\0d4708837da668bab1394a2074cb93a1
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\10\1098da7d54b8b1bc92c550858fcc2445
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\10\1098da7d54b8b1bc92c550858fcc2445
+      projectPath: Library\Artifacts\10\1098da7d54b8b1bc92c550858fcc2445
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\17\170a7fde35560683f0ab0bed444a29a7
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\17\170a7fde35560683f0ab0bed444a29a7
+      projectPath: Library\Artifacts\17\170a7fde35560683f0ab0bed444a29a7
+      originalPath: Library\Artifacts\1c\1c53a2d567033f2fd7bdb804d8e594e8
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\17\1759fad9094dca1af2e5dda45887573f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\17\1759fad9094dca1af2e5dda45887573f
+      projectPath: Library\Artifacts\17\1759fad9094dca1af2e5dda45887573f
+      originalPath: Library\Artifacts\29\29ab0ac9f4e2cd1b3826cd6032b14697
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\17\17ad9e04a4601e2a8b8568f91838bd73
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\17\17ad9e04a4601e2a8b8568f91838bd73
+      projectPath: Library\Artifacts\17\17ad9e04a4601e2a8b8568f91838bd73
+      originalPath: Library\Artifacts\4b\4ba2bff357b6b8e9f522ccd12131010b
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\19\1955d63b82e7606034fd6c3479f21092
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\19\1955d63b82e7606034fd6c3479f21092
+      projectPath: Library\Artifacts\19\1955d63b82e7606034fd6c3479f21092
+      originalPath: Library\Artifacts\2b\2bfd18213374f8ca1e005c022cc4bd2e
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\1a\1a45e8eb2e7ffc5d3422e00dd52eb60a
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\1a\1a45e8eb2e7ffc5d3422e00dd52eb60a
+      projectPath: Library\Artifacts\1a\1a45e8eb2e7ffc5d3422e00dd52eb60a
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\1b\1b14161c854b9b7940f6321adad55717
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\1b\1b14161c854b9b7940f6321adad55717
+      projectPath: Library\Artifacts\1b\1b14161c854b9b7940f6321adad55717
+      originalPath: Library\Artifacts\f1\f1a25a21486c1c97419e88d0e3b73db5
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\1b\1b6739d41163606ccb98e7351098d6b7
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\1b\1b6739d41163606ccb98e7351098d6b7
+      projectPath: Library\Artifacts\1b\1b6739d41163606ccb98e7351098d6b7
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\1f\1f891b6d57e58df42fea980f2007f55a
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\1f\1f891b6d57e58df42fea980f2007f55a
+      projectPath: Library\Artifacts\1f\1f891b6d57e58df42fea980f2007f55a
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\20\20ad84b0601d461c152fb4d0ead6ec56
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\20\20ad84b0601d461c152fb4d0ead6ec56
+      projectPath: Library\Artifacts\20\20ad84b0601d461c152fb4d0ead6ec56
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\21\218944ab61a69b48de74a41f3e92b87f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\21\218944ab61a69b48de74a41f3e92b87f
+      projectPath: Library\Artifacts\21\218944ab61a69b48de74a41f3e92b87f
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\2a\2a8719eaf0ded7a9823f77d7ea610e8b
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2a\2a8719eaf0ded7a9823f77d7ea610e8b
+      projectPath: Library\Artifacts\2a\2a8719eaf0ded7a9823f77d7ea610e8b
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\2a\2aec98db03a73c7865947eaff2230a16
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2a\2aec98db03a73c7865947eaff2230a16
+      projectPath: Library\Artifacts\2a\2aec98db03a73c7865947eaff2230a16
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\2b\2bc9bf6f37f4d0894d5d1f090daa349b
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2b\2bc9bf6f37f4d0894d5d1f090daa349b
+      projectPath: Library\Artifacts\2b\2bc9bf6f37f4d0894d5d1f090daa349b
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\2c\2c5800056bdec3fa2fb59ac1b8faa671
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2c\2c5800056bdec3fa2fb59ac1b8faa671
+      projectPath: Library\Artifacts\2c\2c5800056bdec3fa2fb59ac1b8faa671
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\2d\2d035aeb80f13961f7d606de287a3d61
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2d\2d035aeb80f13961f7d606de287a3d61
+      projectPath: Library\Artifacts\2d\2d035aeb80f13961f7d606de287a3d61
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\2d\2dc80da2f19234366d20ccc089b3217c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2d\2dc80da2f19234366d20ccc089b3217c
+      projectPath: Library\Artifacts\2d\2dc80da2f19234366d20ccc089b3217c
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\2e\2e2b2e7e66bba25fc258466e1855040d
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2e\2e2b2e7e66bba25fc258466e1855040d
+      projectPath: Library\Artifacts\2e\2e2b2e7e66bba25fc258466e1855040d
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\2e\2e5c6696c44564a6372a971e5395fb46
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2e\2e5c6696c44564a6372a971e5395fb46
+      projectPath: Library\Artifacts\2e\2e5c6696c44564a6372a971e5395fb46
+      originalPath: Library\Artifacts\c8\c82bc161e0a8f6a79dc3df562375fd0c
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\2e\2ee1d7865616495844b245fed7a085f9
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2e\2ee1d7865616495844b245fed7a085f9
+      projectPath: Library\Artifacts\2e\2ee1d7865616495844b245fed7a085f9
+      originalPath: Library\Artifacts\07\071e5e63d21c8cc46d2131b051a7da86
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\2e\2ef032ea024f21ac6c54146c55efd781
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\2e\2ef032ea024f21ac6c54146c55efd781
+      projectPath: Library\Artifacts\2e\2ef032ea024f21ac6c54146c55efd781
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\30\3084ee3a3fc10bc26a6569db54f9acef
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\30\3084ee3a3fc10bc26a6569db54f9acef
+      projectPath: Library\Artifacts\30\3084ee3a3fc10bc26a6569db54f9acef
+      originalPath: Library\Artifacts\16\1691efbddb55c54c79eeb2f720192594
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\33\33e9b26987c995fb3b6b44733a686625
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\33\33e9b26987c995fb3b6b44733a686625
+      projectPath: Library\Artifacts\33\33e9b26987c995fb3b6b44733a686625
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\34\34b005a08088945045e4d30c33c10bc5
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\34\34b005a08088945045e4d30c33c10bc5
+      projectPath: Library\Artifacts\34\34b005a08088945045e4d30c33c10bc5
+      originalPath: Library\Artifacts\9a\9a68cb2aa9d090a2d6505d138a332710
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\36\369d40ace5327e8d8bdb92ba759aa46e
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\36\369d40ace5327e8d8bdb92ba759aa46e
+      projectPath: Library\Artifacts\36\369d40ace5327e8d8bdb92ba759aa46e
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\37\37704b39fdece7c0b52a47c0426f6e04
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\37\37704b39fdece7c0b52a47c0426f6e04
+      projectPath: Library\Artifacts\37\37704b39fdece7c0b52a47c0426f6e04
+      originalPath: Library\Artifacts\3a\3a0fd90e67480c05adcc092e52fb25d1
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\38\3835a3a3e9ccd7e143c4b4a10b406c74
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\38\3835a3a3e9ccd7e143c4b4a10b406c74
+      projectPath: Library\Artifacts\38\3835a3a3e9ccd7e143c4b4a10b406c74
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\39\39083b63f3316cff549b489ce28a6fdc
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\39\39083b63f3316cff549b489ce28a6fdc
+      projectPath: Library\Artifacts\39\39083b63f3316cff549b489ce28a6fdc
+      originalPath: Library\Artifacts\ad\ad342578c8d97fa6beb85ee772c7664d
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\39\399add037cc50e21225ff3d6cab288b8
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\39\399add037cc50e21225ff3d6cab288b8
+      projectPath: Library\Artifacts\39\399add037cc50e21225ff3d6cab288b8
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\39\39ced40f81d710b5d4989aabc03b70ff
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\39\39ced40f81d710b5d4989aabc03b70ff
+      projectPath: Library\Artifacts\39\39ced40f81d710b5d4989aabc03b70ff
+      originalPath: Library\Artifacts\7b\7bf3935b02571bbe7a129c0f7917378a
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\3a\3a71a237807b4162b97cde97ea85b72e
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\3a\3a71a237807b4162b97cde97ea85b72e
+      projectPath: Library\Artifacts\3a\3a71a237807b4162b97cde97ea85b72e
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\3b\3b1d7c30deb4f749f434f4669176cb3c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\3b\3b1d7c30deb4f749f434f4669176cb3c
+      projectPath: Library\Artifacts\3b\3b1d7c30deb4f749f434f4669176cb3c
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\41\41a4f5766bf13b359952bb38a67ea41c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\41\41a4f5766bf13b359952bb38a67ea41c
+      projectPath: Library\Artifacts\41\41a4f5766bf13b359952bb38a67ea41c
+      originalPath: Library\Artifacts\3d\3d9fc8d78983c4724528b35294b29107
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\42\4291da0ade40bc89c99ecf9bfe10613c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\42\4291da0ade40bc89c99ecf9bfe10613c
+      projectPath: Library\Artifacts\42\4291da0ade40bc89c99ecf9bfe10613c
+      originalPath: Library\Artifacts\05\05410ce449247f2845cab6c8dbc25b04
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\44\44fa41f60cb5d01281a5472555539b75
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\44\44fa41f60cb5d01281a5472555539b75
+      projectPath: Library\Artifacts\44\44fa41f60cb5d01281a5472555539b75
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\45\451fd91bacb53b929113dac4df02f707
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\45\451fd91bacb53b929113dac4df02f707
+      projectPath: Library\Artifacts\45\451fd91bacb53b929113dac4df02f707
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\45\45cd8ccee9b67ce06738984d7d26bec9
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\45\45cd8ccee9b67ce06738984d7d26bec9
+      projectPath: Library\Artifacts\45\45cd8ccee9b67ce06738984d7d26bec9
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\48\48efe1519820ae2720fc46763170e824
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\48\48efe1519820ae2720fc46763170e824
+      projectPath: Library\Artifacts\48\48efe1519820ae2720fc46763170e824
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\49\49d7b28a471e5b488cd2f488d19c754c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\49\49d7b28a471e5b488cd2f488d19c754c
+      projectPath: Library\Artifacts\49\49d7b28a471e5b488cd2f488d19c754c
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\4a\4a198f706cdabe57b8c53a78a81ff85a
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4a\4a198f706cdabe57b8c53a78a81ff85a
+      projectPath: Library\Artifacts\4a\4a198f706cdabe57b8c53a78a81ff85a
+      originalPath: Library\Artifacts\2b\2b5a1f0ab0e4131709413844a9eb9b76
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\4a\4a621138286a315268920dc69f1bbc6f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4a\4a621138286a315268920dc69f1bbc6f
+      projectPath: Library\Artifacts\4a\4a621138286a315268920dc69f1bbc6f
+      originalPath: Library\Artifacts\ff\ffba8df78e15238f810de07dce44a49a
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\4a\4aec4fb75aad2bdf2d41c19212ea88aa
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4a\4aec4fb75aad2bdf2d41c19212ea88aa
+      projectPath: Library\Artifacts\4a\4aec4fb75aad2bdf2d41c19212ea88aa
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\4b\4bc256ac45ee65315bbd820c2f072d91
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4b\4bc256ac45ee65315bbd820c2f072d91
+      projectPath: Library\Artifacts\4b\4bc256ac45ee65315bbd820c2f072d91
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\4c\4c2faedab909de89c36c3962e261fa00
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4c\4c2faedab909de89c36c3962e261fa00
+      projectPath: Library\Artifacts\4c\4c2faedab909de89c36c3962e261fa00
+      originalPath: Library\Artifacts\2c\2c623fb6b39f2ff1b754f998a88de52b
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\4d\4d09c91810f90bbfef221d3554aba31b
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4d\4d09c91810f90bbfef221d3554aba31b
+      projectPath: Library\Artifacts\4d\4d09c91810f90bbfef221d3554aba31b
+      originalPath: Library\Artifacts\e8\e8b34cb96876db539a74238596ead145
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\4d\4d2fd95f42986b7b81f785b99d58e1fd
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4d\4d2fd95f42986b7b81f785b99d58e1fd
+      projectPath: Library\Artifacts\4d\4d2fd95f42986b7b81f785b99d58e1fd
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\4d\4d3a67fe73bdaacb531805726f30b3c1
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4d\4d3a67fe73bdaacb531805726f30b3c1
+      projectPath: Library\Artifacts\4d\4d3a67fe73bdaacb531805726f30b3c1
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\4d\4df27424159ccbeaa85f975706d526e6
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\4d\4df27424159ccbeaa85f975706d526e6
+      projectPath: Library\Artifacts\4d\4df27424159ccbeaa85f975706d526e6
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\52\5215591014e49afb9959724da270286c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\52\5215591014e49afb9959724da270286c
+      projectPath: Library\Artifacts\52\5215591014e49afb9959724da270286c
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\55\55db5f812529eb76c3d0cc12af48be68
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\55\55db5f812529eb76c3d0cc12af48be68
+      projectPath: Library\Artifacts\55\55db5f812529eb76c3d0cc12af48be68
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\58\5846eae2656b87bbd70f92391f5520ef
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\58\5846eae2656b87bbd70f92391f5520ef
+      projectPath: Library\Artifacts\58\5846eae2656b87bbd70f92391f5520ef
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\58\58739f27afcc0db31813369ac6647133
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\58\58739f27afcc0db31813369ac6647133
+      projectPath: Library\Artifacts\58\58739f27afcc0db31813369ac6647133
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\5f\5f894ac3d2b1cd8bf1bcbd2f65dadcba
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\5f\5f894ac3d2b1cd8bf1bcbd2f65dadcba
+      projectPath: Library\Artifacts\5f\5f894ac3d2b1cd8bf1bcbd2f65dadcba
+      originalPath: Library\Artifacts\56\566969af36322aead88739e95325ce80
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\60\600fdf5543c1bad7b7b0c5752a8517b5
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\60\600fdf5543c1bad7b7b0c5752a8517b5
+      projectPath: Library\Artifacts\60\600fdf5543c1bad7b7b0c5752a8517b5
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\61\611f981dff93f867a8f00e39fd0c75d7
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\61\611f981dff93f867a8f00e39fd0c75d7
+      projectPath: Library\Artifacts\61\611f981dff93f867a8f00e39fd0c75d7
+      originalPath: Library\Artifacts\8e\8e800db15d0ed5d0d78bf6093b3191e2
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\62\629d2c37ffccd35e34e643211a726ae0
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\62\629d2c37ffccd35e34e643211a726ae0
+      projectPath: Library\Artifacts\62\629d2c37ffccd35e34e643211a726ae0
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\63\6327942a0ca399f1dda3c153d866ddfa
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\63\6327942a0ca399f1dda3c153d866ddfa
+      projectPath: Library\Artifacts\63\6327942a0ca399f1dda3c153d866ddfa
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\63\635000e39a75085e2a4460f24a50257c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\63\635000e39a75085e2a4460f24a50257c
+      projectPath: Library\Artifacts\63\635000e39a75085e2a4460f24a50257c
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\63\637e7030b64230e6c427e081f2bb6603
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\63\637e7030b64230e6c427e081f2bb6603
+      projectPath: Library\Artifacts\63\637e7030b64230e6c427e081f2bb6603
+      originalPath: Library\Artifacts\b1\b1efa6c2c80fd9ee9009671a61ecffe0
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\65\65171a735bfdeaad9bc2740db8c13929
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\65\65171a735bfdeaad9bc2740db8c13929
+      projectPath: Library\Artifacts\65\65171a735bfdeaad9bc2740db8c13929
+      originalPath: Library\Artifacts\e7\e7cf3a2c02fe711ef435fb4bcf10a88a
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\65\659ba3d3d5e457bc0957361f42813e08
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\65\659ba3d3d5e457bc0957361f42813e08
+      projectPath: Library\Artifacts\65\659ba3d3d5e457bc0957361f42813e08
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\67\671a31ecfaeb7c8ac7e8d5b1ebef0f38
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\67\671a31ecfaeb7c8ac7e8d5b1ebef0f38
+      projectPath: Library\Artifacts\67\671a31ecfaeb7c8ac7e8d5b1ebef0f38
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\68\68288c9154d9185f3e73021248ad7fb9
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\68\68288c9154d9185f3e73021248ad7fb9
+      projectPath: Library\Artifacts\68\68288c9154d9185f3e73021248ad7fb9
+      originalPath: Library\Artifacts\9f\9f0c2d086d5a8d68926d7d84711b6850
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\68\6875143397de2edeeb662e31c569cb22
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\68\6875143397de2edeeb662e31c569cb22
+      projectPath: Library\Artifacts\68\6875143397de2edeeb662e31c569cb22
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\6a\6a3240e0f6800ab012631fb6ebf447d1
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\6a\6a3240e0f6800ab012631fb6ebf447d1
+      projectPath: Library\Artifacts\6a\6a3240e0f6800ab012631fb6ebf447d1
+      originalPath: Library\Artifacts\d3\d3784e64c1165418517e70db85e93c26
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\6f\6f2b4d80a56a84c2ab44d4186894fbbb
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\6f\6f2b4d80a56a84c2ab44d4186894fbbb
+      projectPath: Library\Artifacts\6f\6f2b4d80a56a84c2ab44d4186894fbbb
+      originalPath: Library\Artifacts\0e\0eafefe214e98a60f29b8b36e0444596
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\76\768536102d6a80d72514ea10cda46523
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\76\768536102d6a80d72514ea10cda46523
+      projectPath: Library\Artifacts\76\768536102d6a80d72514ea10cda46523
+      originalPath: Library\Artifacts\0b\0b5d48a0a8a64e9cc248019e75c31bc0
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\77\77deb743015466137db52e9f8288dc65
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\77\77deb743015466137db52e9f8288dc65
+      projectPath: Library\Artifacts\77\77deb743015466137db52e9f8288dc65
+      originalPath: Library\Artifacts\c5\c56315f3c979c299582ada5a5f1d107a
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\7a\7a6283890fb806577b30d06d46304930
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\7a\7a6283890fb806577b30d06d46304930
+      projectPath: Library\Artifacts\7a\7a6283890fb806577b30d06d46304930
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\7c\7c5b2b32ada2c83210b8643817edf309
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\7c\7c5b2b32ada2c83210b8643817edf309
+      projectPath: Library\Artifacts\7c\7c5b2b32ada2c83210b8643817edf309
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\7d\7d29cbb255c7aa0d070d59a96074052f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\7d\7d29cbb255c7aa0d070d59a96074052f
+      projectPath: Library\Artifacts\7d\7d29cbb255c7aa0d070d59a96074052f
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\81\81e0f385b3a1e04caa1793b4f9747d4f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\81\81e0f385b3a1e04caa1793b4f9747d4f
+      projectPath: Library\Artifacts\81\81e0f385b3a1e04caa1793b4f9747d4f
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\81\81fa547cb34f46465982e52f4fbc778f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\81\81fa547cb34f46465982e52f4fbc778f
+      projectPath: Library\Artifacts\81\81fa547cb34f46465982e52f4fbc778f
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\81\81fecca094d58a5fa0657b13fbaaa3ad
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\81\81fecca094d58a5fa0657b13fbaaa3ad
+      projectPath: Library\Artifacts\81\81fecca094d58a5fa0657b13fbaaa3ad
+      originalPath: Library\Artifacts\43\43aae3e1204912f0a9c3912d70fff099
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\83\83a58eafa39897b27bdb2678abf46117
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\83\83a58eafa39897b27bdb2678abf46117
+      projectPath: Library\Artifacts\83\83a58eafa39897b27bdb2678abf46117
+      originalPath: Library\Artifacts\41\41a5ad3ef7082c03290b4a98ffada888
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\85\85f89e493dd9a0f0fc03ae1768c91710
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\85\85f89e493dd9a0f0fc03ae1768c91710
+      projectPath: Library\Artifacts\85\85f89e493dd9a0f0fc03ae1768c91710
+      originalPath: Library\Artifacts\2c\2c601252f931120eb165be49b75fbd01
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\86\86694b70cb64705efab93cd49eeb1964
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\86\86694b70cb64705efab93cd49eeb1964
+      projectPath: Library\Artifacts\86\86694b70cb64705efab93cd49eeb1964
+      originalPath: Library\Artifacts\03\03fbd0c2c83d641d3c0c28291af78d2c
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\86\86950070eddc262200091714f36e55d1
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\86\86950070eddc262200091714f36e55d1
+      projectPath: Library\Artifacts\86\86950070eddc262200091714f36e55d1
+      originalPath: Library\Artifacts\14\14fdef209ccda0c70abc0ca17ceccfec
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\87\874dbda389c40e3e1eba0920d73f6db0
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\87\874dbda389c40e3e1eba0920d73f6db0
+      projectPath: Library\Artifacts\87\874dbda389c40e3e1eba0920d73f6db0
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\87\87a755a088990d902c92fa03413f426d
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\87\87a755a088990d902c92fa03413f426d
+      projectPath: Library\Artifacts\87\87a755a088990d902c92fa03413f426d
+      originalPath: Library\Artifacts\a1\a11f7ccd23dacce6173b65aa22301fed
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\87\87c95b420af2067c8323ab3529535229
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\87\87c95b420af2067c8323ab3529535229
+      projectPath: Library\Artifacts\87\87c95b420af2067c8323ab3529535229
+      originalPath: Library\Artifacts\4b\4b00ff99279faa9a508e9f448118b9fb
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\8c\8c3aee022ab06848f319e90be9771e8f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\8c\8c3aee022ab06848f319e90be9771e8f
+      projectPath: Library\Artifacts\8c\8c3aee022ab06848f319e90be9771e8f
+      originalPath: Library\Artifacts\ae\ae679cc84fb404c77d6e783658aca25e
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\8c\8ce0524a269e6a1381b25ca922088c84
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\8c\8ce0524a269e6a1381b25ca922088c84
+      projectPath: Library\Artifacts\8c\8ce0524a269e6a1381b25ca922088c84
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\8d\8de802a4d7c272c00610ebf0e6d7882c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\8d\8de802a4d7c272c00610ebf0e6d7882c
+      projectPath: Library\Artifacts\8d\8de802a4d7c272c00610ebf0e6d7882c
+      originalPath: Library\Artifacts\c7\c7661e30113df10ecb5ce1254c994d39
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\93\93164330580134b2e445cbb4c3229661
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\93\93164330580134b2e445cbb4c3229661
+      projectPath: Library\Artifacts\93\93164330580134b2e445cbb4c3229661
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\94\941d0647ddd676576bf5bd04cf711e89
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\94\941d0647ddd676576bf5bd04cf711e89
+      projectPath: Library\Artifacts\94\941d0647ddd676576bf5bd04cf711e89
+      originalPath: Library\Artifacts\d0\d06cb45308aace221163e6e600683188
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\94\948f5bd9a17d80df4f4084fc65679fbd
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\94\948f5bd9a17d80df4f4084fc65679fbd
+      projectPath: Library\Artifacts\94\948f5bd9a17d80df4f4084fc65679fbd
+      originalPath: Library\Artifacts\59\59f0abca6a15b29abaa5141984a65d78
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\94\94a87a4dd021305792382e53e6c1fab1
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\94\94a87a4dd021305792382e53e6c1fab1
+      projectPath: Library\Artifacts\94\94a87a4dd021305792382e53e6c1fab1
+      originalPath: Library\Artifacts\a7\a766da0e2eccbad776353d5ab30a4729
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\94\94f90c701b918389f873cee8d1bc0634
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\94\94f90c701b918389f873cee8d1bc0634
+      projectPath: Library\Artifacts\94\94f90c701b918389f873cee8d1bc0634
+      originalPath: Library\Artifacts\1e\1ec4bff6fb43751d65659f787f74018a
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\97\97800f549b0d74d8f9e2d9950f960c01
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\97\97800f549b0d74d8f9e2d9950f960c01
+      projectPath: Library\Artifacts\97\97800f549b0d74d8f9e2d9950f960c01
+      originalPath: Library\Artifacts\2a\2a705c468af6264c9b096ccb705666d3
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\97\97b25400409ab8c4078a8fb80b77b608
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\97\97b25400409ab8c4078a8fb80b77b608
+      projectPath: Library\Artifacts\97\97b25400409ab8c4078a8fb80b77b608
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\9b\9b63c2e5230eb23c56825e043a1a44dd
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\9b\9b63c2e5230eb23c56825e043a1a44dd
+      projectPath: Library\Artifacts\9b\9b63c2e5230eb23c56825e043a1a44dd
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\9d\9dbae8d2113f047efc1f976040684995
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\9d\9dbae8d2113f047efc1f976040684995
+      projectPath: Library\Artifacts\9d\9dbae8d2113f047efc1f976040684995
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\a1\a129a8c57645dce12c9a02f830596097
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a1\a129a8c57645dce12c9a02f830596097
+      projectPath: Library\Artifacts\a1\a129a8c57645dce12c9a02f830596097
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\a1\a1e784cc6320aa9fd0767c2721b3f117
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a1\a1e784cc6320aa9fd0767c2721b3f117
+      projectPath: Library\Artifacts\a1\a1e784cc6320aa9fd0767c2721b3f117
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\a2\a20f5c94b87776ea16f0fa1a156d6bf8
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a2\a20f5c94b87776ea16f0fa1a156d6bf8
+      projectPath: Library\Artifacts\a2\a20f5c94b87776ea16f0fa1a156d6bf8
+      originalPath: Library\Artifacts\6c\6cb2ab012abe24479a3741eb8b2bab58
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\a2\a2a003b02d4c6511ff36bdd22511db6d
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a2\a2a003b02d4c6511ff36bdd22511db6d
+      projectPath: Library\Artifacts\a2\a2a003b02d4c6511ff36bdd22511db6d
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\a3\a371be33a94265dc6a01aa7532dfd01f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a3\a371be33a94265dc6a01aa7532dfd01f
+      projectPath: Library\Artifacts\a3\a371be33a94265dc6a01aa7532dfd01f
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\a3\a398fdbf4c4aa2b38f16d869d11ef8c1
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a3\a398fdbf4c4aa2b38f16d869d11ef8c1
+      projectPath: Library\Artifacts\a3\a398fdbf4c4aa2b38f16d869d11ef8c1
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\a3\a3ba4efec57676d693c48b709531a12b
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a3\a3ba4efec57676d693c48b709531a12b
+      projectPath: Library\Artifacts\a3\a3ba4efec57676d693c48b709531a12b
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\a3\a3d3d5285808740cd53f42f1107491fa
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a3\a3d3d5285808740cd53f42f1107491fa
+      projectPath: Library\Artifacts\a3\a3d3d5285808740cd53f42f1107491fa
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\a4\a4b4638a3f27c5372fe5ce933796c014
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a4\a4b4638a3f27c5372fe5ce933796c014
+      projectPath: Library\Artifacts\a4\a4b4638a3f27c5372fe5ce933796c014
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\a6\a6f50c034ce5bf75172403d7c91b2c77
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a6\a6f50c034ce5bf75172403d7c91b2c77
+      projectPath: Library\Artifacts\a6\a6f50c034ce5bf75172403d7c91b2c77
+      originalPath: Library\Artifacts\69\699c629b3987a89304aff33cc5ecaff6
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\a8\a8a5388e4c57c3a460865271f15f8604
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a8\a8a5388e4c57c3a460865271f15f8604
+      projectPath: Library\Artifacts\a8\a8a5388e4c57c3a460865271f15f8604
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\a9\a936244076c4eaac4924367ea2e9a398
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a9\a936244076c4eaac4924367ea2e9a398
+      projectPath: Library\Artifacts\a9\a936244076c4eaac4924367ea2e9a398
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\a9\a98419a5dcec18b66817cfd6cba7376a
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a9\a98419a5dcec18b66817cfd6cba7376a
+      projectPath: Library\Artifacts\a9\a98419a5dcec18b66817cfd6cba7376a
+      originalPath: Library\Artifacts\d6\d6a3a6ff74f7fd73ce172a272b0d9182
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\a9\a9dcc918a492b97e834751de7b94bce5
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\a9\a9dcc918a492b97e834751de7b94bce5
+      projectPath: Library\Artifacts\a9\a9dcc918a492b97e834751de7b94bce5
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\aa\aa0b3e6a833d48f28c915150d8807b49
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\aa\aa0b3e6a833d48f28c915150d8807b49
+      projectPath: Library\Artifacts\aa\aa0b3e6a833d48f28c915150d8807b49
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\ae\aec34bb5afd6c0edd602fc5e30f0cb4c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\ae\aec34bb5afd6c0edd602fc5e30f0cb4c
+      projectPath: Library\Artifacts\ae\aec34bb5afd6c0edd602fc5e30f0cb4c
+      originalPath: Library\Artifacts\f6\f6ef484239c2815eec0a69942935de6c
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\af\af1d7a578fcd8c42926d9b8f983caebf
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\af\af1d7a578fcd8c42926d9b8f983caebf
+      projectPath: Library\Artifacts\af\af1d7a578fcd8c42926d9b8f983caebf
+      originalPath: Library\Artifacts\d6\d6bc976df78514a5dade80677d8fda27
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\af\af2be44547a6bd86f80709e1970cf85a
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\af\af2be44547a6bd86f80709e1970cf85a
+      projectPath: Library\Artifacts\af\af2be44547a6bd86f80709e1970cf85a
+      originalPath: Library\Artifacts\c4\c4c76592c9101e5d0bdd171a7c3d1b35
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\af\af4e45380132057c72c95b14e7f23e9f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\af\af4e45380132057c72c95b14e7f23e9f
+      projectPath: Library\Artifacts\af\af4e45380132057c72c95b14e7f23e9f
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\af\af6a3cd4b51fb7b0a115c8b0a13815fb
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\af\af6a3cd4b51fb7b0a115c8b0a13815fb
+      projectPath: Library\Artifacts\af\af6a3cd4b51fb7b0a115c8b0a13815fb
+      originalPath: Library\Artifacts\bd\bdeb16adf5d7a9e17726b16e0d67f484
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\af\afa64093978c65d50293b5e421feae3f
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\af\afa64093978c65d50293b5e421feae3f
+      projectPath: Library\Artifacts\af\afa64093978c65d50293b5e421feae3f
+      originalPath: Library\Artifacts\77\77ad099cb00c827785c3c51e9d7e966f
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\b1\b163737dcbcd9c0ef6ef13e8ca3da4b8
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b1\b163737dcbcd9c0ef6ef13e8ca3da4b8
+      projectPath: Library\Artifacts\b1\b163737dcbcd9c0ef6ef13e8ca3da4b8
+      originalPath: Library\Artifacts\50\500d5fd22cfadadec942edc8ec3b9f4b
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\b1\b178e026fd53e95d7f0ff68714ba7139
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b1\b178e026fd53e95d7f0ff68714ba7139
+      projectPath: Library\Artifacts\b1\b178e026fd53e95d7f0ff68714ba7139
+      originalPath: Library\Artifacts\6a\6a3f2e6a149a2daef71092f1ec95392a
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\b4\b4ee0e923fbe495e181b603ee97e39c4
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b4\b4ee0e923fbe495e181b603ee97e39c4
+      projectPath: Library\Artifacts\b4\b4ee0e923fbe495e181b603ee97e39c4
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\b4\b4f62221c95d4661e6bda9c4ee2cf1aa
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b4\b4f62221c95d4661e6bda9c4ee2cf1aa
+      projectPath: Library\Artifacts\b4\b4f62221c95d4661e6bda9c4ee2cf1aa
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\b5\b552a351110dfe6c442e021804de368d
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b5\b552a351110dfe6c442e021804de368d
+      projectPath: Library\Artifacts\b5\b552a351110dfe6c442e021804de368d
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\b7\b7ac180710feda341e0944bcc116a666
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b7\b7ac180710feda341e0944bcc116a666
+      projectPath: Library\Artifacts\b7\b7ac180710feda341e0944bcc116a666
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\b8\b8a771d586f2afd76716c10aea3066af
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b8\b8a771d586f2afd76716c10aea3066af
+      projectPath: Library\Artifacts\b8\b8a771d586f2afd76716c10aea3066af
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\b9\b986d126d6d6146aabf7d1aa828d72cc
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b9\b986d126d6d6146aabf7d1aa828d72cc
+      projectPath: Library\Artifacts\b9\b986d126d6d6146aabf7d1aa828d72cc
+      originalPath: Library\Artifacts\37\370e98a9f38e6f7689808032eecb0e51
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\b9\b9ebd3c958621c9947be361d63760811
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\b9\b9ebd3c958621c9947be361d63760811
+      projectPath: Library\Artifacts\b9\b9ebd3c958621c9947be361d63760811
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\ba\ba8467c5b68a1e500bc3014a1cfbf5e8
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\ba\ba8467c5b68a1e500bc3014a1cfbf5e8
+      projectPath: Library\Artifacts\ba\ba8467c5b68a1e500bc3014a1cfbf5e8
+      originalPath: Library\Artifacts\8b\8be98fee1f4e46b7dabf6a103e1580af
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\bc\bc440c9c07077ab14a8af66a26546397
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\bc\bc440c9c07077ab14a8af66a26546397
+      projectPath: Library\Artifacts\bc\bc440c9c07077ab14a8af66a26546397
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\bc\bc818a88a1b34a7e65112e478e88f108
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\bc\bc818a88a1b34a7e65112e478e88f108
+      projectPath: Library\Artifacts\bc\bc818a88a1b34a7e65112e478e88f108
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\be\bef1551be8162e238db7c5300281e751
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\be\bef1551be8162e238db7c5300281e751
+      projectPath: Library\Artifacts\be\bef1551be8162e238db7c5300281e751
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\c0\c071d0c4956cffff658a1d4658a060fd
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\c0\c071d0c4956cffff658a1d4658a060fd
+      projectPath: Library\Artifacts\c0\c071d0c4956cffff658a1d4658a060fd
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\c1\c184b62f641b72036743cc8f0ac23c2c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\c1\c184b62f641b72036743cc8f0ac23c2c
+      projectPath: Library\Artifacts\c1\c184b62f641b72036743cc8f0ac23c2c
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\c2\c2db8aeb72dbaedf5facb19b3f158bc7
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\c2\c2db8aeb72dbaedf5facb19b3f158bc7
+      projectPath: Library\Artifacts\c2\c2db8aeb72dbaedf5facb19b3f158bc7
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\c4\c42a23a217609ac4648606a9688bac45
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\c4\c42a23a217609ac4648606a9688bac45
+      projectPath: Library\Artifacts\c4\c42a23a217609ac4648606a9688bac45
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\c4\c4a866d774d5ee30f893e72b24d486cc
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\c4\c4a866d774d5ee30f893e72b24d486cc
+      projectPath: Library\Artifacts\c4\c4a866d774d5ee30f893e72b24d486cc
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\c4\c4c22e8e1abc7a0cb4e78c0e00f5f193
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\c4\c4c22e8e1abc7a0cb4e78c0e00f5f193
+      projectPath: Library\Artifacts\c4\c4c22e8e1abc7a0cb4e78c0e00f5f193
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\c8\c8b6c426d7e5ce74f099cf989c06fe9d
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\c8\c8b6c426d7e5ce74f099cf989c06fe9d
+      projectPath: Library\Artifacts\c8\c8b6c426d7e5ce74f099cf989c06fe9d
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\ca\caa6f8edb12c5e82b2e019d4d47e1676
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\ca\caa6f8edb12c5e82b2e019d4d47e1676
+      projectPath: Library\Artifacts\ca\caa6f8edb12c5e82b2e019d4d47e1676
+      originalPath: Library\Artifacts\e6\e63179d1a2286bdb0294629eec623168
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\cb\cbe28058db1ce60b892cce1a9a97c23d
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\cb\cbe28058db1ce60b892cce1a9a97c23d
+      projectPath: Library\Artifacts\cb\cbe28058db1ce60b892cce1a9a97c23d
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\ce\cee4e6628ca3dd481101655f09d2fd67
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\ce\cee4e6628ca3dd481101655f09d2fd67
+      projectPath: Library\Artifacts\ce\cee4e6628ca3dd481101655f09d2fd67
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\cf\cfb5150848bf4846686f621502bdf4d4
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\cf\cfb5150848bf4846686f621502bdf4d4
+      projectPath: Library\Artifacts\cf\cfb5150848bf4846686f621502bdf4d4
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\d0\d05504f0be5f7dc08602536aa80c779e
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d0\d05504f0be5f7dc08602536aa80c779e
+      projectPath: Library\Artifacts\d0\d05504f0be5f7dc08602536aa80c779e
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\d1\d1628cdb977ceee45ee4f54484773005
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d1\d1628cdb977ceee45ee4f54484773005
+      projectPath: Library\Artifacts\d1\d1628cdb977ceee45ee4f54484773005
+      originalPath: Library\Artifacts\d5\d522f6038cd09ecc16174606547b184d
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\d1\d1cd750caf1e77806b1ac5f4adbc3be3
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d1\d1cd750caf1e77806b1ac5f4adbc3be3
+      projectPath: Library\Artifacts\d1\d1cd750caf1e77806b1ac5f4adbc3be3
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\d3\d307029a52b3db2efa7a11b1f679ac18
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d3\d307029a52b3db2efa7a11b1f679ac18
+      projectPath: Library\Artifacts\d3\d307029a52b3db2efa7a11b1f679ac18
+      originalPath: Library\Artifacts\c3\c3db937b200088bb995a6ff4753271dc
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\d3\d356356a762fde12b15d5fce06144ebc
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d3\d356356a762fde12b15d5fce06144ebc
+      projectPath: Library\Artifacts\d3\d356356a762fde12b15d5fce06144ebc
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\d5\d501fdba778459f3819f873fb0210505
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d5\d501fdba778459f3819f873fb0210505
+      projectPath: Library\Artifacts\d5\d501fdba778459f3819f873fb0210505
+      originalPath: Library\Artifacts\d2\d2b36dc0d4e09f15506e900d0270b30e
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\d5\d554c64da9497135481972344d852e11
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d5\d554c64da9497135481972344d852e11
+      projectPath: Library\Artifacts\d5\d554c64da9497135481972344d852e11
+      originalPath: Library\Artifacts\f2\f2fb868dbe19603d51338a1b90633d11
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\d6\d6e244980fcbafe53bb8e40edfdff896
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d6\d6e244980fcbafe53bb8e40edfdff896
+      projectPath: Library\Artifacts\d6\d6e244980fcbafe53bb8e40edfdff896
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\d7\d77c1f74445f0bb79d8444353e0a0f6b
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d7\d77c1f74445f0bb79d8444353e0a0f6b
+      projectPath: Library\Artifacts\d7\d77c1f74445f0bb79d8444353e0a0f6b
+      originalPath: Library\Artifacts\49\499f170800841f98725797a68408cc0d
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\d7\d787ccb06c2310316388b096c5432a6d
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d7\d787ccb06c2310316388b096c5432a6d
+      projectPath: Library\Artifacts\d7\d787ccb06c2310316388b096c5432a6d
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\d8\d85f5d0a22cc61d404399c2993a75d60
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d8\d85f5d0a22cc61d404399c2993a75d60
+      projectPath: Library\Artifacts\d8\d85f5d0a22cc61d404399c2993a75d60
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\d8\d88c8bb210d68328d46143ed0b9fabac
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\d8\d88c8bb210d68328d46143ed0b9fabac
+      projectPath: Library\Artifacts\d8\d88c8bb210d68328d46143ed0b9fabac
+      originalPath: Library\Artifacts\c9\c9eb0231bdc989f5b8c52631ae4e38d4
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\dc\dcfe79cb892d7ac9ce2b363c62aefacb
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\dc\dcfe79cb892d7ac9ce2b363c62aefacb
+      projectPath: Library\Artifacts\dc\dcfe79cb892d7ac9ce2b363c62aefacb
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\e2\e2a63659916c67961dcc33695927e516
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e2\e2a63659916c67961dcc33695927e516
+      projectPath: Library\Artifacts\e2\e2a63659916c67961dcc33695927e516
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\e2\e2e670d0b8d547852fd75fd156286ede
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e2\e2e670d0b8d547852fd75fd156286ede
+      projectPath: Library\Artifacts\e2\e2e670d0b8d547852fd75fd156286ede
+      originalPath: Library\Artifacts\38\3805c2bddf5568ac88bc8044c88fcebd
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\e3\e3614b21cb2f2dc79be601027bb730aa
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e3\e3614b21cb2f2dc79be601027bb730aa
+      projectPath: Library\Artifacts\e3\e3614b21cb2f2dc79be601027bb730aa
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\e3\e3b2f78017f23ff202403f5fed92eb8c
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e3\e3b2f78017f23ff202403f5fed92eb8c
+      projectPath: Library\Artifacts\e3\e3b2f78017f23ff202403f5fed92eb8c
+      originalPath: Library\Artifacts\ca\ca90481adb108d7e06b62dc14c14eb02
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\e4\e4b6ac7acf866a2993f2271d823c3443
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e4\e4b6ac7acf866a2993f2271d823c3443
+      projectPath: Library\Artifacts\e4\e4b6ac7acf866a2993f2271d823c3443
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\e4\e4e682265090b2208e555c7b1c4ce3da
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e4\e4e682265090b2208e555c7b1c4ce3da
+      projectPath: Library\Artifacts\e4\e4e682265090b2208e555c7b1c4ce3da
+      originalPath: Library\Artifacts\73\734d6eff9460196cc03e9d1aff50591d
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\e7\e71cb6b49bf8d93439c9b41edac524e7
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e7\e71cb6b49bf8d93439c9b41edac524e7
+      projectPath: Library\Artifacts\e7\e71cb6b49bf8d93439c9b41edac524e7
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\e7\e74a11b8b4a5a60c023e5c74d1a33948
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e7\e74a11b8b4a5a60c023e5c74d1a33948
+      projectPath: Library\Artifacts\e7\e74a11b8b4a5a60c023e5c74d1a33948
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\e7\e7bdec246c2a9f0d8956a1d9573962f7
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\e7\e7bdec246c2a9f0d8956a1d9573962f7
+      projectPath: Library\Artifacts\e7\e7bdec246c2a9f0d8956a1d9573962f7
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\ea\eaaf8044b373b2c1c0cd08c0b88a6195
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\ea\eaaf8044b373b2c1c0cd08c0b88a6195
+      projectPath: Library\Artifacts\ea\eaaf8044b373b2c1c0cd08c0b88a6195
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\eb\eb308634eab1237f006c701f2c61a6dd
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\eb\eb308634eab1237f006c701f2c61a6dd
+      projectPath: Library\Artifacts\eb\eb308634eab1237f006c701f2c61a6dd
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\eb\eb9af153a119c091bd793c29cedf13bd
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\eb\eb9af153a119c091bd793c29cedf13bd
+      projectPath: Library\Artifacts\eb\eb9af153a119c091bd793c29cedf13bd
+      originalPath: Library\Artifacts\b0\b0ccbcd1e0c430e1f7264c4035fcf736
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\eb\ebbf879503cf0090e0f8819b6a0a14f3
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\eb\ebbf879503cf0090e0f8819b6a0a14f3
+      projectPath: Library\Artifacts\eb\ebbf879503cf0090e0f8819b6a0a14f3
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\ed\ed5d964f122a13369a4af7d03a1abc23
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\ed\ed5d964f122a13369a4af7d03a1abc23
+      projectPath: Library\Artifacts\ed\ed5d964f122a13369a4af7d03a1abc23
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\ee\ee25c9e9da95b7d9f29b636cefb2cde3
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\ee\ee25c9e9da95b7d9f29b636cefb2cde3
+      projectPath: Library\Artifacts\ee\ee25c9e9da95b7d9f29b636cefb2cde3
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\ee\eef0aae8971c22545d56ad6a13a3e743
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\ee\eef0aae8971c22545d56ad6a13a3e743
+      projectPath: Library\Artifacts\ee\eef0aae8971c22545d56ad6a13a3e743
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\f1\f1b2e5de4fe28930a04a5db5f19633ba
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f1\f1b2e5de4fe28930a04a5db5f19633ba
+      projectPath: Library\Artifacts\f1\f1b2e5de4fe28930a04a5db5f19633ba
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\f2\f2b71550f38e4845ffc004565eb2abc8
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f2\f2b71550f38e4845ffc004565eb2abc8
+      projectPath: Library\Artifacts\f2\f2b71550f38e4845ffc004565eb2abc8
+      originalPath: Library\Artifacts\e1\e15fb83ee81722a2c75072e35e00fda4
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\f4\f465b9830ec37a1935232d78e268e4ad
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f4\f465b9830ec37a1935232d78e268e4ad
+      projectPath: Library\Artifacts\f4\f465b9830ec37a1935232d78e268e4ad
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\f4\f4eeb20e2ae9c5134dff440c948b2fa1
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f4\f4eeb20e2ae9c5134dff440c948b2fa1
+      projectPath: Library\Artifacts\f4\f4eeb20e2ae9c5134dff440c948b2fa1
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\f5\f5e7698a72383be68d13e697476ea8b2
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f5\f5e7698a72383be68d13e697476ea8b2
+      projectPath: Library\Artifacts\f5\f5e7698a72383be68d13e697476ea8b2
+      originalPath: Library\Artifacts\39\391951559ff4255efee3433c0ae7bc86
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\f7\f760afe51886735aed876cba37dcfa12
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f7\f760afe51886735aed876cba37dcfa12
+      projectPath: Library\Artifacts\f7\f760afe51886735aed876cba37dcfa12
+      originalPath: Library\Artifacts\8f\8f9dce0c38eed56d64c01757e9aa91bc
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Artifacts\f8\f8a57a3dae7f7041d052cef028269a16
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f8\f8a57a3dae7f7041d052cef028269a16
+      projectPath: Library\Artifacts\f8\f8a57a3dae7f7041d052cef028269a16
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\f9\f972c135fbd9372a47322f064b7083d7
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f9\f972c135fbd9372a47322f064b7083d7
+      projectPath: Library\Artifacts\f9\f972c135fbd9372a47322f064b7083d7
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\f9\f99dc92bf30fd9ecb431b101e8616cf6
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\f9\f99dc92bf30fd9ecb431b101e8616cf6
+      projectPath: Library\Artifacts\f9\f99dc92bf30fd9ecb431b101e8616cf6
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\fa\fa184393f1d458f7d17009976f35c00b
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\fa\fa184393f1d458f7d17009976f35c00b
+      projectPath: Library\Artifacts\fa\fa184393f1d458f7d17009976f35c00b
+      originalPath: 
+      indexStatus: 5
+      workTreeStatus: 0
+    - path: Library\Artifacts\fa\fa391e3953e531fe2e3d0868bd2fdd51
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\fa\fa391e3953e531fe2e3d0868bd2fdd51
+      projectPath: Library\Artifacts\fa\fa391e3953e531fe2e3d0868bd2fdd51
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\fa\facfc6a165c1f425c8268eeebe3c1c36
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\fa\facfc6a165c1f425c8268eeebe3c1c36
+      projectPath: Library\Artifacts\fa\facfc6a165c1f425c8268eeebe3c1c36
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Artifacts\fc\fc17f16e11e6248081efd609c3c94440
+      fullPath: C:\Users\wende\Documents\Canute\Library\Artifacts\fc\fc17f16e11e6248081efd609c3c94440
+      projectPath: Library\Artifacts\fc\fc17f16e11e6248081efd609c3c94440
+      originalPath: Library\Artifacts\e9\e9ed6f7a177768a19b7aeec6efe1aa24
+      indexStatus: 6
+      workTreeStatus: 0
+    - path: Library\Collab\Base\Assets\Resources\Data\Prototypes\Armies\Basic FighterAirCraft.meta
+      fullPath: C:\Users\wende\Documents\Canute\Library\Collab\Base\Assets\Resources\Data\Prototypes\Armies\Basic
+        FighterAirCraft.meta
+      projectPath: Library\Collab\Base\Assets\Resources\Data\Prototypes\Armies\Basic
+        FighterAirCraft.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\Collab\CollabSnapshot_1102a301-9d98-4839-bebb-6d26289ff7d3.txt
+      fullPath: C:\Users\wende\Documents\Canute\Library\Collab\CollabSnapshot_1102a301-9d98-4839-bebb-6d26289ff7d3.txt
+      projectPath: Library\Collab\CollabSnapshot_1102a301-9d98-4839-bebb-6d26289ff7d3.txt
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\CurrentLayout-default.dwlt
+      fullPath: C:\Users\wende\Documents\Canute\Library\CurrentLayout-default.dwlt
+      projectPath: Library\CurrentLayout-default.dwlt
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\CurrentMaximizeLayout.dwlt
+      fullPath: C:\Users\wende\Documents\Canute\Library\CurrentMaximizeLayout.dwlt
+      projectPath: Library\CurrentMaximizeLayout.dwlt
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\InspectorExpandedItems.asset
+      fullPath: C:\Users\wende\Documents\Canute\Library\InspectorExpandedItems.asset
+      projectPath: Library\InspectorExpandedItems.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\LastSceneManagerSetup.txt
+      fullPath: C:\Users\wende\Documents\Canute\Library\LastSceneManagerSetup.txt
+      projectPath: Library\LastSceneManagerSetup.txt
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\SceneVisibilityState.asset
+      fullPath: C:\Users\wende\Documents\Canute\Library\SceneVisibilityState.asset
+      projectPath: Library\SceneVisibilityState.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+      projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.pdb
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.pdb
+      projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.pdb
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Assembly-CSharp.dll
+      projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Assembly-CSharp.pdb
+      projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\PsdPlugin.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\PsdPlugin.dll
+      projectPath: Library\ScriptAssemblies\PsdPlugin.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+      projectPath: Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+      projectPath: Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.Mathematics.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.Mathematics.dll
+      projectPath: Library\ScriptAssemblies\Unity.Mathematics.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.Rider.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.Rider.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+      projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.Timeline.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.Timeline.dll
+      projectPath: Library\ScriptAssemblies\Unity.Timeline.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+      projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+      projectPath: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\UnityEditor.UI.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\UnityEditor.UI.dll
+      projectPath: Library\ScriptAssemblies\UnityEditor.UI.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+      projectPath: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\ScriptAssemblies\UnityEngine.UI.dll
+      fullPath: C:\Users\wende\Documents\Canute\Library\ScriptAssemblies\UnityEngine.UI.dll
+      projectPath: Library\ScriptAssemblies\UnityEngine.UI.dll
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\SourceAssetDB
+      fullPath: C:\Users\wende\Documents\Canute\Library\SourceAssetDB
+      projectPath: Library\SourceAssetDB
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\StateCache\Hierarchy\1453ad-51aaaa3597e15934e9.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\Hierarchy\1453ad-51aaaa3597e15934e9.json
+      projectPath: Library\StateCache\Hierarchy\1453ad-51aaaa3597e15934e9.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\Hierarchy\1453ad-55a5428b6f3332c438.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\Hierarchy\1453ad-55a5428b6f3332c438.json
+      projectPath: Library\StateCache\Hierarchy\1453ad-55a5428b6f3332c438.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\Hierarchy\1453ad-aefb76f7e4010cb47a.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\Hierarchy\1453ad-aefb76f7e4010cb47a.json
+      projectPath: Library\StateCache\Hierarchy\1453ad-aefb76f7e4010cb47a.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\StateCache\Hierarchy\1453ad-mainStage.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\Hierarchy\1453ad-mainStage.json
+      projectPath: Library\StateCache\Hierarchy\1453ad-mainStage.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\StateCache\Hierarchy\d47cfd-55a5428b6f3332c438.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\Hierarchy\d47cfd-55a5428b6f3332c438.json
+      projectPath: Library\StateCache\Hierarchy\d47cfd-55a5428b6f3332c438.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\Hierarchy\d47cfd-d7b700308e0150448b.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\Hierarchy\d47cfd-d7b700308e0150448b.json
+      projectPath: Library\StateCache\Hierarchy\d47cfd-d7b700308e0150448b.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\Hierarchy\d47cfd-mainStage.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\Hierarchy\d47cfd-mainStage.json
+      projectPath: Library\StateCache\Hierarchy\d47cfd-mainStage.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\SceneView\64a5a5-51aaaa3597e15934e9.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\SceneView\64a5a5-51aaaa3597e15934e9.json
+      projectPath: Library\StateCache\SceneView\64a5a5-51aaaa3597e15934e9.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\SceneView\64a5a5-55a5428b6f3332c438.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\SceneView\64a5a5-55a5428b6f3332c438.json
+      projectPath: Library\StateCache\SceneView\64a5a5-55a5428b6f3332c438.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\SceneView\64a5a5-aefb76f7e4010cb47a.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\SceneView\64a5a5-aefb76f7e4010cb47a.json
+      projectPath: Library\StateCache\SceneView\64a5a5-aefb76f7e4010cb47a.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\StateCache\SceneView\64a5a5-d1f465c14e3b66440a.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\SceneView\64a5a5-d1f465c14e3b66440a.json
+      projectPath: Library\StateCache\SceneView\64a5a5-d1f465c14e3b66440a.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\StateCache\SceneView\64a5a5-mainStage.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\SceneView\64a5a5-mainStage.json
+      projectPath: Library\StateCache\SceneView\64a5a5-mainStage.json
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\StateCache\SceneView\75bde8-55a5428b6f3332c438.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\SceneView\75bde8-55a5428b6f3332c438.json
+      projectPath: Library\StateCache\SceneView\75bde8-55a5428b6f3332c438.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\SceneView\75bde8-d7b700308e0150448b.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\SceneView\75bde8-d7b700308e0150448b.json
+      projectPath: Library\StateCache\SceneView\75bde8-d7b700308e0150448b.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\StateCache\SceneView\75bde8-mainStage.json
+      fullPath: C:\Users\wende\Documents\Canute\Library\StateCache\SceneView\75bde8-mainStage.json
+      projectPath: Library\StateCache\SceneView\75bde8-mainStage.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\expandedItems
+      fullPath: C:\Users\wende\Documents\Canute\Library\expandedItems
+      projectPath: Library\expandedItems
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Library\gfu\cache\branches.yaml
+      fullPath: C:\Users\wende\Documents\Canute\Library\gfu\cache\branches.yaml
+      projectPath: Library\gfu\cache\branches.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\gitlocks.yaml
+      fullPath: C:\Users\wende\Documents\Canute\Library\gfu\cache\gitlocks.yaml
+      projectPath: Library\gfu\cache\gitlocks.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\gitlog.yaml
+      fullPath: C:\Users\wende\Documents\Canute\Library\gfu\cache\gitlog.yaml
+      projectPath: Library\gfu\cache\gitlog.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\gitstatusentries.yaml
+      fullPath: C:\Users\wende\Documents\Canute\Library\gfu\cache\gitstatusentries.yaml
+      projectPath: Library\gfu\cache\gitstatusentries.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\gittrackingstatus.yaml
+      fullPath: C:\Users\wende\Documents\Canute\Library\gfu\cache\gittrackingstatus.yaml
+      projectPath: Library\gfu\cache\gittrackingstatus.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\gituser.yaml
+      fullPath: C:\Users\wende\Documents\Canute\Library\gfu\cache\gituser.yaml
+      projectPath: Library\gfu\cache\gituser.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Library\gfu\cache\repoinfo.yaml
+      fullPath: C:\Users\wende\Documents\Canute\Library\gfu\cache\repoinfo.yaml
+      projectPath: Library\gfu\cache\repoinfo.yaml
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: ProjectSettings\EditorBuildSettings.asset
+      fullPath: C:\Users\wende\Documents\Canute\ProjectSettings\EditorBuildSettings.asset
+      projectPath: ProjectSettings\EditorBuildSettings.asset
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+      fullPath: C:\Users\wende\Documents\Canute\obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+      projectPath: obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+      fullPath: C:\Users\wende\Documents\Canute\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+      projectPath: obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
   - commitID: a325d6bd77fec8212ecccabd0c1fa0ffeda0a785
     mergeA: 
     mergeB: 

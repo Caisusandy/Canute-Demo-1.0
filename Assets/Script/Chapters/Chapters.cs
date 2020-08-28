@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Canute.Module;
+using Canute.StorySystem;
 
 namespace Canute.LevelTree
 {
@@ -68,7 +69,7 @@ namespace Canute.LevelTree
                     return item;
                 }
             }
-            throw new ArgumentNullException();
+            return null;
         }
     }
 
@@ -80,10 +81,10 @@ namespace Canute.LevelTree
         public string endStoryName;
         public string nextLevel;
 
-        public string Name => Data.name;
+        public string Name => Data.Name;
         public LevelData Data => data;
-        public StorySystem.Story BackgroundStory => GameData.Stories.StoryTree.Get(backgroundStoryName);
-        public StorySystem.Story EndStory => GameData.Stories.StoryTree.Get(endStoryName);
+        public Story BackgroundStory => Story.Get(backgroundStoryName);
+        public Story EndStory => Story.Get(endStoryName);
         public Level Next => GameData.Chapters.ChapterTree.GetLevel(nextLevel);
 
 
@@ -131,7 +132,7 @@ namespace Canute.LevelTree
 namespace Canute.StorySystem
 {
     [Serializable]
-    public class StoryTree : DataList<Story>
+    public class StoryTree : DataList<StoryContainer>
     {
 
     }

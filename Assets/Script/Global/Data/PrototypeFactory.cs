@@ -4,6 +4,15 @@ using UnityEngine;
 
 namespace Canute.BattleSystem
 {
+    public static class TempPrototypes
+    {
+        public static ArmyPrototypes tempArmyPrototypes = new ArmyPrototypes();
+        public static LeaderPrototypes tempLeaderPrototypes = new LeaderPrototypes();
+        public static EquipmentPrototypes tempEquipmentPrototypes = new EquipmentPrototypes();
+        public static EventCardPrototypes tempEventCardPrototypes = new EventCardPrototypes();
+        public static BuildingPrototypes tempBuildingPrototypes = new BuildingPrototypes();
+    }
+
     [CreateAssetMenu(fileName = "Game Data", menuName = "Game Data/Prototype Factory", order = 3)]
     public class PrototypeFactory : ScriptableObject
     {
@@ -13,6 +22,7 @@ namespace Canute.BattleSystem
         [SerializeField] private EventCardPrototypes eventCardPrototypes = new EventCardPrototypes();
         [SerializeField] private EventCardPrototypes dragonEventCardPrototypes = new EventCardPrototypes();
         [SerializeField] private BuildingPrototypes buildingPrototypes = new BuildingPrototypes();
+
 
         [Header("Default")]
         [SerializeField] private ArmyPrototypeContainer defaultArmy;
@@ -28,23 +38,23 @@ namespace Canute.BattleSystem
             {
                 return null;
             }
-            if (!(GetBuildingPrototype(name) is null))
-            {
-                return GetBuildingPrototype(name);
-            }
-            else if (!(GetArmyPrototype(name) is null))
+            if (GetArmyPrototype(name))
             {
                 return GetArmyPrototype(name);
             }
-            else if (!(GetLeaderPrototype(name) is null))
+            else if ((GetBuildingPrototype(name)))
+            {
+                return GetBuildingPrototype(name);
+            }
+            else if ((GetLeaderPrototype(name)))
             {
                 return GetLeaderPrototype(name);
             }
-            else if (!(GetEquipmentPrototype(name) is null))
+            else if ((GetEquipmentPrototype(name)))
             {
                 return GetEquipmentPrototype(name);
             }
-            else if (!(GetEventCardPrototype(name) is null))
+            else if ((GetEventCardPrototype(name)))
             {
                 return GetEventCardPrototype(name);
             }
@@ -65,14 +75,19 @@ namespace Canute.BattleSystem
         public EventCardPrototypes DragonEventCards => dragonEventCardPrototypes;
         public BuildingPrototypes Buildings => buildingPrototypes;
 
+        public ArmyPrototypes TempArmies => TempPrototypes.tempArmyPrototypes;
+        public LeaderPrototypes TempLeaders => TempPrototypes.tempLeaderPrototypes;
+        public EquipmentPrototypes TempEquipments => TempPrototypes.tempEquipmentPrototypes;
+        public EventCardPrototypes TempEventCards => TempPrototypes.tempEventCardPrototypes;
+        public BuildingPrototypes TempBuildings => TempPrototypes.tempBuildingPrototypes;
 
         public Army GetArmyPrototype(string name)
         {
-            if (Game.Configuration.IsDebugMode)
+            if (Game.Configuration.UseCustomDefaultPrototype)
             {
                 return TestingArmies.Get(name) ?? defaultArmy;
             }
-            return Armies.Get(name).Exist()?.Prototype ?? defaultArmy;
+            return Armies.Get(name).Exist()?.Prototype ?? TempArmies.Get(name).Exist()?.Prototype ?? defaultArmy;
         }
 
         public List<Army> GetArmyPrototypes(string[] names)
@@ -87,11 +102,11 @@ namespace Canute.BattleSystem
 
         public Building GetBuildingPrototype(string name)
         {
-            if (Game.Configuration.IsDebugMode)
+            if (Game.Configuration.UseCustomDefaultPrototype)
             {
                 return TestingBuildings.Get(name) ?? defaultBuilding;
             }
-            return Buildings.Get(name).Exist()?.Prototype ?? defaultBuilding;
+            return Buildings.Get(name).Exist()?.Prototype ?? TempBuildings.Get(name).Exist()?.Prototype ?? defaultBuilding;
         }
 
         public List<Building> GetBuildingPrototypes(string[] names)
@@ -106,11 +121,11 @@ namespace Canute.BattleSystem
 
         public Leader GetLeaderPrototype(string name)
         {
-            if (Game.Configuration.IsDebugMode)
+            if (Game.Configuration.UseCustomDefaultPrototype)
             {
                 return TestingLeaders.Get(name) ?? defaultLeader;
             }
-            return Leaders.Get(name).Exist().Prototype ?? defaultLeader;
+            return Leaders.Get(name).Exist()?.Prototype ?? TempLeaders.Get(name).Exist()?.Prototype ?? defaultLeader;
         }
 
         public List<Leader> GetLeaderPrototypes(string[] names)
@@ -125,14 +140,14 @@ namespace Canute.BattleSystem
 
         public Equipment GetEquipmentPrototype(string name)
         {
-            if (Game.Configuration.IsDebugMode)
+            if (Game.Configuration.UseCustomDefaultPrototype)
             {
                 return TestingEquipments.Get(name) ?? defaultEquipment;
             }
-            return Equipments.Get(name).Exist()?.Prototype ?? defaultEquipment;
+            return Equipments.Get(name).Exist()?.Prototype ?? TempEquipments.Get(name).Exist()?.Prototype ?? defaultEquipment;
         }
 
-        public List<Equipment> GetEquipmentPPrototypes(string[] names)
+        public List<Equipment> GetEquipmentPrototypes(string[] names)
         {
             List<Equipment> equipments = new List<Equipment>();
             foreach (string name in names)
@@ -144,41 +159,44 @@ namespace Canute.BattleSystem
 
         public EventCard GetEventCardPrototype(string name)
         {
-            if (Game.Configuration.IsDebugMode)
+            if (Game.Configuration.UseCustomDefaultPrototype)
             {
                 return TestingEventCards.Get(name) ?? defaultEventCard;
             }
-            return EventCards.Get(name).Exist()?.Prototype ?? defaultEventCard;
+            return EventCards.Get(name).Exist()?.Prototype ?? TempEventCards.Get(name).Exist()?.Prototype ?? defaultEventCard;
         }
 
-        public void Add<T1, T2>(T1 item) where T1 : PrototypeContainer<T2> where T2 : Prototype
+        public void Add<T1, T2>(T1 item, bool isMainPrototype = false) where T1 : PrototypeContainer<T2> where T2 : Prototype
         {
             if (item.Prototype is Army)
             {
                 ArmyPrototypeContainer container = item as ArmyPrototypeContainer;
-                if (Armies.Contains(container))
-                {
+                if (Armies.Contains(container) || TempArmies.Contains(container))
                     return;
-                }
-                Armies.Add(container);
+                if (isMainPrototype)
+                    Armies.Add(container);
+                else
+                    TempArmies.Add(container);
             }
             if (item.Prototype is Building)
             {
                 BuildingPrototypeContainer container = item as BuildingPrototypeContainer;
-                if (Buildings.Contains(container))
-                {
+                if (Buildings.Contains(container) || TempBuildings.Contains(container))
                     return;
-                }
-                Buildings.Add(container);
+                if (isMainPrototype)
+                    Buildings.Add(container);
+                else
+                    TempBuildings.Add(container);
             }
             if (item.Prototype is Leader)
             {
                 LeaderPrototypeContainer container = item as LeaderPrototypeContainer;
-                if (Leaders.Contains(container))
-                {
+                if (Leaders.Contains(container) || TempLeaders.Contains(container))
                     return;
-                }
-                Leaders.Add(container);
+                if (isMainPrototype)
+                    Leaders.Add(container);
+                else
+                    TempLeaders.Add(container);
             }
             if (item.Prototype is Equipment)
             {
@@ -187,7 +205,12 @@ namespace Canute.BattleSystem
                 {
                     return;
                 }
-                Equipments.Add(container);
+                if (Equipments.Contains(container) || TempEquipments.Contains(container))
+                    return;
+                if (isMainPrototype)
+                    Equipments.Add(container);
+                else
+                    TempEquipments.Add(container);
             }
             if (item.Prototype is EventCard)
             {
@@ -196,7 +219,12 @@ namespace Canute.BattleSystem
                 {
                     return;
                 }
-                EventCards.Add(container);
+                if (EventCards.Contains(container) || TempEventCards.Contains(container))
+                    return;
+                if (isMainPrototype)
+                    EventCards.Add(container);
+                else
+                    TempEventCards.Add(container);
             }
         }
     }

@@ -4,30 +4,18 @@ using UnityEngine;
 
 namespace Canute.BattleSystem
 {
+
     [Serializable]
     public class Card : EntityData, IActionPointUser
     {
+        public static Card LastCard { get; set; }
+
         public enum Types
         {
             normal,
             centerEvent,
-            eventCard
-        }
-
-        [Flags]
-        public enum TargetType
-        {
-            any,
-            self = 1,
-            enemy = 2,
-            player = 4,
-            armyEntity = 8,
-            buildingEntity = 16,
-            cellEntity = 32,
-            cardEntity = 64,
-            passiveEntity = 128,
-            aggressiveEntity = 256,
-            none = 511
+            eventCard,
+            special
         }
 
         [SerializeField] protected Effect effect;
@@ -39,30 +27,22 @@ namespace Canute.BattleSystem
         public Effect Effect { get => effect; set => effect = value; }
         public Career Career => career;
         public Types Type => type;
-        public int ActionPoint { get => actionPoint; set => actionPoint = value > 0 ? value : 0; }
         public TargetType Target { get => target; set => target = value; }
+        public int ActionPoint { get => actionPoint; set => actionPoint = value > 0 ? value : 0; }
 
-        public Card() : base()
-        {
-            prefab = GameData.EntityPrefabs?.CentralDeckCard;
-        }
-
-        public Card(Types type, Career career) : this()
+        private Card(Types type, Career career, Effect effect) : base()
         {
             this.type = type;
             this.career = career;
-            this.prefab = type == Types.eventCard ? GameData.EntityPrefabs.EventCard : GameData.EntityPrefabs.CentralDeckCard;
-            name = type.ToString() + "-" + career.ToString();
-        }
+            this.prefab = (type == Types.normal) || (type == Types.centerEvent) ? GameData.Prefabs.CentralDeckCard : GameData.Prefabs.NormalEventCard;
 
-        public Card(Types type, Career career, Effect effect) : this(type, career)
-        {
+            this.name = type.ToString() + "-" + career.ToString();
             this.effect = effect;
         }
 
-        public Card(Types type, Career career, Effect effect, int actionPointRequire) : this(type, career, effect)
+        public Card(Types type, Career career, Effect effect, int actionPoint) : this(type, career, effect)
         {
-            this.actionPoint = actionPointRequire;
+            this.actionPoint = actionPoint;
         }
 
         public Card(Types type, Career career, Effect effect, int actionPointRequire, TargetType targetType) : this(type, career, effect, actionPointRequire)
@@ -70,29 +50,69 @@ namespace Canute.BattleSystem
             this.target = targetType;
         }
 
-        public Card(EventCardItem eventCard) : this(Types.eventCard, Career.none, eventCard.Effect.Clone(), eventCard.Prototype.Cost, eventCard.Prototype.Target) { }
-
-        public static List<Card> Cards(IEnumerable<EventCardItem> eventCardItems)
+        public Card(EventCardItem eventCard) : this(Types.eventCard, Career.none, eventCard.Effect.Clone(), eventCard.Cost, eventCard.Target)
         {
-            if (eventCardItems is null)
+            if (type == Types.eventCard)
             {
-                return null;
-            }
-            List<Card> cards = new List<Card>();
-            foreach (var item in eventCardItems)
-            {
-                for (int i = 0; i < item.Prototype.Count; i++)
+                switch (eventCard.Prototype.CardType)
                 {
-                    Card card = new Card(item);
-                    cards.Add(card);
+                    case EventCard.Type.@event:
+                        prefab = GameData.Prefabs.NormalEventCard;
+                        break;
+                    case EventCard.Type.building:
+                        prefab = GameData.Prefabs.BuildingEventCard;
+                        type = Types.special;
+                        break;
+                    case EventCard.Type.dragon:
+                        prefab = GameData.Prefabs.DragonEventCard;
+                        type = Types.special;
+                        break;
+                    default:
+                        prefab = GameData.Prefabs.NormalEventCard;
+                        break;
                 }
             }
-            return cards;
+            else
+            {
+                this.prefab = GameData.Prefabs.CentralDeckCard;
+            }
         }
 
-        public override string ToString()
+
+        public Card(Types types, EventCard eventCard, int level) : this(types, Career.none, eventCard.EventCardProperty[level - 1].Effect.Clone(), eventCard.EventCardProperty[level - 1].Cost, eventCard.EventCardProperty[level - 1].TargetType)
         {
-            return base.ToString() + "Card Type" + type.ToString() + " Effect:" + effect.Type.ToString();
+            if (type != Types.normal)
+            {
+                switch (eventCard.CardType)
+                {
+                    case EventCard.Type.@event:
+                        prefab = GameData.Prefabs.NormalEventCard;
+                        break;
+                    case EventCard.Type.building:
+                        prefab = GameData.Prefabs.BuildingEventCard;
+                        break;
+                    case EventCard.Type.dragon:
+                        prefab = GameData.Prefabs.DragonEventCard;
+                        break;
+                    default:
+                        prefab = GameData.Prefabs.NormalEventCard;
+                        break;
+                }
+            }
+            else
+            {
+                this.prefab = GameData.Prefabs.CentralDeckCard;
+            }
+        }
+
+        /// <summary>
+        /// Only for central deck
+        /// </summary>
+        /// <param name="types"></param>
+        /// <param name="eventCard"></param>
+        public Card(Types types, EventCard eventCard) : this(types, Career.none, eventCard.EventCardProperty[0].Effect.Clone(), eventCard.EventCardProperty[0].Cost, eventCard.EventCardProperty[0].TargetType)
+        {
+            prefab = GameData.Prefabs.NormalEventCard;
         }
 
         public bool IsValidTarget(Entity entity)
@@ -110,6 +130,92 @@ namespace Canute.BattleSystem
                 }
             }
             return result;
+        }
+
+        public bool Play()
+        {
+            if (!OwnerHaveEnoughActionPoint())
+            {
+                UI.BattleUI.SendMessage("Card did not played: no enough action point");
+                return false;
+            }
+            bool ret = effect.Execute(true);
+            if (ret)
+            {
+                LastCard = this;
+                TriggerPlayCardStatus();
+                SpentActionPoint();
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// Triggerer of Play Card
+        /// </summary>
+        public void TriggerPlayCardStatus()
+        {
+            (effect.Source as IStatusContainer)?.Trigger(TriggerCondition.Conditions.playCard, ref effect);
+            effect.Source?.Owner?.Trigger(TriggerCondition.Conditions.playCard, ref effect);
+        }
+
+        public int GetActualActionPointSpent()
+        {
+            if (effect.Type == Effect.Types.enterAttack || effect.Type == Effect.Types.enterMove)
+            {
+                return 0;
+            }
+
+            ICareerLabled source = effect.Source.Exist()?.Data as ICareerLabled;
+            if (source is null)
+            {
+                return ActionPoint;
+            }
+            if (source.Career == career)
+            {
+                int v = (ActionPoint - 1);
+                return v >= 0 ? v : 0;
+            }
+            return ActionPoint;
+        }
+
+        public bool OwnerHaveEnoughActionPoint()
+        {
+            IStatusContainer statusContainer = effect.Source as IStatusContainer;
+
+            if (!(statusContainer is null))
+            {
+                foreach (var item in statusContainer.StatList.GetAllStatus(Effect.Types.@event, TriggerCondition.Conditions.playCard, "name:noActionPointRequire"))
+                    if (item.TriggerConditions.IsValid())
+                        return true;
+            }
+            foreach (var item in Effect.Source.Owner.StatList.GetAllStatus(Effect.Types.@event, TriggerCondition.Conditions.playCard, "name:noActionPointRequire"))
+                if (item.TriggerConditions.IsValid())
+                    return true;
+
+            return Owner.ActionPoint >= GetActualActionPointSpent();
+        }
+
+        public void SpentActionPoint()
+        {
+            Debug.Log(GetActualActionPointSpent());
+            Debug.Log(Owner.ActionPoint);
+            Owner.ActionPoint -= GetActualActionPointSpent();
+            Debug.Log(Owner.ActionPoint);
+        }
+
+        public void BackActionPoint()
+        {
+            if (Effect.Type == Effect.Types.enterMove || Effect.Type == Effect.Types.enterAttack)
+            {
+                return;
+            }
+
+            Owner.ActionPoint += GetActualActionPointSpent();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + ";\n Card Type:" + type.ToString() + ";\nEffect:" + effect.Type.ToString();
         }
 
         public static bool IsValidTarget(TargetType targetTypes, Player Owner, Entity entity)
@@ -139,17 +245,27 @@ namespace Canute.BattleSystem
             }
             return false;
         }
-    }
 
-    [Serializable]
-    public class EventCardProperty
-    {
-        public List<Effect> effects;
-
-        public Effect this[int index]
+        public static List<Card> ToCards(IEnumerable<EventCardItem> eventCardItems)
         {
-            get => effects[index];
-            set => effects[index] = value;
+            if (eventCardItems is null)
+            {
+                return null;
+            }
+            List<Card> cards = new List<Card>();
+            foreach (var item in eventCardItems)
+            {
+                for (int i = 0; i < item.Prototype.Count; i++)
+                {
+                    Card card = new Card(item);
+                    cards.Add(card);
+                }
+            }
+            return cards;
         }
+
+
     }
+
+
 }

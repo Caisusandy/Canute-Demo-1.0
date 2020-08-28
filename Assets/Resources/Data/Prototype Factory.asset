@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armyPrototypes:
     list:
-    - {fileID: 11400000, guid: ac71141c62b8df0468970d4841fda0b8, type: 2}
     - {fileID: 11400000, guid: 1b88afabcce5a4f4b98bc093021e7dad, type: 2}
     - {fileID: 11400000, guid: 3573b67c27129964891c4f21167e6e90, type: 2}
     - {fileID: 11400000, guid: 77d851685dca359409d13e1989541419, type: 2}
@@ -24,8 +23,11 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 7ce54b3a9a0ce3d40a37fb9949ff1498, type: 2}
     - {fileID: 11400000, guid: 597c8f22020cc0a409d88c2e3441b41d, type: 2}
     - {fileID: 11400000, guid: 3d9a47407e54cf8499a4118119b35f5e, type: 2}
-    - {fileID: 11400000, guid: 2ffba7d464704a14b9929ecd887d2c78, type: 2}
-    - {fileID: 11400000, guid: 8923e98bd8ffc1b4aa71bad8e9f415e3, type: 2}
+    - {fileID: 11400000, guid: b6ae61b4109e3e04abd72bad2d8a377f, type: 2}
+    - {fileID: 11400000, guid: d3c039e40f5269343a40f017e147a528, type: 2}
+    - {fileID: 11400000, guid: f647d83254c554e4baf5fd4e1238e431, type: 2}
+    - {fileID: 11400000, guid: 13792080e1363914792f5166c7a7af10, type: 2}
+    - {fileID: 11400000, guid: 5a0ff0214276f934e9f8bfdbdbfe5ba4, type: 2}
   leaderPrototypes:
     list:
     - {fileID: 11400000, guid: 74806df266579894b9034318db78bb43, type: 2}
@@ -34,8 +36,20 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 5f65400ff9153d64581cbdf77d17c998, type: 2}
     - {fileID: 11400000, guid: 4729a88675c144843ac98b918f6b6c1f, type: 2}
     - {fileID: 11400000, guid: 835df71e9d7f3eb439310409830a4ed0, type: 2}
+    - {fileID: 11400000, guid: 31adbee8ff4bae244858839a2c6db57f, type: 2}
+    - {fileID: 11400000, guid: 25e9e0cddd205cd4d9c71431de177d45, type: 2}
+    - {fileID: 11400000, guid: a975bf4498d7cbc4193d1bd711fd6960, type: 2}
+    - {fileID: 11400000, guid: 1dc68c4585d5bc74d9f528f32332e3ca, type: 2}
+    - {fileID: 11400000, guid: 7625bb1d23c78ae419d5d30ecfffc692, type: 2}
+    - {fileID: 11400000, guid: 6bad3b17781d16a499533972e029cc5c, type: 2}
+    - {fileID: 11400000, guid: fce1586836e382b42b5db4a97fbc1c9f, type: 2}
+    - {fileID: 11400000, guid: 195e378b206c7a34c9511944c308c0c3, type: 2}
   equipmentPrototypes:
-    list: []
+    list:
+    - {fileID: 11400000, guid: 43ed80c7f6de97247a9349236f647978, type: 2}
+    - {fileID: 11400000, guid: 94611269fc4b87c4aba2e41b7609f268, type: 2}
+    - {fileID: 11400000, guid: 6fc076c37769d1242ba630214107b242, type: 2}
+    - {fileID: 11400000, guid: 594f16870b69ef6488f914f434a348c9, type: 2}
   eventCardPrototypes:
     list:
     - {fileID: 11400000, guid: 410461ba7ef590442b91e18d0b8d79f4, type: 2}
@@ -68,5 +82,5 @@ MonoBehaviour:
   defaultArmy: {fileID: 11400000, guid: ac71141c62b8df0468970d4841fda0b8, type: 2}
   defaultBuilding: {fileID: 11400000, guid: 60b76e19f9aed8d4faec5d751a142796, type: 2}
   defaultEventCard: {fileID: 11400000, guid: 6b76571e73ff8e547b703e4885c8765a, type: 2}
-  defaultEquipment: {fileID: 0}
-  defaultLeader: {fileID: 0}
+  defaultEquipment: {fileID: 11400000, guid: 9cc5c1125c1011f4f8b8c1388d02779c, type: 2}
+  defaultLeader: {fileID: 11400000, guid: 31adbee8ff4bae244858839a2c6db57f, type: 2}

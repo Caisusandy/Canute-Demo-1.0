@@ -19,8 +19,6 @@ namespace Canute.BattleSystem.UI
         public Image icon;
 
         public ArmyEntity ArmyEntity => Entity.Get<ArmyEntity>(connectedArmyEntityUUID);
-        public bool IsValidArmyInfo => !(ArmyEntity is null);
-        public bool IsAvailable => !ArmyEntity;
 
         private void Awake()
         {
@@ -36,7 +34,7 @@ namespace Canute.BattleSystem.UI
         // Update is called once per frame
         private void Update()
         {
-            if (IsValidArmyInfo)
+            if (ArmyEntity)
             {
                 UpdateInfo();
             }
@@ -45,19 +43,12 @@ namespace Canute.BattleSystem.UI
         public void UpdateInfo()
         {
             healthInfo.text = ArmyEntity.data.Health + "/" + ArmyEntity.data.MaxHealth;
-            health.SetProgress(ArmyEntity.data.Health / (float)ArmyEntity.data.MaxHealth);
+            health.SetProgress((float)ArmyEntity.data.Health / ArmyEntity.data.MaxHealth);
             angerInfo.text = ArmyEntity.data.Anger + "/100";
             anger.SetProgress(ArmyEntity.data.Anger / 100f);
             icon.sprite = ArmyEntity.data.Icon;
         }
 
-        public void Reassign()
-        {
-            if (!IsValidArmyInfo)
-            {
-                gameObject.SetActive(false);
-            }
-        }
 
         public void Connect(ArmyEntity armyEntity)
         {
@@ -69,6 +60,10 @@ namespace Canute.BattleSystem.UI
 
         public void Goto()
         {
+            if (!ArmyEntity)
+            {
+                return;
+            }
             ArmyEntity.OnMouseDown();
             ArmyEntity.OnMouseUp();
         }

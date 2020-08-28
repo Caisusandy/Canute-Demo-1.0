@@ -1,0 +1,569 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a598e8f8415514cb46cd2ad10bcb73, type: 3}
+  m_Name: First Trial
+  m_EditorClassIdentifier: 
+  levelName: First Trial
+  battle:
+    enemy:
+      name: Anexar Flotics
+      uUID:
+        Value: c9e20df6-12f4-4be5-952b-774278f0ba8c
+      ownerUUID:
+        Value: 
+      prefab: {fileID: 0}
+      personality: 0
+      legion:
+        armiesUUID: []
+        leaderUUID:
+          Value: 
+      maxArmyCount: 0
+      actionPointRemain: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+      camp: {fileID: 0}
+    thirdParties: []
+    waveInfo:
+    - battleArmies:
+      - name: BetaArmy
+        uUID:
+          Value: 9bc624c2-e6c1-4a90-8aa0-8ac9e2218ca2
+        ownerUUID:
+          Value: c9e20df6-12f4-4be5-952b-774278f0ba8c
+        prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+          type: 3}
+        allowMove: 1
+        x: 5
+        y: 5
+        stats:
+          list: []
+        properties:
+          critRate: 1
+          critBounes: 50
+          pop: 0
+          attackRange: 3
+          moveRange: 4
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          targetType: 0
+          attackArea: 0
+          targetCount: 1
+          skill:
+            uUID:
+              Value: 
+            sourceEntity:
+              Value: 
+            targetEntities: []
+            type: 0
+            count: 0
+            parameter: 0
+            args:
+              allowSerialization: 1
+              keys: []
+              values: []
+        skillPack:
+          uUID:
+            Value: 6d734865-7da1-4996-9153-87f02b9e9e4a
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 0
+          count: 0
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 1
+        anger: 0
+        maxHealth: 240
+        health: 240
+        defence: 17
+        armor: 0
+        damage: 120
+        type: 1
+      - name: BetaArmy
+        uUID:
+          Value: 9bc624c2-e6c1-4a90-8aa0-8ac9e2218ca3
+        ownerUUID:
+          Value: c9e20df6-12f4-4be5-952b-774278f0ba8c
+        prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+          type: 3}
+        allowMove: 1
+        x: 5
+        y: 3
+        stats:
+          list: []
+        properties:
+          critRate: 1
+          critBounes: 50
+          pop: 0
+          attackRange: 3
+          moveRange: 4
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          targetType: 0
+          attackArea: 0
+          targetCount: 1
+          skill:
+            uUID:
+              Value: 
+            sourceEntity:
+              Value: 
+            targetEntities: []
+            type: 0
+            count: 0
+            parameter: 0
+            args:
+              allowSerialization: 1
+              keys: []
+              values: []
+        skillPack:
+          uUID:
+            Value: 6d734865-7da1-4996-9153-87f02b9e9e4a
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 0
+          count: 0
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 1
+        anger: 0
+        maxHealth: 240
+        health: 240
+        defence: 17
+        armor: 0
+        damage: 120
+        type: 1
+      - name: BetaArmy
+        uUID:
+          Value: 9bc624c2-e6c1-4a90-8aa0-8ac9e2218ca4
+        ownerUUID:
+          Value: c9e20df6-12f4-4be5-952b-774278f0ba8c
+        prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+          type: 3}
+        allowMove: 1
+        x: 3
+        y: 5
+        stats:
+          list: []
+        properties:
+          critRate: 1
+          critBounes: 50
+          pop: 0
+          attackRange: 3
+          moveRange: 4
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          targetType: 0
+          attackArea: 0
+          targetCount: 1
+          skill:
+            uUID:
+              Value: 
+            sourceEntity:
+              Value: 
+            targetEntities: []
+            type: 0
+            count: 0
+            parameter: 0
+            args:
+              allowSerialization: 1
+              keys: []
+              values: []
+        skillPack:
+          uUID:
+            Value: 6d734865-7da1-4996-9153-87f02b9e9e4a
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 0
+          count: 0
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 1
+        anger: 0
+        maxHealth: 240
+        health: 240
+        defence: 17
+        armor: 0
+        damage: 120
+        type: 1
+      - name: BetaArmy
+        uUID:
+          Value: 9bc624c2-e6c1-4a90-8aa0-8ac9e2218ca6
+        ownerUUID:
+          Value: c9e20df6-12f4-4be5-952b-774278f0ba8c
+        prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+          type: 3}
+        allowMove: 1
+        x: 3
+        y: 3
+        stats:
+          list: []
+        properties:
+          critRate: 1
+          critBounes: 50
+          pop: 0
+          attackRange: 3
+          moveRange: 4
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          targetType: 0
+          attackArea: 0
+          targetCount: 1
+          skill:
+            uUID:
+              Value: 
+            sourceEntity:
+              Value: 
+            targetEntities: []
+            type: 0
+            count: 0
+            parameter: 0
+            args:
+              allowSerialization: 1
+              keys: []
+              values: []
+        skillPack:
+          uUID:
+            Value: 6d734865-7da1-4996-9153-87f02b9e9e4a
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 0
+          count: 0
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 1
+        anger: 0
+        maxHealth: 240
+        health: 240
+        defence: 17
+        armor: 0
+        damage: 120
+        type: 1
+      - name: BetaArmy
+        uUID:
+          Value: 9bc624c2-e6c1-4a90-8aa0-8ac9e2218ca7
+        ownerUUID:
+          Value: c9e20df6-12f4-4be5-952b-774278f0ba8c
+        prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+          type: 3}
+        allowMove: 1
+        x: 4
+        y: 4
+        stats:
+          list: []
+        properties:
+          critRate: 1
+          critBounes: 50
+          pop: 0
+          attackRange: 3
+          moveRange: 4
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          targetType: 0
+          attackArea: 0
+          targetCount: 1
+          skill:
+            uUID:
+              Value: 
+            sourceEntity:
+              Value: 
+            targetEntities: []
+            type: 0
+            count: 0
+            parameter: 0
+            args:
+              allowSerialization: 1
+              keys: []
+              values: []
+        skillPack:
+          uUID:
+            Value: 6d734865-7da1-4996-9153-87f02b9e9e4a
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 0
+          count: 0
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 1
+        anger: 0
+        maxHealth: 240
+        health: 240
+        defence: 17
+        armor: 0
+        damage: 120
+        type: 1
+      battleBuildings:
+      - name: Campus
+        uUID:
+          Value: bb446871-57aa-47f5-80fd-b77947fee06e
+        ownerUUID:
+          Value: 63c5918a-5aad-45ae-8bab-1b681601289b
+        prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
+          type: 3}
+        allowMove: 0
+        x: 0
+        y: 0
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 0
+          moveRange: 0
+          standPosition: 0
+          attackPosition: 0
+          attackType: 0
+          targetType: 0
+          attackArea: 0
+          targetCount: 0
+          skill:
+            uUID:
+              Value: 80cda7fc-a94c-440b-abea-49af774720ad
+            sourceEntity:
+              Value: 
+            targetEntities: []
+            type: 0
+            count: 0
+            parameter: 0
+            args:
+              allowSerialization: 1
+              keys: []
+              values: []
+        skillPack:
+          uUID:
+            Value: 0b3a6782-5284-44e1-a828-c976bb3bc5a8
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 0
+          count: 0
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 0
+        anger: 0
+        maxHealth: -1
+        health: -1
+        defence: 0
+        armor: 0
+    - battleArmies:
+      - name: BetaArmy
+        uUID:
+          Value: 9bc624c2-e6c1-4a90-8aa0-8ac9e2218ca3
+        ownerUUID:
+          Value: c9e20df6-12f4-4be5-952b-774278f0ba8c
+        prefab: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
+          type: 3}
+        allowMove: 1
+        x: 5
+        y: 5
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 0
+          moveRange: 0
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          targetType: 0
+          attackArea: 0
+          targetCount: 0
+          skill:
+            uUID:
+              Value: 
+            sourceEntity:
+              Value: 
+            targetEntities: []
+            type: 0
+            count: 0
+            parameter: 0
+            args:
+              allowSerialization: 1
+              keys: []
+              values: []
+        skillPack:
+          uUID:
+            Value: 6d734865-7da1-4996-9153-87f02b9e9e4a
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 0
+          count: 0
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 1
+        anger: 0
+        maxHealth: 1000
+        health: 1000
+        defence: 17
+        armor: 0
+        damage: 0
+        type: 1
+      - name: BetaArmy
+        uUID:
+          Value: 0f507e34-68d1-42b5-a882-cb51a167e1a9
+        ownerUUID:
+          Value: c9e20df6-12f4-4be5-952b-774278f0ba8c
+        prefab: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
+          type: 3}
+        allowMove: 1
+        x: 5
+        y: 3
+        stats:
+          list: []
+        properties:
+          critRate: 0
+          critBounes: 0
+          pop: 0
+          attackRange: 0
+          moveRange: 0
+          standPosition: 1
+          attackPosition: 1
+          attackType: 0
+          targetType: 0
+          attackArea: 0
+          targetCount: 0
+          skill:
+            uUID:
+              Value: 
+            sourceEntity:
+              Value: 
+            targetEntities: []
+            type: 0
+            count: 0
+            parameter: 0
+            args:
+              allowSerialization: 1
+              keys: []
+              values: []
+        skillPack:
+          uUID:
+            Value: 7a2dda3b-c80c-49d0-a52c-d8cc9a44bbc2
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 0
+          count: 0
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 1
+        anger: 0
+        maxHealth: 1000
+        health: 1000
+        defence: 17
+        armor: 0
+        damage: 0
+        type: 1
+      battleBuildings: []
+    prize:
+      goldPrize:
+        type: 0
+        count: 0
+      popPrize:
+        type: 0
+        count: 0
+      floatExp: 0
+    round:
+      wave: 0
+      round: 0
+      turn: 0
+      stat: 0
+      currentPlayerUUID:
+        Value: 
+    stat: 0
+    player:
+      name: 
+      uUID:
+        Value: 
+      ownerUUID:
+        Value: 
+      prefab: {fileID: 0}
+      personality: 0
+      legion:
+        armiesUUID: []
+        leaderUUID:
+          Value: 
+      maxArmyCount: 0
+      actionPointRemain: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+      camp: {fileID: 0}
+    armies: []
+    buildings: []
+    ongoingAnimation: []
+    passingEffect: []
+    centralDeck:
+      list:
+      - name: 
+        uUID:
+          Value: 
+        ownerUUID:
+          Value: 
+        prefab: {fileID: 0}
+        effect:
+          uUID:
+            Value: b236f1cf-e2f4-49e0-bd94-373aae625140
+          sourceEntity:
+            Value: 
+          targetEntities: []
+          type: 1
+          count: 1
+          parameter: 0
+          args:
+            allowSerialization: 1
+            keys: []
+            values: []
+        career: 0
+        type: 0
+        actionPointRequire: 0
+    mapEntity: {fileID: 0}
+    mapPrefab: {fileID: 30391003033006947, guid: 891f1cf7e1ddb0a4fa7150b53610579a,
+      type: 3}

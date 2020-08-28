@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Resources/Scenes/Game Start/Game Start.unity
+    guid: 15d49065d14d9ae4387d989187d5a913
+  - enabled: 1
+    path: Assets/Resources/Scenes/Main.unity
+    guid: 46842f8f1ec63c740a440c66696e8e3b
+  - enabled: 1
+    path: Assets/Resources/Scenes/Loading.unity
+    guid: 7a12d06305af7f948ab8c8a10c5794f1
+  - enabled: 1
+    path: Assets/Resources/Scenes/BattleUI/BattleUI.unity
+    guid: 2b5ec3f34ef0c0b48972d20331220533
+  - enabled: 1
+    path: Assets/Resources/Scenes/StoryLineLoader.unity
+    guid: 279f534a21ec3e541a7bda2fbce6b5c2
+  - enabled: 1
+    path: Assets/Resources/Scenes/Legion Setting/Legion Setting.unity
+    guid: 246b91f9022601e408effb0b5a7f175c
+  - enabled: 1
+    path: Assets/Resources/Scenes/ChapterSelection/ChapterSelection.unity
+    guid: 73cfc3d97c3bd99449d142b581845153
+  - enabled: 1
+    path: Assets/Resources/Scenes/Legion/Legion.unity
+    guid: 6a5e501f590846f4d84c725c575866e2
+  - enabled: 1
+    path: Assets/Resources/Scenes/Army List/Army List.unity
+    guid: ba9194eb74a7d5343b5c552045273765
+  - enabled: 1
+    path: Assets/Resources/Scenes/Army Generator/ArmyGenerator.unity
+    guid: a4f8006e07f8ca34297440582172da26
+  - enabled: 1
+    path: Assets/Resources/Scenes/EventCardPile/EventCardPile.unity
+    guid: 8981877da0fe9dc47b33ddd1f440892f
+  - enabled: 1
+    path: Assets/Resources/Scenes/Settings/Settings.unity
+    guid: 055048da7dbf05d40a3856da34709c4a
+  m_configObjects: {}

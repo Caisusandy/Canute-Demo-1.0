@@ -14,7 +14,7 @@ namespace Canute.BattleSystem.UI
         // Update is called once per frame
         private void Update()
         {
-            if (Battle?.CurrentStat == Battle.Stat.begin)
+            if (Battle.Round.CurrentStat == Round.Stat.gameStart)
             {
                 RoundDisplayer.text = "Start";
             }

@@ -5,6 +5,7 @@ using Canute.BattleSystem;
 using System;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 namespace Canute.UI
 {
@@ -21,7 +22,7 @@ namespace Canute.UI
         }
 
         public static ArmyListUI instance;
-        public static ArmyCardSelection CardSelection;
+        public static ArmySelection SelectEvent;
         public static ArmyArrangement ArmyArrangement;
         public static MainScene lastMainScene;
         public static SortType currentSortType;
@@ -29,11 +30,20 @@ namespace Canute.UI
         public static bool reverseArrangement;
         public static object currentSortTypeParam;
         public static Canute.Legion legion;
+        public static IEnumerable<ArmyItem> hidingArmy;
         public static List<ArmyItem> currentDisplayingArmy;
 
         public static List<ArmyItem> GetPlayerArmiesDisplayed()
         {
-            List<ArmyItem> list = Game.PlayerData.Armies.Except(legion?.Armies ?? new List<ArmyItem>()).ToList();
+            List<ArmyItem> list = Game.PlayerData.Armies;
+            if (legion != null)
+            {
+                list = Game.PlayerData.Armies.Except(legion?.Armies ?? new List<ArmyItem>()).ToList();
+            }
+            if (hidingArmy != null)
+            {
+                list = Game.PlayerData.Armies.Except(legion?.Armies ?? new List<ArmyItem>()).Except(hidingArmy).ToList();
+            }
             Debug.Log(list.Count);
             return list;
 
@@ -54,7 +64,7 @@ namespace Canute.UI
 
         public void OnDestroy()
         {
-            CardSelection = null;
+            SelectEvent = null;
             instance = null;
         }
 
@@ -139,6 +149,7 @@ namespace Canute.UI
             }
         }
 
+
         #region FilterSelection
 
         public void FilterByArmyType(int armyType)
@@ -199,13 +210,30 @@ namespace Canute.UI
 
         public void BackToLastScene()
         {
-            SceneControl.GotoSceneImmediate(lastMainScene);
+            if (SceneManager.sceneCount > 1)
+            {
+                CloseArmyList();
+            }
+            else
+            {
+                SceneControl.GotoSceneImmediate(MainScene.mainHall);
+            }
         }
 
         public void ReverseArrangement()
         {
             reverseArrangement = !reverseArrangement;
             DisplayArmyList();
+        }
+
+        public static void OpenArmyList()
+        {
+            SceneControl.AddScene(MainScene.playerArmyList);
+        }
+
+        public static void CloseArmyList()
+        {
+            SceneControl.RemoveScene(MainScene.playerArmyList);
         }
 
     }

@@ -5,7 +5,8 @@ namespace Canute.BattleSystem.Buildings
 {
     public class CampusEntity : BuildingEntity
     {
-        public List<CellEntity> Range => Game.CurrentBattle.MapEntity.GetBorderCell(OnCellOf, 3, true);
+        public MarkController markController;
+        public List<CellEntity> Range => Game.CurrentBattle.MapEntity.GetBorderCell(OnCellOf, 5, true);
         public bool IsPlayers => Owner == Game.CurrentBattle.Player;
         public bool BorderOpened { get; set; }
 
@@ -25,7 +26,6 @@ namespace Canute.BattleSystem.Buildings
         public override void Start()
         {
             base.Start();
-            Owner.Campus = this;
 
             Debug.LogWarning("draw range");
             DrawRange();
@@ -38,25 +38,40 @@ namespace Canute.BattleSystem.Buildings
         {
             if (BorderOpened)
             {
-                DrawRange();
                 TryCloseRange();
             }
         }
 
         private void DrawRange()
         {
-            Mark.Load(Mark.Type.moveRange, Range);
+            markController = new MarkController(CellMark.Type.moveRange, Range);
         }
 
         private void TryCloseRange()
         {
-            if (Game.CurrentBattle.CurrentStat != Battle.Stat.begin)
+            if (Game.CurrentBattle.Round.CurrentStat != Round.Stat.gameStart)
             {
                 Debug.LogWarning("unload range to " + Range.Count + " cells");
-                Mark.Unload(Mark.Type.moveRange, Range);
+                markController.ClearDisplay();
                 BorderOpened = false;
             }
         }
+
+        public static CampusEntity GetCampus(Player player)
+        {
+            foreach (var entity in entities)
+            {
+                if (entity is CampusEntity)
+                {
+                    if (entity.Owner == player)
+                    {
+                        return entity as CampusEntity;
+                    }
+                }
+            }
+            return null;
+        }
+
     }
 
 }

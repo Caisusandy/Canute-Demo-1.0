@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.Module;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,7 +31,8 @@ namespace Canute
 
 
         /// <summary> 显示加载进度的信息栏 </summary>
-        public Text progressbar;
+        public Text progressText;
+        public ProgressBar progressbar;
 
         /*
          * 部分组件
@@ -57,7 +59,7 @@ namespace Canute
             if (async == null)//如果发现没有任何场景需要前往
             {
                 SceneManager.UnloadSceneAsync("Loading");//退出Loading
-                progressbar.text = "--%";
+                progressText.text = "--%";
                 return;
             }
 
@@ -69,7 +71,9 @@ namespace Canute
             progress = time / minimunWaitTime * 100 > realProgress ? realProgress : pretentingProgress;
 
             //使progressBar显示进度
-            progressbar.text = progress + "%";
+            progressText.text = progress + "%";
+            progressbar.SetProgress(progress / 100f);
+
             //当progress大于99（理论上是100）时跳转场景
             async.allowSceneActivation = progress >= 99;
 
@@ -77,7 +81,7 @@ namespace Canute
             {
                 //                enabled = false;
                 SceneManager.UnloadSceneAsync("Loading");//退出Loading
-                progressbar.text = "--%";
+                progressText.text = "--%";
                 return;
             }
         }

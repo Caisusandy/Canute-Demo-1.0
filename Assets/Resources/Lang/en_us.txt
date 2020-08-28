@@ -1,6 +1,5 @@
 ﻿#语言文件可以用#开始来写备注，//这样也可以（不能写在文字后面）
 #(若没有星号，没有等于号也不会出事)
-（像这样,但是很耗性能）
 
 #职业
 Canute.Career.Scholar=学者
@@ -8,13 +7,29 @@ Canute.Career.Politician=政客
 Canute.Career.General=军人
 Canute.Career.Merchant=商人
 Canute.Career.None=无
-#
+#Title
 Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
-#
-Canute.Shops.Currency+Type.federgram=Federgram
+Canute.LevelTree.Level.CalayInfinite.subtitle= infinity test Map
+Canute.LevelTree.Level.CalayInfinite.title= The fall of a fantaria
+Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
+Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
+#Currency
+Canute.Shops.Currency+Type.fedgram=Federgram
 Canute.Shops.Currency+Type.manpower=Manpower
 Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
+Canute.Shops.Currency+Type.aethium=Aethium
+#
+Canute.BattleSystem.PropertyBonus.damage=damage
+Canute.BattleSystem.PropertyBonus.health=health
+Canute.BattleSystem.PropertyBonus.defense=defense
+Canute.BattleSystem.PropertyBonus.moveRange=move range
+Canute.BattleSystem.PropertyBonus.attackRange=attack range
+Canute.BattleSystem.PropertyBonus.critRate=crit rate
+Canute.BattleSystem.PropertyBonus.critBounes=crit bounes
+Canute.BattleSystem.PropertyBonus.pop=pop
+Canute.BattleSystem.PropertyBonus.armor=armor
+Canute.BattleSystem.PropertyBonus.anger=anger
 #
 Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
 Canute.BattleSystem.BattleProperty+AttackType.melee=Melee
@@ -34,27 +49,33 @@ Canute.BattleSystem.BattleProperty+Position.air=Air
 Canute.BattleSystem.BattleProperty+Position.all=Any
 Canute.BattleSystem.BattleProperty+Position.none=None
 #
-Canute.BattleSystem.Army+Types.mage=Mage
-Canute.BattleSystem.Army+Types.warMachine=War Machine
-Canute.BattleSystem.Army+Types.infantry=Infantry
-Canute.BattleSystem.Army+Types.shielder=Shielder
-Canute.BattleSystem.Army+Types.Cavalry=Cavalry
-Canute.BattleSystem.Army+Types.Rifleman=Rifleman
-Canute.BattleSystem.Army+Types.AircraftFighter=AircraftFighter
+Canute.Army+Types.mage=Mage
+Canute.Army+Types.warMachine=War Machine
+Canute.Army+Types.infantry=Infantry
+Canute.Army+Types.shielder=Shielder
+Canute.Army+Types.cavalry=Cavalry
+Canute.Army+Types.rifleman=Rifleman
+Canute.Army+Types.aircraftFighter=AircraftFighter
+Canute.Army+Types.airship=airship
+Canute.Army+Types.dragon=dragon
 #
-Canute.BattleSystem.Army.AlphaArmy.name=A
-Canute.BattleSystem.Army.BetaArmy.name=B
-Canute.BattleSystem.Army.Basic Mage.name=Basic Mage
-Canute.BattleSystem.Army.Basic WarMachine.name=Basic WarMachine
-Canute.BattleSystem.Army.Basic Infantry.name=Basic Infantry
-Canute.BattleSystem.Army.Basic Shielder.name=Basic Shielder
-Canute.BattleSystem.Army.Basic Infantry.name=Basic Infantry
-Canute.BattleSystem.Army.Basic Cavalry.name=Basic Cavalry
-Canute.BattleSystem.Army.Basic Rifleman.name=Basic Rifleman
-Canute.BattleSystem.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
-Canute.BattleSystem.Army.Basic Dragon.name=Basic Dragon
+Canute.Army.Alpha Army.name=A
+Canute.Army.Beta Army.name=B
+Canute.Army.Tutorial Canute Army.name=Canute
+Canute.Army.Basic Mage.name=Basic Mage
+Canute.Army.Basic WarMachine.name=Basic WarMachine
+Canute.Army.Basic Infantry.name=Basic Infantry
+Canute.Army.Basic Shielder.name=Basic Shielder
+Canute.Army.Basic Infantry.name=Basic Infantry
+Canute.Army.Basic Cavalry.name=Basic Cavalry
+Canute.Army.Basic Rifleman.name=Basic Rifleman
+Canute.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
+Canute.Army.Basic Dragon.name=Basic Dragon
+Canute.Army.CalayCityInfantry=Calay City Infantry
+Canute.Army.ΣCityInfantry=Σ City Infantry
+Canute.Army.NewUtoCityInfantry.name=New Uto City Infantry
 #
-Canute.BattleSystem.Building.Campus.name=Campus
+Canute.Building.Campus.name=Campus
 #地形
 Canute.BattleSystem.Terrain.Plain=Plain
 Canute.BattleSystem.Terrain.Forest=Forest
@@ -64,10 +85,7 @@ Canute.BattleSystem.Terrain.River=River
 Canute.BattleSystem.Terrain.Ocean=Ocean
 Canute.BattleSystem.Terrain.Sand=Sand
 Canute.BattleSystem.Terrain.Swamp=Swamp
-
-#KeyName
-Canute.BattleSystem.Status.Turn=Turn
-Canute.BattleSystem.Status.Count=Count
+ 
 
 #效果
 Canute.BattleSystem.Effect+Types.none=None
@@ -89,9 +107,7 @@ Canute.BattleSystem.Effect+Types.damageDecreasePercentage.info=Decrease @param% 
 Canute.BattleSystem.Effect+Types.createArmy=Send army
 Canute.BattleSystem.Effect+Types.createArmy.info=Send @name to select position
 Canute.BattleSystem.Effect+Types.attackRange=Attack range bounes
-Canute.BattleSystem.Effect+Types.attackRange.info=Attack range bounes by @param
-Canute.BattleSystem.Effect+Types.damage=Attack range bounes
-Canute.BattleSystem.Effect+Types.damage.info=damage bounes by @param
+Canute.BattleSystem.Effect+Types.attackRange.info=Attack range bounes by @param 
 Canute.BattleSystem.Effect+Types.cardMinusPoint=补给
 Canute.BattleSystem.Effect+Types.cardMinusPoint.info=使一张牌需要的行动点数-@param
 Canute.BattleSystem.Effect+Types.confusion=Event: Confusion
@@ -102,12 +118,18 @@ Canute.BattleSystem.Effect+Types.infantryLightness=Resonance: Lightness
 Canute.BattleSystem.Effect+Types.infantryLightness.info=No action point cost when moving
 
 Canute.BattleSystem.Effect+Types.addActionPoint=Action Point
-Canute.BattleSystem.Effect+Types.addActionPoint.info=Add @param Action Point
-Canute.BattleSystem.Effect+Types.addActionPoint=Decrease Action Point
-Canute.BattleSystem.Effect+Types.addActionPoint.info=Decrease enemy @param Action Point next turn
-Canute.BattleSystem.Effect+Types.addActionPoint=Decrease Action Point
+Canute.BattleSystem.Effect+Types.addActionPoint.info=Add @param Action Point 
 Canute.BattleSystem.Effect+Types.addArmor=Add Armor
 Canute.BattleSystem.Effect+Types.addArmor.info=Add @param Armor to select army
+
+
+
+#dragon
+
+Canute.BattleSystem.Effect+Types.dragonAttack=Dragon Status:Attack
+Canute.BattleSystem.Effect+Types.dragonAttack.info=the dragon is ready to attack 
+Canute.BattleSystem.Effect+Types.dragonDefense=Dragon Status:Defense
+Canute.BattleSystem.Effect+Types.dragonDefense.info=the dragon is ready to defense
 
 Canute.BattleSystem.Effect+Types.dragonAirAttack=Air Attack
 Canute.BattleSystem.Effect+Types.dragonAirAttack.info=Increase army damage by 10%, switch army attack position to air.
@@ -138,8 +160,22 @@ Canute.BattleSystem.Effect+Types.addDragonStrike.info=enemy army will go back 2 
 
 Canute.BattleSystem.Effect+Types.shielderPenetrate=Resonance: Penetrate
 Canute.BattleSystem.Effect+Types.shielderPenetrate.info=Ignore other army's defense (except for shielder), cause a another @param% of enemy's current HP's real damage (except for shielder).
-Canute.BattleSystem.Effect+Types.aircraftFighterReturn=Returning position
+
+
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Basic Infantry Skill
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill.info= attack twice the [closest, possible, lowest HP] target (with a 0%/40% damage decrease)
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Basic Rifleman Skill
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill.info=to cause the [closest, possible, lowest HP] target lost 20% Current HP and 40% lost HP
+Canute.BattleSystem.Effect+Types.BasicShielderSkill=Basic Shielder Skill
+Canute.BattleSystem.Effect+Types.BasicShielderSkill.info=Give whole legion's army 20 Armor
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill=Basic War Machine Skill
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill.info=Attack the closest possible target, and causes a 120% damage.
+
+#aircraft fighter
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn=Airport
 Canute.BattleSystem.Effect+Types.aircraftFighterReturn.info=Returning position: @x,@y
+Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy=After Attack Effect
+Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy.info=Aircraft will move toward to Enemy when attack.
 
 
 #错误事件

@@ -23,15 +23,26 @@ namespace Canute
         public static Battle CurrentBattle { get => currentBattle; set { currentBattle = value; } }
         public static Level CurrentLevel { get => currentLevel; set { currentLevel = value; } }
         public static bool Initialized { get => initialized; set => initialized = value; }
-        public static LanguageName Language => Configuration is null ? LanguageName.en_us : Configuration.Language;
+        public static string Language => Configuration is null ? "en_us" : Configuration.Language;
 
         public static string ConfigPath => Application.persistentDataPath + "/Config.json";
 
 
         public static void ReadConfig()
         {
-            string settingPath = File.ReadAllText(ConfigPath);
-            Configuration = JsonUtility.FromJson<Config>(settingPath);
+            string settingPath;
+            if (!File.Exists(ConfigPath))
+            {
+                Configuration = new Config();
+                settingPath = JsonUtility.ToJson(Configuration);
+                File.WriteAllText(ConfigPath, settingPath);
+            }
+            else
+            {
+                settingPath = File.ReadAllText(ConfigPath);
+                Configuration = JsonUtility.FromJson<Config>(settingPath);
+            }
+
             initialized = true;
 
             Debug.Log("Configuration import complete");
@@ -82,11 +93,6 @@ namespace Canute
             currentBattle = null;
         }
 
-
-
-
-
-
     }
 
     [Serializable]
@@ -97,24 +103,36 @@ namespace Canute
         [SerializeField] private UUID lastGame;
 
         [Header("Testing only")]
-        [SerializeField] private bool debugMode = true;
-        [SerializeField] private bool pvp = true;
-        [SerializeField] private bool playerAutoSwitch = true;
+        [SerializeField] private bool debugMode = false;
+        [SerializeField] private bool pvp = false;
+        [SerializeField] private bool playerAutoSwitch = false;
+        [SerializeField] private bool useCustomDefaultPrototype;
 
         [Header("Allow Player Control")]
         [SerializeField] private float playCardDelay = 0.25f;
         [SerializeField] private bool showStory = true;
-        [SerializeField] private LanguageName language = LanguageName.zh_cn;
+        [SerializeField] private string language = "zh_cn";
 
         public UUID LastGame { get => lastGame; set { lastGame = value; Game.SaveConfig(); } }
         public bool IsDebugMode { get => debugMode; set { debugMode = value; Game.SaveConfig(); } }
         public bool PvP { get => pvp; set { pvp = value; Game.SaveConfig(); } }
         public bool PlayerAutoSwitch { get => playerAutoSwitch; set { playerAutoSwitch = value; Game.SaveConfig(); } }
+        public bool UseCustomDefaultPrototype { get => useCustomDefaultPrototype; set { useCustomDefaultPrototype = value; Game.SaveConfig(); } }
         public float PlayCardDelay { get => playCardDelay; set { playCardDelay = value; Game.SaveConfig(); } }
         public bool ShowStory { get => showStory; set { showStory = value; Game.SaveConfig(); } }
-        public LanguageName Language { get => language; set { language = value; Game.SaveConfig(); } }
+        public string Language { get => language; set { language = value; Game.SaveConfig(); } }
 
-        private Config() { }
+
+        public Config()
+        {
+            debugMode = false;
+            pvp = false;
+            playerAutoSwitch = false;
+            useCustomDefaultPrototype = false;
+            showStory = true;
+            playCardDelay = 0.25f;
+            language = "zh_cn";
+        }
 
         public Config Clone()
         {

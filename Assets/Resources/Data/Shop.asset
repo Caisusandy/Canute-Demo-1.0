@@ -27,51 +27,80 @@ MonoBehaviour:
     weight: 10
   leader: []
   equipment: []
-  nextRefreshTime:
-    value: 
-  onShopArmies:
-    list:
-    - name: dfadsaf
-      weight: 0
-      price:
-        type: 0
-        count: 100
-    - name: 
-      weight: 0
-      price:
-        type: 0
-        count: 0
-    - name: 
-      weight: 0
-      price:
-        type: 0
-        count: 0
-    - name: 
-      weight: 0
-      price:
-        type: 0
-        count: 0
-    - name: 
-      weight: 0
-      price:
-        type: 0
-        count: 0
-  onShopLeaders:
-    list:
-    - name: Canute
-      weight: 0
-      price:
-        type: 0
-        count: 100000
-  onShopEquipments:
-    list: []
   ArmyPriceList:
     list:
-    - name: 
-      weight: 0
+    - prize:
+        name: Basic Mage
+        count: 1
+        type: 1
+      weight: 10
       price:
-        type: 0
+      - name: 0
+        count: 500
+    - prize:
+        name: Basic Infantry
+        count: 1
+        type: 1
+      weight: 50
+      price:
+      - name: 0
+        count: 100
+    - prize:
+        name: Basic Shielder
+        count: 1
+        type: 1
+      weight: 20
+      price:
+      - name: 0
+        count: 250
+    - prize:
+        name: Basic Cavalry
+        count: 1
+        type: 1
+      weight: 20
+      price:
+      - name: 0
+        count: 250
+    - prize:
+        name: Basic Rifleman
         count: 0
+        type: 1
+      weight: 10
+      price:
+      - name: 0
+        count: 500
+    - prize:
+        name: Basic WarMachine
+        count: 1
+        type: 1
+      weight: 16
+      price:
+      - name: 0
+        count: 300
+    - prize:
+        name: "\u03A3CityInfantry"
+        count: 1
+        type: 1
+      weight: 50
+      price:
+      - name: 0
+        count: 300
+    - prize:
+        name: CalayCityInfantry
+        count: 1
+        type: 1
+      weight: 50
+      price:
+      - name: 0
+        count: 300
+    - prize:
+        name: NewUtoCityInfantry
+        count: 1
+        type: 1
+      weight: 50
+      price:
+      - name: 0
+        count: 300
   LeaderPriceList:
     list: []
   EquipementPriceList:

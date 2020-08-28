@@ -1,19 +1,21 @@
-﻿using System;
+﻿using Canute.BattleSystem;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Canute.BattleSystem
+namespace Canute
 {
     [Serializable]
     public class Leader : Prototype
     {
         [SerializeField] protected Career career;
-        [SerializeField] protected List<PropertyBounes> bounes;
+        [SerializeField] protected List<PropertyBonus> bounes;
+        [SerializeField] protected HalfSkillEffect skill;
 
 
         public Career Career => career;
         public override GameObject Prefab => null;
-        public List<PropertyBounes> Bounes { get => bounes; set => bounes = value; }
+        public List<PropertyBonus> Bounes { get => bounes; set => bounes = value; }
     }
 
 

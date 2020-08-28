@@ -38,31 +38,47 @@ SpriteAtlas:
       padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 1
-      enableTightPacking: 1
+      enableRotation: 0
+      enableTightPacking: 0
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: c97289b09dc831d4481a5a4220ca63a2, type: 3}
-    totalSpriteSurfaceArea: 5471432
+    totalSpriteSurfaceArea: 10942864
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 649a2e60bc29ffb4e95c88fd0538fc7b, type: 3}
   - {fileID: 21300000, guid: 0f5cbac202517894698b7878c1799824, type: 3}
+  - {fileID: 21300000, guid: 652fd3431aa086d4baae7558a18c9013, type: 3}
   - {fileID: 21300000, guid: e5739af4198a1464aacaab25ee84f42c, type: 3}
+  - {fileID: 21300000, guid: a8dc6e07f006c6d489b5c962d3052bd4, type: 3}
+  - {fileID: 21300000, guid: 3e7b48d7ba4fea947ab7a93e0e2063ed, type: 3}
   - {fileID: 21300000, guid: 336e1909d0fa1e34cac7ab07f4078e78, type: 3}
   - {fileID: 21300000, guid: 880586395aee14b42bf47402c166100a, type: 3}
   - {fileID: 21300000, guid: 624fe4e92a4884b43b1e8db927bd9ee9, type: 3}
+  - {fileID: 21300000, guid: 109a563a1ec507444a949ff1018eafc1, type: 3}
+  - {fileID: 21300000, guid: a40a145c0f9edbf4fa428752d3dbee72, type: 3}
   - {fileID: 21300000, guid: 47382f5c4942d604db5ea44151202475, type: 3}
   - {fileID: 21300000, guid: 0968209db6c69524c8c06a6fea9fabd5, type: 3}
+  - {fileID: 21300000, guid: 4449149df1f683b4db20d2c979bca927, type: 3}
+  - {fileID: 21300000, guid: 9298243e4b3885346862239c6285d70e, type: 3}
   - {fileID: 21300000, guid: 69a22c4e33b601b45912268841eb1dd1, type: 3}
   m_PackedSpriteNamesToIndex:
+  - aircraftFighter
   - shielderWBG
+  - riflemanWBG
   - mage
+  - aircraftFighterWBG
+  - rifleman
   - warMachineWBG
   - warMachine
   - infantryWBG
+  - dragonWBG
+  - dragon
   - mageWBG
   - shielder
+  - cavalryWBG
+  - cavalry
   - infantry
   m_Tag: ArmyTypeIcon
   m_IsVariant: 0

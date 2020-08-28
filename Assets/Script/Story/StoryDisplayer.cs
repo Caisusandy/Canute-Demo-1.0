@@ -16,11 +16,13 @@ namespace Canute.StorySystem
 
         public static StoryDisplayer instance;
         public static Story currentStory;
-
+        public static bool transparentBG;
         #region Component
+
         public Image leftPerson;
         public Image rightPerson;
         public Image middlePerson;
+        public Image bg;
         public List<Image> People => new List<Image>() { leftPerson, middlePerson, rightPerson };
 
         public Text speakerName;
@@ -63,6 +65,27 @@ namespace Canute.StorySystem
             LoadWord();
         }
 
+        public void OnMouseUp()
+        {
+            if (word.text == loadingLines)
+            {
+                Next();
+            }
+            else
+            {
+                word.text = loadingLines;
+            }
+        }
+
+        public void OnDestroy()
+        {
+            if (!(BattleSystem.UI.BattleUI.instance is null))
+            {
+                BattleSystem.UI.BattleUI.SetUIInteractive(true);
+            }
+            instance = null;
+        }
+
 
         /// <summary> 加载台词 </summary>
         public void LoadWord()
@@ -95,17 +118,46 @@ namespace Canute.StorySystem
         /// <param name="wordLine"></param>
         public void LoadLine(WordLine wordLine)
         {
+            bg.color = transparentBG ? new Color(0, 0, 0, 0) : new Color(0, 0, 0, 1);
+            bg.sprite = wordLine.ConversationBG;
             speakerName.text = wordLine.SpeakerName;
             word.text = string.Empty;
             loadingLines = wordLine.Line;
 
+            if (leftPerson.sprite)
+                leftPerson.color = new Color(0.8f, 0.8f, 0.8f);
+            else
+                leftPerson.enabled = false;
+
+
+            if (middlePerson.sprite)
+                middlePerson.color = new Color(0.8f, 0.8f, 0.8f);
+            else
+                middlePerson.enabled = false;
+
+
+            if (rightPerson.sprite)
+                rightPerson.color = new Color(0.8f, 0.8f, 0.8f);
+            else
+                rightPerson.enabled = false;
+
+
             switch (wordLine.Position)
             {
                 case SpeakerStandPosition.left:
+                    leftPerson.enabled = true;
+                    leftPerson.color = Color.white;
+                    leftPerson.sprite = wordLine.CharacterPortrait;
                     break;
                 case SpeakerStandPosition.middle:
+                    middlePerson.enabled = true;
+                    middlePerson.color = Color.white;
+                    middlePerson.sprite = wordLine.CharacterPortrait;
                     break;
                 case SpeakerStandPosition.right:
+                    rightPerson.enabled = true;
+                    rightPerson.color = Color.white;
+                    rightPerson.sprite = wordLine.CharacterPortrait;
                     break;
                 default:
                     break;
@@ -138,37 +190,20 @@ namespace Canute.StorySystem
         }
 
         /// <summary> 关闭剧情窗口 </summary>
-        private void Quit()
+        public void Quit()
         {
             SceneControl.RemoveScene(MainScene.StoryDisplayer);
-        }
-
-        public void OnMouseUp()
-        {
-            if (word.text == loadingLines)
-            {
-                Next();
-            }
-            else
-            {
-                word.text = loadingLines;
-            }
         }
 
         public static void Load(Story wordLines)
         {
             SceneControl.AddScene(MainScene.StoryDisplayer);
             currentStory = wordLines;
+            transparentBG = wordLines.Type == StoryType.dailyConversation;
         }
-
-        public void OnDestroy()
+        public static void Load(string storyName)
         {
-            if (!(BattleSystem.UI.BattleUI.instance is null))
-            {
-                BattleSystem.UI.BattleUI.SetUIInteractive(true);
-            }
-            instance = null;
+            Load(Story.Get(storyName));
         }
     }
-
 }

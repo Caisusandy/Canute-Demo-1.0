@@ -31,20 +31,18 @@ namespace Canute.BattleSystem
         #region Entity Status 
         private static InteractableEntity selectingEntity;
         private static CardEntity selectingCard;
-        private static Card lastCard;
 
         public static List<CardEntity> currentCards;
 
         public static List<CardEntity> cards = new List<CardEntity>();
         public static float times = 0;
 
-        public static bool IsDelayEnded => times < PlayCardDelay;
-        public static float PlayCardDelay => GameData.BuildSetting.PlayCardDelay;
+        public static bool IsDelayEnded => times > PlayCardDelay;
+        public static float PlayCardDelay => Game.Configuration.PlayCardDelay;
         public static List<CardEntity> CurrentCards { get => currentCards is null ? Game.CurrentBattle.Player.Entity.Cards : currentCards; set => currentCards = value; }
 
         public static InteractableEntity SelectingEntity { get => selectingEntity; set { selectingEntity = value; } }
         public static CardEntity SelectingCard { get => selectingCard; set { selectingCard = value; } }
-        public static Card LastCard { get => lastCard; set => lastCard = value; }
         #endregion
 
 
@@ -100,7 +98,7 @@ namespace Canute.BattleSystem
             if (wasSelected) Unselect();
             else Reorganize(Owner.Entity.Cards, BattleUI.HandCardBar);
             cardCollider.last = null;
-            TriggerClientSelectEvent(IsSelected);
+            TriggerSelectEvent(IsSelected);
             DetermineAction();
         }
 
@@ -131,7 +129,7 @@ namespace Canute.BattleSystem
             actionPointDisplayer.canvas.sortingLayerName = "Card";
             actionPointDisplayer.canvas.sortingOrder = layer + 1;
 
-            careerPicture.sprite = GameData.SpriteLoader.Get(data.Career.ToString());
+            careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, data.Career.ToString());
             GetComponent<Image>().canvas.sortingLayerName = "Card";
             GetComponent<Image>().canvas.sortingOrder = layer;
 
@@ -242,7 +240,7 @@ namespace Canute.BattleSystem
             Debug.Log("try play card");
             if (!Game.CurrentBattle.IsFreeTime)
             {
-                Debug.Log("Card did not played: Not a free time to play card, there is at least an action in process");
+                //Debug.Log("Card did not played: Not a free time to play card, there is at least an action in process");
                 TimeDeleyReset();
                 return false;
             }
@@ -252,14 +250,8 @@ namespace Canute.BattleSystem
                 TimeDeleyReset();
                 return false;
             }
-            if (Owner.ActionPoint < (data.ActionPoint - (data?.Career == (SelectingEntity.Data as IBattleableEntityData)?.Career ? 1 : 0)))
-            {
-                BattleUI.SendMessage("Card did not played: no enough action point");
-                TimeDeleyReset();
-                return false;
-            }
-            Debug.Log(data.ActionPoint + ", player has " + Owner.ActionPoint);
-            if (IsDelayEnded)
+            //Debug.Log(data.ActionPoint + ", player has " + Owner.ActionPoint);
+            if (!IsDelayEnded)
             {
                 Debug.Log("Card did not played: not enough time deley to play card");
                 TimeDeleyReset();
@@ -271,7 +263,6 @@ namespace Canute.BattleSystem
                 TimeDeleyReset();
                 return false;
             }
-
 
             PlayCard();
             TimeDeleyReset();
@@ -285,16 +276,17 @@ namespace Canute.BattleSystem
         public virtual void PlayCard()
         {
             Debug.Log("play card " + data);
+
             data.Effect.Source = this;
             data.Effect.Target = SelectingEntity;
-
-            bool sucess = Owner.PlayCard(data);
+            bool sucess = data.Play();
 
             if (sucess)
             {
-                LastCard = data;
                 Destroy();
             }
+
+            OnMapEntity.SelectingEntity.Exist()?.Unselect();
             /* */
         }
 
@@ -382,8 +374,8 @@ namespace Canute.BattleSystem
             int cardcount = cardEntities.Count;
             float StartingAngle = 90 + (cardcount - 1) * AnglePerCard / 2;
             float angle = StartingAngle - card.id * AnglePerCard;
-            float degreeX = Mathf.Cos(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 5;
-            float degreeY = Mathf.Sin(angle * Mathf.Deg2Rad) * DistanceFromDeckParam;
+            float degreeX = Mathf.Cos(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 7.5f;
+            float degreeY = Mathf.Sin(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 1.2f;
 
             return new Vector3(degreeX, degreeY) * (card.IsSelected ? 1.25f : 1f);
 
@@ -418,11 +410,17 @@ namespace Canute.BattleSystem
 
         #endregion
 
-        public static CardEntity Create(Card card, HandCardBar handCardBar)
+        public static CardEntity Create(Card card)
         {
+            HandCardBar handCardBar = HandCardBar.GetHandCardBar(card.Owner);
+            if (handCardBar is null)
+            {
+                return NonControllingCardEntity.Create(card, card.Owner);
+            }
+
             CardEntity cardEntity;
             GameObject cardObject;
-            GameObject cardPrefab = card.Type == Card.Types.eventCard ? GameData.EntityPrefabs.EventCard : GameData.EntityPrefabs.CentralDeckCard;
+            GameObject cardPrefab = card.Prefab;
 
             cardObject = Instantiate(cardPrefab, handCardBar.transform);
             cardEntity = cardObject.GetComponent<CardEntity>();
@@ -434,6 +432,7 @@ namespace Canute.BattleSystem
             cardObject.transform.SetParent(handCardBar.transform);
             cardObject.transform.Find("Text").GetComponent<Canvas>().overrideSorting = true;
 
+            cardEntity.Owner.AddHandCard(card);
             Reorganize(card.Owner.Entity.Cards, BattleUI.HandCardBar);
             return cardEntity;
         }
@@ -461,10 +460,11 @@ namespace Canute.BattleSystem
         public override void Destroy()
         {
             cards.Remove(this);
-            Owner.HandCard.Remove(data);
+            Owner.RemoveHandCard(data);
 
             Reorganize(Owner.Entity.Cards, BattleUI.HandCardBar);
             animator.RemoveFromBattle();
+
             base.Destroy();
         }
     }

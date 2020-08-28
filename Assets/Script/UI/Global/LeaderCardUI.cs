@@ -11,6 +11,7 @@ namespace Canute.UI
         public Text leaderName;
         public Image portrait;
         public Image bg;
+        public Image career;
 
         public LeaderItem leaderItem;
 
@@ -28,9 +29,9 @@ namespace Canute.UI
 
         public void Display(LeaderItem leaderItem)
         {
-            leaderName.text = leaderItem.DisplayingName;
             this.leaderItem = leaderItem;
-
+            leaderName.text = leaderItem.DisplayingName;
+            career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, leaderItem.Career.ToString());
         }
     }
 }

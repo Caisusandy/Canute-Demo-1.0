@@ -304,8 +304,10 @@ namespace Canute.BattleSystem
 
             e[effectSpecialName] = null;
             e[effectType] = null;
+            var showToPlayer = (e.Args.HasParam("showToPlayer") ? e.Args.GetBoolParam("showToPlayer") : true);
 
-            Status status = new Status(e, tc, sc, st, cd);
+
+            Status status = new Status(e, tc, sc, st, cd, showToPlayer);
             Debug.Log(status);
             return status;
         }
@@ -336,8 +338,9 @@ namespace Canute.BattleSystem
 
             e[effectSpecialName] = null;
             e[effectType] = null;
+            var showToPlayer = e.Args.HasParam("showToPlayer") ? e.Args.GetBoolParam("showToPlayer") : true;
 
-            Status status = new Status(e, tc, sc, st, cd);
+            Status status = new Status(e, tc, sc, st, cd, showToPlayer);
             Debug.Log(status);
             return status;
         }
@@ -469,6 +472,62 @@ namespace Canute.BattleSystem
             return "Type: " + type + "\n"
                 + "Count: " + count + "\n"
                 + "Parameter: " + parameter + "\n"
+                + "Args: " + args.ToString();
+        }
+
+    }
+
+    [Serializable]
+    public struct HalfSkillEffect : IEffect, ICloneable
+    {
+        [SerializeField] private string specialName;
+        [SerializeField] private int count;
+        [SerializeField] private int parameter;
+        [SerializeField] private ArgList args;
+
+        private HalfSkillEffect(string specialName, int count, int parameter, ArgList args)
+        {
+            this.specialName = specialName;
+            this.parameter = parameter;
+            this.count = count;
+            this.args = args;
+        }
+
+
+        public Effect.Types Type { get => Effect.Types.skill; set { } }
+        public int Count { get => count; set => count = value; }
+        public int Parameter { get => parameter; set => parameter = value; }
+        public string Name => specialName;
+        public Args Args { get => args; set => args = value; }
+
+        public Effect ToEffect()
+        {
+            Effect effect = new Effect(Type, Count, Parameter, args.ToArray());
+            effect.SetSpecialName(specialName);
+            return effect;
+        }
+
+        public HalfSkillEffect Clone()
+        {
+            return new HalfSkillEffect(specialName, count, parameter, args);
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
+        }
+
+        public static implicit operator Effect(HalfSkillEffect effect)
+        {
+            return effect.ToEffect();
+        }
+
+
+        public override string ToString()
+        {
+            return "Type: " + Type + "\n"
+                + "Count: " + Count + "\n"
+                + "Parameter: " + Parameter + "\n"
                 + "Args: " + args.ToString();
         }
 

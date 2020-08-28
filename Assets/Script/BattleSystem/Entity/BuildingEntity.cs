@@ -25,64 +25,30 @@ namespace Canute.BattleSystem
 
         public static List<BuildingEntity> onMap = new List<BuildingEntity>();
 
-        public virtual void Defeated(params object[] vs)
-        {
-            InPerformingAnimation();
-            animator.SetBool(isDefeated, true);
-            Action(new EntityEventPack(IdleDelay, DefeatedDuration), new EntityEventPack(Remove), new EntityEventPack(data.CheckPotentialAction));
-        }
         public virtual void Skill(params object[] vs)
         {
             InPerformingAnimation();
-            animator.SetBool(isPerformingSkill, true);
+            Animator.SetBool(isPerformingSkill, true);
             SkillAction();
         }
         public virtual void Winning(params object[] vs)
         {
             InPerformingAnimation();
-            animator.SetBool(isWinning, true);
+            Animator.SetBool(isWinning, true);
             Action(new EntityEventPack(IdleDelay, WinningDuration));
-        }
-        public virtual void ReadyToDie(params object[] vs)
-        {
-            IEnumerator Check(params object[] vs1)
-            {
-                while (true)
-                {
-                    if (IsIdle)
-                    {
-                        yield return new EntityEventPack(Defeated).Execute();
-                    }
-                    else
-                    {
-                        yield return new WaitForSeconds(0.1f);
-                    }
-                }
-            }
-            Action(Check);
-        }
-        public virtual void Remove(params object[] vs)
-        {
-            Destroy(gameObject);
         }
         public virtual void Hurt(params object[] vs)
         {
             int damage = (int)vs[0];
             var damageSource = vs[1] as IAggressiveEntity;
 
-            if (damageSource is null)
-            {
-                this.Damage(damage);
-            }
-            else
-            {
-                this.Damage(damage, damageSource);
-            }
+
+            this.Damage(damage, damageSource);
 
             InPerformingAnimation();
-            animator.SetBool(isDefencing, true);
+            Animator.SetBool(isDefencing, true);
 
-            Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction));
+            Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction, damageSource));
             Debug.Log(Data.ToString() + " Hurt");
         }
         public virtual void Move(params object[] vs)
@@ -91,7 +57,7 @@ namespace Canute.BattleSystem
             Effect effect = vs[1] as Effect;
 
             InPerformingAnimation();
-            animator.SetBool(isMoving, true);
+            Animator.SetBool(isMoving, true);
 
             EntityOnCellMotion.SetMotion(this, path, effect);
             Action(TryEndMoveAction, new EntityEventPack(data.CheckPotentialAction));
@@ -122,18 +88,24 @@ namespace Canute.BattleSystem
         }
         public abstract void SkillExecute(Effect effect);
 
-
-        public static BuildingEntity Create(BattleBuilding item)
+        public override void Destroy()
         {
-            GameObject prefab;
+            Game.CurrentBattle.Buildings.Remove(data);
+            base.Destroy();
+        }
+
+        public static BuildingEntity Create(BattleBuilding battleBuilding)
+        {
             GameObject gameObject;
             BuildingEntity buildingEntity;
 
-            prefab = item.Prefab;
-            gameObject = Instantiate(prefab, Game.CurrentBattle.MapEntity[item.Coordinate].transform);
+            CellEntity cellEntity = Game.CurrentBattle.MapEntity.GetCell(battleBuilding.Coordinate);
+            gameObject = Instantiate(battleBuilding.Prefab, Game.CurrentBattle.MapEntity[battleBuilding.Coordinate].transform);
 
             buildingEntity = gameObject.GetComponent<BuildingEntity>();
-            buildingEntity.data = item;
+            buildingEntity.data = battleBuilding;
+            buildingEntity.name = "Building";
+            cellEntity.Enter(buildingEntity, null);
 
             return buildingEntity;
         }
@@ -141,7 +113,7 @@ namespace Canute.BattleSystem
     }
 
     [Serializable]
-    public class BattleBuilding : PassiveEntityData
+    public class BattleBuilding : BattleEntityData
     {
         public override GameObject Prefab { get => prefab ?? GameData.Prefabs.DefaultBuilding; set => prefab = value; }
         public override Prototype Prototype { get => GameData.Prototypes.GetBuildingPrototype(name); set => base.Prototype = value; }
@@ -150,7 +122,7 @@ namespace Canute.BattleSystem
 
         protected override string GetDisplayingName()
         {
-            if (HasPrototype)
+            if (HasValidPrototype)
             {
                 return base.GetDisplayingName();
             }

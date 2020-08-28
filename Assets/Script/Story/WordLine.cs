@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Canute.StorySystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
+   //plan: special speaker name can do something
     [Serializable]
     public struct WordLine : INameable, IEquatable<WordLine>
     {
@@ -11,6 +15,7 @@ namespace Canute.StorySystem
         [SerializeField] private string speakerName;
         [TextArea, SerializeField] private string line;
         [SerializeField] private Sprite characterPortrait;
+        [SerializeField] private Sprite conversationBG;
         [SerializeField] private StoryDisplayer.SpeakerStandPosition position;
         [SerializeField] private List<Selection> selections;
 
@@ -21,20 +26,11 @@ namespace Canute.StorySystem
         public StoryDisplayer.SpeakerStandPosition Position { get => position; set => position = value; }
         public Sprite CharacterPortrait { get => characterPortrait; set => characterPortrait = value; }
         public List<Selection> Selections { get => selections; set => selections = value; }
+        public Sprite ConversationBG { get => conversationBG; set => conversationBG = value; }
 
 
         public static WordLine Empty => new WordLine() { Name = string.Empty, Position = StoryDisplayer.SpeakerStandPosition.none, Line = string.Empty };
 
-
-        public WordLine(string id, string speakerName, StoryDisplayer.SpeakerStandPosition position, string line, Sprite characterSprite)
-        {
-            this.id = id;
-            this.speakerName = speakerName;
-            this.position = position;
-            this.line = line;
-            this.characterPortrait = characterSprite;
-            selections = new List<Selection>();
-        }
 
         public bool Equals(WordLine obj)
         {

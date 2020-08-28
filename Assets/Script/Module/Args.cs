@@ -1,7 +1,8 @@
-﻿using Canute;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace System.Collections.Generic
+namespace Canute
 {
     [Serializable]
     public class Args : DataList<Arg>, IDictionary<string, string>
@@ -119,7 +120,7 @@ namespace System.Collections.Generic
         /// <returns></returns>
         public bool HasParam(string key)
         {
-            return string.IsNullOrEmpty(this[key]);
+            return Keys.Contains(key);
         }
 
         /// <summary>
@@ -305,5 +306,7 @@ namespace System.Collections.Generic
         {
             return new ArgList(args);
         }
+
     }
+
 }

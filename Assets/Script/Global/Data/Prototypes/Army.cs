@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Canute.BattleSystem;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Canute.BattleSystem
+namespace Canute
 {
     /// <summary> 军队原型 </summary>
     [Serializable]
@@ -18,13 +19,13 @@ namespace Canute.BattleSystem
 
             rifleman,
             cavalry,
-            scout,
+            sapper,
 
             airship,
             aircraftFighter,
             dragon,
 
-            sapper,
+            scout,
         }
 
         [SerializeField] private double health;
@@ -65,7 +66,10 @@ namespace Canute.BattleSystem
         public List<BattleProperty> Properties => properties;
         public override GameObject Prefab => prefab ?? GameData.Prefabs.DefaultArmy;
     }
+}
 
+namespace Canute.BattleSystem
+{
     public static class AttackTypes
     {
         public static bool IsTypeOf(this BattleProperty.AttackType attackTypes, BattleProperty.AttackType param)

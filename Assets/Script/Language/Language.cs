@@ -19,27 +19,15 @@ namespace Canute.Languages
     [CreateAssetMenu(fileName = "Lang", menuName = "Game Data/Language")]
     public class Language : ScriptableObject
     {
-
-        [ContextMenuItem("Reload language pack", "ForceLoadLang")]
-        [SerializeField] protected Args dictionary;
-        [SerializeField] protected LanguageName dicLang;
-
-        public LanguageName GameLanguage => Game.Configuration is null ? LanguageName.en_us : Game.Language;
-        public Args Dictionary { get => dictionary; set => dictionary = value; }
+        public static Dictionary<string, string> Dictionary { get => LanguageSystem.Dictionary; set => LanguageSystem.Dictionary = value; }
 
         /// <summary>
         /// 语言文件解释器, 加载语言包
         /// </summary>
         public IEnumerator LoadLang()
         {
-            if (dicLang == GameLanguage && dictionary != null)
-            {
-                yield return null;
-            }
-            dicLang = GameLanguage;
-
-            Debug.Log("loading language pack " + dicLang);
-            TextAsset LanguagePack = Resources.Load("Lang/" + GameLanguage.ToString()) as TextAsset;
+            Debug.Log("loading language pack " + Game.Language);
+            TextAsset LanguagePack = Resources.Load("Lang/" + Game.Language) as TextAsset;
             yield return LanguagePack;
             string lang = LanguagePack.text;
             string[] langtoarray = lang.Split('\n');
@@ -54,9 +42,9 @@ namespace Canute.Languages
                     continue;
                 }
                 string[] word = wordset.Split('=');
-                if (!dictionary.ContainsKey(word[0]))
+                if (!Dictionary.ContainsKey(word[0]))
                 {
-                    dictionary.Add(word[0], word[1]);
+                    Dictionary.Add(word[0], word[1]);
                 }
             }
         }
@@ -65,10 +53,9 @@ namespace Canute.Languages
         /// </summary>
         public void ForceLoadLang()
         {
-            dictionary.Clear();
-            dicLang = GameLanguage;
-            Debug.Log("loading language pack " + dicLang);
-            TextAsset LanguagePack = Resources.Load("Lang/" + GameLanguage.ToString()) as TextAsset;
+            Debug.Log("loading language pack " + Game.Language);
+            Dictionary = new Dictionary<string, string>();
+            TextAsset LanguagePack = Resources.Load("Lang/" + Game.Language) as TextAsset;
             string lang = LanguagePack.text;
             string[] langtoarray = lang.Split('\n');
             foreach (string wordset in langtoarray)
@@ -82,10 +69,10 @@ namespace Canute.Languages
                     continue;
                 }
                 string[] word = wordset.Split('=');
-                if (!dictionary.ContainsKey(word[0]))
+                if (!Dictionary.ContainsKey(word[0]))
                 {
                     //Debug.Log("Add " + word[0] + ":" + word[1]);
-                    dictionary.Add(word[0], word[1]);
+                    Dictionary.Add(word[0], word[1]);
                 }
             }
         }

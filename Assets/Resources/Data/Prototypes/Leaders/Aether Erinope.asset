@@ -17,7 +17,7 @@ MonoBehaviour:
     rarity: 3
     icon: {fileID: 0}
     sprite: {fileID: 0}
-    protrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 9a7d3c02996275241a3acfc9badec248, type: 3}
     prefab: {fileID: 0}
     career: 1
     bounes:
@@ -29,3 +29,9 @@ MonoBehaviour:
       bounesType: 1
       value: 20
       growth: 1
+    skill:
+      specialName: 
+      count: 0
+      parameter: 0
+      args:
+        args: []

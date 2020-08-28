@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enTutorialInto
+  m_EditorClassIdentifier: 
+  story:
+    id: Tutorial
+    type: 1
+    wordLines:
+    - id: 
+      speakerName: 
+      line: move card to a object to use a card
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: 
+      speakerName: 
+      line: 'Use"move" card to move army
+
+        Use Finger/Mouse to draw move path'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: 
+      speakerName: 
+      line: Use the "attack" card to army and then select target.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: 
+      speakerName: 
+      line: Check for the amount of action point you have, every card use some action
+        point.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []

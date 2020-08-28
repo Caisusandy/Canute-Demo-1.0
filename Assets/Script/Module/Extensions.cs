@@ -256,13 +256,13 @@ namespace Canute
         {
             switch (rarity)
             {
-                case Rarity.Common:
+                case Rarity.common:
                     return UnityEngine.Color.white;
-                case Rarity.Rare:
+                case Rarity.rare:
                     return UnityEngine.Color.green;
-                case Rarity.Epic:
+                case Rarity.epic:
                     return UnityEngine.Color.blue;
-                case Rarity.Legendary:
+                case Rarity.legendary:
                     return UnityEngine.Color.yellow;
                 default:
                     return UnityEngine.Color.red;
@@ -293,6 +293,19 @@ namespace Canute
                 float.Parse(sArray[2]));
 
             return result;
+        }
+
+        public static bool IsVector2(this string sVector)
+        {
+            try
+            {
+                sVector.ToVector2();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public static Vector2 ToVector2(this string sVector)
@@ -331,6 +344,19 @@ namespace Canute
                 int.Parse(sArray[2]));
 
             return result;
+        }
+
+        public static bool IsVector3(this string sVector)
+        {
+            try
+            {
+                sVector.ToVector3();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public static Vector2Int ToVector2Int(this string sVector)

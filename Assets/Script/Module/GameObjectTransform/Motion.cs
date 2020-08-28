@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Canute.Module
 {
@@ -6,17 +7,21 @@ namespace Canute.Module
     public class Motion : MonoBehaviour
     {
         public event EndMotion MotionEndEvent;
+        public static List<Motion> ongoingMotions = new List<Motion>();
 
         public Vector3 startingPos;
         public Vector3 finalPos;
         public Vector3 curPos;
+        public bool isUIMotion;
         public float speed = 6;
-        public float minimumDistance = 0.01f;
+        public float minimumDistance = 0.05f;
         public Space moveSpace;
 
         // Start is called before the first frame update
         private void Start()
         {
+            if (isUIMotion) ongoingMotions.Add(this);
+            else ongoingMotions.Remove(this);
             startingPos = curPos = transform.position;
         }
 
@@ -65,16 +70,23 @@ namespace Canute.Module
 
         public virtual void Arrive()
         {
-            Destroy(gameObject.GetComponent<Motion>());
             MotionEndEvent?.Invoke();
+            ongoingMotions.Remove(this);
+            Destroy(this);
         }
 
-        public static void SetMotion(GameObject obj, Vector3 finalPos, Space space = Space.World, EndMotion endMotionevent = null)
+        public void OnDestroy()
+        {
+            ongoingMotions.Remove(this);
+        }
+
+        public static void SetMotion(GameObject obj, Vector3 finalPos, Space space = Space.World, EndMotion endMotionevent = null, bool isUIMotion = false)
         {
             Motion motion = obj.GetComponent<Motion>();
             if (!obj.GetComponent<Motion>()) { motion = obj.AddComponent<Motion>(); }
-            motion.MotionEndEvent += endMotionevent;
 
+            motion.MotionEndEvent += endMotionevent;
+            motion.isUIMotion = isUIMotion;
 
             if (space == Space.Self)
             {
@@ -91,6 +103,14 @@ namespace Canute.Module
         public static void SetMotion(GameObject obj, Vector3 finalPos, EndMotion endMotionevent)
         {
             SetMotion(obj, finalPos, Space.World, endMotionevent);
+        }
+        public static void SetMotion(GameObject obj, Vector3 finalPos, EndMotion endMotionevent, bool isUIMotion)
+        {
+            SetMotion(obj, finalPos, Space.World, endMotionevent, isUIMotion);
+        }
+        public static void SetMotion(GameObject obj, Vector3 finalPos, bool isUIMotion)
+        {
+            SetMotion(obj, finalPos, Space.World, null, isUIMotion);
         }
 
         public static void StopMotion(GameObject gameObject)

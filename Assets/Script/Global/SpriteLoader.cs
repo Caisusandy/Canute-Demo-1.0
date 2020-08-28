@@ -49,6 +49,22 @@ namespace Canute
             //Debug.LogWarning(atlasName + ", " + name + " does not exist");
             return default;
         }
+        public SpriteAtlas Get(string atlasName)
+        {
+            if (list == null)
+            {
+                return default;
+            }
+            foreach (SpriteAtlas item in list)
+            {
+                if (item.name.ToLower() == atlasName.ToLower())
+                {
+                    return item;
+                }
+            }
+            //Debug.LogWarning(atlasName + ", " + name + " does not exist");
+            return default;
+        }
     }
 
     public static class SpriteAtlases
@@ -59,5 +75,6 @@ namespace Canute
         public const string careerIcon = "CareerIcon";
         public const string cells = "Cells";
         public const string armyTypeIcon = "ArmyTypeIcon";
+        public const string armyPositionIcon = "armyPositionIcon";
     }
 }

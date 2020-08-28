@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Canute.Languages;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Canute.BattleSystem
 {
-
     public abstract class BuildingEntity : OnMapEntity, IBattleableEntity, IPassiveEntity
     {
         public BattleBuilding data;
@@ -13,6 +13,8 @@ namespace Canute.BattleSystem
 
         IPassiveEntityData IPassiveEntity.Data => data;
         IBattleableEntityData IBattleableEntity.Data => data;
+        public override BattleProperty.Position StandPostion => data.StandPosition;
+
 
         public abstract float AttackAtionDuration { get; }
         public abstract float SkillDuration { get; }
@@ -23,71 +25,65 @@ namespace Canute.BattleSystem
 
         public static List<BuildingEntity> onMap = new List<BuildingEntity>();
 
-        public static BuildingEntity Create(BattleBuilding item)
-        {
-            GameObject prefab;
-            GameObject gameObject;
-            BuildingEntity buildingEntity;
-
-            prefab = item.Prefab ?? GameData.EntityPrefabs.Buildings.Get(item.Name);
-            gameObject = Instantiate(prefab, Game.CurrentBattle.MapEntity[item.Position].transform);
-
-            buildingEntity = gameObject.GetComponent<BuildingEntity>();
-            buildingEntity.data = item;
-
-            return buildingEntity;
-        }
-
-        public virtual void Defeated(params object[] vs)
-        {
-            PerformingAnimation();
-            animator.SetBool(isDefeated, true);
-            Action(new EntityEventPack(IdleDelay, DefeatedDuration), new EntityEventPack(Remove), new EntityEventPack(data.CheckPotentialAction));
-        }
         public virtual void Skill(params object[] vs)
         {
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isPerformingSkill, true);
             SkillAction();
         }
         public virtual void Winning(params object[] vs)
         {
-            PerformingAnimation();
+            InPerformingAnimation();
             animator.SetBool(isWinning, true);
             Action(new EntityEventPack(IdleDelay, WinningDuration));
-        }
-        public virtual void ReadyToDie(params object[] vs)
-        {
-            IEnumerator Check(params object[] vs1)
-            {
-                while (true)
-                {
-                    if (IsIdle)
-                    {
-                        yield return new EntityEventPack(Defeated).Execute();
-                    }
-                    else
-                    {
-                        yield return new WaitForSeconds(0.1f);
-                    }
-                }
-            }
-            Action(Check);
-        }
-        public virtual void Remove(params object[] vs)
-        {
-            Destroy(gameObject);
         }
         public virtual void Hurt(params object[] vs)
         {
             int damage = (int)vs[0];
-            this.Damage(damage);
+            var damageSource = vs[1] as IAggressiveEntity;
 
-            PerformingAnimation();
+            if (damageSource is null)
+            {
+                this.Damage(damage);
+            }
+            else
+            {
+                this.Damage(damage, damageSource);
+            }
+
+            InPerformingAnimation();
             animator.SetBool(isDefencing, true);
 
             Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction));
             Debug.Log(Data.ToString() + " Hurt");
+        }
+        public virtual void Move(params object[] vs)
+        {
+            List<CellEntity> path = vs[0] as List<CellEntity>;
+            Effect effect = vs[1] as Effect;
+
+            InPerformingAnimation();
+            animator.SetBool(isMoving, true);
+
+            EntityOnCellMotion.SetMotion(this, path, effect);
+            Action(TryEndMoveAction, new EntityEventPack(data.CheckPotentialAction));
+
+            IEnumerator TryEndMoveAction(params object[] a)
+            {
+                while (true)
+                {
+                    if (GetComponent<EntityOnCellMotion>())
+                    {
+                        yield return new WaitForSeconds(0.1f);
+                        continue;
+                    }
+                    else
+                    {
+                        yield return Idle();
+                        break;
+                    }
+                }
+            }
         }
 
 
@@ -96,13 +92,50 @@ namespace Canute.BattleSystem
             Debug.Log("Performing skill");
             Action(new EntityEventPack(IdleDelay, SkillDuration));
         }
-
         public abstract void SkillExecute(Effect effect);
+
+        public override void Destroy()
+        {
+            Game.CurrentBattle.Buildings.Remove(data);
+            base.Destroy();
+        }
+
+        public static BuildingEntity Create(BattleBuilding battleBuilding)
+        {
+            GameObject gameObject;
+            BuildingEntity buildingEntity;
+
+            CellEntity cellEntity = Game.CurrentBattle.MapEntity.GetCell(battleBuilding.Coordinate);
+            gameObject = Instantiate(battleBuilding.Prefab, Game.CurrentBattle.MapEntity[battleBuilding.Coordinate].transform);
+
+            buildingEntity = gameObject.GetComponent<BuildingEntity>();
+            buildingEntity.data = battleBuilding;
+            buildingEntity.name = "Army";
+            cellEntity.Enter(buildingEntity, null);
+
+            return buildingEntity;
+        }
+
     }
 
     [Serializable]
     public class BattleBuilding : PassiveEntityData
     {
+        public override GameObject Prefab { get => prefab ?? GameData.Prefabs.DefaultBuilding; set => prefab = value; }
         public override Prototype Prototype { get => GameData.Prototypes.GetBuildingPrototype(name); set => base.Prototype = value; }
+        public new BuildingEntity Entity => base.Entity as BuildingEntity;
+
+
+        protected override string GetDisplayingName()
+        {
+            if (HasPrototype)
+            {
+                return base.GetDisplayingName();
+            }
+            else
+            {
+                return ("Canute.BattleSystem.Building." + name + ".name").Lang();
+            }
+        }
     }
 }

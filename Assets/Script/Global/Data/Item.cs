@@ -6,16 +6,20 @@ using UnityEngine;
 namespace Canute
 {
     [Serializable]
-    public abstract class Item : INameable, IUUIDLabeled, IPrototypeCopy
+    public abstract class Item : INameable, IUUIDLabeled, IPrototypeCopy, IRarityLabled
     {
         public enum Type
         {
             nA = -1,
             none,
-            Army,
-            Leader,
-            Equipment,
-            EventCard
+            commonItem,
+            army,
+            leader,
+            equipment,
+            eventCard,
+            story,
+            currency,
+            exp,
         }
 
         [SerializeField] protected string protoName;
@@ -32,7 +36,7 @@ namespace Canute
         public string Name => protoName;
         public string DisplayingName => GetDisplayingName();
         public Rarity Rarity => GetRarity();
-        /// <summary>  item's icon </summary>
+        /// <summary> item's icon </summary>
         public Sprite Icon => GetIcon();
         /// <summary> item's portrait </summary>
         public Sprite Portrait => GetPortrait();
@@ -43,58 +47,31 @@ namespace Canute
 
 
 
-        protected Rarity GetRarity()
+        protected virtual Rarity GetRarity()
         {
-            if (HasPrototype)
-            {
-                return Proto.Rarity;
-            }
-            else
-            {
-                return Rarity.Common;
-            }
-
+            return HasPrototype ? Proto.Rarity : Rarity.common;
         }
 
-        protected string GetDisplayingName()
+        protected virtual string GetDisplayingName()
         {
-            if (HasPrototype)
-            {
-                return Proto.DisplayingName;
-            }
-            else
-            {
-                return ("Canute.BattleSystem." + ItemType.ToString().ToUpperInvariant() + "." + protoName).Lang();
-            }
+            return HasPrototype
+                ? Proto.DisplayingName
+                : ("Canute.BattleSystem." + ItemType.ToString().ToUpperInvariant() + "." + protoName).Lang();
         }
 
         protected virtual Sprite GetIcon()
         {
-            if (HasPrototype)
-            {
-                return Proto.Icon;
-            }
-            else
-            {
-                return GameData.SpriteLoader.Get(SpriteAtlases.armyIcon, protoName);
-            }
+            return Proto.Icon;
         }
 
         protected virtual Sprite GetPortrait()
         {
-            if (HasPrototype)
-            {
-                return Proto.Portrait;
-            }
-            else
-            {
-                return GameData.SpriteLoader.Get(SpriteAtlases.armyPortrait, protoName);
-            }
+            return HasPrototype ? Proto.Portrait : GameData.SpriteLoader.Get(SpriteAtlases.armyPortrait, protoName);
         }
 
 
         [Temporary]
-        private Sprite GetSprite()
+        protected virtual Sprite GetSprite()
         {
             if (HasPrototype)
             {
@@ -119,7 +96,29 @@ namespace Canute
                 return false;
             }
 
+            if (item.protoName == "Empty")
+            {
+                return false;
+            }
+
             return true;
+        }
+
+        public static bool operator ==(Item a, Item b)
+        {
+            if (!a && !b)
+            {
+                return true;
+            }
+            else if (a && b)
+            {
+                return a.Equals(b);
+            }
+            else return false;
+        }
+        public static bool operator !=(Item a, Item b)
+        {
+            return !(a == b);
         }
 
         protected Item()
@@ -142,6 +141,34 @@ namespace Canute
                 }
             }
             return maxLevel;
+        }
+
+
+
+
+        //protected override Sprite GetIcon()
+        //{
+        //    return HasPrototype
+        //        ? Proto.Icon
+        //        : GameData.SpriteLoader.Get(SpriteAtlases.armyIcon, protoName).Exist() ?? GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, Type.ToString());
+        //}
+
+        //protected override Sprite GetPortrait()
+        //{
+        //    return HasPrototype ? Proto.Portrait : GameData.SpriteLoader.Get(SpriteAtlases.armyPortrait, protoName);
+        //}
+
+
+
+        public virtual void AddFloatExp(int floatExp)
+        {
+            this.floatExp += floatExp;
+        }
+
+
+        public virtual void AddExp(int exp)
+        {
+            this.exp += exp;
         }
     }
 

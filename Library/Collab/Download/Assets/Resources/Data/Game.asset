@@ -17,34 +17,535 @@ MonoBehaviour:
     minor: 0
     build: 0
     revision: 0
-  playerData: {fileID: 11400000, guid: 7267f4b81fffe0241a86446be1fa8f63, type: 2}
-  lastSaveName: JDJJ8ZX20840
-  playerDatas:
-  - {fileID: 11400000, guid: 7267f4b81fffe0241a86446be1fa8f63, type: 2}
-  - {fileID: 11400000, guid: 9ec3b06c7385d5749a90745cb665aff0, type: 2}
-  - {fileID: 11400000, guid: ea4a74bec4d9a2349b546f2e568b03bb, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 9259f995cd6fa1240956f14512a2b687, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: e90ecfeeb8c13e24bb6e2800169b2ff9, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: e90ecfeeb8c13e24bb6e2800169b2ff9, type: 2}
-  - {fileID: 11400000, guid: e90ecfeeb8c13e24bb6e2800169b2ff9, type: 2}
-  - {fileID: 11400000, guid: f411c98ed6055ce4195222d58716f338, type: 2}
-  - {fileID: 11400000, guid: ae3fcd9c38d4c2644bab1e4b21b1df58, type: 2}
-  - {fileID: 11400000, guid: e90ecfeeb8c13e24bb6e2800169b2ff9, type: 2}
-  - {fileID: 11400000, guid: 274741c81c32e2d4090e3c92dc715397, type: 2}
   prototypeFactory: {fileID: 11400000, guid: ee95c71a6e8e34e4a89f10073d0bc405, type: 2}
   entityPrefabs: {fileID: 11400000, guid: 934f48eb78b90474e9826f8a953f0d94, type: 2}
   spriteLoader: {fileID: 11400000, guid: 4bd7520eeb39dfa489ff77c9e2981688, type: 2}
   technology: {fileID: 11400000, guid: fcfd1f70776947b41bb5db362bb87846, type: 2}
   shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
-  buildSetting: {fileID: 11400000, guid: 03e055900e4b7f046a255fcac9251a02, type: 2}
+  levelStart: {fileID: 11400000, guid: dc6a04b2b485dfc439489ed59b0f9e62, type: 2}
   chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
   stories: {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
   language: {fileID: 11400000, guid: 16f3df5f3ea0e0e459b5991cd466258a, type: 2}
+  resonanceSheet: {fileID: 11400000, guid: 2b9677566fe85b94f863baa16160a92c, type: 2}
   storyPacks:
     list:
     - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
+  data:
+    uuid:
+      value: 6864b372-2319-44f3-bbe3-01d672217e0c
+    playerLastOperationTime:
+      value: 2020/6/27 1:15:49
+    federgram: 0
+    manpower: 1000000
+    mantleAlloy: 1000000
+    mantleFluid: 1000000
+    aethium: 1000000
+    legions:
+    - armiesUUID:
+      - value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+      - value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
+      - value: 2be597d2-643f-4040-8c59-a6fd0b42c900
+      - value: 826c6717-7099-4429-a4fe-93a427845a31
+      - value: 5471b989-7bb1-4a99-82cf-9822db0d954a
+      - value: 5471b989-7bb1-4a99-82cf-9822db0d954a
+    - armiesUUID:
+      - value: 2be597d2-643f-4040-8c59-a6fd0b42c900
+      - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
+      - value: ca74d413-d28a-4d56-a700-38944c197165
+      - value: 3e684102-1973-4a78-be26-8acd8e36e5be
+      - value: f2f3e043-8965-42ed-b8a3-963e06d488b2
+      - value: f2f3e043-8965-42ed-b8a3-963e06d488b2
+    - armiesUUID:
+      - value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
+      - value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
+      - value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
+      - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
+      - value: bbfa6c3d-7064-49ef-ba61-2d9d285b72cd
+      - value: bbfa6c3d-7064-49ef-ba61-2d9d285b72cd
+    eventCardPiles:
+    - eventCardUUID:
+      - value: f67edbd2-19ab-4297-8696-330f63af2b48
+      - value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
+      - value: 275c835b-f1bb-4fa4-be54-b6ad43e45595
+      - value: 9a5f367a-319b-4c5e-9ad5-ce605e5f6452
+    - eventCardUUID: []
+    - eventCardUUID:
+      - value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
+    armies:
+    - protoName: AlphaArmy
+      uuid:
+        value: 7b73caad-b105-41b7-8b87-220a84b9d5d0
+      exp: 250638
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: AlphaArmy
+      uuid:
+        value: 25d97017-9226-4833-bb2d-2369347fd414
+      exp: 1018
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: AlphaArmy
+      uuid:
+        value: 5140d5d2-0791-4aa0-8fad-1c2c9048db62
+      exp: 3611
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: AlphaArmy
+      uuid:
+        value: a9ab9245-a213-4aef-a952-e204fbd53e93
+      exp: 10497
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic WarMachine
+      uuid:
+        value: 5fb2fff2-d0d4-42c8-8841-560f63e3d7f6
+      exp: 4947
+      floatExp: 6659
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic WarMachine
+      uuid:
+        value: 6c92bd05-e004-44be-acd8-e2eaff608993
+      exp: 0
+      floatExp: 25164
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic WarMachine
+      uuid:
+        value: 541becd1-fb72-407c-b1a1-fe7b5bf34303
+      exp: 19513
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic WarMachine
+      uuid:
+        value: 02c76a26-a718-4a60-9a1d-1d714f28cf0b
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Infantry
+      uuid:
+        value: dca9dce4-4965-4406-9ff0-66184dcd2eec
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Infantry
+      uuid:
+        value: bbfa6c3d-7064-49ef-ba61-2d9d285b72cd
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Infantry
+      uuid:
+        value: 3e684102-1973-4a78-be26-8acd8e36e5be
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Infantry
+      uuid:
+        value: f2f3e043-8965-42ed-b8a3-963e06d488b2
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Shielder
+      uuid:
+        value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Shielder
+      uuid:
+        value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Shielder
+      uuid:
+        value: 848a4828-f08c-48bd-9ed6-fde8de74f386
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Shielder
+      uuid:
+        value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Mage
+      uuid:
+        value: 25ee4ff2-2f46-496a-a119-a4f9c55c277d
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Mage
+      uuid:
+        value: ca74d413-d28a-4d56-a700-38944c197165
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Mage
+      uuid:
+        value: 2be597d2-643f-4040-8c59-a6fd0b42c900
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Mage
+      uuid:
+        value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
+      exp: 5000000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Cavalry
+      uuid:
+        value: 826c6717-7099-4429-a4fe-93a427845a31
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Cavalry
+      uuid:
+        value: 52112c80-724e-4bca-a5c2-9dbf17289460
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Cavalry
+      uuid:
+        value: 10872522-bd7d-4a11-8268-d4c05bede960
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Cavalry
+      uuid:
+        value: 2537f87a-0b5c-400e-be78-5568373e63bf
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Rifleman
+      uuid:
+        value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Rifleman
+      uuid:
+        value: 5471b989-7bb1-4a99-82cf-9822db0d954a
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Rifleman
+      uuid:
+        value: a038f585-42bf-4590-97f4-917614bdb7fa
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Rifleman
+      uuid:
+        value: d7de1817-696d-4933-8760-58a88831f6a9
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: a59032d1-b9fb-4359-ae7a-74150cfe0c47933-8760-58a88831f6a9
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: dc25bffa-3f71-4b37-9f53-f62a1907990c
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: fb5b2cbd-d1d1-4ae5-8dc3-75e6612241af
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: ec651cad-f113-4aef-83ae-ea817093f79c
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: 84f0b70f-5b39-4d27-9cf4-ecbf4481890e
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Airship
+      uuid:
+        value: 1ae6066c-8c0d-4f4a-9689-1405aa073c4f
+      exp: 250000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Empty
+      uuid:
+        value: 28b1506d-61dc-4791-b39b-cb2a937f0cd0
+      exp: 250000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Mage
+      uuid:
+        value: fd1e89aa-39f5-43cb-b023-45e409eb49b6
+      exp: 250000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Mage
+      uuid:
+        value: 481d22a0-4373-4b80-88ff-964f523716bb
+      exp: 250000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    leaders:
+    - protoName: Aether Erinope
+      uuid:
+        value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
+      exp: 6000
+      floatExp: 0
+    - protoName: Anexar Flotics
+      uuid:
+        value: d7c07b72-ed02-4c19-afb0-666e85e198a2
+      exp: 250000
+      floatExp: 0
+    - protoName: Arthur Connors
+      uuid:
+        value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
+      exp: 250000
+      floatExp: 0
+    - protoName: Canute Svensson
+      uuid:
+        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
+      exp: 250000
+      floatExp: 0
+    - protoName: Kathakria
+      uuid:
+        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a8
+      exp: 250000
+      floatExp: 0
+    - protoName: Phil Erinope VI
+      uuid:
+        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a7
+      exp: 250000
+      floatExp: 0
+    equipments:
+    - protoName: 
+      uuid:
+        value: 
+      exp: 0
+      floatExp: 0
+    - protoName: 
+      uuid:
+        value: 
+      exp: 0
+      floatExp: 0
+    eventCards:
+    - protoName: AlphaCard
+      uuid:
+        value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
+      exp: 0
+      floatExp: 0
+      level: 0
+    - protoName: Trick
+      uuid:
+        value: f67edbd2-19ab-4297-8696-330f63af2b48
+      exp: 0
+      floatExp: 0
+      level: 0
+    - protoName: Oppotunity
+      uuid:
+        value: 275c835b-f1bb-4fa4-be54-b6ad43e45595
+      exp: 0
+      floatExp: 0
+      level: 0
+    - protoName: addActionPoint
+      uuid:
+        value: 9a5f367a-319b-4c5e-9ad5-ce605e5f6452
+      exp: 0
+      floatExp: 0
+      level: 2
+    gameProgree:
+      list: []
+    gameStatistic:
+      armiesUnlocked:
+      - T1
+      - T2
+      - Empty
+      - Basic Mage
+      equipmentsUnlocked: []
+      leadersUnlocked: []

@@ -9,19 +9,24 @@ using UnityEngine.UI;
 
 namespace Canute.BattleSystem.UI
 {
-    public class EndPanel : BattleUIBase
+    public class EndPanel : MonoBehaviour
     {
         public Image fadeOutImage;
 
-        public void Start()
+        public virtual void Start()
         {
-            if (Battle.CurrentStat == Battle.Stat.win)
+            if (Game.CurrentBattle.CurrentStat == Battle.Stat.win)
             {
                 Game.CurrentLevel.OpenEndStory();
             }
         }
 
-        private void OnMouseUp()
+        public void OnMouseUp()
+        {
+            StartCoroutine(Fade());
+        }
+
+        public void Close()
         {
             StartCoroutine(Fade());
         }
@@ -46,11 +51,12 @@ namespace Canute.BattleSystem.UI
             }
         }
 
-        private static void Clear(params object[] vs)
+        public static void Clear(params object[] vs)
         {
             Debug.Log("Clear scene");
-            SceneControl.GotoScene(MainScene.mainHall);
+
             Game.ClearBattle();
+            SceneControl.GotoScene(MainScene.mainHall);
         }
     }
 }

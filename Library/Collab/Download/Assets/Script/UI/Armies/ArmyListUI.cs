@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Canute.BattleSystem;
 using System;
+using UnityEngine.UI;
+using System.Linq;
 
 namespace Canute.UI
 {
@@ -18,16 +20,24 @@ namespace Canute.UI
             standPosition,
         }
 
-
-
         public static ArmyListUI instance;
         public static ArmyCardSelection CardSelection;
         public static ArmyArrangement ArmyArrangement;
         public static MainScene lastMainScene;
         public static SortType currentSortType;
+        public static PropertyType listType;
         public static bool reverseArrangement;
         public static object currentSortTypeParam;
+        public static Canute.Legion legion;
         public static List<ArmyItem> currentDisplayingArmy;
+
+        public static List<ArmyItem> GetPlayerArmiesDisplayed()
+        {
+            List<ArmyItem> list = Game.PlayerData.Armies.Except(legion?.Armies ?? new List<ArmyItem>()).ToList();
+            Debug.Log(list.Count);
+            return list;
+
+        }
 
         public GameObject armyCardPrefab;
         public GameObject scroll;
@@ -38,9 +48,10 @@ namespace Canute.UI
         public void Awake()
         {
             ArmyArrangement = ArmyArrangements.ByLevel;
-            currentDisplayingArmy = Game.PlayerData.Armies;
+            currentDisplayingArmy = GetPlayerArmiesDisplayed();
             instance = this;
         }
+
         public void OnDestroy()
         {
             CardSelection = null;
@@ -62,21 +73,28 @@ namespace Canute.UI
 
         public void ArrangeByLevel()
         {
+            listType = PropertyType.none;
             ArmyArrangement = ArmyArrangements.ByLevel;
             DisplayArmyList();
         }
+
         public void ArrangeByDamage()
         {
+            listType = PropertyType.damage;
             ArmyArrangement = ArmyArrangements.ByDamage;
             DisplayArmyList();
         }
+
         public void ArrangeByHealth()
         {
+            listType = PropertyType.health;
             ArmyArrangement = ArmyArrangements.ByHealth;
             DisplayArmyList();
         }
+
         public void ArrangeByDefense()
         {
+            listType = PropertyType.defense;
             ArmyArrangement = ArmyArrangements.ByDefense;
             DisplayArmyList();
         }
@@ -89,10 +107,35 @@ namespace Canute.UI
             {
                 GameObject gameObject = Instantiate(armyCardPrefab, scroll.transform);
                 ArmyCardUI armyCardUI = gameObject.GetComponent<ArmyCardUI>();
-
                 armies.Add(armyCardUI);
                 armyCardUI.transform.localScale = Vector3.one;
                 armyCardUI.Display(item);
+                Label label = Instantiate(GameData.Prefabs.Get("label"), armyCardUI.transform).GetComponent<Label>();
+                label.image.color = new Color(0, 0, 0, 0);
+                switch (listType)
+                {
+                    case PropertyType.damage:
+                        label.text.text = item.MaxDamage.ToString();
+                        break;
+                    case PropertyType.health:
+                        label.text.text = item.MaxHealth.ToString();
+                        break;
+                    case PropertyType.defense:
+                        label.text.text = item.Defense.ToString();
+                        break;
+                    case PropertyType.moveRange:
+                        break;
+                    case PropertyType.attackRange:
+                        break;
+                    case PropertyType.critRate:
+                        break;
+                    case PropertyType.critBounes:
+                        break;
+                    case PropertyType.pop:
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -103,7 +146,7 @@ namespace Canute.UI
             Army.Types param = (Army.Types)Enum.Parse(typeof(Army.Types), armyType.ToString());
             if (currentSortType == SortType.armyType && currentSortTypeParam.Equals(param))
             {
-                currentDisplayingArmy = Game.PlayerData.Armies;
+                currentDisplayingArmy = GetPlayerArmiesDisplayed();
                 currentSortType = SortType.none;
             }
             else
@@ -117,10 +160,10 @@ namespace Canute.UI
 
         public void FilterByStandPostion(int standpostion)
         {
-            ArmyProperty.Position param = (ArmyProperty.Position)standpostion;
+            BattleProperty.Position param = (BattleProperty.Position)standpostion;
             if (currentSortType == SortType.standPosition && currentSortTypeParam.Equals(param))
             {
-                currentDisplayingArmy = Game.PlayerData.Armies;
+                currentDisplayingArmy = GetPlayerArmiesDisplayed();
                 currentSortType = SortType.none;
                 currentSortTypeParam = param;
             }
@@ -138,7 +181,7 @@ namespace Canute.UI
         {
             ClearArmy();
             List<ArmyItem> armyItems = ArmyArrangement?.Invoke(currentDisplayingArmy);
-            armyItems = armyItems ?? Game.PlayerData.Armies;
+            armyItems = armyItems ?? GetPlayerArmiesDisplayed();
             if (reverseArrangement)
             {
                 armyItems.Reverse();
@@ -173,7 +216,7 @@ namespace Canute.UI
         {
             List<ArmyItem> armyItems = new List<ArmyItem>();
 
-            foreach (var item in Game.PlayerData.Armies)
+            foreach (var item in ArmyListUI.GetPlayerArmiesDisplayed())
             {
                 if (item.Type == armyType)
                 {
@@ -184,11 +227,11 @@ namespace Canute.UI
             return armyItems;
         }
 
-        public static List<ArmyItem> ByStandPosition(ArmyProperty.Position position)
+        public static List<ArmyItem> ByStandPosition(BattleProperty.Position position)
         {
             List<ArmyItem> armyItems = new List<ArmyItem>();
 
-            foreach (var item in Game.PlayerData.Armies)
+            foreach (var item in ArmyListUI.GetPlayerArmiesDisplayed())
             {
                 if (item.StandPosition == position)
                 {
@@ -305,7 +348,7 @@ namespace Canute.UI
                 }
                 for (int j = 0; j < organizedList.Count; j++)
                 {
-                    if (organizedList[j].MaxDefense <= armyItem.MaxDefense)
+                    if (organizedList[j].Defense <= armyItem.Defense)
                     {
                         organizedList.Insert(j, armyItem);
                         break;

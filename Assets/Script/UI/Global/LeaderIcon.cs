@@ -14,8 +14,10 @@ namespace Canute.UI
         public LeaderItem displayingLeader;
 
         // Update is called once per frame
-        private void Update()
+
+        public void Display(LeaderItem item)
         {
+            displayingLeader = item;
             if (!displayingLeader)
             {
                 leaderIcon.sprite = null;
@@ -28,6 +30,11 @@ namespace Canute.UI
                 levelDisplayer.text = "Lv." + displayingLeader?.Level;
                 nameDisplayer.text = displayingLeader.Name;
             }
+        }
+
+
+        private void Update()
+        {
         }
     }
 }

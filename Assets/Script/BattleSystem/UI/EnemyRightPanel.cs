@@ -6,7 +6,7 @@
 
         public override void EndTurn()
         {
-            if (!Game.CurrentBattle.TryEndTurn())
+            if (!Player.TryEndTurn())
             {
                 return;
             }

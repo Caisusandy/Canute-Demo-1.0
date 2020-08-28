@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfe71976b3ae0749b54319090c018b9, type: 3}
+  m_Name: dragonDualAttack
+  m_EditorClassIdentifier: 
+  prototype:
+    name: addDragonDualAttack
+    rarity: 2
+    icon: {fileID: 0}
+    sprite: {fileID: 0}
+    protrait: {fileID: 0}
+    prefab: {fileID: 4382801775652925750, guid: 7f8b6b23fb7522d4c9a5ae8a73a9816a,
+      type: 3}
+    count: 1
+    cardType: 2
+    career: 0
+    eventCardProperty:
+      properties:
+      - targetTypes: 8
+        cost: 1
+        effect:
+          type: 11
+          specialName: addDragonDualAttack
+          count: 1
+          parameter: 0
+          args:
+            args:
+            - key: effectType
+              value: effectRelated
+            - key: tc
+              value: 1
+            - key: sc
+              value: -1
+            - key: statType
+              value: turnBase
+            - key: name
+              value: dragonDualAttack
+            - key: specialName
+              value: dragonDualAttack
+            - key: propertyBonus
+              value: dragonDualAttack
+            - key: onAttack
+              value: true
+            - key: isEffectFromDragon
+              value: true

@@ -19,19 +19,7 @@ namespace Canute.Module
             initialPosition = processing.transform.localPosition;
         }
 
-        // Start is called before the first frame update
-        private void Start()
-        {
-            SetFull();
-        }
-
-        // Update is called once per frame
-        private void Update()
-        {
-            SetProgress(Progress);
-        }
-
-        private void SetFull()
+        public void SetFull()
         {
             SetProgress(1);
         }
@@ -40,7 +28,9 @@ namespace Canute.Module
         /// <param name="f"> progress </param>
         public void SetProgress(float f)
         {
-            processing.transform.localPosition = new Vector3(initialPosition.x + Distance * f, processing.transform.localPosition.y);
+            var a = initialPosition;
+            a.x += (f > 1 ? Distance : (Distance * f));
+            processing.transform.localPosition = a;
         }
 
     }

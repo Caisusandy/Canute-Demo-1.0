@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39142e4fb8ea1a34a994b54e1655eaa7, type: 3}
+  m_Name: Stories
+  m_EditorClassIdentifier: 
+  language: 10
+  storyTree:
+    list:
+    - {fileID: 11400000, guid: 3c1445d639bfd1340a37ee8a4bdab56b, type: 2}
+    - {fileID: 11400000, guid: 207e2b6dd4f925645ba6aa93da5aa46d, type: 2}
+    - {fileID: 11400000, guid: 794e851862e10d04fac0f8522d5b3eca, type: 2}
+    - {fileID: 11400000, guid: 56b66836b6c3f9445a68d643254ee950, type: 2}

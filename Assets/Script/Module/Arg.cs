@@ -1,9 +1,10 @@
-﻿using Canute;
-using Canute.Module;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Linq;
+using System;
+using System.Collections.Generic;
+using System.Collections;
 
-namespace System.Collections.Generic
+namespace Canute
 {
     [Serializable]
     public struct Arg : INameable, IEquatable<Arg>
@@ -90,8 +91,7 @@ namespace System.Collections.Generic
         {
             return '{' + key + ": " + value + '}';
         }
-    }
-
+    } 
     [Serializable]
     public struct ArgList : IEnumerable<Arg>
     {

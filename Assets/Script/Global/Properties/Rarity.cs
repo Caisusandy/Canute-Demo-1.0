@@ -2,9 +2,14 @@
 {
     public enum Rarity
     {
-        Common,
-        Rare,
-        Epic,
-        Legendary,
+        common,
+        rare,
+        epic,
+        legendary,
+    }
+
+    public interface IRarityLabled
+    {
+        Rarity Rarity { get; }
     }
 }

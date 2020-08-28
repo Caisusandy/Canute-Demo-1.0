@@ -36,7 +36,7 @@ namespace Canute.StorySystem
 
             foreach (var item in StoryTree)
             {
-                string json = JsonUtility.ToJson(item);
+                string json = JsonUtility.ToJson(item.story);
                 string filePath = DataPath + item.Name;
                 string savePath = filePath + ".json";
 

@@ -23,6 +23,7 @@ namespace Canute.BattleSystem
         public override void OnDestroy()
         {
             armyCards.Remove(this);
+            cards.Remove(this);
 
             if (armyCards.Count == 0)
             {

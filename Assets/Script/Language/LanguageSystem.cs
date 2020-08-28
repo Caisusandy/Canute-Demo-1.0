@@ -1,13 +1,18 @@
 ﻿using Canute.BattleSystem;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Canute.Languages
 {
     public static class LanguageSystem
     {
-        public static LanguageName Language => Game.Language;
-        public static Args Dictionary => GameData.Language.Dictionary;
+        public static string Language => Game.Language;
+        public static Dictionary<string, string> Dictionary { get => dictionary; set => dictionary = value; }
+
+        [ContextMenuItem("Reload language pack", "ForceLoadLang")]
+        private static Dictionary<string, string> dictionary;
 
         #region 基本
 
@@ -25,6 +30,7 @@ namespace Canute.Languages
             }
             catch (KeyNotFoundException)
             {
+                Debug.LogWarning(key);
                 //Debug.LogWarning(key);
                 string[] vs = key.Split('.');
                 if (vs[vs.Length - 1] == "name" || vs[vs.Length - 1] == "info")
@@ -74,6 +80,27 @@ namespace Canute.Languages
             return Lang(vs.ToArray());
         }
 
+        public static string Lang(this PropertyBonus propertyBonus, int level = 1)
+        {
+            string ret = "";
+            foreach (var item in PropertyTypes.Types)
+            {
+                if ((item & propertyBonus.Type) != PropertyType.none)
+                {
+                    List<string> vs = new List<string>() { propertyBonus.GetFullTypeName() + "." + (item & propertyBonus.Type) };
+                    var raw = Lang(vs.ToArray());
+                    int value = propertyBonus.GetValue(level);
+
+                    ret += value >= 0 ? "+" : "-";
+                    ret += value;
+                    ret += propertyBonus.BonusType == BonusType.percentage ? "% " : " ";
+                    ret += raw + "\n";
+                }
+            }
+            return ret;
+
+        }
+
         /// <summary>
         /// Get the matched display language from dictionary from a instance and a parameter
         /// </summary>
@@ -109,14 +136,19 @@ namespace Canute.Languages
 
         public static string Lang<T>(this T instance) where T : Enum
         {
-            string v = instance.GetFullTypeName() + "." + instance.ToString();
+            string key = instance.GetFullTypeName() + "." + instance.ToString();
             try
             {
-                return Dictionary[v];
+                return Dictionary[key];
             }
             catch (KeyNotFoundException)
             {
-                return v;
+                string[] vs = key.Split('.');
+                if (vs[vs.Length - 1] == "name" || vs[vs.Length - 1] == "info")
+                {
+                    return vs[vs.Length - 2];
+                }
+                return vs[vs.Length - 1];
             }
         }
 
@@ -215,6 +247,10 @@ namespace Canute.Languages
             else if (status.IsBaseOnCount)
             {
                 ret += "Status Count: " + status.StatCount + "\n";
+            }
+            else if (status.Type == Status.StatType.delay)
+            {
+                ret += "Remaining Turn: " + status.StatCount + "\n";
             }
 
             return ret;

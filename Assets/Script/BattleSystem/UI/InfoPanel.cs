@@ -20,7 +20,7 @@ namespace Canute.BattleSystem.UI
                     continue;
                 }
                 StatusDisplayer displayer = Instantiate(statusPrefab, statusInfoAnchor.transform).GetComponent<StatusDisplayer>();
-                displayer.status = status;
+                displayer.ShowStatus(status);
             }
         }
 

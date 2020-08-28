@@ -10,14 +10,18 @@ namespace Canute.BattleSystem
         public static ArmyEntity movingArmy;
 
         private static List<CellEntity> path;
+        public static MarkController pathController;
         private static List<CellEntity> border;
+        public static MarkController borderController;
         private static bool lockPath;
 
         public static void Initialize()
         {
             movingArmy = null;
             path = new List<CellEntity>();
-            border = null;
+            pathController = new MarkController(CellMark.Type.path);
+            border = new List<CellEntity>();
+            borderController = new MarkController(CellMark.Type.moveRange);
             lockPath = false;
         }
 
@@ -89,6 +93,12 @@ namespace Canute.BattleSystem
         public static void ShowMoveRange()
         {
             border = movingArmy.GetMoveRange();
+            if (borderController is null)
+            {
+                borderController = new MarkController(CellMark.Type.moveRange);
+            }
+            borderController.Refresh(border);
+            borderController.Display();
             //Game.CurrentBattle.MapEntity.StartCoroutine(new EntityEventPack(Draw).GetEnumerator());
 
             //IEnumerator Draw(params object[] vs)
@@ -105,7 +115,8 @@ namespace Canute.BattleSystem
 
         public static void EndShowMoveRange()
         {
-            Mark.Unload(Mark.Type.moveRange, border);
+            borderController.ClearDisplay();
+            borderController = null;
             border = null;
         }
 
@@ -131,12 +142,13 @@ namespace Canute.BattleSystem
 
         public static void ShowMovePath()
         {
-            Mark.Load(Mark.Type.moveRange, path);
+            pathController.Refresh(path);
+            pathController.Display();
         }
 
         public static void EndShowMovePath()
         {
-            Mark.Unload(Mark.Type.moveRange, path);
+            pathController.ClearDisplay();
         }
 
         #endregion
@@ -231,6 +243,11 @@ namespace Canute.BattleSystem
         public static void LockPath(Entity entity)
         {
             lockPath = !lockPath;
+        }
+
+        public static void SetPath(List<CellEntity> path)
+        {
+            ArmyMovement.path = path;
         }
 
         public static List<CellEntity> GetPath()

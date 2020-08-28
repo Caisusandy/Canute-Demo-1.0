@@ -20,9 +20,10 @@ namespace Canute.UI
             levelDisplayer = transform.Find("ArmyLevel").GetComponent<Text>();
         }
 
-        // Update is called once per frame
-        private void Update()
+        public void Display(ArmyItem armyItem)
         {
+            displayingArmy = armyItem;
+
             if (!displayingArmy)
             {
                 armyIcon.sprite = null;

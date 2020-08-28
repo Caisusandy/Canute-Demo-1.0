@@ -9,6 +9,8 @@ namespace Canute
     [Serializable]
     public class ArmyItem : Item, IPrototypeCopy<Army>, ICareerLabled
     {
+        public const float LevelMultiple = 1.1f;
+        public const int ExpBase = 100;
         public const int MaxArmyEquipmentCount = 2;
         public static ArmyItem Empty => new ArmyItem() { protoName = "Empty" };
 
@@ -18,13 +20,14 @@ namespace Canute
 
         public Army Prototype { get => GameData.Prototypes.GetArmyPrototype(protoName); private set => protoName = value?.Name; }
         public override Prototype Proto => Prototype;
-        public override int Level => GetLevel(100, 1.1f, Exp);
-        public override Type ItemType => Item.Type.Army;
+        public override int Level => GetLevel(ExpBase, LevelMultiple, Exp);
+        public override Type ItemType => Item.Type.army;
 
+        /// <summary> Star(1,2,3) </summary>
         public int Star => star < 1 ? 1 : star > 3 ? 3 : star;
         public bool HasLeader => !(Leader is null);
         public LeaderItem Leader { get => Game.PlayerData.GetLeaderItem(LeaderName); set => LeaderName = value?.Name; }
-        public ArmyItemEquipmentSlot Equipments => equipments;
+        public ArmyItemEquipmentSlot Equipments => equipments ?? (equipments = new ArmyItemEquipmentSlot());
 
 
         #region Properties
@@ -39,11 +42,11 @@ namespace Canute
         public int MaxDamage => Prototype.Damage.Bonus(LevelBounes);
 
         public new Army.Types Type => Prototype.Type;
-        public Career Career => Prototype.Career;
+        public Career Career => HasLeader ? Leader.Career : Prototype.Career;
 
 
 
-
+        #region Army Properties
         public int Defense => PrototypeProperty.Defense.Bonus(LevelBounes);
         public double CritRate => PrototypeProperty.CritRate;
         public double CritBounes => PrototypeProperty.CritBonus;
@@ -56,11 +59,13 @@ namespace Canute
         public int AttackArea => PrototypeProperty.AttackArea;
         public int TargetCount => PrototypeProperty.TargetCount;
         public BattleProperty.AttackType AttackType => PrototypeProperty.Attack;
-        public HalfEffect SkillPack => PrototypeProperty.Skill;
+        public HalfSkillEffect SkillPack => PrototypeProperty.Skill;
         public ArgList Addition => PrototypeProperty.Addition;
 
+        public BattleProperty Properties => new BattleProperty(this);
+        #endregion
 
-        public BattleProperty ArmyProperty => new BattleProperty(this);
+
 
 
 
@@ -82,43 +87,7 @@ namespace Canute
             this.exp = exp;
         }
 
-
-        #endregion 
-
-        protected override Sprite GetIcon()
-        {
-            if (HasPrototype)
-            {
-                return Proto.Icon;
-            }
-            else
-            {
-                return GameData.SpriteLoader.Get(SpriteAtlases.armyIcon, protoName);
-            }
-        }
-
-        protected override Sprite GetPortrait()
-        {
-            if (HasPrototype)
-            {
-                return Proto.Portrait;
-            }
-            else
-            {
-                return GameData.SpriteLoader.Get(SpriteAtlases.armyPortrait, protoName);
-            }
-        }
-
-
-
-        public void AddFloatExp(int floatExp)
-        {
-            this.floatExp += floatExp;
-        }
-        public void AddExp(int exp)
-        {
-            this.exp += exp;
-        }
+        #endregion
 
         public void AddStar()
         {
@@ -136,20 +105,48 @@ namespace Canute
         public List<UUID> equipmentUUID;
         public List<Equipment.EquipmentType> equipmentLimit;
 
+        public ArmyItemEquipmentSlot()
+        {
+            InitializeEquipmentSlot();
+        }
+
         public List<EquipmentItem> Equipments => GetEquipments();
         public EquipmentItem this[int index]
         {
-            get => Equipments[index];
+            get => GetEquipment(index);
             set => SetEquipment(index, value);
+        }
+
+        private EquipmentItem GetEquipment(int index)
+        {
+            if (equipmentUUID.Count != 3)
+            {
+                InitializeEquipmentSlot();
+            }
+            return Game.PlayerData.GetEquipmentItem(equipmentUUID[index]);
         }
 
         private void SetEquipment(int index, EquipmentItem value)
         {
-            if ((equipmentLimit[index] & value.Prototype.Type) == Equipment.EquipmentType.none)
-            {
-                return;
-            }
+            //if (equipmentUUID is null || equipmentLimit is null)
+            //{
+            //    InitializeEquipmentSlot();
+            //}
+            //if (equipmentUUID.Count != 3 || equipmentLimit.Count != 3)
+            //{
+            //    InitializeEquipmentSlot();
+            //}
+            //if ((equipmentLimit[index] & value.Prototype.Type) == Equipment.EquipmentType.none)
+            //{
+            //    return;
+            //}
             equipmentUUID[index] = value.UUID;
+        }
+
+        private void InitializeEquipmentSlot()
+        {
+            equipmentUUID = new List<UUID> { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
+            equipmentLimit = new List<Equipment.EquipmentType>() { Equipment.EquipmentType.any, Equipment.EquipmentType.any, Equipment.EquipmentType.any };
         }
 
         public IEnumerator<EquipmentItem> GetEnumerator()
@@ -167,7 +164,9 @@ namespace Canute
             List<EquipmentItem> equipmentItems = new List<EquipmentItem>();
             foreach (UUID uuid in equipmentUUID)
             {
-                equipmentItems.Add(Game.PlayerData.GetEquipmentItem(uuid));
+                EquipmentItem item = Game.PlayerData.GetEquipmentItem(uuid);
+                if (item)
+                    equipmentItems.Add(item);
             }
             return equipmentItems;
         }
@@ -177,9 +176,9 @@ namespace Canute
             int bounes = 0;
             foreach (var equipmentItem in Equipments)
             {
-                foreach (var bounesPack in equipmentItem.Bounes)
+                foreach (var bounesPack in equipmentItem.Bonus)
                 {
-                    if (bounesPack.BounesType == bounesTypes && bounesPack.Type == type)
+                    if (bounesPack.BonusType == bounesTypes && bounesPack.Type == type)
                     {
                         bounes += bounesPack.GetValue(equipmentItem.Level);
                     }

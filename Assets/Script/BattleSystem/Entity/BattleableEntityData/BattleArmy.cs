@@ -32,7 +32,19 @@ namespace Canute.BattleSystem
         /// <param name="army"></param>
         public BattleArmy(BattleArmy army) : base(army.Prototype)
         {
+            name = army.name;
+            prefab = army.prefab;
             ownerUUID = army.ownerUUID;
+
+            allowMove = true;
+            Coordinate = army.Coordinate;
+
+            autonomousType = army.autonomousType;
+            if (army.localLeader)
+            {
+                localLeader = new BattleLeader(army.localLeader);
+                localLeader?.Lead(this);
+            }
 
             maxHealth = army.maxHealth;
             damage = army.damage;
@@ -40,29 +52,53 @@ namespace Canute.BattleSystem
             properties.Defense = army.Defense;
             type = army.Type;
             career = army.Career;
-            skillPack = army.skillPack;
-            prefab = army.prefab;
-            Coordinate = army.Coordinate;
             stats = army.stats.Clone() as StatusList;
 
             Health = army.Health;
+        }
+        /// <summary>
+        /// clone a battleArmy and give it a different UUID
+        /// </summary>
+        /// <param name="army"></param>
+        public BattleArmy(Army prototype, Player owner, int level, int star) : base(prototype)
+        {
+            ownerUUID = owner.UUID;
+
+            var army = new ArmyItem(prototype, (int)(ArmyItem.ExpBase * Mathf.Pow(ArmyItem.LevelMultiple, level)));
+            while (army.Star < star)
+            {
+                army.AddStar();
+            }
+            name = army.Name;
+            maxHealth = army.MaxHealth;
+            damage = army.MaxDamage;
+            properties = army.Properties;
+            properties.Defense = army.Defense;
+            type = army.Type;
+            career = army.Career;
+            prefab = prototype.Prefab;
+            health = maxHealth;
             allowMove = true;
         }
 
         private BattleArmy(ArmyItem army) : base(army.Prototype)
         {
             name = army.Name;
-            localLeader = new BattleLeader(army.Leader);
             maxHealth = army.MaxHealth;
             damage = army.MaxDamage;
-            properties = army.ArmyProperty;
+            properties = army.Properties;
             properties.Defense = army.Defense;
             type = army.Type;
             career = army.Career;
-            skillPack = army.SkillPack;
             prefab = army.Prototype.Prefab;
-            AddBounes(army.Equipments?.ToArray());
-            AddBounes(localLeader);
+
+            if (army.Leader)
+            {
+                localLeader = new BattleLeader(army.Leader);
+                localLeader?.Lead(this);
+                AddBounes(localLeader);
+            }
+            AddBounes(army.Equipments.Equipments.ToArray());
             health = maxHealth;
             allowMove = true;
         }
@@ -73,7 +109,10 @@ namespace Canute.BattleSystem
         public BattleArmy(ArmyItem army, Player player) : this(army)
         {
             ownerUUID = player.UUID;
-            AddBounes(player.ViceCommander);
+            if (player.ViceCommander)
+            {
+                AddBounes(player.ViceCommander);
+            }
             health = maxHealth;
         }
 
@@ -85,7 +124,7 @@ namespace Canute.BattleSystem
 
         protected override string GetDisplayingName()
         {
-            if (HasPrototype)
+            if (HasValidPrototype)
             {
                 return base.GetDisplayingName();
             }

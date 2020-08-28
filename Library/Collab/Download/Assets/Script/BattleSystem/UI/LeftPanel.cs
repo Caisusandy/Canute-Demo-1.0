@@ -100,17 +100,17 @@ namespace Canute.BattleSystem.UI
                 if ((SelectingEntity.Data as ICareerLabled).Career != Career.none)
                 {
                     career.enabled = true;
-                    career.sprite = GameData.SpriteLoader.Get((SelectingEntity.Data as ICareerLabled).Career.ToString());
+                    career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, (SelectingEntity.Data as ICareerLabled).Career.ToString());
                 }
             }
             if (SelectingEntity.Data is BattleArmy)
             {
                 type.enabled = true;
-                type.sprite = GameData.SpriteLoader.Get((SelectingEntity.Data as BattleArmy).Type.ToString());
+                type.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, (SelectingEntity.Data as BattleArmy).Type.ToString());
             }
 
             iconDisplayer.enabled = true;
-            iconDisplayer.sprite = SelectingEntity.Data.DisplayingIcon;
+            iconDisplayer.sprite = SelectingEntity.Data.Icon;
             nameDisplayer.text = SelectingEntity?.Data.DisplayingName;
         }
 

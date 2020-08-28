@@ -72,7 +72,7 @@ namespace Canute.BattleSystem
 
         public static bool Execute(this Status status)
         {
-            bool success = status.Effect.Execute(false);
+            bool success = status.Effect.Execute();
 
             if (success)
             {
@@ -140,10 +140,10 @@ namespace Canute.BattleSystem
             }
             else
             {
-                stat.Effect.GetCellParam().data.canStandOn = true;
+                //stat.Effect.GetCellParam().data.canStandOn = true;
             }
             stat.Effect.SetCellParam(sourceEffect.Target as CellEntity);
-            stat.Effect.GetCellParam().data.canStandOn = false;
+            //stat.Effect.GetCellParam().data.canStandOn = false;
             Debug.Log("record original pos");
 
             return;
@@ -157,7 +157,7 @@ namespace Canute.BattleSystem
             destination = GetCloseDestination(source, target);
 
             Effect moveToward = new Effect(Effect.Types.@event, source, destination, 1, 0, "name:move");
-            var s = moveToward.Execute(false);
+            var s = moveToward.Execute();
             if (!s) Debug.Log("failed to move");
 
             CellEntity GetCloseDestination(Entity start, Entity end)
@@ -189,16 +189,22 @@ namespace Canute.BattleSystem
             }
         }
 
+        /// <summary>
+        /// trigger when dragon received card
+        /// </summary>
+        /// <param name="sourceEffect"></param>
+        /// <param name="status"></param>
         private static void DragonCardAcceptance(ref Effect sourceEffect, Status status)
         {
-            if (!status.Effect.Args.HasParam("isEffectFromDragon"))
+            Debug.Log(sourceEffect);
+            if (sourceEffect.Args.HasParam("isEffectFromDragon"))
             {
-                return;
+                Debug.Log("dragon received dragon card");
+                SwitchDragonStatus(sourceEffect);
+                sourceEffect = new Effect(Effect.Types.none, 0, 0);
             }
-
-            SwitchDragonStatus(sourceEffect);
-            sourceEffect = new Effect(Effect.Types.none, 0, 0);
-
+            else
+                Debug.Log("something else received dragon card");
         }
 
         private static void DragonAirAttackBonus(ref Effect sourceEffect, Status status)
@@ -307,11 +313,11 @@ namespace Canute.BattleSystem
 
                 if (!destination)
                 {
-                    child.Remove();
+                    child.KillEntity();
                 }
                 else if (!destination.IsValidDestination(child as OnMapEntity))
                 {
-                    child.Remove();
+                    child.KillEntity();
                 }
 
                 var move = new Effect(Effect.Types.@event, child, destination, 1, 0, "name:move");

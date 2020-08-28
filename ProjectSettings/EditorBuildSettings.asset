@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/Loading.unity
     guid: 7a12d06305af7f948ab8c8a10c5794f1
   - enabled: 1
-    path: Assets/Resources/Scenes/BattleUI.unity
+    path: Assets/Resources/Scenes/Battle.unity
     guid: 2b5ec3f34ef0c0b48972d20331220533
   - enabled: 1
     path: Assets/Resources/Scenes/StoryLineLoader.unity
@@ -41,4 +41,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/Settings/Settings.unity
     guid: 055048da7dbf05d40a3856da34709c4a
+  - enabled: 1
+    path: Assets/Resources/Scenes/Leader List/Leader List.unity
+    guid: 5c139969cd9cd1d419a810fd1cf78bc4
+  - enabled: 1
+    path: Assets/Resources/Scenes/Exploration.unity
+    guid: d3f10740b75798e4ca2bba64c76b5072
+  - enabled: 1
+    path: Assets/Resources/Scenes/Equipment List/Equipment List.unity
+    guid: b29f3206e50979649aa35a9b54859e40
+  - enabled: 1
+    path: Assets/Resources/Scenes/Shop/Shop.unity
+    guid: 971f9dfc40fa1a544a83ce63b08e71f4
+  - enabled: 1
+    path: Assets/Resources/Scenes/ChapterSelection/Ch1.unity
+    guid: 9d65c6fcf526fd44d8aa99e1cd56308f
   m_configObjects: {}

@@ -10,6 +10,7 @@ namespace Canute.BattleSystem.UI
     public class BattleUI : BattleUIBase
     {
         public static BattleUI instance;
+        public static IWindow currentWindow;
 
         public GameObject mapAnchor;
         public static GameObject MapAnchor => instance.mapAnchor;
@@ -31,26 +32,32 @@ namespace Canute.BattleSystem.UI
         public static ArmyBar ArmyBar => instance.armyBar;
         public PausePanel pausePanel;
         public static PausePanel PausePanel => instance.pausePanel;
-        public HandCardBar handCardBar;
-        public static HandCardBar ClientHandCardBar => instance.handCardBar;
         public EndPanel endUI;
         public static EndPanel EndUI => instance.endUI;
+        public HandCardBar handCardBar;
+        public static HandCardBar ClientHandCardBar => instance.handCardBar;
 
-        [Header("AI")]
+        public static HandCardBar HandCardBar => Game.CurrentBattle.Enemy.IsInTurn ? EnemyHandCardBar : ClientHandCardBar;
         public HandCardBar enemyHandCardBar;
         public static HandCardBar EnemyHandCardBar => instance.enemyHandCardBar;
         public RightPanel enemyRightPanel;
         public static RightPanel EnemyRightPanel => instance.enemyRightPanel;
+        [Header("AI")]
         public GameObject AIHolder;
         public List<PlayerEntity> playerEntities;
 
         [Header("Console")]
         public Console console;
         public static Console Console => instance.console;
+        public GameDebug debug;
+        public static GameDebug DebugWindow => instance.debug;
+        [Header("Camera")]
+        public Camera secondCamera;
 
-        public static HandCardBar HandCardBar => Game.CurrentBattle.Enemy.IsInTurn ? EnemyHandCardBar : ClientHandCardBar;
 
+        #region Anchors 
         public static Vector3 UndersideAnchor => instance.undersideAnchor.transform.position;
+        #endregion
 
 
 
@@ -58,9 +65,10 @@ namespace Canute.BattleSystem.UI
         {
             if (instance != null)
             {
-                Destroy(this);
+                Destroy(instance);
             }
             instance = this;
+
             Instantiate(Game.CurrentBattle.MapPrefab, MapAnchor.transform);
         }
 
@@ -75,14 +83,6 @@ namespace Canute.BattleSystem.UI
         // Update is called once per frame
         private void Update()
         {
-            if (GameData.BuildSetting.PvP)
-            {
-                EnemyHandCardBar.transform.parent.gameObject.SetActive(Battle.Enemy.IsInTurn);
-
-                ClientHandCardBar.gameObject.SetActive(Player.IsInTurn);
-                EnemyHandCardBar.gameObject.SetActive(Battle.Enemy.IsInTurn);
-            }
-
             Game.CurrentBattle.EndCheck();
         }
 
@@ -120,6 +120,11 @@ namespace Canute.BattleSystem.UI
         /// <param name="player"></param>
         public static void SendMessage(string message, Player player = null, params string[] param)
         {
+            if (!instance)
+            {
+                return;
+            }
+
             Debug.Log(message);
 
             if (player != Game.CurrentBattle.Player && !(player is null))
@@ -142,10 +147,43 @@ namespace Canute.BattleSystem.UI
         /// <param name="value"></param>
         public static void SetDownBarsActive(bool value)
         {
+            if (!instance)
+            {
+                return;
+            }
+
             if (value) ArmyBar.Show();
             else ArmyBar.Hide();
-            ClientHandCardBar.HideCards(!value);
+            HandCardBar.GetHandCardBar(instance.Player).HideCards(!value);
         }
+
+        public static void SetPlayerUI(Player player, bool value)
+        {
+            if (Game.Configuration.PvP)
+            {
+                HandCardBar handCardBar = HandCardBar.GetHandCardBar(player);
+                if (!handCardBar)
+                {
+                    return;
+                }
+
+                handCardBar.enabled = value;
+                handCardBar.gameObject.SetActive(value);
+                handCardBar.transform.parent.gameObject.SetActive(value);
+            }
+            SetCamera();
+        }
+
+        public static void SetCamera()
+        {
+            if (Game.Configuration.PlayerAutoSwitch)
+            {
+                instance.secondCamera.targetDisplay = Game.CurrentBattle.Enemy.IsInTurn ? 0 : 1;
+                Camera.main.targetDisplay = Game.CurrentBattle.Player.IsInTurn ? 0 : 1;
+            }
+        }
+
+        #region Battle UI Control
 
         /// <summary>
         /// set all ui in active
@@ -153,6 +191,11 @@ namespace Canute.BattleSystem.UI
         /// <param name="value"></param>
         public static void SetUIActive(bool value)
         {
+            if (!instance)
+            {
+                return;
+            }
+
             SetUIInteractive(value);
             UICanvas.enabled = value;
             HighBar.enabled = value;
@@ -163,7 +206,7 @@ namespace Canute.BattleSystem.UI
             ClientHandCardBar.enabled = value;
             EndUI.enabled = value;
 
-            if (GameData.BuildSetting.PvP)
+            if (Game.Configuration.PvP)
             {
                 EnemyRightPanel.enabled = value;
                 EnemyHandCardBar.enabled = value;
@@ -177,14 +220,43 @@ namespace Canute.BattleSystem.UI
 
         public static void SetUIInteractive(bool value)
         {
+            if (!instance)
+            {
+                return;
+            }
+
             Raycaster.enabled = value;
-            Debug.Log(Raycaster.enabled);
+            Debug.Log("Raycaster turn on: " + Raycaster.enabled);
         }
 
-        public static void SetConsoleOpen(bool value)
+        #endregion
+
+        #region Window
+
+        public static void ToggleWindow(IWindow window)
         {
-            Console.gameObject.SetActive(value);
+            if (!window.enabled)
+            {
+                currentWindow = window;
+                currentWindow.Open();
+                SetUIInteractive(false);
+            }
+            else
+            {
+                window.Close();
+                SetUIInteractive(true);
+                currentWindow = null;
+            }
         }
+
+        public static void CloseCurrentWindow()
+        {
+            currentWindow?.Close();
+            SetUIInteractive(true);
+            currentWindow = null;
+        }
+
+        #endregion
 
         public void OnDestroy()
         {

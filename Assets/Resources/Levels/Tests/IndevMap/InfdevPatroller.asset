@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
+  m_Name: InfdevPatroller
+  m_EditorClassIdentifier: 
+  spawnType: 0
+  radius: 0
+  battleArmy:
+    name: BetaArmy
+    prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
+      type: 3}
+    uuid:
+      value: 73f4431e-9479-4cc3-a93d-f90ad68f7362
+    ownerUUID:
+      value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+    allowMove: 1
+    coordinate: {x: 9, y: 10}
+    stats:
+      list: []
+    localLeader:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: 52b789b0-6e23-4b34-8673-799b64c189b4
+      ownerUUID:
+        value: 
+      allowMove: 0
+      coordinate: {x: 0, y: 0}
+      stats:
+        list: []
+      career: 0
+      leadingArmyUUID:
+        value: 
+      isViceCommander: 0
+      level: 0
+      bounes: []
+    autonomousType: 3
+    anger: 0
+    career: 1
+    properties:
+      defense: 0
+      critRate: 20
+      critBounes: 20
+      pop: 5
+      attackRange: 3
+      moveRange: 4
+      standPosition: 1
+      attackPosition: 3
+      attackArea: 0
+      targetCount: 0
+      attackType: 6
+      skill:
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args:
+        - key: 0
+          value: (9,10)
+        - key: 1
+          value: (9,9)
+        - key: 2
+          value: (10,9)
+        - key: 3
+          value: (11,10)
+        - key: 4
+          value: (10,11)
+        - key: 5
+          value: (9,11)
+    skillPack:
+      specialName: 
+      count: 0
+      parameter: 0
+      args:
+        args: []
+    maxHealth: 200
+    health: 200
+    armor: 50
+    damage: 40
+    type: 1

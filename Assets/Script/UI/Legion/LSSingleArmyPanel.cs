@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,8 @@ namespace Canute.UI
 
         public ArmyCardUI armyCardUI;
         public LSArmySkillCardUI armySkillCardUI;
+
+        public LSArmyUpgradePanel upgradePanel;
 
         [Header("Text Info")]
         public Text damage;
@@ -39,6 +42,11 @@ namespace Canute.UI
         [Header("Icon")]
         public Image career;
         public Image leaderIcon;
+
+        public Image equipmentSlot1;
+        public Image equipmentSlot2;
+        public Image equipmentSlot3;
+
         public ArmyTypeIcon armyTypeIcon;
         public AttackTypeIcon attackTypeIcon;
         public StandPostionIcon standPosition;
@@ -78,13 +86,34 @@ namespace Canute.UI
             health.text = "H: " + armyItem.MaxHealth.ToString();
             defense.text = "D: " + armyItem.Defense.ToString();
 
-            moveRange.text = armyItem.ArmyProperty.MoveRange.ToString();
-            attackRange.text = armyItem.ArmyProperty.AttackRange.ToString();
-            critBounes.text = armyItem.ArmyProperty.CritBonus.ToString() + "%";
-            critRate.text = armyItem.ArmyProperty.CritRate.ToString() + "%";
+            if (armyItem.HasLeader)
+            {
+                leaderIcon.enabled = true;
+                leaderName.text = armyItem.Leader.DisplayingName;
+                leaderIcon.sprite = armyItem.Leader.Icon;
+            }
+            else
+            {
+                leaderName.text = "No Leader Assigned";
+                leaderIcon.enabled = false;
+            }
 
-            career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, (armyItem.HasLeader ? armyItem.Leader.Career : armyItem.Career).ToString());
-            leaderName.text = armyItem.HasLeader ? armyItem.Leader.DisplayingName : "No Leader Assigned";
+            Debug.Log(armyItem.Equipments);
+
+            if (armyItem.Equipments[0])
+                equipmentSlot1.sprite = armyItem.Equipments[0].Icon;
+            if (armyItem.Equipments[1])
+                equipmentSlot2.sprite = armyItem.Equipments[1].Icon;
+            if (armyItem.Equipments[2])
+                equipmentSlot3.sprite = armyItem.Equipments[2].Icon;
+
+
+            moveRange.text = armyItem.Properties.MoveRange.ToString();
+            attackRange.text = armyItem.Properties.AttackRange.ToString();
+            critBounes.text = armyItem.Properties.CritBonus.ToString() + "%";
+            critRate.text = armyItem.Properties.CritRate.ToString() + "%";
+
+            career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, armyItem.Career.ToString());
         }
 
         public void ClearDisplay()
@@ -105,24 +134,74 @@ namespace Canute.UI
             critBounes.text = "";
             critRate.text = "";
 
+            equipmentSlot1.sprite = null;
+            equipmentSlot2.sprite = null;
+            equipmentSlot3.sprite = null;
+
+            leaderIcon.enabled = false;
+
             career.sprite = null;
             leaderName.text = "";
         }
 
         public void ChangeArmy()
         {
-            SceneControl.AddScene(MainScene.playerArmyList);
+            ArmyListUI.OpenArmyList();
             ArmyListUI.legion = LSLegionDisplay.instance.Legion;
-            ArmyListUI.CardSelection = Change;
+            ArmyListUI.SelectEvent += Change;
             ArmyListUI.lastMainScene = MainScene.legionSetting;
 
-            void Change(ArmyCardUI armyCardUI)
+            void Change(ArmyItem item)
             {
                 Debug.Log("Change Army");
-                SceneControl.RemoveScene(MainScene.playerArmyList);
+                ArmyListUI.CloseArmyList();
                 var legion = LSLegionDisplay.instance.Legion;
-                legion.Replace(SelectingArmy, armyCardUI.displayingArmy);
+                legion.Replace(SelectingArmy, item);
                 LSLegionDisplay.instance.ReloadLegion();
+                ArmyListUI.SelectEvent -= Change;
+                PlayerFile.SaveCurrentData();
+            }
+        }
+
+        public void ChangeArmyLeader()
+        {
+            LeaderScroll.notShowingLeader = LSLegionDisplay.instance.Legion.Armies.Select((army) => army.Leader).Except(new List<LeaderItem> { SelectingArmy.Leader });
+            LeaderScroll.OpenLeaderScroll();
+            LeaderScroll.SelectEvent += Change;
+
+            void Change(LeaderItem leaderItem)
+            {
+                Debug.Log("Change Leader");
+                LeaderScroll.CloseLeaderScroll();
+                SelectingArmy.Leader = leaderItem;
+                Display(SelectingArmy);
+                PlayerFile.SaveCurrentData();
+            }
+        }
+
+        public void ChangeEquipment(int id)
+        {
+            EquipmentListUI.currentListType = EquipmentListUI.ListType.free;
+            EquipmentListUI.OpenEquipmentList();
+            EquipmentListUI.SelectEvent += Change;
+
+            void Change(EquipmentItem item)
+            {
+                Debug.Log(item);
+                Debug.Log(item.Name);
+                Debug.Log(item.EquipmentUsage);
+                Debug.Log(SelectingArmy);
+                if (!item.EquipmentUsage.Contains(SelectingArmy.Type))
+                {
+                    Debug.Log("Change Equipment (not)");
+                }
+
+                Debug.Log("Change Equipment");
+                EquipmentListUI.CloseEquipmentList();
+                LSLegionDisplay.instance.ReloadLegion();
+                EquipmentListUI.SelectEvent -= Change;
+
+                SelectingArmy.Equipments[id] = item;
                 PlayerFile.SaveCurrentData();
             }
         }
@@ -202,6 +281,14 @@ namespace Canute.UI
                     }
                     yield return new WaitForFixedUpdate();
                 }
+            }
+        }
+
+        public void OpenUpgradePanel()
+        {
+            if (SelectingArmy)
+            {
+                upgradePanel.gameObject.SetActive(true);
             }
         }
     }

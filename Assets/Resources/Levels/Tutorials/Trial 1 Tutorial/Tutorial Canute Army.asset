@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42519a9a9bfe564f9f663cf1d552d44, type: 3}
+  m_Name: Tutorial Canute Army
+  m_EditorClassIdentifier: 
+  isTemporaryPrototype: 1
+  prototype:
+    name: Tutorial Canute Army
+    rarity: 0
+    icon: {fileID: 0}
+    sprite: {fileID: 0}
+    portrait: {fileID: 0}
+    prefab: {fileID: 6470687005625561500, guid: f4715b1d4b01df64b81c6c575a746d48,
+      type: 3}
+    health: 500
+    damage: 500
+    type: -1
+    career: 3
+    properties: []

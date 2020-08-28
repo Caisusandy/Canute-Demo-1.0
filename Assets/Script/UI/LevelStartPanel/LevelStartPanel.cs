@@ -24,15 +24,13 @@ namespace Canute.UI.LevelStart
         public Button startButton;
         public Button last;
         public Button next;
-        [Header("Prefab")]
-        public GameObject leaderCard;
 
 
         private Canute.Legion legion;
         private Canute.EventCardPile pile;
 
 
-        private LeaderItem LeaderItem => Game.PlayerData.Leaders[leaderScroll.selectingId];
+        private LeaderItem LeaderItem => leaderScroll.SelectingLeader;
         public Canute.Legion Legion { get => legion; set => legion = value; }
         public Canute.EventCardPile Pile { get => pile; set => pile = value; }
         private LegionSet LegionSet => new LegionSet(Legion, Pile, LeaderItem.UUID, "Canute Svensson");
@@ -48,9 +46,6 @@ namespace Canute.UI.LevelStart
         // Start is called before the first frame update
         void Start()
         {
-            LoadLeaders();
-            leaderScroll.GetAllLeaderCard();
-
             title.text = Level.Lang("title");
             subtitle.text = Level.Lang("subtitle");
             startButton.interactable = false;
@@ -60,16 +55,6 @@ namespace Canute.UI.LevelStart
         void Update()
         {
 
-        }
-
-        public void LoadLeaders()
-        {
-            foreach (var item in Game.PlayerData.Leaders)
-            {
-                GameObject gameObject = Instantiate(this.leaderCard, leaderScroll.leaderRect.content);
-                LeaderCardUI leaderCard = gameObject.GetComponent<LeaderCardUI>();
-                leaderCard.Display(item);
-            }
         }
 
         public void SelectLegion(int id)

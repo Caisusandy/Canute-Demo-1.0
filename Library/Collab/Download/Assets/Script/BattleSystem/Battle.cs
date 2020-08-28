@@ -8,14 +8,23 @@ using UnityEngine;
 
 namespace Canute.BattleSystem
 {
+
     [Serializable]
     public class Battle : ICloneable
     {
+        public enum Type
+        {
+            normal,
+            endless,
+            rescueMission,
+        }
+
         [Header("Settings")]
+        [SerializeField] protected Type battleType;
+        [SerializeField] protected BattlePrize prize;
         [SerializeField] protected Player enemy;
         [SerializeField] protected List<Player> thirdParties = new List<Player>();
         [SerializeField] protected List<WaveInfo> waveInfo = new List<WaveInfo>();
-        [SerializeField] protected BattlePrize prize;
         [SerializeField] protected GameObject mapPrefab;
 
         [Header("In-battle infomations")]
@@ -24,10 +33,12 @@ namespace Canute.BattleSystem
         [SerializeField] protected Stat stat;
         [SerializeField] protected CentralDeck centralDeck;
         [SerializeField] protected List<Animator> ongoingAnimation = new List<Animator>();
+
         [SerializeField] protected List<BattleArmy> armies = new List<BattleArmy>();
         [SerializeField] protected List<BattleBuilding> buildings = new List<BattleBuilding>();
+        [SerializeField] protected List<Status> globalStatus = new List<Status>();
 
-        [SerializeField] protected List<Effect> passingEffect = new List<Effect>();
+        [SerializeField] protected List<Effect> passedEffect = new List<Effect>();
         [SerializeField] protected MapEntity mapEntity;
 
 
@@ -41,7 +52,7 @@ namespace Canute.BattleSystem
         public List<BattleArmy> Armies => armies;
         public List<BattleBuilding> Buildings => buildings;
         public List<Animator> OngoingAnimation => ongoingAnimation;
-        public List<Effect> PassingEffect { get => passingEffect; set => passingEffect = value; }
+        public List<Effect> PassingEffect { get => passedEffect; set => passedEffect = value; }
         public CentralDeck CentralDeck { get => centralDeck; set => centralDeck = value; }
         public GameObject MapPrefab { get => mapPrefab; set => mapPrefab = value; }
         public MapEntity MapEntity { get => mapEntity; set => mapEntity = value; }
@@ -55,12 +66,11 @@ namespace Canute.BattleSystem
         public bool IsFreeTime => (CurrentStat == Stat.normal && Round.CurrentStat == Round.Stat.normal) || (CurrentStat == Stat.begin && Round.CurrentStat == Round.Stat.gameStart);
         public bool HasAnimation => TryEndAnimation();
 
-        #endregion  
         #endregion
 
+        #endregion
 
         private Battle() { }
-
 
         #region Get Battle object
         /// <summary> Get a player by its uuid </summary>
@@ -103,12 +113,24 @@ namespace Canute.BattleSystem
             List<BattleArmy> armies = new List<BattleArmy>();
             foreach (BattleArmy item in Armies)
             {
-                if (item.Position == position)
+                if (item.Coordinate == position)
                 {
                     armies.Add(item);
                 }
             }
             return armies;
+        }
+
+        public BattleArmy GetArmy(Vector2Int position)
+        {
+            foreach (BattleArmy item in Armies)
+            {
+                if (item.Coordinate == position)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
         public BattleArmy GetArmy(UUID uUID)
         {
@@ -144,13 +166,26 @@ namespace Canute.BattleSystem
             List<BattleBuilding> buildings = new List<BattleBuilding>();
             foreach (BattleBuilding item in Buildings)
             {
-                if (item.Position == position)
+                if (item.Coordinate == position)
                 {
                     buildings.Add(item);
                 }
             }
             return buildings;
         }
+
+        public BattleBuilding GetBuilding(Vector2Int position)
+        {
+            foreach (BattleBuilding item in Buildings)
+            {
+                if (item.Coordinate == position)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
         public BattleBuilding GetBuilding(UUID uUID)
         {
             foreach (BattleBuilding item in Buildings)
@@ -173,6 +208,7 @@ namespace Canute.BattleSystem
         /// </summary>
         public void Prepare()
         {
+            //Player
             foreach (Player item in OtherPlayers)
             {
                 if (item.UUID == UUID.Empty)
@@ -186,6 +222,7 @@ namespace Canute.BattleSystem
             centralDeck = new CentralDeck();
             InBeginning();
 
+            //geneate playerEntity
             BattleUI.instance.CreatePlayerEntity(player);
 
             //generate AI
@@ -199,22 +236,22 @@ namespace Canute.BattleSystem
             for (int i = 0; i < Player.BattleArmies.Count; i++)
             {
                 BattleArmy item = Player.BattleArmies[i];
-                Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, Card.TargetType.cellEntity) { Owner = player };
-                card.Effect.SetParam("name", item.Name);
+                Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, TargetType.cellEntity) { Owner = player };
+                card.Effect["name"] = item.Name;
                 ArmyCardEntity.Create(card, item);
             }
 
-
-            if (GameData.BuildSetting.PvP)
+            if (Game.Configuration.PvP)
             {
-                enemy = new Player("Anexar", Game.PlayerData.legions[1], enemy.UUID);
+                enemy = new Player("Anexar", new LegionSet(Game.PlayerData.Legions[1], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, " "), enemy.UUID);
 
+                Resonance.Resonate(enemy.BattleArmies);
                 //generate player's army card
                 for (int i = 0; i < Enemy.BattleArmies.Count; i++)
                 {
                     BattleArmy item = Enemy.BattleArmies[i];
-                    Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, Card.TargetType.cellEntity) { Owner = enemy };
-                    card.Effect.SetParam("name", item.Name);
+                    Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, TargetType.cellEntity) { Owner = enemy };
+                    card.Effect["name"] = item.Name;
                     ArmyCardEntity.Create(card, item);
                 }
             }
@@ -232,7 +269,7 @@ namespace Canute.BattleSystem
                 BuildingEntity.Create(item);
             }
 
-            if (GameData.BuildSetting.PvP)
+            if (Game.Configuration.PvP)
             {
                 return;
             }
@@ -245,29 +282,25 @@ namespace Canute.BattleSystem
             }
         }
 
-
         /// <summary> 
         /// Start the Battle
         /// </summary>
         public void Start()
         {
-            InNormal();
+            Round.TurnBegin();
             foreach (Player player in AllPlayers)
             {
-                GetHandCard(player, Effect.Types.enterMove, 5);
-                RefillAction(Round.CurrentPlayer);
+                GetHandCard(player, Effect.Types.enterMove, player.MaxHandCardCount);
+                Round.CurrentPlayer.RefillAction();
             }
-            InNormal();
             Round.Normal();
+            InNormal();
         }
 
-        /// <summary> 
-        /// Set the player </summary>
-        /// <param name="legion"></param>
-        public void SetPlayer(Legion legion)
+        public void SetPlayer(LegionSet playerLegion)
         {
-            Debug.Log("setting player by legion lead by " + legion.Leader?.Name);
-            player = new Player("Canute", legion);
+            player = new Player("Canute Svensson", playerLegion);
+            Resonance.Resonate(player.BattleArmies);
         }
 
         #endregion
@@ -353,10 +386,11 @@ namespace Canute.BattleSystem
                 return;
             }
 
-            Card lastCard = CardEntity.LastCard;
-            lastCard.Owner.BackActionPointSpent(lastCard);
-            lastCard.Owner.AddHandCard(lastCard);
-            CardEntity.LastCard = null;
+            Card lastCard = Card.LastCard;
+
+            lastCard.BackActionPoint();
+            CardEntity.Create(lastCard);
+            Card.LastCard = null;
             EffectExecute.CancelSelectTargetEvent();
 
             if (CurrentStat == Stat.attack)
@@ -376,6 +410,7 @@ namespace Canute.BattleSystem
         }
         #endregion
 
+
         #region 回合控制
         public bool TryEndTurn()
         {
@@ -392,13 +427,16 @@ namespace Canute.BattleSystem
         {
             Round.TurnEnd();
             Round.CurrentPlayer.StatTurnDecay();
+            Round.CurrentPlayer.EndTurnDiscard();
             NextPlayer();
         }
 
         /// <summary> 切换到下一个玩家 </summary>
         public void NextPlayer()
         {
+            BattleUI.SetPlayerUI(Round.CurrentPlayer, false);
             Round.Next();
+            BattleUI.SetPlayerUI(Round.CurrentPlayer, true);
             NewTurn();
         }
 
@@ -406,8 +444,8 @@ namespace Canute.BattleSystem
         public void NewTurn()
         {
             Round.TurnBegin();
-            RefillCard(Round.CurrentPlayer);
-            RefillAction(Round.CurrentPlayer);
+            Round.CurrentPlayer.RefillCard();
+            Round.CurrentPlayer.RefillAction();
 
             InNormal();
             Round.Normal();
@@ -418,109 +456,84 @@ namespace Canute.BattleSystem
             }
         }
 
-        public void RefillCard(Player player)
-        {
-            //Send player event card back
-            foreach (Card item in player.GetCard(Card.Types.eventCard))
-            {
-                player.EventCardPile.Add(item);
-                Entity.Get(item.UUID).Destroy();
-            }
-
-            //clear all player card
-            foreach (Card item in player.GetCard(Card.Types.normal))
-            {
-                Entity.Get(item.UUID).Exist()?.Destroy();
-            }
-
-            //clear all player card
-            foreach (Card item in player.GetCard(Card.Types.centerEvent))
-            {
-                Entity.Get(item.UUID).Destroy();
-            }
-
-            int normalCount = player.GetCard(Card.Types.normal).Count + player.GetCard(Card.Types.centerEvent).Count;
-            if (normalCount < 5)
-            {
-                int a = 0;
-                int m = 0;
-                foreach (var item in player.GetCard(Card.Types.normal))
-                {
-                    a += item.Effect.Type == Effect.Types.enterAttack ? 1 : 0;
-                    m += item.Effect.Type == Effect.Types.enterMove ? 1 : 0;
-                }
-                if (a == 0 && player.GetCard(Card.Types.centerEvent).Count < 5)
-                {
-                    GetHandCard(player, Effect.Types.enterAttack, 1);
-                    normalCount++;
-                }
-                if (m == 0 && player.GetCard(Card.Types.centerEvent).Count < 5)
-                {
-                    GetHandCard(player, Effect.Types.enterMove, 1);
-                    normalCount++;
-                }
-                if (normalCount < 5)
-                {
-                    GetHandCard(player, 5 - normalCount);
-                }
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                if (player.EventCardPile.Count == 0)
-                {
-                    break;
-                }
-
-                Card card = player.EventCardPile[UnityEngine.Random.Range(0, player.EventCardPile.Count)];
-                player.EventCardPile.Remove(card);
-                player.AddHandCard(card);
-            }
-        }
-
-        public void RefillAction(Player player)
-        {
-            player.ActionPoint = 8;
-        }
         #endregion
 
         /// <summary> 获取手牌 </summary>
         /// <param name="player"></param>
-        /// <param name="amount"></param>
-        public void GetHandCard(Player player, int amount) => CentralDeck.GetHandCard(player, amount);
+        /// <param name="count"></param>
+        public void GetHandCard(Player player, int count)
+        {
+            Debug.Log(player.Name + ", " + count);
+            for (int i = 0; i < count; i++)
+            {
+                Card card = centralDeck.DrawCard();
+                card.Owner = player;
+                CardEntity.Create(card);
+            }
+            Debug.Log(player.HandCard.Count);
+        }
 
-        public void GetHandCard(Player player, Effect.Types types, int amount) => CentralDeck.GetHandCard(player, types, amount);
+        public void GetHandCard(Player player, Effect.Types types, int count)
+        {
+            Debug.Log(player.Name + ", " + count);
+
+            for (int i = 0; i < count; i++)
+            {
+                Card card = centralDeck.DrawCard(types);
+                card.Owner = player;
+                CardEntity.Create(card);
+            }
+
+            Debug.Log(player.HandCard.Count);
+        }
+
 
         #region End of the Battle
 
         public void EndCheck()
         {
-            if (stat == Stat.begin || Round.CurrentStat == Round.Stat.gameEnd)
-            {
-                return;
-            }
+            if (stat == Stat.begin || Round.CurrentStat == Round.Stat.gameEnd) { return; }
 
-            if (Enemy.BattleArmies.Count == 0)
+            if (battleType == Type.normal)
             {
-                if (Round.wave < waveInfo.Count)
-                {
-                    NextWave();
-                }
-                else
-                {
-                    Win();
-                }
+                if (Enemy.BattleArmies.Count == 0)
+                    if (Round.wave < waveInfo.Count)
+                        NextWave();
+                    else
+                        Win();
+                if (Player.BattleArmies.Count == 0)
+                    Lost();
             }
-            if (Player.BattleArmies.Count == 0)
+            else if (battleType == Type.endless)
             {
-                Lost();
+                if (Enemy.BattleArmies.Count == 0)
+                    NextWave();
+                if (Player.BattleArmies.Count == 0)
+                    Lost();
             }
         }
 
         private void NextWave()
         {
             Round.wave++;
-            GenerateEnemy(round.wave);
+            switch (battleType)
+            {
+                case Type.normal:
+                    if (waveInfo.Count >= Round.wave)
+                        Win();
+                    else
+                        GenerateEnemy(round.wave);
+                    break;
+                case Type.endless:
+                    if (waveInfo.Count > Round.wave)
+                        GenerateEnemy(waveInfo.Count);
+                    else
+                    {
+                        Round.wave--;
+                        GenerateEnemy(round.wave);
+                    }
+                    break;
+            }
         }
 
         public void Win()
@@ -548,10 +561,17 @@ namespace Canute.BattleSystem
 
         #endregion
 
-        public object Clone()
+        object ICloneable.Clone()
         {
+            return Clone();
+        }
+
+        public Battle Clone()
+        {
+
             Battle battleCopy = new Battle
             {
+                battleType = battleType,
                 Enemy = enemy.Clone() as Player,
                 Player = Player.Clone() as Player,
                 thirdParties = thirdParties.Clone(),
@@ -561,7 +581,7 @@ namespace Canute.BattleSystem
                 MapPrefab = MapPrefab,
 
             };
-            return battleCopy as object;
+            return battleCopy;
         }
 
     }
@@ -619,12 +639,20 @@ namespace Canute.BattleSystem
     {
         public static void AddToBattle(this Animator animator)
         {
+            if (Game.CurrentBattle is null)
+            {
+                return;
+            }
             Game.CurrentBattle.OngoingAnimation.Add(animator);
             Game.CurrentBattle.InAnimation();
         }
 
         public static void RemoveFromBattle(this Animator animator)
         {
+            if (Game.CurrentBattle is null)
+            {
+                return;
+            }
             Game.CurrentBattle.OngoingAnimation.Remove(animator);
             Game.CurrentBattle.TryEndAnimation();
         }

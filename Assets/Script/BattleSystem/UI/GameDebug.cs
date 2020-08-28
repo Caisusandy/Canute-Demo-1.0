@@ -15,9 +15,9 @@ namespace Canute.Testing
         {
             enabled = Game.Configuration.IsDebugMode;
             base.Awake();
-#if !UNITY_EDITOR
-            Destroy(gameObject);
-#endif
+            if (!Game.Configuration.IsDebugMode)
+                Destroy(gameObject);
+
         }
 
         // Start is called before the first frame update
@@ -37,6 +37,9 @@ namespace Canute.Testing
             string ret = "";
             ret += "Round Stat: " + Battle.Round.CurrentStat + "\n";
             ret += "Game Stat: " + Battle.CurrentStat + "\n";
+            ret += "Current Player: " + Game.CurrentBattle.Round.CurrentPlayer.Name + "\n";
+            ret += "Motion: " + Module.Motion.ongoingMotions.Count + "\n";
+            ret += "Animation: " + Game.CurrentBattle.OngoingAnimation.Count + "\n";
             displayer.text = ret;
         }
     }

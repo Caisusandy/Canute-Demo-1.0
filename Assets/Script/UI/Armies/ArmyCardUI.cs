@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 namespace Canute.UI
 {
-    public delegate void ArmyCardSelection(ArmyCardUI armyCardUI);
+    public delegate void ArmySelection(ArmyItem armyCardUI);
     public class ArmyCardUI : MonoBehaviour
     {
-        public ArmyCardSelection selectEvent;
+        public static ArmySelection selectEvent;
         public Image frame;
         public Image portrait;
         public Image careerIcon;
@@ -32,8 +32,8 @@ namespace Canute.UI
 
         public void Select()
         {
-            selectEvent?.Invoke(this);
-            ArmyListUI.CardSelection?.Invoke(this);
+            selectEvent?.Invoke(displayingArmy);
+            ArmyListUI.SelectEvent?.Invoke(displayingArmy);
         }
     }
 }

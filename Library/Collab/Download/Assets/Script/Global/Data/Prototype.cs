@@ -13,6 +13,7 @@ namespace Canute
         [SerializeField] protected Sprite icon;
         [SerializeField] protected Sprite sprite;
         [SerializeField] protected Sprite protrait;
+        [SerializeField] protected GameObject prefab;
 
 
         public string DisplayingName => this.Lang("name");
@@ -22,11 +23,28 @@ namespace Canute
         public Sprite Portrait => protrait;
         public Sprite Sprite => sprite;
 
-        public abstract GameObject Prefab { get; }
+        public virtual GameObject Prefab => prefab;
 
         protected Prototype()
         {
 
+        }
+
+        public static implicit operator bool(Prototype prototype)
+        {
+            if (prototype is null)
+            {
+                return false;
+            }
+            else if (prototype.name is null)
+            {
+                return false;
+            }
+            else if (prototype.name == "Empty")
+            {
+                return false;
+            }
+            return true;
         }
     }
 

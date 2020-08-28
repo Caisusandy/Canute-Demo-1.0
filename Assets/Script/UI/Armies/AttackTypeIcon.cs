@@ -18,6 +18,5 @@ namespace Canute.UI
             base.SetArmyItem(armyItem);
             //IconImage.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, armyItem.Type + "WBG");
         }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Canute.BattleSystem
@@ -12,7 +13,6 @@ namespace Canute.BattleSystem
         public Cell data;
         public override EntityData Data => data;
         public override CellEntity OnCellOf => this;
-        public override StatList StatList { get => OnMapData.StatList; }
 
 
         public virtual List<CellEntity> NearByCells => Game.CurrentBattle.MapEntity.GetNearbyCell(this);
@@ -22,19 +22,19 @@ namespace Canute.BattleSystem
         public virtual CellEntity RightUp => Game.CurrentBattle.MapEntity.GetCell(x, y + 1);
         public virtual CellEntity Right => Game.CurrentBattle.MapEntity.GetCell(x + 1, y);
         public virtual CellEntity RightDown => Game.CurrentBattle.MapEntity.GetCell(x + 1, y - 1);
+        public override BattleProperty.Position StandPostion => BattleProperty.Position.land;
 
-        public virtual ArmyEntity HasArmyStandOn => transform.Find("Army")?.GetComponent<ArmyEntity>();
-        public virtual BuildingEntity HasBuildingStandOn => transform.Find("Building")?.GetComponent<BuildingEntity>();
-        public virtual List<ArmyEntity> Armies => Get<ArmyEntity>(data.Armies.ToUUIDList());
-        public virtual List<BuildingEntity> Buildings => Get<BuildingEntity>(data.Armies.ToUUIDList());
+        public virtual ArmyEntity HasArmyStandOn => Game.CurrentBattle?.GetArmy(Coordinate)?.Entity;
+        public virtual BuildingEntity HasBuildingStandOn => Game.CurrentBattle?.GetBuilding(Coordinate)?.Entity;
 
-        public static bool wasOnDrag { get; private set; }
+
+        public static bool WasOnDrag { get; private set; }
 
         public override void Awake()
         {
             base.Awake();
             this.NewUUID();
-            data.Position = Game.CurrentBattle.MapEntity.GetPosition(this);
+            data.Coordinate = Game.CurrentBattle.MapEntity.GetPosition(this);
             GetComponent<SpriteRenderer>().sortingLayerName = "Map";
             GetComponent<SpriteRenderer>().sortingOrder = -y;
         }
@@ -47,7 +47,7 @@ namespace Canute.BattleSystem
             {
                 GetComponent<SpriteRenderer>().enabled = false;
             }
-            GetComponent<SpriteRenderer>().sprite = GameData.SpriteLoader.Get(data.terrain.ToString() + UnityEngine.Random.Range(0, 11));
+            GetComponent<SpriteRenderer>().sprite = GameData.SpriteLoader.Get(SpriteAtlases.cells, data.terrain.ToString() + UnityEngine.Random.Range(0, 11));
         }
 
         public override void OnMouseDrag()
@@ -69,7 +69,7 @@ namespace Canute.BattleSystem
             {
                 base.OnMouseUp();
             }
-            wasOnDrag = false;
+            WasOnDrag = false;
         }
 
         public override void Highlight()
@@ -77,6 +77,7 @@ namespace Canute.BattleSystem
             Highlight(Mark.Type.select);
             IsHighlighted = true;
         }
+
         public override void Unhighlight()
         {
             Unhighlight(Mark.Type.select);
@@ -99,9 +100,26 @@ namespace Canute.BattleSystem
             mark?.Unload(type);
         }
 
-        public virtual void Enter(OnMapEntity onMapEntity)
+
+        /// <summary>
+        /// Triggerer of EntityArrive
+        /// </summary>
+        public virtual void Enter(OnMapEntity onMapEntity, Effect effect)
         {
-            onMapEntity.OnMapData.Position = Position;
+            onMapEntity.transform.SetParent(transform);
+            onMapEntity.OnMapData.Coordinate = Coordinate;
+
+            this.Trigger(TriggerCondition.Conditions.entityArrive, ref effect);
+            onMapEntity.Trigger(TriggerCondition.Conditions.entityArrive, ref effect);
+        }
+
+        /// <summary>
+        /// Triggerer of EntityLeft
+        /// </summary>
+        public virtual void Leave(OnMapEntity onMapEntity, Effect effect)
+        {
+            this.Trigger(TriggerCondition.Conditions.entityLeft, ref effect);
+            onMapEntity.Trigger(TriggerCondition.Conditions.entityLeft, ref effect);
         }
 
         public static void MoveMap()
@@ -119,13 +137,38 @@ namespace Canute.BattleSystem
                 return;
             }
 
+            //Debug.Log(delta);
             MapEntity.CurrentMap.transform.position += delta;
-            wasOnDrag = true;
+            WasOnDrag = true;
         }
+
+        public bool IsValidDestination(IOnMapEntity movingEntity)
+        {
+            if (this.HasArmyStandOn && movingEntity is ArmyEntity)
+            {
+                Debug.Log("Army tried to move to a place has army stand on");
+                return false;
+            }
+            else if (this.HasBuildingStandOn && movingEntity is BuildingEntity)
+            {
+                Debug.Log("Building tried to move to a place has building stand on");
+                return false;
+            }
+            else if (!data.canStandOn)
+            {
+                return false;
+            }
+            else if (data.hide)
+            {
+                return false;
+            }
+            return true;
+        }
+
 
         public override string ToString()
         {
-            return Name + ": " + Position;
+            return Name + ": " + Coordinate;
         }
     }
 }

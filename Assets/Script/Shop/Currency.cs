@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.Languages;
+using System;
 
 namespace Canute.Shops
 {
@@ -7,25 +8,28 @@ namespace Canute.Shops
     {
         public enum Type
         {
-            federgram,
+            fedgram,
             manpower,
-            MantleFluid,
             Aethium,
             mantleAlloy,
         }
 
-        public Type type;
+        public Type name;
         public int count;
 
         public Currency(Type type, int count)
         {
-            this.type = type;
+            this.name = type;
             this.count = count;
         }
 
         public static implicit operator int(Currency currency)
         {
             return currency.count;
+        }
+        public override string ToString()
+        {
+            return name.Lang() + ": " + count;
         }
     }
 }

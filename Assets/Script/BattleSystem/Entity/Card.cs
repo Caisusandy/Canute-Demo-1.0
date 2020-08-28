@@ -250,7 +250,7 @@ namespace Canute.BattleSystem
         {
             if (eventCardItems is null)
             {
-                return null;
+                return new List<Card>();
             }
             List<Card> cards = new List<Card>();
             foreach (var item in eventCardItems)

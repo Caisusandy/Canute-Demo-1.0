@@ -14,9 +14,150 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commands:
     list:
+    - name: battleStart
+      params: []
+    - name: createArmy
+      params:
+      - key: '@SelectingEntity(Create Position)'
+        type: 0
+        default: 
+        possibleValue: []
+      - key: prototype
+        type: 2
+        default: Basic Infantry
+        possibleValue: []
+      - key: exp
+        type: 1
+        default: 250000
+        possibleValue: []
+      - key: owner
+        type: 2
+        default: 
+        possibleValue:
+        - player
+        - enemy
+    - name: execute
+      params:
+      - key: source
+        type: 0
+        default: 
+        possibleValue: []
+      - key: type
+        type: 2
+        default: 
+        possibleValue:
+        - attack
+        - event
+        - move
+      - key: target UUID
+        type: 2
+        default: 
+        possibleValue: []
+      - key: count
+        type: 1
+        default: 1
+        possibleValue: []
+      - key: parameter
+        type: 1
+        default: 0
+        possibleValue: []
+      - key: args
+        type: 6
+        default: 0
+        possibleValue: []
+    - name: getArmyItem
+      params:
+      - key: prototypeName
+        type: 2
+        default: 
+        possibleValue: []
+    - name: getHexCoord
+      params: []
+    - name: getNeighbor
+      params:
+      - key: '@SelectingEntity(Cell Entity)'
+        type: 0
+        default: 
+        possibleValue:
+        - normal
+        - attack
+        - move
+        - waitForAnimationEnd
+        - win
+        - lose
+    - name: getUUID
+      params:
+      - key: '@selectingEntity'
+        type: 0
+        default: 
+        possibleValue: []
+    - name: kill
+      params:
+      - key: '@selectingEntity'
+        type: 0
+        default: 
+        possibleValue: []
+    - name: loadStory
+      params:
+      - key: id
+        type: 2
+        default: 
+        possibleValue: []
+    - name: openBattle
+      params:
+      - key: id
+        type: 2
+        default: 
+        possibleValue: []
+    - name: openEmptyBattle
+      params: []
+    - name: openTutorial
+      params: []
     - name: print
       params:
       - key: string
         type: 2
+        default: 
+        possibleValue: []
+    - name: reloadDefaultPrototype
+      params: []
+    - name: reloadLanguagePack
+      params:
+      - key: status
+        type: 2
+        default: 
+        possibleValue:
+        - en_us
+        - zh_cn
+    - name: setBattleStatus
+      params:
+      - key: status
+        type: 2
+        default: 
+        possibleValue:
+        - normal
+        - attack
+        - move
+        - waitForAnimationEnd
+        - win
+        - lose
+    - name: setProperty
+      params:
+      - key: propertyType
+        type: 2
+        default: 
+        possibleValue:
+        - damage
+        - health
+        - defense
+        - moveRange
+        - attackRange
+        - critRate
+        - critBounes
+        - pop
+        - armor
+        - anger
+      - key: value
+        type: 3
         default: 
         possibleValue: []

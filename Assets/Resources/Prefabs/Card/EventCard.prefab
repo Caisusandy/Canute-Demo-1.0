@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -213,6 +214,7 @@ GameObject:
   - component: {fileID: 3723063664925569507}
   - component: {fileID: 8462678385644906974}
   - component: {fileID: 557189396447392445}
+  - component: {fileID: 2578377659186485609}
   m_Layer: 5
   m_Name: EventCard
   m_TagString: Untagged
@@ -255,7 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7c94bbdaba1e3941b27d6a6660db116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
   isHighlighted: 0
   isSelected: 0
   wasSelected: 0
@@ -263,27 +264,27 @@ MonoBehaviour:
   isOnTrashCan: 0
   data:
     name: 
-    uUID:
-      Value: 
-    ownerUUID:
-      Value: 
     prefab: {fileID: 4382801775652925750}
+    uuid:
+      value: 
+    ownerUUID:
+      value: 
     effect:
+      uuid:
+        value: 7a4a056c-fa0a-467a-a27f-fcd774a11c07
+      specialName: 
       type: 0
       count: 0
       parameter: 0
       sourceEntity:
-        Value: 
+        value: 
       targetEntities: []
       args:
-        allowSerialization: 1
-        keys: []
-        values: []
-      uUID:
-        Value: f4312ec0-8e8b-4e8c-af88-9f6ee778a1ac
+        list: []
     career: 1
     type: 2
-    actionPointRequire: 0
+    target: 0
+    actionPoint: 0
   cardCollider: {fileID: 6961087698638966857}
   careerPicture: {fileID: 139271378688601566}
   infoDisplayer: {fileID: 792575487110996518}
@@ -359,6 +360,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -393,6 +395,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &2578377659186485609
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4382801775652925750}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25a4e7bbc77bacf4eba0db3d75135045, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5667883375059003579
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +495,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -548,6 +570,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

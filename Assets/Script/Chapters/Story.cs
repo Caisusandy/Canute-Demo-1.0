@@ -1,35 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Canute.StorySystem
 {
+    [Serializable]
+    public struct WordLines
+    {
+        [SerializeField] private string[] line;
+
+        public static implicit operator WordLines(Story story)
+        {
+            List<string> strings = new List<string>();
+            foreach (var item in story.WordLines)
+            {
+                strings.Add(item.Line);
+            }
+            return new WordLines() { line = strings.ToArray() };
+        }
+    }
     [Serializable]
     public struct Story : INameable, IEquatable<Story>
     {
         public static Story Empty => new Story();
 
         [SerializeField] private string id;
+        [SerializeField] private StoryType type;
         [SerializeField] private WordLine[] wordLines;
 
         public Story(string id, WordLine[] wordLines) : this()
         {
             this.id = id;
-            this.wordLines = wordLines;
+            this.WordLines = wordLines;
         }
 
-        public int LineCount => wordLines.Length;
+        public int LineCount => WordLines.Length;
         public string Name => id;
+        public StoryType Type { get => type; set => type = value; }
         public WordLine CurrentLine { get; set; }
-        public WordLine First { get { CurrentLine = wordLines[0]; return wordLines[0]; } }
+        public WordLine First { get { CurrentLine = WordLines[0]; return WordLines[0]; } }
+        public WordLine[] WordLines { get => wordLines; set => wordLines = value; }
 
         public WordLine Next(int id = -1)
         {
-            int nextIndex = id == -1 ? Array.IndexOf(wordLines, CurrentLine) + 1 : id;
+            int nextIndex = id == -1 ? Array.IndexOf(WordLines, CurrentLine) + 1 : id;
             //Debug.Log(nextIndex);
-            if (nextIndex < wordLines.Length)
+            if (nextIndex < WordLines.Length)
             {
-                CurrentLine = wordLines[nextIndex];
-                return wordLines[nextIndex];
+                CurrentLine = WordLines[nextIndex];
+                return WordLines[nextIndex];
             }
             else
             {
@@ -39,12 +58,12 @@ namespace Canute.StorySystem
 
         public WordLine Next()
         {
-            int nextIndex = Array.IndexOf(wordLines, CurrentLine) + 1;
+            int nextIndex = Array.IndexOf(WordLines, CurrentLine) + 1;
             //Debug.Log(nextIndex);
-            if (nextIndex < wordLines.Length)
+            if (nextIndex < WordLines.Length)
             {
-                CurrentLine = wordLines[nextIndex];
-                return wordLines[nextIndex];
+                CurrentLine = WordLines[nextIndex];
+                return WordLines[nextIndex];
             }
             else
             {
@@ -81,5 +100,17 @@ namespace Canute.StorySystem
         {
             return id.GetHashCode();
         }
+
+        public static Story Get(string id)
+        {
+            return GameData.Stories.StoryTree.Get(id);
+        }
+    }
+
+    public enum StoryType
+    {
+        normalStory,
+        dailyConversation,
+        selectionBase,
     }
 }

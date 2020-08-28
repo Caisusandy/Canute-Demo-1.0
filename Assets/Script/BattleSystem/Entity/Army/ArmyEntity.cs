@@ -15,9 +15,10 @@ namespace Canute.BattleSystem
     public abstract class ArmyEntity : OnMapEntity, IBattleEntity, IPassiveEntity, IAggressiveEntity, IBattleableEntity
     {
         public BattleArmy data;
+        public ArmyHealthBar armyHealthBar;
 
-        public List<CellEntity> attackRange = new List<CellEntity>();
-        public List<CellEntity> moveRange = new List<CellEntity>();
+        public MarkController attackRange = new MarkController(CellMark.Type.attackRange);
+        public MarkController moveRange = new MarkController(CellMark.Type.moveRange);
 
         public override EntityData Data => data;
 
@@ -34,18 +35,19 @@ namespace Canute.BattleSystem
         {
             base.Awake();
             if (!onMap.Contains(this)) { onMap.Add(this); }
+            entityMark = new MarkController(CellMark.Type.owner);
         }
 
         public override void Start()
         {
             base.Start();
-            Color color = data.Career.GetColor();
-            color.a = 0.4f;
+            CreateHealthBar();
+            //Color color = data.Career.GetColor();
+            //color.a = 0.4f;
         }
 
         public override void Update()
         {
-            OnCellOf.Highlight(Mark.Type.owner);
             if (transform.localPosition != Vector3.zero && !GetComponent<EntityOnCellMotion>())
             {
                 Module.Motion.SetMotion(gameObject, Vector3.zero, Space.Self);
@@ -56,7 +58,7 @@ namespace Canute.BattleSystem
         {
             onMap.Remove(this);
             Game.CurrentBattle?.Armies?.Remove(data);
-
+            Unselect();
             base.OnDestroy();
         }
 
@@ -64,30 +66,50 @@ namespace Canute.BattleSystem
         {
             if (isSelected)
             {
-                transform.localScale /= 1.1f;
+                transform.GetChild(0).localScale /= 1.1f;
             }
             else
             {
-                transform.localScale *= 1.1f;
+                transform.GetChild(0).localScale *= 1.1f;
             }
         }
 
 
         public override void Highlight()
         {
-            base.Highlight();
-            attackRange = GetAttackRange();
-            moveRange = GetMoveRange();
+            if (isHighlighted)
+            {
+                return;
+            }
+            try
+            {
+                transform.GetChild(0).localScale *= 1.2f;
+                IsHighlighted = true;
+            }
+            catch { }
+            var attackRange = GetAttackRange();
+            var moveRange = GetMoveRange();
 
-            Mark.Load(Mark.Type.attackRange, attackRange);
-            Mark.Load(Mark.Type.moveRange, moveRange);
+            this.attackRange.Refresh(attackRange);
+            this.moveRange.Refresh(moveRange);
+            this.moveRange.Display();
+            this.attackRange.Display();
         }
 
         public override void Unhighlight()
         {
-            base.Unhighlight();
-            Mark.Unload(Mark.Type.attackRange, attackRange);
-            Mark.Unload(Mark.Type.moveRange, moveRange);
+            if (!isHighlighted)
+            {
+                return;
+            }
+            try
+            {
+                transform.GetChild(0).localScale = new Vector3(1, 1, 1);
+                IsHighlighted = false;
+            }
+            catch { }
+            moveRange.ClearDisplay();
+            attackRange.ClearDisplay();
         }
 
 
@@ -98,58 +120,12 @@ namespace Canute.BattleSystem
         public abstract float WinningDuration { get; }
         public abstract float HurtDuration { get; }
 
-        /// <summary>
-        /// Animation when entity is defeated
-        /// </summary>
-        /// <param name="vs"></param>
-        public virtual void Defeated(params object[] vs)
-        {
-            InPerformingAnimation();
-            animator.SetBool(isDefeated, true);
-            Action(new EntityEventPack(IdleDelay, DefeatedDuration), new EntityEventPack(Remove));
-        }
-        public virtual void Skill(params object[] vs)
-        {
-            Effect effect = vs[0] as Effect;
-            InPerformingAnimation();
-            animator.SetBool(isPerformingSkill, true);
-            SkillExecute(effect);
-            SkillAction(effect);
-        }
-        public virtual void Winning(params object[] vs)
-        {
-            InPerformingAnimation();
-            animator.SetBool(isWinning, true);
-            Action(new EntityEventPack(IdleDelay, WinningDuration));
-        }
-        public virtual void ReadyToDie(params object[] vs)
-        {
-            IEnumerator Check(params object[] vs1)
-            {
-                while (true)
-                {
-                    if (IsIdle)
-                    {
-                        yield return new EntityEventPack(Defeated).Execute();
-                    }
-                    else
-                    {
-                        yield return new WaitForSeconds(0.1f);
-                    }
-                }
-            }
-            Action(Check);
-        }
-        public virtual void Remove(params object[] vs)
-        {
-            Destroy(gameObject);
-        }
         public virtual void Attack(params object[] vs)
         {
             Effect effect = vs[0] as Effect;
 
             InPerformingAnimation();
-            animator.SetBool(isAttacking, true);
+            Animator.SetBool(isAttacking, true);
 
             AttackExecute(effect);
         }
@@ -159,7 +135,7 @@ namespace Canute.BattleSystem
             Effect effect = vs[1] as Effect;
 
             InPerformingAnimation();
-            animator.SetBool(isMoving, true);
+            Animator.SetBool(isMoving, true);
 
             EntityOnCellMotion.SetMotion(this, path, effect);
             Action(TryEndMoveAction, new EntityEventPack(data.CheckPotentialAction));
@@ -190,20 +166,68 @@ namespace Canute.BattleSystem
             try { damageSource = vs[1] as IAggressiveEntity; }
             catch { damageSource = null; }
 
-            if (damageSource is null)
-                this.Damage(damage);
-            else
-                this.Damage(damage, damageSource);
+            this.Damage(damage, damageSource);
 
 
             InPerformingAnimation();
-            animator.SetBool(isDefencing, true);
+            Animator.SetBool(isDefencing, true);
 
-            Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction));
+            Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction, damageSource));
             Debug.Log(Data.ToString() + " Hurt");
         }
+        public virtual void Skill(params object[] vs)
+        {
+            Effect effect = vs[0] as Effect;
+            InPerformingAnimation();
+            Animator.SetBool(isPerformingSkill, true);
 
-        public abstract void SkillExecute(Effect effect);
+            SkillAction(effect);
+        }
+        public virtual void Winning(params object[] vs)
+        {
+            InPerformingAnimation();
+            Animator.SetBool(isWinning, true);
+            Action(new EntityEventPack(IdleDelay, WinningDuration));
+        }
+        public virtual void KillEntity(params object[] vs)
+        {
+            IEnumerator Check(params object[] vs1)
+            {
+                while (true)
+                {
+                    if (IsIdle)
+                    {
+                        yield return new EntityEventPack(DefeatedAnimation).Execute();
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(0.1f);
+                    }
+                }
+            }
+            Action(Check);
+        }
+        public virtual void DefeatedAnimation(params object[] vs)
+        {
+            InPerformingAnimation();
+            Animator.SetBool(isDefeated, true);
+            Action(new EntityEventPack(IdleDelay, DefeatedDuration), new EntityEventPack((object[] vvs) => { Destroy(); }));
+        }
+
+
+        /// <summary>
+        /// skill code
+        /// </summary>
+        /// <param name="effect">skill effect (<paramref name="effect"/>.type = skill)</param>
+        public virtual void SkillExecute(Effect effect)
+        {
+            effect.Type = Effect.Types.@event;
+            effect.Execute();
+        }
+        /// <summary>
+        /// Attack code
+        /// </summary>
+        /// <param name="effect">attack effect(<paramref name="effect"/>.type = attack)</param>
         public virtual void AttackExecute(Effect effect)
         {
             foreach (var item in effect.Targets)
@@ -216,21 +240,38 @@ namespace Canute.BattleSystem
                 }
             }
         }
+        /// <summary>
+        /// get an(or more) actual target when attack
+        /// </summary>
+        /// <param name="effect"></param>
         public virtual void GetAttackTarget(ref Effect effect)
         {
 
         }
 
+        /// <summary>
+        /// Attack action code
+        /// </summary>
+        /// <param name="attackingEntity"></param>
+        /// <param name="damage"></param>
         protected virtual void AttackAction(IPassiveEntity attackingEntity, int damage)
         {
-            Action(new EntityEventPack(IdleDelay, AttackAtionDuration), new EntityEventPack(data.CheckPotentialAction), new EntityEventPack(attackingEntity.Hurt, damage, this));
+            Action(new EntityEventPack(IdleDelay, AttackAtionDuration), new EntityEventPack(data.CheckPotentialAction, attackingEntity), new EntityEventPack(attackingEntity.Hurt, damage, this));
         }
+        /// <summary>
+        /// skill action code
+        /// </summary>
+        /// <param name="effect"></param>
         protected virtual void SkillAction(Effect effect)
         {
             Debug.Log("Performing skill");
-            /*
-             */
-            Action(new EntityEventPack(IdleDelay, SkillDuration));
+            Action(new EntityEventPack(IdleDelay, SkillDuration), new EntityEventPack(SkillExecute, effect));
+
+            void SkillExecute(params object[] vs)
+            {
+                Effect skillEffect = vs[0] as Effect;
+                this.SkillExecute(skillEffect);
+            }
         }
 
         /// <summary>
@@ -250,23 +291,29 @@ namespace Canute.BattleSystem
             return data.CanAttack(other.Data);
         }
 
-
+        public override void Destroy()
+        {
+            Game.CurrentBattle.Armies.Remove(data);
+            base.Destroy();
+        }
 
         /// <summary> 创建军队实体，自动分配一个ArmyInfoPanel </summary>
         /// <param name="battleArmy"></param> 
-        public static ArmyEntity Create(BattleArmy battleArmy)
+        public static ArmyEntity Create(BattleArmy battleArmy, bool createArmyBarInfoIcon = true)
         {
             GameObject gameObject;
             ArmyEntity armyEntity;
 
             CellEntity cellEntity = Game.CurrentBattle.MapEntity.GetCell(battleArmy.Coordinate);
+            Debug.Log(cellEntity.transform);
+            Debug.Log(battleArmy.Prefab);
             gameObject = Instantiate(battleArmy.Prefab, cellEntity.transform);
             armyEntity = gameObject.GetComponent<ArmyEntity>();
             armyEntity.data = battleArmy;
             armyEntity.name = "Army";
             cellEntity.Enter(armyEntity, null);
 
-            if (battleArmy.Owner == Game.CurrentBattle.Player)
+            if (battleArmy.Owner == Game.CurrentBattle.Player && createArmyBarInfoIcon)
             {
                 ArmyInfoIcon armyInfo = BattleUI.ArmyBar.GetAvailableSlot();
                 armyInfo.Connect(armyEntity);
@@ -298,7 +345,14 @@ namespace Canute.BattleSystem
             return possibleTargets;
         }
 
-
+        public void CreateHealthBar()
+        {
+            armyHealthBar = Instantiate(GameData.Prefabs.Get("armyHealthBar")).GetComponent<ArmyHealthBar>();
+            armyHealthBar.transform.SetParent(transform);
+            armyHealthBar.transform.localPosition = new Vector3(0, -18, 0);
+            armyHealthBar.transform.localScale = new Vector3(0.4f, 0.5f, 0);
+            armyHealthBar.armyEntity = this;
+        }
 
     }
 }

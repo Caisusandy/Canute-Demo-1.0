@@ -11,6 +11,7 @@ using UnityEditor;
 using System.IO;
 using System;
 using Canute.UI.LevelStart;
+using Canute.ExplorationSystem;
 
 namespace Canute
 {
@@ -38,6 +39,7 @@ namespace Canute
         [SerializeField] protected Stories stories;
         [SerializeField] protected Language language;
         [SerializeField] protected ResonanceSheet resonanceSheet;
+        [SerializeField] protected ExcavationPrice excavationPrice;
         [Header("Story Packs")]
         [SerializeField] protected StoryPacks storyPacks;
 
@@ -62,17 +64,15 @@ namespace Canute
         public static Language Language => instance.language;
         /// <summary> 故事 </summary>
         public static Stories Stories => instance.stories;
-        /// <summary> 目前进行的战斗 </summary>
-        //public static Battle CurrentBattle => instance.currentBattle;
-        /// <summary> </summary>
-        //public static Level CurrentLevel => instance.currentLevel;
-        /// <summary> </summary>
-        //public static List<PlayerData> PlayerDatas => instance.playerDatas;
+
+
 
         ///<summary>   </summary>
         public static CanuteVersion Version => instance.version;
 
         public static ResonanceSheet ResonanceSheet => instance.resonanceSheet;
+
+        public static ExcavationPrice ExcavationPrice => instance.excavationPrice;
 
         public static Levels LevelStart => instance.levelStart;
 
@@ -84,8 +84,9 @@ namespace Canute
         public void OnEnable()//当被加载时
         {
             instance = this;
+            Game.ReadConfig();
             Language.ForceLoadLang();
-            stories = storyPacks.Get(Game.Language.ToString());
+            stories = storyPacks.Get(Game.Language);
         }
 
         public void SavePlayerFile()

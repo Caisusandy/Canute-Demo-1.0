@@ -18,10 +18,10 @@ namespace Canute.BattleSystem
         public virtual Prototype Prototype { get => GameData.Prototypes.GetPrototype(name); set => name = value?.Name; }
         public virtual bool HasPrototype => !string.IsNullOrEmpty(name);
 
-        public virtual string DisplayingName => Prototype.DisplayingName;
-        public virtual Sprite DisplayingIcon => Prototype?.Icon;
-        public virtual Sprite DisplayingPortrait => Prototype?.Portrait;
         public virtual string Name => name;
+        public virtual string DisplayingName => GetDisplayingName();
+        public virtual Sprite Icon => GetIcon();
+        public virtual Sprite Portrait => GetPortrait();
         public virtual Player Owner { get => Game.CurrentBattle?.GetPlayer(ownerUUID); set => ownerUUID = value is null ? UUID.Empty : value.UUID; }
         public virtual UUID UUID { get => uuid; set => uuid = value; }
         public virtual GameObject Prefab { get => prefab; set => prefab = value; }
@@ -34,7 +34,7 @@ namespace Canute.BattleSystem
 
         public override string ToString()
         {
-            return "Name: " + Name + ", Owner " + Owner?.Name;
+            return "Name: " + Name + ";\nOwner " + Owner?.Name;
         }
 
         protected EntityData()
@@ -52,18 +52,33 @@ namespace Canute.BattleSystem
             Prototype = prototype;
         }
 
-        protected void NewUUID()
+        private Sprite GetIcon()
+        {
+            return Prototype?.Icon;
+        }
+
+        private Sprite GetPortrait()
+        {
+            return Prototype?.Portrait;
+        }
+
+        protected virtual void NewUUID()
         {
             (this as IUUIDLabeled).NewUUID();
         }
 
-        public static bool IsNullOrEmpty(EntityData battleLeader)
+        protected virtual string GetDisplayingName()
         {
-            if (battleLeader is null)
+            return Prototype.DisplayingName;
+        }
+
+        public static bool IsNullOrEmpty(EntityData entityData)
+        {
+            if (entityData is null)
             {
                 return true;
             }
-            return string.IsNullOrEmpty(battleLeader.name);
+            return string.IsNullOrEmpty(entityData.name);
         }
 
     }
@@ -76,19 +91,19 @@ namespace Canute.BattleSystem
         public int x;
         public int y;
         [Header("Status List")]
-        [SerializeField] protected StatList stats = new StatList();
+        [SerializeField] protected StatusList stats = new StatusList();
 
-        public virtual Vector2Int Position { get => new Vector2Int(x, y); set { x = value.x; y = value.y; } }
+        public virtual Vector2Int Coordinate { get => new Vector2Int(x, y); set { x = value.x; y = value.y; } }
         public virtual Vector3Int HexCoord => new Vector3Int(x - y / 2, y, x - y / 2 + y);
         public virtual bool AllowMove { get => allowMove; set => allowMove = value; }
-        public virtual Cell OnCellOf => Game.CurrentBattle.MapEntity[Position].data;
+        public virtual Cell OnCellOf => Game.CurrentBattle.MapEntity[Coordinate].data;
 
-        public virtual StatList StatList => stats;
-        public virtual StatList GetAllStatus() => StatList.Union(OnCellOf.StatList).ToStatList();
+        public virtual StatusList StatList => stats;
+        public virtual StatusList GetAllStatus() => StatList.Union(OnCellOf.StatList).ToStatList();
 
         public override string ToString()
         {
-            return base.ToString() + " Position: " + Position;
+            return base.ToString() + ";\nPosition: " + Coordinate;
         }
 
         protected OnMapEntityData() : base() { }

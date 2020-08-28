@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Canute.BattleSystem.Buildings;
+using Canute.BattleSystem.Develop;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +10,74 @@ namespace Canute.BattleSystem
 {
     public class MapEntity : DecorativeEntity, IEnumerable<ColumnEntity>, IEnumerable<CellEntity>
     {
+        private static MapEntity instance;
+
         public List<ColumnEntity> columnEntities;
-        public static MapEntity CurrentMap => Game.CurrentBattle.MapEntity;
+        private static bool wasOnDrag;
+
+        public static MapEntity CurrentMap => instance;
 
         public Map data => new Map(this);
         public override EntityData Data => data;
         public int Count => columnEntities.Count;
         public int CellCount => GetCellCount();
+        public float MapRadius => (Origin.transform.position - Center.transform.position).magnitude;
+        public static bool WasOnDrag { get => wasOnDrag; set { wasOnDrag = value; SetCellCollider(!value); } }
+        public CellEntity Origin => this[0][0];
+        public CellEntity Center { get => GetCenter(); }
+
+        public ColumnEntity this[int index] => columnEntities[index];
+        public CellEntity this[Vector2Int pos] => GetCell(pos);
+        public CellEntity this[int x, int y, int z] => columnEntities[y][x + y / 2];
+        public CellEntity this[Vector3Int pos] => this[pos.x, pos.y, pos.z];
+
+        public override void Awake()
+        {
+            name = "Map";
+            instance = this;
+            transform.localScale = Vector3.one;
+            MapSetUp();
+        }
+
+        public override void Start()
+        {
+            base.Start();
+            FakeCellSetUp();
+            SetPlayerCameraToPosition();
+        }
+
+        private void SetPlayerCameraToPosition()
+        {
+            CampusEntity campusEntity = CampusEntity.GetCampus(Game.CurrentBattle.Player);
+            if (campusEntity)
+            {
+                Vector3 position = campusEntity.transform.position;
+                position.z = 0;
+                transform.position -= position;
+            }
+            else if (Game.CurrentBattle.Player.BattleArmies.Count > 0)
+            {
+                Vector3 position = Game.CurrentBattle.Player.BattleArmies[0].Entity.transform.position;
+                position.z = 0;
+                transform.position -= position;
+            }
+            else
+            {
+                Vector3 position = Center.transform.position;
+                position.z = 0;
+                transform.position -= position;
+            }
+        }
+
+        private void FakeCellSetUp()
+        {
+            FakeMapGenerator.instance.CreateFakeCells();
+            FakeMapGenerator.instance.fakeColumn.transform.position = Origin.transform.position;
+
+            Vector3 localPosition = FakeMapGenerator.instance.fakeColumn.transform.localPosition;
+            localPosition.z = 0;
+            FakeMapGenerator.instance.fakeColumn.transform.localPosition = localPosition;
+        }
 
         private int GetCellCount()
         {
@@ -26,30 +89,30 @@ namespace Canute.BattleSystem
             return count;
         }
 
-        public override void Awake()
+
+        private CellEntity GetCenter()
         {
-            name = "Map";
-            Game.CurrentBattle.MapEntity = this;
-            MapSetUp();
+            int y = columnEntities.Count / 2;
+            int x = columnEntities[y].cellEntities.Count / 2;
+            CellEntity cellEntity = this[y][x];
+            return cellEntity;
+        }
+
+        public void MapSetUp()
+        {
+            foreach (Transform columnTransform in transform)
+            {
+                ColumnEntity item = columnTransform.GetComponent<ColumnEntity>();
+                columnEntities.Add(item);
+                item.ColumnSetup();
+            }
+            if (!(Game.CurrentBattle is null))
+                Game.CurrentBattle.MapEntity = this;
         }
 
         public static implicit operator List<ColumnEntity>(MapEntity mapEntity)
         {
             return mapEntity.columnEntities;
-        }
-
-        public ColumnEntity this[int index] => columnEntities[index];
-        public CellEntity this[Vector2Int pos] => this[pos.y][pos.x];
-        public CellEntity this[int x, int y, int z] => columnEntities[y][x + y / 2];
-        public CellEntity this[Vector3Int pos] => this[pos.x, pos.y, pos.z];
-
-
-        public void MapSetUp()
-        {
-            foreach (ColumnEntity item in columnEntities)
-            {
-                item.CellSetup();
-            }
         }
 
         public IEnumerator<ColumnEntity> GetEnumerator()
@@ -87,29 +150,34 @@ namespace Canute.BattleSystem
 
         public CellEntity GetCellEntityByHex(int hexX, int hexY)
         {
+            //Debug.Log(hexX + "," + hexY);
             return GetCell(hexX + hexY / 2, hexY);
         }
 
         public CellEntity GetCell(int x, int y)
         {
+            //Debug.Log(x + "," + y);
             if (y < 0 || x < 0)
             {
                 return null;
             }
-            if (columnEntities.Count > y)
+            //if (columnEntities.Count > y)
+            //{
+            //    if (this[y].cellEntities.Count > x)
+            //    {
+            try
             {
-                if (this[y].cellEntities.Count > x)
+                CellEntity cellEntity = this[y][x];
+                if (cellEntity.data.hide)
                 {
-                    CellEntity cellEntity = this[y][x];
-
-                    if (cellEntity.data.hide)
-                    {
-                        return null;
-                    }
-
-                    return cellEntity;
+                    return null;
                 }
+
+                return cellEntity;
             }
+            catch { }
+            //    }
+            //}
             return null;
         }
 
@@ -137,39 +205,43 @@ namespace Canute.BattleSystem
             int hexY = centerCell.data.HexCoord.y;
             List<CellEntity> Nearby = new List<CellEntity>();
 
-            if (GetCellEntityByHex(hexX, hexY + 1))
+            CellEntity yi = GetCellEntityByHex(hexX, hexY + 1);
+            if (yi)
+                Nearby.Add(yi);   //Y+1 
+
+
+            CellEntity xi = GetCellEntityByHex(hexX + 1, hexY);
+            if (xi)
             {
-                Nearby.Add(GetCellEntityByHex(hexX, hexY + 1));   //Y+1
+                Nearby.Add(xi);   //X+1
             }
 
 
-            if (GetCellEntityByHex(hexX + 1, hexY))
+            CellEntity zi = GetCellEntityByHex(hexX + 1, hexY - 1);
+            if (zi)
             {
-                Nearby.Add(GetCellEntityByHex(hexX + 1, hexY));   //X+1
+                Nearby.Add(zi);//z+1
             }
 
 
-            if (GetCellEntityByHex(hexX + 1, hexY - 1))
+            CellEntity iy = GetCellEntityByHex(hexX, hexY - 1);
+            if (iy)
             {
-                Nearby.Add(GetCellEntityByHex(hexX + 1, hexY - 1));//z+1
+                Nearby.Add(iy);   //Y-1
             }
 
 
-            if (GetCellEntityByHex(hexX, hexY - 1))
+            CellEntity ix = GetCellEntityByHex(hexX - 1, hexY);
+            if (ix)
             {
-                Nearby.Add(GetCellEntityByHex(hexX, hexY - 1));   //Y-1
+                Nearby.Add(ix);   //X-1
             }
 
 
-            if (GetCellEntityByHex(hexX - 1, hexY))
+            CellEntity iz = GetCellEntityByHex(hexX - 1, hexY + 1);
+            if (iz)
             {
-                Nearby.Add(GetCellEntityByHex(hexX - 1, hexY));   //X-1
-            }
-
-
-            if (GetCellEntityByHex(hexX - 1, hexY + 1))
-            {
-                Nearby.Add(GetCellEntityByHex(hexX - 1, hexY + 1));//Z
+                Nearby.Add(iz);//Z
             }
 
 
@@ -278,7 +350,7 @@ namespace Canute.BattleSystem
         /// <param name="centerCell"></param>
         /// <param name="range"></param> 
         /// <returns></returns>
-        public List<CellEntity> GetAttackArea(CellEntity centerCell, int range, BattleableEntityData battleArmy)
+        public List<CellEntity> GetAttackArea(CellEntity centerCell, int range, BattleEntityData battleArmy)
         {
             List<CellEntity> currentLevel = new List<CellEntity> { centerCell };
             List<List<CellEntity>> cellLevel = new List<List<CellEntity>> { new List<CellEntity>(currentLevel) };
@@ -290,7 +362,7 @@ namespace Canute.BattleSystem
                 foreach (CellEntity cellEntity in currentLevel)             //浏览当前层
                 {
                     List<CellEntity> nearbyCells = new List<CellEntity>();
-                    List<CellEntity> nearbyCellsWithArmy = GetNearbyCell(cellEntity);//获取临近格子
+                    List<CellEntity> nearbyCellsWithArmy = GetNearbyCell(cellEntity).Where((cell) => cell.data.canStandOn).ToList();//获取临近格子
                     nearbyCellsWithArmy = nearbyCellsWithArmy.Except(allCells).ToList();
 
                     foreach (CellEntity cell in nearbyCellsWithArmy)
@@ -330,7 +402,7 @@ namespace Canute.BattleSystem
         /// <param name="centerCell"></param>
         /// <param name="range"></param> 
         /// <returns></returns>
-        public List<CellEntity> GetMoveArea(CellEntity centerCell, int range, BattleableEntityData battleArmy)
+        public List<CellEntity> GetMoveArea(CellEntity centerCell, int range, BattleEntityData battleArmy)
         {
             List<CellEntity> currentLevel = new List<CellEntity> { centerCell };
             List<List<CellEntity>> cellLevel = new List<List<CellEntity>> { new List<CellEntity>(currentLevel) };
@@ -342,7 +414,7 @@ namespace Canute.BattleSystem
                 foreach (CellEntity cellEntity in currentLevel)             //浏览当前层
                 {
                     List<CellEntity> nearbyCells = new List<CellEntity>();
-                    List<CellEntity> nearbyCellsWithArmy = GetNearbyCell(cellEntity);//获取临近格子
+                    List<CellEntity> nearbyCellsWithArmy = GetNearbyCell(cellEntity).Where((cell) => cell.data.canStandOn).ToList();//获取临近格子
                     nearbyCellsWithArmy = nearbyCellsWithArmy.Except(allCells).ToList();
 
                     foreach (CellEntity cell in nearbyCellsWithArmy)
@@ -351,18 +423,18 @@ namespace Canute.BattleSystem
                         {
                             nearbyCells.Add(cell);
                         }
-                        else
-                        {
-                            bool isvalid = false;
-                            if (cell.HasArmyStandOn)
-                            {
-                                isvalid = cell.HasArmyStandOn.data.StandPosition != battleArmy.StandPosition;
-                            }
-                            if (isvalid)
-                            {
-                                nearbyCells.Add(cell);
-                            }
-                        }
+                        //else
+                        //{
+                        //    bool isvalid = false;
+                        //    if (cell.HasArmyStandOn)
+                        //    {
+                        //        isvalid = cell.HasArmyStandOn.data.StandPosition != battleArmy.StandPosition;
+                        //    }
+                        //    if (isvalid)
+                        //    {
+                        //        nearbyCells.Add(cell);
+                        //    }
+                        //}
                     }
 
                     nearbyCells = nearbyCells.Except(allCells).ToList();  //保留没有被使用过的格子
@@ -557,14 +629,14 @@ namespace Canute.BattleSystem
             return cellEntities;
         }
 
-        protected List<CellEntity> DrawBorder(List<CellEntity> inner, List<CellEntity> outer)
+        public List<CellEntity> DrawBorder(List<CellEntity> inner, List<CellEntity> outer)
         {
             List<CellEntity> border = outer.Except(inner).ToList();
             foreach (var item in inner)
             {
                 foreach (var cellEntity in item.NearByCells)
                 {
-                    if (cellEntity.NearByCells.Concat(border).ToList().Count <= 2)
+                    if (cellEntity.NearByCells.Concat(border).ToList().Count <= 2 && !IsBorderCell(cellEntity))
                     {
                         border.Add(cellEntity);
                     }
@@ -591,6 +663,115 @@ namespace Canute.BattleSystem
             return new Vector2Int(columnEntities[InColumnOf(cellEntity)].cellEntities.IndexOf(cellEntity), InColumnOf(cellEntity));
         }
 
+        public bool IsBorderCell(CellEntity cellEntity)
+        {
+            if (!GetCell(cellEntity.Coordinate))
+            {
+                return false;
+            }
+            if (cellEntity.Coordinate.x == 0 || cellEntity.Coordinate.x == 0)
+            {
+                return true;
+            }
+            if (cellEntity.Coordinate.y == 0 || cellEntity.Coordinate.y == 0)
+            {
+                return true;
+            }
+            if (cellEntity.Coordinate.x == columnEntities.Count || cellEntity.Coordinate.x == columnEntities.Count)
+            {
+                return true;
+            }
+            if (cellEntity.Coordinate.y == columnEntities.Count || cellEntity.Coordinate.y == columnEntities.Count)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public List<CellEntity> GetRectArea(Vector2Int p1, Vector2Int p2)
+        {
+            if (p1.x > p2.x || p1.y > p2.y)
+            {
+                return new List<CellEntity>();
+            }
+
+            var list = new List<CellEntity>();
+            for (int i = p1.y; i <= p2.y; i++)
+            {
+                for (int j = p1.x; j <= p2.x; j++)
+                {
+                    list.Add(GetCell(j, i));
+                }
+            }
+
+            return list;
+        }
+
+        public void OpenArea(List<CellEntity> area)
+        {
+            foreach (var item in area)
+            {
+                item.data.canStandOn = true;
+                item.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+
+        public static void MoveMap()
+        {
+            Vector3 finalPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 delta = finalPos - Control.instance.inputPos;
+
+            if (Vector3.Magnitude(delta) == 0)
+            {
+                return;
+            }
+
+            //if (Game.CurrentBattle.OngoingAnimation.Count != 0)
+            //{
+            //    return;
+            //}
+
+            if (Module.Motion.ongoingMotions.Count > 0)
+            {
+                return;
+            }
+
+            Vector2 newPos = CurrentMap.Center.transform.position + delta;
+            float magnitude = (new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y) - newPos).magnitude;
+            //Debug.Log(CurrentMap.Center.transform.position);
+            //Debug.Log(delta);
+            //Debug.Log(newPos);
+            //Debug.Log(Camera.main.transform.position);
+            //Debug.Log(magnitude);
+            //Debug.Log(CurrentMap.transform.position);
+            //Debug.Log("============");
+
+            if (magnitude > CurrentMap.MapRadius)
+            {
+                Vector2 oldPos = CurrentMap.Center.transform.position;
+                float oldMagnitude = (new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y) - oldPos).magnitude;
+                if (magnitude > oldMagnitude)
+                {
+                    return;
+                }
+            }
+
+            // Debug.Log(delta.magnitude);
+            WasOnDrag = true;
+            //CurrentMap.transform.position += delta;
+            Camera.main.transform.position -= delta;
+        }
+
+        public static void SetCellCollider(bool value)
+        {
+            foreach (var item in CurrentMap)
+            {
+                foreach (var cell in item)
+                {
+                    cell.GetComponent<Collider2D>().enabled = value;
+                }
+            }
+        }
 
         public static List<CellEntity> GetBorderCell(List<CellEntity> cellEntities)
         {
@@ -610,7 +791,6 @@ namespace Canute.BattleSystem
             }
             return cells;
         }
-
     }
 
     #region With Map

@@ -9,10 +9,12 @@ namespace Canute.BattleSystem.UI
 {
     public class BattleUI : BattleUIBase
     {
+        public GameObject mapAnchor;
+        public Battle battle;
+
+
         public static BattleUI instance;
         public static IWindow currentWindow;
-
-        public GameObject mapAnchor;
         public static GameObject MapAnchor => instance.mapAnchor;
         public static GraphicRaycaster Raycaster => instance.GetComponent<GraphicRaycaster>();
         public static Canvas UICanvas => instance.GetComponent<Canvas>();
@@ -24,22 +26,33 @@ namespace Canute.BattleSystem.UI
         [Header("UI components")]
         public HighBar highBar;
         public static HighBar HighBar => instance.highBar;
+
         public RightPanel rightPanel;
         public static RightPanel RightPanel => instance.rightPanel;
+
         public LeftPanel leftPanel;
         public static LeftPanel LeftPanel => instance.leftPanel;
+
         public ArmyBar armyBar;
         public static ArmyBar ArmyBar => instance.armyBar;
+
         public PausePanel pausePanel;
         public static PausePanel PausePanel => instance.pausePanel;
+
         public EndPanel endUI;
         public static EndPanel EndUI => instance.endUI;
-        public HandCardBar handCardBar;
-        public static HandCardBar ClientHandCardBar => instance.handCardBar;
 
+        public EndlessResultUI endlessEndUI;
+        public static EndlessResultUI EndlessEndUI => instance.endlessEndUI;
+
+        public HandCardBar handCardBar;
         public static HandCardBar HandCardBar => Game.CurrentBattle.Enemy.IsInTurn ? EnemyHandCardBar : ClientHandCardBar;
+        #region HandCard Bar
+        public static HandCardBar ClientHandCardBar => instance.handCardBar;
         public HandCardBar enemyHandCardBar;
         public static HandCardBar EnemyHandCardBar => instance.enemyHandCardBar;
+
+        #endregion
         public RightPanel enemyRightPanel;
         public static RightPanel EnemyRightPanel => instance.enemyRightPanel;
         [Header("AI")]
@@ -77,7 +90,11 @@ namespace Canute.BattleSystem.UI
         {
             Debug.Log("Battle in prepare");
             Game.CurrentBattle.Prepare();
-
+            battle = Game.CurrentBattle;
+            if (Game.CurrentBattle.AvoidPlayerLegion)
+            {
+                Game.CurrentBattle.Start();
+            }
         }
 
         // Update is called once per frame
@@ -157,7 +174,7 @@ namespace Canute.BattleSystem.UI
             HandCardBar.GetHandCardBar(instance.Player).HideCards(!value);
         }
 
-        public static void SetPlayerUI(Player player, bool value)
+        public static void ChangePlayerUI(Player player, bool value)
         {
             if (Game.Configuration.PvP)
             {
@@ -171,10 +188,10 @@ namespace Canute.BattleSystem.UI
                 handCardBar.gameObject.SetActive(value);
                 handCardBar.transform.parent.gameObject.SetActive(value);
             }
-            SetCamera();
+            ChangeCameraDisplay();
         }
 
-        public static void SetCamera()
+        public static void ChangeCameraDisplay()
         {
             if (Game.Configuration.PlayerAutoSwitch)
             {

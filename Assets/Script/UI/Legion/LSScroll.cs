@@ -57,14 +57,14 @@ namespace Canute.UI
 
             switch (type)
             {
-                case Item.Type.Army:
+                case Item.Type.army:
 
                     foreach (ArmyItem item in Game.PlayerData.Armies)
                     {
                         Create(item);
                     }
                     break;
-                case Item.Type.Leader:
+                case Item.Type.leader:
                     foreach (LeaderItem item in Game.PlayerData.Leaders)
                     {
                         Create(item);

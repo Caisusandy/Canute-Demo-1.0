@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c617994c77316468e11869ad9eb814, type: 3}
+  m_Name: Commands
+  m_EditorClassIdentifier: 
+  commands:
+    list:
+    - name: print
+      params:
+      - key: string
+        type: 2
+        default: 
+        possibleValue: []
+    - name: kill
+      params:
+      - key: '@selectingEntity'
+        type: 0
+        default: 
+        possibleValue: []
+    - name: getArmyItem
+      params:
+      - key: prototypeName
+        type: 2
+        default: 
+        possibleValue: []
+    - name: reloadDefaultPrototype
+      params: []
+    - name: execute
+      params:
+      - key: source
+        type: 0
+        default: 
+        possibleValue: []
+      - key: type
+        type: 2
+        default: 
+        possibleValue:
+        - attack
+        - event
+        - move
+      - key: target UUID
+        type: 2
+        default: 
+        possibleValue: []
+      - key: count
+        type: 1
+        default: 1
+        possibleValue: []
+      - key: parameter
+        type: 1
+        default: 0
+        possibleValue: []
+      - key: args
+        type: 6
+        default: 0
+        possibleValue: []
+    - name: getUUID
+      params:
+      - key: '@selectingEntity'
+        type: 0
+        default: 
+        possibleValue: []

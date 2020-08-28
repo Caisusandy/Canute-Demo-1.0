@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -24,13 +25,11 @@ namespace Canute.BattleSystem
         protected const string isDefeated = "isDefeated";
         protected const string isDefencing = "isDefencing";
         protected const string isWinning = "isWinning";
+        protected const string isDragingCard = "isDraging";
         protected const string isIdle = "isIdle";
         #endregion
 
         public static List<Entity> entities = new List<Entity>();
-
-        [SerializeField] protected Animator animator;
-
         public static event SelectEvent SelectEvent;
         public static event SelectEvent UnselectEvent;
 
@@ -43,13 +42,14 @@ namespace Canute.BattleSystem
         /// <summary> UUID of the entity (actually store in Data)</summary>
         public virtual UUID UUID { get => Data is null ? UUID.Empty : Data.UUID; set => Data.UUID = value; }
         /// <summary> Animator of the entity</summary>
-        public virtual Animator Animator { get => animator; set => animator = value; }
+        public virtual Animator Animator { get => GetComponent<Animator>(); }
         /// <summary> entity</summary>
         public virtual Entity entity => this;
 
 
         /// <summary> is any action is occuring </summary>
-        public bool IsIdle => animator.GetBool(isIdle);
+        public bool IsIdle => Animator.GetBool(isIdle);
+
 
         public virtual void Awake()
         {
@@ -79,13 +79,13 @@ namespace Canute.BattleSystem
 
         public virtual void OnDestroy()
         {
-            animator.RemoveFromBattle();
+            Animator.RemoveFromBattle();
             entities?.Remove(this);
             Debug.Log("the entity is destroyed " + this);
         }
 
         /// <summary>
-        /// Detroy the Entity
+        /// Detroy the Entity and clear anything neccesary
         /// </summary>
         public virtual void Destroy()
         {
@@ -98,7 +98,7 @@ namespace Canute.BattleSystem
         /// <param name="IsSelected"></param>
         public virtual void TriggerSelectEvent(bool IsSelected)
         {
-            if (CellEntity.WasOnDrag)
+            if (MapEntity.WasOnDrag)
             {
                 return;
             }
@@ -114,8 +114,8 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         public virtual Coroutine Action(Func<object[], IEnumerator> action, params object[] param)
         {
-            return StartCoroutine(Action(action(param)));
-
+            var c = StartCoroutine(Action(action(param)));
+            return c;
         }
 
         /// <summary>
@@ -128,8 +128,8 @@ namespace Canute.BattleSystem
             //if (isInAction)
             //{
             //    return null;
-            //}
-            Coroutine coroutine = StartCoroutine(Action(AsIEnumerator(entityEvent)));
+            //} 
+            var coroutine = StartCoroutine(Action(AsIEnumerator(entityEvent)));
             return coroutine;
         }
 
@@ -167,7 +167,7 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         protected virtual IEnumerator Action(IEnumerator enumerator)
         {
-            Debug.Log("action start");
+            //Debug.Log("action start");
             yield return enumerator;
         }
 
@@ -176,8 +176,8 @@ namespace Canute.BattleSystem
         /// </summary>
         protected virtual void InPerformingAnimation()
         {
-            animator.SetBool(isIdle, false);
-            animator.AddToBattle();
+            Animator.SetBool(isIdle, false);
+            Animator.AddToBattle();
         }
 
         /// <summary>
@@ -186,15 +186,15 @@ namespace Canute.BattleSystem
         /// <param name="vs"></param>
         protected virtual void Idle(params object[] vs)
         {
-            foreach (var item in animator.parameters)
+            foreach (var item in Animator.parameters)
             {
                 if (item.type == AnimatorControllerParameterType.Bool)
                 {
-                    animator.SetBool(item.name, false);
+                    Animator.SetBool(item.name, false);
                 }
             }
-            animator.SetBool(isIdle, true);
-            animator.TryRemoveFromBattle();
+            Animator.SetBool(isIdle, true);
+            Animator.TryRemoveFromBattle();
 
         }
 
@@ -267,11 +267,17 @@ namespace Canute.BattleSystem
 
         public static void Initialize()
         {
-            entities = new List<Entity>();
+            foreach (var item in entities)
+            {
+                if (item)
+                    item.Destroy();
+            }
+            entities.Clear();
+            ArmyEntity.onMap.Clear();
+            BuildingEntity.onMap.Clear();
+            CardEntity.cards.Clear();
+            ArmyCardEntity.armyCards.Clear();
             OnMapEntity.SelectingEntity = null;
-            ArmyEntity.onMap = new List<ArmyEntity>();
-            BuildingEntity.onMap = new List<BuildingEntity>();
-            CardEntity.cards = new List<CardEntity>();
             CardEntity.SelectingCard = null;
             CardEntity.SelectingEntity = null;
         }
@@ -361,21 +367,11 @@ namespace Canute.BattleSystem
             return IsSelected;
         }
 
-        public virtual void OnMouseDown()
-        {
+        public virtual void OnMouseDown() { }
 
-        }
+        public virtual void OnMouseDrag() { }
 
-        public virtual void OnMouseDrag()
-        {
-
-        }
-
-        public virtual void OnMouseUp()
-        {
-            ToggleSelect();
-            TriggerSelectEvent(IsSelected);
-        }
+        public virtual void OnMouseUp() { ToggleSelect(); TriggerSelectEvent(IsSelected); }
 
     }
 
@@ -385,7 +381,7 @@ namespace Canute.BattleSystem
         public override void Start() { }
         public override Player Owner => null;
         public override string Name => string.Empty;
-        public override UUID UUID { get => UUID.Empty; set => Debug.LogError("trying to assign a decorative entity a UUID is incorrect"); }
+        public override UUID UUID { get => UUID.Empty; set => Debug.LogError("trying to assign a decorative entity a UUID is invalid"); }
     }
 
     /// <summary>

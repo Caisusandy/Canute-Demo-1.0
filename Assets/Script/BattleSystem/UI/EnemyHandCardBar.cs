@@ -10,7 +10,7 @@ namespace Canute.BattleSystem.UI
         public override void Start()
         {
             base.Start();
-            BattleUI.SetPlayerUI(Player, false);
+            BattleUI.ChangePlayerUI(Player, false);
 
             enabled = false;
             gameObject.SetActive(false);

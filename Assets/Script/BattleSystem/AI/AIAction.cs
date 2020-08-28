@@ -1,94 +1,97 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Canute.BattleSystem.AI
 {
     public static partial class AIAction
     {
-        //public static KeyValuePair<CellEntity, ArmyEntity> GetBestDestinationAndTarget(ArmyEntity armyEntity)
-        //{
-        //    CellEntity bestDestination = null;
-        //    ArmyEntity target = null;
-        //    List<CellEntity> moveArea = armyEntity.GetAttackArea();
-        //    List<ArmyEntity> possibleTargets = armyEntity.GetTargetAfterMove();
+        public static void ArmyAttack(ArmyEntity entity)
+        {
+            var targets = entity.GetPossibleTargets();
+            if (targets.Count != 0)
+            {
+                AttackClosest(entity, targets.ToArray());
+                return;
+            }
 
-        //    if (possibleTargets.Count == 0)
-        //    {
-        //        return default;
-        //    }
+            IPassiveEntity closestTarget = entity.GetClosestTarget();
+            CellEntity destination = null;
+            foreach (var item in entity.data.GetMoveArea())
+            {
+                if (item.HasArmyStandOn)
+                {
+                    continue;
+                }
+                if (!destination)
+                {
+                    destination = item;
+                }
+                int d1 = item.GetPointDistanceOf(closestTarget.entity);
+                int d = destination.GetPointDistanceOf(closestTarget.entity);
 
-        //    //try to find a destination that enemy cannnot attack but army can attack enemy
-        //    foreach (var possibleTarget in possibleTargets)
-        //    {
-        //        if (possibleTarget.data.Properties.AttackRange > armyEntity.data.Properties.MoveRange)
-        //        {
-        //            continue;
-        //        }
+                if (d1 < d && d1 != 0)
+                {
+                    destination = item;
+                }
+            }
+            if (!destination)
+            {
+                Debug.Log("no destination to go?");
+                return;
+            }
+            ArmyMovement.SetPath(PathFinder.GetPath(entity.OnCellOf, destination, entity.data.Properties.MoveRange, PathFinder.FinderParam.ignoreBuilding | (entity.data.StandPosition == BattleProperty.Position.land ? PathFinder.FinderParam.ignoreAirArmy : PathFinder.FinderParam.ignoreLandArmy)));
+            new Effect(Effect.Types.move, entity, destination, 1, 0).Execute();
+        }
 
-        //        target = possibleTarget;
-        //        IEnumerable<CellEntity> areaCannotBeAttacked = moveArea.Concat(possibleTarget.GetAttackRange());
-        //        CellEntity cellEntity = areaCannotBeAttacked.First();
-        //        foreach (var item in areaCannotBeAttacked)
-        //        {
-        //            if (item.GetRealDistanceOf(possibleTarget, armyEntity) < cellEntity.GetRealDistanceOf(possibleTarget, armyEntity))
-        //            {
-        //                cellEntity = item;
-        //            }
-        //        }
-        //        bestDestination = cellEntity;
-        //    }
-        //    if (bestDestination)
-        //    {
-        //        return new KeyValuePair<CellEntity, ArmyEntity>(bestDestination, target);
-        //    }
-        //    //if there is not
-        //    target = possibleTargets[0];
-        //    foreach (var possibleTarget in possibleTargets)
-        //    {
-        //        if (possibleTarget.data.RawDamage < target.data.RawDamage)
-        //        {
-        //            target = possibleTarget;
-        //        }
-        //    }
-        //    bestDestination = moveArea[0];
-        //    foreach (var item in moveArea)
-        //    {
-        //        if (item.GetRealDistanceOf(target, armyEntity) < bestDestination.GetRealDistanceOf(target, armyEntity))
-        //        {
-        //            bestDestination = item;
-        //        }
-        //    }
-        //    return new KeyValuePair<CellEntity, ArmyEntity>(bestDestination, target);
-        //}
 
-        /// <summary>
-        /// Get the best target (determine by HP)
-        /// </summary>
-        /// <param name="armyEntity"></param>
-        /// <param name="origin"></param>
-        /// <returns></returns>
-        //public static ArmyEntity BestTarget(ArmyEntity armyEntity, CellEntity origin = null)
-        //{
-        //    if (origin)
-        //    {
-        //        origin = armyEntity.OnCellOf;
-        //    }
-        //    List<ArmyEntity> list = armyEntity.GetTargets(origin, armyEntity.data.Properties.AttackRange);
-        //    if (list.Count == 1)
-        //    {
-        //        return list[0];
-        //    }
-        //    ArmyEntity target = list[0];
-        //    for (int i = 1; i < list.Count; i++)
-        //    {
-        //        ArmyEntity item = list[i];
-        //        if (item.data.Health < target.data.Health)
-        //        {
-        //            target = item;
-        //        }
-        //    }
-        //    return target;
-        //}
+        public static void ArmyPatrol(ArmyEntity entity)
+        {
+            var targets = entity.GetPossibleTargets();
+            if (targets.Count != 0)
+            {
+                AttackClosest(entity, targets.ToArray());
+                return;
+            }
 
+
+            Args args = entity.data.RawProperties.Addition;
+            var curPos = entity.Coordinate;
+            var posID = 0;
+            for (int i = 0; i < args.Count; i++)
+            {
+                Debug.Log(args[i].Value);
+                Debug.Log(!args[i].Value.IsVector2());
+                if (!args[i].Value.IsVector2())
+                {
+                    continue;
+                }
+                if (args[i].Value.ToVector2Int() == curPos)
+                {
+                    posID = i + 1;
+                    break;
+                }
+            }
+            var nextCellCoord = args[posID.ToString()].IsVector2() ? args[posID.ToString()].ToVector2Int() : args["0"].ToVector2Int();
+            var nextCell = Game.CurrentBattle.MapEntity[nextCellCoord];
+            new Effect(Effect.Types.@event, entity, nextCell, 1, 0, "name:move").Execute();
+        }
+        private static void AttackClosest(ArmyEntity entity, params IPassiveEntity[] targets)
+        {
+            IPassiveEntity closestTarget = null;
+            foreach (var target in targets)
+            {
+                if (closestTarget is null)
+                {
+                    closestTarget = target;
+                    continue;
+                }
+                if (target.GetPointDistanceOf(entity) < closestTarget.GetPointDistanceOf(entity))
+                {
+                    closestTarget = target;
+                }
+            }
+
+            new Effect(Effect.Types.attack, entity, closestTarget.entity, 1, entity.data.Damage).Execute();
+        }
     }
 }

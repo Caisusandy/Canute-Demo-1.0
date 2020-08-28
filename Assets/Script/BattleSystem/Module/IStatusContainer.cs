@@ -25,13 +25,17 @@ namespace Canute.BattleSystem
                 {
                     Status stat = stats[i];
 
-                    if (stat.TriggerConditions.CanTrigger())
+                    if (!stat.TriggerConditions.CanTrigger())
                     {
-                        stat.Execute();
+                        continue;
+                    }
+                    else if (stat.Type == Status.StatType.delay && stat.TurnCount != 1)
+                    {
+                        continue;
                     }
                     else
                     {
-                        //Debug.Log(item.Type + " is not available");
+                        stat.Execute();
                     }
                 }
                 container.StatList.ClearInvalid();
@@ -68,6 +72,10 @@ namespace Canute.BattleSystem
                     Debug.LogWarning("An status cannot be triggered: " + item);
                     continue;
                 }
+                else if (item.Type == Status.StatType.delay && item.TurnCount != 1)
+                {
+                    continue;
+                }
                 item.Execute(ref effect);
             }
 
@@ -93,6 +101,10 @@ namespace Canute.BattleSystem
                     Debug.LogWarning("An status cannot be triggered: " + item);
                     continue;
                 }
+                else if (item.Type == Status.StatType.delay && item.TurnCount != 1)
+                {
+                    continue;
+                }
                 item.Execute();
             }
 
@@ -110,11 +122,15 @@ namespace Canute.BattleSystem
             {
                 Status stat = stats[i];
 
-                if (stat.TriggerConditions.CanTrigger())
+                if (!stat.TriggerConditions.CanTrigger())
                 {
-                    stat.Execute();
                     continue;
                 }
+                else if (stat.Type == Status.StatType.delay && stat.TurnCount != 1)
+                {
+                    continue;
+                }
+                stat.Execute();
                 //Debug.Log(item.Type + " is not available");
 
             }
@@ -157,7 +173,7 @@ namespace Canute.BattleSystem
         {
             foreach (Status stat in container.StatList)
             {
-                if (stat.IsBaseOnTurn || stat.IsDualBase)
+                if (stat.IsBaseOnTurn || stat.IsDualBase || stat.Type == Status.StatType.delay)
                 {
                     stat.TurnCount--;
                 }

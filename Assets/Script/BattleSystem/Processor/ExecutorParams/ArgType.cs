@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Canute.Module
+namespace Canute
 {
     [SerializeField]
     public class ArgType<TValue> : INameable

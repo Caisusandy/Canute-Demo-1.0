@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a598e8f8415514cb46cd2ad10bcb73, type: 3}
+  m_Name: 1-2
+  m_EditorClassIdentifier: 
+  levelName: 1-2
+  battle:
+    battleType: 3
+    avoidPlayerDefinedLegionSet: 0
+    prizes:
+    - name: 
+      count: 500
+      type: 6
+      leaderRequirement: []
+      armyRequirement: 
+      time:
+        hours: 0
+        minutes: 0
+        seconds: 0
+    enemy:
+      name: Septia Army
+      prefab: {fileID: 6470687005625561500, guid: f4715b1d4b01df64b81c6c575a746d48,
+        type: 3}
+      uuid:
+        value: acdb0dfd-e782-4a84-ace6-879fd8ae20ed
+      ownerUUID:
+        value: acdb0dfd-e782-4a84-ace6-879fd8ae20ed
+      personality: -1
+      viceCommander:
+        name: 
+        prefab: {fileID: 0}
+        uuid:
+          value: 4db3b99a-882c-4262-b230-c9045fa63824
+        ownerUUID:
+          value: 
+        allowMove: 0
+        coordinate: {x: 0, y: 0}
+        stats:
+          list: []
+        career: 0
+        leadingArmyUUID:
+          value: 
+        isViceCommander: 0
+        level: 0
+        bounes: []
+      pile:
+        eventCardUUID:
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+      maxHandCardCount: 7
+      maxArmyCount: 0
+      actionPoint: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+    thirdParties: []
+    waveInfo:
+    - battleArmies:
+      - {fileID: 11400000, guid: 817aa0499da711447bf3de741eb51489, type: 2}
+      battleBuildings:
+      - {fileID: 11400000, guid: ddeb82d9344935f49b8dfd52e6324db1, type: 2}
+      - {fileID: 11400000, guid: c056018643bee8e4e879a63b39912e1b, type: 2}
+    - battleArmies:
+      - {fileID: 11400000, guid: c05d46f092a279941bce6a17a00ead21, type: 2}
+      battleBuildings:
+      - {fileID: 11400000, guid: f2a465779692c1d44bb29c8328ea39f9, type: 2}
+    - battleArmies:
+      - {fileID: 11400000, guid: 011aa0fa84f560c41aa5b67003c06637, type: 2}
+      battleBuildings:
+      - {fileID: 11400000, guid: 6b36c178cf6fbcc4bb8602973d4b26ee, type: 2}
+    mapPrefab: {fileID: 4116854825515643529, guid: cca357af52fb4694cb5db11fdc050d2e,
+      type: 3}
+    player:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: 0dc675e5-5f19-456c-9dd9-6b2c97376d0a
+      ownerUUID:
+        value: 
+      personality: 0
+      viceCommander:
+        name: 
+        prefab: {fileID: 0}
+        uuid:
+          value: f498fea6-6cfc-40c0-b3d7-ffa327decfea
+        ownerUUID:
+          value: 
+        allowMove: 0
+        coordinate: {x: 0, y: 0}
+        stats:
+          list: []
+        career: 0
+        leadingArmyUUID:
+          value: 
+        isViceCommander: 0
+        level: 0
+        bounes: []
+      pile:
+        eventCardUUID:
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+      maxHandCardCount: 7
+      maxArmyCount: 0
+      actionPoint: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+    round:
+      wave: 0
+      round: 0
+      turn: 0
+      stat: 0
+      currentPlayerUUID:
+        value: 
+    stat: 0
+    centralDeck:
+      list: []
+    armies: []
+    buildings: []
+    globalStatus: []
+    ongoingAnimation: []
+    passedEffect: []
+    scoreBoard:
+      list: []
+      allPassedEffect: []
+      totalPlayerDamage: 890
+      totalAirforceDefeated: 0
+      totalLandArmyDefeated: 9

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 namespace Canute.BattleSystem
 {
@@ -8,6 +9,7 @@ namespace Canute.BattleSystem
     public abstract class OnMapEntity : InteractableEntity, IOnMapEntity, IStatusContainer
     {
         public static OnMapEntity SelectingEntity;
+        public MarkController entityMark;
 
 
         public virtual CellEntity OnCellOf => transform.parent.GetComponent<CellEntity>();
@@ -19,6 +21,7 @@ namespace Canute.BattleSystem
         public virtual bool AllowMove { get => OnMapData.AllowMove; set => OnMapData.AllowMove = value; }
         public virtual StatusList StatList => OnMapData.StatList;
         public virtual StatusList GetAllStatus() => OnMapData.GetAllStatus();
+        public new OnMapEntity entity => Get<OnMapEntity>(UUID);
         public abstract BattleProperty.Position StandPostion { get; }
 
         public int GetPointDistanceOf(OnMapEntity destination)
@@ -43,13 +46,15 @@ namespace Canute.BattleSystem
 
         public override void Select()
         {
-            SelectingEntity?.Unselect();
+            SelectingEntity.Exist()?.Unselect();
             base.Select();
             SelectingEntity = this;
         }
 
         public override void Unselect()
         {
+            if (SelectingEntity != this)
+                SelectingEntity.Exist()?.Unselect();
             SelectingEntity = null;
             base.Unselect();
         }
@@ -74,6 +79,21 @@ namespace Canute.BattleSystem
             }
 
             return PathFinder.GetPath(onMapEntity.OnCellOf, onMapEntity2.OnCellOf, -1, finderParam).Count;
+        }
+
+        internal static void SetAllEntityCollider(bool v)
+        {
+            foreach (var item in entities)
+            {
+                if (item is OnMapEntity)
+                {
+                    try
+                    {
+                        item.GetComponent<Collider2D>().enabled = false;
+                    }
+                    catch { }
+                }
+            }
         }
     }
 }

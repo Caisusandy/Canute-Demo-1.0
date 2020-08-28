@@ -17,32 +17,28 @@ namespace Canute.BattleSystem
                 Career career = (Career)i;
                 for (int j = 0; j < 12; j++)
                 {
-                    Add(new Card(Card.Types.normal, career, new Effect(Effect.Types.enterAttack, 1), 2, Card.TargetType.self | Card.TargetType.armyEntity));
+                    Add(new Card(Card.Types.normal, career, new Effect(Effect.Types.enterAttack, 1), 3, TargetType.self | TargetType.armyEntity));
                 }
                 for (int j = 0; j < 12; j++)
                 {
-                    Add(new Card(Card.Types.normal, career, new Effect(Effect.Types.enterMove, 1), 3, Card.TargetType.self | Card.TargetType.armyEntity));
+                    Add(new Card(Card.Types.normal, career, new Effect(Effect.Types.enterMove, 1), 2, TargetType.self | TargetType.armyEntity));
                 }
             }
             for (int j = 0; j < 8; j++)
             {
-                Add(new Card(Card.Types.centerEvent, Career.none, new Effect(Effect.Types.armySwitch, 1), 1, Card.TargetType.self | Card.TargetType.armyEntity));
+                Add(new Card(Card.Types.centerEvent, GameData.Prototypes.GetEventCardPrototype("armySwitch")));
             }
             for (int j = 0; j < 8; j++)
             {
-                Add(new Card(Card.Types.centerEvent, Career.none, new Effect(Effect.Types.drawCard, 1, 2), 1, Card.TargetType.self));
+                Add(new Card(Card.Types.centerEvent, GameData.Prototypes.GetEventCardPrototype("drawCard")));
             }
             for (int j = 0; j < 8; j++)
             {
-                Effect effect = new Effect(Effect.Types.addActionPoint, 1, -3);
-                effect.SetSpecialName("cardMinusPoint");
-                base.Add(new Card(Card.Types.centerEvent, Career.none, effect, 1, Card.TargetType.cardEntity));
+                Add(new Card(Card.Types.centerEvent, GameData.Prototypes.GetEventCardPrototype("cardMinusPoint")));
             }
             for (int j = 0; j < 8; j++)
             {
-                Effect effect = new Effect(PropertyType.attackRange | PropertyType.moveRange, BounesType.percentageIncrease, 1, -50, Effect.tc + ",1", Effect.statusAddingEffect + ",true", "onMove,true");
-                effect.SetSpecialName("confusion");
-                base.Add(new Card(Card.Types.centerEvent, Career.none, effect, 1, Card.TargetType.enemy | Card.TargetType.armyEntity));
+                Add(new Card(Card.Types.centerEvent, GameData.Prototypes.GetEventCardPrototype("confusion")));
             }
             Refresh();
         }
@@ -73,7 +69,7 @@ namespace Canute.BattleSystem
             return card;
         }
 
-        private Card DrawCard(Effect.Types types)
+        public Card DrawCard(Effect.Types types)
         {
             if (Count == 0)
             {
@@ -91,35 +87,6 @@ namespace Canute.BattleSystem
             Generated();
             return DrawCard(types);
         }
-
-        ///<summary> 获取手牌的方法 </summary>
-        public void GetHandCard(Player player, int count)
-        {
-            Debug.Log(player.Name + ", " + count);
-            for (int i = 0; i < count; i++)
-            {
-                Card card = DrawCard();
-                card.Owner = player;
-                player.AddHandCard(card);
-            }
-            Debug.Log(player.HandCard.Count);
-        }
-
-        ///<summary> 获取手牌的方法 </summary>
-        public void GetHandCard(Player player, Effect.Types types, int count)
-        {
-            Debug.Log(player.Name + ", " + count);
-
-            for (int i = 0; i < count; i++)
-            {
-                Card card = DrawCard(types);
-                card.Owner = player;
-                player.AddHandCard(card);
-            }
-
-            Debug.Log(player.HandCard.Count);
-        }
-
     }
 }
 

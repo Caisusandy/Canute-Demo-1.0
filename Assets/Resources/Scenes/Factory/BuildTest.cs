@@ -29,36 +29,35 @@ namespace Canute.Testing
 
         }
 
-        public void Build()
-        {
-            foreach (var item in new int[1000])
-            {
+        //public void Build()
+        //{
+        //    foreach (int item in new int[1000])
+        //    {
 
-                var a = Shops.Build.BuildPrize(uint.Parse(aethium.text), uint.Parse(mantleAlloy.text), uint.Parse(manpower.text), uint.Parse(federgram.text));
-                switch (a.rarity)
-                {
-                    case Rarity.Common:
-                        common++;
-                        break;
-                    case Rarity.Rare:
-                        rare++;
-                        break;
-                    case Rarity.Epic:
-                        epic++;
-                        break;
+        //        var a = Shops.Build.BuildPrize(uint.Parse(aethium.text), uint.Parse(mantleAlloy.text), uint.Parse(manpower.text), uint.Parse(federgram.text));
+        //        switch (a.rarity)
+        //        {
+        //            case Rarity.common:
+        //                common++;
+        //                break;
+        //            case Rarity.rare:
+        //                rare++;
+        //                break;
+        //            case Rarity.epic:
+        //                epic++;
+        //                break;
+        //            case Rarity.legendary:
+        //                legend++;
+        //                break;
+        //            default:
+        //                break;
+        //        }
 
-                    case Rarity.Legendary:
-                        legend++;
-                        break;
-                    default:
-                        break;
-                }
+        //    }
+        //    Debug.Log("C " + common + "; R " + rare + "; E " + epic + "; L" + legend);
+        //    var total = common + rare + epic + legend;
+        //    Debug.Log("C " + common * 1f / total + "; R " + rare * 1f / total + "; E " + epic * 1f / total + "; L" + legend * 1f / total);
 
-            }
-            Debug.Log("C " + common + "; R " + rare + "; E " + epic + "; L" + legend);
-            var total = common + rare + epic + legend;
-            Debug.Log("C " + common * 1f / total + "; R " + rare * 1f / total + "; E " + epic * 1f / total + "; L" + legend * 1f / total);
-
-        }
+        //}
     }
 }

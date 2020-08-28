@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb39526e4d501c343815c964bda8752d, type: 3}
+  m_Name: Chapter Tree
+  m_EditorClassIdentifier: 
+  chapterTree:
+    Chapter1:
+      list: []
+    Chapter2:
+      list: []
+    Chapter3:
+      list: []
+    Chapter4:
+      list: []
+    Chapter5:
+      list: []
+    Chapter6:
+      list: []
+    Extra:
+      list:
+      - data: {fileID: 11400000, guid: b3a4018f8febfa24db074e069bad05b1, type: 2}
+        backgroundStoryName: prelog
+        endStoryName: prelog2
+        nextLevel: 
+      - data: {fileID: 11400000, guid: 55093178b0916234aaf172f5f009edf5, type: 2}
+        backgroundStoryName: prelog
+        endStoryName: prelog2
+        nextLevel: 
+      - data: {fileID: 11400000, guid: 43016f3dac1ecad45a641f8711af459f, type: 2}
+        backgroundStoryName: prelog
+        endStoryName: prelog2
+        nextLevel: 

@@ -6,10 +6,12 @@ namespace Canute.BattleSystem.UI
     public class LeftPanel : BattleUIBase
     {
         public Text nameDisplayer;
-        public Image iconDisplayer;
 
+        public Image typeBG;
+        public Image iconDisplayer;
         public Image career;
-        public Image type;
+        public Image attackPos;
+        public Image standPos;
 
         public InfoPanel infoPanel;
 
@@ -70,7 +72,7 @@ namespace Canute.BattleSystem.UI
         {
             nameDisplayer.text = "";
             career.enabled = false;
-            type.enabled = false;
+            typeBG.enabled = false;
             iconDisplayer.enabled = false;
             CloseCurrentDisplayer();
             SetPanelActive(false);
@@ -105,8 +107,8 @@ namespace Canute.BattleSystem.UI
             }
             if (SelectingEntity.Data is BattleArmy)
             {
-                type.enabled = true;
-                type.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, (SelectingEntity.Data as BattleArmy).Type.ToString());
+                typeBG.enabled = true;
+                typeBG.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, (SelectingEntity.Data as BattleArmy).Type.ToString());
             }
 
             iconDisplayer.enabled = true;
@@ -122,7 +124,7 @@ namespace Canute.BattleSystem.UI
             {
                 InfoPanelArmy armyPanelInfo = Instantiate(armyInfoPrefab, transform).GetComponent<InfoPanelArmy>();
                 infoPanel = armyPanelInfo;
-                armyPanelInfo.armyEntity = SelectingEntity as ArmyEntity;
+                armyPanelInfo.ArmyEntity = SelectingEntity as ArmyEntity;
                 armyPanelInfo.LoadStatus();
             }
             else if (SelectingEntity is BuildingEntity)
@@ -143,7 +145,7 @@ namespace Canute.BattleSystem.UI
                 return;
             }
             LastEntity = null;
-            Module.Motion.SetMotion(gameObject, transform.position - new Vector3(3, 0, 0));
+            Module.Motion.SetMotion(gameObject, transform.position - new Vector3(3, 0, 0), true);
             isShown = false;
         }
 

@@ -12,18 +12,37 @@ namespace Canute
         [SerializeField] protected Rarity rarity;
         [SerializeField] protected Sprite icon;
         [SerializeField] protected Sprite sprite;
-        [SerializeField] protected Sprite protrait;
+        [SerializeField] protected Sprite portrait;
         [SerializeField] protected GameObject prefab;
 
 
         public string DisplayingName => this.Lang("name");
         public string Name => name;
         public Rarity Rarity => rarity;
-        public Sprite Icon => icon;
-        public Sprite Portrait => protrait;
+        public Sprite Icon => GetIcon();
+        public Sprite Portrait => GetPortrait();
         public Sprite Sprite => sprite;
 
         public virtual GameObject Prefab => prefab;
+
+
+        protected virtual Sprite GetIcon()
+        {
+            if (Game.Configuration.UseCustomDefaultPrototype && !icon)
+            {
+                return GameData.Prototypes.GetPrototype(name)?.icon;
+            }
+            return icon;
+        }
+
+        protected virtual Sprite GetPortrait()
+        {
+            if (Game.Configuration.UseCustomDefaultPrototype && !icon)
+            {
+                return GameData.Prototypes.GetPrototype(name)?.portrait;
+            }
+            return portrait;
+        }
 
         protected Prototype()
         {
@@ -40,6 +59,10 @@ namespace Canute
             {
                 return false;
             }
+            else if (string.IsNullOrEmpty(prototype.name))
+            {
+                return false;
+            }
             else if (prototype.name == "Empty")
             {
                 return false;
@@ -48,29 +71,54 @@ namespace Canute
         }
     }
 
-    public abstract class PrototypeContainer<T> : ScriptableObject, INameable where T : Prototype, IPrototype, INameable
+    public abstract class PrototypeContainer : ScriptableObject, INameable
     {
+        public abstract string Name { get; }
+        /// <summary> rarity of the prototype </summary>
+        public abstract Rarity Rarity { get; }
+        /// <summary> icon of the prototype </summary>
+        public abstract Sprite Icon { get; }
+        /// <summary> sprite of the prototype </summary>
+        public abstract Sprite Sprite { get; }
+
+        public abstract Prototype GetPrototype();
+    }
+
+    public abstract class PrototypeContainer<T> : PrototypeContainer, INameable where T : Prototype, IPrototype, INameable
+    {
+        public bool isTemporaryPrototype;
+
         [SerializeField] protected T prototype;
 
         /// <summary> rarity of the prototype </summary>
-        public Rarity Rarity => Prototype.Rarity;
+        public override Rarity Rarity => Prototype.Rarity;
         /// <summary> icon of the prototype </summary>
-        public Sprite Icon => Prototype.Icon;
+        public override Sprite Icon => Prototype.Icon;
         /// <summary> sprite of the prototype </summary>
-        public Sprite Sprite => Prototype.Sprite;
+        public override Sprite Sprite => Prototype.Sprite;
 
-        public string Name => prototype.Name;
+        public override string Name => prototype.Name;
 
         public T Prototype => prototype;
 
+
         private void OnEnable()
         {
+            if (isTemporaryPrototype)
+            {
+                return;
+            }
             GameData.Prototypes.Add<PrototypeContainer<T>, T>(this);
         }
 
         public static implicit operator T(PrototypeContainer<T> prototypeContainer)
         {
             return prototypeContainer == null ? null : prototypeContainer.prototype;
+        }
+
+        public override Prototype GetPrototype()
+        {
+            return prototype;
         }
 
         public void SetPrototype(T prototype)

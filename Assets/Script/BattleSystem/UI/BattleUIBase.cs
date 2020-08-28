@@ -45,7 +45,7 @@ namespace Canute.BattleSystem.UI
             }
             isShown = true;
             gameObject.SetActive(true);
-            Motion.SetMotion(gameObject, originalPos);
+            Motion.SetMotion(gameObject, originalPos + Camera.main.transform.position, true);
         }
     }
 }

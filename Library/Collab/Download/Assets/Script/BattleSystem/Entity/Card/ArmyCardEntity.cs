@@ -28,7 +28,7 @@ namespace Canute.BattleSystem
             {
                 Game.CurrentBattle.Start();
             }
-            else if (Owner == Game.CurrentBattle.Player && Owner.Entity.Cards.Count == 0 && GameData.BuildSetting.PvP)
+            else if (Owner == Game.CurrentBattle.Player && Owner.Entity.Cards.Count == 0 && Game.Configuration.PvP)
             {
                 BattleUI.SendMessage("Open Card Pile For Second Player");
                 Reorganize(Game.CurrentBattle.Enemy.Entity.Cards, BattleUI.HandCardBar);
@@ -55,7 +55,7 @@ namespace Canute.BattleSystem
             infoDisplayer.canvas.sortingLayerName = "Card";
             infoDisplayer.canvas.sortingOrder = layer + 1;
 
-            careerPicture.sprite = GameData.SpriteLoader.Get(data.Career.ToString());
+            careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, data.Career.ToString());
             GetComponent<Image>().canvas.sortingLayerName = "Card";
             GetComponent<Image>().canvas.sortingOrder = layer;
 
@@ -67,7 +67,7 @@ namespace Canute.BattleSystem
 
             ArmyCardEntity cardEntity;
             GameObject cardObject;
-            GameObject cardPrefab = GameData.EntityPrefabs.ArmyCard;
+            GameObject cardPrefab = GameData.Prefabs.ArmyCard;
 
 
             cardObject = Instantiate(cardPrefab, BattleUI.ClientHandCardBar.transform);

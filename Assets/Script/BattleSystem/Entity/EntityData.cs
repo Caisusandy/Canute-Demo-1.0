@@ -11,12 +11,12 @@ namespace Canute.BattleSystem
     {
         [Header("Basic Property")]
         [SerializeField] protected string name;
-        [SerializeField, ContextMenuItem("Get a UUID", "NewUUID")] protected UUID uuid;
-        [SerializeField] protected UUID ownerUUID;
         [SerializeField] protected GameObject prefab;
+        [SerializeField] protected UUID uuid;
+        [SerializeField] protected UUID ownerUUID;
 
         public virtual Prototype Prototype { get => GameData.Prototypes.GetPrototype(name); set => name = value?.Name; }
-        public virtual bool HasPrototype => !string.IsNullOrEmpty(name);
+        public virtual bool HasValidPrototype => !string.IsNullOrEmpty(name) ? Prototype : false;
 
         public virtual string Name => name;
         public virtual string DisplayingName => GetDisplayingName();
@@ -78,7 +78,16 @@ namespace Canute.BattleSystem
             {
                 return true;
             }
-            return string.IsNullOrEmpty(entityData.name);
+            if (string.IsNullOrEmpty(entityData.name))
+            {
+                return true;
+            }
+            return !entityData.HasValidPrototype;
+        }
+
+        public static implicit operator bool(EntityData entityData)
+        {
+            return !IsNullOrEmpty(entityData);
         }
 
     }
@@ -88,12 +97,13 @@ namespace Canute.BattleSystem
     {
         [SerializeField] protected bool allowMove;
         [Header("Coordinate")]
-        public int x;
-        public int y;
+        public Vector2Int coordinate;
         [Header("Status List")]
         [SerializeField] protected StatusList stats = new StatusList();
 
-        public virtual Vector2Int Coordinate { get => new Vector2Int(x, y); set { x = value.x; y = value.y; } }
+        public virtual int x { get => coordinate.x; set { coordinate = new Vector2Int(value, y); } }
+        public virtual int y { get => coordinate.y; set { coordinate = new Vector2Int(x, value); } }
+        public virtual Vector2Int Coordinate { get => coordinate; set { coordinate = value; } }
         public virtual Vector3Int HexCoord => new Vector3Int(x - y / 2, y, x - y / 2 + y);
         public virtual bool AllowMove { get => allowMove; set => allowMove = value; }
         public virtual Cell OnCellOf => Game.CurrentBattle.MapEntity[Coordinate].data;

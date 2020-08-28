@@ -3,71 +3,6 @@ using UnityEngine;
 
 namespace Canute.BattleSystem
 {
-    public static class PassiveEntities
-    {
-        public static void Damage(this IPassiveEntity passiveEntity, int damage)
-        {
-            int flow = (int)(damage);// * Random.Range(0.95f, 1.05f));
-            int armorHit = passiveEntity.Data.DamageArmor(flow);
-
-            flow -= armorHit;
-            flow = passiveEntity.Data.GetDamageAfterDefensePoint(flow);
-
-            passiveEntity.Data.Damage(flow);
-            passiveEntity.DisplayDamage(flow);
-
-            if (armorHit != 0) passiveEntity.DisplayDamage(armorHit);
-        }
-
-        public static void Damage(this IPassiveEntity passiveEntity, int damage, IAggressiveEntity sourceEntity)
-        {
-            int finalDamageIfCrit = damage.Bonus(Random.value < sourceEntity.Data.Properties.CritRate ? 0 : sourceEntity.Data.Properties.CritBonus, BonusType.percentage);
-            int flow = (int)(finalDamageIfCrit);//* Random.Range(0.95f, 1.05f));
-            int armorHit = passiveEntity.Data.DamageArmor(flow);
-
-            flow -= armorHit;
-            flow = passiveEntity.Data.GetDamageAfterDefensePoint(flow);
-
-            passiveEntity.Data.Damage(flow);
-            passiveEntity.DisplayDamage(flow);
-
-            if (armorHit != 0) passiveEntity.DisplayDamage(armorHit);
-        }
-
-        public static void DisplayDamage(this IPassiveEntity passiveEntity, int damage)
-        {
-            Debug.Log(damage);
-            GameObject displayer = Object.Instantiate(GameData.Prefabs.Get("armyDamageDisplayer"), passiveEntity.transform);
-            displayer.GetComponent<ArmyDamageDisplayer>().damage = damage;
-            Debug.Log("Display Damage");
-        }
-    }
-
-    public static class AgressiveEntities
-    {
-
-    }
-
-    public interface IPassiveEntity : IBattleableEntity
-    {
-        /// <summary> Entity Data </summary>
-        new IPassiveEntityData Data { get; }
-        float DefeatedDuration { get; }
-        float HurtDuration { get; }
-
-        void Hurt(params object[] vs);
-    }
-
-    public interface IAggressiveEntity : IBattleableEntity
-    {
-        /// <summary> Entity Data </summary>
-        new IAggressiveEntityData Data { get; }
-        float AttackAtionDuration { get; }
-
-        void Attack(params object[] vs);
-        void GetAttackTarget(ref Effect effect);
-    }
-
     public interface IBattleEntity : IPassiveEntity, IAggressiveEntity, ISkillable, IDefeatable
     {
         /// <summary> Entity Data </summary>
@@ -106,9 +41,16 @@ namespace Canute.BattleSystem
 
     public interface IDefeatable
     {
-        void ReadyToDie(params object[] vs);
-        void Defeated(params object[] vs);
-        void Remove(params object[] vs);
+        /// <summary>
+        /// kill entity (entity will be killed when no animation is occuring)
+        /// </summary>
+        /// <param name="vs"></param>
+        void KillEntity(params object[] vs);
+        /// <summary>
+        /// Animation when entity is defeated
+        /// </summary>
+        /// <param name="vs"></param>
+        void DefeatedAnimation(params object[] vs);
     }
 
 
@@ -124,6 +66,8 @@ namespace Canute.BattleSystem
         int x { get; }
         /// <summary> y <para></para></summary>
         int y { get; }
+        ///
+        new OnMapEntity entity { get; }
         /// <summary>  <para></para></summary>
         OnMapEntityData OnMapData { get; }
         /// <summary> 允许移动 <para> Determine whether the entity allows to move</para></summary>

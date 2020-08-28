@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1697640569, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: GitHub.Unity.45:GitHub.Unity:GitUserCache
   cacheType: 8
-  lastUpdatedAtString: 2020-05-26T14:46:08.959-04:00
-  initializedAtString: 2020-05-26T14:46:08.959-04:00
+  lastUpdatedAtString: 2020-06-27T01:24:37.269-04:00
+  initializedAtString: 2020-06-27T01:24:37.261-04:00
   gitName: Caisusandy
   gitEmail: 164040662@qq.com

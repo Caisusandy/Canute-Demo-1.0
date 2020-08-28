@@ -38,19 +38,34 @@ namespace Canute.Shops
         public PricePair RandomOut()
         {
             int random = UnityEngine.Random.Range(0, TotalWeight);
-            return InWeightOf(random);
+            PricePair pricePair = InWeightOf(random);
+            Debug.Log(pricePair.Name);
+            return pricePair;
         }
     }
 
     [Serializable]
     public class PricePair : INameable
     {
-        [SerializeField] protected string name;
+        [SerializeField] protected Prize prize;
         [SerializeField] protected int weight;
-        [SerializeField] protected Currency price;
+        [SerializeField] protected Currency[] price;
 
-        public string Name => name;
+        public string Name => Prize.Name;
         public int Weight { get => weight; set => weight = value; }
-        public Currency Price { get => price; set => price = value; }
+        public Prize Prize { get => prize; set => prize = value; }
+        public Currency[] Price { get => price; set => price = value; }
+        public Item.Type ItemType { get => Prize.PrizeType; set => Prize.PrizeType = value; }
+
+        public bool Buy()
+        {
+            if (Game.PlayerData.Spent(price))
+            {
+                prize.Fulfill();
+                return true;
+            }
+
+            return false;
+        }
     }
 }

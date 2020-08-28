@@ -2,11 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 using Canute.BattleSystem;
+using Canute.Testing;
 
 namespace Canute.UI
 {
     public class GameStartMenu : MonoBehaviour
     {
+        public const string currentFirstChat = "theLastDayAtFantarium";
         public static GameStartMenu instance;
         public Button continueButton;
         public Button newGameButton;
@@ -51,7 +53,11 @@ namespace Canute.UI
         public void NewGame()
         {
             PlayerFile.CreateNewPlayerFile();
-            SceneControl.GotoScene(MainScene.mainHall);
+            Game.LoadBattle(GameData.Chapters.ChapterTree.GetLevel("Tutorial"), new LegionSet(Game.PlayerData.Legions[0], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, Game.PlayerData.Leaders[0].Name));
+
+
+            //SceneControl.GotoScene(MainScene.mainHall);
+            //StorySystem.StoryDisplayer.Load(GameData.Stories.StoryTree.Get(currentFirstChat));
             /*
              *
              * 

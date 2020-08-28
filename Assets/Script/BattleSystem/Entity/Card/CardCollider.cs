@@ -53,12 +53,17 @@ namespace Canute.BattleSystem
             for (int i = 0; i < hitObj.Count; i++)
             {
                 RaycastHit2D hit = hitObj[i];
-                if (hit.collider == null) //if collider found nothing
-                {
+                if (hit.collider == null) //if collider found nothing 
                     continue;
-                }
 
                 Transform hitTransform = hit.transform;
+
+                if (hitTransform.name == "TrashCan")
+                {
+                    cardEntity.isOnTrashCan = true;
+                    return;
+                }
+                else cardEntity.isOnTrashCan = false;
 
                 if (hitTransform.GetComponent<CardEntity>())
                 {
@@ -103,7 +108,7 @@ namespace Canute.BattleSystem
                         last?.Select();
                         CardEntity.SelectingEntity = last;
                     }
-                    else if (!possibleArmyTransform.GetComponent<ArmyEntity>().IsSelected) //if there is an armyEntity and it is not select yet
+                    else if (possibleArmyTransform.GetComponent<ArmyEntity>()?.IsSelected == false) //if there is an armyEntity and it is not select yet
                     {
                         //Debug.Log("add Army");
                         last = possibleArmyTransform.GetComponent<OnMapEntity>();

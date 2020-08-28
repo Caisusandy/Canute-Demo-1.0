@@ -78,6 +78,7 @@ namespace Canute.BattleSystem
 
         public bool Equals(TriggerCondition other)
         {
+            Debug.Log(other);
             if (other is null)
             {
                 return false;
@@ -132,7 +133,7 @@ namespace Canute.BattleSystem
 
         public static bool operator ==(TriggerCondition a, TriggerCondition b)
         {
-            return a?.Equals(b) == true;
+            return a?.Equals(b) is true;
         }
 
 
@@ -159,7 +160,7 @@ namespace Canute.BattleSystem
                         condition = OnDefenseEnd;
                         break;
                     default:
-                        break;
+                        throw new Exception();
                 }
 
                 condition.expectValue = string.IsNullOrEmpty(arg.Value) ? true : bool.Parse(arg.Value);
@@ -169,7 +170,7 @@ namespace Canute.BattleSystem
             {
                 if (condition != null)
                 {
-                    Debug.LogError("Trigger Condition Converted Failed " + arg);
+                    Debug.LogWarning("Trigger Condition Converted Failed " + arg);
                 }
                 return null;
             }
@@ -177,15 +178,13 @@ namespace Canute.BattleSystem
 
         public static bool IsTriggerCondition(Arg arg)
         {
-            try
-            {
-                TriggerCondition args = (TriggerCondition)arg;
-                return true;
-            }
-            catch
+            TriggerCondition args = (TriggerCondition)arg;
+            if (args is null)
             {
                 return false;
             }
+            return true;
+
         }
 
         public static TriggerConditions GetTriggerCondition(Effect effect)

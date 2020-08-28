@@ -1,5 +1,4 @@
-﻿using Canute.BattleSystem;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Canute

@@ -32,7 +32,7 @@ namespace Canute.BattleSystem.UI
         {
             while (true)
             {
-                gameObject.SetActive(!(Player.IsInTurn || Game.CurrentBattle.CurrentStat == Battle.Stat.begin));
+                gameObject.SetActive(!(Player.IsInTurn || Game.CurrentBattle.Round.CurrentStat == Round.Stat.gameStart));
                 yield return new WaitForEndOfFrame();
             }
         }

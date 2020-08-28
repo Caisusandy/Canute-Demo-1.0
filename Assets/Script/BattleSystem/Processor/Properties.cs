@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Canute.BattleSystem
 {
+
+
     public static partial class EffectExecute
     {
 

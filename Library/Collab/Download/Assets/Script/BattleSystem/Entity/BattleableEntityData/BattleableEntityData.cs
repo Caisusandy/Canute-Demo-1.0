@@ -8,31 +8,39 @@ namespace Canute.BattleSystem
     [Serializable]
     public abstract class BattleableEntityData : OnMapEntityData, IBattleableEntityData, ICareerLabled
     {
-        [Header("Battle Entity Properties")]
-        [SerializeField] protected ArmyProperty properties;
-        [SerializeField] protected BattleLeader localLeader;
-        [SerializeField] protected Effect skillPack;
-        [SerializeField] protected Career career;
-        [SerializeField] protected int anger;
+        public enum AutonomousType
+        {
+            none,
+            idle,
+            attack,
+            patrol,
+        }
 
-        public Career Career => HasLocalCommander ? (LocalLeader.Career != Career.none ? LocalLeader.Career : career) : career;
-        public virtual ArmyProperty RawProperties => properties;
-        public virtual ArmyProperty Properties => EffectExecute.GetArmyProperty(this);
-        public virtual ArmyProperty.Position StandPosition => Properties.StandPosition;
+        [Header("Leader")]
+        [SerializeField] protected BattleLeader localLeader;
+        [Header("Autonomous")]
+        [SerializeField] protected AutonomousType autonomousType;
+        [Header("Battle Entity Properties")]
+        [SerializeField] protected int anger;
+        [SerializeField] protected Career career;
+        [SerializeField] protected BattleProperty properties;
+        [SerializeField] protected HalfEffect skillPack;
+
+        public Career Career => !IsNullOrEmpty(localLeader) ? (LocalLeader.Career != Career.none ? LocalLeader.Career : career) : career;
+        public virtual BattleProperty RawProperties { get => properties; set => properties = value; }
+        public virtual BattleProperty Properties => EffectExecute.GetProperty(this);
+        public virtual BattleProperty.Position StandPosition => Properties.StandPosition;
 
 
         public virtual BattleLeader LocalLeader { get => localLeader; set => localLeader = value; }
         public virtual BattleLeader ViceCommander => Owner?.ViceCommander;
-        public virtual Effect SkillPack { get => skillPack.Clone(); set => skillPack = value; }
-        public virtual double Morale => Owner.Morale;
+        public virtual Effect SkillPack { get => skillPack; set => skillPack = value; }
         public virtual int Anger { get => anger; set => anger = value < 0 ? 0 : value >= 100 ? 100 : value; }
-        public virtual bool HasViceCommander => !IsNullOrEmpty(ViceCommander);
-        public virtual bool HasLocalCommander => !IsNullOrEmpty(localLeader);
+        public virtual AutonomousType Autonomous { get => autonomousType; set => autonomousType = value; }
 
+        protected BattleableEntityData() : base() { Autonomous = AutonomousType.none; }
 
-        protected BattleableEntityData() : base() { }
-
-        protected BattleableEntityData(Prototype prototype) : base(prototype) { }
+        protected BattleableEntityData(Prototype prototype) : base(prototype) { Autonomous = AutonomousType.none; }
 
         public virtual void CheckPotentialAction(params object[] vs)
         {
@@ -47,11 +55,9 @@ namespace Canute.BattleSystem
         {
             Effect effect = SkillPack;
             Entity entity = Entity;
-
             effect.Type = Effect.Types.skill;
 
             IBattleableEntity battleable = entity as IBattleableEntity;
-
             if (battleable is null)
             {
                 Debug.LogError("an entity with an imposible identity tried to perform skill " + ToString());
@@ -60,66 +66,29 @@ namespace Canute.BattleSystem
 
             effect.Source = entity;
             effect.Target = entity;
-
-            effect.Execute();
+            effect.Execute(true);
             Anger = 0;
         }
 
-        public List<CellEntity> GetMoveArea() => MapEntity.CurrentMap.GetMoveArea(MapEntity.CurrentMap[Position], Properties.MoveRange, this);
+        public List<CellEntity> GetMoveArea() => MapEntity.CurrentMap.GetMoveArea(MapEntity.CurrentMap[Coordinate], Properties.MoveRange, this);
 
-        public List<CellEntity> GetMoveRange() => GetMoveArea().Except(MapEntity.CurrentMap.GetMoveArea(MapEntity.CurrentMap[Position], Properties.MoveRange - 1, this)).ToList();
+        protected abstract void AddBounes(params IBattleBounesItem[] bouneses);
 
-        protected virtual void AddBounes(params IBattleBounesItem[] bouneses)
-        {
-            if (bouneses is null)
-            {
-                return;
-            }
-            foreach (var item in bouneses)
-            {
-                foreach (var property in item.Bounes)
-                {
-                    var checkTypeValues = Enum.GetValues(typeof(PropertyType));
-                    foreach (PropertyType type in checkTypeValues)
-                    {
-                        switch (property.Type & type)
-                        {
-                            case PropertyType.moveRange:
-                                properties.MoveRange = property.Bounes(properties.MoveRange, item.Level); ;
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                }
-            }
-        }
-
-
-        //private void LeaderBounes(BattleLeader battleLeader)
-        //{
-        //    health = maxHealth.Bounes(battleLeader.HealthBounesRate);
-        //    defence = defence.Bounes(battleLeader.DefenceBounesRate);
-        //    damage = damage.Bounes(battleLeader.DamageBounesRate);
-        //}
-
+        protected abstract void RemoveBounes(params IBattleBounesItem[] bouneses);
 
     }
 
     /// <summary> 至少能够上战场的接口 </summary>
-    public interface IBattleableEntityData : IOnMapEntityData
+    public interface IBattleableEntityData : IOnMapEntityData, ICareerLabled
     {
         int Anger { get; set; }
-        bool HasViceCommander { get; }
         BattleLeader ViceCommander { get; }
         Effect SkillPack { get; set; }
-        Career Career { get; }
-        ArmyProperty Properties { get; }
-        ArmyProperty RawProperties { get; }
-        ArmyProperty.Position StandPosition { get; }
+        BattleProperty Properties { get; }
+        BattleProperty RawProperties { get; set; }
+        BattleProperty.Position StandPosition { get; }
 
         List<CellEntity> GetMoveArea();
-        List<CellEntity> GetMoveRange();
     }
 
 }

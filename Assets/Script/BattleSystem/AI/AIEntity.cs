@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Canute.BattleSystem.AI
@@ -8,69 +9,99 @@ namespace Canute.BattleSystem.AI
     public class AIEntity : PlayerEntity
     {
         public List<Entity> targets = new List<Entity>();
+        public Dictionary<string, object> AIMindStorage = new Dictionary<string, object>();
         public bool isInAction;
 
+
         public Entity Target { get => targets.Count == 1 ? targets[0] : null; set => targets = new List<Entity> { value }; }
+        public new Personality Personality => Owner.Personality;
+
 
         public override void Start()
         {
             if (Game.Configuration.PvP)
-            {
                 enabled = false;
-            }
+
         }
 
         public override void Update()
         {
-            if (InPlayerTurn)
-            {
-                Run();
-            }
+
         }
 
-        public virtual void Run()
+        public IEnumerator Run(object[] vs)
         {
-            if (isInAction)
+            //Debug.LogError(Game.CurrentBattle.CurrentStat);
+            //Debug.LogError(Game.CurrentBattle.Round.CurrentStat);
+            Debug.LogError("执行");
+
+            if (Game.CurrentBattle.HasAnimation) yield return WaitForAnimation();
+
+            //Debug.Log(Personality.HasFlag(Personality.dummy));
+            //Debug.Log(Personality);
+
+            if (Personality.HasFlag(Personality.dummy))
             {
-                return;
+                yield return DummyAction();
             }
-            Action(EndTurn);
+
+
+            yield return Action(EndTurn);
         }
 
-        /// <summary>
-        /// perform an action in coroutine
-        /// </summary>
-        /// <param name="action"></param>
-        /// <param name="param"></param>
-        /// <returns></returns>
-        public override Coroutine Action(Func<object[], IEnumerator> action, params object[] param)
+        private IEnumerator DummyAction()
         {
-            if (isInAction)
-            {
-                return null;
-            }
-            return base.Action(action, param);
-        }
-
-
-        /// <summary>
-        /// executor of action, only use in Action(Func, params[])
-        /// </summary>
-        /// <param name="enumerator"></param>
-        /// <returns></returns>
-        protected override IEnumerator Action(IEnumerator enumerator)
-        {
-            Debug.Log("action start");
+            Debug.LogError("执行DummyAction");
             isInAction = true;
-            yield return enumerator;
-            isInAction = false;
+            foreach (var item in Owner.BattleArmies)
+            {
+                yield return WaitForAnimation();
+                Debug.Log("Dummy");
+                switch (item.Autonomous)
+                {
+                    case BattleEntityData.AutonomousType.none:
+                    case BattleEntityData.AutonomousType.idle:
+                        Debug.Log("No action require");
+                        break;
+                    case BattleEntityData.AutonomousType.attack:
+                        AIAction.ArmyAttack(item.Entity);
+                        break;
+                    case BattleEntityData.AutonomousType.patrol:
+                        AIAction.ArmyPatrol(item.Entity);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            yield return null;
+        }
+
+        protected IEnumerator WaitForAnimation()
+        {
+            while (Game.CurrentBattle.HasAnimation)
+            {
+                yield return new WaitForFixedUpdate();
+            }
         }
 
         public virtual IEnumerator EndTurn(params object[] param)
         {
+            Debug.LogError("开始回合结束");
             yield return Sleep(1);
-            Game.CurrentBattle.EndTurn();
-            yield return true;
+            while (Game.CurrentBattle.HasAnimation)
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+            bool notEnd;
+
+            do
+            {
+                notEnd = !Owner.TryEndTurn();
+                yield return new WaitForSeconds(0.1f);
+            } while (notEnd);
+
+            yield return Sleep(1);
+            isInAction = false;
         }
 
         public virtual IEnumerator PlayCard(Card card)
@@ -89,6 +120,7 @@ namespace Canute.BattleSystem.AI
             if (success)
             {
                 Owner.RemoveHandCard(card);
+                card.Entity.Destroy();
             }
             yield return success;
         }
@@ -104,11 +136,8 @@ namespace Canute.BattleSystem.AI
             return ai;
         }
 
-        public enum PersonalityType
-        {
-            none,
-        }
 
 
     }
+
 }

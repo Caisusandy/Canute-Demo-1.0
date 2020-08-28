@@ -27,6 +27,10 @@ namespace Canute.UI.Legion
         {
             if (id == -1)
             {
+                for (int i = 0; i < 6; i++)
+                {
+                    UpdateIcon(i, null);
+                }
                 return;
             }
 
@@ -39,7 +43,15 @@ namespace Canute.UI.Legion
 
         public void UpdateIcon(int id, ArmyItem armyItem)
         {
-            armyIcons[id].GetComponent<Image>().sprite = armyItem.Icon;
+            if (armyItem)
+            {
+                armyIcons[id].SetActive(true);
+                armyIcons[id].GetComponent<Image>().sprite = armyItem.Icon;
+            }
+            else
+            {
+                armyIcons[id].SetActive(false);
+            }
         }
 
         public void ChangeLegion(int id)

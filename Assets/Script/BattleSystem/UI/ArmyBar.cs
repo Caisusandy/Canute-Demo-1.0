@@ -9,6 +9,7 @@ namespace Canute.BattleSystem.UI
     {
         public GameObject attackingArmyAttackButton;
         public GameObject infosAnchor;
+        public GameObject infoPrefab;
         public List<ArmyInfoIcon> armyInfos = new List<ArmyInfoIcon>();
 
         public override void Awake()
@@ -29,30 +30,39 @@ namespace Canute.BattleSystem.UI
 
         public ArmyInfoIcon GetAvailableSlot()
         {
-            foreach (ArmyInfoIcon item in armyInfos)
-            {
-                if (item.IsAvailable)
-                {
-                    item.transform.SetParent(infosAnchor.transform);
-                    return item;
-                }
-                Debug.Log("not available");
-            }
-            Debug.LogError("No enough slot!");
-            return null;
+            var gameObject = Instantiate(infoPrefab, infosAnchor.transform);
+            var armyInfoIcon = gameObject.GetComponent<ArmyInfoIcon>();
+            armyInfos.Add(armyInfoIcon);
+            return armyInfoIcon;
+            //foreach (ArmyInfoIcon item in armyInfos)
+            //{
+            //    if (item.IsAvailable)
+            //    {
+            //        item.transform.SetParent(infosAnchor.transform);
+            //        return item;
+            //    }
+            //    Debug.Log("not available");
+            //}
+            //Debug.LogError("No enough slot!");
+            //return null;
         }
 
         public override void Hide()
         {
             Debug.Log("hide army bar");
-            Motion.SetMotion(gameObject, BattleUI.UndersideAnchor);
-            Motion.SetMotion(gameObject, BattleUI.UndersideAnchor);
+            Motion.SetMotion(gameObject, BattleUI.UndersideAnchor, true);
+            Motion.SetMotion(gameObject, BattleUI.UndersideAnchor, true);
             isShown = false;
         }
 
         private void OnMouseDown()
         {
-            if (Battle.CurrentStat == Battle.Stat.begin)
+            ToggleBar();
+        }
+
+        public void ToggleBar()
+        {
+            if (Battle.Round.CurrentStat == Round.Stat.gameStart)
             {
                 return;
             }

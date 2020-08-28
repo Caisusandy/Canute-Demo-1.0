@@ -37,7 +37,7 @@ namespace Canute.BattleSystem.UI
 
         private void EndTurnButtonDisplay()
         {
-            endTurnButton.gameObject.SetActive(Game.CurrentBattle.Round.CurrentPlayer == Player && Game.CurrentBattle.CurrentStat != Battle.Stat.begin);
+            endTurnButton.gameObject.SetActive(Game.CurrentBattle.Round.CurrentPlayer == Player && Game.CurrentBattle.Round.CurrentStat != Round.Stat.gameStart);
         }
 
         private void MoveStartButtonDisplay()
@@ -48,7 +48,7 @@ namespace Canute.BattleSystem.UI
 
         private void ActionPointDisplay()
         {
-            actionPointInfo.text = Game.CurrentBattle.CurrentStat == Battle.Stat.begin ? "---" : "Action Point: " + Player.ActionPoint + " / 8";
+            actionPointInfo.text = Game.CurrentBattle.Round.CurrentStat == Round.Stat.gameStart ? "---" : "Action Point: " + Player.ActionPoint + " / 7";
         }
 
         public void CancelAction()
@@ -69,7 +69,7 @@ namespace Canute.BattleSystem.UI
 
         public virtual void EndTurn()
         {
-            if (!Game.CurrentBattle.TryEndTurn())
+            if (!Player.TryEndTurn())
             {
                 return;
             }

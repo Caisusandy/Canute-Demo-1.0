@@ -11,7 +11,7 @@
         public override void SetArmyItem(ArmyItem armyItem)
         {
             base.SetArmyItem(armyItem);
-            //IconImage.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, armyItem.Type + "WBG");
+            IconImage.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyPositionIcon, armyItem.StandPosition.ToString());
         }
     }
 }

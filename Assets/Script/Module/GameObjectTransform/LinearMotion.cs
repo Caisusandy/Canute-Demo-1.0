@@ -14,6 +14,8 @@ namespace Canute.Module
         private void Start()
         {
             startingPos = curPos = transform.position;
+            if (isUIMotion) ongoingMotions.Add(this);
+            else ongoingMotions.Remove(this);
             currentSecond = 0;
         }
 
@@ -62,9 +64,10 @@ namespace Canute.Module
         }
 
 
-        public static new void SetMotion(GameObject obj, Vector3 finalPos, Space space = Space.World, EndMotion endMotionevent = null)
+        public static new void SetMotion(GameObject obj, Vector3 finalPos, Space space = Space.World, EndMotion endMotionevent = null, bool isUIMotion = false)
         {
             Motion motion = obj.GetComponent<Motion>();
+            motion.isUIMotion = isUIMotion;
             if (!obj.GetComponent<Motion>()) { motion = obj.AddComponent<Motion>(); }
             motion.MotionEndEvent += endMotionevent;
 

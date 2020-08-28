@@ -9,11 +9,13 @@ namespace Canute.BattleSystem
     {
         public enum StatType
         {
+            none,
             turnBase,
             countBase,
             dualBase,
             perminant,
             resonance,
+            delay,
         }
 
         /*
@@ -72,7 +74,7 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         public bool SimilarTo(Status other)
         {
-            bool sameCount = ((IsBaseOnCount == other.IsBaseOnCount == true) || (IsBaseOnTurn == other.IsBaseOnTurn == true) || (IsDualBase == other.IsDualBase == true) || (IsResonance == other.IsResonance == true)) && !IsPermanentStatus && !other.IsPermanentStatus;
+            bool sameCount = ((IsBaseOnCount == other.IsBaseOnCount == true) || (IsBaseOnTurn == other.IsBaseOnTurn == true) || (IsDualBase == other.IsDualBase == true) || (IsResonance == other.IsResonance == true)) && !IsPermanentStatus && !other.IsPermanentStatus && other.Type != StatType.delay;
             return sameCount && effect.SimilarTo(other.effect) && triggerConditions.Equals(other.TriggerConditions);
         }
 
@@ -115,6 +117,7 @@ namespace Canute.BattleSystem
         {
             switch (type)
             {
+                case StatType.delay:
                 case StatType.turnBase:
                     return TurnCount > 0;
                 case StatType.countBase:
@@ -124,7 +127,8 @@ namespace Canute.BattleSystem
                 case StatType.perminant:
                 case StatType.resonance:
                     return true;
-                default: return false;
+                default:
+                    return false;
             }
         }
 

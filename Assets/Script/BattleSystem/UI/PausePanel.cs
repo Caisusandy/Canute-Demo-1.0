@@ -50,8 +50,21 @@ namespace Canute.BattleSystem.UI
 
         public void Quit()
         {
-            SceneControl.GotoScene(MainScene.mainHall);
-            Game.ClearBattle();
+            if (Game.CurrentBattle is null)
+            {
+                SceneControl.GotoScene(MainScene.mainHall);
+                Game.ClearBattle();
+            }
+            else if (Game.CurrentBattle.BattleType == Battle.Type.endless)
+            {
+                Game.CurrentBattle.EndlessEnd();
+            }
+            else
+            {
+                SceneControl.GotoScene(MainScene.mainHall);
+                Game.ClearBattle();
+            }
+
         }
     }
 }

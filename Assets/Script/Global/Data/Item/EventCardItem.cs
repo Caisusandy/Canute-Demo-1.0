@@ -13,7 +13,7 @@ namespace Canute
         public EventCard Prototype { get => GameData.Prototypes.GetEventCardPrototype(protoName); set => protoName = value?.Name; }
         public override Prototype Proto => Prototype;
         public override int Level => level + 1;
-        public override Type ItemType => Type.EventCard;
+        public override Type ItemType => Type.eventCard;
 
         public int Cost => Prototype.EventCardProperty[level].Cost;
         public Effect Effect => Prototype.EventCardProperty[level].Effect;

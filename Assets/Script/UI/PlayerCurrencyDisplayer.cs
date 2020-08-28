@@ -20,6 +20,9 @@ namespace Canute.UI
         public Text mantleAlloyDisplayer;
         public Text mantleAlloyNameDisplayer;
 
+        public Text aethiumDisplayer;
+        public Text aethiumNameDisplayer;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -32,9 +35,11 @@ namespace Canute.UI
             goldDisplayer.text = Game.PlayerData.Federgram.ToString();
             manpowerDisplayer.text = Game.PlayerData.Manpower.ToString();
             mantleAlloyDisplayer.text = Game.PlayerData.MantleAlloy.ToString();
-            goldNameDisplayer.text = Currency.Type.federgram.Lang();
+            aethiumDisplayer.text = Game.PlayerData.Aethium.ToString();
+            goldNameDisplayer.text = Currency.Type.fedgram.Lang();
             manpowerNameDisplayer.text = Currency.Type.manpower.Lang();
             mantleAlloyNameDisplayer.text = Currency.Type.mantleAlloy.Lang();
+            aethiumNameDisplayer.text = Currency.Type.Aethium.Lang();
         }
     }
 

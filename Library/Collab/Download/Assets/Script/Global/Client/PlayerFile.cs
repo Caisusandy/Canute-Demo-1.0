@@ -11,11 +11,12 @@ namespace Canute
     public static class PlayerFile
     {
         private static Data data;
+
         public static string DataPath => Application.persistentDataPath + "/Saves/";
 
-        public static Data Data { get => GetData(); private set { data = value; Game.Configuration.LastGame = value.uuid; Game.SaveConfig(); } }
+        public static Data Data { get => GetData(); private set { data = value; Game.Configuration.LastGame = value.UUID; Game.SaveConfig(); GameData.instance.data = value; } }
 
-        public static Data GetData()
+        private static Data GetData()
         {
             return data ?? ContinueLastSaved();
         }
@@ -25,12 +26,45 @@ namespace Canute
         /// </summary>
         public static bool SaveCurrentData()
         {
-            Data.playerLastOperationTime = DateTime.UtcNow;
+            Data.PlayerLastOperationTime = DateTime.UtcNow;
             string json = JsonUtility.ToJson(Data);
-            string savePath = DataPath + Data.uuid + "/Data.json";
+            string filePath = DataPath + data.UUID;
+            string savePath = filePath + "/Data.json";
+
+            if (!Directory.Exists(DataPath + data.UUID))
+            {
+                Directory.CreateDirectory(filePath);
+            }
             try
             {
                 File.WriteAllText(savePath, json, Encoding.UTF8);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e.Message);
+                return false;
+            }
+        }
+        /// <summary>
+        /// save player file
+        /// </summary>
+        public static bool SaveData(Data data)
+        {
+            data.PlayerLastOperationTime = DateTime.UtcNow;
+            string json = JsonUtility.ToJson(data);
+            string filePath = DataPath + data.UUID;
+            string savePath = filePath + "/Data.json";
+
+            if (!Directory.Exists(DataPath + data.UUID))
+            {
+                Directory.CreateDirectory(filePath);
+            }
+
+            try
+            {
+                File.WriteAllText(savePath, json, Encoding.UTF8);
+                Debug.Log("Saved!");
                 return true;
             }
             catch (Exception e)
@@ -60,6 +94,8 @@ namespace Canute
             if (Data is null)
                 return false;
 
+            Game.Configuration.LastGame = Data.UUID;
+            Game.SaveConfig();
             return true;
         }
 
@@ -71,7 +107,7 @@ namespace Canute
         {
             Debug.Log("try create player file");
             Data = new Data();
-            string filePath = DataPath + data.uuid;
+            string filePath = DataPath + data.UUID;
             Directory.CreateDirectory(filePath);
             Debug.Log(filePath);
             File.Create(filePath + "/Data.json").Dispose();
@@ -107,21 +143,23 @@ namespace Canute
     }
 
 
-
+    /// <summary>
+    /// User Data
+    /// </summary>
     [Serializable]
     public class Data : IUUIDLabeled
     {
-        public UUID uuid;
-        public WorldTime playerLastOperationTime;
+        [SerializeField] private UUID uuid;
+        [SerializeField] private WorldTime playerLastOperationTime;
 
         #region Curency 
-        [SerializeField] private int gold;
+        [SerializeField] private int federgram;
         [SerializeField] private int manpower;
         [SerializeField] private int mantleAlloy;
         [SerializeField] private int mantleFluid;
         [SerializeField] private int aethium;
 
-        public int Gold { get => gold; set => gold = value; }
+        public int Federgram { get => federgram; set => federgram = value; }
         public int Manpower { get => manpower; set => manpower = value; }
         public int MantleAlloy { get => mantleAlloy; set => mantleAlloy = value; }
         public int MantleFluid { get => mantleFluid; set => mantleFluid = value; }
@@ -131,10 +169,10 @@ namespace Canute
         {
             switch (type)
             {
-                case Currency.Type.gold:
-                    if (Gold < amount)
+                case Currency.Type.federgram:
+                    if (Federgram < amount)
                     {
-                        Gold -= amount;
+                        Federgram -= amount;
                         return true;
                     }
                     return false;
@@ -170,16 +208,21 @@ namespace Canute
                     return false;
             }
         }
+
         public bool Spent(Currency currency)
         {
             return Spent(currency.type, currency.count);
         }
         #endregion
 
-        #region Legion 
+        #region LegionSets
         // 军团，用户默认军队设置储存
         // ......
-        public List<Legion> legions = new List<Legion>(3);
+        [Header("Legion Sets")]
+        [SerializeField] private List<Legion> legions = new List<Legion>(3);
+        [SerializeField] private List<EventCardPile> eventCardPiles = new List<EventCardPile>(3);
+        public List<Legion> Legions { get => legions; set => legions = value; }
+        public List<EventCardPile> EventCardPiles { get => eventCardPiles; set => eventCardPiles = value; }
         #endregion
 
         #region Items
@@ -197,18 +240,20 @@ namespace Canute
         #endregion
 
         #region Player's Chapter Progress
-        [Header("Player's Chapter Progress")]
+        [Header("Chapter Progress")]
         [SerializeField] protected PlayerChapterTree gameProgree;
         public PlayerChapterTree PlayerChapterTreeStat { get => gameProgree; set => gameProgree = value; }
         #endregion
 
         #region Unlocked
+        [Header("staticstic")]
         [SerializeField] private GameStatistic gameStatistic;
         public GameStatistic Statistic { get => gameStatistic; set => gameStatistic = value; }
 
         public CheckList EventCardUnlocked => GetEventTree();
 
         public UUID UUID { get => uuid; set => uuid = value; }
+        public WorldTime PlayerLastOperationTime { get => playerLastOperationTime; set => playerLastOperationTime = value; }
 
         public bool IsArmyUnlocked(string name)
         {
@@ -335,7 +380,7 @@ namespace Canute
                 }
             }
 
-            return null;
+            return ArmyItem.Empty;
         }
 
         public List<ArmyItem> GetArmyItems(params UUID[] uuids)
@@ -344,11 +389,6 @@ namespace Canute
             foreach (UUID uuid in uuids)
             {
                 ArmyItem item = GetArmyItem(uuid);
-                if (item is null)
-                {
-                    continue;
-                }
-
                 items.Add(item);
             }
 

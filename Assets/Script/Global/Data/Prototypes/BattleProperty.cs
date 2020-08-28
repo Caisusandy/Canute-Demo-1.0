@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Canute.BattleSystem
@@ -53,7 +52,7 @@ namespace Canute.BattleSystem
         [Tooltip("群伤范围")] [SerializeField] private int attackArea;
         [Tooltip("目标选择")] [SerializeField] private int targetCount;
         [Tooltip("攻击方式")] [SerializeField] private AttackType attackType;
-        [Tooltip("技能    ")] [SerializeField] private HalfEffect skill;
+        [Tooltip("技能    ")] [SerializeField] private HalfSkillEffect skill;
         [Tooltip("附加    ")] [SerializeField] private ArgList addition;
 
 
@@ -69,7 +68,7 @@ namespace Canute.BattleSystem
         public AttackType Attack { get => attackType; set => attackType = value; }
         public int AttackArea { get => attackArea; set => attackArea = value; }
         public int TargetCount { get => targetCount; set => targetCount = value; }
-        public HalfEffect Skill => skill;
+        public HalfSkillEffect Skill => skill;
         public ArgList Addition { get => addition; set => addition = value; }
 
         public BattleProperty(Army army)
@@ -87,7 +86,7 @@ namespace Canute.BattleSystem
             attackPosition = Position.none;
             attackType = AttackType.melee;
 
-            skill = new HalfEffect();
+            skill = new HalfSkillEffect();
             addition = new ArgList();
         }
 

@@ -16,6 +16,10 @@ namespace Canute.BattleSystem.UI
         public Image statusIcon;
         public Image statusBG;
 
+        public void ShowStatus(Status status)
+        {
+            this.status = status;
+        }
 
         private void Update()
         {

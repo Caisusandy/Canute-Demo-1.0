@@ -9,40 +9,26 @@ namespace Canute.BattleSystem
     {
         public List<CellEntity> cellEntities;
         public override EntityData Data => new Column(this);
-        public int index => Game.CurrentBattle.MapEntity.columnEntities.IndexOf(this);
+        public int index => MapEntity.CurrentMap.columnEntities.IndexOf(this);
 
         public CellEntity this[int index] => cellEntities[index];
+
+
+        [ContextMenu("Column Setup")]
+        public void ColumnSetup()
+        {
+            foreach (Transform item in transform)
+            {
+                CellEntity cellEntity = item.GetComponent<CellEntity>();
+                cellEntities.Add(cellEntity);
+                cellEntity.data.Coordinate = MapEntity.CurrentMap.GetPosition(cellEntity);
+            }
+        }
 
 
         public static implicit operator List<CellEntity>(ColumnEntity columnEntity)
         {
             return columnEntity.cellEntities;
-        }
-
-
-
-        public void GetAllCellEntity()
-        {
-            if (cellEntities is null)
-            {
-                foreach (Transform item in transform)
-                {
-                    CellEntity cellEntity = item.GetComponent<CellEntity>();
-                    if (cellEntity)
-                    {
-                        cellEntities.Add(cellEntity);
-                    }
-                }
-            }
-        }
-
-        [ContextMenu("CellSetup")]
-        public void CellSetup()
-        {
-            foreach (Transform item in transform)
-            {
-                cellEntities.Add(item.GetComponent<CellEntity>());
-            }
         }
 
         public IEnumerator<CellEntity> GetEnumerator()

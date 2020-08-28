@@ -1,4 +1,5 @@
-﻿using Canute.BattleSystem.UI;
+﻿using Canute.BattleSystem.AI;
+using Canute.BattleSystem.UI;
 using Canute.Shops;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,26 @@ using UnityEngine;
 
 namespace Canute.BattleSystem
 {
+
     [Serializable]
     public class Battle : ICloneable
     {
+        public enum Type
+        {
+            none = -1,
+            normal,
+            endless,
+            rescueMission,
+            special,
+        }
+
         [Header("Settings")]
+        [SerializeField] protected Type battleType;
+        [SerializeField] protected bool avoidPlayerDefinedLegionSet;
+        [SerializeField] protected List<Prize> prizes;
         [SerializeField] protected Player enemy;
         [SerializeField] protected List<Player> thirdParties = new List<Player>();
         [SerializeField] protected List<WaveInfo> waveInfo = new List<WaveInfo>();
-        [SerializeField] protected BattlePrize prize;
         [SerializeField] protected GameObject mapPrefab;
 
         [Header("In-battle infomations")]
@@ -23,18 +36,21 @@ namespace Canute.BattleSystem
         [SerializeField] protected Round round;
         [SerializeField] protected Stat stat;
         [SerializeField] protected CentralDeck centralDeck;
-        [SerializeField] protected List<Animator> ongoingAnimation = new List<Animator>();
-
         [SerializeField] protected List<BattleArmy> armies = new List<BattleArmy>();
         [SerializeField] protected List<BattleBuilding> buildings = new List<BattleBuilding>();
         [SerializeField] protected List<Status> globalStatus = new List<Status>();
 
+        [SerializeField] protected List<Animator> ongoingAnimation = new List<Animator>();
         [SerializeField] protected List<Effect> passedEffect = new List<Effect>();
-        [SerializeField] protected MapEntity mapEntity;
+        [SerializeField] protected ScoreBoard scoreBoard;
+
+        [NonSerialized] protected WaveControl waveControl;
+        [NonSerialized] protected MapEntity mapEntity;
 
 
-        #region Properties 
-
+        #region Properties  
+        public bool AvoidPlayerLegion => avoidPlayerDefinedLegionSet;
+        public Type BattleType { get => battleType; set => battleType = value; }
         public Player Enemy { get => enemy; set => enemy = value; }
         public List<Player> ThirdParties => thirdParties;
         public Round Round { get => round; set => round = value; }
@@ -42,12 +58,14 @@ namespace Canute.BattleSystem
         public Player Player { get => player; set => player = value; }
         public List<BattleArmy> Armies => armies;
         public List<BattleBuilding> Buildings => buildings;
+        public ScoreBoard ScoreBoard { get => scoreBoard; set => scoreBoard = value; }
         public List<Animator> OngoingAnimation => ongoingAnimation;
         public List<Effect> PassingEffect { get => passedEffect; set => passedEffect = value; }
         public CentralDeck CentralDeck { get => centralDeck; set => centralDeck = value; }
         public GameObject MapPrefab { get => mapPrefab; set => mapPrefab = value; }
         public MapEntity MapEntity { get => mapEntity; set => mapEntity = value; }
         public Map Map => mapEntity.data;
+        public WaveControl WaveControl => waveControl;
 
         public List<Player> AllPlayers => new List<Player> { Player, Enemy }.Union(ThirdParties).ToList();
         public List<Player> OtherPlayers => new List<Player> { Enemy }.Union(ThirdParties).ToList();
@@ -55,11 +73,15 @@ namespace Canute.BattleSystem
 
         #region Minor Properties
         public bool IsFreeTime => (CurrentStat == Stat.normal && Round.CurrentStat == Round.Stat.normal) || (CurrentStat == Stat.begin && Round.CurrentStat == Round.Stat.gameStart);
-        public bool HasAnimation => TryEndAnimation();
+        public bool HasAnimation => !TryEndAnimation();
+
+        protected bool UsePlayerDefinedLegionSet { get => !avoidPlayerDefinedLegionSet; set => avoidPlayerDefinedLegionSet = !value; }
+
 
         #endregion
 
         #endregion
+
         private Battle() { }
 
         #region Get Battle object
@@ -175,7 +197,6 @@ namespace Canute.BattleSystem
             }
             return null;
         }
-
         public BattleBuilding GetBuilding(UUID uUID)
         {
             foreach (BattleBuilding item in Buildings)
@@ -198,6 +219,8 @@ namespace Canute.BattleSystem
         /// </summary>
         public void Prepare()
         {
+            ScoreBoard = new ScoreBoard();
+            waveControl = new WaveControl(waveInfo, this);
             //Player
             foreach (Player item in OtherPlayers)
             {
@@ -222,56 +245,27 @@ namespace Canute.BattleSystem
                 Debug.Log(item.Name);
             }
 
-            //generate player's army card
-            for (int i = 0; i < Player.BattleArmies.Count; i++)
-            {
-                BattleArmy item = Player.BattleArmies[i];
-                Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, TargetType.cellEntity) { Owner = player };
-                card.Effect["name"] = item.Name;
-                ArmyCardEntity.Create(card, item);
-            }
+            if (UsePlayerDefinedLegionSet)
+                player.CreateArmyCard();
 
             if (Game.Configuration.PvP)
             {
-                enemy = new Player("Anexar", new LegionSet(Game.PlayerData.Legions[1], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, " "), enemy.UUID);
+                LegionSet legionSet = new LegionSet(Game.PlayerData.Legions[1], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, " ");
+                enemy = new Player("Anexar", legionSet, enemy.UUID);
 
-                Resonance.Resonate(enemy.BattleArmies);
-                //generate player's army card
-                for (int i = 0; i < Enemy.BattleArmies.Count; i++)
+                if (UsePlayerDefinedLegionSet)
                 {
-                    BattleArmy item = Enemy.BattleArmies[i];
-                    Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, TargetType.cellEntity) { Owner = enemy };
-                    card.Effect["name"] = item.Name;
-                    ArmyCardEntity.Create(card, item);
+                    enemy.SetupLeader(legionSet.Leader);
+                    enemy.SetupLegion(legionSet.Legion);
+                    enemy.SetupEventCardPile(legionSet.EventCardPile);
+                    Resonance.Resonate(enemy.BattleArmies);
+                    enemy.CreateArmyCard();
                 }
-            }
-
-
-            GenerateEnemy(1);
-        }
-
-        public void GenerateEnemy(int wave)
-        {
-            //generate first wave buildings
-            foreach (BattleBuilding item in waveInfo[wave - 1].BattleBuildings)
-            {
-                buildings.Add(item);
-                BuildingEntity.Create(item);
-            }
-
-            if (Game.Configuration.PvP)
-            {
                 return;
             }
 
-            //generate first wave armies
-            foreach (BattleArmy item in waveInfo[wave - 1].BattleArmies)
-            {
-                armies.Add(item);
-                ArmyEntity.Create(item);
-            }
+            waveControl.GenerateEnemy(1);
         }
-
 
         /// <summary> 
         /// Start the Battle
@@ -281,7 +275,7 @@ namespace Canute.BattleSystem
             Round.TurnBegin();
             foreach (Player player in AllPlayers)
             {
-                GetHandCard(player, Effect.Types.enterMove, 5);
+                GetHandCard(player, Effect.Types.enterMove, player.MaxHandCardCount);
                 Round.CurrentPlayer.RefillAction();
             }
             Round.Normal();
@@ -291,7 +285,13 @@ namespace Canute.BattleSystem
         public void SetPlayer(LegionSet playerLegion)
         {
             player = new Player("Canute Svensson", playerLegion);
-            Resonance.Resonate(player.BattleArmies);
+            if (UsePlayerDefinedLegionSet)
+            {
+                player.SetupLeader(playerLegion.Leader);
+                player.SetupLegion(playerLegion.Legion);
+                player.SetupEventCardPile(playerLegion.EventCardPile);
+                Resonance.Resonate(player.BattleArmies);
+            }
         }
 
         #endregion
@@ -365,10 +365,10 @@ namespace Canute.BattleSystem
         public Stat InAnimation() => CurrentStat = Stat.waitForAnimationEnd;
 
         /// <summary> tell battle the battle is end </summary>
-        public Stat InWinning() => stat = Stat.win;
+        private Stat InWinning() => stat = Stat.win;
 
         /// <summary> tell battle the battle is end </summary>
-        public Stat InLosing() => stat = Stat.lose;
+        private Stat InLosing() => stat = Stat.lose;
 
         public void CancelAction()
         {
@@ -401,6 +401,7 @@ namespace Canute.BattleSystem
         }
         #endregion
 
+
         #region 回合控制
         public bool TryEndTurn()
         {
@@ -417,16 +418,36 @@ namespace Canute.BattleSystem
         {
             Round.TurnEnd();
             Round.CurrentPlayer.StatTurnDecay();
-            Round.CurrentPlayer.Discard();
+            Round.CurrentPlayer.EndTurnDiscard();
+            BuildingOccupy();
             NextPlayer();
+        }
+
+        private void BuildingOccupy()
+        {
+            foreach (var item in buildings)
+            {
+                if (item.OnCellOf.HasArmyStandOn)
+                {
+                    if (item.Owner != Round.NextPlayer)
+                    {
+                        item.Owner = Round.NextPlayer;
+                    }
+                }
+            }
         }
 
         /// <summary> 切换到下一个玩家 </summary>
         public void NextPlayer()
         {
-            BattleUI.SetPlayerUI(Round.CurrentPlayer, false);
+            if (Game.Configuration.PvP)
+                BattleUI.ChangePlayerUI(Round.CurrentPlayer, false);
+
             Round.Next();
-            BattleUI.SetPlayerUI(Round.CurrentPlayer, true);
+
+            if (Game.Configuration.PvP)
+                BattleUI.ChangePlayerUI(Round.CurrentPlayer, true);
+
             NewTurn();
         }
 
@@ -439,6 +460,11 @@ namespace Canute.BattleSystem
 
             InNormal();
             Round.Normal();
+
+            if (Round.CurrentPlayer.Entity is AIEntity)
+            {
+                Round.CurrentPlayer.Entity.Action((Round.CurrentPlayer.Entity as AIEntity).Run);
+            }
 
             if (Player.IsInTurn)
             {
@@ -476,36 +502,35 @@ namespace Canute.BattleSystem
 
             Debug.Log(player.HandCard.Count);
         }
+
+
         #region End of the Battle
 
         public void EndCheck()
         {
-            if (stat == Stat.begin || Round.CurrentStat == Round.Stat.gameEnd)
-            {
-                return;
-            }
+            if (stat == Stat.begin || Round.CurrentStat == Round.Stat.gameEnd) { return; }
 
-            if (Enemy.BattleArmies.Count == 0)
+            switch (battleType)
             {
-                if (Round.wave < waveInfo.Count)
-                {
-                    NextWave();
-                }
-                else
-                {
-                    Win();
-                }
+                case Type.normal:
+                    if (Enemy.BattleArmies.Count == 0)
+                        if (Round.wave < waveInfo.Count)
+                            waveControl.NextWave();
+                        else
+                            Win();
+                    if (Player.BattleArmies.Count == 0)
+                        Lost();
+                    break;
+                case Type.endless:
+                    if (Enemy.BattleArmies.Count == 0)
+                        waveControl.NextWave();
+                    if (Player.BattleArmies.Count == 0)
+                        Lost();
+                    break;
+                case Type.rescueMission:
+                    //unknown condition...
+                    break;
             }
-            if (Player.BattleArmies.Count == 0)
-            {
-                Lost();
-            }
-        }
-
-        private void NextWave()
-        {
-            Round.wave++;
-            GenerateEnemy(round.wave);
         }
 
         public void Win()
@@ -513,10 +538,13 @@ namespace Canute.BattleSystem
             InWinning();
             Round.GameEnd();
             Debug.Log("player win");
-            foreach (ArmyItem item in Player.Legion.Armies)
+
+            if (Player.LegionSet.Legion != null)
             {
-                item.AddFloatExp(prize.floatExp);
-                Debug.Log("Add float exp into army");
+                foreach (var prize in prizes)
+                {
+                    prize.Fulfill(Player.LegionSet.Legion.Armies);
+                }
             }
 
             BattleUI.EndUI.gameObject.SetActive(true);
@@ -527,6 +555,30 @@ namespace Canute.BattleSystem
             InLosing();
             Round.GameEnd();
             Debug.Log("player lost");
+        }
+
+        public void EndlessEnd()
+        {
+            InWinning();
+            Round.GameEnd();
+            Debug.Log("player win");
+
+            foreach (var prize in prizes)
+            {
+                prize.Fulfill(Player.LegionSet.Legion.Armies);
+            }
+
+            int score = ScoreBoard.GetScore();
+            var fgPrize = new Prize(Currency.Type.fedgram.ToString(), score / 400, Item.Type.currency);
+            var mpPrize = new Prize(Currency.Type.manpower.ToString(), score / 400, Item.Type.currency);
+            var maPrize = new Prize(Currency.Type.mantleAlloy.ToString(), (int)(ScoreBoard.TotalAirforceDefeated * (UnityEngine.Random.value + 1) / 1.5f), Item.Type.currency);
+
+            fgPrize.Fulfill();
+            mpPrize.Fulfill();
+            maPrize.Fulfill();
+
+            BattleUI.EndlessEndUI.gameObject.SetActive(true);
+            BattleUI.EndlessEndUI.ShowPrize(fgPrize, mpPrize, maPrize);
         }
 
         public static void End() => Game.ClearBattle();
@@ -540,9 +592,11 @@ namespace Canute.BattleSystem
 
         public Battle Clone()
         {
-
             Battle battleCopy = new Battle
             {
+                avoidPlayerDefinedLegionSet = avoidPlayerDefinedLegionSet,
+                battleType = battleType,
+                prizes = prizes.Clone(),
                 Enemy = enemy.Clone() as Player,
                 Player = Player.Clone() as Player,
                 thirdParties = thirdParties.Clone(),
@@ -560,79 +614,85 @@ namespace Canute.BattleSystem
     [Serializable]
     public class WaveInfo : ICloneable
     {
-        [SerializeField] private List<BattleArmy> battleArmies;
-        [SerializeField] private List<BattleBuilding> battleBuildings;
+        [SerializeField] private List<BattleArmySpawnAnchor> battleArmies;
+        [SerializeField] private List<BattleBuildingSheet> battleBuildings;
 
-        public List<BattleArmy> BattleArmies { get => battleArmies; set => battleArmies = value; }
-        public List<BattleBuilding> BattleBuildings { get => battleBuildings; set => battleBuildings = value; }
+        public List<BattleArmySpawnAnchor> BattleArmies { get => battleArmies; set => battleArmies = value; }
+        public List<BattleBuildingSheet> BattleBuildings { get => battleBuildings; set => battleBuildings = value; }
 
         public object Clone()
         {
             WaveInfo waveInfoCopy = new WaveInfo
             {
                 battleArmies = battleArmies.Clone(),
-                battleBuildings = battleBuildings.Clone()
+                battleBuildings = battleBuildings.Clone(),
             };
             return waveInfoCopy;
         }
     }
 
     [Serializable]
-    public struct BattlePrize
+    public class ScoreBoard : Args
     {
-        public Currency goldPrize;
-        public Currency popPrize;
-        public int floatExp;
+        [SerializeField] private List<Effect> allPassedEffect;
+        [SerializeField] private int totalPlayerDamage = 0;
+        [SerializeField] private int totalAirforceDefeated = 0;
+        [SerializeField] private int totalLandArmyDefeated = 0;
 
-        public override bool Equals(object obj)
+
+        public List<Effect> AllPassedEffect { get => allPassedEffect; set => allPassedEffect = value; }
+        public int TotalEnemyDefeated => TotalAirforceDefeated + TotalLandArmyDefeated;
+        public int TotalAirforceDefeated { get => totalAirforceDefeated; }
+        public int TotalLandArmyDefeated { get => totalLandArmyDefeated; }
+
+        public ScoreBoard()
         {
-            return base.Equals(obj);
+            AllPassedEffect = new List<Effect>();
+            PassiveEntities.DamageEvent += CountPlayerDamage;
+            PassiveEntities.DefeatEvent += CountPlayerDefeated;
         }
 
-        public override int GetHashCode()
+        public void CountPlayerDamage(IBattleableEntity source, IPassiveEntity target, int value)
         {
-            return base.GetHashCode();
-        }
+            //Debug.Log("Counting player damage");
 
-        public static bool operator ==(BattlePrize left, BattlePrize right)
-        {
-            return left.Equals(right);
-        }
-
-        public static bool operator !=(BattlePrize left, BattlePrize right)
-        {
-            return !(left == right);
-        }
-    }
-
-
-    public static class BattleAnimations
-    {
-        public static void AddToBattle(this Animator animator)
-        {
-            Game.CurrentBattle.OngoingAnimation.Add(animator);
-            Game.CurrentBattle.InAnimation();
-        }
-
-        public static void RemoveFromBattle(this Animator animator)
-        {
-            Game.CurrentBattle.OngoingAnimation.Remove(animator);
-            Game.CurrentBattle.TryEndAnimation();
-        }
-
-        public static bool IsDone(this Animator animator)
-        {
-            return animator.GetBool("isIdle");
-        }
-
-        public static bool TryRemoveFromBattle(this Animator animator)
-        {
-            bool isDone = animator.IsDone();
-            if (isDone)
+            if (source is null)
             {
-                animator.RemoveFromBattle();
+                //Debug.Log("No source");
+                return;
             }
-            return isDone;
+
+            if (source.Owner == Game.CurrentBattle.Player)
+            {
+                totalPlayerDamage += value;
+                return;
+            }
+            //Debug.Log("Not from player");
+        }
+        public void CountPlayerDefeated(IBattleableEntity source, IPassiveEntity target)
+        {
+            if (source is null)
+            {
+                return;
+            }
+
+            if (source.Owner == Game.CurrentBattle.Player)
+            {
+                switch (target.StandPostion)
+                {
+                    case BattleProperty.Position.land:
+                        totalLandArmyDefeated++;
+                        break;
+                    case BattleProperty.Position.air:
+                        totalAirforceDefeated++;
+                        break;
+                }
+            }
+        }
+
+        public int GetScore()
+        {
+            return (Game.CurrentBattle.Round.wave - 1) * 10000 + totalPlayerDamage * 5 + TotalEnemyDefeated * 1000;
         }
     }
 }

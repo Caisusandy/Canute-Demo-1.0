@@ -13,6 +13,8 @@ namespace Canute
         StoryDisplayer,
         gameStart,
         playerArmyList,
+        playerLeaderList,
+        playerEquipmentList,
     }
 
     [CreateAssetMenu(fileName = "Scene Control", menuName = "Game Data/Scene Control", order = 1)]
@@ -21,9 +23,11 @@ namespace Canute
         public const string storyDisplayer = "StoryLineLoader";
         public const string main = "Main";
         public const string legionSetting = "Legion";
-        public const string battleUI = "BattleUI";
+        public const string battle = "Battle";
         public const string gameStart = "Game Start";
         public const string armyList = "Army List";
+        public const string EquipmentList = "Equipment List";
+        public const string leaderList = "Leader List";
 
         public static string lastScene;
 
@@ -39,7 +43,7 @@ namespace Canute
                     ans = legionSetting;
                     break;
                 case MainScene.battle:
-                    ans = battleUI;
+                    ans = battle;
                     break;
                 case MainScene.StoryDisplayer:
                     ans = storyDisplayer;
@@ -49,6 +53,12 @@ namespace Canute
                     break;
                 case MainScene.playerArmyList:
                     ans = armyList;
+                    break;
+                case MainScene.playerLeaderList:
+                    ans = leaderList;
+                    break;
+                case MainScene.playerEquipmentList:
+                    ans = EquipmentList;
                     break;
                 default:
                     break;

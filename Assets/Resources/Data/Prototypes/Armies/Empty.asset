@@ -12,85 +12,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42519a9a9bfe564f9f663cf1d552d44, type: 3}
   m_Name: Empty
   m_EditorClassIdentifier: 
+  isTemporaryPrototype: 0
   prototype:
     name: Empty
     rarity: 0
     icon: {fileID: 0}
     sprite: {fileID: 0}
-    protrait: {fileID: 0}
+    portrait: {fileID: 0}
     prefab: {fileID: 0}
     health: 0
     damage: 0
-    defense: 0
     type: 0
-    career: 0
+    career: 1
     properties:
-    - critRate: 0
+    - defense: 0
+      critRate: 0
       critBounes: 0
       pop: 0
       attackRange: 0
       moveRange: 0
-      standPosition: 0
-      attackPosition: 0
-      attackType: 0
+      standPosition: 1
+      attackPosition: 1
       attackArea: 0
       targetCount: 0
-      specialCell: []
+      attackType: 1
       skill:
-        uuid:
-          value: dc94ba8b-9a76-4a6e-b64d-b1c3b08d5551
         specialName: 
-        type: 0
         count: 0
         parameter: 0
-        sourceEntity:
-          value: 
-        targetEntities: []
         args:
-          list: []
-    - critRate: 0
+          args: []
+      addition:
+        args: []
+    - defense: 0
+      critRate: 0
       critBounes: 0
       pop: 0
       attackRange: 0
       moveRange: 0
-      standPosition: 0
-      attackPosition: 0
-      attackType: 0
+      standPosition: 1
+      attackPosition: 1
       attackArea: 0
       targetCount: 0
-      specialCell: []
+      attackType: 1
       skill:
-        uuid:
-          value: d340765b-9e34-4d51-a163-2d0680caa543
         specialName: 
-        type: 0
         count: 0
         parameter: 0
-        sourceEntity:
-          value: 
-        targetEntities: []
         args:
-          list: []
-    - critRate: 0
+          args: []
+      addition:
+        args: []
+    - defense: 0
+      critRate: 0
       critBounes: 0
       pop: 0
       attackRange: 0
       moveRange: 0
-      standPosition: 0
-      attackPosition: 0
-      attackType: 0
+      standPosition: 1
+      attackPosition: 1
       attackArea: 0
       targetCount: 0
-      specialCell: []
+      attackType: 1
       skill:
-        uuid:
-          value: af1b88e9-0958-40f0-9f47-74b7f39aa8f2
         specialName: 
-        type: 0
         count: 0
         parameter: 0
-        sourceEntity:
-          value: 
-        targetEntities: []
         args:
-          list: []
+          args: []
+      addition:
+        args: []

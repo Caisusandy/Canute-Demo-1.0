@@ -11,23 +11,23 @@ namespace Canute.BattleSystem
     [Serializable]
     public class Player : EntityData, IActionPointUser, INameable, IUUIDLabeled, IStatusContainer, ICloneable
     {
-        [SerializeField] protected AIEntity.PersonalityType personality;
+        [SerializeField] protected PlayerEntity.Personality personality;
         [SerializeField] protected BattleLeader viceCommander;
-        [SerializeField] protected Legion legion;
+        [SerializeField] protected LegionSet legion;
         [SerializeField] protected EventCardPile pile;
 
-        [Header("Items")]
+        [SerializeField] protected int maxHandCardCount = 5;
         [SerializeField] protected int maxArmyCount;
+        [Header("Items")]
         [SerializeField] protected int actionPoint;
         [SerializeField] protected List<Card> eventCardPile = new List<Card>();
         [SerializeField] protected List<Card> handCard = new List<Card>();
         [SerializeField] protected StatusList stats = new StatusList();
-        [SerializeField] protected CampusEntity campus;
 
 
 
         public override Prototype Prototype => null;
-        public override bool HasPrototype => false;
+        public override bool HasValidPrototype => false;
         public override Player Owner { get => this; set { Debug.LogError("A player cannot be owned!"); } }
         public override GameObject Prefab { get => null; set { } }
         public override string DisplayingName => this.Lang(Name, "name");
@@ -46,52 +46,22 @@ namespace Canute.BattleSystem
 
 
 
-        public int ActionPoint { get => actionPoint; set => actionPoint = value; }
-        public int HasCampus => Campus ? 1 : 0;
+        public int MaxHandCardCount { get => maxHandCardCount; set => maxHandCardCount = value; }
         public int MaxArmyCount { get => maxArmyCount; set => maxArmyCount = value; }
-        public double Morale => (BattleArmies.Count + HasCampus) / (double)(MaxArmyCount + HasCampus);
+        public int ActionPoint { get => actionPoint; set => actionPoint = value; }
         public bool IsInTurn => this == Game.CurrentBattle?.Round?.CurrentPlayer;
-        public CampusEntity Campus { get => campus; set => campus = value; }
         public AIEntity AI => Entity as AIEntity;
-        public AIEntity.PersonalityType Personality { get => personality; set => personality = value; }
+        public PlayerEntity.Personality Personality { get => personality; set => personality = value; }
 
 
-        public Legion Legion { get => legion; set => legion = value; }
+        public LegionSet LegionSet { get => legion; set => legion = value; }
 
 
         /// <summary>
         /// To Setup a Game Player
         /// </summary>
         /// <param name="legion"></param>
-        public Player(string name, LegionSet playerLegionSet)
-        {
-            Legion legion = playerLegionSet.Legion;
-            LeaderItem leaderItem = playerLegionSet.Leader;
-            EventCardPile pile = playerLegionSet.EventCardPile;
-
-            this.uuid = UUID.Player;
-            this.name = name;
-            this.legion = legion;
-            this.pile = pile;
-
-            viceCommander = new BattleLeader(leaderItem);
-            eventCardPile = Card.ToCards(pile);
-
-            foreach (var item in eventCardPile)
-            {
-                item.Owner = this;
-            }
-
-            List<BattleArmy> battleArmies = new List<BattleArmy>();
-            foreach (ArmyItem item in legion.Armies)
-            {
-                BattleArmy army = new BattleArmy(item, this);
-                battleArmies.Add(army);
-            }
-
-            Game.CurrentBattle.Armies.AddRange(battleArmies);
-            maxArmyCount = battleArmies.Count;
-        }
+        public Player(string name, LegionSet playerLegionSet) : this(name, playerLegionSet, UUID.Player) { }
 
 
         /// <summary>
@@ -106,26 +76,53 @@ namespace Canute.BattleSystem
 
             this.uuid = uuid;
             this.name = name;
-            this.legion = legion;
+            this.legion = LegionSet;
             this.pile = pile;
+        }
 
+        public void SetupLeader(LeaderItem leaderItem)
+        {
             viceCommander = new BattleLeader(leaderItem);
+        }
 
+        public void SetupEventCardPile(EventCardPile pile)
+        {
+            if (pile is null)
+            {
+                return;
+            }
             eventCardPile = Card.ToCards(pile);
             foreach (var item in eventCardPile)
-            {
                 item.Owner = this;
-            }
+        }
 
-            List<BattleArmy> battleArmies = new List<BattleArmy>();
-            foreach (ArmyItem item in LegionSet.Legion.Armies)
+        public void SetupLegion(Legion legion)
+        {
+            if (legion is null)
             {
+                return;
+            }
+            List<BattleArmy> battleArmies = new List<BattleArmy>();
+            foreach (ArmyItem item in legion.Armies)
+            {
+                if (!item) continue;
                 BattleArmy army = new BattleArmy(item, this);
                 battleArmies.Add(army);
             }
-            Game.CurrentBattle.Armies.AddRange(battleArmies);
 
+            Game.CurrentBattle.Armies.AddRange(battleArmies);
             maxArmyCount = battleArmies.Count;
+        }
+
+        public void CreateArmyCard()
+        {
+            for (int i = 0; i < BattleArmies.Count; i++)
+            {
+                BattleArmy item = BattleArmies[i];
+                Card card = new Card(Card.Types.eventCard, Career.none, new Effect(Effect.Types.createArmy, 1, i), 0, TargetType.cellEntity) { Owner = this };
+                card.Effect["name"] = item.Name;
+                ArmyCardEntity.Create(card, item);
+            }
         }
 
         private Player() { NewUUID(); }
@@ -143,7 +140,10 @@ namespace Canute.BattleSystem
             return cards;
         }
 
-        public void Discard()
+        /// <summary>
+        /// discard all (when player end turn)
+        /// </summary>
+        public void EndTurnDiscard()
         {
             //Send player event card back
             foreach (Card item in GetCard(Card.Types.eventCard))
@@ -161,13 +161,13 @@ namespace Canute.BattleSystem
             //clear all player card
             foreach (Card item in GetCard(Card.Types.centerEvent))
             {
-                BattleSystem.Entity.Get(item.UUID).Destroy();
+                BattleSystem.Entity.Get(item.UUID).Exist()?.Destroy();
             }
 
             //clear all player card
             foreach (Card item in GetCard(Card.Types.special))
             {
-                BattleSystem.Entity.Get(item.UUID).Destroy();
+                BattleSystem.Entity.Get(item.UUID).Exist()?.Destroy();
             }
 
         }
@@ -176,7 +176,7 @@ namespace Canute.BattleSystem
         public void RefillCard()
         {
             int normalCount = GetCard(Card.Types.normal).Count + GetCard(Card.Types.centerEvent).Count;
-            if (normalCount < 5)
+            if (normalCount < MaxHandCardCount)
             {
                 int a = 0;
                 int m = 0;
@@ -185,19 +185,19 @@ namespace Canute.BattleSystem
                     a += item.Effect.Type == Effect.Types.enterAttack ? 1 : 0;
                     m += item.Effect.Type == Effect.Types.enterMove ? 1 : 0;
                 }
-                if (a == 0 && GetCard(Card.Types.centerEvent).Count < 5)
+                if (a == 0 && GetCard(Card.Types.centerEvent).Count < MaxHandCardCount)
                 {
                     Game.CurrentBattle.GetHandCard(this, Effect.Types.enterAttack, 1);
                     normalCount++;
                 }
-                if (m == 0 && GetCard(Card.Types.centerEvent).Count < 5)
+                if (m == 0 && GetCard(Card.Types.centerEvent).Count < MaxHandCardCount)
                 {
                     Game.CurrentBattle.GetHandCard(this, Effect.Types.enterMove, 1);
                     normalCount++;
                 }
-                if (normalCount < 5)
+                if (normalCount < MaxHandCardCount)
                 {
-                    Game.CurrentBattle.GetHandCard(this, 5 - normalCount);
+                    Game.CurrentBattle.GetHandCard(this, MaxHandCardCount - normalCount);
                 }
             }
 
@@ -218,7 +218,7 @@ namespace Canute.BattleSystem
         /// <summary> 补充行动点数 </summary>
         public void RefillAction()
         {
-            ActionPoint = 8;
+            ActionPoint = 7;
         }
 
         public override object Clone()
@@ -244,6 +244,18 @@ namespace Canute.BattleSystem
         public bool RemoveHandCard(Card card)
         {
             return HandCard.Remove(card);
+        }
+
+        public bool TryEndTurn()
+        {
+            if (!IsInTurn)
+            {
+                return false;
+            }
+            else
+            {
+                return Game.CurrentBattle.TryEndTurn();
+            }
         }
     }
 }

@@ -1,6 +1,5 @@
 #语言文件可以用#开始来写备注，//这样也可以（不能写在文字后面）
 #(若没有星号，没有等于号也不会出事)
-（像这样）
 
 #职业
 Canute.Career.Scholar=学者
@@ -8,20 +7,77 @@ Canute.Career.Politician=政客
 Canute.Career.General=军人
 Canute.Career.Merchant=商人
 Canute.Career.None=无
+#Title
+Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
+Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
+Canute.LevelTree.Level.CalayInfinite.subtitle= infinity test Map
+Canute.LevelTree.Level.CalayInfinite.title= The fall of a fantaria
+Canute.LevelTree.Level.1-2.subtitle=第一次遭遇色布提亚据点
+Canute.LevelTree.Level.1-2.title=1-2 色布提亚据点
+#Currency
+Canute.Shops.Currency+Type.fedgram=联邦克
+Canute.Shops.Currency+Type.manpower=人力
+Canute.Shops.Currency+Type.mantleAlloy=地幔合金
+Canute.Shops.Currency+Type.aethium=辉石
+#
+Canute.BattleSystem.PropertyBonus.damage=伤害
+Canute.BattleSystem.PropertyBonus.health=生命
+Canute.BattleSystem.PropertyBonus.defense=防御
+Canute.BattleSystem.PropertyBonus.moveRange=移动范围
+Canute.BattleSystem.PropertyBonus.attackRange=攻击范围
+Canute.BattleSystem.PropertyBonus.critRate=暴击概率
+Canute.BattleSystem.PropertyBonus.critBounes=暴击加成
+Canute.BattleSystem.PropertyBonus.pop=人口
+Canute.BattleSystem.PropertyBonus.armor=护甲
+Canute.BattleSystem.PropertyBonus.anger=怒气
+#
+Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
+Canute.BattleSystem.BattleProperty+AttackType.melee=近战
+Canute.BattleSystem.BattleProperty+AttackType.projectile=远程
+Canute.BattleSystem.BattleProperty+AttackType.single=单一目标
+Canute.BattleSystem.BattleProperty+AttackType.singleMelee=单一目标，近战
+Canute.BattleSystem.BattleProperty+AttackType.singleProjectile=单一目标，远程
+Canute.BattleSystem.BattleProperty+AttackType.area=范围
+Canute.BattleSystem.BattleProperty+AttackType.areaMelee=范围，近战
+Canute.BattleSystem.BattleProperty+AttackType.areaProjectile=范围，远程
+Canute.BattleSystem.BattleProperty+AttackType.splash=溅射
+Canute.BattleSystem.BattleProperty+AttackType.splashMelee=溅射，近战
+Canute.BattleSystem.BattleProperty+AttackType.splashProjectile=溅射，远程
+#
+Canute.BattleSystem.BattleProperty+Position.land=地面
+Canute.BattleSystem.BattleProperty+Position.air=空中
+Canute.BattleSystem.BattleProperty+Position.all=任何
+Canute.BattleSystem.BattleProperty+Position.none=None
+#
+Canute.Army+Types.mage=法师
+Canute.Army+Types.warMachine=战场
+Canute.Army+Types.infantry=士兵
+Canute.Army+Types.shielder=重甲兵
+Canute.Army+Types.cavalry=骑兵
+Canute.Army+Types.rifleman=火枪手
+Canute.Army+Types.aircraftFighter=战机
+Canute.Army+Types.airship=空艇
+Canute.Army+Types.dragon=龙
+#
+Canute.Army.Alpha Army.name=A
+Canute.Army.Beta Army.name=B
+Canute.Army.Tutorial Canute Army.name=Canute
+Canute.Army.Basic Mage.name=Basic Mage
+Canute.Army.Basic WarMachine.name=Basic WarMachine
+Canute.Army.Basic Infantry.name=Basic Infantry
+Canute.Army.Basic Shielder.name=Basic Shielder
+Canute.Army.Basic Infantry.name=Basic Infantry
+Canute.Army.Basic Cavalry.name=Basic Cavalry
+Canute.Army.Basic Rifleman.name=Basic Rifleman
+Canute.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
+Canute.Army.Basic Dragon.name=Basic Dragon
+Canute.Army.CalayCityInfantry.name=喀来城防步兵
+Canute.Army.ΣCityInfantry.name=西格玛象限城防步兵
+Canute.Army.NewUtoCityInfantry.name=新犹托城防步兵
+
 
 #
-Canute.Shops.Currency+Type.gold=Gold
-Canute.Shops.Currency+Type.manpower=Manpower
-Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
-#
-Canute.BattleSystem.Army.AlphaArmy.name=A
-Canute.BattleSystem.Army.BetaArmy.name=B
-Canute.BattleSystem.Army.Basic Mage.name=Basic Mage
-Canute.BattleSystem.Army.Basic WarMachine.name=Basic WarMachine
-Canute.BattleSystem.Army.Basic Infantry.name=Basic Infantry
-Canute.BattleSystem.Army.Basic Shielder.name=Basic Shielder
-#
-Canute.BattleSystem.Building.Campus.name=Campus
+Canute.Building.Campus.name=Campus
 #地形
 Canute.BattleSystem.Terrain.Plain=平原
 Canute.BattleSystem.Terrain.Forest=树林
@@ -31,40 +87,107 @@ Canute.BattleSystem.Terrain.River=河流
 Canute.BattleSystem.Terrain.Ocean=海洋
 Canute.BattleSystem.Terrain.Sand=沙地
 Canute.BattleSystem.Terrain.Swamp=沼泽
-
-#KeyName
-Canute.BattleSystem.Status.Turn=回合
-Canute.BattleSystem.Status.Count=次数
+ 
 
 #效果
-Canute.BattleSystem.Effect+Types.none=无
-Canute.BattleSystem.Effect+Types.none.info=没有任何作用
-Canute.BattleSystem.Effect+Types.alert=驻扎队伍
-Canute.BattleSystem.Effect+Types.move=移动z
-Canute.BattleSystem.Effect+Types.move.info=移动@param步
-Canute.BattleSystem.Effect+Types.enterMove=移动
-Canute.BattleSystem.Effect+Types.enterMove.info=移动@param步
-Canute.BattleSystem.Effect+Types.enterAttack=攻击
-Canute.BattleSystem.Effect+Types.enterAttack.info=使用军队进行一次攻击
-Canute.BattleSystem.Effect+Types.drawCard=抽牌
-Canute.BattleSystem.Effect+Types.drawCard.info=获得@param张手牌
-Canute.BattleSystem.Effect+Types.armySwitch=交换军队位置
+Canute.BattleSystem.Effect+Types.none=None
+Canute.BattleSystem.Effect+Types.none.info= 
+Canute.BattleSystem.Effect+Types.move=Move
+Canute.BattleSystem.Effect+Types.move.info=Move army in an area of @param
+Canute.BattleSystem.Effect+Types.enterMove=Move Army
+Canute.BattleSystem.Effect+Types.enterMove.info=Move army in an area of @param
+Canute.BattleSystem.Effect+Types.enterAttack=Attack
+Canute.BattleSystem.Effect+Types.enterAttack.info=attack other army
+Canute.BattleSystem.Effect+Types.drawCard=Draw Card
+Canute.BattleSystem.Effect+Types.drawCard.info=Draw @param Card
+Canute.BattleSystem.Effect+Types.armySwitch=Switch Position
 Canute.BattleSystem.Effect+Types.armySwitch.info=交换军队位置
-Canute.BattleSystem.Effect+Types.damageIncrease=提升伤害
-Canute.BattleSystem.Effect+Types.damageIncrease.info=提升军队@param%的伤害
-Canute.BattleSystem.Effect+Types.damageDecrease=减伤
-Canute.BattleSystem.Effect+Types.damageIncrease.info=减少军队受到的伤害的@param%
-Canute.BattleSystem.Effect+Types.foldCard=弃牌
-Canute.BattleSystem.Effect+Types.foldCard.info=使敌方弃@param张手牌
-Canute.BattleSystem.Effect+Types.createArmy=生成军队 
-Canute.BattleSystem.Effect+Types.createArmy.info=生成军队:@name
-Canute.BattleSystem.Effect+Types.attack=攻击
+Canute.BattleSystem.Effect+Types.damageIncreasePercentage=伤害增加
+Canute.BattleSystem.Effect+Types.damageIncreasePercentage.info=增加@param%伤害
+Canute.BattleSystem.Effect+Types.damageDecreasePercentage=伤害减少
+Canute.BattleSystem.Effect+Types.damageDecreasePercentage.info=减少@param%伤害
+Canute.BattleSystem.Effect+Types.createArmy=派出军队
+Canute.BattleSystem.Effect+Types.createArmy.info=将@name 派往选定地块
+Canute.BattleSystem.Effect+Types.attackRange=攻击范围加成
+Canute.BattleSystem.Effect+Types.attackRange.info=攻击范围+@param 
 Canute.BattleSystem.Effect+Types.cardMinusPoint=补给
 Canute.BattleSystem.Effect+Types.cardMinusPoint.info=使一张牌需要的行动点数-@param
-Canute.BattleSystem.Effect+Types.confusion=战地干扰
+Canute.BattleSystem.Effect+Types.confusion=干扰
 Canute.BattleSystem.Effect+Types.confusion.info=使一只军队移动距离与攻击距离降低@param%
+Canute.BattleSystem.Effect+Types.protection=保护
+Canute.BattleSystem.Effect+Types.protection.info=受到 $sourceName 的保护
+Canute.BattleSystem.Effect+Types.infantryLightness=轻盈
+Canute.BattleSystem.Effect+Types.infantryLightness.info=移动时不消耗行动点
+
+Canute.BattleSystem.Effect+Types.addActionPoint=行动点
+Canute.BattleSystem.Effect+Types.addActionPoint.info=增加@param 行动点 
+Canute.BattleSystem.Effect+Types.addArmor=增加护甲
+Canute.BattleSystem.Effect+Types.addArmor.info=添加@param 护甲
+
+
+
+#dragon
+
+Canute.BattleSystem.Effect+Types.dragonAttack=攻击状态（龙）
+Canute.BattleSystem.Effect+Types.dragonAttack.info=龙准备发动攻击
+Canute.BattleSystem.Effect+Types.dragonDefense=防御状态（龙）
+Canute.BattleSystem.Effect+Types.dragonDefense.info=龙准备应敌
+
+Canute.BattleSystem.Effect+Types.dragonAirAttack=空中打击
+Canute.BattleSystem.Effect+Types.dragonAirAttack.info=提升 10% 攻击, 但是被选中军队的攻击目标被切换为空中.
+Canute.BattleSystem.Effect+Types.dragonAttackBonus=远程打击
+Canute.BattleSystem.Effect+Types.dragonAttackBonus.info=攻击范围 +1， 但是被选中军队移动距离 -2
+Canute.BattleSystem.Effect+Types.dragonCritAttack=致命一击
+Canute.BattleSystem.Effect+Types.dragonCritAttack.info=提升 20% 攻击, 100% 暴击率，但是被选中军队当前血量-10%
+Canute.BattleSystem.Effect+Types.dragonDualAttack=多重打击
+Canute.BattleSystem.Effect+Types.dragonDualAttack.info=每次攻击造成 2 次伤害，但是被选中军队攻击降低 45%
+Canute.BattleSystem.Effect+Types.dragonMoveBonus=快速移动
+Canute.BattleSystem.Effect+Types.dragonMoveBonus.info=移动距离 +1， 但是被选中军队攻击范围 -2
+Canute.BattleSystem.Effect+Types.dragonStrike=猛力冲击
+Canute.BattleSystem.Effect+Types.dragonStrike.info=移动后，目的地敌方会被向后推 2 格, 但是被选中军队无法攻击
+
+Canute.BattleSystem.Effect+Types.addDragonAirAttack=空中打击
+Canute.BattleSystem.Effect+Types.addDragonAirAttack.info=提升 10% 攻击, 但是被选中军队的攻击目标被切换为空中.
+Canute.BattleSystem.Effect+Types.addDragonAttackBonus=远程打击
+Canute.BattleSystem.Effect+Types.addDragonAttackBonus.info=攻击范围 +1， 但是被选中军队移动距离 -2
+Canute.BattleSystem.Effect+Types.addDragonCritAttack=致命一击
+Canute.BattleSystem.Effect+Types.addDragonCritAttack.info=提升 20% 攻击, 100% 暴击率，但是被选中军队当前血量-10%
+Canute.BattleSystem.Effect+Types.addDragonDualAttack=多重打击
+Canute.BattleSystem.Effect+Types.addDragonDualAttack.info=每次攻击造成 2 次伤害，但是被选中军队攻击降低 45% 
+Canute.BattleSystem.Effect+Types.addDragonMoveBonus=快速移动
+Canute.BattleSystem.Effect+Types.addDragonMoveBonus.info=移动距离 +1， 但是被选中军队攻击范围 -2
+Canute.BattleSystem.Effect+Types.addDragonStrike=猛力冲击
+Canute.BattleSystem.Effect+Types.addDragonStrike.info=移动后，目的地敌方会被向后推 2 格, 但是被选中军队无法攻击
+
+
+Canute.BattleSystem.Effect+Types.shielderPenetrate=重甲兵穿透
+Canute.BattleSystem.Effect+Types.shielderPenetrate.info=穿透非重甲兵单位的防御，同时额外造成的敌方当前血量@param%的真实伤害
+
+
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Basic Infantry Skill
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill.info= attack twice the [closest, possible, lowest HP] target (with a 0%/40% damage decrease)
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Basic Rifleman Skill
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill.info=to cause the [closest, possible, lowest HP] target lost 20% Current HP and 40% lost HP
+Canute.BattleSystem.Effect+Types.BasicShielderSkill=Basic Shielder Skill
+Canute.BattleSystem.Effect+Types.BasicShielderSkill.info=Give whole legion‘s army 20 Armor
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill=Basic War Machine Skill
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill.info=Attack the closest possible target, and causes a 140% damage.
+
+#aircraft fighter
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn=机场位置
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn.info=军队机场位置： @x,@y
+Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy=战机：前进
+Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy.info=战机在攻击后会移动到敌方面前，直到本回合结束后回到上一次主动移动的目的地。
+
 
 #错误事件
+Canute.BattleSystem.BattleEventError. = 
+Canute.BattleSystem.BattleEventError.notValidTarget=the target is not a valid target
+Canute.BattleSystem.BattleEventError.noTarget=no target was selected
+Canute.BattleSystem.BattleEventError.noAvailableTarget=no target can be attack 
+Canute.BattleSystem.BattleEventError.armyCannotAttack=it can't attack anyone
+Canute.BattleSystem.BattleEventError.armyNoTarget=no enemy is in attack range
+
 Canute.Language.EventError.UnmatchedCareer=你需要使用相对应职业的手牌
 Canute.Language.EventError.NoDestination=没有设置目的地
 Canute.Language.EventError.TooFarFromCamp=距离大本营太远

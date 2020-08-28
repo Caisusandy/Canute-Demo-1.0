@@ -42,6 +42,19 @@ namespace Canute.BattleSystem
 
         }
 
+        public static void ClearResonate(List<BattleArmy> battleArmies)
+        {
+            foreach (BattleArmy army in battleArmies)
+            {
+                for (int i = army.StatList.Count - 1; i >= 0; i++)
+                {
+                    if (army.StatList[i].IsResonance)
+                    {
+                        army.StatList.RemoveAt(i);
+                    }
+                }
+            }
+        }
         public static void Resonate(List<BattleArmy> battleArmies)
         {
             Debug.Log(battleArmies.Count);

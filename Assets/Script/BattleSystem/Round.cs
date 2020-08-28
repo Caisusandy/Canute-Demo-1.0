@@ -32,6 +32,9 @@ namespace Canute.BattleSystem
 
         public List<UUID> PlayersUUID => battle.AllPlayers?.ToUUIDList();
         public Player CurrentPlayer { get => battle.GetPlayer(currentPlayerUUID); set => currentPlayerUUID = value is null ? UUID.Empty : value.UUID; }
+        public Player NextPlayer { get => GetNextPlayer(); }
+
+
         public Stat CurrentStat => stat;
 
 
@@ -98,6 +101,18 @@ namespace Canute.BattleSystem
         private void RefreshPlayer()
         {
             CurrentPlayer = battle.AllPlayers[turn - 1];
+        }
+
+        private Player GetNextPlayer()
+        {
+            int turn = this.turn + 1;
+            int round = this.round;
+            if (turn > battle.AllPlayers.Count)
+            {
+                turn = 1;
+                round++;
+            }
+            return battle.AllPlayers[turn - 1];
         }
 
         public void Next()

@@ -10,6 +10,16 @@ namespace Canute.BattleSystem
     public delegate void EffectExecutor(Effect effect);
     public delegate void StatusExecutor(ref Effect effect, Status status);
 
+    //public abstract class EffectExecution
+    //{
+    //    public abstract void Execute(Effect effect);
+    //}
+
+    //public abstract class StatusExecution
+    //{
+    //    public abstract void Execute(ref Effect effect, Status status);
+    //}
+
     public static partial class EffectExecute
     {
         #region delegates
@@ -118,6 +128,7 @@ namespace Canute.BattleSystem
                 //Debug.Log(Entity.entities.Count);
             }
 
+            Game.CurrentBattle.ScoreBoard.AllPassedEffect.Add(effect);
             return result;
         }
 
@@ -144,6 +155,8 @@ namespace Canute.BattleSystem
          */
         public static bool BeforeAttack(Effect effect)
         {
+            #region Checking
+
             if (effect.Type != Effect.Types.attack)
             {
                 Debug.LogError("No idea why a effect with type of " + effect.Type + " comes here. " + effect.ToString());
@@ -193,6 +206,8 @@ namespace Canute.BattleSystem
                     return false;
                 }
             }
+
+            #endregion
 
             Debug.Log("Attack Start");
 
@@ -427,6 +442,11 @@ namespace Canute.BattleSystem
             return sucess;
         }
 
+        /// <summary>
+        /// Player create army when game start
+        /// </summary>
+        /// <param name="effect"></param>
+        /// <returns></returns>
         private static bool CreateArmy(Effect effect)
         {
             CellEntity cellEntity = (effect.Target as OnMapEntity)?.OnCellOf;
@@ -442,7 +462,7 @@ namespace Canute.BattleSystem
                 return false;
             }
 
-            if (battleArmy.Owner.Campus?.GetPointDistanceOf(cellEntity) > 3)
+            if (Buildings.CampusEntity.GetCampus(battleArmy.Owner).GetPointDistanceOf(cellEntity) > 5)
             {
                 return false;
             }

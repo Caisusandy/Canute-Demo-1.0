@@ -12,44 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12028c83f88db554f8948d9b4f440d00, type: 3}
   m_Name: Prefabs
   m_EditorClassIdentifier: Assembly-CSharp:Chronicle.Gam:EntityPrefab
+  defaultArmy: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
+    type: 3}
+  defaultBuilding: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
+    type: 3}
   centralDeckCardPrefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
     type: 3}
   eventCardPrefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
     type: 3}
   armyCardPrefab: {fileID: 4382801775652925750, guid: b38eed8f3f5804442860b940ee4845df,
     type: 3}
-  armyDamageDisplayer: {fileID: 277045494684249564, guid: 6ba1a6e330dc8494dbfc52f5799e95b0,
+  dragonEventCardPrefab: {fileID: 4382801775652925750, guid: 7f8b6b23fb7522d4c9a5ae8a73a9816a,
     type: 3}
-  armyPrefabs:
+  buildingEventCardPrefab: {fileID: 0}
+  prefabPairs:
     list:
-    - name: AlphaArmy
-      prefab: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
+    - key: armyDamageDisplayer
+      value: {fileID: 277045494684249564, guid: 6ba1a6e330dc8494dbfc52f5799e95b0,
         type: 3}
-    - name: Basic Infantry
-      prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
+    - key: floatPanelSmall
+      value: {fileID: 3538510198041171531, guid: 9f257bc6f3d67ab41aa6e0b70d44f497,
         type: 3}
-    - name: Basic Mage
-      prefab: {fileID: 6470687005625561500, guid: 0bc50c84f67619a4583f764d2b55a9cf,
+    - key: label
+      value: {fileID: 6433049452998537299, guid: 2ee32deede5ea0c42a36bb57701f8608,
         type: 3}
-    - name: Basic Shielder
-      prefab: {fileID: 6470687005625561500, guid: 3831f74a46416314b8365aad0ca689f8,
+    - key: console
+      value: {fileID: 9022011466294989705, guid: 55a5428b6f3332c4384ae5d22b0e8f20,
         type: 3}
-    - name: Basic WarMachine
-      prefab: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
-        type: 3}
-    - name: default
-      prefab: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
-        type: 3}
-  buildingRefabs:
-    list:
-    - name: Camp
-      prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
-        type: 3}
-    - name: 
-      prefab: {fileID: 0}
-    - name: 
-      prefab: {fileID: 0}
-    - name: 
-      prefab: {fileID: 0}
-    - name: 
-      prefab: {fileID: 0}

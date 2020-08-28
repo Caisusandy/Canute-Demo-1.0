@@ -9,7 +9,6 @@ namespace Canute.BattleSystem
     {
         public void OnEnable()
         {
-
             //Debug.Log(prototype.Properties[2].Skill);
         }
     }
