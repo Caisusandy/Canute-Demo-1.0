@@ -19,13 +19,7 @@ MonoBehaviour:
     prizes:
     - name: 
       count: 5000
-      type: 6
-      leaderRequirement: []
-      armyRequirement: 
-      time:
-        hours: 0
-        minutes: 0
-        seconds: 0
+      type: 8
     enemy:
       name: Anexar Flotics
       prefab: {fileID: 0}
@@ -146,8 +140,6 @@ MonoBehaviour:
     scoreBoard:
       list: []
       allPassedEffect: []
-      totalPlayerDamage: 0
+      totalPlayerDamage: 100
       totalAirforceDefeated: 0
-      totalLandArmyDefeated: 0
-    mapEntity: {fileID: 2488920737704968843, guid: 617018560e8c4884989096463986dcce,
-      type: 3}
+      totalLandArmyDefeated: 1

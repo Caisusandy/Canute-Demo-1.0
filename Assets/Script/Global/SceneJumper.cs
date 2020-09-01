@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Motion = Canute.Module.Motion;
 
 namespace Canute
 {
@@ -59,7 +60,7 @@ namespace Canute
             if (async == null)//如果发现没有任何场景需要前往
             {
                 SceneManager.UnloadSceneAsync("Loading");//退出Loading
-                progressText.text = "--%";
+                progressText.text = "100%";
                 return;
             }
 
@@ -81,7 +82,7 @@ namespace Canute
             {
                 //                enabled = false;
                 SceneManager.UnloadSceneAsync("Loading");//退出Loading
-                progressText.text = "--%";
+                progressText.text = "100%";
                 return;
             }
         }
@@ -89,6 +90,10 @@ namespace Canute
         /// <summary> 加载的协程 </summary>
         private IEnumerator Load()
         {
+            if (GetComponent<Motion>())
+            {
+                yield return new WaitForFixedUpdate();
+            }
             (async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive)).allowSceneActivation = false;
             yield return null;
             /**

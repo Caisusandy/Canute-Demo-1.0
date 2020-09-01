@@ -2,11 +2,11 @@
 #(若没有星号，没有等于号也不会出事)
 
 #职业
-Canute.Career.Scholar=学者
-Canute.Career.Politician=政客
-Canute.Career.General=军人
-Canute.Career.Merchant=商人
-Canute.Career.None=无
+Canute.Career.Scholar=Scholar
+Canute.Career.Politician=Politician
+Canute.Career.General=General
+Canute.Career.Merchant=Merchant
+Canute.Career.None=None
 #Title
 Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
@@ -14,6 +14,8 @@ Canute.LevelTree.Level.CalayInfinite.subtitle= infinity test Map
 Canute.LevelTree.Level.CalayInfinite.title= The fall of a fantaria
 Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
 Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
+Canute.LevelTree.Level.7-inf.subtitle=Daily battle
+Canute.LevelTree.Level.7-inf.title=Basement outside
 #Currency
 Canute.Shops.Currency+Type.fedgram=Federgram
 Canute.Shops.Currency+Type.manpower=Manpower
@@ -71,8 +73,8 @@ Canute.Army.Basic Cavalry.name=Basic Cavalry
 Canute.Army.Basic Rifleman.name=Basic Rifleman
 Canute.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
 Canute.Army.Basic Dragon.name=Basic Dragon
-Canute.Army.CalayCityInfantry=Calay City Infantry
-Canute.Army.ΣCityInfantry=Σ City Infantry
+Canute.Army.CalayCityInfantry.name=Calay City Infantry
+Canute.Army.ΣCityInfantry.name=Σ City Infantry
 Canute.Army.NewUtoCityInfantry.name=New Uto City Infantry
 #
 Canute.Building.Campus.name=Campus
@@ -108,10 +110,10 @@ Canute.BattleSystem.Effect+Types.createArmy=Send army
 Canute.BattleSystem.Effect+Types.createArmy.info=Send @name to select position
 Canute.BattleSystem.Effect+Types.attackRange=Attack range bounes
 Canute.BattleSystem.Effect+Types.attackRange.info=Attack range bounes by @param 
-Canute.BattleSystem.Effect+Types.cardMinusPoint=补给
-Canute.BattleSystem.Effect+Types.cardMinusPoint.info=使一张牌需要的行动点数-@param
-Canute.BattleSystem.Effect+Types.confusion=Event: Confusion
-Canute.BattleSystem.Effect+Types.confusion.info=使一只军队移动距离与攻击距离降低@param%
+Canute.BattleSystem.Effect+Types.cardMinusPoint=Supply
+Canute.BattleSystem.Effect+Types.cardMinusPoint.info=-@param action point require (card)
+Canute.BattleSystem.Effect+Types.confusion=Confusion
+Canute.BattleSystem.Effect+Types.confusion.info=Move Range and Attack Range -@param%
 Canute.BattleSystem.Effect+Types.protection=Protection
 Canute.BattleSystem.Effect+Types.protection.info=Under $sourceName's Protection (Enemy cannot attack)
 Canute.BattleSystem.Effect+Types.infantryLightness=Resonance: Lightness
@@ -202,3 +204,19 @@ Canute.Language.EventError.NoActionRemain=没有行动点数了
 Canute.Language.EventError.NoEnoughMovePoint=没有足够多的行动点数了
 Canute.Language.EventError.HasBuildingAlready=这个位置或者周围已经有建筑
 Canute.Language.EventError.NoResourRemainForNewTeam=不能再建造这个部队了
+
+#UI'
+Canute.UI.Start.Continue=Continue
+Canute.UI.Start.Saves=Saves
+Canute.UI.Start.NewGame=New Game
+Canute.UI.Start.Settings=Settings
+Canute.UI.Start.Credit=Credit
+
+Canute.UI.MainHall.Training=Training
+Canute.UI.MainHall.Basement=Basement Daily
+Canute.UI.MainHall.Legion=Legion Setting
+Canute.UI.MainHall.Pile=Card Pile Setting
+Canute.UI.MainHall.Exploration=Exploration Team
+Canute.UI.MainHall.Shop=Shop
+Canute.UI.MainHall.Chapter=Chapter
+Canute.UI.MainHall.Quit=Quit

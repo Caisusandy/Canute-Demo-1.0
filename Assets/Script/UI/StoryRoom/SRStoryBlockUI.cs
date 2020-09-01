@@ -1,5 +1,4 @@
-﻿using Canute.Languages;
-using Canute.StorySystem;
+﻿using Canute.StorySystem;
 using UnityEngine;
 using UnityEngine.UI;
 

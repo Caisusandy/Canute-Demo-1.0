@@ -12,7 +12,7 @@ namespace Canute.StorySystem
 
         public static implicit operator Story(StoryContainer container)
         {
-            return container.story;
+            return container ? container.story : Story.Empty;
         }
 
         [ContextMenu("Export")]

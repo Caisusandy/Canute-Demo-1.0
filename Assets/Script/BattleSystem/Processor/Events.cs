@@ -362,6 +362,7 @@ namespace Canute.BattleSystem
                 }
 
                 AddSelectEvent(Switch);
+                Game.CurrentBattle.InMotionAction();
                 ArmyMovement.movingArmy = target;
                 ArmyMovement.ShowMoveRange();
                 return true;

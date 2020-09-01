@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 155872390}
   - component: {fileID: 155872389}
   - component: {fileID: 155872392}
+  - component: {fileID: 155872393}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -246,6 +247,29 @@ MonoBehaviour:
   creditButton: {fileID: 280205730}
   versionDisplayer: {fileID: 1818119956}
   savesMenu: {fileID: 306213626}
+--- !u!114 &155872393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155872387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c89a0d1ce862a4a9a200f7ff594628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  languagePairs:
+  - textField: {fileID: 334921332}
+    key: Canute.UI.Start.Continue
+  - textField: {fileID: 1767003161}
+    key: Canute.UI.Start.Saves
+  - textField: {fileID: 1148096065}
+    key: Canute.UI.Start.NewGame
+  - textField: {fileID: 754949739}
+    key: Canute.UI.Start.Settings
+  - textField: {fileID: 1208097289}
+    key: Canute.UI.Start.Credit
 --- !u!1 &280205728
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +351,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1208097289}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: bc3cc874724cc7b45a3f22d6becaf0e0, type: 2}
+        m_MethodName: GotoSceneImmediate
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Credit
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &280205731
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chapterTree:
     Chapter1:
-      list: []
+      list:
+      - data: {fileID: 11400000, guid: 5e88b38a6f08388468d30909430e4db6, type: 2}
+        backgroundStoryName: 
+        endStoryName: 
+        nextLevel: 
+      - data: {fileID: 11400000, guid: 5e88b38a6f08388468d30909430e4db6, type: 2}
+        backgroundStoryName: 
+        endStoryName: 
+        nextLevel: 
     Chapter2:
       list: []
     Chapter3:
@@ -27,6 +35,10 @@ MonoBehaviour:
       list: []
     Extra:
       list:
+      - data: {fileID: 11400000, guid: 43016f3dac1ecad45a641f8711af459f, type: 2}
+        backgroundStoryName: prelog
+        endStoryName: prelog2
+        nextLevel: 
       - data: {fileID: 11400000, guid: b3a4018f8febfa24db074e069bad05b1, type: 2}
         backgroundStoryName: prelog
         endStoryName: prelog2
@@ -35,7 +47,15 @@ MonoBehaviour:
         backgroundStoryName: prelog
         endStoryName: prelog2
         nextLevel: 
-      - data: {fileID: 11400000, guid: 43016f3dac1ecad45a641f8711af459f, type: 2}
+      - data: {fileID: 11400000, guid: 0fc53581d1ba0914ca7a0de7d4bf467c, type: 2}
         backgroundStoryName: prelog
         endStoryName: prelog2
+        nextLevel: 
+      - data: {fileID: 11400000, guid: 0659d0fb27536d94486cc4c2db728c16, type: 2}
+        backgroundStoryName: 
+        endStoryName: 
+        nextLevel: 
+      - data: {fileID: 11400000, guid: 04bc88db144f7b0458f6b445719db140, type: 2}
+        backgroundStoryName: 
+        endStoryName: 
         nextLevel: 

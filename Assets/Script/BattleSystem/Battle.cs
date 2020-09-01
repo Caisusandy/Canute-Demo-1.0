@@ -25,11 +25,11 @@ namespace Canute.BattleSystem
         [Header("Settings")]
         [SerializeField] protected Type battleType;
         [SerializeField] protected bool avoidPlayerDefinedLegionSet;
-        [SerializeField] protected List<Prize> prizes;
-        [SerializeField] protected Player enemy;
-        [SerializeField] protected List<Player> thirdParties = new List<Player>();
-        [SerializeField] protected List<WaveInfo> waveInfo = new List<WaveInfo>();
-        [SerializeField] protected GameObject mapPrefab;
+        [Space(5), SerializeField] protected List<Prize> prizes;
+        [Space(5), SerializeField] protected Player enemy;
+        [Space(5), SerializeField] protected List<Player> thirdParties = new List<Player>();
+        [Space(5), SerializeField] protected List<WaveInfo> waveInfo = new List<WaveInfo>();
+        [Space(5), SerializeField] protected GameObject mapPrefab;
 
         [Header("In-battle infomations")]
         [SerializeField] protected Player player;
@@ -609,26 +609,6 @@ namespace Canute.BattleSystem
             return battleCopy;
         }
 
-    }
-
-    [Serializable]
-    public class WaveInfo : ICloneable
-    {
-        [SerializeField] private List<BattleArmySpawnAnchor> battleArmies;
-        [SerializeField] private List<BattleBuildingSheet> battleBuildings;
-
-        public List<BattleArmySpawnAnchor> BattleArmies { get => battleArmies; set => battleArmies = value; }
-        public List<BattleBuildingSheet> BattleBuildings { get => battleBuildings; set => battleBuildings = value; }
-
-        public object Clone()
-        {
-            WaveInfo waveInfoCopy = new WaveInfo
-            {
-                battleArmies = battleArmies.Clone(),
-                battleBuildings = battleBuildings.Clone(),
-            };
-            return waveInfoCopy;
-        }
     }
 
     [Serializable]

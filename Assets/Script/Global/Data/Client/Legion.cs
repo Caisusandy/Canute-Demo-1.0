@@ -214,11 +214,21 @@ namespace Canute.BattleSystem
             this.name = name;
         }
 
-        public LeaderItem Leader => Game.PlayerData.GetLeaderItem(leaderUUID);
+
         public string Name => name;
+        public LeaderItem Leader => GetLeader();
         public Legion Legion { get => legion; set => legion = value; }
         public EventCardPile EventCardPile { get => eventCardPile; set => eventCardPile = value; }
 
+
+        private LeaderItem GetLeader()
+        {
+            if (Game.PlayerData == null)
+            {
+                return LeaderItem.Empty;
+            }
+            return Game.PlayerData.GetLeaderItem(leaderUUID);
+        }
         public override string ToString()
         {
             return "name: " + name;

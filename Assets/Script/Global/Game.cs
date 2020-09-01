@@ -1,5 +1,5 @@
 ﻿using Canute.BattleSystem;
-using Canute.Languages;
+using Canute.LanguageSystem;
 using Canute.LevelTree;
 using System;
 using System.IO;
@@ -93,6 +93,12 @@ namespace Canute
             currentBattle = null;
         }
 
+    }
+
+    public enum Language
+    {
+        en_us,
+        zh_cn
     }
 
     [Serializable]

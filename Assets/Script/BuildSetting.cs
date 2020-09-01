@@ -1,4 +1,4 @@
-﻿using Canute.Languages;
+﻿using Canute.LanguageSystem;
 using System;
 using UnityEngine;
 
@@ -19,13 +19,11 @@ namespace Canute
         [Header("Allow Player Control")]
         [SerializeField] private float playCardDelay = 0.25f;
         [SerializeField] private bool showStory = true;
-        [SerializeField] private LanguageName language = LanguageName.zh_cn;
 
         public bool IsInDebugMode => debugMode;
         public bool ShowStory => showStory;
         public bool PvP => pvp;
         public bool PlayerAutoSwitch => playerAutoSwitch;
         public float PlayCardDelay { get => playCardDelay; set => playCardDelay = value; }
-        public LanguageName Language { get => language; set => language = value; }
     }
 }

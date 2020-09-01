@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Canute.BattleSystem;
-using Canute.Languages;
 
 
 namespace Canute.BattleSystem.UI

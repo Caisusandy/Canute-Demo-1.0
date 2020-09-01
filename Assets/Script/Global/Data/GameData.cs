@@ -3,7 +3,6 @@ using Canute.LevelTree;
 using Canute.Shops;
 using Canute.StorySystem;
 using Canute.Technologies;
-using Canute.Languages;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,7 +36,6 @@ namespace Canute
         [SerializeField] protected Levels levelStart;
         [SerializeField] protected Chapters chapters;
         [SerializeField] protected Stories stories;
-        [SerializeField] protected Language language;
         [SerializeField] protected ResonanceSheet resonanceSheet;
         [SerializeField] protected ExcavationPrice excavationPrice;
         [Header("Story Packs")]
@@ -60,8 +58,6 @@ namespace Canute
         public static Shop Shop => instance.shop;
         /// <summary> Sprite获取器 </summary>
         public static SpriteLoader SpriteLoader => instance.spriteLoader;
-        /// <summary> 语言包 </summary>
-        public static Language Language => instance.language;
         /// <summary> 故事 </summary>
         public static Stories Stories => instance.stories;
 
@@ -85,7 +81,7 @@ namespace Canute
         {
             instance = this;
             Game.ReadConfig();
-            Language.ForceLoadLang();
+            Languages.ForceLoadLang();
             stories = storyPacks.Get(Game.Language);
         }
 

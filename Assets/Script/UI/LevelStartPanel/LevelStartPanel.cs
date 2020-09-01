@@ -1,5 +1,4 @@
 ﻿using Canute.BattleSystem;
-using Canute.Languages;
 using Canute.LevelTree;
 using Canute.UI.Legion;
 using Canute.UI.EventCardPile;

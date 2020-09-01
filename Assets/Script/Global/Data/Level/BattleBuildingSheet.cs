@@ -2,7 +2,7 @@
 
 namespace Canute.BattleSystem
 {
-    [CreateAssetMenu(fileName = "Battle Building", menuName = "Level/Level Data/Building")]
+    [CreateAssetMenu(fileName = "Battle Building", menuName = "Level/Building Spawner")]
     public class BattleBuildingSheet : SpawnAnchor
     {
         public BattleBuilding battleBuilding;

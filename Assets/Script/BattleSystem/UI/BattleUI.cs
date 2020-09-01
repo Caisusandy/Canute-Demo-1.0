@@ -2,7 +2,6 @@
 using UnityEngine;
 using Canute.StorySystem;
 using UnityEngine.UI;
-using Canute.Languages;
 using Canute.Testing;
 
 namespace Canute.BattleSystem.UI
@@ -81,7 +80,11 @@ namespace Canute.BattleSystem.UI
                 Destroy(instance);
             }
             instance = this;
+            InitiateMapEntity();
+        }
 
+        private static void InitiateMapEntity()
+        {
             Instantiate(Game.CurrentBattle.MapPrefab, MapAnchor.transform);
         }
 

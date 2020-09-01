@@ -32,7 +32,7 @@ MonoBehaviour:
     - prize:
         name: Basic Mage
         count: 1
-        type: 1
+        type: 2
       weight: 10
       price:
       - name: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
     - prize:
         name: Basic Infantry
         count: 1
-        type: 1
+        type: 2
       weight: 50
       price:
       - name: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
     - prize:
         name: Basic Shielder
         count: 1
-        type: 1
+        type: 2
       weight: 20
       price:
       - name: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     - prize:
         name: Basic Cavalry
         count: 1
-        type: 1
+        type: 2
       weight: 20
       price:
       - name: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
     - prize:
         name: Basic Rifleman
         count: 0
-        type: 1
+        type: 2
       weight: 10
       price:
       - name: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
     - prize:
         name: Basic WarMachine
         count: 1
-        type: 1
+        type: 2
       weight: 16
       price:
       - name: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
     - prize:
         name: "\u03A3CityInfantry"
         count: 1
-        type: 1
+        type: 2
       weight: 50
       price:
       - name: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
     - prize:
         name: CalayCityInfantry
         count: 1
-        type: 1
+        type: 2
       weight: 50
       price:
       - name: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
     - prize:
         name: NewUtoCityInfantry
         count: 1
-        type: 1
+        type: 2
       weight: 50
       price:
       - name: 0

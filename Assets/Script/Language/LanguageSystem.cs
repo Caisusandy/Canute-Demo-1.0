@@ -4,15 +4,44 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Canute.Languages
+namespace Canute
 {
-    public static class LanguageSystem
+    public static class Languages
     {
         public static string Language => Game.Language;
         public static Dictionary<string, string> Dictionary { get => dictionary; set => dictionary = value; }
 
         [ContextMenuItem("Reload language pack", "ForceLoadLang")]
         private static Dictionary<string, string> dictionary;
+
+        /// <summary>
+        /// 强行加载语言包
+        /// </summary>
+        public static void ForceLoadLang()
+        {
+            Debug.Log("loading language pack " + Game.Language);
+            Dictionary = new Dictionary<string, string>();
+            TextAsset LanguagePack = Resources.Load("Lang/" + Game.Language) as TextAsset;
+            string lang = LanguagePack.text;
+            string[] langtoarray = lang.Split('\n');
+            foreach (string wordset in langtoarray)
+            {
+                if (wordset.StartsWith("#") || wordset.StartsWith("//"))
+                {
+                    continue;
+                }
+                if (!wordset.Contains("="))
+                {
+                    continue;
+                }
+                string[] word = wordset.Split('=');
+                if (!Dictionary.ContainsKey(word[0]))
+                {
+                    //Debug.Log("Add " + word[0] + ":" + word[1]);
+                    Dictionary.Add(word[0], word[1]);
+                }
+            }
+        }
 
         #region 基本
 
@@ -94,10 +123,10 @@ namespace Canute.Languages
                     ret += value >= 0 ? "+" : "-";
                     ret += value;
                     ret += propertyBonus.BonusType == BonusType.percentage ? "% " : " ";
-                    ret += raw + "\n";
+                    ret += raw + " | ";
                 }
             }
-            return ret;
+            return ret.Remove(ret.Length - 1);
 
         }
 

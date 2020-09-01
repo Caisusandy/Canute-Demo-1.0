@@ -50,3 +50,5 @@ MonoBehaviour:
               value: propertyPanalty
             - key: statType
               value: turnBase
+            - key: specialName
+              value: confusion

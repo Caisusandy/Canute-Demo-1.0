@@ -1,29 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Canute.BattleSystem.Develop;
+using System;
 using UnityEngine;
-using UnityEditor;
 
-namespace Canute.BattleSystem.Develop
+namespace Canute.BattleSystem
 {
-    public static class CellSizeDefault
-    {
-        public const float dist_x = 40;
-        public const float dist_y = 34.5f;
-    }
-
     public class MapGenerator : MonoBehaviour
     {
         public int rect_x;
         public int rect_y;
 
-        public GameObject mapPrefab;
         public GameObject columnPrefab;
         public GameObject cellPrefab;
 
-        public MapEntity mapBase;
+        public MapEntity mapEntity;
+
+        public bool random;
 
         public void Awake()
         {
@@ -31,25 +22,34 @@ namespace Canute.BattleSystem.Develop
         }
 
         [ContextMenu("CreateMap")]
-        private void CreateMap()
+        public MapEntity CreateMap()
         {
-            mapBase = Instantiate(mapPrefab, transform).GetComponent<MapEntity>();
+            mapEntity = GetComponent<MapEntity>();
             for (int i = 0; i < rect_y; i++)
             {
-                var column = Instantiate(columnPrefab, mapBase.transform).GetComponent<ColumnEntity>();
-                mapBase.columnEntities.Add(column);
+                var column = Instantiate(columnPrefab, mapEntity.transform).GetComponent<ColumnEntity>();
+                mapEntity.columnEntities.Add(column);
 
                 column.name = "Column(" + i + ")";
                 column.transform.position = new Vector3((i % 2) * CellSizeDefault.dist_x / 2, CellSizeDefault.dist_y * i, 0);
-                column.transform.localPosition = new Vector3(column.transform.localPosition.x, column.transform.localPosition.y, 0);
+                column.transform.localPosition = new Vector3(column.transform.localPosition.x * transform.lossyScale.x, column.transform.localPosition.y * transform.lossyScale.y, 0);
 
                 for (int j = 0; j < rect_x; j++)
                 {
                     var cellEntity = CreateCell(j, i, column.transform);
                     column.cellEntities.Add(cellEntity);
+                    cellEntity.data.Coordinate = new Vector2Int(j, i);
                 }
             }
+            if (random)
+            {
+                var random = new RandomMapGenerator(this);
+                random.Randomize();
+            }
+
+            return mapEntity;
         }
+
 
         private CellEntity CreateCell(int x, int y, Transform column)
         {

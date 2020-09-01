@@ -616,7 +616,7 @@ namespace Canute.Testing
 
         private static bool ReloadLanguagePack()
         {
-            GameData.Language.ForceLoadLang();
+            Languages.ForceLoadLang();
             return true;
         }
 

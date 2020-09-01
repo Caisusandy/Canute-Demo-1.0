@@ -5,10 +5,10 @@
         Plain,
         Forest,
         Hills,
+        Sand,
+        Swamp,
         Mountains,
         River,
         Ocean,
-        Sand,
-        Swamp,
     }
 }

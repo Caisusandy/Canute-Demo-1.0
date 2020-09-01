@@ -1,5 +1,4 @@
 ﻿using Canute.BattleSystem;
-using Canute.Languages;
 using Canute.UI.LevelStart;
 using System;
 using System.Collections;
@@ -177,10 +176,12 @@ namespace Canute.UI
         public void ShowLeaderInfo()
         {
             bonusInfo.text = "";
+            var text = "";
             foreach (var item in SelectingLeader.Bonus)
             {
-                bonusInfo.text += item.Lang();
+                text += item.Lang();
             }
+            bonusInfo.text = text.Remove(text.Length - 3);
             if (skillInfo)
             {
                 skillInfo.text = "";//SelectingLeader.

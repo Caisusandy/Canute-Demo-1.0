@@ -1,9 +1,10 @@
 ﻿using Canute.BattleSystem;
+using System;
 using UnityEngine;
 
 namespace Canute.UI
 {
-    [System.Obsolete]
+    [Obsolete]
     public class LSScroll : MonoBehaviour
     {
         public static LSScroll instance;

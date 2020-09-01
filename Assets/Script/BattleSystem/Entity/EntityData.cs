@@ -1,4 +1,4 @@
-﻿using Canute.Languages;
+﻿using Canute.LanguageSystem;
 using System;
 using System.Linq;
 using UnityEngine;

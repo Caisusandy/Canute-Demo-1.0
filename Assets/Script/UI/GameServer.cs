@@ -21,7 +21,7 @@ namespace Canute.UI
             if (!Game.Initialized)
             {
                 Game.ReadConfig();
-                GameData.Language.ForceLoadLang();
+                Languages.ForceLoadLang();
             }
         }
 

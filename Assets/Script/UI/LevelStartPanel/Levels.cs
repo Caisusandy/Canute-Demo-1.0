@@ -1,4 +1,5 @@
-﻿using Canute.LevelTree;
+﻿using Canute.BattleSystem;
+using Canute.LevelTree;
 using UnityEngine;
 
 namespace Canute.UI.LevelStart
@@ -29,6 +30,11 @@ namespace Canute.UI.LevelStart
             var obj = Instantiate(levelStartPanel, Camera.main.transform.GetChild(0).transform);
             var panel = obj.GetComponent<LevelStartPanel>();
             panel.levelName = GameData.Chapters.ChapterTree.GetLevel(levelName).Name;
+        }
+
+        public void OpenTutorial()
+        {
+            Game.LoadBattle(GameData.Chapters.ChapterTree.GetLevel("Tutorial"), new LegionSet());
         }
 
         public void OnEnable()

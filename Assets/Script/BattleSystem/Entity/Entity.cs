@@ -1,4 +1,4 @@
-﻿using Canute.Languages;
+﻿using Canute.LanguageSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -81,7 +81,7 @@ namespace Canute.BattleSystem
         {
             Animator.RemoveFromBattle();
             entities?.Remove(this);
-            Debug.Log("the entity is destroyed " + this);
+            //Debug.Log("the entity is destroyed " + this);
         }
 
         /// <summary>

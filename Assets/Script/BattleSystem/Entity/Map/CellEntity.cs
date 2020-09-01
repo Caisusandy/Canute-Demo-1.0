@@ -58,6 +58,11 @@ namespace Canute.BattleSystem
                 GetComponent<SpriteRenderer>().color = new Color(200f / 255, 200f / 255, 200f / 255);
             }
 
+            SetCellSprite();
+        }
+
+        public void SetCellSprite()
+        {
             GetComponent<SpriteRenderer>().sprite = GetCellSprite();
         }
 

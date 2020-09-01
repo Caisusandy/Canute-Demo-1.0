@@ -24,8 +24,7 @@ MonoBehaviour:
   shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
   levelStart: {fileID: 11400000, guid: dc6a04b2b485dfc439489ed59b0f9e62, type: 2}
   chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
-  stories: {fileID: 0}
-  language: {fileID: 11400000, guid: 16f3df5f3ea0e0e459b5991cd466258a, type: 2}
+  stories: {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
   resonanceSheet: {fileID: 11400000, guid: 2b9677566fe85b94f863baa16160a92c, type: 2}
   excavationPrice: {fileID: 11400000, guid: ef1ff19ee3bcbc046800199ccdddf1c6, type: 2}
   storyPacks:
@@ -35,32 +34,24 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/8/10 6:50:06
+      value: 2020/8/31 4:27:23
     shopInfo:
       nextRefreshTime:
-        value: 2020/8/10 4:51:13
+        value: 2020/8/31 4:44:00
       onShopArmies:
         list:
         - prize:
-            name: Basic Infantry
+            name: Basic WarMachine
             count: 1
-            type: 1
-          weight: 50
-          price:
-          - name: 0
-            count: 100
-        - prize:
-            name: CalayCityInfantry
-            count: 1
-            type: 1
-          weight: 50
+            type: 2
+          weight: 16
           price:
           - name: 0
             count: 300
         - prize:
-            name: CalayCityInfantry
+            name: NewUtoCityInfantry
             count: 1
-            type: 1
+            type: 2
           weight: 50
           price:
           - name: 0
@@ -68,82 +59,35 @@ MonoBehaviour:
         - prize:
             name: Basic Shielder
             count: 1
-            type: 1
+            type: 2
           weight: 20
           price:
           - name: 0
             count: 250
+        - prize:
+            name: Basic Mage
+            count: 1
+            type: 2
+          weight: 10
+          price:
+          - name: 0
+            count: 500
       onShopEquipments:
         list: []
-    federgram: 70647
-    manpower: 71597
-    mantleAlloy: 99691
+    federgram: 70547
+    manpower: 71297
+    mantleAlloy: 99685
     aethium: 9996
     excaTeam:
       leadersUUID:
-      - value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
       - value: d7c07b72-ed02-4c19-afb0-666e85e198a2
       - value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
       - value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
+      - value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
       armyUUID:
         value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
       currentPrize:
-        prizeBoxes:
-        - startingTime:
-            value: 2020/8/10 2:50:06
-          prize:
-            name: prelog
-            count: 20
-            type: 1
-            leaderRequirement:
-            - Canute Svensson
-            - Aether Erinope
-            - Anexar Flotics
-            armyRequirement: 
-            time:
-              hours: 4
-              minutes: 2
-              seconds: 0
-        - startingTime:
-            value: 2020/8/10 6:52:06
-          prize:
-            name: Amlos
-            count: 20
-            type: 3
-            leaderRequirement:
-            - Canute Svensson
-            armyRequirement: 
-            time:
-              hours: 2
-              minutes: 16
-              seconds: 25
-        - startingTime:
-            value: 2020/8/10 9:08:31
-          prize:
-            name: Rare Equipment
-            count: 20
-            type: 4
-            leaderRequirement: []
-            armyRequirement: 
-            time:
-              hours: 3
-              minutes: 20
-              seconds: 2
-        - startingTime:
-            value: 2020/8/10 12:28:33
-          prize:
-            name: prelog
-            count: 20
-            type: 1
-            leaderRequirement:
-            - Aether Erinope
-            - Anexar Flotics
-            - Canute Svensson
-            armyRequirement: 
-            time:
-              hours: 4
-              minutes: 1
-              seconds: 0
+        prizeBoxes: []
     legions:
     - armiesUUID:
       - value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
@@ -300,8 +244,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: dcb1fa84-b176-48f5-afef-71b070286ba5
+        - value: 8e97e50a-5e8b-4592-9907-197fa0a3a7a9
+        - value: e0374d21-e259-4e04-872f-ada09795d5ab
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Shielder
       uuid:
         value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
@@ -310,8 +257,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 3231013b-a322-42a9-8097-e1a76ad04157
+        - value: 05a7e9d4-3ef8-4275-bb1c-61bc45a54ffe
+        - value: 0d262143-caf8-4d6d-baad-06c54312ea8f
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Shielder
       uuid:
         value: 848a4828-f08c-48bd-9ed6-fde8de74f386
@@ -320,8 +270,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 45b24e36-c0d5-4399-869c-76c7539322c5
+        - value: 38c66678-ee80-475b-8a13-4223d1733500
+        - value: be424fe4-0db3-4f17-88dc-a031bd0e2a0e
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Shielder
       uuid:
         value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
@@ -386,8 +339,11 @@ MonoBehaviour:
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 56a2321d-2742-4df5-9df3-0fd7cc708957
+        - value: 6384e86f-55fc-4ff8-8998-f3348d4e1f52
+        - value: a645795d-d048-4296-8c5c-4881b896f6e8
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Cavalry
       uuid:
         value: 52112c80-724e-4bca-a5c2-9dbf17289460
@@ -439,8 +395,11 @@ MonoBehaviour:
       star: 1
       LeaderName: Arthur Connors
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: c473c6c0-60e2-40b6-a18c-600efb8b5cfb
+        - value: 7e71e3c3-d576-4602-a79d-922cb1b0ef57
+        - value: 55f37982-7b9c-4c65-9fdf-80ef1861d39d
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Rifleman
       uuid:
         value: a038f585-42bf-4590-97f4-917614bdb7fa
@@ -540,7 +499,7 @@ MonoBehaviour:
       exp: 2511000
       floatExp: 1500
       star: 1
-      LeaderName: Phil Erinope VI
+      LeaderName: Empty
       equipments:
         equipmentUUID:
         - value: 
@@ -626,7 +585,7 @@ MonoBehaviour:
       exp: 301000
       floatExp: 0
       star: 2
-      LeaderName: 
+      LeaderName: Empty
       equipments:
         equipmentUUID:
         - value: 
@@ -757,6 +716,19 @@ MonoBehaviour:
         - value: e2226c5e-5863-4730-8e4d-bfb5e1ba2be0
         - value: 059e58cd-8d2b-436e-ab87-4d11b5bc04d0
         equipmentLimit: 030000000300000003000000
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: de99e4c7-5a4e-41eb-9793-58b27f02288b
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: af5842c1-2aeb-4d77-8075-26f0e6a46c91
+        - value: 6d80371d-28e8-4fff-b9ed-43f795663f52
+        - value: 788ad8e5-65fe-4fdd-a356-6471e1fb376f
+        equipmentLimit: 030000000300000003000000
     leaders:
     - protoName: Aether Erinope
       uuid:
@@ -814,6 +786,11 @@ MonoBehaviour:
         value: 0d2c033e-e0d4-47be-9aa3-d0481d088e41
       exp: 0
       floatExp: 0
+    - protoName: Common Equipment
+      uuid:
+        value: 456e53b3-d5d7-45fb-843f-c0f7808685d8
+      exp: 0
+      floatExp: 0
     eventCards:
     - protoName: AlphaCard
       uuid:
@@ -856,10 +833,12 @@ MonoBehaviour:
       - NewUtoCityInfantry
       - Basic Shielder
       - Basic Infantry
+      - Basic AircraftFighter
       equipmentsUnlocked:
       - 
       - 
       - 
+      - Common Equipment
       leadersUnlocked:
       - Andrew Chaffin-Erinope
       - Aether Erinope

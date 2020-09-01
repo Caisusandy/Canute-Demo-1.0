@@ -8,7 +8,7 @@ namespace Canute.BattleSystem
 {
 
 
-    [CreateAssetMenu(fileName = "Battle Army", menuName = "Level/Level Data/Army")]
+    [CreateAssetMenu(fileName = "Battle Army", menuName = "Level/Army Spawner")]
     public class BattleArmySpawnAnchor : SpawnAnchor
     {
         [Header("Data")]

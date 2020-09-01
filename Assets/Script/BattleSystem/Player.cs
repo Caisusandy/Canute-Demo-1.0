@@ -1,7 +1,6 @@
 ﻿using Canute.BattleSystem.AI;
 using Canute.BattleSystem.Buildings;
 using Canute.BattleSystem.UI;
-using Canute.Languages;
 using System;
 using System.Collections.Generic;
 using UnityEngine;

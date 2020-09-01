@@ -51,6 +51,10 @@ MonoBehaviour:
         backgroundStoryName: prelog
         endStoryName: prelog2
         nextLevel: 
+      - data: {fileID: 11400000, guid: 0659d0fb27536d94486cc4c2db728c16, type: 2}
+        backgroundStoryName: 
+        endStoryName: 
+        nextLevel: 
       - data: {fileID: 11400000, guid: 04bc88db144f7b0458f6b445719db140, type: 2}
         backgroundStoryName: 
         endStoryName: 

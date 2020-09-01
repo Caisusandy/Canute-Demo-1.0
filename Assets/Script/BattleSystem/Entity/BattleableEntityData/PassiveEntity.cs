@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Canute.BattleSystem
 {
@@ -89,23 +90,25 @@ namespace Canute.BattleSystem
     /// <summary> 能被攻击的实体的数据的接口 </summary>
     public interface IPassiveEntityData : IBattleableEntityData, IStatusContainer, IOwnable
     {
-        /// <summary> 生命值 </summary>
-        int Health { get; set; }
         /// <summary> 最高生命值 </summary>
         int MaxHealth { get; }
-        /// <summary> 防御值 </summary>
-        int Defense { get; }
-        /// <summary> 护甲值 </summary>
-        int Armor { get; set; }
-        /// <summary> 生命值百分比 </summary>
+        /// <summary>  </summary>
         float HealthPercent { get; }
     }
-    public interface IPassiveEntity : IBattleableEntity
+
+    public interface IAggressiveEntity : IBattleableEntity
     {
-        /// <summary> Entity Data </summary>
+        new IAggressiveEntityData Data { get; }
+
+        List<CellEntity> GetAttackArea();
+        void GetAttackTarget(ref Effect effect);
+        void Attack(params object[] vs);
+    }
+
+    public interface IPassiveEntity : IBattleableEntity, IDefeatable, ISkillable
+    {
         new IPassiveEntityData Data { get; }
-        float DefeatedDuration { get; }
-        float HurtDuration { get; }
+
         void Hurt(params object[] vs);
     }
 
@@ -114,9 +117,6 @@ namespace Canute.BattleSystem
         public static event DamageEvent DamageEvent;
         public static event DefeatEvent DefeatEvent;
 
-        /// <summary>
-        /// 造成最终伤害值
-        /// </summary>
         public static int FinalDamage(this IPassiveEntity passive, int damagePoint, IBattleableEntity source = null)
         {
             passive.Data.Health -= damagePoint;
@@ -125,12 +125,6 @@ namespace Canute.BattleSystem
             return damagePoint;
         }
 
-        /// <summary>
-        /// 获取扣除护甲值后的伤害
-        /// </summary>
-        /// <param name="passive">伤害对象</param>
-        /// <param name="damagePoint">未考虑伤害对象的伤害</param> 
-        /// <returns></returns>
         public static int DamageArmor(this IPassiveEntity passive, int damagePoint)
         {
             int dArmor = passive.Data.Armor;
@@ -150,7 +144,7 @@ namespace Canute.BattleSystem
             return dArmor;
         }
 
-        private static int GetDamageAfterDefensePoint(this IPassiveEntity passive, int damagePoint)
+        public static int GetDamageAfterDefensePoint(this IPassiveEntity passive, int damagePoint)
         {
             return Mathf.Max(1, damagePoint - passive.Data.Defense);
         }
@@ -171,13 +165,7 @@ namespace Canute.BattleSystem
             DefeatEvent?.Invoke(source, passive);
         }
 
-        /// <summary>
-        /// 伤害
-        /// </summary>
-        /// <param name="passiveEntity">伤害对象</param>
-        /// <param name="damage">未考虑伤害对象的伤害</param>
-        /// <param name="source">伤害来源</param>
-        /// <returns></returns>
+
         public static void Damage(this IPassiveEntity passiveEntity, int damage, IBattleableEntity source = null)
         {
             int finalDamageIfCrit = damage;

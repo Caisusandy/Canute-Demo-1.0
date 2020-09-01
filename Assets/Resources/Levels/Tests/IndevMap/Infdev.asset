@@ -15,17 +15,11 @@ MonoBehaviour:
   levelName: CalayInfinite
   battle:
     battleType: 1
-    usePlayerDefinedLegionSet: 1
+    avoidPlayerDefinedLegionSet: 0
     prizes:
     - name: 
       count: 1000
-      type: 6
-      leaderRequirement: []
-      armyRequirement: 
-      time:
-        hours: 0
-        minutes: 0
-        seconds: 0
+      type: 8
     enemy:
       name: Anexar Flotics
       prefab: {fileID: 0}
@@ -147,7 +141,6 @@ MonoBehaviour:
     scoreBoard:
       list: []
       allPassedEffect: []
-      totalPlayerDamage: 0
+      totalPlayerDamage: 100
       totalAirforceDefeated: 0
-      totalLandArmyDefeated: 0
-    mapEntity: {fileID: 0}
+      totalLandArmyDefeated: 1

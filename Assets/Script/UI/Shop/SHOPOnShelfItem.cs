@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using Canute.UI.Exploration;
 using Canute.Shops;
-using Canute.Languages;
+using Canute.LanguageSystem;
 using System;
 
 namespace Canute.UI.Shop

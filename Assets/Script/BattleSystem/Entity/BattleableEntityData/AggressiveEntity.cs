@@ -66,32 +66,15 @@ namespace Canute.BattleSystem
         int RawDamage { get; set; }
         /// <summary> 获取一次军队可造成的伤害点数（不计算Status的加成） </summary>
         int Damage { get; }
-        /// <summary> 可以攻击的位置 </summary>
         BattleProperty.Position AttackPosition { get; }
-        /// <summary> 攻击方式 </summary>
         BattleProperty.AttackType AttackType { get; }
-        /// <summary> Critical Damage Rate </summary>
         double CritRate { get; }
 
         /// <summary> 攻击方式（选择目标的方式）</summary>
         //ArmyProperty.TargetTypes TargetType { get; }
-        /// <summary> 攻击范围内所有格子 </summary>
+
         List<CellEntity> GetAttackArea();
-        /// <summary> 执行大招 </summary>
         void PerformSkill();
-    }
-
-    public interface IAggressiveEntity : IBattleableEntity
-    {
-        /// <summary> Entity Data </summary>
-        new IAggressiveEntityData Data { get; }
-        /// <summary> 重写攻击目标 </summary> <param name="effect"> 攻击效果参数 </param>
-        void GetAttackTarget(ref Effect effect);
-        /// <summary> 攻击范围内所有格子 </summary>
-        List<CellEntity> GetAttackArea();
-        /// <summary> 攻击 </summary>
-        void Attack(params object[] vs);
-
     }
 
     public static class AgressiveEntitiesData

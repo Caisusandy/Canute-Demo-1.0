@@ -1,5 +1,4 @@
-﻿using Canute.Languages;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,6 +77,30 @@ namespace Canute.BattleSystem
                     }
                 }
             }
+        }
+        public virtual void KillEntity(params object[] vs)
+        {
+            IEnumerator Check(params object[] vs1)
+            {
+                while (true)
+                {
+                    if (IsIdle)
+                    {
+                        yield return new EntityEventPack(DefeatedAnimation).Execute();
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(0.1f);
+                    }
+                }
+            }
+            Action(Check);
+        }
+        public virtual void DefeatedAnimation(params object[] vs)
+        {
+            InPerformingAnimation();
+            Animator.SetBool(isDefeated, true);
+            Action(new EntityEventPack(IdleDelay, DefeatedDuration), new EntityEventPack((object[] vvs) => { Destroy(); }));
         }
 
 

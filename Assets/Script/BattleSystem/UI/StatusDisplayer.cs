@@ -1,5 +1,4 @@
-﻿using Canute.Languages;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Canute.BattleSystem.UI

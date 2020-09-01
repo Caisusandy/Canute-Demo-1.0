@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39142e4fb8ea1a34a994b54e1655eaa7, type: 3}
   m_Name: Stories
   m_EditorClassIdentifier: 
-  language: 10
+  language: 0
   storyTree:
     list:
     - {fileID: 11400000, guid: 3c1445d639bfd1340a37ee8a4bdab56b, type: 2}

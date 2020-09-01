@@ -1,4 +1,4 @@
-﻿using Canute.Languages;
+﻿using Canute.LanguageSystem;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,13 +10,13 @@ namespace Canute.StorySystem
     [CreateAssetMenu(fileName = "Stories", menuName = "Game Data/Stories", order = 6)]
     public class Stories : ScriptableObject, INameable
     {
-        [SerializeField] protected LanguageName language;
+        [SerializeField] protected Language language;
         [ContextMenuItem("Save", "SaveStory")]
         [SerializeField] protected StoryTree storyTree;
 
         public string Name => language.ToString();
         public StoryTree StoryTree { get => storyTree; set => storyTree = value; }
-        public LanguageName Language { get => language; set => language = value; }
+        public Language Language { get => language; set => language = value; }
         public string DataPath => Application.persistentDataPath + "/Stories/";
 
         public void OnValidate()

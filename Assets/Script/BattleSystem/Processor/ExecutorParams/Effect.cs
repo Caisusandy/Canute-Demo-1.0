@@ -1,4 +1,4 @@
-﻿using Canute.Languages;
+﻿using Canute.LanguageSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -151,6 +151,11 @@ namespace Canute.BattleSystem
             if (args.ContainsKey(key))
             {
                 if (value is null)
+                {
+                    args.Remove(key);
+                    return;
+                }
+                else if (string.IsNullOrEmpty(value))
                 {
                     args.Remove(key);
                     return;

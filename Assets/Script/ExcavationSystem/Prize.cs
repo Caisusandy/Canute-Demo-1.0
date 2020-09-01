@@ -1,5 +1,4 @@
-﻿using Canute.Languages;
-using Canute.Shops;
+﻿using Canute.Shops;
 using Canute.StorySystem;
 using System;
 using System.Collections.Generic;

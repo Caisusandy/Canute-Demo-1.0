@@ -1,5 +1,4 @@
 ﻿using Canute.BattleSystem.UI;
-using Canute.Languages;
 using Canute.Module;
 using System;
 using System.Collections.Generic;

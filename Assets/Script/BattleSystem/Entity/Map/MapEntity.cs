@@ -13,7 +13,11 @@ namespace Canute.BattleSystem
         private static MapEntity instance;
 
         public List<ColumnEntity> columnEntities;
-        private static bool wasOnDrag;
+        public bool wasOnDrag;
+
+        public bool isInitialized;
+        public bool isRandomMap;
+        public int seed;
 
         public static MapEntity CurrentMap => instance;
 
@@ -22,7 +26,7 @@ namespace Canute.BattleSystem
         public int Count => columnEntities.Count;
         public int CellCount => GetCellCount();
         public float MapRadius => (Origin.transform.position - Center.transform.position).magnitude;
-        public static bool WasOnDrag { get => wasOnDrag; set { wasOnDrag = value; SetCellCollider(!value); } }
+        public static bool WasOnDrag { get => instance.wasOnDrag; set { instance.wasOnDrag = value; SetCellCollider(!value); } }
         public CellEntity Origin => this[0][0];
         public CellEntity Center { get => GetCenter(); }
 
@@ -36,7 +40,9 @@ namespace Canute.BattleSystem
             name = "Map";
             instance = this;
             transform.localScale = Vector3.one;
-            MapSetUp();
+            if (!isInitialized) MapSetUp();
+            if (!(Game.CurrentBattle is null))
+                Game.CurrentBattle.MapEntity = this;
         }
 
         public override void Start()
@@ -89,7 +95,10 @@ namespace Canute.BattleSystem
             return count;
         }
 
-
+        /// <summary>
+        /// return the center of the map, whether the cell is reachable for the player or not.
+        /// </summary>
+        /// <returns></returns>
         private CellEntity GetCenter()
         {
             int y = columnEntities.Count / 2;
@@ -106,8 +115,7 @@ namespace Canute.BattleSystem
                 columnEntities.Add(item);
                 item.ColumnSetup();
             }
-            if (!(Game.CurrentBattle is null))
-                Game.CurrentBattle.MapEntity = this;
+            isInitialized = true;
         }
 
         public static implicit operator List<ColumnEntity>(MapEntity mapEntity)
@@ -798,17 +806,20 @@ namespace Canute.BattleSystem
     [Serializable]
     public class Map : NonOwnableEntityData, IEnumerable<Column>, IEnumerable<Cell>
     {
-
         public List<Column> columns = new List<Column>();
+        public bool random;
+        public int seed;
+
         public Column this[int index] { get => columns[index]; set => columns[index] = value; }
         public Cell this[int x, int y] { get => columns[x][y]; set => columns[x][y] = value; }
 
         public Map(MapEntity mapEntity)
         {
+            this.random = mapEntity.isRandomMap;
+            this.seed = mapEntity.seed;
             foreach (ColumnEntity columnEntity in mapEntity)
             {
                 columns.Add(new Column(columnEntity));
-
             }
         }
 

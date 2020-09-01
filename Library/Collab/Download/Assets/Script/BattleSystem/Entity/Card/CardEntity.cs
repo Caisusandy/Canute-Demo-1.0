@@ -1,5 +1,4 @@
 ﻿using Canute.BattleSystem.UI;
-using Canute.Languages;
 using Canute.Module;
 using System;
 using System.Collections.Generic;
@@ -32,14 +31,12 @@ namespace Canute.BattleSystem
         private static InteractableEntity selectingEntity;
         private static CardEntity selectingCard;
 
-        public static List<CardEntity> currentCards;
 
         public static List<CardEntity> cards = new List<CardEntity>();
         public static float times = 0;
 
         public static bool IsDelayEnded => times > PlayCardDelay;
         public static float PlayCardDelay => Game.Configuration.PlayCardDelay;
-        public static List<CardEntity> CurrentCards { get => currentCards is null ? Game.CurrentBattle.Player.Entity.Cards : currentCards; set => currentCards = value; }
 
         public static InteractableEntity SelectingEntity { get => selectingEntity; set { selectingEntity = value; } }
         public static CardEntity SelectingCard { get => selectingCard; set { selectingCard = value; } }
@@ -54,6 +51,11 @@ namespace Canute.BattleSystem
         {
             Display();
             DragCardDeleyAdd();
+            //if (Game.CurrentBattle.Round.CurrentStat != Round.Stat.gameStart)
+            //    if (!isDraging && !GetComponent<Motion>())
+            //    {
+            //        Idle(0);
+            //    }
         }
 
         #region Mouse operation
@@ -207,10 +209,12 @@ namespace Canute.BattleSystem
         private void Drag()
         {
             if (GetComponent<Motion>())
-            {
                 Destroy(GetComponent<Motion>());
-            }
-            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
+            //if (Game.CurrentBattle.Round.CurrentStat != Round.Stat.gameStart)
+            //    InPerformingAnimation();
+            transform.position = Control.UserInputPosition + new Vector3(0, 0, 10);
+            Debug.Log(transform.position);
+            Debug.Log(Control.UserInputPosition);
         }
 
         private void DragCardDeleyAdd()
@@ -228,6 +232,8 @@ namespace Canute.BattleSystem
         /// </summary>
         private void ThrowAway()
         {
+            Destroy();
+            Game.CurrentBattle.Player.ActionPoint++;
             /* */
         }
 
@@ -240,7 +246,7 @@ namespace Canute.BattleSystem
             Debug.Log("try play card");
             if (!Game.CurrentBattle.IsFreeTime)
             {
-                //Debug.Log("Card did not played: Not a free time to play card, there is at least an action in process");
+                Debug.Log("Card did not played: Not a free time to play card, there is at least an action in process");
                 TimeDeleyReset();
                 return false;
             }
@@ -291,7 +297,6 @@ namespace Canute.BattleSystem
         }
 
         #endregion 
-
 
         #region Card Positions 
         /// <summary> 重整卡牌实体的位置 </summary>
@@ -374,7 +379,7 @@ namespace Canute.BattleSystem
             int cardcount = cardEntities.Count;
             float StartingAngle = 90 + (cardcount - 1) * AnglePerCard / 2;
             float angle = StartingAngle - card.id * AnglePerCard;
-            float degreeX = Mathf.Cos(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 7.5f;
+            float degreeX = Mathf.Cos(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 6.25f;
             float degreeY = Mathf.Sin(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 1.2f;
 
             return new Vector3(degreeX, degreeY) * (card.IsSelected ? 1.25f : 1f);
@@ -387,7 +392,7 @@ namespace Canute.BattleSystem
             foreach (CardEntity cardEntity in cardEntities)
             {
                 Rotation.SetRotation(cardEntity.gameObject, GetAngle(cardEntities, cardEntity));
-                Motion.SetMotion(cardEntity.gameObject, GetPosition(cardEntities, cardEntity), Space.Self);
+                Motion.SetMotion(cardEntity.gameObject, GetPosition(cardEntities, cardEntity), Space.Self, null, true);
             }
         }
 
@@ -403,7 +408,7 @@ namespace Canute.BattleSystem
                 {
                     cardEntity.Unselect();
                 }
-                Motion.SetMotion(cardEntity.gameObject, handCardBar.transform.position - new Vector3(0, 3, 0));
+                Motion.SetMotion(cardEntity.gameObject, handCardBar.transform.position - new Vector3(0, 3, 0), null, true);
             }
         }
 
@@ -463,7 +468,7 @@ namespace Canute.BattleSystem
             Owner.RemoveHandCard(data);
 
             Reorganize(Owner.Entity.Cards, BattleUI.HandCardBar);
-            animator.RemoveFromBattle();
+            Animator.RemoveFromBattle();
 
             base.Destroy();
         }

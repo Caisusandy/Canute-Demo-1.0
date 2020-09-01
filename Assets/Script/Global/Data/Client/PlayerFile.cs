@@ -106,7 +106,7 @@ namespace Canute
         public static Data CreateNewPlayerFile()
         {
             Debug.Log("try create player file");
-            Data = new Data();
+            Data = new Data(Guid.NewGuid());
             string filePath = DataPath + data.UUID;
             Directory.CreateDirectory(filePath);
             Debug.Log(filePath);
@@ -119,7 +119,12 @@ namespace Canute
         public static Data ContinueLastSaved()
         {
             bool result = LoadData(Game.Configuration.LastGame);
-            return result ? data : null;
+            if (result)
+                return data;
+            else
+                SceneControl.GotoSceneImmediate(MainScene.gameStart);
+
+            return null;
         }
 
         public static List<Save> GetAllSaves()

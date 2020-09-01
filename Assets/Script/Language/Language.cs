@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,18 +9,13 @@ public static class LanguageAddress
     public const string Story = "";
 }
 
-namespace Canute.Languages
+namespace Canute.LanguageSystem
 {
-    public enum LanguageName
-    {
-        zh_cn = SystemLanguage.ChineseSimplified,
-        en_us = SystemLanguage.English,
-    }
-
+    [Obsolete]
     [CreateAssetMenu(fileName = "Lang", menuName = "Game Data/Language")]
     public class Language : ScriptableObject
     {
-        public static Dictionary<string, string> Dictionary { get => LanguageSystem.Dictionary; set => LanguageSystem.Dictionary = value; }
+        public static Dictionary<string, string> Dictionary { get => Languages.Dictionary; set => Languages.Dictionary = value; }
 
         /// <summary>
         /// 语言文件解释器, 加载语言包

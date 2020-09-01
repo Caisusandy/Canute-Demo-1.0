@@ -1,5 +1,4 @@
-﻿using Canute.Languages;
-using System;
+﻿using System;
 using UnityEditor;
 using UnityEngine;
 

@@ -444,6 +444,11 @@ namespace Canute
         public Data()
         {
             uuid = Guid.NewGuid();
+        }
+
+        public Data(Guid guid)
+        {
+            uuid = guid;
             shopInfo = new ShopInfo();
             Legions = new List<Legion>() { new Legion(), new Legion(), new Legion() };
             EventCardPiles = new List<EventCardPile>() { new EventCardPile(), new EventCardPile(), new EventCardPile() };

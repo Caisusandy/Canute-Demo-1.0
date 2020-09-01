@@ -1,5 +1,4 @@
 ﻿using Canute.BattleSystem;
-using Canute.Languages;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +12,7 @@ namespace Canute.UI
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Label.text = Languages.LanguageSystem.Lang(armyItem.Type);
+            Label.text = Languages.Lang(armyItem.Type);
         }
 
         public override void SetArmyItem(ArmyItem armyItem)
