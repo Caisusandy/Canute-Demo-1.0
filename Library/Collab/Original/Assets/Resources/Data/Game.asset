@@ -12,40 +12,165 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9da5f2bfa868b409e19743ad430374, type: 3}
   m_Name: Game
   m_EditorClassIdentifier: 
+  version:
+    major: 0
+    minor: 0
+    build: 0
+    revision: 0
+  prototypeFactory: {fileID: 11400000, guid: ee95c71a6e8e34e4a89f10073d0bc405, type: 2}
+  entityPrefabs: {fileID: 11400000, guid: 934f48eb78b90474e9826f8a953f0d94, type: 2}
+  spriteLoader: {fileID: 11400000, guid: 4bd7520eeb39dfa489ff77c9e2981688, type: 2}
+  technology: {fileID: 11400000, guid: fcfd1f70776947b41bb5db362bb87846, type: 2}
+  shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
+  levelStart: {fileID: 11400000, guid: dc6a04b2b485dfc439489ed59b0f9e62, type: 2}
+  chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
+  stories: {fileID: 0}
+  language: {fileID: 11400000, guid: 16f3df5f3ea0e0e459b5991cd466258a, type: 2}
+  resonanceSheet: {fileID: 11400000, guid: 2b9677566fe85b94f863baa16160a92c, type: 2}
+  excavationPrice: {fileID: 11400000, guid: ef1ff19ee3bcbc046800199ccdddf1c6, type: 2}
+  storyPacks:
+    list:
+    - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
   data:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/4/3 0:09:01
-    gold: 10000000
-    manpower: 1000000
-    mantleAlloy: 1000000
-    mantleFluid: 1000000
-    aethium: 1000000
+      value: 2020/8/10 6:50:06
+    shopInfo:
+      nextRefreshTime:
+        value: 2020/8/10 4:51:13
+      onShopArmies:
+        list:
+        - prize:
+            name: Basic Infantry
+            count: 1
+            type: 1
+          weight: 50
+          price:
+          - name: 0
+            count: 100
+        - prize:
+            name: CalayCityInfantry
+            count: 1
+            type: 1
+          weight: 50
+          price:
+          - name: 0
+            count: 300
+        - prize:
+            name: CalayCityInfantry
+            count: 1
+            type: 1
+          weight: 50
+          price:
+          - name: 0
+            count: 300
+        - prize:
+            name: Basic Shielder
+            count: 1
+            type: 1
+          weight: 20
+          price:
+          - name: 0
+            count: 250
+      onShopEquipments:
+        list: []
+    federgram: 70647
+    manpower: 71597
+    mantleAlloy: 99691
+    aethium: 9996
+    excaTeam:
+      leadersUUID:
+      - value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
+      - value: d7c07b72-ed02-4c19-afb0-666e85e198a2
+      - value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
+      - value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
+      armyUUID:
+        value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+      currentPrize:
+        prizeBoxes:
+        - startingTime:
+            value: 2020/8/10 2:50:06
+          prize:
+            name: prelog
+            count: 20
+            type: 1
+            leaderRequirement:
+            - Canute Svensson
+            - Aether Erinope
+            - Anexar Flotics
+            armyRequirement: 
+            time:
+              hours: 4
+              minutes: 2
+              seconds: 0
+        - startingTime:
+            value: 2020/8/10 6:52:06
+          prize:
+            name: Amlos
+            count: 20
+            type: 3
+            leaderRequirement:
+            - Canute Svensson
+            armyRequirement: 
+            time:
+              hours: 2
+              minutes: 16
+              seconds: 25
+        - startingTime:
+            value: 2020/8/10 9:08:31
+          prize:
+            name: Rare Equipment
+            count: 20
+            type: 4
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 3
+              minutes: 20
+              seconds: 2
+        - startingTime:
+            value: 2020/8/10 12:28:33
+          prize:
+            name: prelog
+            count: 20
+            type: 1
+            leaderRequirement:
+            - Aether Erinope
+            - Anexar Flotics
+            - Canute Svensson
+            armyRequirement: 
+            time:
+              hours: 4
+              minutes: 1
+              seconds: 0
     legions:
     - armiesUUID:
-      - value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
+      - value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+      - value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
       - value: 2be597d2-643f-4040-8c59-a6fd0b42c900
-      - value: 02c76a26-a718-4a60-9a1d-1d714f28cf0b
+      - value: 826c6717-7099-4429-a4fe-93a427845a31
+      - value: 5471b989-7bb1-4a99-82cf-9822db0d954a
+      - value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
+    - armiesUUID:
+      - value: a1c69613-1cca-438d-b56b-73e2c9aec777
+      - value: e232fb80-08fe-402d-9a59-25f5e396391e
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+    - armiesUUID:
+      - value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
       - value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
-      - value: f2f3e043-8965-42ed-b8a3-963e06d488b2
-      leaderUUID:
-        value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
-      eventCardUUID: []
-    - armiesUUID:
-      - value: 7b73caad-b105-41b7-8b87-220a84b9d5d0
-      - value: 541becd1-fb72-407c-b1a1-fe7b5bf34303
-      - value: 6c92bd05-e004-44be-acd8-e2eaff608993
-      - value: a9ab9245-a213-4aef-a952-e204fbd53e93
-      - value: 5140d5d2-0791-4aa0-8fad-1c2c9048db62
-      leaderUUID:
-        value: 
-      eventCardUUID: []
-    - armiesUUID:
-      - value: b28137b3-fb44-4208-95ad-401ae6682d7f
-      leaderUUID:
-        value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
-      eventCardUUID: []
+      - value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
+      - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+    eventCardPiles:
+    - eventCardUUID: []
+    - eventCardUUID: []
+    - eventCardUUID:
+      - value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
     armies:
     - protoName: AlphaArmy
       uuid:
@@ -199,7 +324,7 @@ MonoBehaviour:
         equipmentLimit: 
     - protoName: Basic Shielder
       uuid:
-        value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
+        value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
       exp: 5000000
       floatExp: 0
       star: 2
@@ -230,13 +355,16 @@ MonoBehaviour:
     - protoName: Basic Mage
       uuid:
         value: 2be597d2-643f-4040-8c59-a6fd0b42c900
-      exp: 5000000
-      floatExp: 0
+      exp: 5011000
+      floatExp: 1500
       star: 2
-      LeaderName: 
+      LeaderName: Empty
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 
+        - value: 
+        - value: 
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Mage
       uuid:
         value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
@@ -245,19 +373,22 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: T2
+        equipmentUUID:
+        - value: 6c564ecb-8eaf-47aa-8742-7e1f039466d0
+        - value: 95df306a-0dbb-4c87-8ae7-9be45a4ff0d8
+        - value: eda1b281-fe82-4de7-b35f-fdaca77a97c0
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Cavalry
       uuid:
         value: 826c6717-7099-4429-a4fe-93a427845a31
-      exp: 2500000
-      floatExp: 0
+      exp: 2511000
+      floatExp: 1500
       star: 1
       LeaderName: 
       equipments:
         equipmentUUID: []
         equipmentLimit: 
-    - protoName: T2
+    - protoName: Basic Cavalry
       uuid:
         value: 52112c80-724e-4bca-a5c2-9dbf17289460
       exp: 2500000
@@ -267,7 +398,7 @@ MonoBehaviour:
       equipments:
         equipmentUUID: []
         equipmentLimit: 
-    - protoName: T2
+    - protoName: Basic Cavalry
       uuid:
         value: 10872522-bd7d-4a11-8268-d4c05bede960
       exp: 2500000
@@ -277,7 +408,7 @@ MonoBehaviour:
       equipments:
         equipmentUUID: []
         equipmentLimit: 
-    - protoName: T2
+    - protoName: Basic Cavalry
       uuid:
         value: 2537f87a-0b5c-400e-be78-5568373e63bf
       exp: 2500000
@@ -287,6 +418,345 @@ MonoBehaviour:
       equipments:
         equipmentUUID: []
         equipmentLimit: 
+    - protoName: Basic Rifleman
+      uuid:
+        value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
+      exp: 2511000
+      floatExp: 0
+      star: 1
+      LeaderName: Canute Svensson
+      equipments:
+        equipmentUUID:
+        - value: 12b7905b-1617-4ec2-a0db-577591c94eb2
+        - value: 2cceaed2-ca28-4bf5-b4b2-9c11fa611760
+        - value: 1ed21af8-30e9-4c4e-94f0-16f874457764
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Rifleman
+      uuid:
+        value: 5471b989-7bb1-4a99-82cf-9822db0d954a
+      exp: 2511000
+      floatExp: 3000
+      star: 1
+      LeaderName: Arthur Connors
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Rifleman
+      uuid:
+        value: a038f585-42bf-4590-97f4-917614bdb7fa
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Rifleman
+      uuid:
+        value: d7de1817-696d-4933-8760-58a88831f6a9
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: a59032d1-b9fb-4359-ae7a-74150cfe0c47933-8760-58a88831f6a9
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: dc25bffa-3f71-4b37-9f53-f62a1907990c
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic AircraftFighter
+      uuid:
+        value: fb5b2cbd-d1d1-4ae5-8dc3-75e6612241af
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: ec651cad-f113-4aef-83ae-ea817093f79c
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
+      exp: 2511000
+      floatExp: 1500
+      star: 1
+      LeaderName: Anexar Flotics
+      equipments:
+        equipmentUUID:
+        - value: 
+        - value: 
+        - value: 
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Dragon
+      uuid:
+        value: 84f0b70f-5b39-4d27-9cf4-ecbf4481890e
+      exp: 2500000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+      exp: 2511000
+      floatExp: 1500
+      star: 1
+      LeaderName: Phil Erinope VI
+      equipments:
+        equipmentUUID:
+        - value: 
+        - value: 
+        - value: 
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Airship
+      uuid:
+        value: 1ae6066c-8c0d-4f4a-9689-1405aa073c4f
+      exp: 250000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Mage
+      uuid:
+        value: fd1e89aa-39f5-43cb-b023-45e409eb49b6
+      exp: 250000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Mage
+      uuid:
+        value: 481d22a0-4373-4b80-88ff-964f523716bb
+      exp: 250000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: e82787e4-34eb-4015-8a86-69e0e8dfa43d
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Dragon
+      uuid:
+        value: ebd580ef-1c7b-408c-9e47-dbbdbe08eb89
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: "\u03A3CityInfantry"
+      uuid:
+        value: a1c69613-1cca-438d-b56b-73e2c9aec777
+      exp: 251000
+      floatExp: 0
+      star: 1
+      LeaderName: Empty
+      equipments:
+        equipmentUUID:
+        - value: ab6e0c7b-43a8-427c-b9ed-e64fda0f353f
+        - value: b56a4ae1-73bc-4572-8520-36f11ddffd44
+        - value: b56a4ae1-73bc-4572-8520-36f11ddffd44
+        equipmentLimit: 030000000300000003000000
+    - protoName: CalayCityInfantry
+      uuid:
+        value: 37cff0d2-b620-4a44-9919-aef955e132f5
+      exp: 300000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: CalayCityInfantry
+      uuid:
+        value: e232fb80-08fe-402d-9a59-25f5e396391e
+      exp: 301000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 
+        - value: 
+        - value: 
+        equipmentLimit: 030000000300000003000000
+    - protoName: NewUtoCityInfantry
+      uuid:
+        value: 1d58336d-de5d-4c39-8cb4-e6e8627ac486
+      exp: 300000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: NewUtoCityInfantry
+      uuid:
+        value: 49fb7494-a193-41fd-b6f7-7f38e91f906c
+      exp: 300000
+      floatExp: 0
+      star: 2
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 
+        - value: 
+        - value: 
+        equipmentLimit: 030000000300000003000000
+    - protoName: NewUtoCityInfantry
+      uuid:
+        value: 34109417-3b58-4aeb-92a2-14ae5031cd21
+      exp: 300000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID: []
+        equipmentLimit: 
+    - protoName: Basic Shielder
+      uuid:
+        value: 81377706-f6e6-436f-85f7-c7a5ab0bdfed
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: fca49c46-611f-4fbb-a345-ad668c6630a0
+        - value: f259d5a0-49ae-413c-a0a3-da1829c5edb6
+        - value: 9a0bcf88-f835-4c4e-b988-86686f139fc1
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Infantry
+      uuid:
+        value: 5f3df38f-c279-4d0d-9861-997d39e1606b
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 3412d34f-d5c5-41ae-94cc-dfb38a9f18de
+        - value: 237adf44-0e5b-4700-900d-a20e8e5700c0
+        - value: a6da2b4c-3282-4fa5-ac47-c8c2a0e455be
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Infantry
+      uuid:
+        value: 380fdff9-dba9-475b-8f84-ad77304c694a
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 415dd947-caf5-4fd3-a095-671689743575
+        - value: 5fd559a2-fa18-44f0-ab5e-c620be593edb
+        - value: 63421aff-60dc-4a05-bffe-5ab4f166a09e
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Infantry
+      uuid:
+        value: db68f120-b2a4-42d7-a77e-d2228cf31164
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: a1fa8e97-6a24-43ca-b9da-70babf556e7e
+        - value: 2fb15989-a82a-4b45-b905-75cc7d81b786
+        - value: 6ac61474-4be9-4e65-a7cb-9f8bc40051ab
+        equipmentLimit: 030000000300000003000000
+    - protoName: CalayCityInfantry
+      uuid:
+        value: d3561710-a385-4e07-a4ab-4f074047b44a
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 35050cf7-d3bc-438b-8cf2-cfdd56a55bdc
+        - value: 1ce9f33e-1ad9-4859-8121-3ff10e06ae41
+        - value: fd7767dc-9ee9-4cf1-ab94-1b42998b146e
+        equipmentLimit: 030000000300000003000000
+    - protoName: CalayCityInfantry
+      uuid:
+        value: 88fbe7b7-d902-4981-bde1-45309f3d7b24
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 1bd50ba4-275d-478b-abf8-91a8ff637b80
+        - value: fe04f5f6-6328-4f7c-b5dc-0d088da2a325
+        - value: a28305e6-4cca-4b64-9954-9975fc2623ca
+        equipmentLimit: 030000000300000003000000
+    - protoName: CalayCityInfantry
+      uuid:
+        value: 2e8f9b78-5b5d-4af2-8167-fdb9b60d0f22
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 2f88d1f2-6d77-4465-97eb-afb8b294aec0
+        - value: e2226c5e-5863-4730-8e4d-bfb5e1ba2be0
+        - value: 059e58cd-8d2b-436e-ab87-4d11b5bc04d0
+        equipmentLimit: 030000000300000003000000
     leaders:
     - protoName: Aether Erinope
       uuid:
@@ -298,15 +768,50 @@ MonoBehaviour:
         value: d7c07b72-ed02-4c19-afb0-666e85e198a2
       exp: 250000
       floatExp: 0
-    equipments:
-    - protoName: 
+    - protoName: Arthur Connors
       uuid:
-        value: 
+        value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
+      exp: 250000
+      floatExp: 0
+    - protoName: Canute Svensson
+      uuid:
+        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
+      exp: 250000
+      floatExp: 0
+    - protoName: Kathakria
+      uuid:
+        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a8
+      exp: 250000
+      floatExp: 0
+    - protoName: Phil Erinope VI
+      uuid:
+        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a7
+      exp: 250000
+      floatExp: 0
+    - protoName: Andrew Chaffin-Erinope
+      uuid:
+        value: 7a101737-8f6f-4223-85c0-e7c6cd23516a
       exp: 0
       floatExp: 0
-    - protoName: 
+    - protoName: Aether Erinope
       uuid:
-        value: 
+        value: ff85234d-8ac1-4af6-bcce-3294ed9ab5ba
+      exp: 0
+      floatExp: 0
+    equipments:
+    - protoName: Common Equipment
+      uuid:
+        value: b56a4ae1-73bc-4572-8520-36f11ddffd44
+      exp: 0
+      floatExp: 0
+    - protoName: Common Equipment
+      uuid:
+        value: ab6e0c7b-43a8-427c-b9ed-e64fda0f353f
+      exp: 0
+      floatExp: 0
+    - protoName: Common Equipment
+      uuid:
+        value: 0d2c033e-e0d4-47be-9aa3-d0481d088e41
       exp: 0
       floatExp: 0
     eventCards:
@@ -315,28 +820,46 @@ MonoBehaviour:
         value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
       exp: 0
       floatExp: 0
+      level: 0
+    - protoName: Trick
+      uuid:
+        value: f67edbd2-19ab-4297-8696-330f63af2b48
+      exp: 0
+      floatExp: 0
+      level: 0
+    - protoName: Oppotunity
+      uuid:
+        value: 275c835b-f1bb-4fa4-be54-b6ad43e45595
+      exp: 0
+      floatExp: 0
+      level: 0
+    - protoName: addActionPoint
+      uuid:
+        value: 9a5f367a-319b-4c5e-9ad5-ce605e5f6452
+      exp: 0
+      floatExp: 0
+      level: 2
+    collectiveStoriesID: []
+    countableItems:
+      list: []
     gameProgree:
       list: []
     gameStatistic:
       armiesUnlocked:
       - T1
       - T2
-      equipmentsUnlocked: []
-      leadersUnlocked: []
-  version:
-    major: 0
-    minor: 0
-    build: 0
-    revision: 0
-  prototypeFactory: {fileID: 11400000, guid: ee95c71a6e8e34e4a89f10073d0bc405, type: 2}
-  entityPrefabs: {fileID: 11400000, guid: 934f48eb78b90474e9826f8a953f0d94, type: 2}
-  spriteLoader: {fileID: 11400000, guid: 4bd7520eeb39dfa489ff77c9e2981688, type: 2}
-  technology: {fileID: 11400000, guid: fcfd1f70776947b41bb5db362bb87846, type: 2}
-  shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
-  buildSetting: {fileID: 11400000, guid: 03e055900e4b7f046a255fcac9251a02, type: 2}
-  chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
-  stories: {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
-  language: {fileID: 11400000, guid: 16f3df5f3ea0e0e459b5991cd466258a, type: 2}
-  storyPacks:
-    list:
-    - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
+      - Empty
+      - Basic Mage
+      - Basic Dragon
+      - "\u03A3CityInfantry"
+      - CalayCityInfantry
+      - NewUtoCityInfantry
+      - Basic Shielder
+      - Basic Infantry
+      equipmentsUnlocked:
+      - 
+      - 
+      - 
+      leadersUnlocked:
+      - Andrew Chaffin-Erinope
+      - Aether Erinope
