@@ -20,6 +20,10 @@ MonoBehaviour:
     sprite: {fileID: 0}
     portrait: {fileID: 0}
     prefab: {fileID: 0}
-    bounes: []
+    bounes:
+    - type: 0
+      bounesType: 0
+      value: 0
+      growth: 0
     type: -1
     equipmentUsage: 00000000
