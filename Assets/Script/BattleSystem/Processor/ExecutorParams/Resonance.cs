@@ -9,38 +9,20 @@ namespace Canute.BattleSystem
     [Serializable]
     public class Resonance : Status
     {
-        [Flags]
         public enum ResonanceTarget
         {
-            selfType = 1,
-            legion = 2,
-            player = 4,
-            landArmy = 8,
-            airArmy = 16
+            selfType,
+            legion,
+            player,
+            global,
+            landArmy,
+            airArmy,
         }
 
         public Resonance(Effect e) : base(e, -1, -1, StatType.resonance) { }
         public Resonance(Effect e, TriggerConditions tc) : base(e, -1, -1, StatType.resonance, tc) { }
         public Resonance(Effect e, TriggerCondition tc) : base(e, -1, -1, StatType.resonance, tc) { }
 
-        public static List<Resonance> Get(Army.Types types, int count)
-        {
-            List<Resonance> resonances = new List<Resonance>();
-            switch (types)
-            {
-                //    case Army.Types.shielder:
-                //        if (count < 2)
-                //        {
-                //            Effect e = new Effect();
-                //            e.SetSpecialName("shielderPenetrate");
-                //            e.Parameter = 10;
-                //            return new Resonance(e); 
-                //        }
-                default:
-                    return null;
-            }
-
-        }
 
         public static void ClearResonate(List<BattleArmy> battleArmies)
         {
@@ -58,6 +40,85 @@ namespace Canute.BattleSystem
         public static void Resonate(List<BattleArmy> battleArmies)
         {
             Debug.Log(battleArmies.Count);
+            Dictionary<Army.Types, int> resonanceInfo = GetResonance(battleArmies);
+
+            foreach (var info in resonanceInfo)
+            {
+                Debug.Log(info);
+                foreach (var resonancePair in GameData.ResonanceSheet.GetResonance(info.Key, info.Value))
+                {
+                    Resonance resonance = resonancePair.Resonance;
+                    //foreach (ResonanceTarget item in Enum.GetValues(typeof(ResonanceTarget)))
+                    switch (resonancePair.Target)
+                    {
+                        case ResonanceTarget.selfType:
+                            foreach (var army in battleArmies)
+                            {
+                                if (army.Type != resonancePair.ArmyType)
+                                {
+                                    continue;
+                                }
+                                AddResonance(army, resonance, army, army);
+                            }
+                            break;
+                        case ResonanceTarget.legion:
+                            foreach (var army in battleArmies)
+                            {
+                                AddResonance(army, resonance, army, army);
+                            }
+                            break;
+                        case ResonanceTarget.player:
+                            AddResonance(battleArmies[0].Owner, resonance, battleArmies[0].Owner, battleArmies[0].Owner);
+                            break;
+                        case ResonanceTarget.global:
+                            foreach (var army in battleArmies)
+                            {
+                                AddResonance(Game.CurrentBattle, resonance, army, army);
+                            }
+                            break;
+                        case ResonanceTarget.landArmy:
+                            foreach (var army in battleArmies)
+                            {
+                                if (army.StandPosition != BattleProperty.Position.land)
+                                {
+                                    continue;
+                                }
+                                AddResonance(army, resonance, army, army);
+                            }
+                            break;
+                        case ResonanceTarget.airArmy:
+                            foreach (var army in battleArmies)
+                            {
+                                if (army.StandPosition != BattleProperty.Position.air)
+                                {
+                                    continue;
+                                }
+                                AddResonance(army, resonance, army, army);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        private static void AddResonance<T>(IStatusContainer reciever, Resonance resonance, T source, T target) where T : EntityData
+        {
+            var cloneResonance = resonance.Clone();
+            cloneResonance.Effect.SetSource(source);
+            cloneResonance.Effect.SetTarget(target);
+
+            if ((cloneResonance.TriggerConditions.Count == 0) && (cloneResonance.Effect.Type != Effect.Types.tag))
+            {
+                cloneResonance.Effect.Execute();
+                cloneResonance.Effect.Type = Effect.Types.tag;
+            }
+            reciever.StatList.Add(cloneResonance);
+        }
+
+        public static Dictionary<Army.Types, int> GetResonance(List<BattleArmy> battleArmies)
+        {
             Dictionary<Army.Types, int> resonanceInfo = new Dictionary<Army.Types, int>();
 
             foreach (BattleArmy army in battleArmies)
@@ -72,67 +133,25 @@ namespace Canute.BattleSystem
                 }
             }
 
-            foreach (var info in resonanceInfo)
+            return resonanceInfo;
+        }
+        public static Dictionary<Army.Types, int> GetResonance(List<ArmyItem> armyItem)
+        {
+            Dictionary<Army.Types, int> resonanceInfo = new Dictionary<Army.Types, int>();
+
+            foreach (ArmyItem army in armyItem)
             {
-                foreach (var resonancePair in GameData.ResonanceSheet.GetResonance(info.Key, info.Value))
+                if (resonanceInfo.ContainsKey(army.Type))
                 {
-                    Resonance resonance = resonancePair.Resonance;
-                    switch (resonancePair.Target)
-                    {
-                        case ResonanceTarget.selfType:
-                            foreach (var army in battleArmies)
-                            {
-                                if (army.Type != resonancePair.ArmyType)
-                                {
-                                    continue;
-                                }
-                                resonance.Effect.SetSource(army);
-                                resonance.Effect.SetTarget(army);
-                                army.StatList.Add(resonance);
-                            }
-                            break;
-                        case ResonanceTarget.legion:
-                            foreach (var army in battleArmies)
-                            {
-                                resonance.Effect.SetSource(army);
-                                resonance.Effect.SetTarget(army);
-                                army.StatList.Add(resonance);
-                            }
-                            break;
-                        case ResonanceTarget.player:
-                            resonance.Effect.SetSource(battleArmies[0].Owner);
-                            resonance.Effect.SetTarget(battleArmies[0].Owner);
-                            battleArmies[0].Owner.StatList.Add(resonance);
-                            break;
-                        case ResonanceTarget.landArmy:
-                            foreach (var battleArmy in battleArmies)
-                            {
-                                if (battleArmy.StandPosition != BattleProperty.Position.land)
-                                {
-                                    continue;
-                                }
-                                resonance.Effect.SetSource(battleArmy);
-                                resonance.Effect.SetTarget(battleArmy);
-                                battleArmy.StatList.Add(resonance);
-                            }
-                            break;
-                        case ResonanceTarget.airArmy:
-                            foreach (var battleArmy in battleArmies)
-                            {
-                                if (battleArmy.StandPosition != BattleProperty.Position.air)
-                                {
-                                    continue;
-                                }
-                                resonance.Effect.SetSource(battleArmy);
-                                resonance.Effect.SetTarget(battleArmy);
-                                battleArmy.StatList.Add(resonance);
-                            }
-                            break;
-                        default:
-                            break;
-                    }
+                    resonanceInfo[army.Type] += army.Properties.Pop;
+                }
+                else
+                {
+                    resonanceInfo.Add(army.Type, army.Properties.Pop);
                 }
             }
+
+            return resonanceInfo;
         }
     }
 }

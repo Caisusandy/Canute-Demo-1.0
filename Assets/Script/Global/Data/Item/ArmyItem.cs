@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Canute
 {
     [Serializable]
-    public class ArmyItem : Item, IPrototypeCopy<Army>, ICareerLabled
+    public class ArmyItem : Item, IPrototypeCopy<Army>, ICareerLabled, IBattlePropertyContainer, IArmy
     {
         public const float LevelMultiple = 1.1f;
         public const int ExpBase = 100;
@@ -21,6 +21,7 @@ namespace Canute
         public Army Prototype { get => GameData.Prototypes.GetArmyPrototype(protoName); private set => protoName = value?.Name; }
         public override Prototype Proto => Prototype;
         public override int Level => GetLevel(ExpBase, LevelMultiple, Exp);
+        public int NextLevelExp => (int)(ExpBase * Mathf.Pow(LevelMultiple, Level + 1) - ExpBase * Mathf.Pow(LevelMultiple, Level));
         public override Type ItemType => Item.Type.army;
 
         /// <summary> Star(1,2,3) </summary>
@@ -35,11 +36,12 @@ namespace Canute
         /// bounes of level and star
         /// </summary>
         private double LevelBounes => Mathf.Pow(1.3f, Star - 1) * Mathf.Pow(1.005f, Level) * 100; //2.2795
-        private BattleProperty PrototypeProperty => Prototype.Properties[Star - 1];
+        public BattleProperty BaseProperty => Prototype.Properties[Star - 1];
 
 
         public int MaxHealth => Prototype.Health.Bonus(LevelBounes);
-        public int MaxDamage => Prototype.Damage.Bonus(LevelBounes);
+        public int RawDamage => Prototype.Damage.Bonus(LevelBounes);
+        public int Defense => Properties.Defense.Bonus(LevelBounes);
 
         public new Army.Types Type => Prototype.Type;
         public Career Career => HasLeader ? Leader.Career : Prototype.Career;
@@ -47,21 +49,6 @@ namespace Canute
 
 
         #region Army Properties
-        public int Defense => PrototypeProperty.Defense.Bonus(LevelBounes);
-        public double CritRate => PrototypeProperty.CritRate;
-        public double CritBounes => PrototypeProperty.CritBonus;
-        public int AttackRange => PrototypeProperty.AttackRange;
-        public int MoveRange => PrototypeProperty.MoveRange;
-        public int Pop => PrototypeProperty.Pop;
-        public BattleProperty.Position StandPosition => PrototypeProperty.StandPosition;
-        public BattleProperty.Position AttackPosition => PrototypeProperty.AttackPosition;
-
-        public int AttackArea => PrototypeProperty.AttackArea;
-        public int TargetCount => PrototypeProperty.TargetCount;
-        public BattleProperty.AttackType AttackType => PrototypeProperty.Attack;
-        public HalfSkillEffect SkillPack => PrototypeProperty.Skill;
-        public ArgList Addition => PrototypeProperty.Addition;
-
         public BattleProperty Properties => new BattleProperty(this);
         #endregion
 
@@ -99,6 +86,7 @@ namespace Canute
 
 
     }
+
     [Serializable]
     public class ArmyItemEquipmentSlot : IEnumerable<EquipmentItem>
     {

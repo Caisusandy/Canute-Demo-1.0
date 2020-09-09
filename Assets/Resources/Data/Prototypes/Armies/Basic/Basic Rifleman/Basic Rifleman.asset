@@ -29,49 +29,7 @@ MonoBehaviour:
     - defense: 0
       critRate: 40
       critBounes: 80
-      pop: 2
-      attackRange: 4
-      moveRange: 3
-      standPosition: 1
-      attackPosition: 3
-      attackArea: 0
-      targetCount: 1
-      attackType: 6
-      skill:
-        specialName: BasicRiflemanSkill
-        count: 1
-        parameter: 0
-        args:
-          args:
-          - key: name
-            value: damage
-      addition:
-        args: []
-    - defense: 0
-      critRate: 40
-      critBounes: 80
-      pop: 2
-      attackRange: 4
-      moveRange: 3
-      standPosition: 1
-      attackPosition: 3
-      attackArea: 0
-      targetCount: 1
-      attackType: 6
-      skill:
-        specialName: BasicRiflemanSkill
-        count: 1
-        parameter: 0
-        args:
-          args:
-          - key: name
-            value: damage
-      addition:
-        args: []
-    - defense: 0
-      critRate: 40
-      critBounes: 80
-      pop: 2
+      pop: 11
       attackRange: 4
       moveRange: 3
       standPosition: 1

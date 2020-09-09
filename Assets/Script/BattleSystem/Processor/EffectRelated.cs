@@ -32,6 +32,9 @@ namespace Canute.BattleSystem
                         break;
 
                     //special
+                    case "mageResonance":
+                        statusExecutor = MageResonanceDamageIncrease;
+                        break;
                     case "aircraftFighterReturnPositionRecorder":
                         statusExecutor = FighterAircraftChangeReturnPos;
                         break;
@@ -114,6 +117,28 @@ namespace Canute.BattleSystem
             for (int i = 0; i < status.Effect.Count; i++)
             {
                 sourceEffect.Parameter = (int)(sourceEffect.Parameter / (1 + status.Effect.Parameter / 100f));
+            }
+        }
+
+        private static void MageResonanceDamageIncrease(ref Effect sourceEffect, Status status)
+        {
+            Debug.Log("mage resonance");
+            Debug.Log(sourceEffect.Type != Effect.Types.attack);
+            Debug.Log(!(status.Effect.Source is OnMapEntity));
+            Debug.Log(!(sourceEffect.Source is OnMapEntity));
+
+            if (sourceEffect.Type != Effect.Types.attack) return;
+            if (!(status.Effect.Source is OnMapEntity)) return;
+            if (!(sourceEffect.Source is OnMapEntity)) return;
+
+            int distance = status.Effect.Args.GetIntParam("distance");
+
+            if ((status.Effect.Source as OnMapEntity).GetPointDistanceOf(sourceEffect.Source as OnMapEntity) > distance) return;
+
+
+            for (int i = 0; i < status.Effect.Count; i++)
+            {
+                sourceEffect.Parameter = (int)(sourceEffect.Parameter * (1 + status.Effect.Parameter / 100f));
             }
         }
 

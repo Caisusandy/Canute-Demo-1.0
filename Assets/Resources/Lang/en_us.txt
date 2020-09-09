@@ -10,8 +10,8 @@ Canute.Career.None=None
 #Title
 Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
-Canute.LevelTree.Level.CalayInfinite.subtitle= infinity test Map
-Canute.LevelTree.Level.CalayInfinite.title= The fall of a fantaria
+Canute.LevelTree.Level.CalayInfinite.subtitle=infinity Map
+Canute.LevelTree.Level.CalayInfinite.title=Training Ground
 Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
 Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
 Canute.LevelTree.Level.7-inf.subtitle=Daily battle
@@ -22,17 +22,18 @@ Canute.Shops.Currency+Type.manpower=Manpower
 Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
 Canute.Shops.Currency+Type.aethium=Aethium
 #
-Canute.BattleSystem.PropertyBonus.damage=damage
-Canute.BattleSystem.PropertyBonus.health=health
-Canute.BattleSystem.PropertyBonus.defense=defense
-Canute.BattleSystem.PropertyBonus.moveRange=move range
-Canute.BattleSystem.PropertyBonus.attackRange=attack range
-Canute.BattleSystem.PropertyBonus.critRate=crit rate
-Canute.BattleSystem.PropertyBonus.critBounes=crit bounes
-Canute.BattleSystem.PropertyBonus.pop=pop
-Canute.BattleSystem.PropertyBonus.armor=armor
-Canute.BattleSystem.PropertyBonus.anger=anger
+Canute.BattleSystem.PropertyType.damage=damage
+Canute.BattleSystem.PropertyType.health=health
+Canute.BattleSystem.PropertyType.defense=defense
+Canute.BattleSystem.PropertyType.moveRange=move range
+Canute.BattleSystem.PropertyType.attackRange=attack range
+Canute.BattleSystem.PropertyType.critRate=crit rate
+Canute.BattleSystem.PropertyType.critBounes=crit bounes
+Canute.BattleSystem.PropertyType.pop=pop
+Canute.BattleSystem.PropertyType.armor=armor
+Canute.BattleSystem.PropertyType.anger=anger
 #
+Canute.BattleSystem.BattleProperty.AttackType=Attack Type
 Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
 Canute.BattleSystem.BattleProperty+AttackType.melee=Melee
 Canute.BattleSystem.BattleProperty+AttackType.projectile=Projectile
@@ -46,6 +47,8 @@ Canute.BattleSystem.BattleProperty+AttackType.splash=Splash
 Canute.BattleSystem.BattleProperty+AttackType.splashMelee=Splash Melee
 Canute.BattleSystem.BattleProperty+AttackType.splashProjectile=Splash Projectile
 #
+Canute.BattleSystem.BattleProperty.StandPosition=Stand Position
+Canute.BattleSystem.BattleProperty.AttackPosition=Attack Position
 Canute.BattleSystem.BattleProperty+Position.land=Land
 Canute.BattleSystem.BattleProperty+Position.air=Air
 Canute.BattleSystem.BattleProperty+Position.all=Any
@@ -116,9 +119,6 @@ Canute.BattleSystem.Effect+Types.confusion=Confusion
 Canute.BattleSystem.Effect+Types.confusion.info=Move Range and Attack Range -@param%
 Canute.BattleSystem.Effect+Types.protection=Protection
 Canute.BattleSystem.Effect+Types.protection.info=Under $sourceName's Protection (Enemy cannot attack)
-Canute.BattleSystem.Effect+Types.infantryLightness=Resonance: Lightness
-Canute.BattleSystem.Effect+Types.infantryLightness.info=No action point cost when moving
-
 Canute.BattleSystem.Effect+Types.addActionPoint=Action Point
 Canute.BattleSystem.Effect+Types.addActionPoint.info=Add @param Action Point 
 Canute.BattleSystem.Effect+Types.addArmor=Add Armor
@@ -126,8 +126,31 @@ Canute.BattleSystem.Effect+Types.addArmor.info=Add @param Armor to select army
 
 
 
-#dragon
 
+Canute.BattleSystem.Effect+Types.infantryLightness=Resonance: Lightness
+Canute.BattleSystem.Effect+Types.infantryLightness.info=No action point cost when moving
+Canute.BattleSystem.Effect+Types.infantryDamageBonus=Resonance: Damage Increase
+Canute.BattleSystem.Effect+Types.infantryDamageBonus.info=Increase Damage by @param%
+Canute.BattleSystem.Effect+Types.warMachineResonance=Resonance: War Machine Enhance
+Canute.BattleSystem.Effect+Types.warMachineResonance.info=For all War Machine, Defense +@param
+Canute.BattleSystem.Effect+Types.mageResonance=Resonance: Mage Support
+Canute.BattleSystem.Effect+Types.mageResonance.info=Friendly Army in range of @distance will increase @param% damage
+Canute.BattleSystem.Effect+Types.shielderResonance=Resonance: Shielder Enhancement
+Canute.BattleSystem.Effect+Types.shielderResonance.info=Health +@param%
+Canute.BattleSystem.Effect+Types.rifleman1Resonance=Resonance: Rifleman Penetrate
+Canute.BattleSystem.Effect+Types.rifleman1Resonance.info=When Rifleman attacks，if enemy is stand on the same line，all the enemy on the same line would damage, with maximum penetrate range no more than 2 * rifleman's attack range
+Canute.BattleSystem.Effect+Types.riflemanAttackRange=Resonance: Rifleman Support
+Canute.BattleSystem.Effect+Types.riflemanAttackRange.info=For all land army, Attack Range +1
+Canute.BattleSystem.Effect+Types.rifleman2Resonance=Resonance: Rifleman Penetrate Enhance
+Canute.BattleSystem.Effect+Types.rifleman2Resonance.info=Penetrate can happen when enemy is not stand on the same line
+Canute.BattleSystem.Effect+Types.riflemanCriticalBonus=Resonance: Rifleman Focus
+Canute.BattleSystem.Effect+Types.riflemanCriticalBonus.info=Rifleman, Critical Damage Bonus +20%
+Canute.BattleSystem.Effect+Types.addDragonCard=Resonance: Magic from Dragon
+Canute.BattleSystem.Effect+Types.addDragonCard.info=Add @count Dragon Card
+Canute.BattleSystem.Effect+Types.shielderPenetrate=Resonance: Shielder Penetrate
+Canute.BattleSystem.Effect+Types.shielderPenetrate.info=Ignore other army's defense (except for shielder), cause a another @param% of enemy's current HP's real damage (except for shielder).
+
+#dragon
 Canute.BattleSystem.Effect+Types.dragonAttack=Dragon Status:Attack
 Canute.BattleSystem.Effect+Types.dragonAttack.info=the dragon is ready to attack 
 Canute.BattleSystem.Effect+Types.dragonDefense=Dragon Status:Defense
@@ -160,10 +183,6 @@ Canute.BattleSystem.Effect+Types.addDragonStrike=Add Strike
 Canute.BattleSystem.Effect+Types.addDragonStrike.info=enemy army will go back 2 grid when the army stand by.
 
 
-Canute.BattleSystem.Effect+Types.shielderPenetrate=Resonance: Penetrate
-Canute.BattleSystem.Effect+Types.shielderPenetrate.info=Ignore other army's defense (except for shielder), cause a another @param% of enemy's current HP's real damage (except for shielder).
-
-
 Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Basic Infantry Skill
 Canute.BattleSystem.Effect+Types.BasicInfantrySkill.info= attack twice the [closest, possible, lowest HP] target (with a 0%/40% damage decrease)
 Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Basic Rifleman Skill
@@ -179,33 +198,19 @@ Canute.BattleSystem.Effect+Types.aircraftFighterReturn.info=Returning position: 
 Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy=After Attack Effect
 Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy.info=Aircraft will move toward to Enemy when attack.
 
+#Level State
+Canute.BattleSystem.UI.ResultUI.Passed=Battle Succeed
+Canute.BattleSystem.UI.ResultUI.Lost=Battle Lost
 
 #错误事件
-Canute.BattleSystem.BattleEventError. = 
-Canute.BattleSystem.BattleEventError.notValidTarget=the target is not a valid target
-Canute.BattleSystem.BattleEventError.noTarget=no target was selected
-Canute.BattleSystem.BattleEventError.noAvailableTarget=no target can be attack 
-Canute.BattleSystem.BattleEventError.armyCannotAttack=it can't attack anyone
-Canute.BattleSystem.BattleEventError.armyNoTarget=no enemy is in attack range
+Canute.BattleSystem.BattleEventError.CardNoSelectingEntity=Card did not played: no selecting entity
+Canute.BattleSystem.BattleEventError.CardNotValidTarget=Card did not played: not a valid target
+Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=Card did not played: no enough action point
 
-Canute.Language.EventError.UnmatchedCareer=你需要使用相对应职业的手牌
-Canute.Language.EventError.NoDestination=没有设置目的地
-Canute.Language.EventError.TooFarFromCamp=距离大本营太远
-Canute.Language.EventError.InBattle=部队在指挥所状态
-Canute.Language.EventError.CannotStrengthArmy=不允许加强部队
-Canute.Language.EventError.OutOfBorder=不在战斗范围内
-Canute.Language.EventError.TooFar=太远了
-Canute.Language.EventError.NotAValidDestination=不能到达这个位置
-Canute.Language.EventError.NotInYourTurn=不在玩家回合
-Canute.Language.EventError.CannotAttackFort=不能攻击堡垒
-Canute.Language.EventError.CannotBuildArmy=无法建造部队
-Canute.Language.EventError.ActionUndone=不能同时进行多次任务
-Canute.Language.EventError.NoActionRemain=没有行动点数了
-Canute.Language.EventError.NoEnoughMovePoint=没有足够多的行动点数了
-Canute.Language.EventError.HasBuildingAlready=这个位置或者周围已经有建筑
-Canute.Language.EventError.NoResourRemainForNewTeam=不能再建造这个部队了
-
-#UI'
+Canute.BattleSystem.BattleEventError.armyNoTarget=no enemy is in attack range  
+Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: target is under protection
+Canute.BattleSystem.BattleEventError.ArmyCannotAttack=it can't attack anyone 
+#UI
 Canute.UI.Start.Continue=Continue
 Canute.UI.Start.Saves=Saves
 Canute.UI.Start.NewGame=New Game
@@ -220,3 +225,28 @@ Canute.UI.MainHall.Exploration=Exploration Team
 Canute.UI.MainHall.Shop=Shop
 Canute.UI.MainHall.Chapter=Chapter
 Canute.UI.MainHall.Quit=Quit
+
+#Tips
+Canute.Tips.0=Place Card On the Army to use it.
+Canute.Tips.1=Place a card on anothor card if the card you want to use can only choose card as target.
+Canute.Tips.2=Some Leader have a better bonus than others.
+Canute.Tips.3=Some army are on the sky, and some are not.
+Canute.Tips.4=Please don't try to command your infantry to attack an aircraft.
+Canute.Tips.5=Equipment can give your army a better performance on the battle.
+Canute.Tips.6=Mages have a special attack method: There will be a bonus splash attack within 1 cell.
+Canute.Tips.7=Riflemen attack every enemy in a line.
+Canute.Tips.8=Aircraft Fighters have to go back to its airport at the end of the turn.
+Canute.Tips.9=Airships can sent more aircraft fighter.
+Canute.Tips.10=No army can penetrate Shielder's shield, some special event maybe.
+Canute.Tips.11=Every attack would cause at least 1 damage
+Canute.Tips.12=Using the card that matched with army's career would cause 1 less action point.
+Canute.Tips.13=Dragons knows magic better than those mage, they can boot up the army for some cost...
+Canute.Tips.14=Resonance happens when more same type of army exist.
+
+#
+Canute.Character.Theodore Pullan.WordLine.0=It is funny that where the name of “Avgium” can from, the Avgium was discovered in a huge mine of aethium. Since aethium means “light” and it has the same origin as the king Aether Erinope, so the scientist name it after Aether’s step father, which was the dragon king Avgas.
+Canute.Character.Theodore Pullan.WordLine.1=Hmm… My sister? I haven’t met her for five years; she is a grown up already. I mean, all Pullans are strong and independent, she will be fine. But anyway, can I have a vacation, just to see how is she doing?
+Canute.Character.Theodore Pullan.WordLine.2=Chairman Canute, even though you are part of the Project Ankaa, I don’t really know much about you before. Ankaa？The firebird on the sky that can reborn, they name is project as they want Anexar also reborn. Well, they are so lucky to choose you and create one of the best commanders in Fantarium.
+Canute.Character.Finn Herman.WordLine.0=Both old teacher and I are from Calay.
+Canute.Character.Finn Herman.WordLine.1=Sir, Can I go outside to take a walk?
+Canute.Character.Finn Herman.WordLine.2=Sir, Can I watch the television? ok you are right, nothing interesting about the Council’s Propaganda, and Meialian Channel which only speak Meialian, they sound like dragon roar.

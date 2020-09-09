@@ -1,4 +1,5 @@
 ﻿using Canute.BattleSystem;
+using Canute.Module;
 using System;
 using System.Collections.Generic;
 using UnityEngine;

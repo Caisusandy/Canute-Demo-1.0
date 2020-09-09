@@ -76,6 +76,8 @@ namespace Canute.BattleSystem
             {
                 wasSelected = true;
             }
+
+            HighLightPossibleTargets();
         }
 
         public override void OnMouseDrag()
@@ -100,6 +102,7 @@ namespace Canute.BattleSystem
             if (wasSelected) Unselect();
             else Reorganize(Owner.Entity.Cards, BattleUI.HandCardBar);
             cardCollider.last = null;
+            EndHighLightPossibleTargets();
             TriggerSelectEvent(IsSelected);
             DetermineAction();
         }
@@ -175,6 +178,27 @@ namespace Canute.BattleSystem
             base.Unhighlight();
         }
 
+        public override void CardTargetHighlight()
+        {
+            GetComponent<Image>().color = HightGreen;
+            foreach (Transform item in transform)
+            {
+                Image image = item.GetComponent<Image>();
+                if (image)
+                    image.color = HightGreen;
+            }
+        }
+
+        public override void CardTargetUnhighlight()
+        {
+            GetComponent<Image>().color = Color.white;
+            foreach (Transform item in transform)
+            {
+                Image image = item.GetComponent<Image>();
+                if (image)
+                    image.color = Color.white;
+            }
+        }
         /// <summary>
         /// Determine the action player trying to do
         /// </summary>
@@ -213,8 +237,8 @@ namespace Canute.BattleSystem
             //if (Game.CurrentBattle.Round.CurrentStat != Round.Stat.gameStart)
             //    InPerformingAnimation();
             transform.position = Control.UserInputPosition + new Vector3(0, 0, 10);
-            Debug.Log(transform.position);
-            Debug.Log(Control.UserInputPosition);
+            //Debug.Log(transform.position);
+            //Debug.Log(Control.UserInputPosition);
         }
 
         private void DragCardDeleyAdd()
@@ -252,7 +276,7 @@ namespace Canute.BattleSystem
             }
             if (SelectingEntity == null)
             {
-                BattleUI.SendMessage("Card did not played: no selecting Entity");
+                BattleUI.SendMessage(BattleEventError.CardNoSelectingEntity);
                 TimeDeleyReset();
                 return false;
             }
@@ -265,7 +289,7 @@ namespace Canute.BattleSystem
             }
             if (!data.IsValidTarget(SelectingEntity))
             {
-                BattleUI.SendMessage("Card did not played: not a valid target");
+                BattleUI.SendMessage(BattleEventError.CardNotValidTarget);
                 TimeDeleyReset();
                 return false;
             }
@@ -294,6 +318,25 @@ namespace Canute.BattleSystem
 
             OnMapEntity.SelectingEntity.Exist()?.Unselect();
             /* */
+        }
+
+        public virtual void HighLightPossibleTargets()
+        {
+            foreach (var item in entities)
+            {
+                if (data.IsValidTarget(item) && (item != this))
+                {
+                    (item as InteractableEntity)?.CardTargetHighlight();
+                }
+            }
+        }
+
+        public virtual void EndHighLightPossibleTargets()
+        {
+            foreach (var item in entities)
+            {
+                (item as InteractableEntity)?.CardTargetUnhighlight();
+            }
         }
 
         #endregion 

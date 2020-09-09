@@ -36,7 +36,7 @@ namespace Canute.BattleSystem.Armies
         protected Status GetStatusOnFast()
         {
             Effect attack = new Effect(PropertyType.attackRange, BonusType.additive, this, this, 1, 2, "name:dragonBonus", "dragonStatus:attack");
-            attack[Effect.propertyBonusType] = "dragonAttack";
+            attack[Effect.propertyType] = "dragonAttack";
             attack.SetSpecialName("dragonAttack");
             return new Status(attack, -1, -1, Status.StatType.resonance, true);
         }
@@ -45,7 +45,7 @@ namespace Canute.BattleSystem.Armies
         protected Status GetStatusOnSlow()
         {
             Effect defense = new Effect(PropertyType.defense, BonusType.percentage, this, this, 1, 800, "name:dragonBonus", "dragonStatus:defense");
-            defense[Effect.propertyBonusType] = "dragonDefense";
+            defense[Effect.propertyType] = "dragonDefense";
             defense.SetSpecialName("dragonDefense");
             return new Status(defense, -1, -1, Status.StatType.resonance, true);
         }

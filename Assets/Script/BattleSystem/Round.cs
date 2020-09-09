@@ -51,14 +51,14 @@ namespace Canute.BattleSystem
         public Stat TurnBegin()
         {
             stat = Stat.turnBegin;
-            CurrentPlayer.Trigger(TriggerCondition.Conditions.turnBegin);
+            CurrentPlayer.TriggerConditionOf(TriggerCondition.Conditions.turnBegin);
             foreach (var item in CurrentPlayer.BattleArmies)
             {
-                item.Trigger(TriggerCondition.Conditions.turnBegin);
+                item.TriggerConditionOf(TriggerCondition.Conditions.turnBegin);
             }
             foreach (var item in CurrentPlayer.Buildings)
             {
-                item.Trigger(TriggerCondition.Conditions.turnBegin);
+                item.TriggerConditionOf(TriggerCondition.Conditions.turnBegin);
             }
             return stat;
         }
@@ -66,14 +66,14 @@ namespace Canute.BattleSystem
         public Stat TurnEnd()
         {
             stat = Stat.turnEnd;
-            CurrentPlayer.Trigger(TriggerCondition.Conditions.turnEnd);
+            CurrentPlayer.TriggerConditionOf(TriggerCondition.Conditions.turnEnd);
             foreach (var item in CurrentPlayer.BattleArmies)
             {
-                item.Trigger(TriggerCondition.Conditions.turnEnd);
+                item.TriggerConditionOf(TriggerCondition.Conditions.turnEnd);
             }
             foreach (var item in CurrentPlayer.Buildings)
             {
-                item.Trigger(TriggerCondition.Conditions.turnEnd);
+                item.TriggerConditionOf(TriggerCondition.Conditions.turnEnd);
             }
             return stat;
         }

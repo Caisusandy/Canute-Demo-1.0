@@ -16,33 +16,40 @@ MonoBehaviour:
     id: Tutorial
     type: 1
     wordLines:
-    - id: 
+    - id: Tutorial.1
       speakerName: 
-      line: move card to a object to use a card
+      line: move card to an army to use iy.
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
-    - id: 
+    - id: Tutorial.2
       speakerName: 
       line: 'Use"move" card to move army
 
-        Use Finger/Mouse to draw move path'
+        Use Finger/Mouse to draw move path.
+
+        the
+        possible destination is inside the move range (yellow).'
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
-    - id: 
+    - id: Tutorial.3
       speakerName: 
-      line: Use the "attack" card to army and then select target.
+      line: 'Use the "attack" card to army and then select target.
+
+        the possible
+        target is inside the attack range (red).'
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
-    - id: 
+    - id: Tutorial.4
       speakerName: 
-      line: Check for the amount of action point you have, every card use some action
-        point.
+      line: Every Card requires action point to be used. Check for the amount of
+        action point you have, You can't use it if you don't have enough action point
+        left.
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0

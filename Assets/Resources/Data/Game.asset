@@ -34,20 +34,12 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/8/31 4:27:23
+      value: 2020/9/7 22:46:45
     shopInfo:
       nextRefreshTime:
-        value: 2020/8/31 4:44:00
+        value: 2020/9/6 22:01:08
       onShopArmies:
         list:
-        - prize:
-            name: Basic WarMachine
-            count: 1
-            type: 2
-          weight: 16
-          price:
-          - name: 0
-            count: 300
         - prize:
             name: NewUtoCityInfantry
             count: 1
@@ -57,13 +49,13 @@ MonoBehaviour:
           - name: 0
             count: 300
         - prize:
-            name: Basic Shielder
+            name: Basic Infantry
             count: 1
             type: 2
-          weight: 20
+          weight: 50
           price:
           - name: 0
-            count: 250
+            count: 100
         - prize:
             name: Basic Mage
             count: 1
@@ -72,6 +64,14 @@ MonoBehaviour:
           price:
           - name: 0
             count: 500
+        - prize:
+            name: "\u03A3CityInfantry"
+            count: 1
+            type: 2
+          weight: 50
+          price:
+          - name: 0
+            count: 300
       onShopEquipments:
         list: []
     federgram: 70547
@@ -90,26 +90,26 @@ MonoBehaviour:
         prizeBoxes: []
     legions:
     - armiesUUID:
-      - value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+      - value: d7de1817-696d-4933-8760-58a88831f6a9
       - value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
       - value: 2be597d2-643f-4040-8c59-a6fd0b42c900
-      - value: 826c6717-7099-4429-a4fe-93a427845a31
+      - value: a038f585-42bf-4590-97f4-917614bdb7fa
       - value: 5471b989-7bb1-4a99-82cf-9822db0d954a
       - value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
     - armiesUUID:
-      - value: a1c69613-1cca-438d-b56b-73e2c9aec777
-      - value: e232fb80-08fe-402d-9a59-25f5e396391e
-      - value: 00000000-0000-0000-0000-000000000000
-      - value: 00000000-0000-0000-0000-000000000000
+      - value: d7de1817-696d-4933-8760-58a88831f6a9
+      - value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
+      - value: a038f585-42bf-4590-97f4-917614bdb7fa
+      - value: 5471b989-7bb1-4a99-82cf-9822db0d954a
       - value: 00000000-0000-0000-0000-000000000000
       - value: 00000000-0000-0000-0000-000000000000
     - armiesUUID:
-      - value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
-      - value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
-      - value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
-      - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
-      - value: 00000000-0000-0000-0000-000000000000
-      - value: 00000000-0000-0000-0000-000000000000
+      - value: 34109417-3b58-4aeb-92a2-14ae5031cd21
+      - value: 1d58336d-de5d-4c39-8cb4-e6e8627ac486
+      - value: 49fb7494-a193-41fd-b6f7-7f38e91f906c
+      - value: e232fb80-08fe-402d-9a59-25f5e396391e
+      - value: 37cff0d2-b620-4a44-9919-aef955e132f5
+      - value: a1c69613-1cca-438d-b56b-73e2c9aec777
     eventCardPiles:
     - eventCardUUID: []
     - eventCardUUID: []
@@ -164,8 +164,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: e4de8d9e-19f2-4534-a763-65df0894f38a
+        - value: 11939062-eaf0-4e84-804b-d438ca4544e3
+        - value: d8d2bc8e-cbeb-4259-afdc-50829fd7d39e
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic WarMachine
       uuid:
         value: 6c92bd05-e004-44be-acd8-e2eaff608993
@@ -174,8 +177,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: ba32de70-0b69-4e9d-99f3-ef00886dcecc
+        - value: b310917a-a07e-4556-9e86-ae0480f5a4f5
+        - value: 20435197-3cf5-41e0-a6b3-c3641be7c166
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic WarMachine
       uuid:
         value: 541becd1-fb72-407c-b1a1-fe7b5bf34303
@@ -184,8 +190,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 824ba807-ef4b-4cc9-b33f-2fb2bc721f33
+        - value: cdedd6a4-66ad-4542-8f99-5e695ff285b9
+        - value: 367d8ff9-d9bd-49e6-bc8e-d27033c702fa
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic WarMachine
       uuid:
         value: 02c76a26-a718-4a60-9a1d-1d714f28cf0b
@@ -194,8 +203,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: f4be3fd7-8d92-4d62-976a-b61c383e91ff
+        - value: 1aa66c22-45fd-41b8-a2ad-e274a1cb2295
+        - value: 82f0dc60-6426-4e80-806b-b3106e6e2446
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Infantry
       uuid:
         value: dca9dce4-4965-4406-9ff0-66184dcd2eec
@@ -283,8 +295,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: d9351025-62ca-4c3d-9be9-cf042c8dfca9
+        - value: a1a954c3-c959-442f-9f88-3f1b10cfbdcd
+        - value: f50d32b1-bc81-4312-80bd-194ddac446e8
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Mage
       uuid:
         value: 25ee4ff2-2f46-496a-a119-a4f9c55c277d
@@ -293,8 +308,11 @@ MonoBehaviour:
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 1334281c-ffae-4875-8cb8-84caaa36cb08
+        - value: 8344ac2a-8b32-49a0-b77c-7edac54a1b7b
+        - value: 63508374-a4c2-457d-8892-78e5a557605c
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Mage
       uuid:
         value: ca74d413-d28a-4d56-a700-38944c197165
@@ -308,7 +326,7 @@ MonoBehaviour:
     - protoName: Basic Mage
       uuid:
         value: 2be597d2-643f-4040-8c59-a6fd0b42c900
-      exp: 5011000
+      exp: 5017000
       floatExp: 1500
       star: 2
       LeaderName: Empty
@@ -377,7 +395,7 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
-      exp: 2511000
+      exp: 2517000
       floatExp: 0
       star: 1
       LeaderName: Canute Svensson
@@ -390,7 +408,7 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: 5471b989-7bb1-4a99-82cf-9822db0d954a
-      exp: 2511000
+      exp: 2517000
       floatExp: 3000
       star: 1
       LeaderName: Arthur Connors
@@ -403,23 +421,29 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: a038f585-42bf-4590-97f4-917614bdb7fa
-      exp: 2500000
+      exp: 2506000
       floatExp: 0
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: dd438bc7-e1bc-4696-81a5-10426e166055
+        - value: 838da216-42c2-41da-b8c7-741132c17f3e
+        - value: 2b4771f1-1595-43a3-acb9-ada9c9cea397
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Rifleman
       uuid:
         value: d7de1817-696d-4933-8760-58a88831f6a9
-      exp: 2500000
+      exp: 2506000
       floatExp: 0
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: b05a3829-f674-4bc7-802b-72ccc54b5102
+        - value: 60e497c3-0819-4432-ac3b-cc36cdd66aeb
+        - value: 6cdf38b7-1bfb-4451-aa99-37242a4f634c
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic AircraftFighter
       uuid:
         value: a59032d1-b9fb-4359-ae7a-74150cfe0c47933-8760-58a88831f6a9
@@ -448,8 +472,11 @@ MonoBehaviour:
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 97ba9a11-871d-44b0-8295-894f2274ea00
+        - value: 2b5f0ad5-8a2b-45c8-a47b-13ba0306cd0b
+        - value: d283affa-a6f9-4acc-b04c-0a7896182486
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic AircraftFighter
       uuid:
         value: fb5b2cbd-d1d1-4ae5-8dc3-75e6612241af
@@ -468,12 +495,15 @@ MonoBehaviour:
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 65306223-27c8-447b-9072-d08bff7402a7
+        - value: 3262215f-0450-45bd-880c-5a245ed7e9f5
+        - value: 4f6ca90e-0dda-4db1-92ba-c60350d1ef66
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Dragon
       uuid:
         value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
-      exp: 2511000
+      exp: 2517000
       floatExp: 1500
       star: 1
       LeaderName: Anexar Flotics
@@ -491,8 +521,11 @@ MonoBehaviour:
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: e5063489-b2c7-4a3b-835a-edfcbcfde2bd
+        - value: 3b9e9a2c-74dd-4768-baac-8690bf9bb0ee
+        - value: 80d3ed09-500d-4267-8383-30f4241b1447
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Dragon
       uuid:
         value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
@@ -577,8 +610,11 @@ MonoBehaviour:
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 7784ada0-e49b-4299-a25f-e803def21295
+        - value: 5cb30833-6dbb-451b-979a-6c519623509c
+        - value: 0f153cac-7ed4-4c4d-b77b-7120fd8ce233
+        equipmentLimit: 030000000300000003000000
     - protoName: CalayCityInfantry
       uuid:
         value: e232fb80-08fe-402d-9a59-25f5e396391e
@@ -600,8 +636,11 @@ MonoBehaviour:
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: ca3f2a1b-2583-4ce4-aaac-5eda9ce0a45b
+        - value: 38cb6a50-98bc-4b8e-a5cf-7255f56b6de2
+        - value: c240666c-c835-46d8-b143-d5c0dca0bcf3
+        equipmentLimit: 030000000300000003000000
     - protoName: NewUtoCityInfantry
       uuid:
         value: 49fb7494-a193-41fd-b6f7-7f38e91f906c
@@ -623,8 +662,11 @@ MonoBehaviour:
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 9ba0dac2-8f6e-4faf-906c-e5db27e46cf4
+        - value: bc473818-6f38-4a01-80a4-ec36f9fa2a41
+        - value: d7270c48-ffb3-48a6-bb8f-eb93b92c3956
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Shielder
       uuid:
         value: 81377706-f6e6-436f-85f7-c7a5ab0bdfed
@@ -770,6 +812,11 @@ MonoBehaviour:
         value: ff85234d-8ac1-4af6-bcce-3294ed9ab5ba
       exp: 0
       floatExp: 0
+    - protoName: Theodore Pullan
+      uuid:
+        value: fbd94bd1-907f-4d7c-b475-2f2629496c2c
+      exp: 0
+      floatExp: 0
     equipments:
     - protoName: Common Equipment
       uuid:
@@ -816,7 +863,11 @@ MonoBehaviour:
       exp: 0
       floatExp: 0
       level: 2
-    collectiveStoriesID: []
+    collectionStoriesID:
+    - Prologue
+    - Epilogue
+    collectionLetterID:
+    - Amlos1
     countableItems:
       list: []
     gameProgree:

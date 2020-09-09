@@ -11,6 +11,7 @@ namespace Canute
         legionSetting,
         battle,
         StoryDisplayer,
+        letterDisplayer,
         gameStart,
         playerArmyList,
         playerLeaderList,
@@ -21,6 +22,7 @@ namespace Canute
     public class SceneControl : ScriptableObject
     {
         public const string storyDisplayer = "StoryLineLoader";
+        public const string letterDisplayer = "LetterLineLoader";
         public const string main = "Main";
         public const string legionSetting = "Legion";
         public const string battle = "Battle";
@@ -47,6 +49,9 @@ namespace Canute
                     break;
                 case MainScene.StoryDisplayer:
                     ans = storyDisplayer;
+                    break;
+                case MainScene.letterDisplayer:
+                    ans = letterDisplayer;
                     break;
                 case MainScene.gameStart:
                     ans = gameStart;

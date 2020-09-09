@@ -74,7 +74,7 @@ namespace Canute.BattleSystem
             type = Types.propertyBonus;
             count = c;
             parameter = p;
-            this[propertyBonusType] = i.ToString();
+            this[propertyType] = i.ToString();
             this[bonusType] = bt.ToString();
         }
         public Effect(Types i, int c, int p = 0, params Arg[] args) : this(i, c, p)
@@ -125,7 +125,7 @@ namespace Canute.BattleSystem
                 }
                 else if (type == Types.propertyBonus || type == Types.propertyPanalty)
                 {
-                    return this[propertyBonusType];
+                    return this[propertyType];
                 }
                 return type.ToString();
             }
@@ -263,9 +263,7 @@ namespace Canute.BattleSystem
         public bool SimilarTo(Effect effect)
         {
             if (targetEntities.Count != effect.targetEntities.Count)
-            {
                 return false;
-            }
             foreach (var item in targetEntities)
             {
                 if (!effect.targetEntities.Contains(item))
@@ -273,6 +271,9 @@ namespace Canute.BattleSystem
                     return false;
                 }
             }
+
+            if (effect.args.Count != args.Count)
+                return false;
             foreach (var item in args)
             {
                 if (!effect.args.Contains(item))
@@ -281,7 +282,7 @@ namespace Canute.BattleSystem
                 }
             }
 
-            return type == effect.type && parameter == effect.parameter && sourceEntity == effect.sourceEntity;
+            return (type == effect.type) && (sourceEntity == effect.sourceEntity);
         }
 
         /// <summary>
@@ -300,16 +301,16 @@ namespace Canute.BattleSystem
             Effect e = Clone();
             e[isStatus] = "true";
             e.SetSpecialName(e[effectSpecialName]);
-            e.type = e.Args.GetEnumParam<Types>("effectType");
+            e.type = e.Args.GetEnumParam<Types>(effectType);
 
-            int sc = Args.GetIntParam("sc");
-            int tc = Args.GetIntParam("tc");
+            int sc = Args.GetIntParam(statusCount);
+            int tc = Args.GetIntParam(turnCount);
             TriggerConditions cd = TriggerConditions.GetTriggerCondition(this);
             Status.StatType st = Args.GetEnumParam<Status.StatType>(statusType);
 
             e[effectSpecialName] = null;
             e[effectType] = null;
-            var showToPlayer = (e.Args.HasParam("showToPlayer") ? e.Args.GetBoolParam("showToPlayer") : true);
+            var showToPlayer = (e.Args.HasParam(statusShowToPlayer) ? e.Args.GetBoolParam(statusShowToPlayer) : true);
 
 
             Status status = new Status(e, tc, sc, st, cd, showToPlayer);
@@ -334,16 +335,16 @@ namespace Canute.BattleSystem
             Effect e = Clone();
             e[isStatus] = "true";
             e.SetSpecialName(e[effectSpecialName]);
-            e.type = e.Args.GetEnumParam<Types>("effectType");
+            e.type = e.Args.GetEnumParam<Types>(effectType);
 
-            int sc = Args.GetIntParam("sc");
-            int tc = Args.GetIntParam("tc");
+            int sc = Args.GetIntParam(statusCount);
+            int tc = Args.GetIntParam(turnCount);
             TriggerConditions cd = TriggerConditions.GetTriggerCondition(this); cd.AddRange(args);
             Status.StatType st = Args.GetEnumParam<Status.StatType>(statusType);
 
             e[effectSpecialName] = null;
             e[effectType] = null;
-            var showToPlayer = e.Args.HasParam("showToPlayer") ? e.Args.GetBoolParam("showToPlayer") : true;
+            var showToPlayer = e.Args.HasParam(statusShowToPlayer) ? e.Args.GetBoolParam(statusShowToPlayer) : true;
 
             Status status = new Status(e, tc, sc, st, cd, showToPlayer);
             Debug.Log(status);

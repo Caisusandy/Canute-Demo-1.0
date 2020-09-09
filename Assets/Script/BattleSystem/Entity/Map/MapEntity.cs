@@ -34,6 +34,7 @@ namespace Canute.BattleSystem
         public CellEntity this[Vector2Int pos] => GetCell(pos);
         public CellEntity this[int x, int y, int z] => columnEntities[y][x + y / 2];
         public CellEntity this[Vector3Int pos] => this[pos.x, pos.y, pos.z];
+        public Vector2Int Size => new Vector2Int(this[0].cellEntities.Count, Count);
 
         public override void Awake()
         {
@@ -50,6 +51,7 @@ namespace Canute.BattleSystem
             base.Start();
             FakeCellSetUp();
             SetPlayerCameraToPosition();
+            new CellColoration(this).Color();
         }
 
         private void SetPlayerCameraToPosition()

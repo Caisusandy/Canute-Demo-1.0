@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.Module;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 namespace Canute.BattleSystem
@@ -142,7 +143,7 @@ namespace Canute.BattleSystem
         }
 
         /// <summary>
-        /// Get all status that have <paramref name="conditions"/>
+        /// Get all status that have given <paramref name="conditions"/>
         /// </summary>
         /// <param name="conditions"></param>
         /// <returns></returns>

@@ -49,22 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2706bba46e011479c7e8fd5a20cc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columnEntities:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  columnEntities: []
   wasOnDrag: 0
   isInitialized: 0
   isRandomMap: 1

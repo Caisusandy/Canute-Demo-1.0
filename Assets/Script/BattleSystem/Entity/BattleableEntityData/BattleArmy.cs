@@ -9,7 +9,7 @@ namespace Canute.BattleSystem
     /// 战斗时的军队信息
     /// </summary>
     [Serializable]
-    public class BattleArmy : BattleEntityData, ICloneable
+    public class BattleArmy : BattleEntityData, ICloneable, IArmy
     {
         [SerializeField] protected Army.Types type;
         public override GameObject Prefab { get => prefab ?? GameData.Prefabs.DefaultArmy; set => prefab = value; }
@@ -70,9 +70,9 @@ namespace Canute.BattleSystem
             }
             name = army.Name;
             maxHealth = army.MaxHealth;
-            damage = army.MaxDamage;
+            damage = army.RawDamage;
             properties = army.Properties;
-            properties.Defense = army.Defense;
+            properties.Defense = army.Defense; //defense is special
             type = army.Type;
             career = army.Career;
             prefab = prototype.Prefab;
@@ -84,9 +84,9 @@ namespace Canute.BattleSystem
         {
             name = army.Name;
             maxHealth = army.MaxHealth;
-            damage = army.MaxDamage;
+            damage = army.RawDamage;
             properties = army.Properties;
-            properties.Defense = army.Defense;
+            properties.Defense = army.Defense; //defense is special
             type = army.Type;
             career = army.Career;
             prefab = army.Prototype.Prefab;
@@ -95,9 +95,9 @@ namespace Canute.BattleSystem
             {
                 localLeader = new BattleLeader(army.Leader);
                 localLeader?.Lead(this);
-                AddBounes(localLeader);
+                AddBonus(localLeader);
             }
-            AddBounes(army.Equipments.Equipments.ToArray());
+            AddBonus(army.Equipments.Equipments.ToArray());
             health = maxHealth;
             allowMove = true;
         }
@@ -110,7 +110,7 @@ namespace Canute.BattleSystem
             ownerUUID = player.UUID;
             if (player.ViceCommander)
             {
-                AddBounes(player.ViceCommander);
+                AddBonus(player.ViceCommander);
             }
             health = maxHealth;
         }

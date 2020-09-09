@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Canute.BattleSystem;
+using UnityEngine;
 
 namespace Canute.UI
 {
@@ -7,15 +8,14 @@ namespace Canute.UI
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Label.text = Languages.Lang(armyItem.AttackPosition);
+            Label.text = army.Properties.Lang("AttackPosition") + ": " + army.Properties.AttackPosition.Lang();
         }
 
-        public override void SetArmyItem(ArmyItem armyItem)
+        public override void SetArmyItem(IArmy armyItem)
         {
             base.SetArmyItem(armyItem);
-            Debug.Log(armyItem.AttackPosition.ToString());
-            IconImage.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyPositionIcon, armyItem.AttackPosition.ToString());
-
+            //Debug.Log(armyItem.Properties.AttackPosition);
+            IconImage.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyPositionIcon, armyItem.Properties.AttackPosition.ToString());
         }
     }
 }

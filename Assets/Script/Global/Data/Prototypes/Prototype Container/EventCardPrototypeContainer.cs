@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
+using Canute.Module;
 
 namespace Canute.BattleSystem
 {

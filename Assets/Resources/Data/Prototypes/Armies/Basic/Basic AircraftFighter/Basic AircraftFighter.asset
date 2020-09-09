@@ -29,7 +29,7 @@ MonoBehaviour:
     - defense: 13.215859030837
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 14
       attackRange: 1
       moveRange: 5
       standPosition: 2
@@ -48,7 +48,7 @@ MonoBehaviour:
     - defense: 13.215859030837
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 14
       attackRange: 1
       moveRange: 5
       standPosition: 2
@@ -61,17 +61,13 @@ MonoBehaviour:
         count: 0
         parameter: 0
         args:
-          args:
-          - key: 
-            value: 
-          - key: 
-            value: 
+          args: []
       addition:
         args: []
     - defense: 13.215859030837
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 14
       attackRange: 1
       moveRange: 5
       standPosition: 2

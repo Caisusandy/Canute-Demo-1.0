@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42519a9a9bfe564f9f663cf1d552d44, type: 3}
   m_Name: Basic Shielder
   m_EditorClassIdentifier: 
+  isTemporaryPrototype: 0
   prototype:
     name: Basic Shielder
     rarity: 1
@@ -28,7 +29,7 @@ MonoBehaviour:
     - defense: 1000
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 10
       attackRange: 2
       moveRange: 4
       standPosition: 1
@@ -55,7 +56,7 @@ MonoBehaviour:
     - defense: 1000
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 10
       attackRange: 2
       moveRange: 4
       standPosition: 1
@@ -82,7 +83,7 @@ MonoBehaviour:
     - defense: 1000
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 10
       attackRange: 2
       moveRange: 4
       standPosition: 1

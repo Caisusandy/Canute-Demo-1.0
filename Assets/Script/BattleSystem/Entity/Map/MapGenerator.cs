@@ -16,13 +16,12 @@ namespace Canute.BattleSystem
 
         public bool random;
 
-        public void Awake()
+        public virtual void Awake()
         {
             CreateMap();
         }
 
-        [ContextMenu("CreateMap")]
-        public MapEntity CreateMap()
+        public virtual MapEntity CreateMap()
         {
             mapEntity = GetComponent<MapEntity>();
             for (int i = 0; i < rect_y; i++)

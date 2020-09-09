@@ -128,19 +128,23 @@ namespace Canute.BattleSystem
                 //Debug.Log(Entity.entities.Count);
             }
 
-            Game.CurrentBattle.ScoreBoard.AllPassedEffect.Add(effect);
+            Game.CurrentBattle?.ScoreBoard?.AllPassedEffect?.Add(effect);
             return result;
         }
 
-        public static void StatusMerge(this Status status, Status mergingStatus)
+        public static bool StatusMerge(this Status status, Status mergingStatus)
         {
             switch (status.Effect.Type)
             {
                 default:
-                    status.Effect.Count += mergingStatus.Effect.Count;
-                    status.Effect.Parameter += mergingStatus.Effect.Parameter;
+                    if (status.Effect.Count == mergingStatus.Effect.Count)
+                        status.Effect.Parameter += mergingStatus.Effect.Parameter;
+                    else if (status.Effect.Parameter == mergingStatus.Effect.Parameter)
+                        status.Effect.Count += mergingStatus.Effect.Count;
+                    else return false;
                     break;
             }
+            return true;
         }
 
         #region Attack
@@ -218,7 +222,9 @@ namespace Canute.BattleSystem
                 {
                     continue;
                 }
-                battleEntityData.Data.Trigger(TriggerCondition.Conditions.beforeAttack, ref effect);
+                battleEntityData.Data.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                battleEntityData.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
             }
 
             InAttack(effect);
@@ -230,7 +236,9 @@ namespace Canute.BattleSystem
         private static void InAttack(Effect effect)
         {
             IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
-            agressiveEntity.Data.Trigger(TriggerCondition.Conditions.attack, ref effect);
+            agressiveEntity.Data.TriggerConditionOf(TriggerCondition.Conditions.attack, ref effect);
+            agressiveEntity.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.attack, ref effect);
+            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.attack, ref effect);
 
             foreach (var item in effect.Targets)
             {
@@ -246,7 +254,9 @@ namespace Canute.BattleSystem
             IAggressiveEntity source = effect.Source as IAggressiveEntity;
             IPassiveEntity target = effect.Target as IPassiveEntity;
 
-            target.Data.Trigger(TriggerCondition.Conditions.defense, ref effect);
+            target.Data.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
+            target.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
+            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
 
             string type = effect["attackType"];
             if (string.IsNullOrEmpty(type))
@@ -269,7 +279,9 @@ namespace Canute.BattleSystem
                 {
                     continue;
                 }
-                battleEntity.Data.Trigger(TriggerCondition.Conditions.afterDefence, ref effect);
+                battleEntity.Data.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                battleEntity.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
             }
 
             Debug.Log("Attack End");
@@ -376,7 +388,7 @@ namespace Canute.BattleSystem
             foreach (var item in effect.Targets)
             {
                 IStatusContainer statusContainer = item as IStatusContainer;
-                statusContainer.Trigger(TriggerCondition.Conditions.addingStatus, ref effect);
+                statusContainer.TriggerConditionOf(TriggerCondition.Conditions.addingStatus, ref effect);
                 Status status = effect.ToStatus();
                 statusContainer.StatList.Add(status);
             }
@@ -391,19 +403,19 @@ namespace Canute.BattleSystem
 
             if (effect.Type != Effect.Types.removeStatus)
             {
-                BattleUI.SendMessage("Remove Failed");
+                Debug.Log("Remove Failed");
                 return false;
             }
 
             if (statusContainer is null)
             {
-                BattleUI.SendMessage("Remove Failed");
+                Debug.Log("Remove Failed");
                 return false;
             }
 
             if (uuid == UUID.Empty)
             {
-                BattleUI.SendMessage("Remove Failed");
+                Debug.Log("Remove Failed");
                 return false;
             }
 
@@ -417,7 +429,7 @@ namespace Canute.BattleSystem
                 }
             }
 
-            BattleUI.SendMessage("status does not exist");
+            Debug.Log("status does not exist");
             return true;
         }
 
@@ -522,7 +534,8 @@ namespace Canute.BattleSystem
             }
             else
             {
-                movingArmy.data.Trigger(TriggerCondition.Conditions.move, ref effect);
+                movingArmy.data.TriggerConditionOf(TriggerCondition.Conditions.move, ref effect);
+                Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.move, ref effect);
                 movingArmy.Move(path, effect);
 
                 return true;

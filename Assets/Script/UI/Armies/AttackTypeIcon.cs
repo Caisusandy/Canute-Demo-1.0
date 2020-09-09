@@ -10,10 +10,10 @@ namespace Canute.UI
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Label.text = Languages.Lang(armyItem.AttackType);
+            Label.text = army.Properties.Lang("AttackType") + ": " + Languages.Lang(army.Properties.Attack);
         }
 
-        public override void SetArmyItem(ArmyItem armyItem)
+        public override void SetArmyItem(IArmy armyItem)
         {
             base.SetArmyItem(armyItem);
             //IconImage.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, armyItem.Type + "WBG");

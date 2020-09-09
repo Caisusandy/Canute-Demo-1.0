@@ -61,6 +61,7 @@ namespace Canute.BattleSystem.Armies
                 IPassiveEntity target = item as IPassiveEntity;
                 int d = GetPointDistanceOf(target as OnMapEntity);
                 double damageDecayPerLevel = 0.8 / (2 * data.Properties.AttackRange - 1);
+
                 for (int i = 0; i < effect.Count; i++)
                 {
                     Debug.Log(effect.Parameter);
@@ -90,25 +91,26 @@ namespace Canute.BattleSystem.Armies
                         entities = entities.Union(new List<Entity>() { item.HasArmyStandOn });
             }
 
-            d /= GetCommonDivisor(d.x, d.y);
-            for (int i = 0; i < 10; i++)
+            if (StatList.GetTag("name:rifleman2Resonance") != null)
             {
-                try
+                d /= GetCommonDivisor(d.x, d.y);
+                for (int i = 0; i < 10; i++)
                 {
-                    CellEntity item = Game.CurrentBattle.MapEntity[HexCoord + d * i];
-                    if (item.GetPointDistanceOf(this) > 2 * data.Properties.AttackRange)
+                    try
                     {
-                        break;
+                        CellEntity item = Game.CurrentBattle.MapEntity[HexCoord + d * i];
+                        if (item.GetPointDistanceOf(this) > 2 * data.Properties.AttackRange)
+                        {
+                            break;
+                        }
+                        if (item.HasArmyStandOn)
+                            if (item.HasArmyStandOn.Owner == effect.Target.Owner)
+                                entities = entities.Union(new List<Entity>() { item.HasArmyStandOn });
                     }
-                    if (item.HasArmyStandOn)
-                        if (item.HasArmyStandOn.Owner == effect.Target.Owner)
-                            entities = entities.Union(new List<Entity>() { item.HasArmyStandOn });
-                }
-                catch
-                {
-
+                    catch { }
                 }
             }
+
 
 
             effect.Targets = entities.ToList();

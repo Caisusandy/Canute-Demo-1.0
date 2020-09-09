@@ -14,8 +14,8 @@ namespace Canute.UI
         {
             displayingArmy = armyItem;
 
-            skillName.text = armyItem.SkillPack.GetDisplayingName();
-            info.text = armyItem.SkillPack.Info();
+            skillName.text = armyItem.Properties.SkillPack.GetDisplayingName();
+            info.text = armyItem.Properties.SkillPack.Info();
         }
     }
 }

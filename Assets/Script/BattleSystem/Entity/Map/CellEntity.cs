@@ -38,14 +38,14 @@ namespace Canute.BattleSystem
         {
             base.Awake();
             this.NewUUID();
-            GetComponent<SpriteRenderer>().sortingLayerName = "Map";
-            GetComponent<SpriteRenderer>().sortingOrder = -y;
             entityMark = new MarkController(CellMark.Type.select);
         }
 
         public override void Start()
         {
             base.Start();
+            GetComponent<SpriteRenderer>().sortingLayerName = "Map";
+            GetComponent<SpriteRenderer>().sortingOrder = -y;
 
             if (data.hide)
             {
@@ -58,7 +58,7 @@ namespace Canute.BattleSystem
                 GetComponent<SpriteRenderer>().color = new Color(200f / 255, 200f / 255, 200f / 255);
             }
 
-            SetCellSprite();
+            //SetCellSprite();
         }
 
         public void SetCellSprite()
@@ -127,8 +127,9 @@ namespace Canute.BattleSystem
             onMapEntity.entityMark.Refresh(this);
             onMapEntity.entityMark.Display();
 
-            this.Trigger(TriggerCondition.Conditions.entityArrive, ref effect);
-            onMapEntity.Trigger(TriggerCondition.Conditions.entityArrive, ref effect);
+            this.TriggerConditionOf(TriggerCondition.Conditions.entityArrive, ref effect);
+            onMapEntity.TriggerConditionOf(TriggerCondition.Conditions.entityArrive, ref effect);
+            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.entityArrive, ref effect);
         }
 
         /// <summary>
@@ -136,8 +137,9 @@ namespace Canute.BattleSystem
         /// </summary>
         public void Leave(OnMapEntity onMapEntity, Effect effect)
         {
-            this.Trigger(TriggerCondition.Conditions.entityLeft, ref effect);
-            onMapEntity.Trigger(TriggerCondition.Conditions.entityLeft, ref effect);
+            this.TriggerConditionOf(TriggerCondition.Conditions.entityLeft, ref effect);
+            onMapEntity.TriggerConditionOf(TriggerCondition.Conditions.entityLeft, ref effect);
+            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.entityLeft, ref effect);
             onMapEntity.entityMark.Refresh();
         }
 

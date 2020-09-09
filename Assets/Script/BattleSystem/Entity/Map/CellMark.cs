@@ -40,7 +40,7 @@ namespace Canute.BattleSystem
                         color = new Color(1f, 0.9f, 0f);
                         break;
                     case Type.select:
-                        color = new Color(0.5f, 1f, 1);
+                        color = new Color(1f, 1f, 1, 0.8f);
                         break;
                     case Type.path:
                         color = new Color(1f, 0.9f, 0.5f);

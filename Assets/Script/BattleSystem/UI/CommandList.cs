@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Canute.Module;
+using System;
 using UnityEngine;
 
 namespace Canute.Testing

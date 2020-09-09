@@ -299,6 +299,8 @@ namespace Canute.BattleSystem
 
     public abstract class InteractableEntity : Entity, IInteractableEntity
     {
+        public Color HightGreen => new Color(0.7f, 1, 0.7f);
+
         [Header("Entity Status")]
         [SerializeField] protected bool isHighlighted;
         [SerializeField] protected bool isSelected;
@@ -348,6 +350,28 @@ namespace Canute.BattleSystem
                 IsHighlighted = false;
             }
             catch { }
+        }
+
+        public virtual void CardTargetHighlight()
+        {
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer)
+            {
+                var c = spriteRenderer.color;
+                c.a -= 0.5f;
+                spriteRenderer.color = c;
+            }
+        }
+
+        public virtual void CardTargetUnhighlight()
+        {
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer)
+            {
+                var c = spriteRenderer.color;
+                c.a = 1;
+                spriteRenderer.color = c;
+            }
         }
 
         /// <summary>

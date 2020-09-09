@@ -91,7 +91,7 @@ namespace Canute.BattleSystem
     public interface IPassiveEntityData : IBattleableEntityData, IStatusContainer, IOwnable
     {
         /// <summary> 最高生命值 </summary>
-        int MaxHealth { get; }
+        int MaxHealth { get; set; }
         /// <summary>  </summary>
         float HealthPercent { get; }
     }

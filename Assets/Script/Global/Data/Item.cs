@@ -128,7 +128,7 @@ namespace Canute
         public static int GetLevel(int @base, double multiple, int currentExp, int maxLevel = 60)
         {
             double curLevel = @base;
-            for (int i = 0; i < maxLevel; i++)
+            for (int i = 0; i < maxLevel - 1; i++)
             {
                 if (currentExp > curLevel)
                 {

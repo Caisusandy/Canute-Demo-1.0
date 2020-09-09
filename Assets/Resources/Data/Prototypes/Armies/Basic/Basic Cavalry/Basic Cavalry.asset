@@ -29,7 +29,7 @@ MonoBehaviour:
     - defense: 4.40528634361233
       critRate: 80
       critBounes: 50
-      pop: 2
+      pop: 12
       attackRange: 2
       moveRange: 5
       standPosition: 1
@@ -58,7 +58,7 @@ MonoBehaviour:
     - defense: 4.40528634361233
       critRate: 80
       critBounes: 50
-      pop: 2
+      pop: 12
       attackRange: 2
       moveRange: 5
       standPosition: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
     - defense: 4.40528634361233
       critRate: 80
       critBounes: 50
-      pop: 2
+      pop: 12
       attackRange: 2
       moveRange: 5
       standPosition: 1

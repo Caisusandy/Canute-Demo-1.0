@@ -140,6 +140,6 @@ MonoBehaviour:
     scoreBoard:
       list: []
       allPassedEffect: []
-      totalPlayerDamage: 100
+      totalPlayerDamage: 0
       totalAirforceDefeated: 0
-      totalLandArmyDefeated: 1
+      totalLandArmyDefeated: 0

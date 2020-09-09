@@ -178,7 +178,8 @@ namespace Canute
         [SerializeField] protected List<LeaderItem> leaders = new List<LeaderItem>();
         [SerializeField] protected List<EquipmentItem> equipments = new List<EquipmentItem>();
         [SerializeField] protected List<EventCardItem> eventCards = new List<EventCardItem>();
-        [SerializeField] protected List<string> collectiveStoriesID = new List<string>();
+        [SerializeField] protected List<string> collectionStoriesID = new List<string>();
+        [SerializeField] protected List<string> collectionLetterID = new List<string>();
         [SerializeField] protected ItemList countableItems = new ItemList();
 
 
@@ -186,7 +187,8 @@ namespace Canute
         public List<LeaderItem> Leaders { get => leaders; set => leaders = value; }
         public List<EquipmentItem> Equipments { get => equipments; set => equipments = value; }
         public List<EventCardItem> EventCards { get => eventCards; set => eventCards = value; }
-        public List<string> CollectiveStoriesID { get => collectiveStoriesID; set => collectiveStoriesID = value; }
+        public List<string> CollectionStoriesID { get => collectionStoriesID; set => collectionStoriesID = value; }
+        public List<string> CollectionLetterID { get => collectionLetterID; set => collectionLetterID = value; }
         public ItemList CountableItems { get => countableItems; set => countableItems = value; }
 
         #endregion
@@ -459,6 +461,9 @@ namespace Canute
 
             gameProgree = new PlayerChapterTree();
             gameStatistic = new GameStatistic();
+            countableItems = new ItemList();
+            collectionLetterID = new List<string>();
+            collectionStoriesID = new List<string>();
 
             excaTeam = new ExplorationTeam();
 

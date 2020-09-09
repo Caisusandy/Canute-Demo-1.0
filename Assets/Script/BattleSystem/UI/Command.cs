@@ -51,6 +51,8 @@ namespace Canute.Testing
                         return GetUUID();
                     case "kill":
                         return Kill(commandParams);
+                    case "lang":
+                        return Lang(commandParams);
                     case "loadStory":
                         return LoadStory(commandParams);
                     case "openEmptyBattle":
@@ -87,6 +89,12 @@ namespace Canute.Testing
             }
 
             return false;
+        }
+
+        private static bool Lang(string[] commandParams)
+        {
+            Console.WriteLine(commandParams[1].Lang());
+            return true;
         }
 
         private static bool LoadStory(string[] commandParams)

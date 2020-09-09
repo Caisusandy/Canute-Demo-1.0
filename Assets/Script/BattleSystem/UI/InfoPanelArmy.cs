@@ -1,4 +1,5 @@
 ﻿using Canute.Module;
+using Canute.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,8 @@ namespace Canute.BattleSystem.UI
         [Header("Other Info")]
         public Text damage;
         public Text defense;
+        public AttackPostionIcon attackPostionIcon;
+        public StandPostionIcon standPostionIcon;
 
         public override IStatusContainer StatusContainer => ArmyEntity.data;
 
@@ -54,10 +57,15 @@ namespace Canute.BattleSystem.UI
             BattleArmy data = ArmyEntity.data;
             healthBar.SetProgress((float)ArmyEntity.data.Health / ArmyEntity.data.MaxHealth);
             healthInfo.text = data.Health + (data.Armor == 0 ? "" : ("(+" + data.Armor + ")")) + " / " + data.MaxHealth;
+
             angerBar.SetProgress(data.Anger / 100f);
             angerInfo.text = data.Anger + " / 100";
+
             damage.text = "Damage: " + data.RawDamage;
             defense.text = "Defense: " + data.Defense;
+
+            attackPostionIcon.SetArmyItem(ArmyEntity.data);
+            standPostionIcon.SetArmyItem(ArmyEntity.data);
         }
     }
 }

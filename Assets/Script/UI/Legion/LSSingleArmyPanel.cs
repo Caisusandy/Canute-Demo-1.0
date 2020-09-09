@@ -17,10 +17,9 @@ namespace Canute.UI
         public static ArmyItem SelectingArmy => instance.selectingArmyCard.displayingArmy;
 
         public ArmyCardUI selectingArmyCard;
-
         public ArmyCardUI armyCardUI;
-        public LSArmySkillCardUI armySkillCardUI;
 
+        public LSArmySkillCardUI armySkillCardUI;
         public LSArmyUpgradePanel upgradePanel;
 
         [Header("Text Info")]
@@ -36,6 +35,8 @@ namespace Canute.UI
         public Text critRate;
         public Text critBounesKey;
         public Text critBounes;
+        public Text starKey;
+        public Text star;
 
         public Text leaderName;
 
@@ -72,7 +73,12 @@ namespace Canute.UI
         public void Display(ArmyItem armyItem)
         {
             ClearDisplay();
+            if (!armyItem)
+                return;
+
+            transform.GetChild(0).gameObject.SetActive(true);
             Debug.Log(armyCardUI);
+
             armyCardUI.Display(armyItem);
             armySkillCardUI.Display(armyItem);
 
@@ -82,7 +88,7 @@ namespace Canute.UI
             attackPostion.SetArmyItem(armyItem);
 
 
-            damage.text = "A: " + armyItem.MaxDamage.ToString();
+            damage.text = "A: " + armyItem.RawDamage.ToString();
             health.text = "H: " + armyItem.MaxHealth.ToString();
             defense.text = "D: " + armyItem.Defense.ToString();
 
@@ -112,36 +118,38 @@ namespace Canute.UI
             attackRange.text = armyItem.Properties.AttackRange.ToString();
             critBounes.text = armyItem.Properties.CritBonus.ToString() + "%";
             critRate.text = armyItem.Properties.CritRate.ToString() + "%";
+            star.text = armyItem.Star.ToString();
 
             career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, armyItem.Career.ToString());
         }
 
         public void ClearDisplay()
         {
-            armyCardUI.Display(ArmyItem.Empty);
-            armyTypeIcon.SetArmyItem(ArmyItem.Empty);
-            attackTypeIcon.SetArmyItem(ArmyItem.Empty);
-            standPosition.SetArmyItem(ArmyItem.Empty);
-            attackPostion.SetArmyItem(ArmyItem.Empty);
+            transform.GetChild(0).gameObject.SetActive(false);
+            //armyCardUI.Display(ArmyItem.Empty);
+            //armyTypeIcon.SetArmyItem(ArmyItem.Empty);
+            //attackTypeIcon.SetArmyItem(ArmyItem.Empty);
+            //standPosition.SetArmyItem(ArmyItem.Empty);
+            //attackPostion.SetArmyItem(ArmyItem.Empty);
 
 
-            damage.text = "";
-            health.text = "";
-            defense.text = "";
+            //damage.text = "";
+            //health.text = "";
+            //defense.text = "";
 
-            moveRange.text = "";
-            attackRange.text = "";
-            critBounes.text = "";
-            critRate.text = "";
+            //moveRange.text = "";
+            //attackRange.text = "";
+            //critBounes.text = "";
+            //critRate.text = "";
 
-            equipmentSlot1.sprite = null;
-            equipmentSlot2.sprite = null;
-            equipmentSlot3.sprite = null;
+            //equipmentSlot1.sprite = null;
+            //equipmentSlot2.sprite = null;
+            //equipmentSlot3.sprite = null;
 
-            leaderIcon.enabled = false;
+            //leaderIcon.enabled = false;
 
-            career.sprite = null;
-            leaderName.text = "";
+            //career.sprite = null;
+            //leaderName.text = "";
         }
 
         public void ChangeArmy()
@@ -157,9 +165,9 @@ namespace Canute.UI
                 ArmyListUI.CloseArmyList();
                 var legion = LSLegionDisplay.instance.Legion;
                 legion.Replace(SelectingArmy, item);
-                LSLegionDisplay.instance.ReloadLegion();
                 ArmyListUI.SelectEvent -= Change;
                 PlayerFile.SaveCurrentData();
+                LSLegionDisplay.instance.ReloadLegion();
             }
         }
 
@@ -198,11 +206,11 @@ namespace Canute.UI
 
                 Debug.Log("Change Equipment");
                 EquipmentListUI.CloseEquipmentList();
-                LSLegionDisplay.instance.ReloadLegion();
                 EquipmentListUI.SelectEvent -= Change;
 
                 SelectingArmy.Equipments[id] = item;
                 PlayerFile.SaveCurrentData();
+                LSLegionDisplay.instance.ReloadLegion();
             }
         }
 

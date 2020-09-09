@@ -215,18 +215,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1300870132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 849c66b5f925df64f993ba257f730dd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3489d0e91d909534f97f9191a4954892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rect_x: 20
+  rect_x: 25
   rect_y: 25
-  mapPrefab: {fileID: 7136143374493739514, guid: 661a646dfddfb4d4883c3e24fc3e3cad,
-    type: 3}
   columnPrefab: {fileID: 6767798170634441603, guid: 55c9472f4e6ee9445bfa194730a22b14,
     type: 3}
   cellPrefab: {fileID: 2280665428330849364, guid: ae45f2e0ec71ddf40a03d68cb8d040e9,
     type: 3}
-  mapBase: {fileID: 0}
+  mapEntity: {fileID: 0}
+  random: 1
+  useSeed: 1
+  seed: 0
+  mapPrefab: {fileID: 7136143374493739514, guid: 661a646dfddfb4d4883c3e24fc3e3cad,
+    type: 3}
 --- !u!114 &1300870137
 MonoBehaviour:
   m_ObjectHideFlags: 0

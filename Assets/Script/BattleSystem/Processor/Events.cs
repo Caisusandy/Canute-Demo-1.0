@@ -26,6 +26,7 @@ namespace Canute.BattleSystem
         public const string addDragonCard = "addDragonCard";
         public const string dragonCritAttack = "dragonCritAttack";
         public const string createArmy = "createArmy";
+        public const string propertyBonus = "propertyBonus";
     }
 
 
@@ -38,6 +39,9 @@ namespace Canute.BattleSystem
             bool result = true;
             switch (name)
             {
+                case EventName.propertyBonus:
+                    result = PropertyBonus(effect);
+                    break;
                 case EventName.addArmor:
                     result = AddArmor(effect);
                     break;
@@ -94,6 +98,62 @@ namespace Canute.BattleSystem
             }
 
             return result;
+        }
+
+        private static bool PropertyBonus(Effect effect)
+        {
+
+            PropertyType propertyType = effect.Args.GetEnumParam<PropertyType>(Effect.propertyType);
+            BonusType bounesType = effect.Args.GetEnumParam<BonusType>(Effect.bonusType);
+            var checkTypeValues = Enum.GetValues(typeof(PropertyType));
+            Debug.Log(effect.Target);
+            IBattleableEntityData data = (effect.Target as IBattleableEntity).Data;
+            var property = data.RawProperties;
+
+            foreach (PropertyType item in checkTypeValues)
+            {
+                switch (propertyType & item)
+                {
+                    case PropertyType.defense:
+                        property.Defense = property.Defense.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.moveRange:
+                        property.MoveRange = property.MoveRange.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.attackRange:
+                        property.AttackRange = property.AttackRange.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.critRate:
+                        property.CritRate = property.CritRate.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.critBounes:
+                        property.CritBonus = property.CritBonus.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.pop:
+                        property.Pop = property.Pop.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.damage:
+                        if (data is IAggressiveEntityData)
+                            (data as IAggressiveEntityData).RawDamage = (data as IAggressiveEntityData).RawDamage.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.health:
+                        if (data is IPassiveEntityData)
+                            (data as IPassiveEntityData).MaxHealth = (data as IPassiveEntityData).MaxHealth.Bonus(effect.Parameter, bounesType);
+                        data.Health = data.Health.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.armor:
+                        data.Armor = data.Armor.Bonus(effect.Parameter, bounesType);
+                        break;
+                    case PropertyType.anger:
+                        data.Anger = data.Anger.Bonus(effect.Parameter, bounesType);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+             (effect.Target as IBattleableEntity).Data.RawProperties = property;
+            return true;
         }
 
         #region Events
@@ -231,17 +291,24 @@ namespace Canute.BattleSystem
                     {
                         continue;
                     }
-                    battleEntityData.Data.Trigger(TriggerCondition.Conditions.beforeAttack, ref effect);
+                    battleEntityData.Data.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                    battleEntityData.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                    Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
                 }
                 IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
-                agressiveEntity.Data.Trigger(TriggerCondition.Conditions.attack, ref effect);
+                agressiveEntity.Data.TriggerConditionOf(TriggerCondition.Conditions.attack, ref effect);
             }
 
             IAggressiveEntity aggressiveEntity = effect.Source as IAggressiveEntity;
             foreach (var item in effect.Targets)
             {
                 IPassiveEntity target = item as IPassiveEntity;
-                if (!effect.Args.HasParam("avoidTrigger")) target.Data.Trigger(TriggerCondition.Conditions.defense, ref effect);
+                if (!effect.Args.HasParam("avoidTrigger"))
+                {
+                    target.Data.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
+                    target.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
+                    Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
+                }
                 var executingEffect = effect.Clone();
                 executingEffect.Target = item;
                 RewriteAttackEffect(ref executingEffect);
@@ -263,7 +330,9 @@ namespace Canute.BattleSystem
                     {
                         continue;
                     }
-                    battleEntity.Data.Trigger(TriggerCondition.Conditions.afterDefence, ref effect);
+                    battleEntity.Data.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                    battleEntity.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                    Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
                 }
             }
             return true;
@@ -451,14 +520,14 @@ namespace Canute.BattleSystem
             Status GetStatusOnFast(ArmyEntity armyEntity)
             {
                 Effect attack = new Effect(PropertyType.attackRange, BonusType.additive, armyEntity, armyEntity, 1, 2, "name:dragonBonus", "dragonStatus:attack");
-                attack[Effect.propertyBonusType] = "dragonAttack";
+                attack[Effect.propertyType] = "dragonAttack";
                 return new Status(attack, -1, -1, Status.StatType.resonance, true);
             }
 
             Status GetStatusOnSlow(ArmyEntity armyEntity)
             {
                 Effect defense = new Effect(PropertyType.defense, BonusType.percentage, armyEntity, armyEntity, 1, 800, "name:dragonBonus", "dragonStatus:defense");
-                defense[Effect.propertyBonusType] = "dragonDefense";
+                defense[Effect.propertyType] = "dragonDefense";
                 return new Status(defense, -1, -1, Status.StatType.resonance, true);
             }
         }

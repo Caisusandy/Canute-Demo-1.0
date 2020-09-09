@@ -117,7 +117,7 @@ namespace Canute
         [Header("Allow Player Control")]
         [SerializeField] private float playCardDelay = 0.25f;
         [SerializeField] private bool showStory = true;
-        [SerializeField] private string language = "zh_cn";
+        [SerializeField] private string language = "en_us";
 
         public UUID LastGame { get => lastGame; set { lastGame = value; Game.SaveConfig(); } }
         public bool IsDebugMode { get => debugMode; set { debugMode = value; Game.SaveConfig(); } }
@@ -137,7 +137,7 @@ namespace Canute
             useCustomDefaultPrototype = false;
             showStory = true;
             playCardDelay = 0.25f;
-            language = "zh_cn";
+            language = "en_us";
         }
 
         public Config Clone()

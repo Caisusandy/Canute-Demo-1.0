@@ -80,7 +80,7 @@ namespace Canute.Module
             ongoingMotions.Remove(this);
         }
 
-        public static void SetMotion(GameObject obj, Vector3 finalPos, Space space = Space.World, EndMotion endMotionevent = null, bool isUIMotion = false)
+        public static Motion SetMotion(GameObject obj, Vector3 finalPos, Space space = Space.World, EndMotion endMotionevent = null, bool isUIMotion = false)
         {
             Motion motion = obj.GetComponent<Motion>();
             if (!obj.GetComponent<Motion>()) { motion = obj.AddComponent<Motion>(); }
@@ -98,19 +98,21 @@ namespace Canute.Module
                 // Debug.Log(FinalPos); 
                 motion.finalPos = finalPos;
             }
+
+            return motion;
         }
 
-        public static void SetMotion(GameObject obj, Vector3 finalPos, EndMotion endMotionevent)
+        public static Motion SetMotion(GameObject obj, Vector3 finalPos, EndMotion endMotionevent)
         {
-            SetMotion(obj, finalPos, Space.World, endMotionevent);
+            return SetMotion(obj, finalPos, Space.World, endMotionevent);
         }
-        public static void SetMotion(GameObject obj, Vector3 finalPos, EndMotion endMotionevent, bool isUIMotion)
+        public static Motion SetMotion(GameObject obj, Vector3 finalPos, EndMotion endMotionevent, bool isUIMotion)
         {
-            SetMotion(obj, finalPos, Space.World, endMotionevent, isUIMotion);
+            return SetMotion(obj, finalPos, Space.World, endMotionevent, isUIMotion);
         }
-        public static void SetMotion(GameObject obj, Vector3 finalPos, bool isUIMotion)
+        public static Motion SetMotion(GameObject obj, Vector3 finalPos, bool isUIMotion)
         {
-            SetMotion(obj, finalPos, Space.World, null, isUIMotion);
+            return SetMotion(obj, finalPos, Space.World, null, isUIMotion);
         }
 
         public static void StopMotion(GameObject gameObject)

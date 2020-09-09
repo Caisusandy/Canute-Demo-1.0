@@ -9,9 +9,8 @@ using UnityEngine;
 
 namespace Canute.BattleSystem
 {
-
     [Serializable]
-    public class Battle : ICloneable
+    public class Battle : ICloneable, IStatusContainer
     {
         public enum Type
         {
@@ -38,7 +37,7 @@ namespace Canute.BattleSystem
         [SerializeField] protected CentralDeck centralDeck;
         [SerializeField] protected List<BattleArmy> armies = new List<BattleArmy>();
         [SerializeField] protected List<BattleBuilding> buildings = new List<BattleBuilding>();
-        [SerializeField] protected List<Status> globalStatus = new List<Status>();
+        [SerializeField] protected StatusList globalStatus = new List<Status>();
 
         [SerializeField] protected List<Animator> ongoingAnimation = new List<Animator>();
         [SerializeField] protected List<Effect> passedEffect = new List<Effect>();
@@ -49,6 +48,7 @@ namespace Canute.BattleSystem
 
 
         #region Properties  
+        public string Name => player.Name + " vs." + enemy.Name;
         public bool AvoidPlayerLegion => avoidPlayerDefinedLegionSet;
         public Type BattleType { get => battleType; set => battleType = value; }
         public Player Enemy { get => enemy; set => enemy = value; }
@@ -61,7 +61,9 @@ namespace Canute.BattleSystem
         public ScoreBoard ScoreBoard { get => scoreBoard; set => scoreBoard = value; }
         public List<Animator> OngoingAnimation => ongoingAnimation;
         public List<Effect> PassingEffect { get => passedEffect; set => passedEffect = value; }
+        public StatusList GlobalStatus { get => globalStatus; set => globalStatus = value; }
         public CentralDeck CentralDeck { get => centralDeck; set => centralDeck = value; }
+        public List<Prize> Prizes { get => prizes; set => prizes = value; }
         public GameObject MapPrefab { get => mapPrefab; set => mapPrefab = value; }
         public MapEntity MapEntity { get => mapEntity; set => mapEntity = value; }
         public Map Map => mapEntity.data;
@@ -71,6 +73,19 @@ namespace Canute.BattleSystem
         public List<Player> OtherPlayers => new List<Player> { Enemy }.Union(ThirdParties).ToList();
         public List<IStatusContainer> StatusContainers => AllPlayers.OfType<IStatusContainer>().Union(Armies.OfType<IStatusContainer>()).Union(Buildings.OfType<IStatusContainer>()).Union(Map.OfType<IStatusContainer>()).ToList();
 
+        StatusList IStatusContainer.StatList => GlobalStatus;
+        StatusList IStatusContainer.GetAllStatus() => GetAllStatus();
+
+        private StatusList GetAllStatus()
+        {
+            List<Status> stats = new List<Status>();
+            foreach (var item in StatusContainers)
+            {
+                stats.AddRange(item.StatList);
+            }
+            stats.AddRange(globalStatus);
+            return stats;
+        }
         #region Minor Properties
         public bool IsFreeTime => (CurrentStat == Stat.normal && Round.CurrentStat == Round.Stat.normal) || (CurrentStat == Stat.begin && Round.CurrentStat == Round.Stat.gameStart);
         public bool HasAnimation => !TryEndAnimation();
@@ -219,20 +234,19 @@ namespace Canute.BattleSystem
         /// </summary>
         public void Prepare()
         {
-            ScoreBoard = new ScoreBoard();
-            waveControl = new WaveControl(waveInfo, this);
             //Player
             foreach (Player item in OtherPlayers)
             {
                 if (item.UUID == UUID.Empty)
-                {
                     item.NewUUID();
-                }
                 Debug.Log(item.Name);
             }
 
+            ScoreBoard = new ScoreBoard();
+            waveControl = new WaveControl(waveInfo, this);
             round = new Round(this);
             centralDeck = new CentralDeck();
+
             InBeginning();
 
             //geneate playerEntity
@@ -272,6 +286,7 @@ namespace Canute.BattleSystem
         /// </summary>
         public void Start()
         {
+            Resonance.Resonate(player.BattleArmies);
             Round.TurnBegin();
             foreach (Player player in AllPlayers)
             {
@@ -290,7 +305,6 @@ namespace Canute.BattleSystem
                 player.SetupLeader(playerLegion.Leader);
                 player.SetupLegion(playerLegion.Legion);
                 player.SetupEventCardPile(playerLegion.EventCardPile);
-                Resonance.Resonate(player.BattleArmies);
             }
         }
 
@@ -569,16 +583,21 @@ namespace Canute.BattleSystem
             }
 
             int score = ScoreBoard.GetScore();
+
             var fgPrize = new Prize(Currency.Type.fedgram.ToString(), score / 400, Item.Type.currency);
             var mpPrize = new Prize(Currency.Type.manpower.ToString(), score / 400, Item.Type.currency);
             var maPrize = new Prize(Currency.Type.mantleAlloy.ToString(), (int)(ScoreBoard.TotalAirforceDefeated * (UnityEngine.Random.value + 1) / 1.5f), Item.Type.currency);
-
             fgPrize.Fulfill();
             mpPrize.Fulfill();
             maPrize.Fulfill();
 
-            BattleUI.EndlessEndUI.gameObject.SetActive(true);
-            BattleUI.EndlessEndUI.ShowPrize(fgPrize, mpPrize, maPrize);
+            #region Display Info 
+            int ma = maPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.mantleAlloy);
+            int mp = mpPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.manpower);
+            int fg = fgPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.fedgram);
+            BattleUI.EndUI.gameObject.SetActive(true);
+            BattleUI.EndUI.ShowPrize(fg, mp, ma);
+            #endregion
         }
 
         public static void End() => Game.ClearBattle();

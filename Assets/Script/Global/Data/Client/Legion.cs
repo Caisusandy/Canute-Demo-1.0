@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Canute
@@ -12,11 +13,14 @@ namespace Canute
 
         public Legion()
         {
-            armiesUUID = new List<UUID>() { Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty, Guid.Empty };
+            armiesUUID = new List<UUID>();
+            InitializeLegion();
         }
 
         public List<ArmyItem> Armies => Game.PlayerData.GetArmyItems(armiesUUID.ToArray());
+        public IEnumerable<ArmyItem> RealArmies => Game.PlayerData.GetArmyItems(armiesUUID.ToArray()).Where((a) => a);
         public int PopCount => GetPopCount();
+        public int RealArmyCount => Armies.Sum((a) => a ? 1 : 0);
 
         public bool HasArmyItem(ArmyItem armyItem)
         {
@@ -34,13 +38,8 @@ namespace Canute
 
         public void Replace(ArmyItem original, ArmyItem replaceTo)
         {
-            if (armiesUUID.Count < 5)
-            {
-                for (int i = armiesUUID.Count; i < 5; i++)
-                {
-                    armiesUUID.Add(UUID.Empty);
-                }
-            }
+            if (armiesUUID.Count < 6)
+                InitializeLegion();
 
             if (HasArmyItem(replaceTo)) //switch
             {
@@ -85,6 +84,21 @@ namespace Canute
             Reorganize();
         }
 
+        private void InitializeLegion()
+        {
+            if (armiesUUID == null)
+            {
+                armiesUUID = new List<UUID>();
+            }
+            if (armiesUUID.Count < 6)
+            {
+                for (int i = armiesUUID.Count; i < 6; i++)
+                {
+                    armiesUUID.Add(UUID.Empty);
+                }
+            }
+        }
+
         public void SetArmy(int index, ArmyItem armyItem)
         {
             if (armyItem is null)
@@ -125,7 +139,7 @@ namespace Canute
             int count = 0;
             foreach (var item in Armies)
             {
-                count += item.Pop;
+                count += item.Properties.Pop;
             }
             return count;
         }

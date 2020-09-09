@@ -80,9 +80,11 @@
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\ΣCityInfantry\SigmaQuadrantCityDefenseInfantry.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Buildings\Camp\CampusEntity.cs" />
     <Compile Include="Assets\Resources\Levels\1-2\C1L2.cs" />
-    <Compile Include="Assets\Resources\Levels\Tutorials\Trial 1 Tutorial\Tutorial.cs" />
+    <Compile Include="Assets\Resources\Levels\Tutorials\Trial 2\Tutorial.cs" />
     <Compile Include="Assets\Resources\Scenes\Credit\Credit.cs" />
     <Compile Include="Assets\Resources\Scenes\Factory\BuildTest.cs" />
+    <Compile Include="Assets\Resources\Scenes\Game Start\GameStart.cs" />
+    <Compile Include="Assets\Resources\Scenes\Logo\Logo.cs" />
     <Compile Include="Assets\Resources\Scenes\Main\Main.cs" />
     <Compile Include="Assets\Resources\Scenes\ModeSettings\ModeArmySetting.cs" />
     <Compile Include="Assets\Script\BattleSystem\AI\AIAction.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Assets\Script\BattleSystem\Entity\EntityData.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\Cell.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\CellBorder.cs" />
+    <Compile Include="Assets\Script\BattleSystem\Entity\Map\CellColoration.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\CellEntity.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\CellMark.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\ColumnEntity.cs" />
@@ -166,7 +169,6 @@
     <Compile Include="Assets\Script\BattleSystem\UI\Console.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\Control.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\EndPanel.cs" />
-    <Compile Include="Assets\Script\BattleSystem\UI\EndlessResultUI.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\EnemyHandCardBar.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\EnemyRightPanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\GameDebug.cs" />
@@ -180,6 +182,7 @@
     <Compile Include="Assets\Script\BattleSystem\UI\LeftPanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\PausePanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\PvPUI.cs" />
+    <Compile Include="Assets\Script\BattleSystem\UI\ResultUI.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\RightPanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\StatusDetailDisplayer.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\StatusDisplayer.cs" />
@@ -189,6 +192,7 @@
     <Compile Include="Assets\Script\BuildSetting.cs" />
     <Compile Include="Assets\Script\Chapters\ChapterPanel.cs" />
     <Compile Include="Assets\Script\Chapters\Chapters.cs" />
+    <Compile Include="Assets\Script\Chapters\LetterContainer.cs" />
     <Compile Include="Assets\Script\Chapters\Stories.cs" />
     <Compile Include="Assets\Script\Chapters\Story.cs" />
     <Compile Include="Assets\Script\Chapters\StoryContainer.cs" />
@@ -232,6 +236,8 @@
     <Compile Include="Assets\Script\Global\Data\Prototypes\Army.cs" />
     <Compile Include="Assets\Script\Global\Data\Prototypes\BattleProperty.cs" />
     <Compile Include="Assets\Script\Global\Data\Prototypes\Building.cs" />
+    <Compile Include="Assets\Script\Global\Data\Prototypes\Character.cs" />
+    <Compile Include="Assets\Script\Global\Data\Prototypes\CharacterContainer.cs" />
     <Compile Include="Assets\Script\Global\Data\Prototypes\Equipment.cs" />
     <Compile Include="Assets\Script\Global\Data\Prototypes\EventCard.cs" />
     <Compile Include="Assets\Script\Global\Data\Prototypes\Leader.cs" />
@@ -261,6 +267,7 @@
     <Compile Include="Assets\Script\Module\Arg.cs" />
     <Compile Include="Assets\Script\Module\Args.cs" />
     <Compile Include="Assets\Script\Module\CheckList.cs" />
+    <Compile Include="Assets\Script\Module\DList.cs" />
     <Compile Include="Assets\Script\Module\DataList.cs" />
     <Compile Include="Assets\Script\Module\Extensions.cs" />
     <Compile Include="Assets\Script\Module\Follow.cs" />
@@ -275,6 +282,7 @@
     <Compile Include="Assets\Script\Module\KeyValuePairs.cs" />
     <Compile Include="Assets\Script\Module\LanguageLoader.cs" />
     <Compile Include="Assets\Script\Module\NumberInputField.cs" />
+    <Compile Include="Assets\Script\Module\PrizeLists.cs" />
     <Compile Include="Assets\Script\Module\ProgressBar.cs" />
     <Compile Include="Assets\Script\Module\SingleInstanceMonoBehaviour.cs" />
     <Compile Include="Assets\Script\Module\TemporaryAttribute.cs" />
@@ -286,6 +294,7 @@
     <Compile Include="Assets\Script\Shop\PriceList.cs" />
     <Compile Include="Assets\Script\Shop\Shop.cs" />
     <Compile Include="Assets\Script\Shop\WeightItem.cs" />
+    <Compile Include="Assets\Script\Story\LetterDisplayer.cs" />
     <Compile Include="Assets\Script\Story\StoryDisplayer.cs" />
     <Compile Include="Assets\Script\Story\WordLine.cs" />
     <Compile Include="Assets\Script\Technology\Technology.cs" />
@@ -295,6 +304,7 @@
     <Compile Include="Assets\Script\UI\Armies\ArmyTypeIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\AttackPostionIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\AttackTypeIcon.cs" />
+    <Compile Include="Assets\Script\UI\Armies\Icon.cs" />
     <Compile Include="Assets\Script\UI\Armies\StandPostionIcon.cs" />
     <Compile Include="Assets\Script\UI\ConfirmWindow.cs" />
     <Compile Include="Assets\Script\UI\Equipments\EquipmentListUI.cs" />
@@ -317,12 +327,17 @@
     <Compile Include="Assets\Script\UI\Global\Label.cs" />
     <Compile Include="Assets\Script\UI\Global\LeaderCardUI.cs" />
     <Compile Include="Assets\Script\UI\Global\LeaderIcon.cs" />
+    <Compile Include="Assets\Script\UI\Hallway\HWCharacter.cs" />
+    <Compile Include="Assets\Script\UI\Hallway\HWUI.cs" />
+    <Compile Include="Assets\Script\UI\Hallway\Hallway.cs" />
     <Compile Include="Assets\Script\UI\InfoWindow.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSArmySkillCardUI.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSArmyUpgradePanel.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSLegionDisplay.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSLegionPopCount.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSLegionSmallIcon.cs" />
+    <Compile Include="Assets\Script\UI\Legion\LSResonance.cs" />
+    <Compile Include="Assets\Script\UI\Legion\LSResonanceInfo.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSScroll.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSSingleArmyPanel.cs" />
     <Compile Include="Assets\Script\UI\LevelStartPanel\LeaderScroll.cs" />
@@ -332,9 +347,12 @@
     <Compile Include="Assets\Script\UI\RandomOAW.cs" />
     <Compile Include="Assets\Script\UI\Settings\SettingUI.cs" />
     <Compile Include="Assets\Script\UI\Settings\SettingUIBasic.cs" />
+    <Compile Include="Assets\Script\UI\Settings\SettingUIDebug.cs" />
     <Compile Include="Assets\Script\UI\Settings\SettingUILanguage.cs" />
+    <Compile Include="Assets\Script\UI\Settings\SettingUIOther.cs" />
     <Compile Include="Assets\Script\UI\Shop\SHOPOnShelfItem.cs" />
     <Compile Include="Assets\Script\UI\Shop\SHOPShelf.cs" />
+    <Compile Include="Assets\Script\UI\StoryRoom\SRLetterUI.cs" />
     <Compile Include="Assets\Script\UI\StoryRoom\SRStoryBlockUI.cs" />
     <Compile Include="Assets\Script\UI\StoryRoom\StoryRoomUI.cs" />
     <Compile Include="Assets\Script\UI\Testing\Army Generator\ArmyGenerator.cs" />

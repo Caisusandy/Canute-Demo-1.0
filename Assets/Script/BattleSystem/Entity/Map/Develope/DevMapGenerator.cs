@@ -14,30 +14,22 @@ namespace Canute.BattleSystem.Develop
         public const float dist_y = 34.5f;
     }
 
-    public class DevMapGenerator : MonoBehaviour
+    public class DevMapGenerator : MapGenerator
     {
-        public int rect_x;
-        public int rect_y;
+        public bool useSeed;
+        public int seed;
 
         public GameObject mapPrefab;
-        public GameObject columnPrefab;
-        public GameObject cellPrefab;
 
-        public MapEntity mapBase;
-
-        public void Awake()
-        {
-            CreateMap();
-        }
 
         [ContextMenu("CreateMap")]
-        public MapEntity CreateMap()
+        public override MapEntity CreateMap()
         {
-            mapBase = Instantiate(mapPrefab, transform).GetComponent<MapEntity>();
+            mapEntity = Instantiate(mapPrefab, transform).GetComponent<MapEntity>();
             for (int i = 0; i < rect_y; i++)
             {
-                var column = Instantiate(columnPrefab, mapBase.transform).GetComponent<ColumnEntity>();
-                mapBase.columnEntities.Add(column);
+                var column = Instantiate(columnPrefab, mapEntity.transform).GetComponent<ColumnEntity>();
+                mapEntity.columnEntities.Add(column);
 
                 column.name = "Column(" + i + ")";
                 column.transform.position = new Vector3((i % 2) * CellSizeDefault.dist_x / 2, CellSizeDefault.dist_y * i, 0);
@@ -50,7 +42,12 @@ namespace Canute.BattleSystem.Develop
                     cellEntity.data.Coordinate = new Vector2Int(j, i);
                 }
             }
-            return mapBase;
+            if (random)
+            {
+                RandomMapGenerator random = useSeed ? new RandomMapGenerator(this, seed) : new RandomMapGenerator(this);
+                random.Randomize();
+            }
+            return mapEntity;
         }
 
         private CellEntity CreateCell(int x, int y, Transform column)

@@ -74,8 +74,25 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         public bool SimilarTo(Status other)
         {
-            bool sameCount = ((IsBaseOnCount == other.IsBaseOnCount == true) || (IsBaseOnTurn == other.IsBaseOnTurn == true) || (IsDualBase == other.IsDualBase == true) || (IsResonance == other.IsResonance == true)) && !IsPermanentStatus && !other.IsPermanentStatus && other.Type != StatType.delay;
-            return sameCount && effect.SimilarTo(other.effect) && triggerConditions.Equals(other.TriggerConditions);
+            if (other.Name != Name)
+                return false;
+
+            bool sameCount = (
+                (IsBaseOnCount == other.IsBaseOnCount == true)
+                || (IsBaseOnTurn == other.IsBaseOnTurn == true)
+                || (IsDualBase == other.IsDualBase == true)
+                || (IsResonance == other.IsResonance == true))
+                && !IsPermanentStatus
+                && !other.IsPermanentStatus
+                && (other.Type != StatType.delay);
+            bool effectSimilar = effect.SimilarTo(other.effect);
+            bool trigger = triggerConditions.Equals(other.TriggerConditions);
+
+
+            Debug.Log(sameCount);
+            Debug.Log(effectSimilar);
+            Debug.Log(trigger);
+            return sameCount && effectSimilar && trigger;
         }
 
         public Status(Effect e, bool showToPlayer = true)
@@ -146,26 +163,22 @@ namespace Canute.BattleSystem
             if (IsBaseOnTurn)
             {
                 TurnCount += other.TurnCount;
-                this.StatusMerge(other);
-                return true;
+                return this.StatusMerge(other);
             }
             if (IsBaseOnCount)
             {
                 StatCount += other.StatCount;
-                this.StatusMerge(other);
-                return true;
+                return this.StatusMerge(other);
             }
             if (IsDualBase)
             {
                 StatCount += other.StatCount;
                 TurnCount += other.TurnCount;
-                this.StatusMerge(other);
-                return true;
+                return this.StatusMerge(other);
             }
             if (IsResonance)
             {
-                this.StatusMerge(other);
-                return true;
+                return this.StatusMerge(other);
             }
 
 

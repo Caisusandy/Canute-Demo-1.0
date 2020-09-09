@@ -30,6 +30,7 @@ namespace Canute.BattleSystem
         IBattleableEntityData IBattleableEntity.Data => data;
 
         public override BattleProperty.Position StandPostion => data.StandPosition;
+        public GameObject ArmyObject => transform.GetChild(0).gameObject;
 
         public override void Awake()
         {
@@ -66,11 +67,11 @@ namespace Canute.BattleSystem
         {
             if (isSelected)
             {
-                transform.GetChild(0).localScale /= 1.1f;
+                ArmyObject.transform.localScale /= 1.1f;
             }
             else
             {
-                transform.GetChild(0).localScale *= 1.1f;
+                ArmyObject.transform.localScale *= 1.1f;
             }
         }
 
@@ -83,7 +84,7 @@ namespace Canute.BattleSystem
             }
             try
             {
-                transform.GetChild(0).localScale *= 1.2f;
+                ArmyObject.transform.localScale *= 1.2f;
                 IsHighlighted = true;
             }
             catch { }
@@ -104,7 +105,7 @@ namespace Canute.BattleSystem
             }
             try
             {
-                transform.GetChild(0).localScale = new Vector3(1, 1, 1);
+                ArmyObject.transform.localScale = new Vector3(1, 1, 1);
                 IsHighlighted = false;
             }
             catch { }
@@ -112,6 +113,27 @@ namespace Canute.BattleSystem
             attackRange.ClearDisplay();
         }
 
+        public override void CardTargetHighlight()
+        {
+            ArmyObject.GetComponent<SpriteRenderer>().color = HightGreen;
+            foreach (Transform item in ArmyObject.transform)
+            {
+                SpriteRenderer spriteRenderer = item.GetComponent<SpriteRenderer>();
+                if (spriteRenderer)
+                    spriteRenderer.color = HightGreen;
+            }
+        }
+
+        public override void CardTargetUnhighlight()
+        {
+            ArmyObject.GetComponent<SpriteRenderer>().color = Color.white;
+            foreach (Transform item in ArmyObject.transform)
+            {
+                SpriteRenderer spriteRenderer = item.GetComponent<SpriteRenderer>();
+                if (spriteRenderer)
+                    spriteRenderer.color = Color.white;
+            }
+        }
 
 
         public abstract float AttackAtionDuration { get; }

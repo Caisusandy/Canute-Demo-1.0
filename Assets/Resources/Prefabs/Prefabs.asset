@@ -52,5 +52,5 @@ MonoBehaviour:
       value: {fileID: 9027971701355007171, guid: 9c22485267cd52b40b1fce6f62ddb2be,
         type: 3}
     - key: infoWindow
-      value: {fileID: 9027971701355007171, guid: 41d90e8d81b5fe44ead5bc598e066e9a,
+      value: {fileID: 9027971701355007171, guid: 4e85bdbfb75315446a9fa25078ffefa5,
         type: 3}

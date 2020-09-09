@@ -1,6 +1,5 @@
 ﻿using Canute.BattleSystem;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Canute.Module;
@@ -133,6 +132,11 @@ namespace Canute.StorySystem
 {
     [Serializable]
     public class StoryTree : DataList<StoryContainer>
+    {
+
+    }
+    [Serializable]
+    public class LetterTree : DataList<LetterContainer>
     {
 
     }

@@ -14,7 +14,7 @@ namespace Canute
     public class SceneJumper : MonoBehaviour
     {
         /// <summary> 最少加载场景过场时间 </summary>
-        private const float minimunWaitTime = 1.5f;
+        private const float minimunWaitTime = 2f;
 
         public const string storyDisplayer = "StoryLineLoader";
         public const string main = "Main";
@@ -33,6 +33,7 @@ namespace Canute
 
         /// <summary> 显示加载进度的信息栏 </summary>
         public Text progressText;
+        public Text tip;
         public ProgressBar progressbar;
 
         /*
@@ -50,6 +51,7 @@ namespace Canute
         private void Start()
         {
             StartCoroutine("Load");//开启一个协程，名字为Load（在这个class内）
+            LoadTip();
         }
 
         // Update is called once per frame
@@ -102,6 +104,12 @@ namespace Canute
              * 迭代器里放置迭代器不可以用普通的方法（直接调用），必须return另外一个迭代器
              * 迭代器的执行方式是unity的引擎把代码一个个扫描过去。
              */
+        }
+
+        public void LoadTip()
+        {
+            int tipCount = 10;
+            tip.text = ("Canute.Tips." + UnityEngine.Random.Range(0, tipCount)).Lang();
         }
 
         /// <summary>

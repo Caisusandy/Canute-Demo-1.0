@@ -29,7 +29,45 @@ MonoBehaviour:
     - defense: 2.21
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 15
+      attackRange: 1
+      moveRange: 1
+      standPosition: 2
+      attackPosition: 3
+      attackArea: 1
+      targetCount: 1
+      attackType: 6
+      skill:
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []
+    - defense: 2.21
+      critRate: 20
+      critBounes: 50
+      pop: 15
+      attackRange: 1
+      moveRange: 1
+      standPosition: 2
+      attackPosition: 3
+      attackArea: 1
+      targetCount: 1
+      attackType: 6
+      skill:
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []
+    - defense: 2.21
+      critRate: 20
+      critBounes: 50
+      pop: 15
       attackRange: 1
       moveRange: 1
       standPosition: 2

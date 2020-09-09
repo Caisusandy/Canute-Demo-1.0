@@ -2,8 +2,7 @@
 using UnityEngine;
 using System.IO;
 using Canute.BattleSystem;
-#if UNITY_EDITOR
-#endif
+using Canute.Module;
 
 
 namespace Canute.Testing

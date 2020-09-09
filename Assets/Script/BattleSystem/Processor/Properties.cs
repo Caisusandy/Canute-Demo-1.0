@@ -10,8 +10,6 @@ namespace Canute.BattleSystem
 
     public static partial class EffectExecute
     {
-
-
         #region Property
         public static BattleProperty GetProperty(IBattleableEntityData battleableEntity)
         {
@@ -21,7 +19,7 @@ namespace Canute.BattleSystem
             {
                 for (int i = 0; i < stat.Effect.Count; i++)
                 {
-                    string type = stat.Effect[Effect.propertyBonusType];
+                    string type = stat.Effect[Effect.propertyType];
                     if (!Enum.TryParse<PropertyType>(type, out _))
                     {
                         property = PropertyBonus(property, stat);
@@ -33,7 +31,7 @@ namespace Canute.BattleSystem
             {
                 for (int i = 0; i < stat.Effect.Count; i++)
                 {
-                    string type = stat.Effect[Effect.propertyBonusType];
+                    string type = stat.Effect[Effect.propertyType];
                     if (!Enum.TryParse<PropertyType>(type, out _))
                     {
                         property = PropertyPanalty(property, stat);
@@ -46,7 +44,7 @@ namespace Canute.BattleSystem
 
         private static BattleProperty PropertyBonus(BattleProperty property, Status stat)
         {
-            string type = stat.Effect[Effect.propertyBonusType];
+            string type = stat.Effect[Effect.propertyType];
             //Debug.Log(type);
             switch (type)
             {
@@ -80,7 +78,7 @@ namespace Canute.BattleSystem
 
         private static BattleProperty SinglePropertyBonus(BattleProperty property, Status stat)
         {
-            PropertyType propertyType = stat.Effect.Args.GetEnumParam<PropertyType>(Effect.propertyBonusType);
+            PropertyType propertyType = stat.Effect.Args.GetEnumParam<PropertyType>(Effect.propertyType);
             BonusType bounesType = stat.Effect.Args.GetEnumParam<BonusType>(Effect.bonusType);
             var checkTypeValues = Enum.GetValues(typeof(PropertyType));
 
@@ -115,7 +113,7 @@ namespace Canute.BattleSystem
 
         private static BattleProperty PropertyPanalty(BattleProperty property, Status stat)
         {
-            string type = stat.Effect[Effect.propertyBonusType];
+            string type = stat.Effect[Effect.propertyType];
             switch (type)
             {
                 case "dragonStrike":
@@ -129,7 +127,7 @@ namespace Canute.BattleSystem
 
         private static BattleProperty SinglePropertyPanalty(BattleProperty property, Status stat)
         {
-            PropertyType propertyType = stat.Effect.Args.GetEnumParam<PropertyType>(Effect.propertyBonusType);
+            PropertyType propertyType = stat.Effect.Args.GetEnumParam<PropertyType>(Effect.propertyType);
             BonusType bounesType = stat.Effect.Args.GetEnumParam<BonusType>(Effect.bonusType);
             var checkTypeValues = Enum.GetValues(typeof(PropertyType));
 

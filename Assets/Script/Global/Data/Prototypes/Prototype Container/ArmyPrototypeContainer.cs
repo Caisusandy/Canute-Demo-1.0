@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using Canute.Module;
 using UnityEngine;
 
 namespace Canute.BattleSystem

@@ -13,9 +13,9 @@ namespace Canute.BattleSystem
         const float scale = (1f / int.MaxValue) / 2f;
         const float riverweight = 0;//0.025f;
         const float sand = 0;//0.1f;
-        const float mountains = 0.1f;// 0.2f;
-        const float hill = 0.3f;
-        const float plain = 0.6f;
+        const float mountains = 0.15f;// 0.2f;
+        const float hill = 0.35f;
+        const float plain = 0.65f;
         const float forest = 1.0f;//0.9f;
         const float swamp = 0;//1.0f;
 
@@ -38,7 +38,13 @@ namespace Canute.BattleSystem
             mapEntity = generator.mapEntity;
             mapEntity.isRandomMap = true;
             mapEntity.seed = seed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+        }
 
+        public RandomMapGenerator(MapGenerator generator, int seed)
+        {
+            mapEntity = generator.mapEntity;
+            mapEntity.isRandomMap = true;
+            mapEntity.seed = this.seed = seed;
         }
 
 
@@ -70,7 +76,7 @@ namespace Canute.BattleSystem
         {
             float p = Perlin(x, y, seed);
             p = p < 0 ? 0 : (p > 1 ? 1 : p);
-            Debug.Log(p);
+            //Debug.Log(p);
             return (GetTerrain(p));
         }
 
@@ -109,13 +115,19 @@ namespace Canute.BattleSystem
             throw new ArgumentOutOfRangeException(nameof(value), value, "value: " + value + " is not a valid value");
         }
 
-        public static float Perlin(float x, float y, int seed)
+        public float Perlin(float x, float y, int seed)
         {
-            float x1 = seed / 2048f + x / 8.1f;
-            float y1 = seed / 2048f + y / 8.1f;
+            if (Mathf.Abs(seed) > Mathf.Pow(2, 20))
+            {
+                seed %= (int)Mathf.Pow(2, 20);
+            }
+            //            Debug.Log(seed);
+            float scale = 5f;
+            float x1 = seed + x / mapEntity.Size.x;
+            float y1 = seed + y / mapEntity.Size.y;
             //Debug.Log(x1);
             //Debug.Log(y1);
-            return Mathf.PerlinNoise(x1, y1);
+            return (Mathf.PerlinNoise(x1 * scale, y1 * scale));
         }
     }
 }

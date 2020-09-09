@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Canute.Module;
 namespace Canute.BattleSystem
 {
     /// <summary>
@@ -126,21 +127,22 @@ namespace Canute.BattleSystem
         /// <summary> attack(When attack just begin) </summary>  
         public static TriggerCondition OnBeforeAttack => new TriggerCondition(Conditions.beforeAttack, true, ConditionGroups.or);
         /// <summary> defense(When tried changes attack's value) </summary>
-        public static TriggerCondition OnDefense => new TriggerCondition(Conditions.defense, true, ConditionGroups.or);
+        public static TriggerCondition OnDefense => new TriggerCondition(Conditions.defense, true, ConditionGroups.and);
         /// <summary> defense(When attack ended) </summary>
-        public static TriggerCondition OnDefenseEnd => new TriggerCondition(Conditions.afterDefence, true, ConditionGroups.or);
+        public static TriggerCondition OnDefenseEnd => new TriggerCondition(Conditions.afterDefence, true, ConditionGroups.and);
         /// <summary> When play card </summary>
-        public static TriggerCondition OnPlayCard => new TriggerCondition(Conditions.playCard, true, ConditionGroups.or);
+        public static TriggerCondition OnPlayCard => new TriggerCondition(Conditions.playCard, true, ConditionGroups.and);
         /// <summary> when entity arrive a cell </summary>
-        public static TriggerCondition OnEnterCell => new TriggerCondition(Conditions.entityArrive, true, ConditionGroups.or);
+        public static TriggerCondition OnEnterCell => new TriggerCondition(Conditions.entityArrive, true, ConditionGroups.and);
         /// <summary> when entity leave a cell </summary>
-        public static TriggerCondition OnExitCell => new TriggerCondition(Conditions.entityLeft, true, ConditionGroups.or);
+        public static TriggerCondition OnExitCell => new TriggerCondition(Conditions.entityLeft, true, ConditionGroups.and);
         /// <summary> when turn begin </summary>
-        public static TriggerCondition OnTurnBegin => new TriggerCondition(Conditions.turnBegin, true, ConditionGroups.or);
+        public static TriggerCondition OnTurnBegin => new TriggerCondition(Conditions.turnBegin, true, ConditionGroups.and);
         /// <summary> when turn end </summary>
-        public static TriggerCondition OnTurnEnd => new TriggerCondition(Conditions.turnEnd, true, ConditionGroups.or);
+        public static TriggerCondition OnTurnEnd => new TriggerCondition(Conditions.turnEnd, true, ConditionGroups.and);
         /// <summary> when turn end </summary>
-        public static TriggerCondition OnAddingStatus => new TriggerCondition(Conditions.addingStatus, true, ConditionGroups.or);
+        public static TriggerCondition OnAddingStatus => new TriggerCondition(Conditions.addingStatus, true, ConditionGroups.and);
+
         public static TriggerCondition Parse(Arg arg)
         {
             return (TriggerCondition)arg;
@@ -171,7 +173,7 @@ namespace Canute.BattleSystem
             {
                 switch (arg.Key)
                 {
-                    case "OnPlayCard":
+                    case "onPlayCard":
                         condition = OnPlayCard;
                         break;
                     case "onMove":
@@ -304,9 +306,15 @@ namespace Canute.BattleSystem
                     args.Add(TriggerCondition.Parse(item));
                 }
             }
+
             if (args.Count == 0)
             {
-                Debug.LogWarning("Trigger Condition Converted Failed");
+                Debug.LogWarning("No Trigger Condition Found");
+            }
+
+            foreach (var item in args)
+            {
+                item.AddRange(effect.Args);
             }
             return new TriggerConditions(args);
         }
@@ -315,14 +323,18 @@ namespace Canute.BattleSystem
 
     public static class ConditionChecker
     {
+        private const string cardType = "cardType";
+        private const string effect = "effect";
+
         public static bool IsValid(this TriggerConditions conditions, Effect effect = null)
         {
             bool andGroup = true;
-            bool orGroup = true;
+            bool orGroup = false;
+            int or = 0;
             foreach (TriggerCondition item in conditions)
             {
                 bool result = item.IsValid(effect) == item.ExpectValue;
-
+                Debug.Log(result);
                 switch (item.Group)
                 {
                     case TriggerCondition.ConditionGroups.and:
@@ -330,8 +342,13 @@ namespace Canute.BattleSystem
                         break;
                     case TriggerCondition.ConditionGroups.or:
                         orGroup = orGroup || result;
+                        or++;
                         break;
                 }
+            }
+            if (or == 0)
+            {
+                orGroup = true;
             }
             return orGroup && andGroup;
         }
@@ -378,7 +395,7 @@ namespace Canute.BattleSystem
                 default:
                     break;
             }
-
+            Debug.Log(ans);
             return ans;
         }
 
@@ -419,8 +436,11 @@ namespace Canute.BattleSystem
 
         private static bool IsPlayingCard(TriggerCondition condition)
         {
-            string sCardType = condition.TryGet("cardType");
-            string sType = condition.TryGet("effect");
+            string sCardType = condition.TryGet(ConditionChecker.cardType);
+            string sType = condition.TryGet(effect);
+
+
+
             Card.Types cardType = default;
             Effect.Types effectType = default;
             if (!(sCardType is null))
@@ -429,7 +449,10 @@ namespace Canute.BattleSystem
                 effectType = (Effect.Types)Enum.Parse(typeof(Effect.Types), sType);
 
             if (!(sCardType is null) && !(sType is null))
+            {
+                Debug.Log(Card.LastCard.Effect);
                 return Card.LastCard.Type == cardType && Card.LastCard.Effect.Type == effectType;
+            }
             else if (!(sCardType is null))
                 return Card.LastCard.Type == cardType;
             else if (!(sType is null))

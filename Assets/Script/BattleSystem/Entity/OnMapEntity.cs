@@ -15,8 +15,8 @@ namespace Canute.BattleSystem
         public virtual CellEntity OnCellOf => transform.parent.GetComponent<CellEntity>();
         public virtual Vector3Int HexCoord => OnCellOf.data.HexCoord;
         public virtual Vector2Int Coordinate => OnCellOf.data.Coordinate;
-        public virtual int x => OnCellOf.data.Coordinate.x;
-        public virtual int y => OnCellOf.data.Coordinate.y;
+        public virtual int x => OnCellOf.data.x;
+        public virtual int y => OnCellOf.data.y;
         public virtual OnMapEntityData OnMapData => Data as OnMapEntityData;
         public virtual bool AllowMove { get => OnMapData.AllowMove; set => OnMapData.AllowMove = value; }
         public virtual StatusList StatList => OnMapData.StatList;

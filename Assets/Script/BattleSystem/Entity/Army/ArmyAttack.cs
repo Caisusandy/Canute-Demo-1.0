@@ -34,7 +34,7 @@ namespace Canute.BattleSystem
             Initialize();
             if (effect.Parameter == 0)
             {
-                BattleUI.SendMessage(BattleEventError.armyCannotAttack);
+                BattleUI.SendMessage(BattleEventError.ArmyCannotAttack);
                 return false;
             }
 
@@ -43,7 +43,7 @@ namespace Canute.BattleSystem
 
             if (expectedTargets.Count == 0 && armyEntity.data.Type != Army.Types.airship)
             {
-                BattleUI.SendMessage("No enemy is in attack range");
+                BattleUI.SendMessage(BattleEventError.ArmyNoTargetInAttackRage);
                 return false;
             }
 
@@ -124,7 +124,7 @@ namespace Canute.BattleSystem
                 }
                 if ((target as IPassiveEntity).Data.StatList.HasStatus(Effect.Types.tag, "protection"))
                 {
-                    BattleUI.SendMessage("Cannot attack: target is under protection");
+                    BattleUI.SendMessage(BattleEventError.ArmyUnderShielderProtection);
                     return;
                 }
             }

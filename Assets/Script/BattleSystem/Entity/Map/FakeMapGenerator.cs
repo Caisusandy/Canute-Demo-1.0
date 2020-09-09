@@ -91,7 +91,8 @@ namespace Canute.BattleSystem
             //cellEntity.transform.localPosition = new Vector3(cellEntity.transform.localPosition.x, cellEntity.transform.localPosition.y, 0);
             //Debug.Log(pos); Debug.Log(cellEntity.transform.localPosition);
             cellEntity.name = "FakeCell(" + x + "," + y + ")";
-            cellEntity.GetComponent<SpriteRenderer>().sortingOrder = -x;
+            cellEntity.GetComponent<SpriteRenderer>().sortingLayerName = "Map";
+            cellEntity.GetComponent<SpriteRenderer>().sortingOrder = -y;
         }
     }
 }

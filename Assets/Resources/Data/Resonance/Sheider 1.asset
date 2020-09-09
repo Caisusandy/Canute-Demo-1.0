@@ -17,10 +17,10 @@ MonoBehaviour:
   target: 0
   resonance:
     effect:
-      type: 14
+      type: 15
       specialName: shielderPenetrate
-      count: 0
-      parameter: 0
+      count: 1
+      parameter: 16
       args:
         args: []
     triggerConditions:

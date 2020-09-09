@@ -7,7 +7,7 @@ namespace Canute.BattleSystem
 {
 
     [Serializable]
-    public abstract class BattleEntityData : OnMapEntityData, IBattleEntityData, IPassiveEntityData, IAggressiveEntityData, IBattleableEntityData, ICareerLabled
+    public abstract class BattleEntityData : OnMapEntityData, IBattleEntityData, IPassiveEntityData, IAggressiveEntityData, IBattleableEntityData, ICareerLabled, IBattlePropertyContainer
     {
         public enum AutonomousType
         {
@@ -43,12 +43,12 @@ namespace Canute.BattleSystem
 
         public virtual BattleLeader LocalLeader { get => localLeader; set => localLeader = value; }
         public virtual BattleLeader ViceCommander => Owner?.ViceCommander;
-        public virtual HalfSkillEffect SkillPack { get => Properties.Skill; }
-        public virtual int Anger { get => anger; set => anger = value < 0 ? 0 : value >= 100 ? 100 : value; }
+        public virtual HalfSkillEffect SkillPack { get => Properties.SkillPack; }
         public virtual AutonomousType Autonomous { get => autonomousType; set => autonomousType = value; }
         public new OnMapEntity Entity => BattleSystem.Entity.Get(uuid) as OnMapEntity;
+        public virtual int Anger { get => anger; set => anger = value < 0 ? 0 : value >= 100 ? 100 : value; }
 
-        public virtual int MaxHealth => maxHealth;
+        public virtual int MaxHealth { get => maxHealth; set => maxHealth = value; }
         public virtual int Defense => (int)Properties.Defense;
         public virtual int RawDamage { get => damage; set => damage = value; }
         public virtual float HealthPercent => ((float)health) / MaxHealth;
@@ -100,14 +100,14 @@ namespace Canute.BattleSystem
             }
         }
 
-        protected virtual void AddBounes(params IBattleBounesItem[] bouneses)
+        protected virtual void AddBonus(params IBattleBounesItem[] bonuses)
         {
-            if (bouneses is null)
+            if (bonuses is null)
             {
                 return;
             }
 
-            foreach (var (item, property, type) in from item in bouneses
+            foreach (var (item, property, type) in from item in bonuses
                                                    from property in item?.Bonus
                                                    from PropertyType type in PropertyTypes.Types
                                                    select (item, property, type))
@@ -123,21 +123,11 @@ namespace Canute.BattleSystem
                         maxHealth = property.Bonus(maxHealth, item.Level);
                         break;
                     case PropertyType.defense:
-                        properties.Defense = property.Bonus(properties.Defense, item.Level);
-                        break;
                     case PropertyType.moveRange:
-                        properties.MoveRange = property.Bonus(properties.MoveRange, item.Level);
-                        break;
                     case PropertyType.attackRange:
-                        properties.AttackRange = property.Bonus(properties.AttackRange, item.Level);
-                        break;
                     case PropertyType.critRate:
-                        properties.CritRate = property.Bonus(properties.CritRate, item.Level);
-                        break;
                     case PropertyType.critBounes:
-                        properties.CritBonus = property.Bonus(properties.CritBonus, item.Level);
-                        break;
-                    default:
+                        properties.AddBonus(item);
                         break;
                 }
 
@@ -145,14 +135,14 @@ namespace Canute.BattleSystem
             }
         }
 
-        protected virtual void RemoveBounes(params IBattleBounesItem[] bouneses)
+        protected virtual void RemoveBonus(params IBattleBounesItem[] bonuses)
         {
-            if (bouneses is null)
+            if (bonuses is null)
             {
                 return;
             }
 
-            foreach (var (item, property, type) in from item in bouneses
+            foreach (var (item, property, type) in from item in bonuses
                                                    from property in item.Bonus
                                                    from PropertyType type in PropertyTypes.Types
                                                    select (item, property, type))
@@ -166,18 +156,11 @@ namespace Canute.BattleSystem
                         maxHealth = property.RemoveBonus(maxHealth, item.Level);
                         break;
                     case PropertyType.defense:
-                        properties.Defense = property.Bonus(properties.Defense, item.Level);
-                        break;
+                    case PropertyType.moveRange:
                     case PropertyType.attackRange:
-                        properties.AttackRange = property.RemoveBonus(properties.AttackRange, item.Level);
-                        break;
                     case PropertyType.critRate:
-                        properties.CritRate = property.RemoveBonus(properties.CritRate, item.Level);
-                        break;
                     case PropertyType.critBounes:
-                        properties.CritBonus = property.RemoveBonus(properties.CritBonus, item.Level);
-                        break;
-                    default:
+                        properties.RemoveBonus(item);
                         break;
                 }
                 Debug.Log(property);

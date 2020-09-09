@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.Module;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;

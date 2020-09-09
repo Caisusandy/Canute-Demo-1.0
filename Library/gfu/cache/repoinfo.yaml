@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-08-31T20:10:24.995-04:00
-  initializedAtString: 2020-08-31T18:48:25.315-04:00
+  lastUpdatedAtString: 2020-09-09T11:19:41.617-04:00
+  initializedAtString: 2020-09-08T20:53:20.041-04:00
   currentGitRemote:
     name: origin
     url: https://github.com/Minerva-Studio/Canute.git

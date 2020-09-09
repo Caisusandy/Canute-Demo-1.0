@@ -38,11 +38,9 @@ namespace Canute.BattleSystem.UI
         public PausePanel pausePanel;
         public static PausePanel PausePanel => instance.pausePanel;
 
-        public EndPanel endUI;
-        public static EndPanel EndUI => instance.endUI;
 
-        public EndlessResultUI endlessEndUI;
-        public static EndlessResultUI EndlessEndUI => instance.endlessEndUI;
+        public ResultUI endlessEndUI;
+        public static ResultUI EndUI => instance.endlessEndUI;
 
         public HandCardBar handCardBar;
         public static HandCardBar HandCardBar => Game.CurrentBattle.Enemy.IsInTurn ? EnemyHandCardBar : ClientHandCardBar;
@@ -75,6 +73,11 @@ namespace Canute.BattleSystem.UI
 
         public override void Awake()
         {
+            if (Game.CurrentBattle == null)
+            {
+                SceneControl.GotoScene(MainScene.mainHall);
+                return;
+            }
             if (instance != null)
             {
                 Destroy(instance);
@@ -159,7 +162,36 @@ namespace Canute.BattleSystem.UI
             messageDisplayer.transform.localPosition = Vector3.zero;
         }
 
-        public static void SendMessage(BattleEventError message, Player player = null, params string[] param) => SendMessage(message.Lang(), player, param);
+        /// <summary>
+        /// send game message, only when player is assigned to be the local player or did not assign the player can send message
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="color"></param>
+        /// <param name="player"></param>
+        public static void SendMessage(string message, Color color, Player player = null, params string[] param)
+        {
+            if (!instance)
+            {
+                return;
+            }
+
+            Debug.Log(message);
+            if (player != Game.CurrentBattle.Player && !(player is null))
+            {
+                return;
+            }
+
+            GameMessage messageDisplayer = GameMessage.GetNewMessage();
+            messageDisplayer.line = message;
+            messageDisplayer.transform.SetParent(instance.messageAnchor.transform);
+            messageDisplayer.transform.localScale = Vector3.one;
+            messageDisplayer.transform.localPosition = Vector3.zero;
+            messageDisplayer.text.color = color;
+        }
+
+        public static void SendMessage(BattleEventError message, Player player = null, params string[] param) => SendMessage(message.Lang(), new Color(1, 0.15f, 0.15f), player, param);
+
+        public static void SendMessage(BattleEvent message, Color color, Player player = null, params string[] param) => SendMessage(message.Lang(), color, player, param);
 
         /// <summary>
         /// control player's down bars(army bar, hand card bar)

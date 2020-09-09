@@ -7,6 +7,8 @@ namespace Canute.UI.Legion
     public class LSLegionDisplay : MonoBehaviour, IMonoinstanceMonoBehaviour
     {
         public static LSLegionDisplay instance;
+
+        public LSResonance resonancePanel;
         public List<GameObject> armyCards;
         public List<LSLegionSmallIcon> legionSmallIcons;
 
@@ -41,8 +43,14 @@ namespace Canute.UI.Legion
 
         public void SelectArmy(int id)
         {
-            LSSingleArmyPanel.instance.Display(Legion.Armies[id]);
+            ArmyItem armyItem = Legion.Armies[id];
+
+            LSSingleArmyPanel.instance.Display(armyItem);
             LSSingleArmyPanel.instance.selectingArmyCard = armyCards[id].GetComponent<ArmyCardUI>();
+            if (!armyItem)
+            {
+                LSSingleArmyPanel.instance.ChangeArmy();
+            }
         }
 
         public void ReloadLegion()
@@ -54,15 +62,37 @@ namespace Canute.UI.Legion
         {
             var legion = Game.PlayerData.Legions[id];
             legionId = id;
+            for (int j = 0; j < legion.Armies.Count; j++)
+            {
+                ArmyItem item = legion.Armies[j];
+                LSLegionSmallIcon.UpdateIcon(j, item);
+            }
 
-            for (int i = 0; i < armyCards.Count; i++)
+            int i = 0;
+            for (; i < legion.RealArmyCount; i++)
             {
                 GameObject item = armyCards[i];
-                ArmyItem armyItem = i < legion.Armies.Count ? legion.Armies[i] : ArmyItem.Empty;
+                ArmyItem armyItem = legion.Armies[i];
+                item.SetActive(true);
                 item.GetComponent<ArmyCardUI>().Exist()?.Display(armyItem);
                 LSLegionSmallIcon.UpdateIcon(i, armyItem);
             }
+            if (i != 6)
+            {
+                GameObject item = armyCards[i];
+                item.SetActive(true);
+                item.GetComponent<ArmyCardUI>().Exist()?.Display(ArmyItem.Empty);
+                i++;
+            }
+            for (; i < 6; i++)
+            {
+                GameObject item = armyCards[i];
+                ArmyItem armyItem = legion.Armies[i];
+                item.SetActive(false);
+            }
 
+
+            resonancePanel.LoadResonance();
             SelectArmy(0);
         }
     }

@@ -43,7 +43,7 @@ namespace Canute.BattleSystem.UI
             gameMessage.GetComponent<Text>().alignment = TextAnchor.MiddleCenter;
             gameMessage.GetComponent<Text>().horizontalOverflow = HorizontalWrapMode.Overflow;
             gameMessage.GetComponent<Text>().color = Color.black;
-            gameMessage.GetComponent<Text>().fontSize = 18;
+            gameMessage.GetComponent<Text>().fontSize = 24;
             return gameMessage;
         }
     }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dragon 2
   m_EditorClassIdentifier: 
   type: 9
-  count: 2
-  target: 4
+  count: 30
+  target: 2
   resonance:
     effect:
       type: 13

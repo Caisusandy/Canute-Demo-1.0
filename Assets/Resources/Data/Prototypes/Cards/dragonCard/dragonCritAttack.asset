@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfe71976b3ae0749b54319090c018b9, type: 3}
   m_Name: dragonCritAttack
   m_EditorClassIdentifier: 
+  isTemporaryPrototype: 0
   prototype:
     name: addDragonCritAttack
     rarity: 2
     icon: {fileID: 0}
     sprite: {fileID: 0}
-    protrait: {fileID: 0}
+    portrait: {fileID: 0}
     prefab: {fileID: 4382801775652925750, guid: 7f8b6b23fb7522d4c9a5ae8a73a9816a,
       type: 3}
     count: 1
@@ -46,7 +47,7 @@ MonoBehaviour:
               value: dragonCritAttack
             - key: specialName
               value: dragonCritAttack
-            - key: propertyBonus
+            - key: propertyType
               value: dragonCritAttack
             - key: onAttack
               value: true

@@ -19,6 +19,7 @@ namespace Canute.StorySystem
             return new WordLines() { line = strings.ToArray() };
         }
     }
+
     [Serializable]
     public struct Story : INameable, IEquatable<Story>
     {
@@ -104,6 +105,54 @@ namespace Canute.StorySystem
         public static Story Get(string id)
         {
             return GameData.Stories.StoryTree.Get(id);
+        }
+    }
+
+    [Serializable]
+    public struct Letter : INameable
+    {
+        public static Letter Empty => new Letter();
+
+        [SerializeField] private string id;
+        [SerializeField] private string author;
+        [SerializeField] private string title;
+        [SerializeField] private Sprite background;
+        [SerializeField, TextArea(3, 50)] private string text;
+
+        public string Name => id;
+        public string Text { get => text; set => text = value; }
+        public string Author { get => author; set => author = value; }
+        public string Title { get => title; set => title = value; }
+        public string AuthorDisplayingName => ("Canute.Leader." + Author + ".name").Lang();
+        public Sprite Background { get => background; set => background = value; }
+
+        public bool Equals(Letter letter)
+        {
+            return id == letter.id;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Letter story && Equals(story);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public static bool operator ==(Letter left, Letter right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Letter left, Letter right)
+        {
+            return !(left == right);
+        }
+        public static Letter Get(string id)
+        {
+            return GameData.Stories.Letters.Get(id);
         }
     }
 

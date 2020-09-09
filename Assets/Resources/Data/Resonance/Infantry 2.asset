@@ -12,19 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f72e7805b3fffd40aeedb4f0ee6c5a7, type: 3}
   m_Name: Infantry 2
   m_EditorClassIdentifier: Assembly-CSharp:Canute.BattleSystem:ResoncancePair
-  Types: 0
-  count: 2
+  type: 0
+  count: 16
+  target: 0
   resonance:
     effect:
-      specialName: 
-      type: 0
+      type: 14
+      specialName: infantryDamageBonus
       count: 1
-      parameter: 20
+      parameter: 10
       args:
-        args: []
+        args:
+        - key: name
+          value: damageIncreasePercentage
     triggerConditions:
       list:
       - list: []
-        condition: 4
+        condition: 5
         expectValue: 1
         group: 0
+    showToPlayer: 1

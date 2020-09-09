@@ -76,7 +76,7 @@ namespace Canute.ExplorationSystem
             int H = (int)(25 * Mathf.Pow(Mathf.Sqrt(6), UnityEngine.Random.value * 2));
             int D = UnityEngine.Random.Range(0, 20);
 
-            int armyA = army.MaxDamage;
+            int armyA = army.RawDamage;
             int armyH = army.MaxHealth;
             int armyD = army.Defense;
 

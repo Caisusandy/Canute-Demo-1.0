@@ -1,17 +1,19 @@
-﻿namespace Canute.UI
+﻿using Canute.BattleSystem;
+
+namespace Canute.UI
 {
     public class StandPostionIcon : Icon
     {
         public override void DisplayInfo()
         {
             base.DisplayInfo();
-            Label.text = Languages.Lang(armyItem.StandPosition);
+            Label.text = army.Properties.Lang("StandPosition") + ": " + Languages.Lang(army.Properties.StandPosition);
         }
 
-        public override void SetArmyItem(ArmyItem armyItem)
+        public override void SetArmyItem(IArmy armyItem)
         {
             base.SetArmyItem(armyItem);
-            IconImage.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyPositionIcon, armyItem.StandPosition.ToString());
+            IconImage.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyPositionIcon, armyItem.Properties.StandPosition.ToString());
         }
     }
 }

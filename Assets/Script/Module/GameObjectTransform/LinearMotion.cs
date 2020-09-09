@@ -64,11 +64,11 @@ namespace Canute.Module
         }
 
 
-        public static new void SetMotion(GameObject obj, Vector3 finalPos, Space space = Space.World, EndMotion endMotionevent = null, bool isUIMotion = false)
+        public static new LinearMotion SetMotion(GameObject obj, Vector3 finalPos, Space space = Space.World, EndMotion endMotionevent = null, bool isUIMotion = false)
         {
-            Motion motion = obj.GetComponent<Motion>();
+            LinearMotion motion = obj.GetComponent<LinearMotion>();
+            if (!obj.GetComponent<LinearMotion>()) { motion = obj.AddComponent<LinearMotion>(); }
             motion.isUIMotion = isUIMotion;
-            if (!obj.GetComponent<Motion>()) { motion = obj.AddComponent<Motion>(); }
             motion.MotionEndEvent += endMotionevent;
 
 
@@ -82,11 +82,13 @@ namespace Canute.Module
                 // Debug.Log(FinalPos); 
                 motion.finalPos = finalPos;
             }
+
+            return motion;
         }
 
-        public static new void SetMotion(GameObject obj, Vector3 finalPos, EndMotion endMotionevent)
+        public static new LinearMotion SetMotion(GameObject obj, Vector3 finalPos, EndMotion endMotionevent)
         {
-            SetMotion(obj, finalPos, Space.World, endMotionevent);
+            return SetMotion(obj, finalPos, Space.World, endMotionevent);
         }
 
         public static new void StopMotion(GameObject gameObject)

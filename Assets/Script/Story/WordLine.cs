@@ -13,13 +13,14 @@ namespace Canute.StorySystem
     {
         [SerializeField] private string id;
         [SerializeField] private string speakerName;
-        [TextArea, SerializeField] private string line;
+        [TextArea(3, 10), SerializeField] private string line;
         [SerializeField] private Sprite characterPortrait;
         [SerializeField] private Sprite conversationBG;
         [SerializeField] private StoryDisplayer.SpeakerStandPosition position;
         [SerializeField] private List<Selection> selections;
 
         public string Name { get => id; set => id = value; }
+        public string ID { get => id; set => id = value; }
         public string SpeakerName { get => speakerName; set => speakerName = value; }
         public string Line { get => line; set => line = value; }
         public bool HasSelection => selections is null ? false : selections.Count != 0;

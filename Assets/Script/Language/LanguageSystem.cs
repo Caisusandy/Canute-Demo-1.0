@@ -22,6 +22,11 @@ namespace Canute
             Debug.Log("loading language pack " + Game.Language);
             Dictionary = new Dictionary<string, string>();
             TextAsset LanguagePack = Resources.Load("Lang/" + Game.Language) as TextAsset;
+            if (!LanguagePack)
+            {
+                Debug.LogError("Language pack not found: " + Game.Language);
+                LanguagePack = Resources.Load("Lang/en_us") as TextAsset;
+            }
             string lang = LanguagePack.text;
             string[] langtoarray = lang.Split('\n');
             foreach (string wordset in langtoarray)
@@ -109,6 +114,20 @@ namespace Canute
             return Lang(vs.ToArray());
         }
 
+        /// <summary>
+        /// Get the matched display language from dictionary from a instance and a parameter
+        /// </summary> 
+        /// <param name="instance"></param>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        /// 
+        public static string Lang(this object instance, string name, params string[] param)
+        {
+            List<string> vs = new List<string>() { instance.GetFullTypeName() + "." + name };
+            vs.AddRange(param);
+            return Lang(vs.ToArray());
+        }
+
         public static string Lang(this PropertyBonus propertyBonus, int level = 1)
         {
             string ret = "";
@@ -120,13 +139,14 @@ namespace Canute
                     var raw = Lang(vs.ToArray());
                     int value = propertyBonus.GetValue(level);
 
+                    ret += " ";
                     ret += value >= 0 ? "+" : "-";
                     ret += value;
                     ret += propertyBonus.BonusType == BonusType.percentage ? "% " : " ";
-                    ret += raw + " | ";
+                    ret += raw + " |";
                 }
             }
-            return ret.Remove(ret.Length - 1);
+            return ret.Remove(ret.Length - 1).Remove(0, 1);
 
         }
 
@@ -180,6 +200,7 @@ namespace Canute
                 return vs[vs.Length - 1];
             }
         }
+
 
 
         //public static string EnglishPretenting(string word, LangType type)
@@ -254,17 +275,16 @@ namespace Canute
 
             return ret;
         }
-
         public static string Info(this Status status)
         {
             string ret = status.Effect.GetDisplayingName() + "\n" + status.Effect.Info();
 
             ret += "\n";
 
-            if (status.IsResonance)
-            {
-                ret += "Resonance\n";
-            }
+            //if (status.IsResonance)
+            //{
+            //    ret += "Resonance\n";
+            //}
             if (status.IsDualBase)
             {
                 ret += "Turn: " + status.TurnCount + ", Status Count: " + status.StatCount + "\n";

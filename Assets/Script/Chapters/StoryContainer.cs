@@ -26,6 +26,16 @@ namespace Canute.StorySystem
             Debug.Log(Application.persistentDataPath + "/Stories");
             File.WriteAllText(Application.persistentDataPath + "/Stories/" + story.Name + ".json", json);
         }
+        [ContextMenu("Auto Fill Id")]
+        public void AutoFillId()
+        {
+            for (int i = 0; i < story.WordLines.Length; i++)
+            {
+                var temp = story.WordLines[i];
+                temp.ID = story.Name + "." + (i + 1);
+                story.WordLines[i] = temp;
+            }
+        }
         [ContextMenu("Export Story Only")]
         public void ExportStoryOnly()
         {

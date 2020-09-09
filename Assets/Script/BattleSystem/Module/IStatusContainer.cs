@@ -5,7 +5,14 @@ namespace Canute.BattleSystem
 {
     public interface IStatusContainer : INameable
     {
+        /// <summary>
+        /// Status in the container
+        /// </summary>
         StatusList StatList { get; }
+        /// <summary>
+        /// Get all Status that effect a container directly (readonly)
+        /// </summary>
+        /// <returns></returns>
         StatusList GetAllStatus();
     }
 
@@ -53,68 +60,56 @@ namespace Canute.BattleSystem
             }
         }
 
-        public static void Trigger(this IStatusContainer statusContainer, TriggerCondition.Conditions condition, ref Effect effect)
+
+        public static void TriggerConditionOf(this IStatusContainer statusContainer, TriggerCondition.Conditions condition, ref Effect effect)
         {
             StatusList stats = statusContainer.StatList?.GetAllStatus(condition);
             Debug.Log(condition.ToString() + " triggered. " + statusContainer.Name + "; status count:" + stats.Count);
 
             if (stats is null)
-            {
                 return;
-            }
 
             for (int i = stats.Count - 1; i >= 0; i--)
             {
                 Status item = stats[i];
-
                 if (!item.TriggerConditions.CanTrigger(effect))
                 {
                     Debug.LogWarning("An status cannot be triggered: " + item);
                     continue;
                 }
                 else if (item.Type == Status.StatType.delay && item.TurnCount != 1)
-                {
                     continue;
-                }
+
                 item.Execute(ref effect);
             }
-
             statusContainer.StatList.ClearInvalid();
         }
 
-        public static void Trigger(this IStatusContainer statusContainer, TriggerCondition.Conditions condition)
+        public static void TriggerConditionOf(this IStatusContainer statusContainer, TriggerCondition.Conditions condition)
         {
             StatusList stats = statusContainer.StatList?.GetAllStatus(condition);
             Debug.Log(statusContainer.Name + " triggered its effect in condition of " + condition.ToString() + "; status count:" + stats.Count);
 
             if (stats is null)
-            {
                 return;
-            }
 
             for (int i = stats.Count - 1; i >= 0; i--)
             {
                 Status item = stats[i];
-
                 if (!item.TriggerConditions.CanTrigger())
                 {
                     Debug.LogWarning("An status cannot be triggered: " + item);
                     continue;
                 }
                 else if (item.Type == Status.StatType.delay && item.TurnCount != 1)
-                {
                     continue;
-                }
+
                 item.Execute();
             }
-
             statusContainer.StatList.ClearInvalid();
         }
 
-        /// <summary>
-        /// try trigger all status
-        /// </summary>
-        /// <param name="statusContainer"></param>
+        /// <summary> try trigger all status </summary> <param name="statusContainer"></param>
         public static void TryTriggerAll(this IStatusContainer statusContainer)
         {
             StatusList stats = statusContainer.StatList;

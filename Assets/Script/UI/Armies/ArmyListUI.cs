@@ -109,6 +109,41 @@ namespace Canute.UI
             DisplayArmyList();
         }
 
+        public void ArrangeByMoveRange()
+        {
+            listType = PropertyType.moveRange;
+            ArmyArrangement = ArmyArrangements.ByMoveRange;
+            DisplayArmyList();
+        }
+
+        public void ArrangeByAttackRange()
+        {
+            listType = PropertyType.attackRange;
+            ArmyArrangement = ArmyArrangements.ByAttackRange;
+            DisplayArmyList();
+        }
+
+        public void ArrangeByCritRate()
+        {
+            listType = PropertyType.critRate;
+            ArmyArrangement = ArmyArrangements.ByCritRate;
+            DisplayArmyList();
+        }
+
+        public void ArrangeByCritBonus()
+        {
+            listType = PropertyType.critBounes;
+            ArmyArrangement = ArmyArrangements.ByCritBonus;
+            DisplayArmyList();
+        }
+
+        public void ArrangeByPop()
+        {
+            listType = PropertyType.pop;
+            ArmyArrangement = ArmyArrangements.ByPopulation;
+            DisplayArmyList();
+        }
+
         #endregion
 
         public void ShowArmy(List<ArmyItem> armyItems)
@@ -125,23 +160,29 @@ namespace Canute.UI
                 switch (listType)
                 {
                     case PropertyType.damage:
-                        label.text.text = item.MaxDamage.ToString();
+                        label.text.text = item.RawDamage.ToString();
                         break;
                     case PropertyType.health:
                         label.text.text = item.MaxHealth.ToString();
                         break;
                     case PropertyType.defense:
-                        label.text.text = item.Defense.ToString();
+                        label.text.text = item.Properties.Defense.ToString();
                         break;
                     case PropertyType.moveRange:
+                        label.text.text = item.Properties.MoveRange.ToString();
                         break;
                     case PropertyType.attackRange:
+                        label.text.text = item.Properties.AttackRange.ToString();
                         break;
                     case PropertyType.critRate:
+                        //Debug.Log(item.CritRate);
+                        label.text.text = item.Properties.CritRate + "%";
                         break;
                     case PropertyType.critBounes:
+                        label.text.text = item.Properties.CritBonus + "%";
                         break;
                     case PropertyType.pop:
+                        label.text.text = item.Properties.Pop.ToString();
                         break;
                     default:
                         break;
@@ -261,7 +302,7 @@ namespace Canute.UI
 
             foreach (var item in ArmyListUI.GetPlayerArmiesDisplayed())
             {
-                if (item.StandPosition == position)
+                if (item.Properties.StandPosition == position)
                 {
                     armyItems.Add(item);
                 }
@@ -316,7 +357,7 @@ namespace Canute.UI
                 }
                 for (int j = 0; j < organizedList.Count; j++)
                 {
-                    if (organizedList[j].MaxDamage <= armyItem.MaxDamage)
+                    if (organizedList[j].RawDamage <= armyItem.RawDamage)
                     {
                         organizedList.Insert(j, armyItem);
                         break;
@@ -377,6 +418,156 @@ namespace Canute.UI
                 for (int j = 0; j < organizedList.Count; j++)
                 {
                     if (organizedList[j].Defense <= armyItem.Defense)
+                    {
+                        organizedList.Insert(j, armyItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(armyItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(armyItems.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<ArmyItem> ByMoveRange(List<ArmyItem> armyItems)
+        {
+            List<ArmyItem> organizedList = new List<ArmyItem>();
+            for (int i = 0; i < armyItems.Count; i++)
+            {
+                ArmyItem armyItem = armyItems[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(armyItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].Properties.MoveRange <= armyItem.Properties.MoveRange)
+                    {
+                        organizedList.Insert(j, armyItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(armyItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(armyItems.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<ArmyItem> ByAttackRange(List<ArmyItem> armyItems)
+        {
+            List<ArmyItem> organizedList = new List<ArmyItem>();
+            for (int i = 0; i < armyItems.Count; i++)
+            {
+                ArmyItem armyItem = armyItems[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(armyItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].Properties.AttackRange <= armyItem.Properties.AttackRange)
+                    {
+                        organizedList.Insert(j, armyItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(armyItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(armyItems.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<ArmyItem> ByCritRate(List<ArmyItem> armyItems)
+        {
+            List<ArmyItem> organizedList = new List<ArmyItem>();
+            for (int i = 0; i < armyItems.Count; i++)
+            {
+                ArmyItem armyItem = armyItems[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(armyItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].Properties.CritRate <= armyItem.Properties.CritRate)
+                    {
+                        organizedList.Insert(j, armyItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(armyItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(armyItems.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<ArmyItem> ByCritBonus(List<ArmyItem> armyItems)
+        {
+            List<ArmyItem> organizedList = new List<ArmyItem>();
+            for (int i = 0; i < armyItems.Count; i++)
+            {
+                ArmyItem armyItem = armyItems[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(armyItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].Properties.CritBonus <= armyItem.Properties.CritBonus)
+                    {
+                        organizedList.Insert(j, armyItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(armyItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(armyItems.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<ArmyItem> ByPopulation(List<ArmyItem> armyItems)
+        {
+            List<ArmyItem> organizedList = new List<ArmyItem>();
+            for (int i = 0; i < armyItems.Count; i++)
+            {
+                ArmyItem armyItem = armyItems[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(armyItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].Properties.Pop <= armyItem.Properties.Pop)
                     {
                         organizedList.Insert(j, armyItem);
                         break;

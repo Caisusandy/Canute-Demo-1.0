@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f72e7805b3fffd40aeedb4f0ee6c5a7, type: 3}
   m_Name: Infantry 1
   m_EditorClassIdentifier: Assembly-CSharp:Canute.BattleSystem:ResoncancePair
-  Types: 0
+  type: 0
   count: 1
+  target: 0
   resonance:
     effect:
       type: 11
@@ -30,10 +31,16 @@ MonoBehaviour:
           value: 1
         - key: sc
           value: 1
-        - key: OnPlayCard
+        - key: onPlayCard
           value: true
         - key: statType
           value: dualBase
+        - key: showToPlayer
+          value: false
+        - key: cardType
+          value: normal
+        - key: effect
+          value: move
     triggerConditions:
       list:
       - list:

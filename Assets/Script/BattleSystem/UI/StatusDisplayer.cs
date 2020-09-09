@@ -36,8 +36,22 @@ namespace Canute.BattleSystem.UI
             DestroyDetailDisplayer();
         }
 
+        public void OnMouseOver()
+        {
+            GenerateDetailDisplayer();
+        }
+        public void OnMouseExit()
+        {
+            DestroyDetailDisplayer();
+        }
+
         public void GenerateDetailDisplayer()
         {
+            if (statusDetailDisplayer)
+            {
+                return;
+            }
+
             GameObject gameObject = Instantiate(StatusDetailDisplayerPrefab, transform);
             statusDetailDisplayer = gameObject.GetComponent<StatusDetailDisplayer>();
             statusDetailDisplayer.status = status;
@@ -47,7 +61,7 @@ namespace Canute.BattleSystem.UI
 
         public void DestroyDetailDisplayer()
         {
-            Destroy(statusDetailDisplayer.gameObject);
+            Destroy(statusDetailDisplayer.Exist()?.gameObject);
             statusDetailDisplayer = null;
         }
     }

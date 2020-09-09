@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Canute.BattleSystem
@@ -68,7 +69,7 @@ namespace Canute.BattleSystem
         public AttackType Attack { get => attackType; set => attackType = value; }
         public int AttackArea { get => attackArea; set => attackArea = value; }
         public int TargetCount { get => targetCount; set => targetCount = value; }
-        public HalfSkillEffect Skill => skill;
+        public HalfSkillEffect SkillPack => skill;
         public ArgList Addition { get => addition; set => addition = value; }
 
         public BattleProperty(Army army)
@@ -92,21 +93,21 @@ namespace Canute.BattleSystem
 
         public BattleProperty(ArmyItem armyItem)
         {
-            defense = armyItem.Defense;
-            critRate = armyItem.CritRate;
-            critBounes = armyItem.CritBounes;
-            attackRange = armyItem.AttackRange;
-            moveRange = armyItem.MoveRange;
-            pop = armyItem.Pop;
-            standPosition = armyItem.StandPosition;
-            attackPosition = armyItem.AttackPosition;
+            defense = armyItem.BaseProperty.Defense;
+            critRate = armyItem.BaseProperty.CritRate;
+            critBounes = armyItem.BaseProperty.CritBonus;
+            attackRange = armyItem.BaseProperty.AttackRange;
+            moveRange = armyItem.BaseProperty.MoveRange;
+            pop = armyItem.BaseProperty.Pop;
+            standPosition = armyItem.BaseProperty.StandPosition;
+            attackPosition = armyItem.BaseProperty.AttackPosition;
 
-            attackType = armyItem.AttackType;
-            attackArea = armyItem.AttackArea;
-            targetCount = armyItem.TargetCount;
+            attackType = armyItem.BaseProperty.Attack;
+            attackArea = armyItem.BaseProperty.AttackArea;
+            targetCount = armyItem.BaseProperty.TargetCount;
 
-            skill = armyItem.SkillPack;
-            addition = armyItem.Addition;
+            skill = armyItem.BaseProperty.SkillPack;
+            addition = armyItem.BaseProperty.Addition;
         }
 
         public bool Equals(BattleProperty obj)
@@ -143,6 +144,92 @@ namespace Canute.BattleSystem
         {
             return base.GetHashCode();
         }
+
+        public void AddBonus(params IBattleBounesItem[] bonuses)
+        {
+            if (bonuses is null)
+            {
+                return;
+            }
+
+            foreach (var (item, property, type) in from item in bonuses
+                                                   from property in item?.Bonus
+                                                   from PropertyType type in PropertyTypes.Types
+                                                   select (item, property, type))
+            {
+                Debug.Log(property);
+                switch (property.Type & type)
+                {
+                    case PropertyType.defense:
+                        Defense = property.Bonus(Defense, item.Level);
+                        break;
+                    case PropertyType.moveRange:
+                        MoveRange = property.Bonus(MoveRange, item.Level);
+                        break;
+                    case PropertyType.attackRange:
+                        AttackRange = property.Bonus(AttackRange, item.Level);
+                        break;
+                    case PropertyType.critRate:
+                        CritRate = property.Bonus(CritRate, item.Level);
+                        break;
+                    case PropertyType.critBounes:
+                        CritBonus = property.Bonus(CritBonus, item.Level);
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+        }
+
+        public void RemoveBonus(params IBattleBounesItem[] bonuses)
+        {
+            if (bonuses is null)
+            {
+                return;
+            }
+
+            foreach (var (item, property, type) in from item in bonuses
+                                                   from property in item.Bonus
+                                                   from PropertyType type in PropertyTypes.Types
+                                                   select (item, property, type))
+            {
+                switch (property.Type & type)
+                {
+                    case PropertyType.defense:
+                        Defense = property.RemoveBonus(Defense, item.Level);
+                        break;
+                    case PropertyType.moveRange:
+                        MoveRange = property.RemoveBonus(MoveRange, item.Level);
+                        break;
+                    case PropertyType.attackRange:
+                        AttackRange = property.RemoveBonus(AttackRange, item.Level);
+                        break;
+                    case PropertyType.critRate:
+                        CritRate = property.RemoveBonus(CritRate, item.Level);
+                        break;
+                    case PropertyType.critBounes:
+                        CritBonus = property.RemoveBonus(CritBonus, item.Level);
+                        break;
+                    default:
+                        break;
+                }
+                Debug.Log(property);
+            }
+        }
     }
+
+
+    public interface IBattlePropertyContainer
+    {
+        BattleProperty Properties { get; }
+    }
+
+    public interface IArmy : IBattlePropertyContainer
+    {
+        Army.Types Type { get; }
+    }
+
 }
 

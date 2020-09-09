@@ -1,5 +1,6 @@
 ﻿using Canute.BattleSystem;
 using Canute.LevelTree;
+using Canute.Module;
 using Canute.Shops;
 using System;
 using System.Collections.Generic;

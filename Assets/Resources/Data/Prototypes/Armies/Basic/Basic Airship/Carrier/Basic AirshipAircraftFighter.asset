@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42519a9a9bfe564f9f663cf1d552d44, type: 3}
   m_Name: Basic AirshipAircraftFighter
   m_EditorClassIdentifier: 
+  isTemporaryPrototype: 0
   prototype:
     name: Basic AirshipAircraftFighter
     rarity: 1
@@ -28,7 +29,7 @@ MonoBehaviour:
     - defense: 13.215859030837
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 14
       attackRange: 1
       moveRange: 5
       standPosition: 2
@@ -37,7 +38,6 @@ MonoBehaviour:
       targetCount: 1
       attackType: 6
       skill:
-        type: 0
         specialName: 
         count: 0
         parameter: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
     - defense: 13.215859030837
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 14
       attackRange: 1
       moveRange: 5
       standPosition: 2
@@ -57,7 +57,6 @@ MonoBehaviour:
       targetCount: 1
       attackType: 6
       skill:
-        type: 0
         specialName: 
         count: 0
         parameter: 0
@@ -68,7 +67,7 @@ MonoBehaviour:
     - defense: 13.215859030837
       critRate: 20
       critBounes: 50
-      pop: 1
+      pop: 14
       attackRange: 1
       moveRange: 5
       standPosition: 2
@@ -77,7 +76,6 @@ MonoBehaviour:
       targetCount: 1
       attackType: 6
       skill:
-        type: 0
         specialName: 
         count: 0
         parameter: 0

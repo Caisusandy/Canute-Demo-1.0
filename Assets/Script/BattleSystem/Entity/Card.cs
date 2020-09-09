@@ -136,7 +136,7 @@ namespace Canute.BattleSystem
         {
             if (!OwnerHaveEnoughActionPoint())
             {
-                UI.BattleUI.SendMessage("Card did not played: no enough action point");
+                UI.BattleUI.SendMessage(BattleEventError.CardPlayerHasNoActionPoint);
                 return false;
             }
             bool ret = effect.Execute(true);
@@ -154,8 +154,9 @@ namespace Canute.BattleSystem
         /// </summary>
         public void TriggerPlayCardStatus()
         {
-            (effect.Source as IStatusContainer)?.Trigger(TriggerCondition.Conditions.playCard, ref effect);
-            effect.Source?.Owner?.Trigger(TriggerCondition.Conditions.playCard, ref effect);
+            (effect.Source as IStatusContainer)?.TriggerConditionOf(TriggerCondition.Conditions.playCard, ref effect);
+            effect.Source?.Owner?.TriggerConditionOf(TriggerCondition.Conditions.playCard, ref effect);
+            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.playCard, ref effect);
         }
 
         public int GetActualActionPointSpent()

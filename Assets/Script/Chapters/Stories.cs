@@ -1,6 +1,6 @@
 ﻿using Canute.LanguageSystem;
+using Canute.Module;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEngine;
@@ -13,9 +13,11 @@ namespace Canute.StorySystem
         [SerializeField] protected Language language;
         [ContextMenuItem("Save", "SaveStory")]
         [SerializeField] protected StoryTree storyTree;
+        [SerializeField] protected LetterTree letter;
 
         public string Name => language.ToString();
         public StoryTree StoryTree { get => storyTree; set => storyTree = value; }
+        public LetterTree Letters { get => letter; set => letter = value; }
         public Language Language { get => language; set => language = value; }
         public string DataPath => Application.persistentDataPath + "/Stories/";
 

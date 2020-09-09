@@ -5,75 +5,39 @@ using UnityEngine;
 
 namespace Canute
 {
+
     [Serializable]
     public class Leader : Prototype
     {
         [SerializeField] protected Career career;
         [SerializeField] protected List<PropertyBonus> bounes;
         [SerializeField] protected HalfSkillEffect skill;
+        [SerializeField] protected bool hasAssociateCharacter;
 
 
-        public Career Career => career;
         public override GameObject Prefab => null;
+        public Career Career => career;
         public List<PropertyBonus> Bounes { get => bounes; set => bounes = value; }
+        public Character Charater => HasAssociateCharacter ? GameData.Prototypes.GetCharacter(name) : default;
+        public bool HasAssociateCharacter { get => hasAssociateCharacter; set => hasAssociateCharacter = value; }
+
+        protected override Sprite GetIcon()
+        {
+            if (hasAssociateCharacter)
+                return Charater?.Icon;
+            if (Game.Configuration.UseCustomDefaultPrototype && !icon)
+                return GameData.Prototypes.GetPrototype(name)?.Icon;
+            return icon;
+        }
+
+
+        protected override Sprite GetPortrait()
+        {
+            if (hasAssociateCharacter)
+                return GameData.Prototypes.GetCharacter(name)?.Portrait;
+            if (Game.Configuration.UseCustomDefaultPrototype && !icon)
+                return GameData.Prototypes.GetPrototype(name)?.Portrait;
+            return portrait;
+        }
     }
-
-
-
-    //[Serializable]
-    //public struct LeaderBounes
-    //{
-    //    [SerializeField] private int defenseBounesRate;
-    //    [SerializeField] private int damageBounesRate;
-    //    [SerializeField] private int healthBounesRate;
-    //    [SerializeField] private int critRateBounesRate;
-    //    [SerializeField] private int critBounesBounesRate;
-
-    //    [SerializeField] private int attackRangeBounesPoint;
-    //    [SerializeField] private int moveRangeBounesPoint;
-    //    [SerializeField] private int popBounesPoint;
-
-    //    public LeaderBounes(int defenseBounesRate, int damageBounesRate, int healthBounesRate, int critRateBounesRate, int critBounesBounesRate, int attackRangeBounesPoint, int moveRangeBounesPoint, int popBounesPoint)
-    //    {
-    //        this.defenseBounesRate = defenseBounesRate;
-    //        this.damageBounesRate = damageBounesRate;
-    //        this.healthBounesRate = healthBounesRate;
-    //        this.critRateBounesRate = critRateBounesRate;
-    //        this.critBounesBounesRate = critBounesBounesRate;
-    //        this.attackRangeBounesPoint = attackRangeBounesPoint;
-    //        this.moveRangeBounesPoint = moveRangeBounesPoint;
-    //        this.popBounesPoint = popBounesPoint;
-    //    }
-
-    //    public int DefenseBounesRate => defenseBounesRate;
-    //    public int DamageBounesRate => damageBounesRate;
-    //    public int HealthBounesRate => healthBounesRate;
-    //    public int CritRateBounesRate => critRateBounesRate;
-    //    public int CritBounesBounesRate => critBounesBounesRate;
-
-
-    //    public int AttackRangeBounesPoint => attackRangeBounesPoint;
-    //    public int MoveRangeBounesPoint => moveRangeBounesPoint;
-    //    public int PopBounesPoint => popBounesPoint;
-
-    //    public static LeaderBounes operator +(LeaderBounes l, LeaderBounes r)
-    //    {
-    //        LeaderBounes leaderBounes;
-
-    //        leaderBounes = new LeaderBounes()
-    //        {
-    //            defenseBounesRate = l.defenseBounesRate.Bounes(r.defenseBounesRate),
-    //            damageBounesRate = l.damageBounesRate.Bounes(r.damageBounesRate),
-    //            healthBounesRate = l.healthBounesRate.Bounes(r.healthBounesRate),
-    //            critRateBounesRate = l.critRateBounesRate.Bounes(r.critRateBounesRate),
-    //            critBounesBounesRate = l.critBounesBounesRate.Bounes(r.critBounesBounesRate),
-
-    //            attackRangeBounesPoint = l.attackRangeBounesPoint + r.attackRangeBounesPoint,
-    //            moveRangeBounesPoint = l.defenseBounesRate + r.defenseBounesRate,
-    //            popBounesPoint = l.defenseBounesRate + r.defenseBounesRate
-    //        };
-    //        return leaderBounes;
-    //    }
-    //}
-
 }

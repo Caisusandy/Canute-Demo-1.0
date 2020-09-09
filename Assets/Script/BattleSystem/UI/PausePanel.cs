@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Canute.BattleSystem.UI
 {
@@ -6,6 +7,8 @@ namespace Canute.BattleSystem.UI
     {
         public static PausePanel instance;
 
+        public Text title;
+        public Text subtitle;
         public bool IsPausing => enabled;
 
         private void Awake()
@@ -16,6 +19,8 @@ namespace Canute.BattleSystem.UI
         // Start is called before the first frame update
         private void Start()
         {
+            title.text = Game.CurrentLevel.Lang("title");
+            subtitle.text = Game.CurrentLevel.Lang("subtitle");
             Close();
         }
 

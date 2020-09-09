@@ -181,7 +181,8 @@ namespace Canute.UI
             {
                 text += item.Lang();
             }
-            bonusInfo.text = text.Remove(text.Length - 3);
+            if (text.Length > 1)
+                bonusInfo.text = text.Remove(text.Length - 1);
             if (skillInfo)
             {
                 skillInfo.text = "";//SelectingLeader.

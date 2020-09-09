@@ -10,27 +10,30 @@ Canute.Career.None=无
 #Title
 Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
-Canute.LevelTree.Level.CalayInfinite.subtitle= infinity test Map
-Canute.LevelTree.Level.CalayInfinite.title= The fall of a fantaria
+Canute.LevelTree.Level.CalayInfinite.subtitle=无限战役
+Canute.LevelTree.Level.CalayInfinite.title=训练营
 Canute.LevelTree.Level.1-2.subtitle=第一次遭遇色布提亚据点
 Canute.LevelTree.Level.1-2.title=1-2 色布提亚据点
+Canute.LevelTree.Level.7-inf.subtitle=日常战役
+Canute.LevelTree.Level.7-inf.title=基地外
 #Currency
 Canute.Shops.Currency+Type.fedgram=联邦克
 Canute.Shops.Currency+Type.manpower=人力
 Canute.Shops.Currency+Type.mantleAlloy=地幔合金
 Canute.Shops.Currency+Type.aethium=辉石
 #
-Canute.BattleSystem.PropertyBonus.damage=伤害
-Canute.BattleSystem.PropertyBonus.health=生命
-Canute.BattleSystem.PropertyBonus.defense=防御
-Canute.BattleSystem.PropertyBonus.moveRange=移动范围
-Canute.BattleSystem.PropertyBonus.attackRange=攻击范围
-Canute.BattleSystem.PropertyBonus.critRate=暴击概率
-Canute.BattleSystem.PropertyBonus.critBounes=暴击加成
-Canute.BattleSystem.PropertyBonus.pop=人口
-Canute.BattleSystem.PropertyBonus.armor=护甲
-Canute.BattleSystem.PropertyBonus.anger=怒气
+Canute.BattleSystem.PropertyType.damage=伤害
+Canute.BattleSystem.PropertyType.health=生命
+Canute.BattleSystem.PropertyType.defense=防御
+Canute.BattleSystem.PropertyType.moveRange=移动范围
+Canute.BattleSystem.PropertyType.attackRange=攻击范围
+Canute.BattleSystem.PropertyType.critRate=暴击概率
+Canute.BattleSystem.PropertyType.critBounes=暴击加成
+Canute.BattleSystem.PropertyType.pop=人口
+Canute.BattleSystem.PropertyType.armor=护甲
+Canute.BattleSystem.PropertyType.anger=怒气
 #
+Canute.BattleSystem.BattleProperty.AttackType=攻击方式
 Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
 Canute.BattleSystem.BattleProperty+AttackType.melee=近战
 Canute.BattleSystem.BattleProperty+AttackType.projectile=远程
@@ -44,6 +47,8 @@ Canute.BattleSystem.BattleProperty+AttackType.splash=溅射
 Canute.BattleSystem.BattleProperty+AttackType.splashMelee=溅射，近战
 Canute.BattleSystem.BattleProperty+AttackType.splashProjectile=溅射，远程
 #
+Canute.BattleSystem.BattleProperty.StandPosition=位置
+Canute.BattleSystem.BattleProperty.AttackPosition=攻击位置
 Canute.BattleSystem.BattleProperty+Position.land=地面
 Canute.BattleSystem.BattleProperty+Position.air=空中
 Canute.BattleSystem.BattleProperty+Position.all=任何
@@ -116,9 +121,6 @@ Canute.BattleSystem.Effect+Types.confusion=干扰
 Canute.BattleSystem.Effect+Types.confusion.info=使一只军队移动距离与攻击距离降低@param%
 Canute.BattleSystem.Effect+Types.protection=保护
 Canute.BattleSystem.Effect+Types.protection.info=受到 $sourceName 的保护
-Canute.BattleSystem.Effect+Types.infantryLightness=轻盈
-Canute.BattleSystem.Effect+Types.infantryLightness.info=移动时不消耗行动点
-
 Canute.BattleSystem.Effect+Types.addActionPoint=行动点
 Canute.BattleSystem.Effect+Types.addActionPoint.info=增加@param 行动点 
 Canute.BattleSystem.Effect+Types.addArmor=增加护甲
@@ -126,6 +128,29 @@ Canute.BattleSystem.Effect+Types.addArmor.info=添加@param 护甲
 
 
 
+
+Canute.BattleSystem.Effect+Types.infantryLightness=共鸣：轻盈
+Canute.BattleSystem.Effect+Types.infantryLightness.info=每回合第一次移动时不消耗行动点
+Canute.BattleSystem.Effect+Types.infantryDamageBonus=共鸣：伤害提升
+Canute.BattleSystem.Effect+Types.infantryDamageBonus.info=造出的伤害提升@param%
+Canute.BattleSystem.Effect+Types.mageResonance=共鸣：法师增援
+Canute.BattleSystem.Effect+Types.mageResonance.info=@distance格范围内友军造出的伤害提升@param%
+Canute.BattleSystem.Effect+Types.warMachineResonance=共鸣:战车加固
+Canute.BattleSystem.Effect+Types.warMachineResonance.info=战车增加@param防御
+Canute.BattleSystem.Effect+Types.shielderResonance=共鸣:重甲加厚
+Canute.BattleSystem.Effect+Types.shielderResonance.info=血量提升@param%
+Canute.BattleSystem.Effect+Types.rifleman1Resonance=共鸣：火枪手穿透
+Canute.BattleSystem.Effect+Types.rifleman1Resonance.info=火枪手攻击时，若火枪手与目标处于同一条线上，相同方向的敌方军队受到穿透攻击，伤害随距离衰减，最远为火枪手的攻击范围的2倍
+Canute.BattleSystem.Effect+Types.riflemanAttackRange=共鸣：范围提升
+Canute.BattleSystem.Effect+Types.riflemanAttackRange.info=地面单位攻击距离+1
+Canute.BattleSystem.Effect+Types.rifleman2Resonance=共鸣：穿透增强
+Canute.BattleSystem.Effect+Types.rifleman2Resonance.info=穿透能在非一线时触发
+Canute.BattleSystem.Effect+Types.riflemanCriticalBonus=共鸣：爆伤提升
+Canute.BattleSystem.Effect+Types.riflemanCriticalBonus.info=火枪手增加暴击伤害20%
+Canute.BattleSystem.Effect+Types.addDragonCard=共鸣：龙法术
+Canute.BattleSystem.Effect+Types.addDragonCard.info=获得@count张龙牌
+Canute.BattleSystem.Effect+Types.shielderPenetrate=共鸣：重甲兵穿透
+Canute.BattleSystem.Effect+Types.shielderPenetrate.info=穿透非重甲兵单位的防御，同时额外造成的敌方当前血量@param%的真实伤害
 #dragon
 
 Canute.BattleSystem.Effect+Types.dragonAttack=攻击状态（龙）
@@ -160,10 +185,6 @@ Canute.BattleSystem.Effect+Types.addDragonStrike=猛力冲击
 Canute.BattleSystem.Effect+Types.addDragonStrike.info=移动后，目的地敌方会被向后推 2 格, 但是被选中军队无法攻击
 
 
-Canute.BattleSystem.Effect+Types.shielderPenetrate=重甲兵穿透
-Canute.BattleSystem.Effect+Types.shielderPenetrate.info=穿透非重甲兵单位的防御，同时额外造成的敌方当前血量@param%的真实伤害
-
-
 Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Basic Infantry Skill
 Canute.BattleSystem.Effect+Types.BasicInfantrySkill.info= attack twice the [closest, possible, lowest HP] target (with a 0%/40% damage decrease)
 Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Basic Rifleman Skill
@@ -179,31 +200,19 @@ Canute.BattleSystem.Effect+Types.aircraftFighterReturn.info=军队机场位置�
 Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy=战机：前进
 Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy.info=战机在攻击后会移动到敌方面前，直到本回合结束后回到上一次主动移动的目的地。
 
+#Level State
+Canute.BattleSystem.UI.ResultUI.Passed=战斗结束
+Canute.BattleSystem.UI.ResultUI.Lost=战斗失败
 
 #错误事件
-Canute.BattleSystem.BattleEventError. = 
-Canute.BattleSystem.BattleEventError.notValidTarget=the target is not a valid target
-Canute.BattleSystem.BattleEventError.noTarget=no target was selected
-Canute.BattleSystem.BattleEventError.noAvailableTarget=no target can be attack 
-Canute.BattleSystem.BattleEventError.armyCannotAttack=it can't attack anyone
-Canute.BattleSystem.BattleEventError.armyNoTarget=no enemy is in attack range
+Canute.BattleSystem.BattleEventError.CardNoSelectingEntity=Card did not played: no selecting entity
+Canute.BattleSystem.BattleEventError.CardNotValidTarget=Card did not played: not a valid target
+Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=Card did not played: no enough action point
 
-Canute.Language.EventError.UnmatchedCareer=你需要使用相对应职业的手牌
-Canute.Language.EventError.NoDestination=没有设置目的地
-Canute.Language.EventError.TooFarFromCamp=距离大本营太远
-Canute.Language.EventError.InBattle=部队在指挥所状态
-Canute.Language.EventError.CannotStrengthArmy=不允许加强部队
-Canute.Language.EventError.OutOfBorder=不在战斗范围内
-Canute.Language.EventError.TooFar=太远了
-Canute.Language.EventError.NotAValidDestination=不能到达这个位置
-Canute.Language.EventError.NotInYourTurn=不在玩家回合
-Canute.Language.EventError.CannotAttackFort=不能攻击堡垒
-Canute.Language.EventError.CannotBuildArmy=无法建造部队
-Canute.Language.EventError.ActionUndone=不能同时进行多次任务
-Canute.Language.EventError.NoActionRemain=没有行动点数了
-Canute.Language.EventError.NoEnoughMovePoint=没有足够多的行动点数了
-Canute.Language.EventError.HasBuildingAlready=这个位置或者周围已经有建筑
-Canute.Language.EventError.NoResourRemainForNewTeam=不能再建造这个部队了
+Canute.BattleSystem.BattleEventError.armyNoTarget=军队攻击范围内没有敌方
+Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: target is under protection
+Canute.BattleSystem.BattleEventError.armyCannotAttack=军队不能攻击
+ 
 
 #UI' 
 Canute.UI.Start.Continue=继续。。。
@@ -220,3 +229,20 @@ Canute.UI.MainHall.Exploration=物资队
 Canute.UI.MainHall.Shop=商店
 Canute.UI.MainHall.Chapter=章节
 Canute.UI.MainHall.Quit=退出
+
+#Tips
+Canute.Tips.0=Place Card On the Army to use it.
+Canute.Tips.1=Place a card on anothor card if the card you want to use can only choose card as target.
+Canute.Tips.2=Some Leader have a better bonus than others.
+Canute.Tips.3=Some army are on the sky, and some are not.
+Canute.Tips.4=Please don't try to command your infantry to attack an aircraft.
+Canute.Tips.5=Equipment can give your army a better performance on the battle.
+Canute.Tips.6=Mages have a special attack method: There will be a bonus splash attack within 1 cell.
+Canute.Tips.7=Riflemen attack every enemy in a line.
+Canute.Tips.8=Aircraft Fighters have to go back to its airport at the end of the turn.
+Canute.Tips.9=Airships can sent more aircraft fighter.
+Canute.Tips.10=No army can penetrate Shielder's shield, some special event maybe.
+Canute.Tips.11=Every attack would cause at least 1 damage
+Canute.Tips.12=Using the card that matched with army's career would cause 1 less action point.
+Canute.Tips.13=Dragons knows magic better than those mage, they can boot up the army for some cost...
+Canute.Tips.14=Resonance happens when more same type of army exist.
