@@ -8,30 +8,31 @@ namespace Canute.UI
     {
         public Text levelDisplayer;
         public Image armyIcon;
-        public Image BG;
+        public Image rarity;
 
         public ArmyItem displayingArmy;
 
         // Start is called before the first frame update
         private void Awake()
         {
-            BG = GetComponent<Image>();
+            rarity = GetComponent<Image>();
             armyIcon = transform.Find("ArmyIcon").GetComponent<Image>();
             levelDisplayer = transform.Find("ArmyLevel").GetComponent<Text>();
         }
 
-        public void Display(ArmyItem armyItem)
+        public void Display(ArmyItem item)
         {
-            displayingArmy = armyItem;
+            displayingArmy = item;
 
             if (!displayingArmy)
             {
                 armyIcon.sprite = null;
                 levelDisplayer.text = string.Empty;
+                rarity.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, Rarity.none.ToString());
             }
             else
             {
-                BG.color = displayingArmy.Prototype.Rarity.GetColor();
+                rarity.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, item.Rarity.ToString());
                 armyIcon.sprite = displayingArmy.Prototype.Icon;
                 levelDisplayer.text = "Lv." + displayingArmy.Level;
             }

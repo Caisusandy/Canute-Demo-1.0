@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: rarity
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2cdc2e82dab67654ea91aeb0ecbc1ec7, type: 3}
+    totalSpriteSurfaceArea: 1310720
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: fc26e8449f22ec44f955d2ea8915fa70, type: 3}
+  - {fileID: 21300000, guid: 1d0dbbb9740f01e478746df7dba47e5f, type: 3}
+  - {fileID: 21300000, guid: 58f2f3baf80d49e47afd7463d8d29b42, type: 3}
+  - {fileID: 21300000, guid: af6ee8fc9fa75964a9474b722c6c5777, type: 3}
+  - {fileID: 21300000, guid: d8f9675d9b18680419a9fe6f96d9c94f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - none
+  - common
+  - legendary
+  - epic
+  - rare
+  m_Tag: rarity
+  m_IsVariant: 0

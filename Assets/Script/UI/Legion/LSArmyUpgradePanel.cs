@@ -36,7 +36,7 @@ namespace Canute.UI.Legion
             if (left)
             {
                 leftCard.image.color = Color.white;
-                leftCard.image.sprite = left.Portrait;
+                leftCard.image.sprite = left.Prototype.Portrait;
             }
             else
             {
@@ -49,7 +49,7 @@ namespace Canute.UI.Legion
             if (right)
             {
                 rightCard.image.color = Color.white;
-                rightCard.image.sprite = right.Portrait;
+                rightCard.image.sprite = right.Prototype.Portrait;
             }
             else
             {
@@ -87,7 +87,7 @@ namespace Canute.UI.Legion
 
         public void TryUpgrade()
         {
-            bool canUpgrade = Game.PlayerData.Spent(new Currency(Currency.Type.Aethium, SelectingArmy.Star * 2)) && CanUpgrade();
+            bool canUpgrade = Game.PlayerData.Spent(new Currency(Currency.Type.aethium, SelectingArmy.Star * 2)) && CanUpgrade();
             if (!canUpgrade)
             {
                 return;

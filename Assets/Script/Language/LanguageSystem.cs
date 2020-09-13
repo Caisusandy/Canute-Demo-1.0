@@ -135,18 +135,28 @@ namespace Canute
             {
                 if ((item & propertyBonus.Type) != PropertyType.none)
                 {
-                    List<string> vs = new List<string>() { propertyBonus.GetFullTypeName() + "." + (item & propertyBonus.Type) };
+                    List<string> vs = new List<string>() { (typeof(PropertyType)).GetFullTypeName() + "." + (item & propertyBonus.Type) };
                     var raw = Lang(vs.ToArray());
                     int value = propertyBonus.GetValue(level);
 
-                    ret += " ";
                     ret += value >= 0 ? "+" : "-";
                     ret += value;
                     ret += propertyBonus.BonusType == BonusType.percentage ? "% " : " ";
-                    ret += raw + " |";
+                    ret += raw + "\n";
                 }
             }
-            return ret.Remove(ret.Length - 1).Remove(0, 1);
+            return ret.Remove(ret.Length - 1);
+
+        }
+
+        public static string Lang(this PropertyBonus[] propertyBonus, int level = 1)
+        {
+            string ret = "";
+            foreach (var item in propertyBonus)
+            {
+                ret += item.Lang(level) + "\n";
+            }
+            return ret;
 
         }
 

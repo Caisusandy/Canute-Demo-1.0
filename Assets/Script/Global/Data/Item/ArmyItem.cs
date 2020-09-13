@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Canute
@@ -33,15 +34,15 @@ namespace Canute
 
         #region Properties
         /// <summary>
-        /// bounes of level and star
+        /// bonus of level and star
         /// </summary>
-        private double LevelBounes => Mathf.Pow(1.3f, Star - 1) * Mathf.Pow(1.005f, Level) * 100; //2.2795
+        public double LevelBonus => Mathf.Pow(1.3f, Star - 1) * Mathf.Pow(1.005f, Level) * 100; //2.2795
         public BattleProperty BaseProperty => Prototype.Properties[Star - 1];
 
 
-        public int MaxHealth => Prototype.Health.Bonus(LevelBounes);
-        public int RawDamage => Prototype.Damage.Bonus(LevelBounes);
-        public int Defense => Properties.Defense.Bonus(LevelBounes);
+        public int MaxHealth => Prototype.Health.Bonus(LevelBonus);
+        public int RawDamage => Prototype.Damage.Bonus(LevelBonus);
+        public int Defense => Properties.Defense.Bonus(LevelBonus);
 
         public new Army.Types Type => Prototype.Type;
         public Career Career => HasLeader ? Leader.Career : Prototype.Career;
@@ -53,7 +54,13 @@ namespace Canute
         #endregion
 
 
+        #region Properties For display before battle
+        public BattleProperty PropertiesAfterEquipment => new BattleProperty(this, equipments);
+        public int DefenseForDisplay => (int)PropertiesAfterEquipment.Defense;
+        public int MaxHealthForDisplay => Prototype.Health.Bonus(LevelBonus).Bonus(equipments.GetBonusOf(PropertyType.health, BonusType.additive), BonusType.additive).Bonus(equipments.GetBonusOf(PropertyType.health, BonusType.percentage), BonusType.percentage);
+        public int DamageForDisplay => Prototype.Damage.Bonus(LevelBonus).Bonus(equipments.GetBonusOf(PropertyType.damage, BonusType.additive), BonusType.additive).Bonus(equipments.GetBonusOf(PropertyType.damage, BonusType.percentage), BonusType.percentage);
 
+        #endregion
 
 
         #endregion
@@ -128,7 +135,10 @@ namespace Canute
             //{
             //    return;
             //}
-            equipmentUUID[index] = value.UUID;
+            if (value)
+                equipmentUUID[index] = value.UUID;
+            else
+                equipmentUUID[index] = UUID.Empty;
         }
 
         private void InitializeEquipmentSlot()
@@ -159,7 +169,7 @@ namespace Canute
             return equipmentItems;
         }
 
-        public int GetBounesOf(PropertyType type, BonusType bounesTypes)
+        public int GetBonusOf(PropertyType type, BonusType bounesTypes)
         {
             int bounes = 0;
             foreach (var equipmentItem in Equipments)

@@ -12,6 +12,7 @@ namespace Canute.BattleSystem
             aggresive
         }
 
+        [SerializeField] protected GameObject prefab;
         [SerializeField] private int health;
         [SerializeField] private int defence;
         [SerializeField] private Types type;
@@ -31,7 +32,7 @@ namespace Canute.BattleSystem
         public int Defence => defence;
         public Types Type => type;
         public BattleProperty Property => property;
-        public override GameObject Prefab => prefab ?? GameData.Prefabs.DefaultBuilding;
+        public GameObject Prefab => prefab ?? GameData.Prefabs.DefaultBuilding;
         public static Building Empty => new Building();
     }
 

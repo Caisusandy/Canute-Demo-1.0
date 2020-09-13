@@ -105,7 +105,7 @@ namespace Canute.BattleSystem
             }
             try
             {
-                ArmyObject.transform.localScale = new Vector3(1, 1, 1);
+                ArmyObject.transform.localScale = Vector3.one;
                 IsHighlighted = false;
             }
             catch { }
@@ -140,7 +140,7 @@ namespace Canute.BattleSystem
         public abstract float SkillDuration { get; }
         public abstract float DefeatedDuration { get; }
         public abstract float WinningDuration { get; }
-        public abstract float HurtDuration { get; }
+        public virtual float HurtDuration => 0.5f;
 
         public virtual void Attack(params object[] vs)
         {
@@ -192,7 +192,7 @@ namespace Canute.BattleSystem
 
 
             InPerformingAnimation();
-            Animator.SetBool(isDefencing, true);
+            Animator.SetBool(isDefensing, true);
 
             Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction, damageSource));
             Debug.Log(Data.ToString() + " Hurt");
@@ -239,6 +239,7 @@ namespace Canute.BattleSystem
 
         /// <summary>
         /// skill code
+        /// effect would convert to an event and execute
         /// </summary>
         /// <param name="effect">skill effect (<paramref name="effect"/>.type = skill)</param>
         public virtual void SkillExecute(Effect effect)
@@ -311,6 +312,17 @@ namespace Canute.BattleSystem
         public virtual bool CanAttack(IPassiveEntity other)
         {
             return data.CanAttack(other.Data);
+        }
+
+        public override void FaceTo(bool isToRight)
+        {
+            var scale = transform.localScale;
+            scale.x *= isToRight ? 1 : -1;
+            transform.localScale = scale;
+
+            scale = armyHealthBar.transform.localScale;
+            scale.x *= isToRight ? 1 : -1;
+            armyHealthBar.transform.localScale = scale;
         }
 
         public override void Destroy()

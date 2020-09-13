@@ -7,7 +7,7 @@ namespace Canute
     {
         public static List<Character> GetPlayersTeam()
         {
-            return Game.PlayerData.Leaders.Where((l) => l.Prototype.HasAssociateCharacter).Select((l) => l.Prototype.Charater).ToList();
+            return Game.PlayerData.Leaders.Where((l) => l.Prototype.HasAssociateCharacter).Select((l) => l.Prototype.Character).ToList();
         }
 
         public static List<Character> CameOut()

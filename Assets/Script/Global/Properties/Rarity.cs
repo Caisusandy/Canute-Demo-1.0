@@ -6,6 +6,7 @@
         rare,
         epic,
         legendary,
+        none,
     }
 
     public interface IRarityLabled

@@ -122,6 +122,12 @@ namespace Canute.BattleSystem
                 {
                     Game.CurrentBattle.PassingEffect.Add(effect);
                 }
+
+                if (effect.Source is OnMapEntity && effect.Targets[0] is OnMapEntity)
+                {
+                    (effect.Source as OnMapEntity).FaceTo((effect.Targets[0] as OnMapEntity));
+                    (effect.Targets[0] as OnMapEntity).FaceTo((effect.Source as OnMapEntity));
+                }
             }
             else
             {

@@ -16,6 +16,7 @@ namespace Canute.StorySystem
 
         public static StoryDisplayer instance;
         public static Story currentStory;
+        public static List<Story> nextStories = new List<Story>();
         public static bool transparentBG;
         #region Component
 
@@ -169,7 +170,7 @@ namespace Canute.StorySystem
         {
             if (!currentStory)
             {
-                Quit();
+                TryQuit();
                 return;
             }
 
@@ -182,7 +183,7 @@ namespace Canute.StorySystem
 
             if (line == WordLine.Empty)
             {
-                Quit();
+                TryQuit();
                 return;
             }
 
@@ -190,13 +191,36 @@ namespace Canute.StorySystem
         }
 
         /// <summary> 关闭剧情窗口 </summary>
+        public void TryQuit()
+        {
+            if (nextStories.Count > 0)
+            {
+                NextStory();
+            }
+            else Quit();
+        }
+
+        public static void NextStory()
+        {
+            currentStory = nextStories[0];
+            transparentBG = currentStory.Type == StoryType.dailyConversation;
+            nextStories.RemoveAt(0);
+        }
+
         public void Quit()
         {
+            currentStory = Story.Empty;
             SceneControl.RemoveScene(MainScene.StoryDisplayer);
         }
 
         public static void Load(Story wordLines)
         {
+            if (currentStory)
+            {
+                nextStories.Add(wordLines);
+                return;
+            }
+
             SceneControl.AddScene(MainScene.StoryDisplayer);
             currentStory = wordLines;
             transparentBG = wordLines.Type == StoryType.dailyConversation;

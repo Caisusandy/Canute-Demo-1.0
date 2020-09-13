@@ -98,7 +98,7 @@ namespace Canute.BattleSystem
                     case PropertyType.critRate:
                         property.CritRate = property.CritRate.Bonus(stat.Effect.Parameter, bounesType);
                         break;
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         property.CritBonus = property.CritBonus.Bonus(stat.Effect.Parameter, bounesType);
                         break;
                     case PropertyType.pop:
@@ -144,7 +144,7 @@ namespace Canute.BattleSystem
                     case PropertyType.critRate:
                         property.CritRate = property.CritRate.Bonus(-stat.Effect.Parameter, bounesType);
                         break;
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         property.CritBonus = property.CritBonus.Bonus(-stat.Effect.Parameter, bounesType);
                         break;
                     case PropertyType.pop:

@@ -176,11 +176,7 @@ namespace Canute.UI
         public void ShowLeaderInfo()
         {
             bonusInfo.text = "";
-            var text = "";
-            foreach (var item in SelectingLeader.Bonus)
-            {
-                text += item.Lang();
-            }
+            var text = SelectingLeader.Bonus.ToArray().Lang();
             if (text.Length > 1)
                 bonusInfo.text = text.Remove(text.Length - 1);
             if (skillInfo)

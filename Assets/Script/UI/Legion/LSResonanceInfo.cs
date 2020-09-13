@@ -42,7 +42,7 @@ namespace Canute.UI.Legion
 
         private void HideInfo()
         {
-            Destroy(label?.gameObject);
+            Destroy(label.Exist()?.gameObject);
         }
 
         public void DisplayInfo()

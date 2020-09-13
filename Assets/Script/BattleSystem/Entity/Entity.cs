@@ -23,7 +23,7 @@ namespace Canute.BattleSystem
         protected const string isPerformingSkill = "isPerformingSkill";
         protected const string isMoving = "isMoving";
         protected const string isDefeated = "isDefeated";
-        protected const string isDefencing = "isDefencing";
+        protected const string isDefensing = "isDefensing";
         protected const string isWinning = "isWinning";
         protected const string isDragingCard = "isDraging";
         protected const string isIdle = "isIdle";

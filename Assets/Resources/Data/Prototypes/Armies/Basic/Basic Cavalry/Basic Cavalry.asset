@@ -38,21 +38,11 @@ MonoBehaviour:
       targetCount: 1
       attackType: 5
       skill:
-        specialName: 
-        count: 0
+        specialName: BasicCavalrySkill
+        count: 1
         parameter: 0
         args:
-          args:
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
+          args: []
       addition:
         args: []
     - defense: 4.40528634361233
@@ -67,21 +57,11 @@ MonoBehaviour:
       targetCount: 1
       attackType: 5
       skill:
-        specialName: 
-        count: 0
+        specialName: BasicCavalrySkill
+        count: 1
         parameter: 0
         args:
-          args:
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
+          args: []
       addition:
         args: []
     - defense: 4.40528634361233
@@ -96,20 +76,10 @@ MonoBehaviour:
       targetCount: 1
       attackType: 5
       skill:
-        specialName: 
-        count: 0
+        specialName: BasicCavalrySkill
+        count: 1
         parameter: 0
         args:
-          args:
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
-          - key: 
-            value: 
+          args: []
       addition:
         args: []

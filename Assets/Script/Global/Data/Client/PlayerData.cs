@@ -58,7 +58,7 @@ namespace Canute
                         return true;
                     }
                     return false;
-                case Currency.Type.Aethium:
+                case Currency.Type.aethium:
                     if (Aethium < amount)
                     {
                         Aethium -= amount;

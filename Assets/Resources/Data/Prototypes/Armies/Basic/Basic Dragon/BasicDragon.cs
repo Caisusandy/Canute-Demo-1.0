@@ -29,7 +29,6 @@ namespace Canute.BattleSystem.Armies
 
         public override float WinningDuration => 2;
 
-        public override float HurtDuration => 2;
 
 
 
@@ -52,7 +51,11 @@ namespace Canute.BattleSystem.Armies
 
         public override void SkillExecute(Effect effect)
         {
-
+            var cards = Game.CurrentBattle.GetHandCard(Owner, 3);
+            foreach (var item in cards)
+            {
+                item.data.ActionPoint = 0;
+            }
         }
     }
 }

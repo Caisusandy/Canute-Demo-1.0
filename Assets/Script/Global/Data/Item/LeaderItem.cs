@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Canute
 {
     [Serializable]
-    public class LeaderItem : Item, IPrototypeCopy<Leader>, ICareerLabled, IBattleBounesItem
+    public class LeaderItem : Item, IPrototypeCopy<Leader>, ICareerLabled, IBattleBonusItem
     {
         public override Prototype Proto => Prototype;
         public override int Level => GetLevel(100, 1.1f, Exp);
@@ -31,7 +31,7 @@ namespace Canute
 namespace Canute.BattleSystem
 {
     [Serializable]
-    public class BattleLeader : OnMapEntityData, IEquatable<BattleLeader>, ICareerLabled, IBattleBounesItem
+    public class BattleLeader : OnMapEntityData, IEquatable<BattleLeader>, ICareerLabled, IBattleBonusItem
     {
         [SerializeField] protected Career career;
         [SerializeField] protected UUID leadingArmyUUID;

@@ -43,14 +43,11 @@ namespace Canute.UI.Legion
 
         public void SelectArmy(int id)
         {
+            Debug.Log("Selected");
             ArmyItem armyItem = Legion.Armies[id];
-
             LSSingleArmyPanel.instance.Display(armyItem);
             LSSingleArmyPanel.instance.selectingArmyCard = armyCards[id].GetComponent<ArmyCardUI>();
-            if (!armyItem)
-            {
-                LSSingleArmyPanel.instance.ChangeArmy();
-            }
+            if (!armyItem) { LSSingleArmyPanel.instance.ChangeArmy(); }
         }
 
         public void ReloadLegion()

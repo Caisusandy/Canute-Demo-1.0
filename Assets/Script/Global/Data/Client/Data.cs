@@ -1,5 +1,5 @@
 ﻿using Canute.BattleSystem;
-using Canute.ExplorationSystem;
+using Canute.SupplyTeam;
 using Canute.Shops;
 using System;
 using System.Collections.Generic;
@@ -62,7 +62,7 @@ namespace Canute
                         break;
                     }
                     else return false;
-                case Currency.Type.Aethium:
+                case Currency.Type.aethium:
                     if (Aethium >= amount)
                     {
                         Aethium -= amount;
@@ -113,7 +113,7 @@ namespace Canute
                     case Currency.Type.mantleAlloy:
                         manpower += amount;
                         break;
-                    case Currency.Type.Aethium:
+                    case Currency.Type.aethium:
                         Aethium += amount;
                         break;
                     default:
@@ -151,7 +151,7 @@ namespace Canute
                 case Currency.Type.mantleAlloy:
                     MantleAlloy += amount;
                     break;
-                case Currency.Type.Aethium:
+                case Currency.Type.aethium:
                     Aethium += amount;
                     break;
             }
@@ -164,7 +164,7 @@ namespace Canute
         // ......
         [Header("Exca Team")]
         [SerializeField] private ExplorationTeam excaTeam;
-        public ExplorationTeam ExplorationTeam { get => excaTeam; set => excaTeam = value; }
+        public ExplorationTeam SupplyTeam { get => excaTeam; set => excaTeam = value; }
         [Header("Legion Sets")]
         [SerializeField] private List<Legion> legions = new List<Legion>(3);
         [SerializeField] private List<EventCardPile> eventCardPiles = new List<EventCardPile>(3);
@@ -183,12 +183,12 @@ namespace Canute
         [SerializeField] protected ItemList countableItems = new ItemList();
 
 
-        public List<ArmyItem> Armies { get => armies; set => armies = value; }
-        public List<LeaderItem> Leaders { get => leaders; set => leaders = value; }
-        public List<EquipmentItem> Equipments { get => equipments; set => equipments = value; }
-        public List<EventCardItem> EventCards { get => eventCards; set => eventCards = value; }
-        public List<string> CollectionStoriesID { get => collectionStoriesID; set => collectionStoriesID = value; }
-        public List<string> CollectionLetterID { get => collectionLetterID; set => collectionLetterID = value; }
+        public List<ArmyItem> Armies { get => armies.ShallowClone(); }
+        public List<LeaderItem> Leaders { get => leaders.ShallowClone(); }
+        public List<EquipmentItem> Equipments { get => equipments.ShallowClone(); }
+        public List<EventCardItem> EventCards { get => eventCards.ShallowClone(); }
+        public List<string> CollectionStoriesID { get => collectionStoriesID.ShallowClone(); set => collectionStoriesID = value; }
+        public List<string> CollectionLetterID { get => collectionLetterID.ShallowClone(); set => collectionLetterID = value; }
         public ItemList CountableItems { get => countableItems; set => countableItems = value; }
 
         #endregion
@@ -408,7 +408,8 @@ namespace Canute
                 Statistic.ArmiesUnlocked.Add(item.Name);
             }
 
-            Armies.Add(item);
+            armies.Add(item);
+            PlayerFile.SaveCurrentData();
         }
 
         public void AddLeaderItem(LeaderItem item)
@@ -417,10 +418,11 @@ namespace Canute
             {
                 Statistic.LeadersUnlocked.Add(item.Name);
             }
-            Leaders.Add(item);
+            leaders.Add(item);
+            PlayerFile.SaveCurrentData();
         }
 
-        public void AddEquipment(EquipmentItem item)
+        public void AddEquipmentItem(EquipmentItem item)
         {
             if (!Statistic.EquipmentsUnlocked.Contains(item.Name))
             {
@@ -431,9 +433,22 @@ namespace Canute
                 Statistic.EquipmentsUnlocked.Add(item.Name);
             }
 
-            Equipments.Add(item);
+            equipments.Add(item);
+            PlayerFile.SaveCurrentData();
         }
 
+        public void AddCollectionStory(string name)
+        {
+            if (!collectionStoriesID.Contains(name))
+                collectionStoriesID.Add(name);
+            PlayerFile.SaveCurrentData();
+        }
+        public void AddCollectionLetter(string name)
+        {
+            if (!collectionLetterID.Contains(name))
+                collectionLetterID.Add(name);
+            PlayerFile.SaveCurrentData();
+        }
         #endregion
 
         public void ClearInvalidInfo()

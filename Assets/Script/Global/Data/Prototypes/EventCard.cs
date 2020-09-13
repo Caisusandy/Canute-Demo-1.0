@@ -14,6 +14,7 @@ namespace Canute.BattleSystem
             dragon,
         }
 
+        [SerializeField] protected GameObject prefab;
         [SerializeField] protected int count;
         [SerializeField] protected Type cardType;
         [SerializeField] protected Career career;
@@ -22,7 +23,7 @@ namespace Canute.BattleSystem
         public int Count => count;
         public Effect Effect => EventCardProperty[0].Effect;
         public EventCardPropertyList EventCardProperty => eventCardProperty;
-        public override GameObject Prefab => prefab ?? GameData.Prefabs.NormalEventCard;
+        public GameObject Prefab => prefab ?? GameData.Prefabs.NormalEventCard;
         public Type CardType { get => cardType; set => cardType = value; }
         public Career Career { get => career; set => career = value; }
     }

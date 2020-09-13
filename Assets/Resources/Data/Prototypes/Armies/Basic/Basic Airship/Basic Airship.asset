@@ -38,45 +38,7 @@ MonoBehaviour:
       targetCount: 1
       attackType: 6
       skill:
-        specialName: 
-        count: 0
-        parameter: 0
-        args:
-          args: []
-      addition:
-        args: []
-    - defense: 13.215859030837
-      critRate: 20
-      critBounes: 50
-      pop: 25
-      attackRange: 1
-      moveRange: 5
-      standPosition: 2
-      attackPosition: 1
-      attackArea: 1
-      targetCount: 1
-      attackType: 6
-      skill:
-        specialName: 
-        count: 0
-        parameter: 0
-        args:
-          args: []
-      addition:
-        args: []
-    - defense: 13.215859030837
-      critRate: 20
-      critBounes: 50
-      pop: 25
-      attackRange: 1
-      moveRange: 5
-      standPosition: 2
-      attackPosition: 1
-      attackArea: 1
-      targetCount: 1
-      attackType: 6
-      skill:
-        specialName: 
+        specialName: NoSkill
         count: 0
         parameter: 0
         args:

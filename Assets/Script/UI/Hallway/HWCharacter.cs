@@ -50,7 +50,7 @@ namespace Canute.UI.Hallway
             talk = Instantiate(talkPrefab, transform);
             time = 0;
             talk.SetActive(true);
-            string wordLine = character.RandomWordLine;
+            string wordLine = character.GetRandomWordLine();
             Debug.Log(wordLine.Length);
             for (int i = 0, j = 0; i < wordLine.Length; i++, j++)
             {

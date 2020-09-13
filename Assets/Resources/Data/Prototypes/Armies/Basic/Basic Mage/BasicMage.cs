@@ -15,26 +15,11 @@ namespace Canute.BattleSystem.Armies
 
         public override float WinningDuration => 2;
 
-        public override float HurtDuration => 2;
-
         public override void SkillExecute(Effect effect)
         {
-            List<Entity> targets = new List<Entity>();
-            int y = this.y;
-
-            foreach (var item in Game.CurrentBattle.MapEntity[y])
-            {
-                if (item.HasArmyStandOn)
-                {
-                    if (CanAttack(item.HasArmyStandOn))
-                    {
-                        targets.Add(item.HasArmyStandOn);
-                    }
-
-                }
-            }
-            Effect attack = new Effect(Effect.Types.attack, this, targets, 1, data.GetDamage(), data.SkillPack.Args.ToArray());
-            attack.Execute();
+            var target = ArmyAttack.GetClosestTarget(this);
+            var status = new Status(new Effect(Effect.Types.@event, this, target.entity, effect.Count, (int)(data.RawDamage * 0.4), Effect.name + ":" + EventName.magePoison), 0, 3, Status.StatType.turnBase, true, TriggerCondition.OnTurnBegin);
+            target.StatList.Add(status);
         }
 
 

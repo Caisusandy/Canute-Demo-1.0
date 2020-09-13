@@ -24,3 +24,4 @@ MonoBehaviour:
   letter:
     list:
     - {fileID: 11400000, guid: 2bb3b7650318a0545a1db1b9b009a8f5, type: 2}
+    - {fileID: 11400000, guid: a1c460972e22b5040bbbea067a04294c, type: 2}

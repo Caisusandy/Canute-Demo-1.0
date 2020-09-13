@@ -45,7 +45,7 @@ namespace Canute.BattleSystem
             this.Damage(damage, damageSource);
 
             InPerformingAnimation();
-            Animator.SetBool(isDefencing, true);
+            Animator.SetBool(isDefensing, true);
 
             Action(new EntityEventPack(IdleDelay, HurtDuration), new EntityEventPack(data.CheckPotentialAction, damageSource));
             Debug.Log(Data.ToString() + " Hurt");

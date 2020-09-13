@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Canute.BattleSystem
 {
     [Serializable]
-    public struct PropertyBonus
+    public struct PropertyBonus : IComparable<PropertyBonus>
     {
         [SerializeField] private PropertyType type;
         [SerializeField] private BonusType bounesType;
@@ -75,6 +75,19 @@ namespace Canute.BattleSystem
         {
             @base = @base.RemoveBonus(GetValue(level), BonusType);
         }
+
+        public int CompareTo(PropertyBonus other)
+        {
+            if (other.BonusType == BonusType)
+            {
+                return other.GetValue(1) - GetValue(1);
+            }
+            else if (BonusType == BonusType.additive)
+            {
+                return -1;
+            }
+            return 1;
+        }
     }
 
     [Flags]
@@ -89,7 +102,7 @@ namespace Canute.BattleSystem
         attackRange = 16,
 
         critRate = 32,
-        critBounes = 64,
+        critBonus = 64,
 
         pop = 128,
         armor = 256,

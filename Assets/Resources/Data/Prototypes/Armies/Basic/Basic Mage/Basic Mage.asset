@@ -38,7 +38,7 @@ MonoBehaviour:
       targetCount: 1
       attackType: 18
       skill:
-        specialName: attackRange
+        specialName: BasicMageSkill
         count: 1
         parameter: 3
         args:
@@ -57,7 +57,7 @@ MonoBehaviour:
       targetCount: 1
       attackType: 18
       skill:
-        specialName: attackRange
+        specialName: BasicMageSkill
         count: 1
         parameter: 3
         args:
@@ -76,7 +76,7 @@ MonoBehaviour:
       targetCount: 1
       attackType: 18
       skill:
-        specialName: attackRange
+        specialName: BasicMageSkill
         count: 1
         parameter: 3
         args:

@@ -9,7 +9,7 @@ namespace Canute.Shops
         {
             fedgram,
             manpower,
-            Aethium,
+            aethium,
             mantleAlloy,
         }
 

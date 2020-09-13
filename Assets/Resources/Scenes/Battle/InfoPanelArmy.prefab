@@ -518,73 +518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: {fileID: 0}
-  armyItem:
-    protoName: 
-    uuid:
-      value: 0e0dcd86-3334-4d89-879b-f8eaf8c31afe
-    exp: 0
-    floatExp: 0
-    star: 1
-    LeaderName: 
-    equipments:
-      equipmentUUID: []
-      equipmentLimit: 
-  battleArmy:
-    name: 
-    prefab: {fileID: 0}
-    uuid:
-      value: ab6072d9-dd7b-4ff4-a031-5a6ed692546d
-    ownerUUID:
-      value: 
-    allowMove: 1
-    coordinate: {x: 0, y: 0}
-    stats:
-      list: []
-    localLeader:
-      name: 
-      prefab: {fileID: 0}
-      uuid:
-        value: f66ea988-a596-4662-9324-a67c3bc0e55c
-      ownerUUID:
-        value: 
-      allowMove: 0
-      coordinate: {x: 0, y: 0}
-      stats:
-        list: []
-      career: 0
-      leadingArmyUUID:
-        value: 
-      isViceCommander: 0
-      level: 0
-      bounes: []
-    autonomousType: 0
-    anger: 0
-    career: 0
-    properties:
-      defense: 0
-      critRate: 0
-      critBounes: 0
-      pop: 0
-      attackRange: 0
-      moveRange: 0
-      standPosition: 0
-      attackPosition: 0
-      attackArea: 0
-      targetCount: 0
-      attackType: 0
-      skill:
-        specialName: 
-        count: 0
-        parameter: 0
-        args:
-          args: []
-      addition:
-        args: []
-    maxHealth: 0
-    health: 0
-    armor: 0
-    damage: 0
-    type: 0
 --- !u!1 &2022139289453848565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,73 +1001,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: {fileID: 0}
-  armyItem:
-    protoName: 
-    uuid:
-      value: 36c28ad0-f9b1-4129-8f93-153cf3931168
-    exp: 0
-    floatExp: 0
-    star: 1
-    LeaderName: 
-    equipments:
-      equipmentUUID: []
-      equipmentLimit: 
-  battleArmy:
-    name: 
-    prefab: {fileID: 0}
-    uuid:
-      value: cc886fd1-3d27-4f62-ac38-46ed069eaa53
-    ownerUUID:
-      value: 
-    allowMove: 1
-    coordinate: {x: 0, y: 0}
-    stats:
-      list: []
-    localLeader:
-      name: 
-      prefab: {fileID: 0}
-      uuid:
-        value: 05364e5f-19ba-49e8-b50c-0e81018f20a6
-      ownerUUID:
-        value: 
-      allowMove: 0
-      coordinate: {x: 0, y: 0}
-      stats:
-        list: []
-      career: 0
-      leadingArmyUUID:
-        value: 
-      isViceCommander: 0
-      level: 0
-      bounes: []
-    autonomousType: 0
-    anger: 0
-    career: 0
-    properties:
-      defense: 0
-      critRate: 0
-      critBounes: 0
-      pop: 0
-      attackRange: 0
-      moveRange: 0
-      standPosition: 0
-      attackPosition: 0
-      attackArea: 0
-      targetCount: 0
-      attackType: 0
-      skill:
-        specialName: 
-        count: 0
-        parameter: 0
-        args:
-          args: []
-      addition:
-        args: []
-    maxHealth: 0
-    health: 0
-    armor: 0
-    damage: 0
-    type: 0
 --- !u!1 &5060329815677018886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,7 +1862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 125, y: 0}
   m_SizeDelta: {x: 250, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &5487497188449287523

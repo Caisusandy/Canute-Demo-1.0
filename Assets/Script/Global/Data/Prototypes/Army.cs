@@ -28,6 +28,8 @@ namespace Canute
             scout,
         }
 
+        [SerializeField] protected Sprite portrait;
+        [SerializeField] protected GameObject prefab;
         [SerializeField] private double health;
         [SerializeField] private double damage;
         [SerializeField] private Types type;
@@ -64,7 +66,8 @@ namespace Canute
         public Types Type => type;
         public Career Career => career;
         public List<BattleProperty> Properties => properties;
-        public override GameObject Prefab => prefab ?? GameData.Prefabs.DefaultArmy;
+        public GameObject Prefab => prefab ?? GameData.Prefabs.DefaultArmy;
+        public Sprite Portrait => Game.Configuration.UseCustomDefaultPrototype && !icon ? GameData.Prototypes.GetArmyPrototype(name)?.portrait : portrait;
     }
 }
 

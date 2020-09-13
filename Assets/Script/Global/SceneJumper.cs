@@ -108,7 +108,7 @@ namespace Canute
 
         public void LoadTip()
         {
-            int tipCount = 10;
+            int tipCount = 17;
             tip.text = ("Canute.Tips." + UnityEngine.Random.Range(0, tipCount)).Lang();
         }
 

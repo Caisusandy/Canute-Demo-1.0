@@ -44,6 +44,19 @@ namespace Canute.BattleSystem
             return GetRealDistanceOf(OnCellOf, destination, movingEntity);
         }
 
+        public virtual void FaceTo(OnMapEntity onMapEntity)
+        {
+            var a = onMapEntity.transform.position - transform.position;
+            FaceTo(a.x > 0);
+        }
+
+        public virtual void FaceTo(bool isToRight)
+        {
+            var scale = transform.localScale;
+            scale.x = isToRight ? 1 : -1;
+            transform.localScale = scale;
+        }
+
         public override void Select()
         {
             SelectingEntity.Exist()?.Unselect();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using Canute.Module;
 using UnityEngine;
@@ -32,7 +33,12 @@ namespace Canute.BattleSystem
         [SerializeField] private EventCardPrototypeContainer defaultEventCard;
         [SerializeField] private EquipmentPrototypeContainer defaultEquipment;
         [SerializeField] private LeaderPrototypeContainer defaultLeader;
+        [SerializeField] private CharacterContainer defaultCharacter;
 
+
+        public void OnEnable()
+        {
+        }
 
         public Prototype GetPrototype(string name)
         {
@@ -170,7 +176,7 @@ namespace Canute.BattleSystem
 
         public Character GetCharacter(string name)
         {
-            return characterList.Get(name).Exist()?.character;
+            return characterList.Get(name).Exist()?.character ?? defaultCharacter.character;
         }
 
         public void Add<T1, T2>(T1 item, bool isMainPrototype = false) where T1 : PrototypeContainer<T2> where T2 : Prototype

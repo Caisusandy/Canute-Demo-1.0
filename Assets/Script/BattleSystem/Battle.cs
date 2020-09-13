@@ -491,30 +491,35 @@ namespace Canute.BattleSystem
         /// <summary> 获取手牌 </summary>
         /// <param name="player"></param>
         /// <param name="count"></param>
-        public void GetHandCard(Player player, int count)
+        public List<CardEntity> GetHandCard(Player player, int count)
         {
+            List<CardEntity> ret = new List<CardEntity>();
             Debug.Log(player.Name + ", " + count);
             for (int i = 0; i < count; i++)
             {
                 Card card = centralDeck.DrawCard();
                 card.Owner = player;
-                CardEntity.Create(card);
+                ret.Add(CardEntity.Create(card));
             }
             Debug.Log(player.HandCard.Count);
+            return ret;
         }
 
-        public void GetHandCard(Player player, Effect.Types types, int count)
+        public List<CardEntity> GetHandCard(Player player, Effect.Types types, int count)
         {
+            List<CardEntity> ret = new List<CardEntity>();
             Debug.Log(player.Name + ", " + count);
 
             for (int i = 0; i < count; i++)
             {
                 Card card = centralDeck.DrawCard(types);
                 card.Owner = player;
-                CardEntity.Create(card);
+                ret.Add(CardEntity.Create(card));
+
             }
 
             Debug.Log(player.HandCard.Count);
+            return ret;
         }
 
 

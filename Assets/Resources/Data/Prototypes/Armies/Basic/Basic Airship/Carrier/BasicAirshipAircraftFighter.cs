@@ -16,7 +16,6 @@ namespace Canute.BattleSystem.Armies
 
         public override float WinningDuration => 2;
 
-        public override float HurtDuration => 2;
 
         public override void Start()
         {

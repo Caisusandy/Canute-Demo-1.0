@@ -132,7 +132,7 @@ namespace Canute.UI
 
         public void ArrangeByCritBonus()
         {
-            listType = PropertyType.critBounes;
+            listType = PropertyType.critBonus;
             ArmyArrangement = ArmyArrangements.ByCritBonus;
             DisplayArmyList();
         }
@@ -178,7 +178,7 @@ namespace Canute.UI
                         //Debug.Log(item.CritRate);
                         label.text.text = item.Properties.CritRate + "%";
                         break;
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         label.text.text = item.Properties.CritBonus + "%";
                         break;
                     case PropertyType.pop:

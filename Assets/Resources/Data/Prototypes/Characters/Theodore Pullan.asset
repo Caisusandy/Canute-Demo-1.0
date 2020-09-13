@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character:
     name: Theodore Pullan
-    wordLineCount: 3
+    wordLineCount: 5
     icon: {fileID: 0}
     portrait: {fileID: 0}

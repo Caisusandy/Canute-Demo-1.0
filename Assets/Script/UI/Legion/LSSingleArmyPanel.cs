@@ -44,9 +44,8 @@ namespace Canute.UI
         public Image career;
         public Image leaderIcon;
 
-        public Image equipmentSlot1;
-        public Image equipmentSlot2;
-        public Image equipmentSlot3;
+        [Header("Equipment")]
+        public List<EquipmentUI> equipmentSlot;
 
         public ArmyTypeIcon armyTypeIcon;
         public AttackTypeIcon attackTypeIcon;
@@ -88,9 +87,9 @@ namespace Canute.UI
             attackPostion.SetArmyItem(armyItem);
 
 
-            damage.text = "A: " + armyItem.RawDamage.ToString();
-            health.text = "H: " + armyItem.MaxHealth.ToString();
-            defense.text = "D: " + armyItem.Defense.ToString();
+            damage.text = "A: " + armyItem.DamageForDisplay.ToString();
+            health.text = "H: " + armyItem.MaxHealthForDisplay.ToString();
+            defense.text = "D: " + armyItem.DefenseForDisplay.ToString();
 
             if (armyItem.HasLeader)
             {
@@ -106,18 +105,25 @@ namespace Canute.UI
 
             Debug.Log(armyItem.Equipments);
 
-            if (armyItem.Equipments[0])
-                equipmentSlot1.sprite = armyItem.Equipments[0].Icon;
-            if (armyItem.Equipments[1])
-                equipmentSlot2.sprite = armyItem.Equipments[1].Icon;
-            if (armyItem.Equipments[2])
-                equipmentSlot3.sprite = armyItem.Equipments[2].Icon;
+            for (int i = 0; i < 3; i++)
+            {
+                if (armyItem.Equipments[i])
+                {
+                    equipmentSlot[i].Display(armyItem.Equipments[i]);
+                    equipmentSlot[i].icon.gameObject.SetActive(true);
+                }
+                else
+                {
+                    equipmentSlot[i].icon.gameObject.SetActive(false);
+                    equipmentSlot[i].Display(null);
+                }
+            }
 
 
-            moveRange.text = armyItem.Properties.MoveRange.ToString();
-            attackRange.text = armyItem.Properties.AttackRange.ToString();
-            critBounes.text = armyItem.Properties.CritBonus.ToString() + "%";
-            critRate.text = armyItem.Properties.CritRate.ToString() + "%";
+            moveRange.text = armyItem.PropertiesAfterEquipment.MoveRange.ToString();
+            attackRange.text = armyItem.PropertiesAfterEquipment.AttackRange.ToString();
+            critBounes.text = armyItem.PropertiesAfterEquipment.CritBonus.ToString() + "%";
+            critRate.text = armyItem.PropertiesAfterEquipment.CritRate.ToString() + "%";
             star.text = armyItem.Star.ToString();
 
             career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, armyItem.Career.ToString());
@@ -126,6 +132,9 @@ namespace Canute.UI
         public void ClearDisplay()
         {
             transform.GetChild(0).gameObject.SetActive(false);
+
+            #region old
+
             //armyCardUI.Display(ArmyItem.Empty);
             //armyTypeIcon.SetArmyItem(ArmyItem.Empty);
             //attackTypeIcon.SetArmyItem(ArmyItem.Empty);
@@ -150,6 +159,7 @@ namespace Canute.UI
 
             //career.sprite = null;
             //leaderName.text = "";
+            #endregion
         }
 
         public void ChangeArmy()
@@ -189,28 +199,31 @@ namespace Canute.UI
 
         public void ChangeEquipment(int id)
         {
-            EquipmentListUI.currentListType = EquipmentListUI.ListType.free;
             EquipmentListUI.OpenEquipmentList();
+            EquipmentListUI.currentListType = EquipmentListUI.ListType.strict;
+            EquipmentListUI.currentArmy = selectingArmyCard.displayingArmy;
+            EquipmentListUI.changingEquipment = selectingArmyCard.displayingArmy.Equipments[id];
             EquipmentListUI.SelectEvent += Change;
-
+            Debug.Log(EquipmentListUI.changingEquipment);
             void Change(EquipmentItem item)
             {
-                Debug.Log(item);
-                Debug.Log(item.Name);
-                Debug.Log(item.EquipmentUsage);
-                Debug.Log(SelectingArmy);
-                if (!item.EquipmentUsage.Contains(SelectingArmy.Type))
+                //Debug.Log(item);
+                //Debug.Log(item.Name);
+                //Debug.Log(item.EquipmentUsage);
+                //Debug.Log(SelectingArmy);
+                if (!item.CanUseBy(SelectingArmy.Prototype))
                 {
-                    Debug.Log("Change Equipment (not)");
+                    Debug.Log("Army can't use");
+                    return;
                 }
 
                 Debug.Log("Change Equipment");
                 EquipmentListUI.CloseEquipmentList();
                 EquipmentListUI.SelectEvent -= Change;
 
-                SelectingArmy.Equipments[id] = item;
+                SelectingArmy.Equipments[id] = selectingArmyCard.displayingArmy.Equipments[id] == item ? null : item;
                 PlayerFile.SaveCurrentData();
-                LSLegionDisplay.instance.ReloadLegion();
+                Display(SelectingArmy);
             }
         }
 

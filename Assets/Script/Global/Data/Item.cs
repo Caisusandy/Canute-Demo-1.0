@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Canute
 {
     [Serializable]
-    public abstract class Item : INameable, IUUIDLabeled, IPrototypeCopy, IRarityLabled
+    public abstract class Item : INameable, IUUIDLabeled, IPrototypeCopy, IRarityLabled, IComparable<Item>
     {
         public enum Type
         {
@@ -19,6 +19,7 @@ namespace Canute
             story,
             currency,
             exp,
+            letter
         }
 
         [SerializeField] protected string protoName;
@@ -37,8 +38,6 @@ namespace Canute
         public Rarity Rarity => GetRarity();
         /// <summary> item's icon </summary>
         public Sprite Icon => GetIcon();
-        /// <summary> item's portrait </summary>
-        public Sprite Portrait => GetPortrait();
         protected bool HasPrototype => !(Proto is null);
 
         /// <summary> actually I don't know what is this </summary>
@@ -63,10 +62,6 @@ namespace Canute
             return Proto.Icon;
         }
 
-        protected virtual Sprite GetPortrait()
-        {
-            return HasPrototype ? Proto.Portrait : GameData.SpriteLoader.Get(SpriteAtlases.armyPortrait, protoName);
-        }
 
 
         [Temporary]
@@ -168,6 +163,11 @@ namespace Canute
         public virtual void AddExp(int exp)
         {
             this.exp += exp;
+        }
+
+        public virtual int CompareTo(Item other)
+        {
+            return Rarity - other.Rarity;
         }
     }
 

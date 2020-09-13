@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Canute.BattleSystem;
 using UnityEngine.SceneManagement;
-using static Canute.Equipment;
+using System.Linq;
+using UnityEngine.UI;
 
 namespace Canute.UI
 {
@@ -12,55 +13,47 @@ namespace Canute.UI
 
     public class EquipmentListUI : MonoBehaviour
     {
+        /// <summary>
+        /// mark for either list shows all equipment or only the free one that is not used by any army
+        /// </summary>
         [Flags]
         public enum ListType
         {
-            all,
-            free,
-            limited,
+            strict,
+            equiped,
+            notLimited,
+            equipedAndNotLimited,
         }
 
         public static EquipmentListUI instance;
         public static EquipmentSelection SelectEvent;
         public static EquipmentArrangement EquipmentArrangement;
 
-        public static ListType currentListType = ListType.all;
-        public static Army.Types listLimitUsage = Army.Types.none;
+        public static ListType currentListType = ListType.strict;
+        public static List<Army.Types> listLimitUsage = new List<Army.Types>();
         public static PropertyType arrangementType = PropertyType.none;
         public static bool reverseArrangement;
-        public static object currentSortTypeParam;
         public static List<EquipmentItem> currentDisplayingEquipment;
+        public static ArmyItem currentArmy;
+        public static EquipmentItem changingEquipment;
 
-        public static List<EquipmentItem> GetPlayerArmiesDisplayed()
-        {
-            List<EquipmentItem> equipments = Game.PlayerData.Equipments;
 
-            if (currentListType == ListType.all)
-            {
-                equipments = Game.PlayerData.Equipments;
-            }
-            if (currentListType == ListType.all)
-            {
-                equipments = GetFreeEquipment(equipments);
-            }
-            if (currentListType == ListType.all)
-            {
-                equipments = GetLimitedEquipment(equipments);
-            }
-            return equipments;
-
-        }
-
+        public Toggle showUsedEquipment;
+        public Toggle showNotAllowedEquipment;
+        public GameObject armyTypeSelectionBar;
         public GameObject equipmentPrefab;
+        public GameObject firstEquipmentPrefab;
         public GameObject scroll;
-
         public List<EquipmentUI> equipments;
+
 
         // Use this for initialization
         public void Awake()
         {
+            showUsedEquipment.isOn = currentListType.HasFlag(ListType.equiped);
+            showNotAllowedEquipment.isOn = currentListType.HasFlag(ListType.notLimited);
             EquipmentArrangement = EquipmentArrangements.ByLevel;
-            currentDisplayingEquipment = GetPlayerArmiesDisplayed();
+            currentDisplayingEquipment = GetPlayerEquipmentDisplayed();
             instance = this;
         }
 
@@ -72,7 +65,8 @@ namespace Canute.UI
 
         void Start()
         {
-            DisplayArmyList();
+            if (currentArmy) armyTypeSelectionBar.SetActive(false);
+            DisplayEquipmentList();
         }
 
         // Update is called once per frame
@@ -87,43 +81,96 @@ namespace Canute.UI
         {
             arrangementType = PropertyType.none;
             EquipmentArrangement = EquipmentArrangements.ByLevel;
-            DisplayArmyList();
+            DisplayEquipmentList();
         }
 
         public void ArrangeByDamage()
         {
             arrangementType = PropertyType.damage;
             EquipmentArrangement = EquipmentArrangements.ByDamage;
-            DisplayArmyList();
+            DisplayEquipmentList();
         }
 
         public void ArrangeByHealth()
         {
             arrangementType = PropertyType.health;
             EquipmentArrangement = EquipmentArrangements.ByHealth;
-            DisplayArmyList();
+            DisplayEquipmentList();
         }
 
         public void ArrangeByDefense()
         {
             arrangementType = PropertyType.defense;
             EquipmentArrangement = EquipmentArrangements.ByDefense;
-            DisplayArmyList();
+            DisplayEquipmentList();
+        }
+
+
+        public void ArrangeByMoveRange()
+        {
+            arrangementType = PropertyType.moveRange;
+            EquipmentArrangement = EquipmentArrangements.ByMoveRange;
+            DisplayEquipmentList();
+        }
+
+        public void ArrangeByAttackRange()
+        {
+            arrangementType = PropertyType.attackRange;
+            EquipmentArrangement = EquipmentArrangements.ByAttackRange;
+            DisplayEquipmentList();
+        }
+
+        public void ArrangeByCritRate()
+        {
+            arrangementType = PropertyType.critRate;
+            EquipmentArrangement = EquipmentArrangements.ByCritRate;
+            DisplayEquipmentList();
+        }
+
+        public void ArrangeByCritBonus()
+        {
+            arrangementType = PropertyType.critBonus;
+            EquipmentArrangement = EquipmentArrangements.ByCritBonus;
+            DisplayEquipmentList();
+        }
+
+        public void ArrangeByPop()
+        {
+            arrangementType = PropertyType.pop;
+            EquipmentArrangement = EquipmentArrangements.ByPopulation;
+            DisplayEquipmentList();
         }
 
         #endregion
 
         public void ShowEquipment(List<EquipmentItem> equipmentItems)
         {
+            Debug.Log(currentListType);
+            if (equipmentItems == null)
+            {
+                return;
+            }
+
+            if (changingEquipment)
+            {
+                CreateFisrt(changingEquipment);
+            }
+
             foreach (var item in equipmentItems)
             {
-                GameObject gameObject = Instantiate(equipmentPrefab, scroll.transform);
-                EquipmentUI equipmentUI = gameObject.GetComponent<EquipmentUI>();
-                equipments.Add(equipmentUI);
-                equipmentUI.transform.localScale = Vector3.one;
-                equipmentUI.Display(item);
-                Label label = Instantiate(GameData.Prefabs.Get("label"), equipmentUI.transform).GetComponent<Label>();
-                label.image.color = new Color(0, 0, 0, 0);
+                EquipmentUI equipmentUI = CreateEquipmentUI(item);
+
+                if (!equipmentUI.displayingEquipment.CanUseBy(currentArmy?.Prototype) && currentArmy)
+                {
+                    equipmentUI.GetComponent<Button>().interactable = false;
+                }
+
+                if (equipmentUI.displayingEquipment.IsUsed && currentArmy)
+                {
+                    equipmentUI.GetComponent<Button>().interactable = false;
+                }
+
+
                 switch (arrangementType)
                 {
                     case PropertyType.damage:
@@ -141,7 +188,7 @@ namespace Canute.UI
                         break;
                     case PropertyType.critRate:
                         break;
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         break;
                     case PropertyType.pop:
                         break;
@@ -151,30 +198,106 @@ namespace Canute.UI
             }
         }
 
+        private EquipmentUI CreateEquipmentUI(EquipmentItem item)
+        {
+            var equipmentUI = Instantiate(equipmentPrefab, scroll.transform).GetComponent<EquipmentUI>();
+            equipmentUI.Display(item);
+            equipmentUI.transform.localScale = Vector3.one;
+
+            equipments.Add(equipmentUI);
+
+            Label label = Instantiate(GameData.Prefabs.Get("label"), equipmentUI.transform).GetComponent<Label>();
+            label.image.color = new Color(0, 0, 0, 0);
+
+            return equipmentUI;
+        }
+        private EquipmentUI CreateFisrt(EquipmentItem item)
+        {
+            var equipmentUI = Instantiate(firstEquipmentPrefab, scroll.transform).GetComponent<EquipmentUI>();
+            equipmentUI.Display(item);
+            equipmentUI.transform.localScale = Vector3.one;
+
+            equipments.Add(equipmentUI);
+
+            Label label = Instantiate(GameData.Prefabs.Get("label"), equipmentUI.transform).GetComponent<Label>();
+            label.image.color = new Color(0, 0, 0, 0);
+
+            return equipmentUI;
+        }
 
         public void FilterByArmyType(int armyType)
         {
-            if (currentListType.HasFlag(ListType.limited))
+            if (currentListType.HasFlag(ListType.notLimited))
             {
-                currentDisplayingEquipment = GetPlayerArmiesDisplayed();
-                currentListType -= ListType.limited;
+                currentDisplayingEquipment = GetPlayerEquipmentDisplayed();
+                currentListType -= ListType.notLimited;
             }
             else
             {
                 Army.Types param = (Army.Types)Enum.Parse(typeof(Army.Types), armyType.ToString());
-                currentListType |= ListType.limited;
-                listLimitUsage = param;
-                currentDisplayingEquipment = GetPlayerArmiesDisplayed();
+                currentListType |= ListType.notLimited;
+                if (!listLimitUsage.Contains(param)) listLimitUsage.Add(param);
+                else listLimitUsage.Remove(param);
+
+                currentDisplayingEquipment = GetPlayerEquipmentDisplayed();
             }
-            DisplayArmyList();
+            DisplayEquipmentList();
         }
 
-
-        public void DisplayArmyList()
+        public void ShowArmyUsedEquipment(bool show)
         {
-            ClearArmy();
-            List<EquipmentItem> equipmentItems = EquipmentArrangement?.Invoke(currentDisplayingEquipment);
-            equipmentItems = equipmentItems ?? GetPlayerArmiesDisplayed();
+            if (show)
+                currentListType |= ListType.equiped;
+            else
+                currentListType &= ~ListType.equiped;
+
+            DisplayEquipmentList();
+        }
+
+        public void ShowArmyNotAllowedEquipment(bool show)
+        {
+            if (show)
+                currentListType |= ListType.notLimited;
+            else
+                currentListType &= ~ListType.notLimited;
+
+            DisplayEquipmentList();
+        }
+
+        public static List<EquipmentItem> GetPlayerEquipmentDisplayed()
+        {
+            List<EquipmentItem> equipments = Game.PlayerData.Equipments;
+            equipments.Sort();
+
+            Debug.Log(equipments.Count);
+            Debug.Log(currentArmy);
+
+
+            if (changingEquipment)
+            {
+                equipments.Remove(changingEquipment);
+            }
+            if (currentArmy)
+            {
+                equipments.RemoveAll((e) => currentArmy.Equipments.Contains(e));
+            }
+            if (!currentListType.HasFlag(ListType.equiped))
+            {
+                equipments = RemoveEquiped(equipments);
+            }
+            if (!currentListType.HasFlag(ListType.notLimited))
+            {
+                equipments = RemoveUnmatched(equipments);
+            }
+
+            return equipments;
+
+        }
+
+        public void DisplayEquipmentList()
+        {
+            ClearList();
+            List<EquipmentItem> equipmentItems = EquipmentArrangement?.Invoke(GetPlayerEquipmentDisplayed());
             if (reverseArrangement)
             {
                 equipmentItems.Reverse();
@@ -182,12 +305,13 @@ namespace Canute.UI
             ShowEquipment(equipmentItems);
         }
 
-        public void ClearArmy()
+        public void ClearList()
         {
-            foreach (Transform item in scroll.transform)
+            foreach (var item in equipments)
             {
                 Destroy(item.gameObject);
             }
+            equipments.Clear();
         }
 
         public void BackToLastScene()
@@ -205,11 +329,68 @@ namespace Canute.UI
         public void ReverseArrangement()
         {
             reverseArrangement = !reverseArrangement;
-            DisplayArmyList();
+            DisplayEquipmentList();
+        }
+
+        /// <summary>
+        /// Get all the free equipment
+        /// </summary>
+        /// <param name="equipments"></param>
+        /// <returns></returns>
+        public static List<EquipmentItem> RemoveEquiped(List<EquipmentItem> equipments)
+        {
+            return equipments.Where((e) => !e.IsUsed).ToList();
+        }
+
+        /// <summary>
+        /// Get all valid equipment for the limiting army type
+        /// </summary>
+        /// <param name="equipments"></param>
+        /// <returns></returns>
+        public static List<EquipmentItem> RemoveUnmatched(List<EquipmentItem> equipments)
+        {
+            var listLimitUsage = EquipmentListUI.listLimitUsage.ShallowClone();
+
+            if (currentArmy)
+            {
+                listLimitUsage.Add(currentArmy.Type);
+            }
+            if (listLimitUsage.Count == 0)
+            {
+                return equipments;
+            }
+
+            for (int i = equipments.Count - 1; i >= 0; i--)
+            {
+                EquipmentItem item = equipments[i];
+                bool remove = true;
+                foreach (var usage in item.EquipmentUsage)
+                {
+                    if (listLimitUsage.Contains(usage)) { remove = false; }
+                }
+                if (remove) { equipments.Remove(item); }
+            }
+
+            return equipments;
+        }
+
+        public static void Initialize()
+        {
+            SelectEvent = null;
+            EquipmentArrangement = null;
+            currentListType = ListType.strict;
+            listLimitUsage = new List<Army.Types>();
+            arrangementType = PropertyType.none;
+            reverseArrangement = false;
+            currentDisplayingEquipment = new List<EquipmentItem>();
+            currentArmy = null;
+            changingEquipment = null;
+
         }
 
         public static void OpenEquipmentList()
         {
+            Initialize();
             SceneControl.AddScene(MainScene.playerEquipmentList);
         }
 
@@ -218,41 +399,6 @@ namespace Canute.UI
             SceneControl.RemoveScene(MainScene.playerEquipmentList);
         }
 
-        public void Close()
-        {
-            SceneControl.RemoveScene(MainScene.playerEquipmentList);
-        }
-
-        public static List<EquipmentItem> GetFreeEquipment(List<EquipmentItem> equipments)
-        {
-            foreach (var item in Game.PlayerData.Armies)
-            {
-                foreach (var equipment in item.Equipments)
-                {
-                    equipments.Remove(equipment);
-                }
-            }
-
-            return equipments;
-        }
-
-        public static List<EquipmentItem> GetLimitedEquipment(List<EquipmentItem> equipments)
-        {
-            if (listLimitUsage == Army.Types.none)
-            {
-                return equipments;
-            }
-
-            foreach (var item in equipments)
-            {
-                if (item.EquipmentUsage.Contains(listLimitUsage))
-                {
-                    equipments.Remove(item);
-                }
-            }
-
-            return equipments;
-        }
 
     }
 
@@ -403,7 +549,7 @@ namespace Canute.UI
                 }
                 for (int j = 0; j < organizedList.Count; j++)
                 {
-                    if (organizedList[j].GetPropertyValueAdditive(PropertyType.defense) <= equipmentItem.GetPropertyValueAdditive(PropertyType.defense))
+                    if (organizedList[j].GetPropertyValuePercentage(PropertyType.defense) <= equipmentItem.GetPropertyValuePercentage(PropertyType.defense))
                     {
                         organizedList.Insert(j, equipmentItem);
                         break;
@@ -420,6 +566,221 @@ namespace Canute.UI
             return (organizedList);
         }
 
+        public static List<EquipmentItem> ByMoveRange(List<EquipmentItem> items)
+        {
+            List<EquipmentItem> organizedList = new List<EquipmentItem>();
+            for (int i = 0; i < items.Count; i++)
+            {
+                EquipmentItem equipmentItem = items[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(equipmentItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValueAdditive(PropertyType.moveRange) <= equipmentItem.GetPropertyValueAdditive(PropertyType.moveRange))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValuePercentage(PropertyType.moveRange) <= equipmentItem.GetPropertyValuePercentage(PropertyType.moveRange))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(items.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<EquipmentItem> ByAttackRange(List<EquipmentItem> items)
+        {
+            List<EquipmentItem> organizedList = new List<EquipmentItem>();
+            for (int i = 0; i < items.Count; i++)
+            {
+                EquipmentItem equipmentItem = items[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(equipmentItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValueAdditive(PropertyType.attackRange) <= equipmentItem.GetPropertyValueAdditive(PropertyType.attackRange))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValuePercentage(PropertyType.attackRange) <= equipmentItem.GetPropertyValuePercentage(PropertyType.attackRange))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(items.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<EquipmentItem> ByCritRate(List<EquipmentItem> items)
+        {
+            List<EquipmentItem> organizedList = new List<EquipmentItem>();
+            for (int i = 0; i < items.Count; i++)
+            {
+                EquipmentItem equipmentItem = items[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(equipmentItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValueAdditive(PropertyType.critRate) <= equipmentItem.GetPropertyValueAdditive(PropertyType.critRate))
+
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValuePercentage(PropertyType.critRate) <= equipmentItem.GetPropertyValuePercentage(PropertyType.critRate))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(items.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<EquipmentItem> ByCritBonus(List<EquipmentItem> items)
+        {
+            List<EquipmentItem> organizedList = new List<EquipmentItem>();
+            for (int i = 0; i < items.Count; i++)
+            {
+                EquipmentItem equipmentItem = items[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(equipmentItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValueAdditive(PropertyType.critBonus) <= equipmentItem.GetPropertyValueAdditive(PropertyType.critBonus))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValuePercentage(PropertyType.critBonus) <= equipmentItem.GetPropertyValuePercentage(PropertyType.critBonus))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(items.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
+
+        public static List<EquipmentItem> ByPopulation(List<EquipmentItem> items)
+        {
+            List<EquipmentItem> organizedList = new List<EquipmentItem>();
+            for (int i = 0; i < items.Count; i++)
+            {
+                EquipmentItem equipmentItem = items[i];
+                if (organizedList.Count == 0)
+                {
+                    organizedList.Add(equipmentItem);
+                    continue;
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValueAdditive(PropertyType.pop) <= equipmentItem.GetPropertyValueAdditive(PropertyType.pop))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+                for (int j = 0; j < organizedList.Count; j++)
+                {
+                    if (organizedList[j].GetPropertyValuePercentage(PropertyType.pop) <= equipmentItem.GetPropertyValuePercentage(PropertyType.pop))
+                    {
+                        organizedList.Insert(j, equipmentItem);
+                        break;
+                    }
+                    else if (j == organizedList.Count - 1)
+                    {
+                        organizedList.Add(equipmentItem);
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log(items.Count + ": " + organizedList.Count);
+            return (organizedList);
+        }
 
     }
 }

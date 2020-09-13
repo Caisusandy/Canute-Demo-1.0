@@ -34,15 +34,34 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/9/7 22:46:45
+      value: 2020/9/13 6:10:30
     shopInfo:
       nextRefreshTime:
-        value: 2020/9/6 22:01:08
+        value: 2020/9/11 5:05:10
       onShopArmies:
         list:
         - prize:
+            name: Basic Infantry
+            count: 1
+            parameter: 0
+            type: 2
+          weight: 50
+          price:
+          - name: 0
+            count: 100
+        - prize:
             name: NewUtoCityInfantry
             count: 1
+            parameter: 0
+            type: 2
+          weight: 50
+          price:
+          - name: 0
+            count: 300
+        - prize:
+            name: "\u03A3CityInfantry"
+            count: 1
+            parameter: 0
             type: 2
           weight: 50
           price:
@@ -51,43 +70,80 @@ MonoBehaviour:
         - prize:
             name: Basic Infantry
             count: 1
+            parameter: 0
             type: 2
           weight: 50
           price:
           - name: 0
             count: 100
-        - prize:
-            name: Basic Mage
-            count: 1
-            type: 2
-          weight: 10
-          price:
-          - name: 0
-            count: 500
-        - prize:
-            name: "\u03A3CityInfantry"
-            count: 1
-            type: 2
-          weight: 50
-          price:
-          - name: 0
-            count: 300
       onShopEquipments:
         list: []
-    federgram: 70547
-    manpower: 71297
-    mantleAlloy: 99685
+    federgram: 71047
+    manpower: 72147
+    mantleAlloy: 99679
     aethium: 9996
     excaTeam:
       leadersUUID:
-      - value: d7c07b72-ed02-4c19-afb0-666e85e198a2
-      - value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
+      - value: fbd94bd1-907f-4d7c-b475-2f2629496c2c
       - value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
       - value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
+      - value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a7
       armyUUID:
         value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
       currentPrize:
-        prizeBoxes: []
+        prizeBoxes:
+        - startingTime:
+            value: 2020/9/13 1:54:39
+          prize:
+            name: Rare Equipment
+            count: 20
+            parameter: 0
+            type: 4
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 3
+              minutes: 20
+              seconds: 2
+        - startingTime:
+            value: 2020/9/13 5:14:40
+          prize:
+            name: manpower
+            count: 200
+            parameter: 100
+            type: 7
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 0
+              minutes: 0
+              seconds: 0
+        - startingTime:
+            value: 2020/9/13 5:14:40
+          prize:
+            name: reflection from Arthur Connors
+            count: 20
+            parameter: 0
+            type: 9
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 2
+              minutes: 30
+              seconds: 0
+        - startingTime:
+            value: 2020/9/13 7:44:40
+          prize:
+            name: manpower
+            count: 300
+            parameter: 50
+            type: 7
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 0
+              minutes: 0
+              seconds: 0
     legions:
     - armiesUUID:
       - value: d7de1817-696d-4933-8760-58a88831f6a9
@@ -100,16 +156,16 @@ MonoBehaviour:
       - value: d7de1817-696d-4933-8760-58a88831f6a9
       - value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
       - value: a038f585-42bf-4590-97f4-917614bdb7fa
-      - value: 5471b989-7bb1-4a99-82cf-9822db0d954a
-      - value: 00000000-0000-0000-0000-000000000000
+      - value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
+      - value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
       - value: 00000000-0000-0000-0000-000000000000
     - armiesUUID:
-      - value: 34109417-3b58-4aeb-92a2-14ae5031cd21
-      - value: 1d58336d-de5d-4c39-8cb4-e6e8627ac486
-      - value: 49fb7494-a193-41fd-b6f7-7f38e91f906c
-      - value: e232fb80-08fe-402d-9a59-25f5e396391e
-      - value: 37cff0d2-b620-4a44-9919-aef955e132f5
-      - value: a1c69613-1cca-438d-b56b-73e2c9aec777
+      - value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
+      - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
+      - value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
+      - value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
+      - value: 02c76a26-a718-4a60-9a1d-1d714f28cf0b
+      - value: 00000000-0000-0000-0000-000000000000
     eventCardPiles:
     - eventCardUUID: []
     - eventCardUUID: []
@@ -201,10 +257,10 @@ MonoBehaviour:
       exp: 5000000
       floatExp: 0
       star: 2
-      LeaderName: 
+      LeaderName: Empty
       equipments:
         equipmentUUID:
-        - value: f4be3fd7-8d92-4d62-976a-b61c383e91ff
+        - value: a3168da4-7cc8-486a-8408-76065679895f
         - value: 1aa66c22-45fd-41b8-a2ad-e274a1cb2295
         - value: 82f0dc60-6426-4e80-806b-b3106e6e2446
         equipmentLimit: 030000000300000003000000
@@ -257,22 +313,22 @@ MonoBehaviour:
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: dcb1fa84-b176-48f5-afef-71b070286ba5
-        - value: 8e97e50a-5e8b-4592-9907-197fa0a3a7a9
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
         - value: e0374d21-e259-4e04-872f-ada09795d5ab
         equipmentLimit: 030000000300000003000000
     - protoName: Basic Shielder
       uuid:
         value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
-      exp: 5000000
+      exp: 5001000
       floatExp: 0
       star: 2
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: 3231013b-a322-42a9-8097-e1a76ad04157
-        - value: 05a7e9d4-3ef8-4275-bb1c-61bc45a54ffe
-        - value: 0d262143-caf8-4d6d-baad-06c54312ea8f
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: cde9cf1a-5572-4b65-a444-9209cc79c7f1
         equipmentLimit: 030000000300000003000000
     - protoName: Basic Shielder
       uuid:
@@ -283,7 +339,7 @@ MonoBehaviour:
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: 45b24e36-c0d5-4399-869c-76c7539322c5
+        - value: 00000000-0000-0000-0000-000000000000
         - value: 38c66678-ee80-475b-8a13-4223d1733500
         - value: be424fe4-0db3-4f17-88dc-a031bd0e2a0e
         equipmentLimit: 030000000300000003000000
@@ -296,7 +352,7 @@ MonoBehaviour:
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: d9351025-62ca-4c3d-9be9-cf042c8dfca9
+        - value: 00000000-0000-0000-0000-000000000000
         - value: a1a954c3-c959-442f-9f88-3f1b10cfbdcd
         - value: f50d32b1-bc81-4312-80bd-194ddac446e8
         equipmentLimit: 030000000300000003000000
@@ -395,7 +451,7 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
-      exp: 2517000
+      exp: 2518000
       floatExp: 0
       star: 1
       LeaderName: Canute Svensson
@@ -415,13 +471,13 @@ MonoBehaviour:
       equipments:
         equipmentUUID:
         - value: c473c6c0-60e2-40b6-a18c-600efb8b5cfb
-        - value: 7e71e3c3-d576-4602-a79d-922cb1b0ef57
+        - value: cde9cf1a-5572-4b65-a444-9209cc79c7f1
         - value: 55f37982-7b9c-4c65-9fdf-80ef1861d39d
         equipmentLimit: 030000000300000003000000
     - protoName: Basic Rifleman
       uuid:
         value: a038f585-42bf-4590-97f4-917614bdb7fa
-      exp: 2506000
+      exp: 2507000
       floatExp: 0
       star: 1
       LeaderName: 
@@ -434,14 +490,14 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: d7de1817-696d-4933-8760-58a88831f6a9
-      exp: 2506000
+      exp: 2507000
       floatExp: 0
       star: 1
-      LeaderName: 
+      LeaderName: Empty
       equipments:
         equipmentUUID:
-        - value: b05a3829-f674-4bc7-802b-72ccc54b5102
-        - value: 60e497c3-0819-4432-ac3b-cc36cdd66aeb
+        - value: 
+        - value: 0d2c033e-e0d4-47be-9aa3-d0481d088e41
         - value: 6cdf38b7-1bfb-4451-aa99-37242a4f634c
         equipmentLimit: 030000000300000003000000
     - protoName: Basic AircraftFighter
@@ -457,13 +513,16 @@ MonoBehaviour:
     - protoName: Basic AircraftFighter
       uuid:
         value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
-      exp: 2500000
+      exp: 2501000
       floatExp: 0
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 1c4cd8a8-f44d-42b1-a200-25a6dae44569
+        - value: f2144592-5e40-4be4-a820-632f2f60feb1
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic AircraftFighter
       uuid:
         value: dc25bffa-3f71-4b37-9f53-f62a1907990c
@@ -817,25 +876,145 @@ MonoBehaviour:
         value: fbd94bd1-907f-4d7c-b475-2f2629496c2c
       exp: 0
       floatExp: 0
+    - protoName: Arthur Connors
+      uuid:
+        value: 1b979fa7-0655-4a56-86d6-7484c04a6776
+      exp: 0
+      floatExp: 0
     equipments:
-    - protoName: Common Equipment
-      uuid:
-        value: b56a4ae1-73bc-4572-8520-36f11ddffd44
-      exp: 0
-      floatExp: 0
-    - protoName: Common Equipment
-      uuid:
-        value: ab6e0c7b-43a8-427c-b9ed-e64fda0f353f
-      exp: 0
-      floatExp: 0
-    - protoName: Common Equipment
-      uuid:
-        value: 0d2c033e-e0d4-47be-9aa3-d0481d088e41
-      exp: 0
-      floatExp: 0
-    - protoName: Common Equipment
+    - protoName: CeramicCompositeArmorIV
       uuid:
         value: 456e53b3-d5d7-45fb-843f-c0f7808685d8
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 9b97a89d-f7e9-4ae2-aefb-e7fe34dd1d34
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 144dc316-71d6-4354-a976-9e53b4f5c1dc
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 764c8a3b-54ec-4a8f-8917-57c936a290e0
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 3ebe7ea1-6ad3-48ab-b887-c38483eb2871
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: a3168da4-7cc8-486a-8408-76065679895f
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterIV
+      uuid:
+        value: 234f0b90-1775-46e5-ba9b-74776d88fe3e
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterIV
+      uuid:
+        value: 9bd89bf8-7700-4fd5-94fc-045468fca289
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterIV
+      uuid:
+        value: d7df1ab5-8f9f-4849-904c-c925cb9403d7
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterIV
+      uuid:
+        value: 5d199a2a-bfe6-4221-8271-60b30cd41475
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterIV
+      uuid:
+        value: c668c26f-2639-4f82-a36f-77411f515b2b
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterII
+      uuid:
+        value: 6e754108-a880-44e0-b01d-209b3fe8286e
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterII
+      uuid:
+        value: 19ad9c58-91d3-41cd-b6bc-43a1d456075e
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterII
+      uuid:
+        value: 9062d171-f7de-488e-9974-c0fc365eaf72
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterII
+      uuid:
+        value: ff75e08a-4bd1-4566-a29b-3adcc474fa5a
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterI
+      uuid:
+        value: 7092ac42-84c0-46bd-ba6a-4dd5daf5a42e
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterI
+      uuid:
+        value: 33707d4f-1434-4b2a-8222-0da0c8b9fdc7
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterI
+      uuid:
+        value: 69246565-f6c2-4827-855b-82791e48ee21
+      exp: 0
+      floatExp: 0
+    - protoName: PersonalAethiumBeamEmitterI
+      uuid:
+        value: 6c9432e7-843b-4e8a-8d8b-dda82a512f21
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIII
+      uuid:
+        value: 99d039c6-051f-40c4-9e01-b592796db823
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIII
+      uuid:
+        value: a8a4bfb9-7545-4aef-adc3-3e04f877929e
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIII
+      uuid:
+        value: b141751a-8468-4d97-8fba-764aab5eb4e5
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIII
+      uuid:
+        value: c818853c-5a03-4ee5-abe1-f6012f2baf72
+      exp: 0
+      floatExp: 0
+    - protoName: MagneticGeneratorIII
+      uuid:
+        value: 659900c3-4034-483c-a407-a859aee3b378
+      exp: 0
+      floatExp: 0
+    - protoName: MagneticGeneratorIII
+      uuid:
+        value: 380e561a-affd-4899-993b-b1fa663f5dd2
+      exp: 0
+      floatExp: 0
+    - protoName: MagneticGeneratorIII
+      uuid:
+        value: 151da67e-567f-4976-8e2d-f7efc725f57a
+      exp: 0
+      floatExp: 0
+    - protoName: MagneticGeneratorIII
+      uuid:
+        value: 3d16c405-6036-46a4-a1db-180764d72f6b
       exp: 0
       floatExp: 0
     eventCards:
@@ -890,6 +1069,14 @@ MonoBehaviour:
       - 
       - 
       - Common Equipment
+      - Epic Equipment
+      - CeramicCompositeArmorIV
+      - PersonalAethiumBeamEmitterIV
+      - PersonalAethiumBeamEmitterII
+      - PersonalAethiumBeamEmitterI
+      - AeroReinforceArmorIII
+      - MagneticGeneratorIII
       leadersUnlocked:
       - Andrew Chaffin-Erinope
       - Aether Erinope
+      - Arthur Connors

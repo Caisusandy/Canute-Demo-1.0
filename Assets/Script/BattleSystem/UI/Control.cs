@@ -8,8 +8,8 @@ namespace Canute.BattleSystem
 {
     public class Control : MonoBehaviour
     {
-        private const double maxMapScale = 3;
-        private const double minMaxScale = 0.5;
+        private const double maxMapScale = 1.5;
+        private const double minMaxScale = 0.6;
         public static Control instance;
         public Vector3 inputPos;
 

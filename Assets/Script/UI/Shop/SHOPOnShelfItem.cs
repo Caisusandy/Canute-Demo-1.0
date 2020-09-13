@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using Canute.UI.Exploration;
+using Canute.UI.SupplyTeam;
 using Canute.Shops;
 using Canute.LanguageSystem;
 using System;

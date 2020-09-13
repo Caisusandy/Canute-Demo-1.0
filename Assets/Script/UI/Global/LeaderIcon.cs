@@ -9,7 +9,7 @@ namespace Canute.UI
         public Text levelDisplayer;
         public Text nameDisplayer;
         public Image leaderIcon;
-        public Image BG;
+        public Image rarity;
 
         public LeaderItem displayingLeader;
 
@@ -23,12 +23,14 @@ namespace Canute.UI
                 leaderIcon.sprite = null;
                 levelDisplayer.text = string.Empty;
                 nameDisplayer.text = string.Empty;
+                rarity.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, Rarity.none.ToString());
             }
             else
             {
                 leaderIcon.sprite = displayingLeader.Prototype.Icon;
                 levelDisplayer.text = "Lv." + displayingLeader?.Level;
                 nameDisplayer.text = displayingLeader.Name;
+                rarity.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, item.Rarity.ToString());
             }
         }
 

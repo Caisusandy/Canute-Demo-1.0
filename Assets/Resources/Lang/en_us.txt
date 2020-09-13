@@ -79,6 +79,19 @@ Canute.Army.Basic Dragon.name=Basic Dragon
 Canute.Army.CalayCityInfantry.name=Calay City Infantry
 Canute.Army.ΣCityInfantry.name=Σ City Infantry
 Canute.Army.NewUtoCityInfantry.name=New Uto City Infantry
+# 
+Canute.Equipment.CeramicCompositeArmorI.name=Ceramic Composite Armor Mk Lv.I
+Canute.Equipment.CeramicCompositeArmorII.name=Ceramic Composite Armor Mk Lv.II
+Canute.Equipment.CeramicCompositeArmorIII.name=Ceramic Composite Armor Mk Lv.III
+Canute.Equipment.CeramicCompositeArmorIV.name=Ceramic Composite Armor Mk Lv.IV
+Canute.Equipment.PersonalAethiumBeamEmitterI.name=Personal Aethium Beam Emitter Mk 1
+Canute.Equipment.PersonalAethiumBeamEmitterII.name=Personal Aethium Beam Emitter Mk 2
+Canute.Equipment.PersonalAethiumBeamEmitterIII.name=Personal Aethium Beam Emitter Mk 3
+Canute.Equipment.PersonalAethiumBeamEmitterIV.name=Personal Aethium Beam Emitter Mk 4
+Canute.Equipment.MagneticGeneratorI.name=Magnetic Shield Generator Lv.I
+Canute.Equipment.MagneticGeneratorII.name=Magnetic Shield Generator Lv.II
+Canute.Equipment.MagneticGeneratorIII.name=Magnetic Shield Generator Lv.III
+Canute.Equipment.MagneticGeneratorIV.name=Magnetic Shield Generator Lv.IV
 #
 Canute.Building.Campus.name=Campus
 #地形
@@ -183,14 +196,24 @@ Canute.BattleSystem.Effect+Types.addDragonStrike=Add Strike
 Canute.BattleSystem.Effect+Types.addDragonStrike.info=enemy army will go back 2 grid when the army stand by.
 
 
-Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Basic Infantry Skill
+Canute.BattleSystem.Effect+Types.NoSkill=---
+Canute.BattleSystem.Effect+Types.NoSkill=No Skill
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Infantry Skill
 Canute.BattleSystem.Effect+Types.BasicInfantrySkill.info= attack twice the [closest, possible, lowest HP] target (with a 0%/40% damage decrease)
-Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Basic Rifleman Skill
+Canute.BattleSystem.Effect+Types.BasicMageSkill=Mage Skill
+Canute.BattleSystem.Effect+Types.BasicMageSkill.info=Give a closest enemy poison. In next 3 turns, enemy would lost 40% of mage's damage every turn.
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Rifleman Skill
 Canute.BattleSystem.Effect+Types.BasicRiflemanSkill.info=to cause the [closest, possible, lowest HP] target lost 20% Current HP and 40% lost HP
-Canute.BattleSystem.Effect+Types.BasicShielderSkill=Basic Shielder Skill
+Canute.BattleSystem.Effect+Types.BasicShielderSkill=Shielder Skill
 Canute.BattleSystem.Effect+Types.BasicShielderSkill.info=Give whole legion's army 20 Armor
-Canute.BattleSystem.Effect+Types.BasicWarMachineSkill=Basic War Machine Skill
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill=War Machine Skill
 Canute.BattleSystem.Effect+Types.BasicWarMachineSkill.info=Attack the closest possible target, and causes a 120% damage.
+Canute.BattleSystem.Effect+Types.BasicCavalrySkill=Cavalry Skill
+Canute.BattleSystem.Effect+Types.BasicCavalrySkill.info=When HP < 50%，move to the side of the closest enemy，otherwise attack closest enemy by 1 * damage;
+Canute.BattleSystem.Effect+Types.BasicDragonSkill=Dragon Skill
+Canute.BattleSystem.Effect+Types.BasicDragonSkill=Get 3 central deck card with no action point cost.
+
+
 
 #aircraft fighter
 Canute.BattleSystem.Effect+Types.aircraftFighterReturn=Airport
@@ -199,7 +222,7 @@ Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy=After Attack Effect
 Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy.info=Aircraft will move toward to Enemy when attack.
 
 #Level State
-Canute.BattleSystem.UI.ResultUI.Passed=Battle Succeed
+Canute.BattleSystem.UI.ResultUI.Passed=Succeed
 Canute.BattleSystem.UI.ResultUI.Lost=Battle Lost
 
 #错误事件
@@ -221,9 +244,10 @@ Canute.UI.MainHall.Training=Training
 Canute.UI.MainHall.Basement=Basement Daily
 Canute.UI.MainHall.Legion=Legion Setting
 Canute.UI.MainHall.Pile=Card Pile Setting
-Canute.UI.MainHall.Exploration=Exploration Team
+Canute.UI.MainHall.Exploration=Supply Team
 Canute.UI.MainHall.Shop=Shop
 Canute.UI.MainHall.Chapter=Chapter
+Canute.UI.MainHall.Hallway=Hallway
 Canute.UI.MainHall.Quit=Quit
 
 #Tips
@@ -242,11 +266,22 @@ Canute.Tips.11=Every attack would cause at least 1 damage
 Canute.Tips.12=Using the card that matched with army's career would cause 1 less action point.
 Canute.Tips.13=Dragons knows magic better than those mage, they can boot up the army for some cost...
 Canute.Tips.14=Resonance happens when more same type of army exist.
+Canute.Tips.15=Careers are Scientist, Politician, Military, and Merchant.
+Canute.Tips.16=Fantarium is larger than what you think.
 
-#
-Canute.Character.Theodore Pullan.WordLine.0=It is funny that where the name of “Avgium” can from, the Avgium was discovered in a huge mine of aethium. Since aethium means “light” and it has the same origin as the king Aether Erinope, so the scientist name it after Aether’s step father, which was the dragon king Avgas.
-Canute.Character.Theodore Pullan.WordLine.1=Hmm… My sister? I haven’t met her for five years; she is a grown up already. I mean, all Pullans are strong and independent, she will be fine. But anyway, can I have a vacation, just to see how is she doing?
-Canute.Character.Theodore Pullan.WordLine.2=Chairman Canute, even though you are part of the Project Ankaa, I don’t really know much about you before. Ankaa？The firebird on the sky that can reborn, they name is project as they want Anexar also reborn. Well, they are so lucky to choose you and create one of the best commanders in Fantarium.
+#;
+Canute.Character.Theodore Pullan.WordLine.0=It is funny that where the name of "Avgium" can from, so the scientist name it after Aether’s step father, which was the dragon king Avgas.
+Canute.Character.Theodore Pullan.WordLine.1=Since aethium means "light" and it has the same origin as the king Aether Erinope, and the Avgium was discovered in a huge mine of aethium.
+Canute.Character.Theodore Pullan.WordLine.2=Hmm… My sister? I haven’t met her for five years; she is a grown up already. I mean, all Pullans are strong and independent, she will be fine. But anyway, can I have a vacation, just to see how is she doing?
+Canute.Character.Theodore Pullan.WordLine.3=Chairman Canute, even though you are part of the Project Ankaa, I don’t really know much about you before. 
+Canute.Character.Theodore Pullan.WordLine.4=Ankaa? The firebird on the sky that can reborn, they name is project as they want Anexar also reborn.
+Canute.Character.Theodore Pullan.WordLine.5=Well, they are so lucky to choose you and create one of the best commanders in Fantarium.
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithItem=Chairman Canute, we found soemthing on the way back, I think now it's time to go out again.
+
 Canute.Character.Finn Herman.WordLine.0=Both old teacher and I are from Calay.
 Canute.Character.Finn Herman.WordLine.1=Sir, Can I go outside to take a walk?
 Canute.Character.Finn Herman.WordLine.2=Sir, Can I watch the television? ok you are right, nothing interesting about the Council’s Propaganda, and Meialian Channel which only speak Meialian, they sound like dragon roar.
+Canute.Character.Finn Herman.supplyTeamComeBackWithItem=Sir, I found a give for you!
+#
+Canute.STPrizeDisplay.NewPrize=Supply Team get @name
+Canute.SupplyTeam.TeamPositionInfo=The Supply Team is in @city, @country right now.

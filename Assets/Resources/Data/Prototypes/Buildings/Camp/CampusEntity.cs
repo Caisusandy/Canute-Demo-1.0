@@ -7,6 +7,7 @@ namespace Canute.BattleSystem.Buildings
     {
         public MarkController markController;
         public List<CellEntity> Range => Game.CurrentBattle.MapEntity.GetBorderCell(OnCellOf, 5, true);
+        public List<CellEntity> PossibleCells => Game.CurrentBattle.MapEntity.GetNearbyCell(OnCellOf, 5, true);
         public bool IsPlayers => Owner == Game.CurrentBattle.Player;
         public bool BorderOpened { get; set; }
 

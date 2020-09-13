@@ -226,22 +226,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8345a183d4198474fa99635f0a311f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6494768576080503992}
   isHighlighted: 0
   isSelected: 0
+  entityMark:
+    cellMarks: []
+    type: 0
   data:
     name: AlphaArmy
-    uUID:
-      Value: 
-    ownerUUID:
-      Value: 
     prefab: {fileID: 6470687005625561500}
+    uuid:
+      value: a17e1b0d-465c-411f-a4a4-d4b6a019512d
+    ownerUUID:
+      value: 
     allowMove: 0
-    x: 5
-    y: 5
+    coordinate: {x: 0, y: 0}
     stats:
       list: []
+    localLeader:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: 748bd410-fbca-425d-8f43-5155cbd5bb85
+      ownerUUID:
+        value: 
+      allowMove: 0
+      coordinate: {x: 0, y: 0}
+      stats:
+        list: []
+      career: 0
+      leadingArmyUUID:
+        value: 
+      isViceCommander: 0
+      level: 0
+      bounes: []
+    autonomousType: 0
+    anger: 0
+    career: 0
     properties:
+      defense: 0
       critRate: 0
       critBounes: 0
       pop: 0
@@ -249,71 +271,29 @@ MonoBehaviour:
       moveRange: 0
       standPosition: 0
       attackPosition: 0
-      attackType: 0
-      targetType: 0
       attackArea: 0
       targetCount: 0
+      attackType: 0
       skill:
-        uUID:
-          Value: f35abf89-7b3e-4510-9923-70241de440ba
-        type: 0
+        specialName: 
         count: 0
         parameter: 0
-        sourceEntity:
-          Value: 
-        targetEntities: []
         args:
-          allowSerialization: 1
-          keys: []
-          values: []
-    localLeader:
-      name: 
-      uUID:
-        Value: 21b155fe-aa7c-49e8-a15d-93098ed2018f
-      ownerUUID:
-        Value: 
-      prefab: {fileID: 0}
-      allowMove: 0
-      x: 0
-      y: 0
-      stats:
-        list: []
-      career: 0
-      leaderBounes:
-        defenseBounesRate: 0
-        damageBounesRate: 0
-        healthBounesRate: 0
-        critRateBounesRate: 0
-        critBounesBounesRate: 0
-        attackRangeBounesPoint: 0
-        moveRangeBounesPoint: 0
-        popBounesPoint: 0
-      leadingArmyUUID:
-        Value: 
-      isViceCommander: 0
-    skillPack:
-      uUID:
-        Value: a2e66ce8-3159-4361-bd04-0c6e51cd0643
-      type: 0
-      count: 0
-      parameter: 0
-      sourceEntity:
-        Value: 
-      targetEntities: []
-      args:
-        allowSerialization: 1
-        keys: []
-        values: []
-    career: 0
-    anger: 0
+          args: []
+      addition:
+        args: []
     maxHealth: 0
     health: 0
-    defence: 0
     armor: 0
     damage: 0
     type: 0
-  attackRange: []
-  moveRange: []
+  armyHealthBar: {fileID: 0}
+  attackRange:
+    cellMarks: []
+    type: 2
+  moveRange:
+    cellMarks: []
+    type: 1
 --- !u!61 &7021099752345519390
 BoxCollider2D:
   m_ObjectHideFlags: 0

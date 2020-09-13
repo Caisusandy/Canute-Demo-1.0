@@ -37,7 +37,7 @@ namespace Canute.UI
             goldNameDisplayer.text = Currency.Type.fedgram.Lang();
             manpowerNameDisplayer.text = Currency.Type.manpower.Lang();
             mantleAlloyNameDisplayer.text = Currency.Type.mantleAlloy.Lang();
-            aethiumNameDisplayer.text = Currency.Type.Aethium.Lang();
+            aethiumNameDisplayer.text = Currency.Type.aethium.Lang();
         }
     }
 

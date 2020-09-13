@@ -185,14 +185,22 @@ Canute.BattleSystem.Effect+Types.addDragonStrike=猛力冲击
 Canute.BattleSystem.Effect+Types.addDragonStrike.info=移动后，目的地敌方会被向后推 2 格, 但是被选中军队无法攻击
 
 
+Canute.BattleSystem.Effect+Types.NoSkill=---
+Canute.BattleSystem.Effect+Types.NoSkill=无技能
 Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Basic Infantry Skill
 Canute.BattleSystem.Effect+Types.BasicInfantrySkill.info= attack twice the [closest, possible, lowest HP] target (with a 0%/40% damage decrease)
+Canute.BattleSystem.Effect+Types.BasicMageSkill=Mage Skill
+Canute.BattleSystem.Effect+Types.BasicMageSkill.info=对最近敌方单位造成3回合的法师的40%伤害的生命值损失.
 Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Basic Rifleman Skill
 Canute.BattleSystem.Effect+Types.BasicRiflemanSkill.info=to cause the [closest, possible, lowest HP] target lost 20% Current HP and 40% lost HP
 Canute.BattleSystem.Effect+Types.BasicShielderSkill=Basic Shielder Skill
 Canute.BattleSystem.Effect+Types.BasicShielderSkill.info=Give whole legion‘s army 20 Armor
 Canute.BattleSystem.Effect+Types.BasicWarMachineSkill=Basic War Machine Skill
 Canute.BattleSystem.Effect+Types.BasicWarMachineSkill.info=Attack the closest possible target, and causes a 140% damage.
+Canute.BattleSystem.Effect+Types.BasicCavalrySkill=Basic Cavalry Skill
+Canute.BattleSystem.Effect+Types.BasicCavalrySkill.info=当血量高于50%时，移动到最近敌方面前，若小于50%则对最近敌方并造成1倍伤害
+Canute.BattleSystem.Effect+Types.BasicDragonSkill=Dragon Skill
+Canute.BattleSystem.Effect+Types.BasicDragonSkill=获取3张中央牌堆的手牌，并且这些手牌不消耗任何行动点数
 
 #aircraft fighter
 Canute.BattleSystem.Effect+Types.aircraftFighterReturn=机场位置
@@ -228,6 +236,7 @@ Canute.UI.MainHall.Pile=事件牌
 Canute.UI.MainHall.Exploration=物资队
 Canute.UI.MainHall.Shop=商店
 Canute.UI.MainHall.Chapter=章节
+Canute.UI.MainHall.Hallway=过道
 Canute.UI.MainHall.Quit=退出
 
 #Tips

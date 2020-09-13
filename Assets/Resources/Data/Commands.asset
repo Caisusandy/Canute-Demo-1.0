@@ -65,9 +65,16 @@ MonoBehaviour:
         type: 6
         default: 0
         possibleValue: []
-    - name: getArmyItem
+    - name: getItem
       params:
-      - key: prototypeName
+      - key: type
+        type: 2
+        default: 
+        possibleValue:
+        - army
+        - leader
+        - equipment
+      - key: name
         type: 2
         default: 
         possibleValue: []

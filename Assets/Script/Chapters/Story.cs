@@ -29,7 +29,7 @@ namespace Canute.StorySystem
         [SerializeField] private StoryType type;
         [SerializeField] private WordLine[] wordLines;
 
-        public Story(string id, WordLine[] wordLines) : this()
+        public Story(string id, params WordLine[] wordLines) : this()
         {
             this.id = id;
             this.WordLines = wordLines;
@@ -71,7 +71,6 @@ namespace Canute.StorySystem
                 return WordLine.Empty;
             }
         }
-
         public override bool Equals(object obj)
         {
             return obj is Story story && Equals(story);

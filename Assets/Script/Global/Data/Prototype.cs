@@ -11,18 +11,13 @@ namespace Canute
         [SerializeField] protected Rarity rarity;
         [SerializeField] protected Sprite icon;
         [SerializeField] protected Sprite sprite;
-        [SerializeField] protected Sprite portrait;
-        [SerializeField] protected GameObject prefab;
 
 
         public string DisplayingName => this.Lang("name");
         public string Name => name;
         public Rarity Rarity => rarity;
         public Sprite Icon => GetIcon();
-        public Sprite Portrait => GetPortrait();
         public Sprite Sprite => sprite;
-
-        public virtual GameObject Prefab => prefab;
 
 
         protected virtual Sprite GetIcon()
@@ -32,15 +27,6 @@ namespace Canute
                 return GameData.Prototypes.GetPrototype(name)?.icon;
             }
             return icon;
-        }
-
-        protected virtual Sprite GetPortrait()
-        {
-            if (Game.Configuration.UseCustomDefaultPrototype && !icon)
-            {
-                return GameData.Prototypes.GetPrototype(name)?.portrait;
-            }
-            return portrait;
         }
 
         protected Prototype()
@@ -134,6 +120,5 @@ namespace Canute
         Sprite Icon { get; }
         /// <summary> sprite of the prototype </summary>
         Sprite Sprite { get; }
-        Sprite Portrait { get; }
     }
 }

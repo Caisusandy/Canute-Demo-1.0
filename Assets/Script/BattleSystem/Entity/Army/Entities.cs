@@ -10,7 +10,7 @@ namespace Canute.BattleSystem
 
     }
 
-    public interface IBattleableEntity : IOnMapEntity
+    public interface IBattleableEntity : IOnMapEntity, IStatusContainer
     {
         /// <summary>
         /// Entity Data

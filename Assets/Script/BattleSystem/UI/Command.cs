@@ -41,6 +41,8 @@ namespace Canute.Testing
                         return FindBattleEntity(commandParams);
                     case "getArmyItem":
                         return GetArmyItem(commandParams);
+                    case "getItem":
+                        return GetItem(commandParams);
                     case "getHexCoord":
                         return GetHexCoord();
                     case "getMapRadius":
@@ -84,11 +86,51 @@ namespace Canute.Testing
             }
             catch (Exception e)
             {
-                Debug.Log(e.Message);
-                Debug.Log(e);
+                if (Game.Configuration.IsDebugMode)
+                {
+                    throw e;
+                }
+                else
+                {
+                    Debug.Log(e.Message);
+                    Debug.Log(e);
+                }
             }
 
             return false;
+        }
+
+        private static bool GetItem(string[] commandParams)
+        {
+            Item.Type type = (Item.Type)Enum.Parse(typeof(Item.Type), commandParams[1]);
+            string name = commandParams[2];
+            Item item = null;
+            switch (type)
+            {
+                case Item.Type.army:
+                    Army army = GameData.Prototypes.GetArmyPrototype(name);
+                    if (!army) { Console.WriteLine("the army prototype is not exist!"); return false; }
+                    ArmyItem armyItem = new ArmyItem(army, 300000);
+                    Game.PlayerData.AddArmyItem(armyItem);
+                    break;
+                case Item.Type.leader:
+                    Leader leader = GameData.Prototypes.GetLeaderPrototype(name);
+                    if (!leader) { Console.WriteLine("the leader prototype is not exist!"); return false; }
+                    LeaderItem leaderItem = new LeaderItem(leader);
+                    Game.PlayerData.AddLeaderItem(leaderItem);
+                    break;
+                case Item.Type.equipment:
+                    Equipment equipment = GameData.Prototypes.GetEquipmentPrototype(name);
+                    if (!equipment) { Console.WriteLine("the equipment prototype is not exist!"); return false; }
+                    EquipmentItem equipmentItem = new EquipmentItem(equipment);
+                    Game.PlayerData.AddEquipmentItem(equipmentItem);
+                    break;
+                case Item.Type.eventCard:
+                    break;
+            }
+            PlayerFile.SaveCurrentData();
+            Console.WriteLine("player get item: " + type.Lang() + " " + item?.Name);
+            return true;
         }
 
         private static bool Lang(string[] commandParams)
@@ -308,7 +350,7 @@ namespace Canute.Testing
                     case PropertyType.critRate:
                         properties.CritRate = (int)value;
                         break;
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         properties.CritBonus = (int)value;
                         break;
                     case PropertyType.pop:

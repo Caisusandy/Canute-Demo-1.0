@@ -23,24 +23,31 @@ namespace Canute.Shops
 
         public static T Get<T>(float position, params T[] itemWeights) where T : IWeightable
         {
-            if (WeightOf(itemWeights) == 0)
+            int totalWeight = WeightOf(itemWeights);
+            if (totalWeight == 0)
             {
                 return default;
             }
-            int param = (int)(WeightOf(itemWeights) * position);
-            Debug.Log(+param);
+            if (position > 1 && position < 0)
+            {
+                position %= 1;
+            }
+
+            float param = totalWeight * position;
+            //Debug.Log(totalWeight + ", " + param);
+
             for (int i = 0; i < itemWeights.Length; i++)
             {
                 T item = itemWeights[i];
                 param -= item.Count;
                 if (param <= 0)
                 {
-                    Debug.Log(i + ", " + item.Count + ", " + param + ", " + WeightOf(itemWeights));
+                    //Debug.Log(i + ", " + item.Count + ", " + (param + item.Count) + ", " + totalWeight);
                     return item;
                 }
             }
 
-            throw new ArgumentOutOfRangeException("The parameter is too large to get a Weight Of, the parameter should be between 0 and " + WeightOf(itemWeights) + ", but parameter lead to " + param);
+            throw new ArgumentOutOfRangeException("The parameter is too large to get a Weight Of, the parameter should be between 0 and " + totalWeight + ", but parameter lead to " + param);
         }
 
         public static int WeightOf<T>(params T[] itemWeights) where T : IWeightable
@@ -50,7 +57,7 @@ namespace Canute.Shops
             {
                 cur += item.Count;
             }
-            Debug.Log(cur);
+            //Debug.Log(cur);
             return cur;
         }
 

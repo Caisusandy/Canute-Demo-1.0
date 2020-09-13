@@ -100,13 +100,16 @@ namespace Canute.BattleSystem
             }
         }
 
-        protected virtual void AddBonus(params IBattleBounesItem[] bonuses)
+        protected virtual void AddBonus(params IBattleBonusItem[] bonuses)
         {
             if (bonuses is null)
             {
                 return;
             }
 
+            var temp = bonuses.ToList();
+            temp.Sort();
+            bonuses = temp.ToArray();
             foreach (var (item, property, type) in from item in bonuses
                                                    from property in item?.Bonus
                                                    from PropertyType type in PropertyTypes.Types
@@ -126,7 +129,7 @@ namespace Canute.BattleSystem
                     case PropertyType.moveRange:
                     case PropertyType.attackRange:
                     case PropertyType.critRate:
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         properties.AddBonus(item);
                         break;
                 }
@@ -135,13 +138,16 @@ namespace Canute.BattleSystem
             }
         }
 
-        protected virtual void RemoveBonus(params IBattleBounesItem[] bonuses)
+        protected virtual void RemoveBonus(params IBattleBonusItem[] bonuses)
         {
             if (bonuses is null)
             {
                 return;
             }
 
+            var temp = bonuses.ToList();
+            temp.Sort();
+            bonuses = temp.ToArray();
             foreach (var (item, property, type) in from item in bonuses
                                                    from property in item.Bonus
                                                    from PropertyType type in PropertyTypes.Types
@@ -159,7 +165,7 @@ namespace Canute.BattleSystem
                     case PropertyType.moveRange:
                     case PropertyType.attackRange:
                     case PropertyType.critRate:
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         properties.RemoveBonus(item);
                         break;
                 }

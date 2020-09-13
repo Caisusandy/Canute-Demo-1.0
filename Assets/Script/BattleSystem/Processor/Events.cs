@@ -26,6 +26,7 @@ namespace Canute.BattleSystem
         public const string addDragonCard = "addDragonCard";
         public const string dragonCritAttack = "dragonCritAttack";
         public const string createArmy = "createArmy";
+        public const string magePoison = "magePoison";
         public const string propertyBonus = "propertyBonus";
     }
 
@@ -76,7 +77,11 @@ namespace Canute.BattleSystem
                     result = EventCreateArmy(effect);
                     break;
 
+
                 //special
+                case EventName.magePoison:
+                    result = MagePoison(effect);
+                    break;
                 case EventName.aircraftFighterReturn:
                     result = FighterAircraftReturn(effect);
                     break;
@@ -98,6 +103,22 @@ namespace Canute.BattleSystem
             }
 
             return result;
+        }
+
+        private static bool MagePoison(Effect effect)
+        {
+            if (!(effect.Source is ArmyEntity)) return false;
+            if ((effect.Source as ArmyEntity).data.Type != Army.Types.mage) return false;
+
+            ArmyEntity mage = (effect.Target as ArmyEntity);
+            RealDamage(new Effect(Effect.Types.@event, effect.Source, effect.Targets, 1, effect.Parameter));
+            //if ((effect.Target as IPassiveEntity).Data.Health == 0)
+            //{
+            //    IPassiveEntity armyEntity = mage.GetClosestTarget();
+            //    var status = new Status(new Effect(Effect.Types.@event, mage, armyEntity.entity, effect.Count, effect.Parameter, Effect.name + ":" + EventName.magePoison), 0, 3, Status.StatType.turnBase, true, TriggerCondition.OnTurnBegin);
+            //    armyEntity.StatList.Add(status);
+            //}
+            return true;
         }
 
         private static bool PropertyBonus(Effect effect)
@@ -126,7 +147,7 @@ namespace Canute.BattleSystem
                     case PropertyType.critRate:
                         property.CritRate = property.CritRate.Bonus(effect.Parameter, bounesType);
                         break;
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         property.CritBonus = property.CritBonus.Bonus(effect.Parameter, bounesType);
                         break;
                     case PropertyType.pop:

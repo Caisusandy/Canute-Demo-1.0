@@ -110,6 +110,32 @@ namespace Canute.BattleSystem
             addition = armyItem.BaseProperty.Addition;
         }
 
+        /// <summary>
+        /// use for display info only
+        /// </summary>
+        /// <param name="armyItem"></param>
+        /// <param name="equipment"></param>
+        public BattleProperty(ArmyItem armyItem, ArmyItemEquipmentSlot equipment)
+        {
+            defense = armyItem.BaseProperty.Defense.Bonus(armyItem.LevelBonus);
+            critRate = armyItem.BaseProperty.CritRate;
+            critBounes = armyItem.BaseProperty.CritBonus;
+            attackRange = armyItem.BaseProperty.AttackRange;
+            moveRange = armyItem.BaseProperty.MoveRange;
+            pop = armyItem.BaseProperty.Pop;
+            standPosition = armyItem.BaseProperty.StandPosition;
+            attackPosition = armyItem.BaseProperty.AttackPosition;
+
+            attackType = armyItem.BaseProperty.Attack;
+            attackArea = armyItem.BaseProperty.AttackArea;
+            targetCount = armyItem.BaseProperty.TargetCount;
+
+            skill = armyItem.BaseProperty.SkillPack;
+            addition = armyItem.BaseProperty.Addition;
+
+            AddBonus(equipment.ToArray());
+        }
+
         public bool Equals(BattleProperty obj)
         {
             return CritRate == obj.CritRate &&
@@ -145,22 +171,25 @@ namespace Canute.BattleSystem
             return base.GetHashCode();
         }
 
-        public void AddBonus(params IBattleBounesItem[] bonuses)
+        public void AddBonus(params IBattleBonusItem[] bonuses)
         {
             if (bonuses is null)
             {
                 return;
             }
+            var temp = bonuses.ToList();
+            temp.Sort();
+            bonuses = temp.ToArray();
 
             foreach (var (item, property, type) in from item in bonuses
                                                    from property in item?.Bonus
                                                    from PropertyType type in PropertyTypes.Types
                                                    select (item, property, type))
             {
-                Debug.Log(property);
                 switch (property.Type & type)
                 {
                     case PropertyType.defense:
+                        Debug.Log(property);
                         Defense = property.Bonus(Defense, item.Level);
                         break;
                     case PropertyType.moveRange:
@@ -172,7 +201,7 @@ namespace Canute.BattleSystem
                     case PropertyType.critRate:
                         CritRate = property.Bonus(CritRate, item.Level);
                         break;
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         CritBonus = property.Bonus(CritBonus, item.Level);
                         break;
                     default:
@@ -183,7 +212,7 @@ namespace Canute.BattleSystem
             }
         }
 
-        public void RemoveBonus(params IBattleBounesItem[] bonuses)
+        public void RemoveBonus(params IBattleBonusItem[] bonuses)
         {
             if (bonuses is null)
             {
@@ -209,7 +238,7 @@ namespace Canute.BattleSystem
                     case PropertyType.critRate:
                         CritRate = property.RemoveBonus(CritRate, item.Level);
                         break;
-                    case PropertyType.critBounes:
+                    case PropertyType.critBonus:
                         CritBonus = property.RemoveBonus(CritBonus, item.Level);
                         break;
                     default:

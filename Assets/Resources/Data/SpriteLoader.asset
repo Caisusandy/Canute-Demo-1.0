@@ -20,4 +20,5 @@ MonoBehaviour:
     - {fileID: 4343727234628468602, guid: 42854a8945185ed4294fc95901bde8d7, type: 2}
     - {fileID: 4343727234628468602, guid: 92fdfae7baa031543909960f14ea88a7, type: 2}
     - {fileID: 4343727234628468602, guid: b6e664d0562b8b44b8d229588e88d79e, type: 2}
+    - {fileID: 4343727234628468602, guid: 3884f3f20ee341e42a1a1653be70ecd2, type: 2}
   loneSprites: []

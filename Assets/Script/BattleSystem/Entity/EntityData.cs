@@ -21,7 +21,6 @@ namespace Canute.BattleSystem
         public virtual string Name => name;
         public virtual string DisplayingName => GetDisplayingName();
         public virtual Sprite Icon => GetIcon();
-        public virtual Sprite Portrait => GetPortrait();
         public virtual Player Owner { get => Game.CurrentBattle?.GetPlayer(ownerUUID); set => ownerUUID = value is null ? UUID.Empty : value.UUID; }
         public virtual UUID UUID { get => uuid; set => uuid = value; }
         public virtual GameObject Prefab { get => prefab; set => prefab = value; }
@@ -57,10 +56,6 @@ namespace Canute.BattleSystem
             return Prototype?.Icon;
         }
 
-        private Sprite GetPortrait()
-        {
-            return Prototype?.Portrait;
-        }
 
         protected virtual void NewUUID()
         {

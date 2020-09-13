@@ -11,7 +11,7 @@ namespace Canute
         [SerializeField] private List<PropertyBonus> bounes;
         [SerializeField] private EquipmentType type;
         [SerializeField] private List<Army.Types> equipmentUsage;
-        public override GameObject Prefab => null;
+
         public List<PropertyBonus> Bonus { get => bounes; set => bounes = value; }
         public EquipmentType Type { get => type; set => type = value; }
         public List<Army.Types> EquipmentUsage { get => equipmentUsage; set => equipmentUsage = value; }

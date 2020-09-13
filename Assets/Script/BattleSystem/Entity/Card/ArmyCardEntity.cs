@@ -1,4 +1,5 @@
-﻿using Canute.BattleSystem.UI;
+﻿using Canute.BattleSystem.Buildings;
+using Canute.BattleSystem.UI;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -59,6 +60,19 @@ namespace Canute.BattleSystem
             GetComponent<Image>().canvas.sortingLayerName = "Card";
             GetComponent<Image>().canvas.sortingOrder = layer;
 
+        }
+
+        public override void HighLightPossibleTargets()
+        {
+            CampusEntity campusEntity = CampusEntity.GetCampus(Owner);
+            if (campusEntity)
+            {
+                foreach (var item in campusEntity.PossibleCells)
+                {
+                    item.CardTargetHighlight();
+                }
+            }
+            else base.CardTargetHighlight();
         }
 
         public static CardEntity Create(Card card, BattleArmy battleArmy)

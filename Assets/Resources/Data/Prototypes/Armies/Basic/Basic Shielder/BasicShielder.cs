@@ -17,7 +17,6 @@ namespace Canute.BattleSystem.Armies
 
         public override float WinningDuration => 2;
 
-        public override float HurtDuration => 2;
 
         public override void Start()
         {
@@ -46,7 +45,7 @@ namespace Canute.BattleSystem.Armies
             }
 
             //add protection to armies that is already stand there
-            foreach (var item in GetProtectCell().Where((CellEntity entity) => entity.HasArmyStandOn))
+            foreach (var item in GetProtectCell().Where((entity) => entity.HasArmyStandOn && entity.Owner == Owner && entity.HasArmyStandOn?.data.Type != Army.Types.shielder))
             {
                 Effect protection = new Effect(Effect.Types.tag, this, item.HasArmyStandOn, 1, 0, "name:protection");
                 protection.SetSpecialName("protection");
@@ -120,26 +119,26 @@ namespace Canute.BattleSystem.Armies
             List<CellEntity> cells = GetProtectCell();
             protectCells.Refresh(cells);
             protectCells.Display();
-            foreach (var item in cells)
-            {
-                if (item.HasArmyStandOn)
-                {
-                    item.HasArmyStandOn.transform.localScale *= 1.2f;
-                }
-            }
+            //foreach (var item in cells)
+            //{
+            //    if (item.HasArmyStandOn)
+            //    {
+            //        item.HasArmyStandOn.Highlight();
+            //    }
+            //}
         }
 
         public override void Unhighlight()
         {
             base.Unhighlight();
             protectCells.ClearDisplay();
-            foreach (var item in protectCells.CellMarks.Select(mark => transform.parent.GetComponent<CellEntity>()))
-            {
-                if (item.HasArmyStandOn)
-                {
-                    item.HasArmyStandOn.transform.localScale = Vector3.one;
-                }
-            }
+            //foreach (var item in protectCells.CellMarks.Select(mark => transform.parent.GetComponent<CellEntity>()))
+            //{
+            //    if (item.HasArmyStandOn)
+            //    {
+            //        item.HasArmyStandOn.Unhighlight();
+            //    }
+            //}
         }
 
         protected Status GetProtectionStatus(CellEntity cellEntity)
