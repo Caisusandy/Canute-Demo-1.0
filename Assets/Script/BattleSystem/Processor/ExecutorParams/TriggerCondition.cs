@@ -40,6 +40,8 @@ namespace Canute.BattleSystem
             entityLeft,
             /// <summary> when entity is adding status </summary>
             addingStatus,
+            /// <summary> when performing any actions (effect execute) </summary>
+            action,
         }
 
         public enum ConditionGroups
@@ -80,10 +82,10 @@ namespace Canute.BattleSystem
 
         public bool Equals(TriggerCondition other)
         {
-            Debug.Log(other);
+            //Debug.Log(other);
             if (other is null)
             {
-                Debug.Log("a null trigger condition");
+                Debug.Log("other one is a null trigger condition");
                 return false;
             }
             if (Count != other.Count)
@@ -142,6 +144,8 @@ namespace Canute.BattleSystem
         public static TriggerCondition OnTurnEnd => new TriggerCondition(Conditions.turnEnd, true, ConditionGroups.and);
         /// <summary> when turn end </summary>
         public static TriggerCondition OnAddingStatus => new TriggerCondition(Conditions.addingStatus, true, ConditionGroups.and);
+        /// <summary> when performing action </summary>
+        public static TriggerCondition OnAction => new TriggerCondition(Conditions.action, true, ConditionGroups.and);
 
         public static TriggerCondition Parse(Arg arg)
         {
@@ -194,6 +198,10 @@ namespace Canute.BattleSystem
                     case "onArrive":
                         condition = OnEnterCell;
                         break;
+                    case "onAction":
+                        condition = OnAction;
+                        break;
+
                     default:
                         throw new Exception();
                 }
@@ -392,11 +400,23 @@ namespace Canute.BattleSystem
                 case TriggerCondition.Conditions.addingStatus:
                     ans = IsAddingStatus(refEffect);
                     break;
+                case TriggerCondition.Conditions.action:
+                    ans = IsAction(refEffect);
+                    break;
                 default:
                     break;
             }
             Debug.Log(ans);
             return ans;
+        }
+
+        private static bool IsAction(Effect refEffect)
+        {
+            if (refEffect == null)
+            {
+                return false;
+            }
+            else return refEffect.Type != Effect.Types.none;
         }
 
         private static bool IsAddingStatus(Effect refEffect)

@@ -74,6 +74,9 @@ namespace Canute.BattleSystem
         bool AllowMove { get; set; }
         BattleProperty.Position StandPostion { get; }
 
+        void FaceTo(OnMapEntity onMapEntity);
+        void FaceTo(bool isToRight);
+
         /// <summary>
         /// Get the straight distance to <paramref name="destination"/>
         /// </summary>

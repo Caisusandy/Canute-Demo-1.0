@@ -91,7 +91,7 @@ public class Credit : MonoBehaviour
         {
             t += Time.deltaTime;
             page.content.position = new Vector3(0, -1000, 0);
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForEndOfFrame();
         }
 
         yield return null;
@@ -109,7 +109,7 @@ public class Credit : MonoBehaviour
             color = blocker.color;
             color.a = t / 3;
             blocker.color = color;
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForEndOfFrame();
         }
 
         color = blocker.color;

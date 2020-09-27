@@ -18,7 +18,7 @@ namespace Canute.BattleSystem.AI
             CellEntity destination = null;
             foreach (var item in entity.data.GetMoveArea())
             {
-                if (item.HasArmyStandOn)
+                if (item.HasArmyStandOn || !item.data.canStandOn)
                 {
                     continue;
                 }
@@ -40,7 +40,7 @@ namespace Canute.BattleSystem.AI
                 return;
             }
             ArmyMovement.SetPath(PathFinder.GetPath(entity.OnCellOf, destination, entity.data.Properties.MoveRange, PathFinder.FinderParam.ignoreBuilding | (entity.data.StandPosition == BattleProperty.Position.land ? PathFinder.FinderParam.ignoreAirArmy : PathFinder.FinderParam.ignoreLandArmy)));
-            new Effect(Effect.Types.move, entity, destination, 1, 0).Execute();
+            new Effect(Effect.Types.move, entity, destination, 1, 0).Execute(true);
         }
 
 
@@ -73,7 +73,7 @@ namespace Canute.BattleSystem.AI
             }
             var nextCellCoord = args[posID.ToString()].IsVector2() ? args[posID.ToString()].ToVector2Int() : args["0"].ToVector2Int();
             var nextCell = Game.CurrentBattle.MapEntity[nextCellCoord];
-            new Effect(Effect.Types.@event, entity, nextCell, 1, 0, "name:move").Execute();
+            new Effect(Effect.Types.@event, entity, nextCell, 1, 0, "name:move").Execute(true);
         }
         private static void AttackClosest(ArmyEntity entity, params IPassiveEntity[] targets)
         {
@@ -91,7 +91,7 @@ namespace Canute.BattleSystem.AI
                 }
             }
 
-            new Effect(Effect.Types.attack, entity, closestTarget.entity, 1, entity.data.Damage).Execute();
+            new Effect(Effect.Types.attack, entity, closestTarget.entity, 1, entity.data.Damage).Execute(true);
         }
     }
 }

@@ -21,13 +21,25 @@ namespace Canute.UI
         public void Display(ArmyItem armyItem)
         {
             displayingArmy = armyItem;
+            if (displayingArmy)
+            {
+                portrait.sprite = armyItem.Prototype.Portrait;
+                portrait.color = Color.white;
+                armyName.text = armyItem.DisplayingName;
+                careerIcon.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, armyItem.Career.ToString());
+                typeIcon.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, armyItem.Type.ToString());
+                level.text = armyItem.Level.ToString();
+            }
+            else
+            {
+                portrait.sprite = null;
+                portrait.color = Color.grey;
+                armyName.text = "";
+                careerIcon.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, Career.none.ToString());
+                typeIcon.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, Army.Types.none.ToString());
+                level.text = "";
+            }
 
-            //TODO get portrait
-            //portrait.sprite = armyItem.Portrait;
-            armyName.text = armyItem.DisplayingName;
-            careerIcon.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, armyItem.Career.ToString());
-            typeIcon.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, armyItem.Type.ToString());
-            level.text = armyItem.Level.ToString();
         }
 
         public void Select()

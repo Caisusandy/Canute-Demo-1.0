@@ -14,7 +14,7 @@ namespace Canute.UI
 
         public void Start()
         {
-            levelName.text = playerData.uuid;
+            levelName.text = (playerData.LastOperationTime).ToShortDateString();
             //lastTime.text = ((DateTime)playerData.playerLastOperationTime).ToShortDateString();
         }
 

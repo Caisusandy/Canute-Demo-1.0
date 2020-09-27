@@ -120,6 +120,7 @@ namespace Canute.BattleSystem
             isInitialized = true;
         }
 
+
         public static implicit operator List<ColumnEntity>(MapEntity mapEntity)
         {
             return mapEntity.columnEntities;
@@ -655,19 +656,6 @@ namespace Canute.BattleSystem
             return border;
         }
 
-        public List<ArmyEntity> FindArmies(List<CellEntity> cellEntities)
-        {
-            List<ArmyEntity> armyEntities = new List<ArmyEntity>();
-            foreach (var item in ArmyEntity.onMap)
-            {
-                if (cellEntities.Contains(item.OnCellOf))
-                {
-                    armyEntities.Add(item);
-                }
-            }
-            return armyEntities;
-        }
-
         public Vector2Int GetPosition(CellEntity cellEntity)
         {
             return new Vector2Int(columnEntities[InColumnOf(cellEntity)].cellEntities.IndexOf(cellEntity), InColumnOf(cellEntity));
@@ -800,6 +788,18 @@ namespace Canute.BattleSystem
                 }
             }
             return cells;
+        }
+
+        [ContextMenu("Draw Cell")]
+        public void DrawCell()
+        {
+            foreach (var item in columnEntities)
+            {
+                foreach (var cell in item)
+                {
+                    cell.SetCellSprite();
+                }
+            }
         }
     }
 

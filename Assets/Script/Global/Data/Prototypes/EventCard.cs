@@ -22,7 +22,7 @@ namespace Canute.BattleSystem
 
         public int Count => count;
         public Effect Effect => EventCardProperty[0].Effect;
-        public EventCardPropertyList EventCardProperty => eventCardProperty;
+        public EventCardPropertyList EventCardProperty { get => eventCardProperty; set => eventCardProperty = value; }
         public GameObject Prefab => prefab ?? GameData.Prefabs.NormalEventCard;
         public Type CardType { get => cardType; set => cardType = value; }
         public Career Career { get => career; set => career = value; }

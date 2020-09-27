@@ -24,7 +24,7 @@ namespace Canute
         /// </summary>
         public static bool SaveCurrentData()
         {
-            Data.PlayerLastOperationTime = DateTime.UtcNow;
+            Data.LastOperationTime = DateTime.UtcNow;
             string json = JsonUtility.ToJson(Data);
             string filePath = DataPath + data.UUID;
             string savePath = filePath + "/Data.json";
@@ -50,7 +50,7 @@ namespace Canute
         /// </summary>
         public static bool SaveData(Data data)
         {
-            data.PlayerLastOperationTime = DateTime.UtcNow;
+            data.LastOperationTime = DateTime.UtcNow;
             string json = JsonUtility.ToJson(data);
             string filePath = DataPath + data.UUID;
             string savePath = filePath + "/Data.json";
@@ -149,18 +149,22 @@ namespace Canute
                 }
             }
             Debug.Log("Current saves count : " + saves.Count);
+            saves.Sort();
+            saves.Reverse();
             return saves;
         }
     }
 
     [Serializable]
-    public class Save : IUUIDLabeled
+    public class Save : IUUIDLabeled, IComparable<Save>, IComparable<Data>
     {
         public UUID uuid;
         public WorldTime playerLastOperationTime;
         public string filePath;
 
+        public DateTime LastOperationTime => playerLastOperationTime;
         public UUID UUID { get => uuid; set => uuid = value; }
+
 
         public Data GetData()
         {
@@ -172,6 +176,18 @@ namespace Canute
             }
             string json = File.ReadAllText(path, Encoding.UTF8);
             return JsonUtility.FromJson<Data>(json);
+        }
+        public int CompareTo(Save other)
+        {
+            if (LastOperationTime > other.LastOperationTime) { return 1; }
+            if (LastOperationTime < other.LastOperationTime) { return -1; }
+            return 0;
+        }
+        public int CompareTo(Data other)
+        {
+            if (LastOperationTime > other.LastOperationTime) { return 1; }
+            if (LastOperationTime < other.LastOperationTime) { return -1; }
+            return 0;
         }
     }
 }

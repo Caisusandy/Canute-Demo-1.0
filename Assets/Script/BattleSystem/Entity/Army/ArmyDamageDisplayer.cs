@@ -5,6 +5,7 @@ namespace Canute.BattleSystem
 {
     public class ArmyDamageDisplayer : MonoBehaviour
     {
+        public IPassiveEntity parent => transform.parent.GetComponent<OnMapEntity>() as IPassiveEntity;
         public Text displayer;
         public Canvas canvas;
         public int damage;
@@ -19,6 +20,8 @@ namespace Canute.BattleSystem
         {
             dx = 0.25f + 0.5f * Random.value;
             dy = 0.25f + 0.5f * Random.value;
+            var scale = transform.localScale;
+            transform.localScale = parent.transform.localScale;
         }
 
         private void Start()

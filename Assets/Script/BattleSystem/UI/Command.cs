@@ -126,6 +126,10 @@ namespace Canute.Testing
                     Game.PlayerData.AddEquipmentItem(equipmentItem);
                     break;
                 case Item.Type.eventCard:
+                    EventCard eventCard = GameData.Prototypes.GetEventCardPrototype(name);
+                    if (!eventCard) { Console.WriteLine("the eventCard prototype is not exist!"); return false; }
+                    EventCardItem eventCardItem = new EventCardItem(eventCard);
+                    Game.PlayerData.AddEventCardItem(eventCardItem);
                     break;
             }
             PlayerFile.SaveCurrentData();

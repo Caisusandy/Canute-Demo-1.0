@@ -27,6 +27,7 @@ namespace Canute.BattleSystem
         public const string dragonCritAttack = "dragonCritAttack";
         public const string createArmy = "createArmy";
         public const string magePoison = "magePoison";
+        public const string poison = "poison";
         public const string propertyBonus = "propertyBonus";
     }
 
@@ -73,6 +74,9 @@ namespace Canute.BattleSystem
                 case EventName.protection:
                     result = Protection(effect);
                     break;
+                case EventName.poison:
+                    result = Poison(effect);
+                    break;
                 case EventName.createArmy:
                     result = EventCreateArmy(effect);
                     break;
@@ -103,6 +107,12 @@ namespace Canute.BattleSystem
             }
 
             return result;
+        }
+
+        private static bool Poison(Effect effect)
+        {
+            RealDamage(new Effect(Effect.Types.@event, effect.Source, effect.Targets, effect.Count, effect.Parameter));
+            return true;
         }
 
         private static bool MagePoison(Effect effect)
@@ -312,12 +322,14 @@ namespace Canute.BattleSystem
                     {
                         continue;
                     }
-                    battleEntityData.Data.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
-                    battleEntityData.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
-                    Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                    Status.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect, battleEntityData.Data, battleEntityData.Owner, Game.CurrentBattle);
+                    //battleEntityData.Data.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                    //battleEntityData.Owner.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                    //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
                 }
                 IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
-                agressiveEntity.Data.TriggerConditionOf(TriggerCondition.Conditions.attack, ref effect);
+                Status.TriggerOf(TriggerCondition.Conditions.attack, ref effect, agressiveEntity.Data, agressiveEntity.Owner, Game.CurrentBattle);
+                //agressiveEntity.Data.TriggerOf(TriggerCondition.Conditions.attack, ref effect);
             }
 
             IAggressiveEntity aggressiveEntity = effect.Source as IAggressiveEntity;
@@ -326,9 +338,10 @@ namespace Canute.BattleSystem
                 IPassiveEntity target = item as IPassiveEntity;
                 if (!effect.Args.HasParam("avoidTrigger"))
                 {
-                    target.Data.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
-                    target.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
-                    Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
+                    Status.TriggerOf(TriggerCondition.Conditions.defense, ref effect, target.Data, target.Owner, Game.CurrentBattle);
+                    //target.Data.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
+                    //target.Owner.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
+                    //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
                 }
                 var executingEffect = effect.Clone();
                 executingEffect.Target = item;
@@ -351,9 +364,10 @@ namespace Canute.BattleSystem
                     {
                         continue;
                     }
-                    battleEntity.Data.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
-                    battleEntity.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
-                    Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                    Status.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect, battleEntity.Data, battleEntity.Owner, Game.CurrentBattle);
+                    //battleEntity.Data.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                    //battleEntity.Data.Owner.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                    //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
                 }
             }
             return true;

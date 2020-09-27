@@ -12,24 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c60caa65246bd804a8a164ad96819de3, type: 3}
   m_Name: Kathakria
   m_EditorClassIdentifier: 
+  isTemporaryPrototype: 0
   prototype:
     name: Kathakria
     rarity: 2
     icon: {fileID: 0}
     sprite: {fileID: 0}
-    protrait: {fileID: 0}
-    prefab: {fileID: 0}
+    portrait: {fileID: 0}
     career: 3
     bounes:
     - type: 1
-      bounesType: 1
+      bonusType: 1
       value: 25
       growth: 2
     - type: 64
-      bounesType: 1
+      bonusType: 1
       value: 4.5
       growth: 1
     - type: 4
-      bounesType: 1
+      bonusType: 1
       value: 15
       growth: -2
+    skill:
+      specialName: 
+      count: 0
+      parameter: 0
+      args:
+        args: []
+    hasAssociateCharacter: 0

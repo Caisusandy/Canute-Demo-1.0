@@ -15,14 +15,16 @@ MonoBehaviour:
   chapterTree:
     Chapter1:
       list:
-      - data: {fileID: 11400000, guid: 5e88b38a6f08388468d30909430e4db6, type: 2}
-        backgroundStoryName: 
-        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 5e88b38a6f08388468d30909430e4db6, type: 2}
         nextLevel: 
-      - data: {fileID: 11400000, guid: 5e88b38a6f08388468d30909430e4db6, type: 2}
-        backgroundStoryName: 
         endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 5e88b38a6f08388468d30909430e4db6, type: 2}
         nextLevel: 
+        endStoryName: 
     Chapter2:
       list: []
     Chapter3:
@@ -33,29 +35,77 @@ MonoBehaviour:
       list: []
     Chapter6:
       list: []
+    Chapter7:
+      list:
+      - backgroundStoryName: 
+        lastLevel: Empty
+        data: {fileID: 0}
+        nextLevel: Ch7-2
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: Ch7-1
+        data: {fileID: 0}
+        nextLevel: Ch7-3
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: Ch7-2
+        data: {fileID: 0}
+        nextLevel: Ch7-4
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: Ch7-3
+        data: {fileID: 0}
+        nextLevel: Ch7-5
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: Ch7-4
+        data: {fileID: 0}
+        nextLevel: Ch7-6
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: Ch7-5
+        data: {fileID: 0}
+        nextLevel: Ch7-7
+        endStoryName: 
     Extra:
       list:
-      - data: {fileID: 11400000, guid: 43016f3dac1ecad45a641f8711af459f, type: 2}
-        backgroundStoryName: 
-        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 43016f3dac1ecad45a641f8711af459f, type: 2}
         nextLevel: 
-      - data: {fileID: 11400000, guid: b3a4018f8febfa24db074e069bad05b1, type: 2}
-        backgroundStoryName: prelog
+        endStoryName: 
+      - backgroundStoryName: prelog
+        lastLevel: 
+        data: {fileID: 11400000, guid: b3a4018f8febfa24db074e069bad05b1, type: 2}
+        nextLevel: 
         endStoryName: prelog2
+      - backgroundStoryName: prelog
+        lastLevel: 
+        data: {fileID: 11400000, guid: 55093178b0916234aaf172f5f009edf5, type: 2}
         nextLevel: 
-      - data: {fileID: 11400000, guid: 55093178b0916234aaf172f5f009edf5, type: 2}
-        backgroundStoryName: prelog
         endStoryName: prelog2
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 0fc53581d1ba0914ca7a0de7d4bf467c, type: 2}
         nextLevel: 
-      - data: {fileID: 11400000, guid: 0fc53581d1ba0914ca7a0de7d4bf467c, type: 2}
-        backgroundStoryName: 
         endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 0659d0fb27536d94486cc4c2db728c16, type: 2}
         nextLevel: 
-      - data: {fileID: 11400000, guid: 0659d0fb27536d94486cc4c2db728c16, type: 2}
-        backgroundStoryName: 
         endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 04bc88db144f7b0458f6b445719db140, type: 2}
         nextLevel: 
-      - data: {fileID: 11400000, guid: 04bc88db144f7b0458f6b445719db140, type: 2}
-        backgroundStoryName: 
         endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: df873f47a5124f9499ffa3e746b29f98, type: 2}
         nextLevel: 
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 373fb71bc345551449b35aa581113c79, type: 2}
+        nextLevel: 
+        endStoryName: 

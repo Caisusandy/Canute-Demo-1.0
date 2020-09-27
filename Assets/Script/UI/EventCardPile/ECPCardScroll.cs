@@ -35,13 +35,13 @@ namespace Canute.UI.EventCardPile
                 gameObject.AddComponent<ECPAddCard>();
                 cards.Add(gameObject);
             }
-            gridLayoutGroup.enabled = true;
+            //gridLayoutGroup.enabled = true;
         }
 
         public void Organize()
         {
-            gridLayoutGroup.enabled = true;
-            gridLayoutGroup.enabled = false;
+            //gridLayoutGroup.enabled = true;
+            //gridLayoutGroup.enabled = false;
         }
 
         public void Unload()
@@ -51,7 +51,7 @@ namespace Canute.UI.EventCardPile
                 Destroy(item);
             }
             cards.Clear();
-            gridLayoutGroup.enabled = true;
+            //gridLayoutGroup.enabled = true;
         }
 
         public void Reload()

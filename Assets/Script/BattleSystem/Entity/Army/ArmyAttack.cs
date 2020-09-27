@@ -253,7 +253,12 @@ namespace Canute.BattleSystem
 
                 if (AllowSearchBuilding && cellEntity.HasBuildingStandOn)
                 {
-                    possibleTarget = cellEntity.HasBuildingStandOn;
+                    possibleTarget = cellEntity.HasBuildingStandOn as IPassiveEntity;
+                    if (possibleTarget == null)
+                    {
+                        cellEntities.RemoveAt(i);
+                        continue;
+                    }
                     if (!entity.Data.AttackPosition.HasFlag(possibleTarget.Data.StandPosition))
                     {
                         cellEntities.RemoveAt(i);
@@ -288,14 +293,9 @@ namespace Canute.BattleSystem
             foreach (var target in enumerable)
             {
                 IPassiveEntity possibleTarget = target.Entity as IPassiveEntity;
-                if (!aggressiveEntity.Data.Properties.AttackPosition.HasFlag(possibleTarget.Data.StandPosition))
-                {
-                    continue;
-                }
-                else if (target.Owner == aggressiveEntity.Owner || target.Owner == null)
-                {
-                    continue;
-                }
+                if (possibleTarget is null) continue;
+                else if (!aggressiveEntity.Data.Properties.AttackPosition.HasFlag(possibleTarget.Data.StandPosition)) continue;
+                else if (target.Owner == aggressiveEntity.Owner || target.Owner == null) continue;
                 else if (closestTarget is null)
                 {
                     closestTarget = possibleTarget;
@@ -330,6 +330,7 @@ namespace Canute.BattleSystem
             foreach (var target in enumerable)
             {
                 IPassiveEntity possibleTarget = target.Entity as IPassiveEntity;
+                if (possibleTarget is null) continue;
                 if (!aggressiveEntity.Data.Properties.AttackPosition.HasFlag(possibleTarget.Data.StandPosition))
                 {
                     continue;

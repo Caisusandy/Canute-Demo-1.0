@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Canute.BattleSystem
@@ -17,13 +18,13 @@ namespace Canute.BattleSystem
     }
 
 
-    public static class StatusContainer
+    public static class Statuses
     {
         #region Trigger
 
         /// <summary> Trigger all effect that fit in a specific condition </summary>
         /// <param name="conditions"></param>
-        public static void Trigger(this TriggerCondition.Conditions conditions)
+        public static void TriggerOf(this TriggerCondition.Conditions conditions)
         {
             foreach (IStatusContainer container in Game.CurrentBattle.StatusContainers)
             {
@@ -61,48 +62,55 @@ namespace Canute.BattleSystem
         }
 
 
-        public static void TriggerConditionOf(this IStatusContainer statusContainer, TriggerCondition.Conditions condition, ref Effect effect)
+
+        /// <summary>
+        /// trigger with a reference effect
+        /// attack triggers(4), move, entity arrive/left, adding status, play card 
+        /// </summary>
+        /// <param name="statusContainer"></param>
+        /// <param name="condition"></param>
+        /// <param name="effect"></param>
+        public static void TriggerOf(this IStatusContainer statusContainer, TriggerCondition.Conditions condition, ref Effect effect)
         {
             StatusList stats = statusContainer.StatList?.GetAllStatus(condition);
             Debug.Log(condition.ToString() + " triggered. " + statusContainer.Name + "; status count:" + stats.Count);
 
-            if (stats is null)
-                return;
+            if (stats is null) return;
 
             for (int i = stats.Count - 1; i >= 0; i--)
             {
                 Status item = stats[i];
                 if (!item.TriggerConditions.CanTrigger(effect))
                 {
-                    Debug.LogWarning("An status cannot be triggered: " + item);
-                    continue;
+                    Debug.LogWarning("An status cannot be triggered: " + item); continue;
                 }
-                else if (item.Type == Status.StatType.delay && item.TurnCount != 1)
-                    continue;
+                else if (item.Type == Status.StatType.delay && item.TurnCount != 1) continue;
 
                 item.Execute(ref effect);
             }
             statusContainer.StatList.ClearInvalid();
         }
 
-        public static void TriggerConditionOf(this IStatusContainer statusContainer, TriggerCondition.Conditions condition)
+        /// <summary>
+        /// trigger without a reference effect (turn begin, turn end)
+        /// </summary>
+        /// <param name="statusContainer"></param>
+        /// <param name="condition"></param>
+        public static void TriggerOf(this IStatusContainer statusContainer, TriggerCondition.Conditions condition)
         {
             StatusList stats = statusContainer.StatList?.GetAllStatus(condition);
-            Debug.Log(statusContainer.Name + " triggered its effect in condition of " + condition.ToString() + "; status count:" + stats.Count);
+            Debug.Log(statusContainer.Name + " trigger status when" + condition.ToString() + "; status count =" + stats.Count);
 
-            if (stats is null)
-                return;
+            if (stats is null) return;
 
             for (int i = stats.Count - 1; i >= 0; i--)
             {
                 Status item = stats[i];
                 if (!item.TriggerConditions.CanTrigger())
                 {
-                    Debug.LogWarning("An status cannot be triggered: " + item);
-                    continue;
+                    Debug.LogWarning("An status cannot be triggered: " + item); continue;
                 }
-                else if (item.Type == Status.StatType.delay && item.TurnCount != 1)
-                    continue;
+                else if (item.Type == Status.StatType.delay && item.TurnCount != 1) continue;
 
                 item.Execute();
             }
@@ -132,17 +140,8 @@ namespace Canute.BattleSystem
             statusContainer.StatList.ClearInvalid();
         }
 
-
-        public static List<IStatusContainer> ToStatusContainers<T>(this IEnumerable<T> ts) where T : IStatusContainer
-        {
-            List<IStatusContainer> statusContainers = new List<IStatusContainer>();
-            foreach (var item in ts)
-            {
-                statusContainers.Add(item);
-            }
-            return statusContainers;
-        }
         #endregion
+
         #region 回合计算Stat自减 
         /// <summary>
         /// Let all status that work to the player/ object that player own -1 turn (if is base on turn)

@@ -287,11 +287,12 @@ namespace Canute.BattleSystem
         /// <param name="effect"></param>
         protected virtual void SkillAction(Effect effect)
         {
-            Debug.Log("Performing skill");
+            Debug.Log("performing skill");
             Action(new EntityEventPack(IdleDelay, SkillDuration), new EntityEventPack(SkillExecute, effect));
 
             void SkillExecute(params object[] vs)
             {
+                Debug.Log("skill?");
                 Effect skillEffect = vs[0] as Effect;
                 this.SkillExecute(skillEffect);
             }

@@ -288,6 +288,7 @@ namespace Canute.BattleSystem
         /// <summary>
         /// Convert the effect to a status
         /// <para>require parameter of {tc}, {sc}, {effectType}, {statType}</para>
+        /// <para>possible parameter: {name}, {[triggerCondition]}</para>
         /// <para>use when effect is type of addStatus</para>
         /// </summary>
         /// <returns></returns>

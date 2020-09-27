@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c60caa65246bd804a8a164ad96819de3, type: 3}
   m_Name: Aether Erinope
   m_EditorClassIdentifier: Assembly-CSharp:Canute.BattleSystem:LeaderPrototypeContainer
+  isTemporaryPrototype: 0
   prototype:
     name: Aether Erinope
     rarity: 3
     icon: {fileID: 0}
     sprite: {fileID: 0}
     portrait: {fileID: 21300000, guid: 9a7d3c02996275241a3acfc9badec248, type: 3}
-    prefab: {fileID: 0}
     career: 1
     bounes:
     - type: 6
-      bounesType: 1
+      bonusType: 1
       value: 25
       growth: 1
     - type: 1
-      bounesType: 1
+      bonusType: 1
       value: 20
       growth: 1
     skill:
@@ -35,3 +35,4 @@ MonoBehaviour:
       parameter: 0
       args:
         args: []
+    hasAssociateCharacter: 0

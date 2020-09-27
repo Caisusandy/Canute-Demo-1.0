@@ -1,9 +1,8 @@
-﻿using Canute.BattleSystem;
-using System;
+﻿using System;
 using System.Linq;
 using UnityEngine;
 using Canute.Module;
-using Canute.StorySystem;
+using System.Collections.Generic;
 
 namespace Canute.LevelTree
 {
@@ -35,6 +34,7 @@ namespace Canute.LevelTree
             CH4,
             CH5,
             CH6,
+            CH7,
             Extra,
         }
 
@@ -44,6 +44,7 @@ namespace Canute.LevelTree
         public Chapter Chapter4;
         public Chapter Chapter5;
         public Chapter Chapter6;
+        public Chapter Chapter7;
         public Chapter Extra;
 
         public ChapterTree()
@@ -54,10 +55,11 @@ namespace Canute.LevelTree
             Chapter4 = new Chapter();
             Chapter5 = new Chapter();
             Chapter6 = new Chapter();
+            Chapter7 = new Chapter();
             Extra = new Chapter();
         }
 
-        public DataList<Level> Levels => Chapter1.Union(Chapter2).Union(Chapter3).Union(Chapter4).Union(Chapter5).Union(Chapter6).Union(Extra).ToDataList();
+        private IEnumerable<Level> Levels => Chapter1.Union(Chapter2).Union(Chapter3).Union(Chapter4).Union(Chapter5).Union(Chapter6).Union(Chapter7).Union(Extra);
 
         public Level GetLevel(string name)
         {
@@ -69,57 +71,6 @@ namespace Canute.LevelTree
                 }
             }
             return null;
-        }
-    }
-
-    [Serializable]
-    public class Level : INameable, IEquatable<Level>
-    {
-        public LevelData data;
-        public string backgroundStoryName;
-        public string endStoryName;
-        public string nextLevel;
-
-        public string Name => Data.Name;
-        public LevelData Data => data;
-        public Story BackgroundStory => Story.Get(backgroundStoryName);
-        public Story EndStory => Story.Get(endStoryName);
-        public Level Next => GameData.Chapters.ChapterTree.GetLevel(nextLevel);
-
-
-        public bool OpenBGStory()
-        {
-            if (!Game.Configuration.ShowStory)
-            {
-                return false;
-            }
-
-            if (BackgroundStory)
-            {
-                StorySystem.StoryDisplayer.Load(BackgroundStory);
-                return true;
-            }
-            else return false;
-        }
-
-        public bool OpenEndStory()
-        {
-            if (!Game.Configuration.ShowStory)
-            {
-                return false;
-            }
-
-            if (EndStory)
-            {
-                StorySystem.StoryDisplayer.Load(EndStory);
-                return true;
-            }
-            else return false;
-        }
-
-        public bool Equals(Level level)
-        {
-            return data == level?.data;
         }
     }
 

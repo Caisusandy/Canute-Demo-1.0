@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Canute.BattleSystem.Buildings
 {
     public class CampusEntity : BuildingEntity
     {
+        private const int PlaceRange = 4;
         public MarkController markController;
-        public List<CellEntity> Range => Game.CurrentBattle.MapEntity.GetBorderCell(OnCellOf, 5, true);
-        public List<CellEntity> PossibleCells => Game.CurrentBattle.MapEntity.GetNearbyCell(OnCellOf, 5, true);
+        public List<CellEntity> Range => Game.CurrentBattle.MapEntity.GetBorderCell(OnCellOf, PlaceRange, true);
+        public List<CellEntity> PossibleCells => Game.CurrentBattle.MapEntity.GetNearbyCell(OnCellOf, PlaceRange, true).Where((c) => c.data.canStandOn).ToList();
         public bool IsPlayers => Owner == Game.CurrentBattle.Player;
         public bool BorderOpened { get; set; }
 

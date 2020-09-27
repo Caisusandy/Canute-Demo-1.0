@@ -88,10 +88,9 @@ namespace Canute.BattleSystem
             bool effectSimilar = effect.SimilarTo(other.effect);
             bool trigger = triggerConditions.Equals(other.TriggerConditions);
 
-
-            Debug.Log(sameCount);
-            Debug.Log(effectSimilar);
-            Debug.Log(trigger);
+            //Debug.Log(sameCount);
+            //Debug.Log(effectSimilar);
+            //Debug.Log(trigger);
             return sameCount && effectSimilar && trigger;
         }
 
@@ -205,6 +204,24 @@ namespace Canute.BattleSystem
                 TriggerConditions?.ToString() +
                 "============================\n" +
                 Effect?.ToString();
+        }
+
+
+
+        public static void TriggerOf(TriggerCondition.Conditions condition, ref Effect effect, params IStatusContainer[] statusContainer)
+        {
+            foreach (var item in statusContainer)
+            {
+                if (item != null) item.TriggerOf(condition, ref effect);
+            }
+        }
+
+        public static void TriggerOf(TriggerCondition.Conditions condition, params IStatusContainer[] statusContainer)
+        {
+            foreach (var item in statusContainer)
+            {
+                if (item != null) item.TriggerOf(condition);
+            }
         }
 
     }

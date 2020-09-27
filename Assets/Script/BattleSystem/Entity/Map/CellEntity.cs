@@ -53,10 +53,7 @@ namespace Canute.BattleSystem
                 GetComponent<Collider2D>().enabled = false;
             }
 
-            if (!data.canStandOn)
-            {
-                GetComponent<SpriteRenderer>().color = new Color(200f / 255, 200f / 255, 200f / 255);
-            }
+            GetComponent<SpriteRenderer>().color = !data.canStandOn ? new Color(150f / 255, 150f / 255, 150f / 255) : Color.white;
 
             //SetCellSprite();
         }
@@ -64,6 +61,13 @@ namespace Canute.BattleSystem
         public void SetCellSprite()
         {
             GetComponent<SpriteRenderer>().sprite = GetCellSprite();
+            GetComponent<SpriteRenderer>().size = new Vector2(40, 67.72008f);
+        }
+
+        public void SetCellSprite(Sprite sprite)
+        {
+            GetComponent<SpriteRenderer>().sprite = sprite;
+            GetComponent<SpriteRenderer>().size = new Vector2(40, 67.72008f);
         }
 
         private Sprite GetCellSprite()
@@ -127,9 +131,10 @@ namespace Canute.BattleSystem
             onMapEntity.entityMark.Refresh(this);
             onMapEntity.entityMark.Display();
 
-            this.TriggerConditionOf(TriggerCondition.Conditions.entityArrive, ref effect);
-            onMapEntity.TriggerConditionOf(TriggerCondition.Conditions.entityArrive, ref effect);
-            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.entityArrive, ref effect);
+            Status.TriggerOf(TriggerCondition.Conditions.entityArrive, ref effect, this, onMapEntity, Game.CurrentBattle);
+            //this.TriggerOf(TriggerCondition.Conditions.entityArrive, ref effect);
+            //onMapEntity.TriggerOf(TriggerCondition.Conditions.entityArrive, ref effect);
+            //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.entityArrive, ref effect);
         }
 
         /// <summary>
@@ -137,9 +142,10 @@ namespace Canute.BattleSystem
         /// </summary>
         public void Leave(OnMapEntity onMapEntity, Effect effect)
         {
-            this.TriggerConditionOf(TriggerCondition.Conditions.entityLeft, ref effect);
-            onMapEntity.TriggerConditionOf(TriggerCondition.Conditions.entityLeft, ref effect);
-            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.entityLeft, ref effect);
+            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, ref effect, this, onMapEntity, Game.CurrentBattle);
+            //this.TriggerOf(TriggerCondition.Conditions.entityLeft, ref effect);
+            //onMapEntity.TriggerOf(TriggerCondition.Conditions.entityLeft, ref effect);
+            //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.entityLeft, ref effect);
             onMapEntity.entityMark.Refresh();
         }
 

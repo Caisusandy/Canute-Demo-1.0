@@ -136,10 +136,17 @@ Canute.BattleSystem.Effect+Types.addActionPoint=Action Point
 Canute.BattleSystem.Effect+Types.addActionPoint.info=Add @param Action Point 
 Canute.BattleSystem.Effect+Types.addArmor=Add Armor
 Canute.BattleSystem.Effect+Types.addArmor.info=Add @param Armor to select army
+Canute.BattleSystem.Effect+Types.magePoison=Poison
+Canute.BattleSystem.Effect+Types.magePoison.info=Army will lost @param HP each turn.
+Canute.BattleSystem.Effect+Types.coma=Coma
+Canute.BattleSystem.Effect+Types.coma.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.EMPImpact=EMP Impact
+Canute.BattleSystem.Effect+Types.EMPImpact.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.flashLight=Flash Light
+Canute.BattleSystem.Effect+Types.flashLight.info=Army cannot do anything.
 
 
-
-
+#resonance
 Canute.BattleSystem.Effect+Types.infantryLightness=Resonance: Lightness
 Canute.BattleSystem.Effect+Types.infantryLightness.info=No action point cost when moving
 Canute.BattleSystem.Effect+Types.infantryDamageBonus=Resonance: Damage Increase
@@ -195,7 +202,7 @@ Canute.BattleSystem.Effect+Types.addDragonMoveBonus.info=army move range +1, arm
 Canute.BattleSystem.Effect+Types.addDragonStrike=Add Strike
 Canute.BattleSystem.Effect+Types.addDragonStrike.info=enemy army will go back 2 grid when the army stand by.
 
-
+#skill
 Canute.BattleSystem.Effect+Types.NoSkill=---
 Canute.BattleSystem.Effect+Types.NoSkill=No Skill
 Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Infantry Skill
@@ -275,13 +282,73 @@ Canute.Character.Theodore Pullan.WordLine.1=Since aethium means "light" and it h
 Canute.Character.Theodore Pullan.WordLine.2=Hmm… My sister? I haven’t met her for five years; she is a grown up already. I mean, all Pullans are strong and independent, she will be fine. But anyway, can I have a vacation, just to see how is she doing?
 Canute.Character.Theodore Pullan.WordLine.3=Chairman Canute, even though you are part of the Project Ankaa, I don’t really know much about you before. 
 Canute.Character.Theodore Pullan.WordLine.4=Ankaa? The firebird on the sky that can reborn, they name is project as they want Anexar also reborn.
-Canute.Character.Theodore Pullan.WordLine.5=Well, they are so lucky to choose you and create one of the best commanders in Fantarium.
+Canute.Character.Theodore Pullan.WordLine.5=Wow, Finn won the tennis competition yesterday. I am totally not interested in this competition.
+Canute.Character.Theodore Pullan.WordLine.6=If… How can Aethium and Avgium have so much reaction to magnetic fields? This is it! I am done with this stupid stone. No, I am just kidding, Mr. Chairman.
+Canute.Character.Theodore Pullan.WordLine.7=Nah, I don’t know why we are so focused on Magnetics for thousands of years, we can’t change the history of that after all, or can we?
+Canute.Character.Theodore Pullan.WordLine.8=How many times I have told you, I am not a calculator, Finn! Ok, what? The answer is 42, yes, 42, still, yes all answers are 42.
 Canute.Character.Theodore Pullan.supplyTeamComeBackWithItem=Chairman Canute, we found soemthing on the way back, I think now it's time to go out again.
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithLeader=Chairman Canute, I think we have a new member. Anyway, It is your stuff, not mine.
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithStory=Chairman Canute, there are some tales I heard on the way back, not really interesting...
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithLetter=Chairman Canute, I picked up some papers outside, probably some history document you might like.
 
-Canute.Character.Finn Herman.WordLine.0=Both old teacher and I are from Calay.
+Canute.Character.Finn Herman.WordLine.0=Both the old teacher and I are from Calay.
 Canute.Character.Finn Herman.WordLine.1=Sir, Can I go outside to take a walk?
 Canute.Character.Finn Herman.WordLine.2=Sir, Can I watch the television? ok you are right, nothing interesting about the Council’s Propaganda, and Meialian Channel which only speak Meialian, they sound like dragon roar.
+Canute.Character.Finn Herman.WordLine.3=Last time I saw Theodore on a vacation, he was playing tennis.
+Canute.Character.Finn Herman.WordLine.4=Sir, do you like Calay more or here? Oh, I think you like Sigma Quadrant more because that was your home.
+Canute.Character.Finn Herman.WordLine.5=Sir, can you tell me more about your experience when you are studying abroad? Where? Of course I am talking about Meialia
+Canute.Character.Finn Herman.WordLine.6=Sir, can you tell someone who is going outside to get a simple calculator for me? What? You mean I can just use the Material printers to print one? Yeah!
+Canute.Character.Finn Herman.WordLine.7=Sir, last time one of the supply vehicles brought only 90% of the cargo. I am still investigating where the other 10% goes...
+Canute.Character.Finn Herman.WordLine.8=Sir, when can we go back to Calay, I missed home?
 Canute.Character.Finn Herman.supplyTeamComeBackWithItem=Sir, I found a give for you!
+Canute.Character.Finn Herman.supplyTeamComeBackWithLeader=Sir, there is a stranger who wants to be a new member...
+Canute.Character.Finn Herman.supplyTeamComeBackWithStory=Sir! I heard an interesting tale on the way this time!
+Canute.Character.Finn Herman.supplyTeamComeBackWithLetter=Sir, I found some papers, can you read for me? I don’t like to read.
+
+Canute.Character.Ron Thompson.WordLine.0=Do I like to be in Swisha? Why don’t I like to be at home? People said nothing is better than Home.
+Canute.Character.Ron Thompson.WordLine.1=Actions and Consequences, they formed everything.
+Canute.Character.Ron Thompson.WordLine.2=Why did I become a smuggler? When we don’t have choices, we do everything possible to live, smuggling is just one thing.
+Canute.Character.Ron Thompson.WordLine.3=Did you see my pipe? I think it is in the main hall. Well, I think just use the Material Printer to print another one.
+Canute.Character.Ron Thompson.WordLine.4=Federacy never changed, just as there never had a past to be remembered. We are in a world without yesterday.
+Canute.Character.Ron Thompson.WordLine.5=...
+Canute.Character.Ron Thompson.WordLine.6=...
+Canute.Character.Ron Thompson.WordLine.7=...
+Canute.Character.Ron Thompson.WordLine.8=...
+Canute.Character.Ron Thompson.supplyTeamComeBackWithItem=Canute, We picked up some supply on the way.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithLeader=Canute, We met someone who I think is reliable.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithStory=Canute, Let me tell you a tell, one even I just know.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithLetter=Canute, I found some papers, can you read for me? I can’t see those really tiny wrinkles clearly.
+
+
+Canute.Character.Shelly McMoore.WordLine.0=Thank you for getting most of us here, Mr. Chairman.
+Canute.Character.Shelly McMoore.WordLine.1=Even though you are from Sigma Quadrant, you don’t like those Quadranter.
+Canute.Character.Shelly McMoore.WordLine.2=Can I do anything for you?
+Canute.Character.Shelly McMoore.WordLine.3=As much as you know, the Federacy had two fractions before, we are the Revival Party, which today becomes the Scientific Revolution Party.
+Canute.Character.Shelly McMoore.WordLine.4=The other party? the Advance Party, which formed the Supreme Council today. Oh yes, there is a third party which we don’t admit is legal.
+Canute.Character.Shelly McMoore.WordLine.5=Determination is important, Chairman, without it, we can’t make it today and continue our work.
+Canute.Character.Shelly McMoore.WordLine.6=I have actually never been to Calay before, Chairman, I know you were the Senator of Calay, before the Supreme Council took over everything in the Federacy.
+Canute.Character.Shelly McMoore.WordLine.7=They said that the last president of the Federacy, Brittany Whitaker, ended the civil war of the Federacy by negotiating with the Supreme Council. Do you think the war is ended?
+Canute.Character.Shelly McMoore.WordLine.8=May the independence of the real Federation last forever.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithItem=Mr. Chairman, we found something on the way back.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithLeader=Mr. Chairman, we have a new member.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithStory=Mr. Chairman, there are some rumors outside and I think you are supposed to know about it.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithLetter=Mr. Chairman, we found some lost documents, and I think you should read it.
+
+
+Canute.Character.Empty.WordLine.0=
+Canute.Character.Empty.WordLine.1=
+Canute.Character.Empty.WordLine.2=
+Canute.Character.Empty.WordLine.3=
+Canute.Character.Empty.WordLine.4=
+Canute.Character.Empty.WordLine.5=
+Canute.Character.Empty.WordLine.6=
+Canute.Character.Empty.WordLine.7=
+Canute.Character.Empty.WordLine.8=
+Canute.Character.Empty.supplyTeamComeBackWithItem=
+Canute.Character.Empty.supplyTeamComeBackWithLeader=
+Canute.Character.Empty.supplyTeamComeBackWithStory=
+Canute.Character.Empty.supplyTeamComeBackWithLetter=
+
 #
 Canute.STPrizeDisplay.NewPrize=Supply Team get @name
 Canute.SupplyTeam.TeamPositionInfo=The Supply Team is in @city, @country right now.

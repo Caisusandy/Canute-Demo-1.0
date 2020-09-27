@@ -53,13 +53,7 @@ namespace Canute.BattleSystem
             int layer = !IsSelected ? id * 2 : 1000;
 
             infoDisplayer.text = data.Effect.Type.Lang();
-            infoDisplayer.canvas.sortingLayerName = "Card";
-            infoDisplayer.canvas.sortingOrder = layer + 1;
-
-            careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, data.Career.ToString());
-            GetComponent<Image>().canvas.sortingLayerName = "Card";
-            GetComponent<Image>().canvas.sortingOrder = layer;
-
+            careerPicture.sprite = battleArmy.Icon;
         }
 
         public override void HighLightPossibleTargets()
@@ -77,7 +71,7 @@ namespace Canute.BattleSystem
 
         public static CardEntity Create(Card card, BattleArmy battleArmy)
         {
-            Debug.Log("Generating armycard");
+            Debug.Log("Generating army card");
 
             ArmyCardEntity cardEntity;
             GameObject cardObject;

@@ -10,16 +10,6 @@ namespace Canute.BattleSystem
     public delegate void EffectExecutor(Effect effect);
     public delegate void StatusExecutor(ref Effect effect, Status status);
 
-    //public abstract class EffectExecution
-    //{
-    //    public abstract void Execute(Effect effect);
-    //}
-
-    //public abstract class StatusExecution
-    //{
-    //    public abstract void Execute(ref Effect effect, Status status);
-    //}
-
     public static partial class EffectExecute
     {
         #region delegates
@@ -62,6 +52,12 @@ namespace Canute.BattleSystem
 
         #region Framework
         /// <summary>
+        /// Execute a effect pack, it is not the start of a chain of effect if this effect would trigger other effect to execute
+        /// </summary>
+        /// <param name="effect"></param> 
+        /// <returns></returns>
+        public static bool Execute(this Effect effect) => Execute(effect, false);
+        /// <summary>
         /// Execute a effect pack
         /// <para>if is a primary effect, it will be recorded</para>
         /// </summary>
@@ -70,16 +66,16 @@ namespace Canute.BattleSystem
         /// <returns></returns>
         public static bool Execute(this Effect effect, bool isPrimaryEffect = false)
         {
+            if (effect is null) return false;
+
+            if (isPrimaryEffect) Status.TriggerOf(TriggerCondition.Conditions.action, ref effect, effect.Source as IStatusContainer, effect.Source?.Owner, Game.CurrentBattle);
+            //if (effect.Source is IStatusContainer) (effect.Source as IStatusContainer).TriggerOf(TriggerCondition.Conditions.action, ref effect);
+            //effect.Source.Owner.TriggerOf(TriggerCondition.Conditions.action, ref effect);
+            //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.action, ref effect);
+
             bool result = false;
-
-            if (effect is null)
-            {
-                return false;
-            }
-
             switch (effect.Type)
             {
-
                 case Effect.Types.none:
                     result = true;    //空effect永远返回真
                     break;
@@ -115,22 +111,20 @@ namespace Canute.BattleSystem
                     break;
             }
 
-            Debug.Log(effect);
             if (result)
             {
-                if (effect.Type != Effect.Types.none && isPrimaryEffect)
-                {
-                    Game.CurrentBattle.PassingEffect.Add(effect);
-                }
+                Debug.Log(effect);
+                if (effect.Type != Effect.Types.none && isPrimaryEffect) Game.CurrentBattle.PassingEffect.Add(effect);
 
                 if (effect.Source is OnMapEntity && effect.Targets[0] is OnMapEntity)
                 {
-                    (effect.Source as OnMapEntity).FaceTo((effect.Targets[0] as OnMapEntity));
-                    (effect.Targets[0] as OnMapEntity).FaceTo((effect.Source as OnMapEntity));
+                    (effect.Source as OnMapEntity).FaceTo(effect.Targets[0] as OnMapEntity);
+                    (effect.Targets[0] as OnMapEntity).FaceTo(effect.Source as OnMapEntity);
                 }
             }
             else
             {
+                Debug.Log(effect);
                 //Debug.Log(Entity.entities.Count);
             }
 
@@ -223,14 +217,16 @@ namespace Canute.BattleSystem
 
             foreach (Entity entity in effect.AllEntities)
             {
-                IBattleableEntity battleEntityData = entity as IBattleableEntity;
-                if (battleEntityData is null)
+                IBattleableEntity battleEntity = entity as IBattleableEntity;
+                if (battleEntity is null)
                 {
                     continue;
                 }
-                battleEntityData.Data.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
-                battleEntityData.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
-                Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                Status.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect, battleEntity, battleEntity.Owner, Game.CurrentBattle);
+
+                //battleEntity.Data.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                //battleEntity.Owner.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
             }
 
             InAttack(effect);
@@ -242,9 +238,11 @@ namespace Canute.BattleSystem
         private static void InAttack(Effect effect)
         {
             IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
-            agressiveEntity.Data.TriggerConditionOf(TriggerCondition.Conditions.attack, ref effect);
-            agressiveEntity.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.attack, ref effect);
-            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.attack, ref effect);
+
+            Status.TriggerOf(TriggerCondition.Conditions.attack, ref effect, agressiveEntity, agressiveEntity.Owner, Game.CurrentBattle);
+            //agressiveEntity.Data.TriggerOf(TriggerCondition.Conditions.attack, ref effect);
+            //agressiveEntity.Owner.TriggerOf(TriggerCondition.Conditions.attack, ref effect);
+            //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.attack, ref effect);
 
             foreach (var item in effect.Targets)
             {
@@ -260,9 +258,10 @@ namespace Canute.BattleSystem
             IAggressiveEntity source = effect.Source as IAggressiveEntity;
             IPassiveEntity target = effect.Target as IPassiveEntity;
 
-            target.Data.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
-            target.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
-            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.defense, ref effect);
+            Status.TriggerOf(TriggerCondition.Conditions.defense, ref effect, target.Data, target.Owner, Game.CurrentBattle);
+            //target.Data.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
+            //target.Owner.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
+            //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
 
             string type = effect["attackType"];
             if (string.IsNullOrEmpty(type))
@@ -285,9 +284,10 @@ namespace Canute.BattleSystem
                 {
                     continue;
                 }
-                battleEntity.Data.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
-                battleEntity.Data.Owner.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
-                Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                Status.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect, battleEntity.Data, battleEntity.Owner, Game.CurrentBattle);
+                //battleEntity.Data.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                //battleEntity.Owner.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
             }
 
             Debug.Log("Attack End");
@@ -394,7 +394,8 @@ namespace Canute.BattleSystem
             foreach (var item in effect.Targets)
             {
                 IStatusContainer statusContainer = item as IStatusContainer;
-                statusContainer.TriggerConditionOf(TriggerCondition.Conditions.addingStatus, ref effect);
+                Status.TriggerOf(TriggerCondition.Conditions.addingStatus, ref effect, statusContainer);
+                //statusContainer.TriggerOf(TriggerCondition.Conditions.addingStatus, ref effect);
                 Status status = effect.ToStatus();
                 statusContainer.StatList.Add(status);
             }
@@ -480,7 +481,7 @@ namespace Canute.BattleSystem
                 return false;
             }
 
-            if (Buildings.CampusEntity.GetCampus(battleArmy.Owner).GetPointDistanceOf(cellEntity) > 5)
+            if (!Buildings.CampusEntity.GetCampus(battleArmy.Owner).PossibleCells.Contains(cellEntity))
             {
                 return false;
             }
@@ -540,8 +541,7 @@ namespace Canute.BattleSystem
             }
             else
             {
-                movingArmy.data.TriggerConditionOf(TriggerCondition.Conditions.move, ref effect);
-                Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.move, ref effect);
+                Status.TriggerOf(TriggerCondition.Conditions.move, ref effect, movingArmy.data, Game.CurrentBattle);
                 movingArmy.Move(path, effect);
 
                 return true;
@@ -551,11 +551,9 @@ namespace Canute.BattleSystem
         private static bool Skill(Effect effect)
         {
             ISkillable sourceEntity = effect.Source as ISkillable;
-            if (sourceEntity is null)
-            {
-                return false;
-            }
+            if (sourceEntity is null) return false;
 
+            Debug.Log("entity perform skill");
             sourceEntity.Skill(effect);
             return true;
         }

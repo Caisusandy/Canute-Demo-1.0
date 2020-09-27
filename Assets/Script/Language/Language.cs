@@ -12,7 +12,7 @@ public static class LanguageAddress
 namespace Canute.LanguageSystem
 {
     [Obsolete]
-    [CreateAssetMenu(fileName = "Lang", menuName = "Game Data/Language")]
+    [CreateAssetMenu(fileName = "Lang", menuName = "Other/[Obsolete] Language")]
     public class Language : ScriptableObject
     {
         public static Dictionary<string, string> Dictionary { get => Languages.Dictionary; set => Languages.Dictionary = value; }

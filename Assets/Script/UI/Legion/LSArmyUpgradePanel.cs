@@ -15,8 +15,8 @@ namespace Canute.UI.Legion
         public ArmyItem left;
         public ArmyItem right;
 
-        public Button leftCard;
-        public Button rightCard;
+        public ArmyCardUI leftUI;
+        public ArmyCardUI rightUI;
 
         public Button upgrade;
 
@@ -33,30 +33,32 @@ namespace Canute.UI.Legion
         // Update is called once per frame
         void Update()
         {
-            if (left)
-            {
-                leftCard.image.color = Color.white;
-                leftCard.image.sprite = left.Prototype.Portrait;
-            }
-            else
-            {
-                Color white = Color.white;
-                white.a = 0.1f;
-                leftCard.image.color = white;
-            }
+            leftUI.Display(left);
+            rightUI.Display(right);
+            //if (left)
+            //{
+            //    leftCard.image.color = Color.white;
+            //    leftCard.image.sprite = left.Prototype.Portrait;
+            //}
+            //else
+            //{
+            //    Color white = Color.white;
+            //    white.a = 0.1f;
+            //    leftCard.image.color = white;
+            //}
 
 
-            if (right)
-            {
-                rightCard.image.color = Color.white;
-                rightCard.image.sprite = right.Prototype.Portrait;
-            }
-            else
-            {
-                Color white = Color.white;
-                white.a = 0.1f;
-                rightCard.image.color = white;
-            }
+            //if (right)
+            //{
+            //    rightCard.image.color = Color.white;
+            //    rightCard.image.sprite = right.Prototype.Portrait;
+            //}
+            //else
+            //{
+            //    Color white = Color.white;
+            //    white.a = 0.1f;
+            //    rightCard.image.color = white;
+            //}
 
             upgrade.interactable = CanUpgrade();
 
@@ -87,15 +89,8 @@ namespace Canute.UI.Legion
 
         public void TryUpgrade()
         {
-            bool canUpgrade = Game.PlayerData.Spent(new Currency(Currency.Type.aethium, SelectingArmy.Star * 2)) && CanUpgrade();
-            if (!canUpgrade)
-            {
-                return;
-            }
-
-            SelectingArmy.AddStar();
-            Game.PlayerData.Armies.Remove(left);
-            Game.PlayerData.Armies.Remove(right);
+            var ans = SelectingArmy.TryUpgrade(left, right);
+            if (!ans) return;
             left = null;
             right = null;
             PlayerFile.SaveCurrentData();
@@ -108,12 +103,12 @@ namespace Canute.UI.Legion
                 if (left)
                 {
                     left = null;
-                    leftCard.image.sprite = null;
+                    //leftCard.image.sprite = null;
                 }
                 else
                 {
                     ArmyListUI.OpenArmyList();
-                    ArmyListUI.hidingArmy = Game.PlayerData.Armies.Where((item) => item.Prototype != LSSingleArmyPanel.SelectingArmy.Prototype || item.Star != SelectingArmy.Star).Union(new List<ArmyItem> { SelectingArmy });
+                    ArmyListUI.hidingArmy = Game.PlayerData.Armies.Where((item) => item.Prototype != LSSingleArmyPanel.SelectingArmy.Prototype || item.Star != SelectingArmy.Star).Union(new List<ArmyItem> { SelectingArmy, right });
                     ArmyListUI.SelectEvent += ChangeLeft;
                     ArmyListUI.lastMainScene = MainScene.legionSetting;
 
@@ -136,12 +131,12 @@ namespace Canute.UI.Legion
                 if (right)
                 {
                     right = null;
-                    rightCard.image.sprite = null;
+                    //rightCard.image.sprite = null;
                 }
                 else
                 {
                     ArmyListUI.OpenArmyList();
-                    ArmyListUI.hidingArmy = Game.PlayerData.Armies.Where((item) => item.Prototype != SelectingArmy.Prototype || item.Star != SelectingArmy.Star).Union(new List<ArmyItem> { SelectingArmy });
+                    ArmyListUI.hidingArmy = Game.PlayerData.Armies.Where((item) => item.Prototype != SelectingArmy.Prototype || item.Star != SelectingArmy.Star).Union(new List<ArmyItem> { SelectingArmy, left });
                     ArmyListUI.SelectEvent += ChangeRight;
                     ArmyListUI.lastMainScene = MainScene.legionSetting;
 

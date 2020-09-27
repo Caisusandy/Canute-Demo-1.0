@@ -131,11 +131,14 @@ namespace Canute
         public static string Lang(this PropertyBonus propertyBonus, int level = 1)
         {
             string ret = "";
+            PropertyType _ = default;
+            string keyHead = _.GetFullTypeName();
+
             foreach (var item in PropertyTypes.Types)
             {
                 if ((item & propertyBonus.Type) != PropertyType.none)
                 {
-                    List<string> vs = new List<string>() { (typeof(PropertyType)).GetFullTypeName() + "." + (item & propertyBonus.Type) };
+                    List<string> vs = new List<string>() { (keyHead + "." + (item & propertyBonus.Type)) };
                     var raw = Lang(vs.ToArray());
                     int value = propertyBonus.GetValue(level);
 

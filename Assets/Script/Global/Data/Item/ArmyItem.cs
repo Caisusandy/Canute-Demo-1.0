@@ -1,4 +1,5 @@
 ﻿using Canute.BattleSystem;
+using Canute.Shops;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -91,7 +92,19 @@ namespace Canute
             }
         }
 
+        public bool TryUpgrade(ArmyItem left, ArmyItem right)
+        {
+            if (left == right) return false;
+            bool canUpgrade = Game.PlayerData.Spent(new Currency(Currency.Type.aethium, Star * 2));
+            if (!canUpgrade) return false;
 
+            Game.PlayerData.RemoveArmyItem(left);
+            Game.PlayerData.RemoveArmyItem(right);
+            AddStar();
+
+            PlayerFile.SaveCurrentData();
+            return true;
+        }
     }
 
     [Serializable]

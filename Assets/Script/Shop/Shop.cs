@@ -16,7 +16,7 @@ namespace Canute.Shops
 
         public PriceList OnShopArmies { get => onShopArmies; set => onShopArmies = value; }
         public PriceList OnShopEquipments { get => onShopEquipments; set => onShopEquipments = value; }
-        public WorldTime NextRefreshTime { get => nextRefreshTime; set => nextRefreshTime = value; }
+        public DateTime NextRefreshTime { get => nextRefreshTime; set => nextRefreshTime = value; }
 
 
 

@@ -95,42 +95,41 @@ namespace Canute.BattleSystem
             }
             else if (Anger == 100)
             {
-                Debug.Log("Skill");
+                Debug.Log("anger is ready for skill");
                 PerformSkill();
             }
         }
 
         protected virtual void AddBonus(params IBattleBonusItem[] bonuses)
         {
-            if (bonuses is null)
+            if (bonuses is null) return;
+
+            var propertyBonuses = new List<PropertyBonus>();
+            foreach (var (item, property) in from item in bonuses from property in item?.Bonus select (item, property))
             {
-                return;
+                propertyBonuses.Add(property.ConvertToLevel1(item.Level));
             }
 
-            var temp = bonuses.ToList();
-            temp.Sort();
-            bonuses = temp.ToArray();
-            foreach (var (item, property, type) in from item in bonuses
-                                                   from property in item?.Bonus
-                                                   from PropertyType type in PropertyTypes.Types
-                                                   select (item, property, type))
+            propertyBonuses.Sort();
+            foreach (var (propertyBonus, type) in from property in propertyBonuses from PropertyType type in PropertyTypes.Types select (property, type))
             {
+                if ((propertyBonus.Type & type) == PropertyType.none) continue;
                 //Debug.Log(property);
                 //Debug.Log(item.Bounes.Count);
-                switch (property.Type & type)
+                switch (propertyBonus.Type & type)
                 {
                     case PropertyType.damage:
-                        damage = property.Bonus(damage, item.Level);
+                        damage = propertyBonus.Bonus(damage);
                         break;
                     case PropertyType.health:
-                        maxHealth = property.Bonus(maxHealth, item.Level);
+                        maxHealth = propertyBonus.Bonus(maxHealth);
                         break;
                     case PropertyType.defense:
                     case PropertyType.moveRange:
                     case PropertyType.attackRange:
                     case PropertyType.critRate:
                     case PropertyType.critBonus:
-                        properties.AddBonus(item);
+                        properties.AddBonus(propertyBonus);
                         break;
                 }
 
@@ -140,36 +139,35 @@ namespace Canute.BattleSystem
 
         protected virtual void RemoveBonus(params IBattleBonusItem[] bonuses)
         {
-            if (bonuses is null)
+            if (bonuses is null) return;
+
+            var propertyBonuses = new List<PropertyBonus>();
+            foreach (var (item, property) in from item in bonuses from property in item?.Bonus select (item, property))
             {
-                return;
+                propertyBonuses.Add(property.ConvertToLevel1(item.Level));
             }
 
-            var temp = bonuses.ToList();
-            temp.Sort();
-            bonuses = temp.ToArray();
-            foreach (var (item, property, type) in from item in bonuses
-                                                   from property in item.Bonus
-                                                   from PropertyType type in PropertyTypes.Types
-                                                   select (item, property, type))
+            propertyBonuses.Sort();
+            foreach (var (propertyBonus, type) in from property in propertyBonuses from PropertyType type in PropertyTypes.Types select (property, type))
             {
-                switch (property.Type & type)
+                if ((propertyBonus.Type & type) == PropertyType.none) continue;
+                switch (propertyBonus.Type & type)
                 {
                     case PropertyType.damage:
-                        damage = property.RemoveBonus(damage, item.Level);
+                        damage = propertyBonus.RemoveBonus(damage);
                         break;
                     case PropertyType.health:
-                        maxHealth = property.RemoveBonus(maxHealth, item.Level);
+                        maxHealth = propertyBonus.RemoveBonus(maxHealth);
                         break;
                     case PropertyType.defense:
                     case PropertyType.moveRange:
                     case PropertyType.attackRange:
                     case PropertyType.critRate:
                     case PropertyType.critBonus:
-                        properties.RemoveBonus(item);
+                        properties.RemoveBonus(propertyBonus);
                         break;
                 }
-                Debug.Log(property);
+                Debug.Log(propertyBonus);
             }
         }
 

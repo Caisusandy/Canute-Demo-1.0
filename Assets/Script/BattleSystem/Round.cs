@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Canute.BattleSystem
@@ -51,30 +52,36 @@ namespace Canute.BattleSystem
         public Stat TurnBegin()
         {
             stat = Stat.turnBegin;
-            CurrentPlayer.TriggerConditionOf(TriggerCondition.Conditions.turnBegin);
-            foreach (var item in CurrentPlayer.BattleArmies)
-            {
-                item.TriggerConditionOf(TriggerCondition.Conditions.turnBegin);
-            }
-            foreach (var item in CurrentPlayer.Buildings)
-            {
-                item.TriggerConditionOf(TriggerCondition.Conditions.turnBegin);
-            }
+
+            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, CurrentPlayer);
+            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, CurrentPlayer.BattleArmies.OfType<IStatusContainer>().Union(CurrentPlayer.Buildings).ToArray());
+
+            //foreach (var item in CurrentPlayer.BattleArmies)
+            //{
+            //    item.TriggerOf(TriggerCondition.Conditions.turnBegin);
+            //}
+            //foreach (var item in CurrentPlayer.Buildings)
+            //{
+            //    item.TriggerOf(TriggerCondition.Conditions.turnBegin);
+            //}
             return stat;
         }
 
         public Stat TurnEnd()
         {
             stat = Stat.turnEnd;
-            CurrentPlayer.TriggerConditionOf(TriggerCondition.Conditions.turnEnd);
-            foreach (var item in CurrentPlayer.BattleArmies)
-            {
-                item.TriggerConditionOf(TriggerCondition.Conditions.turnEnd);
-            }
-            foreach (var item in CurrentPlayer.Buildings)
-            {
-                item.TriggerConditionOf(TriggerCondition.Conditions.turnEnd);
-            }
+            //CurrentPlayer.TriggerOf(TriggerCondition.Conditions.turnEnd);
+            //foreach (var item in CurrentPlayer.BattleArmies)
+            //{
+            //    item.TriggerOf(TriggerCondition.Conditions.turnEnd);
+            //}
+            //foreach (var item in CurrentPlayer.Buildings)
+            //{
+            //    item.TriggerOf(TriggerCondition.Conditions.turnEnd);
+            //}
+            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, CurrentPlayer);
+            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, CurrentPlayer.BattleArmies.OfType<IStatusContainer>().Union(CurrentPlayer.Buildings).ToArray());
+
             return stat;
         }
 

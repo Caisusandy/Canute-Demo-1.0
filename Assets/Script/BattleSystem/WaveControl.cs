@@ -62,6 +62,7 @@ namespace Canute.BattleSystem
         {
             int positionGetTime = 0;
             Beginning:
+            CellEntity cellEntity;
             if (positionGetTime > 100)
             {
                 return;
@@ -75,10 +76,12 @@ namespace Canute.BattleSystem
                     var possible = Game.CurrentBattle.MapEntity.GetNearbyCell(center, spawnAnchor.radius);
                     if (possible.Count > 0)
                     {
-                        CellEntity c1 = possible[(int)(UnityEngine.Random.value * possible.Count)];
-                        if (!c1) { positionGetTime++; goto Beginning; }
-                        if (c1.HasArmyStandOn) { positionGetTime++; goto Beginning; }
-                        spawnAnchor.Coordinate = c1.Coordinate;
+                        cellEntity = possible[(int)(UnityEngine.Random.value * possible.Count)];
+                        if (!cellEntity) { positionGetTime++; goto Beginning; }
+                        if (!cellEntity.data.canStandOn) { positionGetTime++; goto Beginning; }
+                        if (cellEntity.HasArmyStandOn) { positionGetTime++; goto Beginning; }
+                        if (CampusEntity.GetCampus(Game.CurrentBattle.Player).PossibleCells.Contains(cellEntity)) { positionGetTime++; goto Beginning; }
+                        spawnAnchor.Coordinate = cellEntity.Coordinate;
                         break;
                     }
                     goto Beginning;
@@ -86,10 +89,12 @@ namespace Canute.BattleSystem
                     int x = UnityEngine.Random.Range(0, Game.CurrentBattle.MapEntity.columnEntities[0].cellEntities.Count);
                     int y = UnityEngine.Random.Range(0, Game.CurrentBattle.MapEntity.columnEntities.Count);
                     var pos = new Vector2Int(x, y);
-                    CellEntity c2 = Game.CurrentBattle.MapEntity.GetCell(pos);
-                    if (!c2) { positionGetTime++; goto Beginning; }
-                    if (c2.HasArmyStandOn) { positionGetTime++; goto Beginning; }
-                    spawnAnchor.Coordinate = c2.Coordinate;
+                    cellEntity = Game.CurrentBattle.MapEntity.GetCell(pos);
+                    if (!cellEntity) { positionGetTime++; goto Beginning; }
+                    if (!cellEntity.data.canStandOn) { positionGetTime++; goto Beginning; }
+                    if (cellEntity.HasArmyStandOn) { positionGetTime++; goto Beginning; }
+                    if (CampusEntity.GetCampus(Game.CurrentBattle.Player).PossibleCells.Contains(cellEntity)) { positionGetTime++; goto Beginning; }
+                    spawnAnchor.Coordinate = cellEntity.Coordinate;
                     break;
                 default:
                     break;

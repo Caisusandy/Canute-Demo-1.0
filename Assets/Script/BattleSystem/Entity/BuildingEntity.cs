@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Canute.BattleSystem
 {
-    public abstract class BuildingEntity : OnMapEntity, IBattleableEntity, IPassiveEntity
+    public abstract class BuildingEntity : OnMapEntity, IBattleableEntity
     {
         public BattleBuilding data;
         public override EntityData Data => data;
 
-        IPassiveEntityData IPassiveEntity.Data => data;
+        //IPassiveEntityData IPassiveEntity.Data => data;
         IBattleableEntityData IBattleableEntity.Data => data;
         public override BattleProperty.Position StandPostion => data.StandPosition;
 
@@ -38,11 +38,13 @@ namespace Canute.BattleSystem
         }
         public virtual void Hurt(params object[] vs)
         {
+            if (!(this is IPassiveEntity)) return;
+
             int damage = (int)vs[0];
             var damageSource = vs[1] as IAggressiveEntity;
 
 
-            this.Damage(damage, damageSource);
+            (this as IPassiveEntity).Damage(damage, damageSource);
 
             InPerformingAnimation();
             Animator.SetBool(isDefensing, true);
@@ -138,7 +140,7 @@ namespace Canute.BattleSystem
     [Serializable]
     public class BattleBuilding : BattleEntityData
     {
-        public override GameObject Prefab { get => prefab ?? GameData.Prefabs.DefaultBuilding; set => prefab = value; }
+        public override GameObject Prefab { get => prefab.Exist() ?? GameData.Prefabs.DefaultBuilding; set => prefab = value; }
         public override Prototype Prototype { get => GameData.Prototypes.GetBuildingPrototype(name); set => base.Prototype = value; }
         public new BuildingEntity Entity => base.Entity as BuildingEntity;
 

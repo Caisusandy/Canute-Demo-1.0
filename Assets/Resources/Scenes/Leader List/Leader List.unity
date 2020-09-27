@@ -1213,6 +1213,8 @@ MonoBehaviour:
   elements: []
   center: {fileID: 1307917167}
   dragging: 0
+  bonusInfo: {fileID: 0}
+  skillInfo: {fileID: 0}
 --- !u!222 &8147360430629768125
 CanvasRenderer:
   m_ObjectHideFlags: 0

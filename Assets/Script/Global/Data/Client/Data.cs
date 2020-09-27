@@ -21,7 +21,7 @@ namespace Canute
         [SerializeField] private UUID uuid;
         [SerializeField] private WorldTime playerLastOperationTime;
         public UUID UUID { get => uuid; set => uuid = value; }
-        public WorldTime PlayerLastOperationTime { get => playerLastOperationTime; set => playerLastOperationTime = value; }
+        public WorldTime LastOperationTime { get => playerLastOperationTime; set => playerLastOperationTime = value; }
 
         #region Curency 
         [SerializeField] private ShopInfo shopInfo;
@@ -428,12 +428,19 @@ namespace Canute
             {
                 Statistic.EquipmentsUnlocked.Add(item.Name);
             }
-            if (!Statistic.EquipmentsUnlocked.Contains(item.Name))
+
+            equipments.Add(item);
+            PlayerFile.SaveCurrentData();
+        }
+
+        public void AddEventCardItem(EventCardItem item)
+        {
+            if (!Statistic.EventCardUnlocked.Contains(item.Name))
             {
                 Statistic.EquipmentsUnlocked.Add(item.Name);
             }
 
-            equipments.Add(item);
+            eventCards.Add(item);
             PlayerFile.SaveCurrentData();
         }
 
@@ -448,6 +455,29 @@ namespace Canute
             if (!collectionLetterID.Contains(name))
                 collectionLetterID.Add(name);
             PlayerFile.SaveCurrentData();
+        }
+        #endregion
+
+        #region Remove Item
+        public bool RemoveArmyItem(ArmyItem item)
+        {
+            bool ret = armies.Remove(item);
+            PlayerFile.SaveCurrentData();
+            return ret;
+        }
+
+        public bool RemoveLeaderItem(LeaderItem item)
+        {
+            bool ret = leaders.Remove(item);
+            PlayerFile.SaveCurrentData();
+            return ret;
+        }
+
+        public bool RemoveEquipmentItem(EquipmentItem item)
+        {
+            bool ret = equipments.Remove(item);
+            PlayerFile.SaveCurrentData();
+            return ret;
         }
         #endregion
 

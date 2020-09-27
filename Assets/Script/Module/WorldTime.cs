@@ -40,6 +40,15 @@ namespace Canute
             return !(left == right);
         }
 
+        //public static bool operator >(WorldTime left, WorldTime right)
+        //{
+        //    return !((DateTime)left > ((DateTime)right));
+        //}
+        //public static bool operator <(WorldTime left, WorldTime right)
+        //{
+        //    return !((DateTime)left < ((DateTime)right));
+        //}
+
         public override int GetHashCode()
         {
             return base.GetHashCode();

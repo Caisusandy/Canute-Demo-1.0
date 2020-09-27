@@ -7,13 +7,19 @@ namespace Canute.BattleSystem
     public struct PropertyBonus : IComparable<PropertyBonus>
     {
         [SerializeField] private PropertyType type;
-        [SerializeField] private BonusType bounesType;
+        [SerializeField] private BonusType bonusType;
         [SerializeField] private float value;
         [SerializeField] private float growth;
 
         public PropertyType Type => type;
-        public BonusType BonusType => bounesType;
-        public int GetValue(int level) => (int)(Mathf.Pow(1 + growth / 100, level) * value);
+        public BonusType BonusType => bonusType;
+        public float Value { get => value; set => this.value = value; }
+        public int GetValue(int level) => (int)(Mathf.Pow(1 + growth / 100, level) * Value);
+
+        public PropertyBonus ConvertToLevel1(int level)
+        {
+            return new PropertyBonus(type, bonusType, GetValue(level), 0);
+        }
 
         public static bool operator ==(PropertyBonus a, PropertyBonus b)
         {
@@ -28,7 +34,7 @@ namespace Canute.BattleSystem
         public PropertyBonus(PropertyType type, BonusType bounesType, int value, float growth)
         {
             this.type = type;
-            this.bounesType = bounesType;
+            this.bonusType = bounesType;
             this.value = value;
             this.growth = growth;
         }
@@ -38,7 +44,7 @@ namespace Canute.BattleSystem
             if (obj is PropertyBonus)
             {
                 PropertyBonus equipmentProperty = (PropertyBonus)obj;
-                return equipmentProperty.bounesType == bounesType && value == equipmentProperty.value && type == equipmentProperty.type;
+                return equipmentProperty.bonusType == bonusType && Value == equipmentProperty.Value && type == equipmentProperty.type;
             }
             return false;
         }
@@ -51,27 +57,27 @@ namespace Canute.BattleSystem
         public override string ToString()
         {
             return "type: " + type.ToString() + ";\n" +
-                "bounes type: " + bounesType.ToString() + ";\n" +
-                "value: " + value + ";\n" +
+                "bounes type: " + bonusType.ToString() + ";\n" +
+                "value: " + Value + ";\n" +
                 "growth: " + growth;
         }
 
-        public int Bonus(double @base, int level)
+        public int Bonus(double @base, int level = 1)
         {
             return @base.Bonus(GetValue(level), BonusType);
         }
 
-        public void Bonus(ref double @base, int level)
+        public void Bonus(ref double @base, int level = 1)
         {
             @base = @base.Bonus(GetValue(level), BonusType);
         }
 
-        public int RemoveBonus(double @base, int level)
+        public int RemoveBonus(double @base, int level = 1)
         {
             return @base.RemoveBonus(GetValue(level), BonusType);
         }
 
-        public void RemoveBonus(ref double @base, int level)
+        public void RemoveBonus(ref double @base, int level = 1)
         {
             @base = @base.RemoveBonus(GetValue(level), BonusType);
         }

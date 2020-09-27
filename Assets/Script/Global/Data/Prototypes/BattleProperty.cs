@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -173,73 +174,81 @@ namespace Canute.BattleSystem
 
         public void AddBonus(params IBattleBonusItem[] bonuses)
         {
-            if (bonuses is null)
-            {
-                return;
-            }
-            var temp = bonuses.ToList();
-            temp.Sort();
-            bonuses = temp.ToArray();
+            if (bonuses is null) return;
 
-            foreach (var (item, property, type) in from item in bonuses
-                                                   from property in item?.Bonus
-                                                   from PropertyType type in PropertyTypes.Types
-                                                   select (item, property, type))
+            var propertyBonuses = new List<PropertyBonus>();
+            foreach (var (item, property) in from item in bonuses from property in item?.Bonus select (item, property))
             {
+                propertyBonuses.Add(property.ConvertToLevel1(item.Level));
+            }
+
+            AddBonus(propertyBonuses.ToArray());
+        }
+
+        public void AddBonus(params PropertyBonus[] propertyBonuses)
+        {
+            Array.Sort(propertyBonuses);
+            foreach (var (property, type) in from property in propertyBonuses from PropertyType type in PropertyTypes.Types select (property, type))
+            {
+                if ((property.Type & type) == PropertyType.none) continue;
                 switch (property.Type & type)
                 {
                     case PropertyType.defense:
-                        Debug.Log(property);
-                        Defense = property.Bonus(Defense, item.Level);
+                        Defense = property.Bonus(Defense);
                         break;
                     case PropertyType.moveRange:
-                        MoveRange = property.Bonus(MoveRange, item.Level);
+                        MoveRange = property.Bonus(MoveRange);
                         break;
                     case PropertyType.attackRange:
-                        AttackRange = property.Bonus(AttackRange, item.Level);
+                        AttackRange = property.Bonus(AttackRange);
                         break;
                     case PropertyType.critRate:
-                        CritRate = property.Bonus(CritRate, item.Level);
+                        CritRate = property.Bonus(CritRate);
                         break;
                     case PropertyType.critBonus:
-                        CritBonus = property.Bonus(CritBonus, item.Level);
+                        CritBonus = property.Bonus(CritBonus);
                         break;
                     default:
                         break;
                 }
-
-
             }
         }
 
         public void RemoveBonus(params IBattleBonusItem[] bonuses)
         {
-            if (bonuses is null)
+            if (bonuses is null) return;
+
+            var propertyBonuses = new List<PropertyBonus>();
+            foreach (var (item, property) in from item in bonuses from property in item?.Bonus select (item, property))
             {
-                return;
+                propertyBonuses.Add(property.ConvertToLevel1(item.Level));
             }
 
-            foreach (var (item, property, type) in from item in bonuses
-                                                   from property in item.Bonus
-                                                   from PropertyType type in PropertyTypes.Types
-                                                   select (item, property, type))
+            RemoveBonus(propertyBonuses.ToArray());
+        }
+
+        public void RemoveBonus(params PropertyBonus[] propertyBonuses)
+        {
+            Array.Sort(propertyBonuses);
+            foreach (var (property, type) in from property in propertyBonuses from PropertyType type in PropertyTypes.Types select (property, type))
             {
+                if ((property.Type & type) == PropertyType.none) continue;
                 switch (property.Type & type)
                 {
                     case PropertyType.defense:
-                        Defense = property.RemoveBonus(Defense, item.Level);
+                        Defense = property.RemoveBonus(Defense);
                         break;
                     case PropertyType.moveRange:
-                        MoveRange = property.RemoveBonus(MoveRange, item.Level);
+                        MoveRange = property.RemoveBonus(MoveRange);
                         break;
                     case PropertyType.attackRange:
-                        AttackRange = property.RemoveBonus(AttackRange, item.Level);
+                        AttackRange = property.RemoveBonus(AttackRange);
                         break;
                     case PropertyType.critRate:
-                        CritRate = property.RemoveBonus(CritRate, item.Level);
+                        CritRate = property.RemoveBonus(CritRate);
                         break;
                     case PropertyType.critBonus:
-                        CritBonus = property.RemoveBonus(CritBonus, item.Level);
+                        CritBonus = property.RemoveBonus(CritBonus);
                         break;
                     default:
                         break;

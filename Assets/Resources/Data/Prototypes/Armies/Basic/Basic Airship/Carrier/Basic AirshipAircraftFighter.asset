@@ -33,7 +33,7 @@ MonoBehaviour:
       attackRange: 1
       moveRange: 5
       standPosition: 2
-      attackPosition: 1
+      attackPosition: 3
       attackArea: 1
       targetCount: 1
       attackType: 6
@@ -52,7 +52,7 @@ MonoBehaviour:
       attackRange: 1
       moveRange: 5
       standPosition: 2
-      attackPosition: 1
+      attackPosition: 3
       attackArea: 1
       targetCount: 1
       attackType: 6
@@ -71,7 +71,7 @@ MonoBehaviour:
       attackRange: 1
       moveRange: 5
       standPosition: 2
-      attackPosition: 1
+      attackPosition: 3
       attackArea: 1
       targetCount: 1
       attackType: 6

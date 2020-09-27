@@ -12,23 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfe71976b3ae0749b54319090c018b9, type: 3}
   m_Name: Oppotunity
   m_EditorClassIdentifier: 
+  isTemporaryPrototype: 0
   prototype:
-    name: Oppotunity
-    rarity: 1
-    icon: {fileID: 21300000, guid: bb0dce32469614847b3235e702ec710d, type: 3}
+    name: 
+    rarity: 0
+    icon: {fileID: 0}
     sprite: {fileID: 0}
-    protrait: {fileID: 0}
     prefab: {fileID: 0}
-    count: 4
-    cost: 2
-    targetTypes: 1
+    count: 0
+    cardType: 0
     career: 0
     eventCardProperty:
       properties:
-      - effect:
-          type: 12
-          specialName: Oppotunity
-          count: 1
-          parameter: 3
+      - targetTypes: 0
+        cost: 0
+        effect:
+          type: 13
+          specialName: 
+          count: 0
+          parameter: 0
           args:
-            args: []
+            args:
+            - key: name
+              value: ' '

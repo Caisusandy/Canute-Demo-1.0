@@ -1,4 +1,5 @@
-﻿using Canute.Shops;
+﻿using Canute.BattleSystem;
+using Canute.Shops;
 using Canute.StorySystem;
 using System;
 using System.Collections.Generic;
@@ -85,31 +86,24 @@ namespace Canute
                     break;
                 case Item.Type.army:
                     Army army = GameData.Prototypes.GetArmyPrototype(Name);
-                    if (!army)
-                    {
-                        return false;
-                    }
+                    if (!army) return false;
                     Game.PlayerData.AddArmyItem(new ArmyItem(army));
                     break;
                 case Item.Type.leader:
                     Leader leader = GameData.Prototypes.GetLeaderPrototype(Name);
-                    if (!leader)
-                    {
-                        return false;
-                    }
-                    if (Game.PlayerData.IsLeaderUnlocked(leader.Name))
-                    {
-                        return false;
-                    }
+                    if (!leader) return false;
+                    if (Game.PlayerData.IsLeaderUnlocked(leader.Name)) return false;
                     Game.PlayerData.AddLeaderItem(new LeaderItem(leader));
                     break;
                 case Item.Type.equipment:
                     Equipment equipement = GameData.Prototypes.GetEquipmentPrototype(Name);
-                    if (!equipement)
-                    {
-                        return false;
-                    }
+                    if (!equipement) return false;
                     Game.PlayerData.AddEquipmentItem(new EquipmentItem(equipement));
+                    break;
+                case Item.Type.eventCard:
+                    EventCard eventCard = GameData.Prototypes.GetEventCardPrototype(Name);
+                    if (!eventCard) return false;
+                    Game.PlayerData.AddEventCardItem(new EventCardItem(eventCard));
                     break;
                 case Item.Type.currency:
                     Currency.Type type;

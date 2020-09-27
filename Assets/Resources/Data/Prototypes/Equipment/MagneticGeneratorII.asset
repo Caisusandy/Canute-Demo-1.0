@@ -20,7 +20,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: ff3d5ef3e40ce7241b5ef11049cb98f3, type: 3}
     bounes:
     - type: 2
-      bounesType: 1
+      bonusType: 1
       value: 6
       growth: 0
     type: 2

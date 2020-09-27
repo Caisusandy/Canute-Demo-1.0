@@ -26,7 +26,7 @@ namespace Canute.UI.EventCardPile
         {
             if (id == -1)
             {
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     UpdateIcon(i, null);
                 }
@@ -35,13 +35,13 @@ namespace Canute.UI.EventCardPile
 
             for (int i = 0; i < Game.PlayerData.EventCardPiles[id].EventCards.Count; i++)
             {
-                if (i > 5) break;
+                if (i > 4) break;
                 Debug.Log(id + "," + i);
                 EventCardItem item = Game.PlayerData.EventCardPiles[id].EventCards[i];
                 UpdateIcon(i, item);
             }
 
-            for (int i = Game.PlayerData.EventCardPiles[id].EventCards.Count; i < 6; i++)
+            for (int i = Game.PlayerData.EventCardPiles[id].EventCards.Count; i < 5; i++)
             {
                 Hide(i);
             }
@@ -67,7 +67,7 @@ namespace Canute.UI.EventCardPile
 
         public void Hide(int id)
         {
-            cardIcons[id].SetActive(false);
+            cardIcons[id].Exist()?.SetActive(false);
         }
 
         /// <summary>

@@ -19,7 +19,11 @@ namespace Canute.BattleSystem
         /// <param name="sourceEffect"></param>
         public static void Execute(this Status status, ref Effect sourceEffect)
         {
-            if (status.Effect.Type == Effect.Types.effectRelated || status.Effect.Type == Effect.Types.propertyBonus || status.Effect.Type == Effect.Types.propertyPanalty)
+            if (status.Effect.Type != Effect.Types.effectRelated && status.Effect.Type != Effect.Types.propertyBonus && status.Effect.Type != Effect.Types.propertyPanalty)
+            {
+                status.Execute();
+            }
+            else
             {
                 StatusExecutor statusExecutor;
                 switch (status.Effect[Effect.name])
@@ -29,6 +33,9 @@ namespace Canute.BattleSystem
                         break;
                     case "damageDecreasePercentage":
                         statusExecutor = DamageDecrease;
+                        break;
+                    case "coma":
+                        statusExecutor = Coma;
                         break;
 
                     //special
@@ -64,23 +71,14 @@ namespace Canute.BattleSystem
                         return;
                 }
                 statusExecutor(ref sourceEffect, status);
+                AfterExecute(status);
             }
-            else
-            {
-                status.Execute();
-                return;
-            }
-            AfterExecute(status);
         }
 
         public static bool Execute(this Status status)
         {
             bool success = status.Effect.Execute();
-
-            if (success)
-            {
-                AfterExecute(status);
-            }
+            if (success) AfterExecute(status);
 
             return success;
         }
@@ -94,6 +92,15 @@ namespace Canute.BattleSystem
         }
 
 
+
+        private static void Coma(ref Effect effect, Status status)
+        {
+            effect.Type = Effect.Types.none;
+            effect.Count = 0;
+            effect.Parameter = 0;
+
+            return;
+        }
         private static void DamageIncrease(ref Effect sourceEffect, Status status)
         {
             if (sourceEffect.Type != Effect.Types.attack)

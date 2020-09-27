@@ -33,7 +33,7 @@ namespace Canute.BattleSystem
 
         public override string ToString()
         {
-            return "Name: " + Name + ";\nOwner " + Owner?.Name;
+            return Name + ", " + Owner?.Name + "'s";
         }
 
         protected EntityData()
@@ -108,7 +108,7 @@ namespace Canute.BattleSystem
 
         public override string ToString()
         {
-            return base.ToString() + ";\nPosition: " + Coordinate;
+            return base.ToString() + "" + Coordinate;
         }
 
         protected OnMapEntityData() : base() { }

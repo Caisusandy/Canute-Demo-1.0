@@ -121,7 +121,7 @@ namespace Canute.BattleSystem
         {
             passive.Data.Health -= damagePoint;
             DamageEvent?.Invoke(source, passive, damagePoint);
-            Debug.Log("Harm: " + damagePoint + ":" + passive.ToString());
+            Debug.Log("Harm: " + damagePoint + " " + passive.ToString());
             return damagePoint;
         }
 
@@ -140,7 +140,7 @@ namespace Canute.BattleSystem
                 }
             }
             dArmor -= passive.Data.Armor;
-            Debug.Log("Harm Armor: " + dArmor + ":" + passive.ToString());
+            Debug.Log("Harm Armor: " + dArmor + " " + passive.ToString());
             return dArmor;
         }
 

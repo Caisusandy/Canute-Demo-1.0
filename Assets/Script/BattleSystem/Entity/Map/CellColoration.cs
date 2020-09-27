@@ -25,8 +25,7 @@ namespace Canute.BattleSystem
                     if (cell.data.terrain != Terrain.Plain)
                         cell.SetCellSprite();
                     else
-                        cell.GetComponent<SpriteRenderer>().sprite =
-                            GameData.SpriteLoader.Get(SpriteAtlases.cells, Terrain.Plain.ToString() + PerlinInt(cell.x, cell.y));
+                        cell.SetCellSprite(GameData.SpriteLoader.Get(SpriteAtlases.cells, Terrain.Plain.ToString() + PerlinInt(cell.x, cell.y)));
                 }
             }
         }

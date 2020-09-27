@@ -15,6 +15,8 @@ namespace Canute.BattleSystem
         player = 4,
         /// <summary> an army </summary>
         armyEntity = 8,
+        playerArmyEntity = 9,
+        enemyArmyEntity = 10,
         /// <summary> a building </summary>
         buildingEntity = 16,
         /// <summary> a cell </summary>

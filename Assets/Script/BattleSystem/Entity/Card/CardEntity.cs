@@ -45,17 +45,13 @@ namespace Canute.BattleSystem
 
         public override void Start()
         {
+            base.Start();
         }
 
         public override void Update()
         {
             Display();
             DragCardDeleyAdd();
-            //if (Game.CurrentBattle.Round.CurrentStat != Round.Stat.gameStart)
-            //    if (!isDraging && !GetComponent<Motion>())
-            //    {
-            //        Idle(0);
-            //    }
         }
 
         #region Mouse operation
@@ -124,20 +120,23 @@ namespace Canute.BattleSystem
                 }
             }
 
+            infoDisplayer.text = data.Effect.GetDisplayingName();
+            actionPointDisplayer.text = data.ActionPoint.ToString();
+            careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, data.Career.ToString());
+        }
+
+        public virtual void RefreshLayer()
+        {
             int layer = !IsSelected ? id * 2 : 1000;
 
-            infoDisplayer.text = data.Effect.GetDisplayingName();
             infoDisplayer.canvas.sortingLayerName = "Card";
             infoDisplayer.canvas.sortingOrder = layer + 1;
 
-            actionPointDisplayer.text = data.ActionPoint.ToString();
             actionPointDisplayer.canvas.sortingLayerName = "Card";
             actionPointDisplayer.canvas.sortingOrder = layer + 1;
 
-            careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, data.Career.ToString());
             GetComponent<Image>().canvas.sortingLayerName = "Card";
             GetComponent<Image>().canvas.sortingOrder = layer;
-
         }
 
         public override bool ToggleSelect()
@@ -369,19 +368,19 @@ namespace Canute.BattleSystem
             {
                 for (int i = 0; i < cardEntities.Count - 1; i++)
                 {
-                    CardEntity CardEntity = cardEntities[i];
+                    CardEntity cardEntity = cardEntities[i];
                     Card Card = cardEntities[i].data;
                     if (Card.Type > cardEntities[i + 1].data.Type)
                     {
                         cardEntities.RemoveAt(i);
-                        cardEntities.Insert(i + 1, CardEntity);
+                        cardEntities.Insert(i + 1, cardEntity);
                     }
                     else if (Card.Type == cardEntities[i + 1].data.Type)
                     {
                         if (Card.Career > cardEntities[i + 1].data.Career)
                         {
                             cardEntities.RemoveAt(i);
-                            cardEntities.Insert(i + 1, CardEntity);
+                            cardEntities.Insert(i + 1, cardEntity);
                         }
                     }
                 }
@@ -394,6 +393,7 @@ namespace Canute.BattleSystem
             foreach (CardEntity card in cardEntities)
             {
                 card.transform.SetSiblingIndex(card.id);
+                card.RefreshLayer();
             }
         }
 
@@ -436,6 +436,7 @@ namespace Canute.BattleSystem
             {
                 Rotation.SetRotation(cardEntity.gameObject, GetAngle(cardEntities, cardEntity));
                 Motion.SetMotion(cardEntity.gameObject, GetPosition(cardEntities, cardEntity), Space.Self, null, true);
+                cardEntity.RefreshLayer();
             }
         }
 

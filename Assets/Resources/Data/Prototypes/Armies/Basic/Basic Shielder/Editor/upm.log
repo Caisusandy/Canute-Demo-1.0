@@ -1,0 +1,4 @@
+[2020-09-13T06:43:22.136Z][INFO] Starting Server
+[2020-09-13T06:43:22.147Z][INFO] Server started on port [51593]
+[2020-09-13T06:43:22.738Z][INFO] Health Request received
+[2020-09-13T06:43:22.977Z][INFO] Resolving dependencies using SAT solver

@@ -23,12 +23,18 @@ namespace Canute.UI
             GetComponent<Canvas>().sortingLayerName = "UI";
         }
 
-        public void Display(EventCardItem eventCardItem)
+        public void Display(EventCardItem item)
         {
-            displayingEventCard = eventCardItem;
+            displayingEventCard = item;
+            if (displayingEventCard)
+            {
+                if (cardName) cardName.text = item.DisplayingName;
+                if (cost) cost.text = item.Level.ToString();
+                if (frame) frame.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, item.Rarity.ToString());
+                if (rarity) rarity.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, item.Rarity.ToString());
+                if (chart) chart.sprite = item.Prototype.Sprite;
+            }
 
-            cardName.text = eventCardItem.DisplayingName;
-            cost.text = eventCardItem.Level.ToString();
         }
 
         public void Select()

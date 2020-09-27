@@ -154,9 +154,10 @@ namespace Canute.BattleSystem
         /// </summary>
         public void TriggerPlayCardStatus()
         {
-            (effect.Source as IStatusContainer)?.TriggerConditionOf(TriggerCondition.Conditions.playCard, ref effect);
-            effect.Source?.Owner?.TriggerConditionOf(TriggerCondition.Conditions.playCard, ref effect);
-            Game.CurrentBattle.TriggerConditionOf(TriggerCondition.Conditions.playCard, ref effect);
+            Status.TriggerOf(TriggerCondition.Conditions.playCard, ref effect, effect.Source as IStatusContainer, effect.Source?.Owner, Game.CurrentBattle);
+            //(effect.Source as IStatusContainer)?.TriggerOf(TriggerCondition.Conditions.playCard, ref effect);
+            //effect.Source?.Owner?.TriggerOf(TriggerCondition.Conditions.playCard, ref effect);
+            //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.playCard, ref effect);
         }
 
         public int GetActualActionPointSpent()

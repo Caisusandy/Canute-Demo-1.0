@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Canute.UI.LevelStart
 {
-    [CreateAssetMenu(fileName = "Level Start Panel", menuName = "UI/Level Start Panel", order = 1)]
+    [CreateAssetMenu(fileName = "Level Start Panel", menuName = "Other/Level Start Panel", order = 1)]
     public class Levels : ScriptableObject
     {
         public static Levels instance;

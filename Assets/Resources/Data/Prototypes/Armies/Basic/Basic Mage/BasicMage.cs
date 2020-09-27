@@ -18,8 +18,9 @@ namespace Canute.BattleSystem.Armies
         public override void SkillExecute(Effect effect)
         {
             var target = ArmyAttack.GetClosestTarget(this);
-            var status = new Status(new Effect(Effect.Types.@event, this, target.entity, effect.Count, (int)(data.RawDamage * 0.4), Effect.name + ":" + EventName.magePoison), 0, 3, Status.StatType.turnBase, true, TriggerCondition.OnTurnBegin);
+            var status = new Status(new Effect(Effect.Types.@event, this, target.entity, effect.Count, (int)(data.RawDamage * 0.4), Effect.name + ":" + EventName.magePoison), 3, 0, Status.StatType.turnBase, true, TriggerCondition.OnTurnBegin);
             target.StatList.Add(status);
+            Debug.Log(target + "add status", target.entity);
         }
 
 

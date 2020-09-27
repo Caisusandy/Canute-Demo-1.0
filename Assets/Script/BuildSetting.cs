@@ -7,7 +7,7 @@ namespace Canute
 {
     [Serializable]
     [Obsolete]
-    [CreateAssetMenu(fileName = "Player Setting", menuName = "Game Data/Player Setting", order = 1)]
+    [CreateAssetMenu(fileName = "Player Setting", menuName = "Other/[Obsolete] Player Setting", order = 1)]
     public class BuildSetting : ScriptableObject
     {
         public static BuildSetting instance;
