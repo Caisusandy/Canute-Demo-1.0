@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 3582659308204456386}
   image: {fileID: 7728686100027947455}
+  tryInsertEnter: 0
   layoutGroup: {fileID: 8006485520676998164}
 --- !u!114 &3950540941640395791
 MonoBehaviour:

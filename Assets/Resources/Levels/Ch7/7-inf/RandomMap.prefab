@@ -66,8 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849c66b5f925df64f993ba257f730dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rect_x: 15
-  rect_y: 15
+  rect_x: 10
+  rect_y: 10
   columnPrefab: {fileID: 6767798170634441603, guid: 55c9472f4e6ee9445bfa194730a22b14,
     type: 3}
   cellPrefab: {fileID: 2280665428330849364, guid: ae45f2e0ec71ddf40a03d68cb8d040e9,

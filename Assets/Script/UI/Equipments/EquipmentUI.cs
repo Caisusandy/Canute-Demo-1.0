@@ -23,7 +23,7 @@ namespace Canute.UI
                 if (itemName) itemName.text = item.DisplayingName;
                 if (level) level.text = item.Level.ToString();
                 if (icon) icon.sprite = item.Icon;
-                if (rarity) rarity.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, item.Rarity.ToString());
+                if (rarity) rarity.sprite = item.GetRaritySprite();
                 if (info) info.text = displayingEquipment.Bonus.ToArray().Lang();
             }
             else

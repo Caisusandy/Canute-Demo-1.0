@@ -70,13 +70,14 @@ namespace Canute
 
     public static class SpriteAtlases
     {
-        public const string armyPortrait = "armyPortrait";
-        public const string armyIcon = "armyIcon";
+        //public const string armyPortrait = "armyPortrait";
+        //public const string armyIcon = "armyIcon";
         public const string armySprite = "armySprite";
         public const string careerIcon = "CareerIcon";
         public const string cells = "Cells";
         public const string armyTypeIcon = "ArmyTypeIcon";
         public const string armyPositionIcon = "armyPositionIcon";
         public const string rarity = "rarity";
+        public const string currency = "currency";
     }
 }

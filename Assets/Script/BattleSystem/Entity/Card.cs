@@ -52,6 +52,7 @@ namespace Canute.BattleSystem
 
         public Card(EventCardItem eventCard) : this(Types.eventCard, Career.none, eventCard.Effect.Clone(), eventCard.Cost, eventCard.Target)
         {
+            this.name = eventCard.Name;
             if (type == Types.eventCard)
             {
                 switch (eventCard.Prototype.CardType)
@@ -81,6 +82,7 @@ namespace Canute.BattleSystem
 
         public Card(Types types, EventCard eventCard, int level) : this(types, Career.none, eventCard.EventCardProperty[level - 1].Effect.Clone(), eventCard.EventCardProperty[level - 1].Cost, eventCard.EventCardProperty[level - 1].TargetType)
         {
+            this.name = eventCard.Name;
             if (type != Types.normal)
             {
                 switch (eventCard.CardType)
@@ -112,6 +114,7 @@ namespace Canute.BattleSystem
         /// <param name="eventCard"></param>
         public Card(Types types, EventCard eventCard) : this(types, Career.none, eventCard.EventCardProperty[0].Effect.Clone(), eventCard.EventCardProperty[0].Cost, eventCard.EventCardProperty[0].TargetType)
         {
+            this.name = eventCard.Name;
             prefab = GameData.Prefabs.NormalEventCard;
         }
 

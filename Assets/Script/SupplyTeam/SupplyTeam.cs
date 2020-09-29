@@ -74,7 +74,7 @@ namespace Canute.SupplyTeam
         {
             List<PrizeBox> boxes = new List<PrizeBox>();
             ConditionalPrize prize;
-            int count = team.Leaders.Count;
+            int count = team.RealLeaders.Count;
             for (int i = 0; i < (count > 4 ? 4 : count); i++)
             {
                 #region Enemy Face Chance
@@ -104,7 +104,7 @@ namespace Canute.SupplyTeam
                 {
                     //Item Prize
                     #region Rarity
-                    int v = (team.Leaders.Where((l) => l).Count() / 4);
+                    int v = (team.RealLeaders.Where((l) => l).Count() / 4);
 
                     WeightItem common = new WeightItem((int)(4500 - 2500 * v), "common");
                     WeightItem rare = new WeightItem((int)(3500 + 1000 * v), "rare");
@@ -177,7 +177,7 @@ namespace Canute.SupplyTeam
                 if (story.LeaderRequirement != null) if (story.LeaderRequirement.Count != 0)
                         foreach (var name in story.LeaderRequirement)
                         {
-                            if (team.Leaders.Where(leader => leader.Name == name)?.Count() == 0)
+                            if (team.RealLeaders.Where(leader => leader.Name == name)?.Count() == 0)
                             {
                                 goto Story;
                             }
@@ -212,7 +212,7 @@ namespace Canute.SupplyTeam
                         if (armyPrize.LeaderRequirement != null)
                             foreach (var name in armyPrize.LeaderRequirement)
                             {
-                                if (team.Leaders.Where(leader => leader.Name == name).Count() == 0)
+                                if (team.RealLeaders.Where(leader => leader.Name == name).Count() == 0)
                                 {
                                     goto Re;
                                 }
@@ -234,7 +234,7 @@ namespace Canute.SupplyTeam
                         if (equipment.LeaderRequirement != null)
                             foreach (var name in equipment.LeaderRequirement)
                             {
-                                if (team.Leaders.Where(leader => leader.Name == name).Count() == 0)
+                                if (team.RealLeaders.Where(leader => leader.Name == name).Count() == 0)
                                 {
                                     goto Re;
                                 }
@@ -262,7 +262,7 @@ namespace Canute.SupplyTeam
                         if (leaderPrize.LeaderRequirement != null)
                             foreach (var name in leaderPrize.LeaderRequirement)
                             {
-                                if (team.Leaders.Where(leader => leader.Name == name).Count() == 0)
+                                if (team.RealLeaders.Where(leader => leader.Name == name).Count() == 0)
                                 {
                                     goto Re;
                                 }
@@ -398,24 +398,9 @@ namespace Canute.SupplyTeam
         public TimeSpan ToBackTime => GetBackTime();
         public List<UUID> LeadersUUID { get => leadersUUID; set => leadersUUID = value; }
         public List<LeaderItem> Leaders => GetLeader();
+        public List<LeaderItem> RealLeaders => Leaders.Where((l) => l).ToList();
         public UUID ArmyUUID { get => armyUUID; set => armyUUID = value; }
         public ArmyItem Army => Game.PlayerData.GetArmyItem(armyUUID);
-        public List<LeaderItem> RealLeader
-        {
-            get
-            {
-                var leaders = Leaders;
-                for (int i = leaders.Count - 1; i >= 0; i--)
-                {
-                    LeaderItem item = leaders[i];
-                    if (!item)
-                    {
-                        leaders.RemoveAt(i);
-                    }
-                }
-                return leaders;
-            }
-        }
         public PrizeBoxes CurrentPrize { get => currentPrize; set => currentPrize = value; }
 
 

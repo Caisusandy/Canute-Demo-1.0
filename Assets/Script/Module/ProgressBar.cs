@@ -1,22 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Canute.Module
 {
 
     public class ProgressBar : MonoBehaviour
     {
+        public float progress;
+        public Vector3 initialPosition;
         public GameObject background;
         public GameObject processing;
 
-        protected float progress;
-        protected Vector3 initialPosition;
+        public Image bg => background.GetComponent<Image>();
+        public Image progressImage => processing.GetComponent<Image>();
+
+
         private float Distance => -initialPosition.x;
 
         public float Progress { get => progress; set => progress = value > 0 ? value : 0; }
 
-        private void Awake()
+        public void Awake()
         {
             initialPosition = processing.transform.localPosition;
+        }
+
+        public virtual void Start()
+        {
+
         }
 
         public void SetFull()

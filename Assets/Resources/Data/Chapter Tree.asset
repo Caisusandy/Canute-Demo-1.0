@@ -39,7 +39,7 @@ MonoBehaviour:
       list:
       - backgroundStoryName: 
         lastLevel: Empty
-        data: {fileID: 0}
+        data: {fileID: 11400000, guid: ec3cb5de883c8fc4daad39515e3d080e, type: 2}
         nextLevel: Ch7-2
         endStoryName: 
       - backgroundStoryName: 
@@ -102,6 +102,16 @@ MonoBehaviour:
       - backgroundStoryName: 
         lastLevel: 
         data: {fileID: 11400000, guid: df873f47a5124f9499ffa3e746b29f98, type: 2}
+        nextLevel: 
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 63b4a37e6aa67ab4689eb6dbb6dedc34, type: 2}
+        nextLevel: 
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
+        data: {fileID: 11400000, guid: 7ce6026111106fc489bf749a4e344d6a, type: 2}
         nextLevel: 
         endStoryName: 
       - backgroundStoryName: 

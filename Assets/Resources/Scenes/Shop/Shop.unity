@@ -460,7 +460,8 @@ MonoBehaviour:
   refreshTime: {fileID: 1265637315}
   ArmyShelfItemPrefab: {fileID: 8021143442855264323, guid: 845d02c9bc26f304db018a3277ac417f,
     type: 3}
-  EquipmentShelfItemPrefab: {fileID: 0}
+  EquipmentShelfItemPrefab: {fileID: 9145442617467481814, guid: 42147d10fa248004a89e6f01b05dc54f,
+    type: 3}
 --- !u!1 &250142564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1799,7 @@ GameObject:
   - component: {fileID: 1517433853}
   - component: {fileID: 1517433852}
   - component: {fileID: 1517433851}
+  - component: {fileID: 1517433854}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1889,6 +1891,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1517433854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517433849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f8cc2a390814c408cbc20fbeb29f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 11400000, guid: 460c8e612ce430a44882b7d2403d35de, type: 2}
+  loadingScriptableObject: []
 --- !u!1 &1706656878
 GameObject:
   m_ObjectHideFlags: 0

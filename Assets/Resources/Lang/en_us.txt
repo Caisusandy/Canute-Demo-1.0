@@ -80,10 +80,14 @@ Canute.Army.CalayCityInfantry.name=Calay City Infantry
 Canute.Army.ΣCityInfantry.name=Σ City Infantry
 Canute.Army.NewUtoCityInfantry.name=New Uto City Infantry
 # 
-Canute.Equipment.CeramicCompositeArmorI.name=Ceramic Composite Armor Mk Lv.I
-Canute.Equipment.CeramicCompositeArmorII.name=Ceramic Composite Armor Mk Lv.II
-Canute.Equipment.CeramicCompositeArmorIII.name=Ceramic Composite Armor Mk Lv.III
-Canute.Equipment.CeramicCompositeArmorIV.name=Ceramic Composite Armor Mk Lv.IV
+Canute.Equipment.AeroReinforceArmorI.name=Aero Reinforce Armor Lv.I
+Canute.Equipment.AeroReinforceArmorII.name=Aero Reinforce Armor Lv.II
+Canute.Equipment.AeroReinforceArmorIII.name=Aero Reinforce Armor Lv.III
+Canute.Equipment.AeroReinforceArmorIV.name=Aero Reinforce Armor Lv.IV
+Canute.Equipment.CeramicCompositeArmorI.name=Ceramic Composite Armor Lv.I
+Canute.Equipment.CeramicCompositeArmorII.name=Ceramic Composite Armor Lv.II
+Canute.Equipment.CeramicCompositeArmorIII.name=Ceramic Composite Armor Lv.III
+Canute.Equipment.CeramicCompositeArmorIV.name=Ceramic Composite Armor Lv.IV
 Canute.Equipment.PersonalAethiumBeamEmitterI.name=Personal Aethium Beam Emitter Mk 1
 Canute.Equipment.PersonalAethiumBeamEmitterII.name=Personal Aethium Beam Emitter Mk 2
 Canute.Equipment.PersonalAethiumBeamEmitterIII.name=Personal Aethium Beam Emitter Mk 3
@@ -94,6 +98,8 @@ Canute.Equipment.MagneticGeneratorIII.name=Magnetic Shield Generator Lv.III
 Canute.Equipment.MagneticGeneratorIV.name=Magnetic Shield Generator Lv.IV
 #
 Canute.Building.Campus.name=Campus
+#
+Canute.BattleSystem.Cell.name=Region
 #地形
 Canute.BattleSystem.Terrain.Plain=Plain
 Canute.BattleSystem.Terrain.Forest=Forest
@@ -127,12 +133,12 @@ Canute.BattleSystem.Effect+Types.createArmy.info=Send @name to select position
 Canute.BattleSystem.Effect+Types.attackRange=Attack range bounes
 Canute.BattleSystem.Effect+Types.attackRange.info=Attack range bounes by @param 
 Canute.BattleSystem.Effect+Types.cardMinusPoint=Supply
-Canute.BattleSystem.Effect+Types.cardMinusPoint.info=-@param action point require (card)
+Canute.BattleSystem.Effect+Types.cardMinusPoint.info=-@param action point require for a card when playing the card
 Canute.BattleSystem.Effect+Types.confusion=Confusion
 Canute.BattleSystem.Effect+Types.confusion.info=Move Range and Attack Range -@param%
 Canute.BattleSystem.Effect+Types.protection=Protection
-Canute.BattleSystem.Effect+Types.protection.info=Under $sourceName's Protection (Enemy cannot attack)
-Canute.BattleSystem.Effect+Types.addActionPoint=Action Point
+Canute.BattleSystem.Effect+Types.protection.info=Under $sourceName's Protection (Enemy cannot attack this army)
+Canute.BattleSystem.Effect+Types.addActionPoint=Get Action Point
 Canute.BattleSystem.Effect+Types.addActionPoint.info=Add @param Action Point 
 Canute.BattleSystem.Effect+Types.addArmor=Add Armor
 Canute.BattleSystem.Effect+Types.addArmor.info=Add @param Armor to select army
@@ -240,22 +246,6 @@ Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=Card did not pla
 Canute.BattleSystem.BattleEventError.armyNoTarget=no enemy is in attack range  
 Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: target is under protection
 Canute.BattleSystem.BattleEventError.ArmyCannotAttack=it can't attack anyone 
-#UI
-Canute.UI.Start.Continue=Continue
-Canute.UI.Start.Saves=Saves
-Canute.UI.Start.NewGame=New Game
-Canute.UI.Start.Settings=Settings
-Canute.UI.Start.Credit=Credit
-
-Canute.UI.MainHall.Training=Training
-Canute.UI.MainHall.Basement=Basement Daily
-Canute.UI.MainHall.Legion=Legion Setting
-Canute.UI.MainHall.Pile=Card Pile Setting
-Canute.UI.MainHall.Exploration=Supply Team
-Canute.UI.MainHall.Shop=Shop
-Canute.UI.MainHall.Chapter=Chapter
-Canute.UI.MainHall.Hallway=Hallway
-Canute.UI.MainHall.Quit=Quit
 
 #Tips
 Canute.Tips.0=Place Card On the Army to use it.
@@ -335,20 +325,44 @@ Canute.Character.Shelly McMoore.supplyTeamComeBackWithStory=Mr. Chairman, there 
 Canute.Character.Shelly McMoore.supplyTeamComeBackWithLetter=Mr. Chairman, we found some lost documents, and I think you should read it.
 
 
-Canute.Character.Empty.WordLine.0=
-Canute.Character.Empty.WordLine.1=
-Canute.Character.Empty.WordLine.2=
-Canute.Character.Empty.WordLine.3=
-Canute.Character.Empty.WordLine.4=
-Canute.Character.Empty.WordLine.5=
-Canute.Character.Empty.WordLine.6=
-Canute.Character.Empty.WordLine.7=
-Canute.Character.Empty.WordLine.8=
-Canute.Character.Empty.supplyTeamComeBackWithItem=
-Canute.Character.Empty.supplyTeamComeBackWithLeader=
-Canute.Character.Empty.supplyTeamComeBackWithStory=
-Canute.Character.Empty.supplyTeamComeBackWithLetter=
+Canute.Character.Empty.WordLine.0= 
+Canute.Character.Empty.WordLine.1= 
+Canute.Character.Empty.WordLine.2= 
+Canute.Character.Empty.WordLine.3= 
+Canute.Character.Empty.WordLine.4= 
+Canute.Character.Empty.WordLine.5= 
+Canute.Character.Empty.WordLine.6= 
+Canute.Character.Empty.WordLine.7= 
+Canute.Character.Empty.WordLine.8= 
+Canute.Character.Empty.supplyTeamComeBackWithItem= 
+Canute.Character.Empty.supplyTeamComeBackWithLeader= 
+Canute.Character.Empty.supplyTeamComeBackWithStory= 
+Canute.Character.Empty.supplyTeamComeBackWithLetter= 
+
+
+#UI
+Canute.UI.Start.Continue=Continue
+Canute.UI.Start.Saves=Saves
+Canute.UI.Start.NewGame=New Game
+Canute.UI.Start.Settings=Settings
+Canute.UI.Start.Credit=Credit
+
+Canute.UI.MainHall.Training=Training
+Canute.UI.MainHall.Basement=Basement outside
+Canute.UI.MainHall.Legion=Legion Setting
+Canute.UI.MainHall.Pile=Card Pile Setting
+Canute.UI.MainHall.Exploration=Supply Team
+Canute.UI.MainHall.Shop=Shop
+Canute.UI.MainHall.Chapter=Battles
+Canute.UI.MainHall.Hallway=Hallway
+Canute.UI.MainHall.Quit=Quit
 
 #
+Canute.Shop.BuyItem=Buy @itemName?Cost:@cost
+Canute.Shop.GetItem=Get @itemName
+Canute.Shop.No money=We don't have enough money for this, sir.
+#
 Canute.STPrizeDisplay.NewPrize=Supply Team get @name
+#
+Canute.SupplyTeam.Explanation=Send your leaders and one protect army to get more supply for the basement
 Canute.SupplyTeam.TeamPositionInfo=The Supply Team is in @city, @country right now.

@@ -56,11 +56,11 @@ namespace Canute.UI.SupplyTeam
 
         public void Open()
         {
-            Debug.Log(STTeamDisplay.instance.Team);
-            Debug.Log(STTeamDisplay.instance.Team.Leaders[0]);
-            Debug.Log(STTeamDisplay.instance.Team.Leaders[0].Prototype);
-            Debug.Log(STTeamDisplay.instance.Team.Leaders[0].Prototype.Character);
-            Debug.Log(STTeamDisplay.instance.Team.Leaders[0].Prototype.Character.SupplyTeamComeBackItem);
+            //Debug.Log(STTeamDisplay.instance.Team);
+            //Debug.Log(STTeamDisplay.instance.Team.Leaders[0]);
+            //Debug.Log(STTeamDisplay.instance.Team.Leaders[0].Prototype);
+            //Debug.Log(STTeamDisplay.instance.Team.Leaders[0].Prototype.Character);
+            //Debug.Log(STTeamDisplay.instance.Team.Leaders[0].Prototype.Character.SupplyTeamComeBackItem);
             switch (prizeBox.prize.PrizeType)
             {
                 case Item.Type.none:
@@ -68,20 +68,28 @@ namespace Canute.UI.SupplyTeam
                 case Item.Type.currency:
                 case Item.Type.equipment:
                     Debug.Log("Currency");
-                    StoryDisplayer.Load(STTeamDisplay.instance.Team.Leaders[0].Prototype.Character.SupplyTeamComeBackItem);
+                    if (STTeamDisplay.instance.Team?.RealLeaders.Count > 0)
+                        if (STTeamDisplay.instance.Team?.RealLeaders[0]?.Prototype?.Character)
+                            StoryDisplayer.Load(STTeamDisplay.instance.Team.RealLeaders[0].Prototype.Character.SupplyTeamComeBackItem);
                     break;
                 case Item.Type.army:
                 case Item.Type.leader:
                     Debug.Log("leader");
-                    StoryDisplayer.Load(STTeamDisplay.instance.Team.Leaders[0].Prototype.Character.SupplyTeamComeBackLeader);
+                    if (STTeamDisplay.instance.Team?.RealLeaders.Count > 0)
+                        if (STTeamDisplay.instance.Team?.RealLeaders[0]?.Prototype?.Character)
+                            StoryDisplayer.Load(STTeamDisplay.instance.Team.RealLeaders[0].Prototype.Character.SupplyTeamComeBackLeader);
                     break;
                 case Item.Type.letter:
                     Debug.Log("letter");
-                    StoryDisplayer.Load(STTeamDisplay.instance.Team.Leaders[0].Prototype.Character.SupplyTeamComeBackLetter);
+                    if (STTeamDisplay.instance.Team?.RealLeaders.Count > 0)
+                        if (STTeamDisplay.instance.Team?.RealLeaders[0]?.Prototype?.Character)
+                            StoryDisplayer.Load(STTeamDisplay.instance.Team.RealLeaders[0].Prototype.Character.SupplyTeamComeBackLetter);
                     break;
                 case Item.Type.story:
                     Debug.Log("story");
-                    StoryDisplayer.Load(STTeamDisplay.instance.Team.Leaders[0].Prototype.Character.SupplyTeamComeBackStory);
+                    if (STTeamDisplay.instance.Team?.RealLeaders.Count > 0)
+                        if (STTeamDisplay.instance.Team?.RealLeaders[0]?.Prototype?.Character)
+                            StoryDisplayer.Load(STTeamDisplay.instance.Team.RealLeaders[0].Prototype.Character.SupplyTeamComeBackStory);
                     break;
                 default:
                     break;

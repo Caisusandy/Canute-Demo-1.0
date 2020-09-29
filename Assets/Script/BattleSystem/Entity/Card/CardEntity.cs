@@ -122,7 +122,16 @@ namespace Canute.BattleSystem
 
             infoDisplayer.text = data.Effect.GetDisplayingName();
             actionPointDisplayer.text = data.ActionPoint.ToString();
-            careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, data.Career.ToString());
+
+            if (data.HasValidPrototype)
+            {
+                if ((data.Prototype as EventCard).CardType == EventCard.Type.dragon)
+                {
+                    careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.armyTypeIcon, Army.Types.dragon.ToString());
+                }
+                else careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, data.Career.ToString());
+            }
+            else careerPicture.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, data.Career.ToString());
         }
 
         public virtual void RefreshLayer()
@@ -462,10 +471,7 @@ namespace Canute.BattleSystem
         public static CardEntity Create(Card card)
         {
             HandCardBar handCardBar = HandCardBar.GetHandCardBar(card.Owner);
-            if (handCardBar is null)
-            {
-                return NonControllingCardEntity.Create(card, card.Owner);
-            }
+            if (handCardBar is null) { return NonControllingCardEntity.Create(card, card.Owner); }
 
             CardEntity cardEntity;
             GameObject cardObject;

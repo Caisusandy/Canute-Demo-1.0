@@ -54,6 +54,10 @@ namespace Canute
             }
             return true;
         }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public abstract class PrototypeContainer : ScriptableObject, INameable

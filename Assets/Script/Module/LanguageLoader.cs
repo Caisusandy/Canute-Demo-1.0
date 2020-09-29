@@ -23,7 +23,8 @@ namespace Canute.Module
         {
             foreach (var item in languagePairs)
             {
-                item.textField.text = item.key.Lang();
+                if (item.textField)
+                    item.textField.text = item.key.Lang();
             }
         }
 

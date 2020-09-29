@@ -10,7 +10,14 @@ namespace Canute
         private string value;
         public static implicit operator DateTime(WorldTime time)
         {
-            return DateTime.Parse(time.value);
+            try
+            {
+                return DateTime.Parse(time.value);
+            }
+            catch
+            {
+                return DateTime.MinValue;
+            }
         }
         public static implicit operator WorldTime(DateTime time)
         {

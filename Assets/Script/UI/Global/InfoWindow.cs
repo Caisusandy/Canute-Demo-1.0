@@ -35,7 +35,7 @@ namespace Canute.UI
             instance = null;
         }
 
-        public static InfoWindow CreateConfirmWindow(Action action, string info)
+        public static InfoWindow CreateInfoWindow(Action action, string info)
         {
             ConfirmWindow.action = action;
             if (instance)
@@ -43,7 +43,24 @@ namespace Canute.UI
                 return instance;
             }
 
-            instance = Instantiate(GameData.Prefabs.Get("confirmWindow")).GetComponent<InfoWindow>();
+            instance = Instantiate(GameData.Prefabs.Get("infoWindow")).GetComponent<InfoWindow>();
+
+
+            instance.info.text = info;
+            instance.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 10));
+
+            return instance;
+        }
+
+        public static InfoWindow CreateInfoWindow(string info)
+        {
+            ConfirmWindow.action = () => { };
+            if (instance)
+            {
+                return instance;
+            }
+
+            instance = Instantiate(GameData.Prefabs.Get("infoWindow")).GetComponent<InfoWindow>();
 
 
             instance.info.text = info;

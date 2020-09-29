@@ -2304,6 +2304,8 @@ MonoBehaviour:
     type: 3}
   buildingInfoPrefab: {fileID: 2180369002547028401, guid: 2932f4bb155ca7d459aeef5bff6d93bd,
     type: 3}
+  cellInfoPrefab: {fileID: 4723241070052597958, guid: 183be13f49662c946928e141bdac6278,
+    type: 3}
 --- !u!114 &517010835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9329,6 +9331,7 @@ MonoBehaviour:
     type: 3}
   buildingInfoPrefab: {fileID: 2180369002547028401, guid: 2932f4bb155ca7d459aeef5bff6d93bd,
     type: 3}
+  cellInfoPrefab: {fileID: 0}
 --- !u!114 &1652903023
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -99,6 +99,10 @@ namespace Canute.UI
                 time += Time.deltaTime;
                 foreach (var item in MenuText)
                 {
+                    if (!item)
+                    {
+                        continue;
+                    }
                     var c = item.color;
                     c.a = time / 2;
                     item.color = c;

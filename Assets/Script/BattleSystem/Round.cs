@@ -53,8 +53,8 @@ namespace Canute.BattleSystem
         {
             stat = Stat.turnBegin;
 
-            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, CurrentPlayer);
-            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, CurrentPlayer.BattleArmies.OfType<IStatusContainer>().Union(CurrentPlayer.Buildings).ToArray());
+            Status.TriggerOf(TriggerCondition.Conditions.turnBegin, CurrentPlayer);
+            Status.TriggerOf(TriggerCondition.Conditions.turnBegin, CurrentPlayer.BattleArmies.OfType<IStatusContainer>().Union(CurrentPlayer.Buildings).ToArray());
 
             //foreach (var item in CurrentPlayer.BattleArmies)
             //{
@@ -79,8 +79,8 @@ namespace Canute.BattleSystem
             //{
             //    item.TriggerOf(TriggerCondition.Conditions.turnEnd);
             //}
-            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, CurrentPlayer);
-            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, CurrentPlayer.BattleArmies.OfType<IStatusContainer>().Union(CurrentPlayer.Buildings).ToArray());
+            Status.TriggerOf(TriggerCondition.Conditions.turnEnd, CurrentPlayer);
+            Status.TriggerOf(TriggerCondition.Conditions.turnEnd, CurrentPlayer.BattleArmies.OfType<IStatusContainer>().Union(CurrentPlayer.Buildings).ToArray());
 
             return stat;
         }

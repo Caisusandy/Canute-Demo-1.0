@@ -190,7 +190,7 @@ namespace Canute.BattleSystem
         public static void DisplayDamage(this IPassiveEntity passiveEntity, int damage)
         {
             Debug.Log(damage);
-            GameObject displayer = UnityEngine.Object.Instantiate(GameData.Prefabs.Get("armyDamageDisplayer"), passiveEntity.transform);
+            GameObject displayer = UnityEngine.Object.Instantiate(GameData.Prefabs.Get("armyDamageDisplayer"), passiveEntity.OnCellOf.transform);
             displayer.GetComponent<ArmyDamageDisplayer>().damage = damage;
             //Debug.Log("Display Damage");
         }

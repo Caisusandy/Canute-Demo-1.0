@@ -14,9 +14,13 @@ namespace Canute.BattleSystem
         [Tooltip("not to show this cell when map is loaded, also there will be no access to this cell on the map")]
         public bool hide = false;
 
+        public override bool HasValidPrototype => false;
+        public override Prototype Prototype { get => null; set { } }
         public override string Name => base.Name + Coordinate;
         public override Cell OnCellOf => this;
         public override StatusList GetAllStatus() => StatList;
+        public override string DisplayingName => "Canute.BattleSystem.Cell.name".Lang() + " " + coordinate.ToString() + "\n" + HexCoord;
+        public override Sprite Icon => base.Icon.Exist() ?? Entity.GetComponent<SpriteRenderer>()?.sprite;
 
         public List<BattleBuilding> Buildings => Game.CurrentBattle.GetBuildings(Coordinate);
         public List<BattleArmy> Armies => Game.CurrentBattle.GetArmies(Coordinate);

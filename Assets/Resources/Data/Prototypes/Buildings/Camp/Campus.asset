@@ -12,34 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d91a120c551294497bb4b51b6b3d0b, type: 3}
   m_Name: Campus
   m_EditorClassIdentifier: 
+  isTemporaryPrototype: 0
   prototype:
     name: Campus
     rarity: 0
     icon: {fileID: 21300000, guid: d64a55dbbe5417d4d81dd9888b9b208b, type: 3}
     sprite: {fileID: 0}
+    prefab: {fileID: 0}
     health: -1
     defence: 0
     type: 0
     property:
+      defense: 0
       critRate: 0
       critBounes: 0
       pop: 0
       attackRange: 0
-      moveRange: 0
+      moveRange: 4
       standPosition: 0
       attackPosition: 0
-      attackType: 0
-      targetType: 0
       attackArea: 0
       targetCount: 0
+      attackType: 0
       skill:
-        uUID:
-          Value: a68f6e83-2828-4374-aaa5-9e24f6a5d160
-        type: 0
+        specialName: 
         count: 0
         parameter: 0
-        sourceEntity:
-          Value: 
-        targetEntities: []
         args:
-          list: []
+          args: []
+      addition:
+        args: []

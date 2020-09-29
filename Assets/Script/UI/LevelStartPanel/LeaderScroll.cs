@@ -39,6 +39,8 @@ namespace Canute.UI
         public List<LeaderItem> LeaderItems => Game.PlayerData.Leaders;
         public LeaderItem SelectingLeader => GetSelectingLeader();
 
+        public int SelectingId { get => selectingId; set => selectingId = value; }
+
         private void Awake()
         {
             instance = this;
@@ -90,7 +92,7 @@ namespace Canute.UI
                 float curDist = distancePerLeader * i;
                 if (Mathf.Abs(x - curDist) < distancePerLeader / 2)
                 {
-                    selectingId = i;
+                    SelectingId = i;
                     ShowLeaderInfo();
                 }
             }
@@ -99,7 +101,7 @@ namespace Canute.UI
         void LerpEleToCenter()
         {
             Vector2 center = this.center.position;
-            float dx = selectPanel.GetChild(selectingId).position.x - center.x;
+            float dx = selectPanel.GetChild(SelectingId).position.x - center.x;
             float newX = Mathf.Lerp(leaderRect.content.position.x, leaderRect.content.position.x - dx, Time.deltaTime * 20f); //使用Mathf.Lerp函数让数据的顺滑地变化
 
             Vector2 newPosition = new Vector2(newX, leaderRect.content.position.y);//目标距离 
@@ -123,9 +125,9 @@ namespace Canute.UI
 
         private LeaderItem GetSelectingLeader()
         {
-            if (selectingId >= 0)
+            if (SelectingId > 0)
             {
-                return leaders[selectingId];
+                return leaders[SelectingId - 1];
             }
             else return LeaderItem.Empty;
         }
@@ -145,6 +147,11 @@ namespace Canute.UI
             {
                 leaders = leaders.Except(notShowingLeader).ToList();
             }
+
+            GameObject firstG = Instantiate(this.leaderCard, leaderRect.content);
+            LeaderCardUI first = firstG.GetComponent<LeaderCardUI>();
+            first.Display(LeaderItem.Empty);
+
             foreach (var item in leaders)
             {
                 GameObject gameObject = Instantiate(this.leaderCard, leaderRect.content);

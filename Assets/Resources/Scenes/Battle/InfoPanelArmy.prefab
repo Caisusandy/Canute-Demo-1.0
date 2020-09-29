@@ -207,14 +207,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.78431374, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b02d7c91800951418bcaae6d159f6d2, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 9387bb6d8ef6b3f41b9b34f986cdbf6c, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -233,9 +233,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1162211961045149315}
   - component: {fileID: 1162211961045149341}
-  - component: {fileID: 1162211961045149314}
   - component: {fileID: 1162211961045149343}
   - component: {fileID: 1162211961045149340}
+  - component: {fileID: 1717997884388364684}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -272,20 +272,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162211961045149312}
   m_CullTransparentMesh: 0
---- !u!114 &1162211961045149314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162211961045149312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f06339371c502714a874dfc38a20bd22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  background: {fileID: 1162211961045149312}
-  processing: {fileID: 1162211960272142374}
 --- !u!114 &1162211961045149343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +314,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &1717997884388364684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162211961045149312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942d0367e0bbf8a408deb4e15eb62657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: 0
+  initialPosition: {x: 0, y: 0, z: 0}
+  background: {fileID: 1162211961045149312}
+  processing: {fileID: 1162211960272142374}
+  text: {fileID: 5487497186642694497}
+  armyEntity: {fileID: 0}
 --- !u!1 &1462254662364367561
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +882,7 @@ MonoBehaviour:
   armyEntity: {fileID: 0}
   skillDisplayer: {fileID: 1282532038889840506}
   leaderDisplayer: {fileID: 2547493295092746129}
-  healthBar: {fileID: 1162211961045149314}
+  healthBar: {fileID: 1717997884388364684}
   healthInfo: {fileID: 5487497186642694497}
   angerBar: {fileID: 5487497187980611499}
   angerInfo: {fileID: 5487497187522303882}
@@ -1636,6 +1640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06339371c502714a874dfc38a20bd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progress: 0
+  initialPosition: {x: 0, y: 0, z: 0}
   background: {fileID: 5487497187980611503}
   processing: {fileID: 5487497186884287989}
 --- !u!114 &5487497187980611496

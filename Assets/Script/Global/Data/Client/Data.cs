@@ -88,6 +88,7 @@ namespace Canute
             {
                 return false;
             }
+
             foreach (var item in currency)
             {
                 Spent(item);
@@ -123,10 +124,13 @@ namespace Canute
 
             if (Federgram < federgram)
                 return false;
+
             if (Manpower < manpower)
                 return false;
+
             if (MantleAlloy < mantleAlloy)
                 return false;
+
             if (Aethium < aethium)
                 return false;
 
@@ -512,11 +516,28 @@ namespace Canute
 
             excaTeam = new ExplorationTeam();
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 3; i++)
             {
-                AddArmyItem(new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry")));
+                ArmyItem item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry"));
+                armies.Add(item);
+                legions[1].SetArmy(i, item);
             }
-            AddLeaderItem(new LeaderItem(GameData.Prototypes.GetLeaderPrototype("Canute Svensson")));
+            for (int i = 0; i < 3; i++)
+            {
+                ArmyItem item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry"));
+                armies.Add(item);
+            }
+            Statistic.ArmiesUnlocked.Add("Basic Infantry");
+
+
+            leaders.Add(new LeaderItem(GameData.Prototypes.GetLeaderPrototype("Canute Svensson")));
+            Statistic.LeadersUnlocked.Add("Canute Svensson");
+            leaders.Add(new LeaderItem(GameData.Prototypes.GetLeaderPrototype("Shelly McMoore")));
+            Statistic.LeadersUnlocked.Add("Shelly McMoore");
+            leaders.Add(new LeaderItem(GameData.Prototypes.GetLeaderPrototype("Ron Thompson")));
+            Statistic.LeadersUnlocked.Add("Ron Thompson");
+            leaders.Add(new LeaderItem(GameData.Prototypes.GetLeaderPrototype("Finn Herman")));
+            Statistic.LeadersUnlocked.Add("Finn Herman");
         }
     }
 }

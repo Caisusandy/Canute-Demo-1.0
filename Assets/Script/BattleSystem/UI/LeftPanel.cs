@@ -18,6 +18,7 @@ namespace Canute.BattleSystem.UI
         [Header("Prefabs")]
         public GameObject armyInfoPrefab;
         public GameObject buildingInfoPrefab;
+        public GameObject cellInfoPrefab;
 
         public OnMapEntity LastEntity { get; set; }
         public OnMapEntity SelectingEntity { get; set; }
@@ -52,11 +53,6 @@ namespace Canute.BattleSystem.UI
                 return;
             }
             else if (!SelectingEntity)
-            {
-                Close();
-                return;
-            }
-            if (SelectingEntity is CellEntity)
             {
                 Close();
                 return;
@@ -133,8 +129,13 @@ namespace Canute.BattleSystem.UI
                 infoPanel = buildingPanelInfo;
                 buildingPanelInfo.buildingEntity = SelectingEntity as BuildingEntity;
                 buildingPanelInfo.LoadStatus();
-
-
+            }
+            else if (SelectingEntity is CellEntity)
+            {
+                InfoPanelCell cellPanelInfo = Instantiate(cellInfoPrefab, transform).GetComponent<InfoPanelCell>();
+                infoPanel = cellPanelInfo;
+                cellPanelInfo.cellEntity = SelectingEntity as CellEntity;
+                cellPanelInfo.LoadStatus();
             }
         }
 

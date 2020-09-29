@@ -20,13 +20,13 @@ namespace Canute.BattleSystem
         public int seed;
 
         public static MapEntity CurrentMap => instance;
+        public static bool WasOnDrag { get => instance.wasOnDrag; set { instance.wasOnDrag = value; SetCellCollider(!value); } }
 
         public Map data => new Map(this);
         public override EntityData Data => data;
         public int Count => columnEntities.Count;
         public int CellCount => GetCellCount();
         public float MapRadius => (Origin.transform.position - Center.transform.position).magnitude;
-        public static bool WasOnDrag { get => instance.wasOnDrag; set { instance.wasOnDrag = value; SetCellCollider(!value); } }
         public CellEntity Origin => this[0][0];
         public CellEntity Center { get => GetCenter(); }
 
@@ -36,6 +36,7 @@ namespace Canute.BattleSystem
         public CellEntity this[Vector3Int pos] => this[pos.x, pos.y, pos.z];
         public Vector2Int Size => new Vector2Int(this[0].cellEntities.Count, Count);
 
+        #region Map setup
         public override void Awake()
         {
             name = "Map";
@@ -87,6 +88,38 @@ namespace Canute.BattleSystem
             FakeMapGenerator.instance.fakeColumn.transform.localPosition = localPosition;
         }
 
+        public void MapSetUp()
+        {
+            foreach (Transform columnTransform in transform)
+            {
+                ColumnEntity item = columnTransform.GetComponent<ColumnEntity>();
+                columnEntities.Add(item);
+                item.ColumnSetup();
+            }
+            isInitialized = true;
+        }
+
+        public int InColumnOf(CellEntity cellEntity)
+        {
+            foreach (ColumnEntity item in this)
+            {
+                if (item.cellEntities.Contains(cellEntity))
+                {
+                    return columnEntities.IndexOf(item);
+                }
+            }
+            return -1;
+        }
+
+        public CellEntity GetCellEntityByHex(int hexX, int hexY)
+        {
+            //Debug.Log(hexX + "," + hexY);
+            //Debug.Log((hexX + hexY / 2) + "," + hexY);
+            return GetCell(hexX + hexY / 2, hexY);
+        }
+
+        #endregion
+
         private int GetCellCount()
         {
             int count = 0;
@@ -107,17 +140,6 @@ namespace Canute.BattleSystem
             int x = columnEntities[y].cellEntities.Count / 2;
             CellEntity cellEntity = this[y][x];
             return cellEntity;
-        }
-
-        public void MapSetUp()
-        {
-            foreach (Transform columnTransform in transform)
-            {
-                ColumnEntity item = columnTransform.GetComponent<ColumnEntity>();
-                columnEntities.Add(item);
-                item.ColumnSetup();
-            }
-            isInitialized = true;
         }
 
 
@@ -147,23 +169,7 @@ namespace Canute.BattleSystem
             return ((IEnumerable<ColumnEntity>)columnEntities).GetEnumerator();
         }
 
-        public int InColumnOf(CellEntity cellEntity)
-        {
-            foreach (ColumnEntity item in this)
-            {
-                if (item.cellEntities.Contains(cellEntity))
-                {
-                    return columnEntities.IndexOf(item);
-                }
-            }
-            return -1;
-        }
 
-        public CellEntity GetCellEntityByHex(int hexX, int hexY)
-        {
-            //Debug.Log(hexX + "," + hexY);
-            return GetCell(hexX + hexY / 2, hexY);
-        }
 
         public CellEntity GetCell(int x, int y)
         {
@@ -209,47 +215,47 @@ namespace Canute.BattleSystem
         }
 
 
-
+        #region Nearby
         public List<CellEntity> GetNearbyCell(CellEntity centerCell)
         {
             int hexX = centerCell.data.HexCoord.x;
             int hexY = centerCell.data.HexCoord.y;
             List<CellEntity> Nearby = new List<CellEntity>();
 
-            CellEntity yi = GetCellEntityByHex(hexX, hexY + 1);
+            CellEntity yi = GetCellEntityByHex(hexX, hexY + 1); //RU
             if (yi)
                 Nearby.Add(yi);   //Y+1 
 
 
-            CellEntity xi = GetCellEntityByHex(hexX + 1, hexY);
+            CellEntity xi = GetCellEntityByHex(hexX + 1, hexY); //R
             if (xi)
             {
                 Nearby.Add(xi);   //X+1
             }
 
 
-            CellEntity zi = GetCellEntityByHex(hexX + 1, hexY - 1);
+            CellEntity zi = GetCellEntityByHex(hexX + 1, hexY - 1); //RD
             if (zi)
             {
                 Nearby.Add(zi);//z+1
             }
 
 
-            CellEntity iy = GetCellEntityByHex(hexX, hexY - 1);
+            CellEntity iy = GetCellEntityByHex(hexX, hexY - 1); //LD
             if (iy)
             {
                 Nearby.Add(iy);   //Y-1
             }
 
 
-            CellEntity ix = GetCellEntityByHex(hexX - 1, hexY);
+            CellEntity ix = GetCellEntityByHex(hexX - 1, hexY); //L
             if (ix)
             {
                 Nearby.Add(ix);   //X-1
             }
 
 
-            CellEntity iz = GetCellEntityByHex(hexX - 1, hexY + 1);
+            CellEntity iz = GetCellEntityByHex(hexX - 1, hexY + 1); //LU
             if (iz)
             {
                 Nearby.Add(iz);//Z
@@ -504,6 +510,16 @@ namespace Canute.BattleSystem
             return DrawBorder(inner, outer);
         }
 
+
+
+        public List<CellEntity> GetMapBorderCell()
+        {
+            return ((IEnumerable<CellEntity>)this).Where((c) => c.x == 0 || c.y == 0 || c.x == Size.x - 1 || c.y == Size.y - 1).ToList();
+        }
+
+        #endregion
+
+
         public List<CellEntity> GetLine(CellEntity origin, CellEntity direction)
         {
             if (!origin || !direction)
@@ -656,36 +672,6 @@ namespace Canute.BattleSystem
             return border;
         }
 
-        public Vector2Int GetPosition(CellEntity cellEntity)
-        {
-            return new Vector2Int(columnEntities[InColumnOf(cellEntity)].cellEntities.IndexOf(cellEntity), InColumnOf(cellEntity));
-        }
-
-        public bool IsBorderCell(CellEntity cellEntity)
-        {
-            if (!GetCell(cellEntity.Coordinate))
-            {
-                return false;
-            }
-            if (cellEntity.Coordinate.x == 0 || cellEntity.Coordinate.x == 0)
-            {
-                return true;
-            }
-            if (cellEntity.Coordinate.y == 0 || cellEntity.Coordinate.y == 0)
-            {
-                return true;
-            }
-            if (cellEntity.Coordinate.x == columnEntities.Count || cellEntity.Coordinate.x == columnEntities.Count)
-            {
-                return true;
-            }
-            if (cellEntity.Coordinate.y == columnEntities.Count || cellEntity.Coordinate.y == columnEntities.Count)
-            {
-                return true;
-            }
-            return false;
-        }
-
         public List<CellEntity> GetRectArea(Vector2Int p1, Vector2Int p2)
         {
             if (p1.x > p2.x || p1.y > p2.y)
@@ -705,14 +691,55 @@ namespace Canute.BattleSystem
             return list;
         }
 
-        public void OpenArea(List<CellEntity> area)
+        public Vector2Int GetPosition(CellEntity cellEntity)
+        {
+            return new Vector2Int(columnEntities[InColumnOf(cellEntity)].cellEntities.IndexOf(cellEntity), InColumnOf(cellEntity));
+        }
+
+        public bool IsBorderCell(CellEntity cellEntity)
+        {
+            if (!GetCell(cellEntity.Coordinate))
+            {
+                return false;
+            }
+            if (cellEntity.Coordinate.x == 0 || cellEntity.Coordinate.y == 0)
+            {
+                return true;
+            }
+            if (cellEntity.Coordinate.x == Size.x)
+            {
+                return true;
+            }
+            if (cellEntity.Coordinate.y == Size.y)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+
+        public void OpenCells(params CellEntity[] area)
         {
             foreach (var item in area)
             {
-                item.data.canStandOn = true;
-                item.GetComponent<SpriteRenderer>().color = Color.white;
+                item.Open();
             }
         }
+
+        public void OpenCells(IEnumerable<CellEntity> area) => OpenCells(area.ToArray());
+
+        public void CloseCells(params CellEntity[] area)
+        {
+            foreach (var item in area)
+            {
+                item.Close();
+            }
+        }
+
+        public void CloseCells(IEnumerable<CellEntity> area) => CloseCells(area.ToArray());
+
+
 
         public static void MoveMap()
         {
@@ -789,6 +816,8 @@ namespace Canute.BattleSystem
             }
             return cells;
         }
+
+
 
         [ContextMenu("Draw Cell")]
         public void DrawCell()

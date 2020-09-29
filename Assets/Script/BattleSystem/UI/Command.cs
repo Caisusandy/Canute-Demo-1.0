@@ -57,6 +57,8 @@ namespace Canute.Testing
                         return Lang(commandParams);
                     case "loadStory":
                         return LoadStory(commandParams);
+                    case "refreshShop":
+                        return RefreshShop(commandParams);
                     case "openEmptyBattle":
                         return OpenEmptyBattle();
                     case "openBattle":
@@ -98,6 +100,13 @@ namespace Canute.Testing
             }
 
             return false;
+        }
+
+        private static bool RefreshShop(string[] commandParams)
+        {
+            Game.PlayerData.ShopInfo.NextRefreshTime = DateTime.Now;
+            Game.PlayerData.ShopInfo.Refresh();
+            return true;
         }
 
         private static bool GetItem(string[] commandParams)

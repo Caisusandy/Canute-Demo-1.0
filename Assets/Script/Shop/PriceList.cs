@@ -4,55 +4,41 @@ using UnityEngine;
 
 namespace Canute.Shops
 {
+    //[Serializable]
+    //public class PlayerPriceList : DataList<PlayerPricePair>
+    //{
+
+    //}
+
+    //[Serializable]
+    //public class PlayerPricePair : PricePair, INameable, IWeightable
+    //{
+    //    [SerializeField] protected bool available;
+
+    //}
+
     [Serializable]
     public class PriceList : DataList<PricePair>
     {
-        public int TotalWeight => GetSum();
-
-        protected int GetSum()
-        {
-            int i = 0;
-            foreach (PricePair item in this)
-            {
-                i += item.Weight;
-            }
-            return i;
-        }
-
-        public PricePair InWeightOf(int weight)
-        {
-            foreach (PricePair item in this)
-            {
-                if (weight < item.Weight)
-                {
-                    return item;
-                }
-                else
-                {
-                    weight -= item.Weight;
-                }
-            }
-            return null;
-        }
-
+        public int TotalWeight => WeightItem.WeightOf(ToArray());
+        public PricePair InWeightOf(float weight) => WeightItem.Get(weight, ToArray());
         public PricePair RandomOut()
         {
-            int random = UnityEngine.Random.Range(0, TotalWeight);
-            PricePair pricePair = InWeightOf(random);
+            PricePair pricePair = InWeightOf(UnityEngine.Random.value);
             Debug.Log(pricePair.Name);
             return pricePair;
         }
     }
 
     [Serializable]
-    public class PricePair : INameable
+    public class PricePair : INameable, IWeightable
     {
-        [SerializeField] protected Prize prize;
         [SerializeField] protected int weight;
+        [SerializeField] protected Prize prize;
         [SerializeField] protected Currency[] price;
 
         public string Name => Prize.Name;
-        public int Weight { get => weight; set => weight = value; }
+        public int Count { get => weight; set => weight = value; }
         public Prize Prize { get => prize; set => prize = value; }
         public Currency[] Price { get => price; set => price = value; }
         public Item.Type ItemType { get => Prize.PrizeType; set => Prize.PrizeType = value; }
@@ -67,5 +53,6 @@ namespace Canute.Shops
 
             return false;
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Canute.BattleSystem;
+using Canute.Shops;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,7 +81,6 @@ namespace Canute
         /// </summary> 
         /// <param name="param"></param>
         /// <returns></returns> 
-
         public static string Lang(params string[] param)
         {
             string fullName = "";
@@ -97,7 +97,6 @@ namespace Canute
 
             return fullName.Lang();
         }
-
 
         /// <summary>
         /// Get the matched display language from dictionary from a instance and a parameter
@@ -126,6 +125,22 @@ namespace Canute
             List<string> vs = new List<string>() { instance.GetFullTypeName() + "." + name };
             vs.AddRange(param);
             return Lang(vs.ToArray());
+        }
+
+        public static string Lang(this Currency currency)
+        {
+            string ret = currency.name.Lang();
+            ret += ": " + currency.count;
+            return ret;
+        }
+        public static string Lang(this Currency[] currency)
+        {
+            string ret = "";
+            foreach (var item in currency)
+            {
+                ret += item.Lang() + "\n";
+            }
+            return ret.Remove(ret.Length - 1);
         }
 
         public static string Lang(this PropertyBonus propertyBonus, int level = 1)

@@ -18,7 +18,6 @@ MonoBehaviour:
     rarity: 2
     icon: {fileID: 0}
     sprite: {fileID: 0}
-    portrait: {fileID: 0}
     prefab: {fileID: 4382801775652925750, guid: 7f8b6b23fb7522d4c9a5ae8a73a9816a,
       type: 3}
     count: 1
@@ -46,8 +45,6 @@ MonoBehaviour:
             - key: name
               value: dragonAirAttack
             - key: specialName
-              value: true
-            - key: effectSpecialName
               value: dragonAirAttack
             - key: propertyType
               value: dragonAirAttack

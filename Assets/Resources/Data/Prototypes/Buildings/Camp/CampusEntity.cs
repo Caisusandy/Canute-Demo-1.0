@@ -8,8 +8,8 @@ namespace Canute.BattleSystem.Buildings
     {
         private const int PlaceRange = 4;
         public MarkController markController;
-        public List<CellEntity> Range => Game.CurrentBattle.MapEntity.GetBorderCell(OnCellOf, PlaceRange, true);
-        public List<CellEntity> PossibleCells => Game.CurrentBattle.MapEntity.GetNearbyCell(OnCellOf, PlaceRange, true).Where((c) => c.data.canStandOn).ToList();
+        public List<CellEntity> Range => Game.CurrentBattle.MapEntity.GetBorderCell(OnCellOf, data.Properties.AttackRange, true);
+        public List<CellEntity> PossibleCells => Game.CurrentBattle.MapEntity.GetNearbyCell(OnCellOf, data.Properties.AttackRange, true).Where((c) => c.data.canStandOn).ToList();
         public bool IsPlayers => Owner == Game.CurrentBattle.Player;
         public bool BorderOpened { get; set; }
 
@@ -33,7 +33,8 @@ namespace Canute.BattleSystem.Buildings
             Debug.LogWarning("draw range");
             DrawRange();
             BorderOpened = true;
-
+            Game.CurrentBattle.MapEntity.OpenCells(OnCellOf);
+            Game.CurrentBattle.MapEntity.OpenCells(OnCellOf.NearByCells);
         }
 
         // Update is called once per frame

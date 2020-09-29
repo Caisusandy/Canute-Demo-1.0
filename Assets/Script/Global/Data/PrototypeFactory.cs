@@ -171,7 +171,7 @@ namespace Canute.BattleSystem
             {
                 return TestingEventCards.Get(name) ?? defaultEventCard;
             }
-            return EventCards.Get(name).Exist()?.Prototype ?? TempEventCards.Get(name).Exist()?.Prototype ?? defaultEventCard;
+            return EventCards.Get(name).Exist()?.Prototype ?? DragonEventCards.Get(name).Exist()?.Prototype ?? TempEventCards.Get(name).Exist()?.Prototype ?? defaultEventCard;
         }
 
         public Character GetCharacter(string name)

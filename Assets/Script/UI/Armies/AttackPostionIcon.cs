@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Canute.UI
 {
-    public class AttackPostionIcon : Icon
+    public class AttackPostionIcon : ArmyPropertyInfoIcon
     {
         public override void DisplayInfo()
         {

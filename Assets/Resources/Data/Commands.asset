@@ -65,6 +65,8 @@ MonoBehaviour:
         type: 6
         default: 0
         possibleValue: []
+    - name: getHexCoord
+      params: []
     - name: getItem
       params:
       - key: type
@@ -78,8 +80,6 @@ MonoBehaviour:
         type: 2
         default: 
         possibleValue: []
-    - name: getHexCoord
-      params: []
     - name: getNeighbor
       params:
       - key: '@SelectingEntity(Cell Entity)'
@@ -126,6 +126,8 @@ MonoBehaviour:
         type: 2
         default: 
         possibleValue: []
+    - name: refreshShop
+      params: []
     - name: reloadDefaultPrototype
       params: []
     - name: reloadLanguagePack

@@ -8,37 +8,7 @@ using UnityEngine;
 namespace Canute
 {
     [Serializable]
-    public class ConditionalPrize : Prize
-    {
-        [SerializeField] private List<string> leaderRequirement;
-        [SerializeField] private string armyRequirement;
-        [SerializeField] private TimeInterval time;
-
-        public ConditionalPrize() { }
-        public ConditionalPrize(string name, int count, Item.Type type, List<string> leaderRequirement, string armyRequirement, TimeInterval time)
-        {
-            this.name = name;
-            this.count = count;
-            this.type = type;
-            this.leaderRequirement = leaderRequirement;
-            this.armyRequirement = armyRequirement;
-            this.time = time;
-        }
-
-
-        public new ConditionalPrize Clone()
-        {
-            return new ConditionalPrize(name, count, type, leaderRequirement.Clone(), armyRequirement, time);
-        }
-
-
-        public List<string> LeaderRequirement { get => leaderRequirement; set => leaderRequirement = value; }
-        public string ArmyRequirement { get => armyRequirement; set => armyRequirement = value; }
-        public TimeInterval Time { get => time; set => time = value; }
-
-    }
-    [Serializable]
-    public class Prize : IWeightable, ICloneable
+    public class Prize : IWeightable, ICloneable, IRarityLabled
     {
         [SerializeField] protected string name;
         [SerializeField] protected int count;
@@ -50,7 +20,8 @@ namespace Canute
         public int Parameter { get => parameter; }
         public Item.Type PrizeType { get => type; set => type = value; }
         public string DisplayingName => GetDisplayingName();
-
+        public Sprite Icon => GetIcon();
+        public Rarity Rarity => GetRarity();
 
         public Prize(string name, int count, Item.Type type)
         {
@@ -58,7 +29,6 @@ namespace Canute
             this.name = name;
             this.count = count;
         }
-
         public Prize()
         {
         }
@@ -121,6 +91,12 @@ namespace Canute
             return true;
         }
 
+        /// <summary>
+        /// Give items exp
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items"></param>
+        /// <returns></returns>
         public bool Fulfill<T>(List<T> items) where T : Item
         {
             switch (PrizeType)
@@ -147,7 +123,10 @@ namespace Canute
 
         public bool Fulfill(List<Item> items) => Fulfill<Item>(items);
 
-
+        /// <summary>
+        /// Get displaying name of different item
+        /// </summary>
+        /// <returns></returns>
         private string GetDisplayingName()
         {
             switch (PrizeType)
@@ -173,6 +152,52 @@ namespace Canute
                     break;
             }
             return "";
+        }
+
+        private Sprite GetIcon()
+        {
+            switch (PrizeType)
+            {
+                case Item.Type.none:
+                    break;
+                case Item.Type.army:
+                    return GameData.Prototypes.GetArmyPrototype(Name).Icon;
+                case Item.Type.leader:
+                    return GameData.Prototypes.GetLeaderPrototype(Name).Icon;
+                case Item.Type.equipment:
+                    return GameData.Prototypes.GetEquipmentPrototype(Name).Icon;
+                case Item.Type.eventCard:
+                    return GameData.Prototypes.GetEventCardPrototype(Name).Icon;
+                case Item.Type.currency:
+                    Debug.Log(Name);
+                    return GameData.SpriteLoader.Get(SpriteAtlases.currency, Name);
+                default:
+                    break;
+            }
+            return null;
+        }
+
+        private Rarity GetRarity()
+        {
+            switch (PrizeType)
+            {
+                case Item.Type.none:
+                    break;
+                case Item.Type.army:
+                    return GameData.Prototypes.GetArmyPrototype(Name).Rarity;
+                case Item.Type.leader:
+                    return GameData.Prototypes.GetLeaderPrototype(Name).Rarity;
+                case Item.Type.equipment:
+                    return GameData.Prototypes.GetEquipmentPrototype(Name).Rarity;
+                case Item.Type.eventCard:
+                    return GameData.Prototypes.GetEventCardPrototype(Name).Rarity;
+                case Item.Type.currency:
+                    Debug.Log(Name);
+                    return Rarity.epic;
+                default:
+                    break;
+            }
+            return Rarity.none;
         }
 
         object ICloneable.Clone()

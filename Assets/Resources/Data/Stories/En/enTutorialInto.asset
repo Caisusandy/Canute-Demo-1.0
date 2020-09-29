@@ -18,19 +18,18 @@ MonoBehaviour:
     wordLines:
     - id: Tutorial.1
       speakerName: 
-      line: move card to an army to use iy.
+      line: move the top of your card to an army to use it.
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
     - id: Tutorial.2
       speakerName: 
-      line: 'Use"move" card to move army
+      line: 'the discription of the card would appear on the top of your card bar,
+        all available targets of a card would appear green when you tried to use
+        it.
 
-        Use Finger/Mouse to draw move path.
-
-        the
-        possible destination is inside the move range (yellow).'
+'
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
@@ -46,6 +45,18 @@ MonoBehaviour:
       position: 0
       selections: []
     - id: Tutorial.4
+      speakerName: 
+      line: 'Use"move" card to move army
+
+        Use Finger/Mouse to draw move path.
+
+        the
+        possible destination is inside the move range (yellow).'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Tutorial.5
       speakerName: 
       line: Every Card requires action point to be used. Check for the amount of
         action point you have, You can't use it if you don't have enough action point

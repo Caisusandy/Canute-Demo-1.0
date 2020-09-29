@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 732c2c3c72ac27842bc140ee0ed6d795, type: 3}
   m_Name: InfdevEnemyCampus
   m_EditorClassIdentifier: 
+  Prototype: {fileID: 0}
   spawnType: 0
   radius: 0
+  generateCount: 0
   battleBuilding:
     name: Campus
     prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
@@ -51,7 +53,7 @@ MonoBehaviour:
       critRate: 0
       critBounes: 0
       pop: 0
-      attackRange: 0
+      attackRange: 4
       moveRange: 0
       standPosition: 0
       attackPosition: 0
@@ -66,14 +68,7 @@ MonoBehaviour:
           args: []
       addition:
         args: []
-    skillPack:
-      specialName: 
-      count: 0
-      parameter: 0
-      args:
-        args: []
     maxHealth: -1
     health: -1
-    defense: 0
     armor: 0
-    canBeTargeted: 0
+    damage: 0

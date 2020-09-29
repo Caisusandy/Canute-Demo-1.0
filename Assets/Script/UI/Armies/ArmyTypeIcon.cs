@@ -5,7 +5,7 @@ using UnityEngine.U2D;
 
 namespace Canute.UI
 {
-    public class ArmyTypeIcon : Icon
+    public class ArmyTypeIcon : ArmyPropertyInfoIcon
     {
         public override void DisplayInfo()
         {

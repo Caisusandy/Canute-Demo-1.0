@@ -26,7 +26,7 @@ namespace Canute.UI.EventCardPile
         {
             if (id == -1)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < cardIcons.Count; i++)
                 {
                     UpdateIcon(i, null);
                 }
@@ -40,8 +40,8 @@ namespace Canute.UI.EventCardPile
                 EventCardItem item = Game.PlayerData.EventCardPiles[id].EventCards[i];
                 UpdateIcon(i, item);
             }
-
-            for (int i = Game.PlayerData.EventCardPiles[id].EventCards.Count; i < 5; i++)
+            Debug.Log(cardIcons.Count);
+            for (int i = Game.PlayerData.EventCardPiles[id].EventCards.Count; i < cardIcons.Count; i++)
             {
                 Hide(i);
             }

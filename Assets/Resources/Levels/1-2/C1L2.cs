@@ -28,7 +28,7 @@ namespace Canute.LevelScript
                 if (Game.CurrentBattle.GetBuilding(logement1Pos)?.Owner == Game.CurrentBattle.Player)
                 {
                     var area = Game.CurrentBattle.MapEntity.GetRectArea(new Vector2Int(11, 0), new Vector2Int(19, 15));
-                    Game.CurrentBattle.MapEntity.OpenArea(area);
+                    Game.CurrentBattle.MapEntity.OpenCells(area);
                     Game.CurrentBattle.WaveControl.NextWave();
                 }
             }
@@ -37,7 +37,7 @@ namespace Canute.LevelScript
                 if (Game.CurrentBattle.GetBuilding(logement2Pos)?.Owner == Game.CurrentBattle.Player)
                 {
                     var area = Game.CurrentBattle.MapEntity.GetRectArea(new Vector2Int(0, 16), new Vector2Int(19, 24));
-                    Game.CurrentBattle.MapEntity.OpenArea(area);
+                    Game.CurrentBattle.MapEntity.OpenCells(area);
                     Game.CurrentBattle.WaveControl.NextWave();
                 }
             }

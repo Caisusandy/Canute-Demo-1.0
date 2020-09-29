@@ -128,7 +128,9 @@
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\MapEntity.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\MapGenerator.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\MarkController.cs" />
+    <Compile Include="Assets\Script\BattleSystem\Entity\Map\MazeGenerator.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\RandomMapGenerator.cs" />
+    <Compile Include="Assets\Script\BattleSystem\Entity\Map\StartPointPair.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\Terrain.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\Weather.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\OnMapEntity.cs" />
@@ -179,6 +181,7 @@
     <Compile Include="Assets\Script\BattleSystem\UI\InfoPanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\InfoPanelArmy.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\InfoPanelBuilding.cs" />
+    <Compile Include="Assets\Script\BattleSystem\UI\InfoPanelCell.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\LeftPanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\PausePanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\PvPUI.cs" />
@@ -291,6 +294,7 @@
     <Compile Include="Assets\Script\Story\LetterDisplayer.cs" />
     <Compile Include="Assets\Script\Story\StoryDisplayer.cs" />
     <Compile Include="Assets\Script\Story\WordLine.cs" />
+    <Compile Include="Assets\Script\SupplyTeam\ConditionalPrize.cs" />
     <Compile Include="Assets\Script\SupplyTeam\ExcavationPrice.cs" />
     <Compile Include="Assets\Script\SupplyTeam\ItemPrizeSheet.cs" />
     <Compile Include="Assets\Script\SupplyTeam\Prize.cs" />
@@ -302,12 +306,12 @@
     <Compile Include="Assets\Script\UI\Armies\ArmyCardUI.cs" />
     <Compile Include="Assets\Script\UI\Armies\ArmyIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\ArmyListUI.cs" />
+    <Compile Include="Assets\Script\UI\Armies\ArmyPropertyInfoIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\ArmyTypeIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\AttackPostionIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\AttackTypeIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\Icon.cs" />
     <Compile Include="Assets\Script\UI\Armies\StandPostionIcon.cs" />
-    <Compile Include="Assets\Script\UI\ConfirmWindow.cs" />
     <Compile Include="Assets\Script\UI\Equipments\EquipmentListUI.cs" />
     <Compile Include="Assets\Script\UI\Equipments\EquipmentUI.cs" />
     <Compile Include="Assets\Script\UI\EventCardPile\ECPAddCard.cs" />
@@ -322,14 +326,15 @@
     <Compile Include="Assets\Script\UI\GameStart\GameStartMenu.cs" />
     <Compile Include="Assets\Script\UI\GameStart\GameStartSavesInfo.cs" />
     <Compile Include="Assets\Script\UI\GameStart\GameStartSavesMenu.cs" />
+    <Compile Include="Assets\Script\UI\Global\ConfirmWindow.cs" />
     <Compile Include="Assets\Script\UI\Global\IconExplain.cs" />
+    <Compile Include="Assets\Script\UI\Global\InfoWindow.cs" />
     <Compile Include="Assets\Script\UI\Global\Label.cs" />
     <Compile Include="Assets\Script\UI\Global\LeaderCardUI.cs" />
     <Compile Include="Assets\Script\UI\Global\LeaderIcon.cs" />
     <Compile Include="Assets\Script\UI\Hallway\HWCharacter.cs" />
     <Compile Include="Assets\Script\UI\Hallway\HWUI.cs" />
     <Compile Include="Assets\Script\UI\Hallway\Hallway.cs" />
-    <Compile Include="Assets\Script\UI\InfoWindow.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSArmySkillCardUI.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSArmyUpgradePanel.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSLegionDisplay.cs" />
@@ -356,6 +361,7 @@
     <Compile Include="Assets\Script\UI\StoryRoom\SRLetterUI.cs" />
     <Compile Include="Assets\Script\UI\StoryRoom\SRStoryBlockUI.cs" />
     <Compile Include="Assets\Script\UI\StoryRoom\StoryRoomUI.cs" />
+    <Compile Include="Assets\Script\UI\SupplyTeam\STExplanation.cs" />
     <Compile Include="Assets\Script\UI\SupplyTeam\STPrize.cs" />
     <Compile Include="Assets\Script\UI\SupplyTeam\STPrizeDisplay.cs" />
     <Compile Include="Assets\Script\UI\SupplyTeam\STTeamDisplay.cs" />

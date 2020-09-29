@@ -53,7 +53,7 @@ MonoBehaviour:
       critRate: 0
       critBounes: 0
       pop: 0
-      attackRange: 0
+      attackRange: 4
       moveRange: 0
       standPosition: 0
       attackPosition: 0

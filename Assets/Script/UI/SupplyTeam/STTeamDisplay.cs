@@ -75,7 +75,7 @@ namespace Canute.UI.SupplyTeam
         {
             //    TotalCost.text = "Total: Fedgram:" + TotalFedgram + ", " + "Manpower:" + TotalManpower + "\n" + "Mantle Alloy:" + TotalMantleAlloy;
             RemainingTimeDisplayer.text = Team.ToBackTime.ToString("g");
-            goOutButton.interactable = Team.ToBackTime == TimeSpan.Zero;
+            goOutButton.interactable = Team.ToBackTime == TimeSpan.Zero ? Team.RealLeaders.Count > 0 : false;
         }
 
         public void ReloadTeamIcon()
@@ -142,6 +142,7 @@ namespace Canute.UI.SupplyTeam
             Canute.SupplyTeam.SupplyTeam.GoOut(Team);
             STPrizeDisplay.instance.Start();
             teamPositionControl.RefreshTeamMark();
+            ReloadTeamIcon();
         }
     }
 }

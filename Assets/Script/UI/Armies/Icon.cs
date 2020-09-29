@@ -1,36 +1,24 @@
-﻿using Canute.BattleSystem;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Canute.UI
 {
-    [RequireComponent(typeof(Image))]
+
+    [RequireComponent(typeof(Image), typeof(Collider2D))]
     public abstract class Icon : MonoBehaviour
     {
         [HideInInspector] public GameObject label;
-        [HideInInspector] public IArmy army;
 
         protected Image IconImage => GetComponent<Image>();
         protected Text Label => label.GetComponent<Label>().text;
 
-        public void OnMouseOver()
-        {
-            DisplayInfo();
-        }
+        public void OnMouseOver() { DisplayInfo(); }
 
-        public void OnMouseDown()
-        {
-            DisplayInfo();
-        }
+        public void OnMouseDown() { DisplayInfo(); }
 
-        public void OnMouseExit()
-        {
-            HideInfo();
-        }
-        public void OnMouseUp()
-        {
-            HideInfo();
-        }
+        public void OnMouseExit() { HideInfo(); }
+
+        public void OnMouseUp() { HideInfo(); }
 
         public virtual void DisplayInfo()
         {
@@ -45,11 +33,6 @@ namespace Canute.UI
         public virtual void HideInfo()
         {
             label.SetActive(false);
-        }
-
-        public virtual void SetArmyItem(IArmy armyItem)
-        {
-            this.army = armyItem;
         }
     }
 }

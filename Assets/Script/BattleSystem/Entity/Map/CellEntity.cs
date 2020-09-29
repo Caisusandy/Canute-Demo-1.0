@@ -18,12 +18,14 @@ namespace Canute.BattleSystem
 
 
         public List<CellEntity> NearByCells => Game.CurrentBattle.MapEntity.GetNearbyCell(this);
-        //public virtual CellEntity LeftUp => Game.CurrentBattle.MapEntity.GetCell(x - 1, y + 1);
-        //public virtual CellEntity Left => Game.CurrentBattle.MapEntity.GetCell(x - 1, y);
-        //public virtual CellEntity LeftDown => Game.CurrentBattle.MapEntity.GetCell(x, y - 1);
-        //public virtual CellEntity RightUp => Game.CurrentBattle.MapEntity.GetCell(x, y + 1);
-        //public virtual CellEntity Right => Game.CurrentBattle.MapEntity.GetCell(x + 1, y);
-        //public virtual CellEntity RightDown => Game.CurrentBattle.MapEntity.GetCell(x + 1, y - 1);
+
+        public virtual CellEntity LeftUp => Game.CurrentBattle.MapEntity.GetCellEntityByHex(HexCoord.x - 1, HexCoord.y + 1);
+        public virtual CellEntity Left => Game.CurrentBattle.MapEntity.GetCellEntityByHex(HexCoord.x - 1, HexCoord.y);
+        public virtual CellEntity LeftDown => Game.CurrentBattle.MapEntity.GetCellEntityByHex(HexCoord.x, HexCoord.y - 1);
+        public virtual CellEntity RightUp => Game.CurrentBattle.MapEntity.GetCellEntityByHex(HexCoord.x, HexCoord.y + 1);
+        public virtual CellEntity Right => Game.CurrentBattle.MapEntity.GetCellEntityByHex(HexCoord.x + 1, HexCoord.y);
+        public virtual CellEntity RightDown => Game.CurrentBattle.MapEntity.GetCellEntityByHex(HexCoord.x + 1, HexCoord.y - 1);
+
         public override BattleProperty.Position StandPostion => BattleProperty.Position.land;
 
         public ArmyEntity HasArmyStandOn => data.HasArmyStandOn?.Entity;
@@ -99,6 +101,10 @@ namespace Canute.BattleSystem
                 Unselect();
                 HasBuildingStandOn.OnMouseUp();
             }
+            else if (MapEntity.WasOnDrag)
+            {
+                Debug.Log("was dragin map");
+            }
             else
             {
                 base.OnMouseUp();
@@ -149,6 +155,42 @@ namespace Canute.BattleSystem
             onMapEntity.entityMark.Refresh();
         }
 
+        public void Open()
+        {
+            data.canStandOn = true;
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        public void Close()
+        {
+            data.canStandOn = false;
+            GetComponent<SpriteRenderer>().color = new Color(150f / 255, 150f / 255, 150f / 255);
+        }
+
+        public override void FaceTo(bool isToRight)
+        {
+            //cellEntity does not face to anyone
+        }
+
+        public CellEntity GetByDirection(MapDirection direction)
+        {
+            switch (direction)
+            {
+                case MapDirection.RU:
+                    return RightUp;
+                case MapDirection.R:
+                    return Right;
+                case MapDirection.RD:
+                    return RightDown;
+                case MapDirection.LD:
+                    return LeftDown;
+                case MapDirection.L:
+                    return Left;
+                case MapDirection.LU:
+                    return LeftUp;
+                default: return null;
+            }
+        }
 
         public bool IsValidDestination(IOnMapEntity movingEntity)
         {

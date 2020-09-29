@@ -55,8 +55,7 @@ namespace Canute.BattleSystem.UI
                 return;
             }
             BattleArmy data = ArmyEntity.data;
-            healthBar.SetProgress((float)ArmyEntity.data.Health / ArmyEntity.data.MaxHealth);
-            healthInfo.text = data.Health + (data.Armor == 0 ? "" : ("(+" + data.Armor + ")")) + " / " + data.MaxHealth;
+            (healthBar as ArmyHealthBar).armyEntity = ArmyEntity;
 
             angerBar.SetProgress(data.Anger / 100f);
             angerInfo.text = data.Anger + " / 100";

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Canute.UI
 {
-    public class AttackTypeIcon : Icon
+    public class AttackTypeIcon : ArmyPropertyInfoIcon
     {
         public override void DisplayInfo()
         {
