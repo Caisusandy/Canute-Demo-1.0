@@ -24,9 +24,9 @@ MonoBehaviour:
   shop: {fileID: 11400000, guid: 7c1a17cfa514e4b499882b16afc71081, type: 2}
   levelStart: {fileID: 11400000, guid: dc6a04b2b485dfc439489ed59b0f9e62, type: 2}
   chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
-  stories: {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
   resonanceSheet: {fileID: 11400000, guid: 2b9677566fe85b94f863baa16160a92c, type: 2}
   excavationPrice: {fileID: 11400000, guid: ef1ff19ee3bcbc046800199ccdddf1c6, type: 2}
+  defaultBG: {fileID: 0}
   storyPacks:
     list:
     - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
@@ -34,70 +34,145 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/9/15 1:08:22
+      value: 2020/9/30 17:48:58
     shopInfo:
       nextRefreshTime:
-        value: 2020/9/13 21:14:59
+        value: 2020/9/30 7:31:42
       onShopArmies:
         list:
-        - prize:
+        - weight: 50
+          prize:
             name: CalayCityInfantry
             count: 1
             parameter: 0
             type: 2
-          weight: 50
           price:
           - name: 0
             count: 300
-        - prize:
-            name: Basic Shielder
+        - weight: 50
+          prize:
+            name: CalayCityInfantry
             count: 1
             parameter: 0
             type: 2
-          weight: 20
           price:
           - name: 0
-            count: 250
-        - prize:
+            count: 300
+        - weight: 50
+          prize:
             name: "\u03A3CityInfantry"
             count: 1
             parameter: 0
             type: 2
-          weight: 50
           price:
           - name: 0
             count: 300
-        - prize:
-            name: CalayCityInfantry
+        - weight: 50
+          prize:
+            name: NewUtoCityInfantry
             count: 1
             parameter: 0
             type: 2
-          weight: 50
           price:
           - name: 0
             count: 300
       onShopEquipments:
-        list: []
-    federgram: 71047
-    manpower: 72297
-    mantleAlloy: 99679
+        list:
+        - weight: 25
+          prize:
+            name: AeroReinforceArmorII
+            count: 1
+            parameter: 0
+            type: 4
+          price:
+          - name: 3
+            count: 5
+        - weight: 25
+          prize:
+            name: AeroReinforceArmorII
+            count: 1
+            parameter: 0
+            type: 4
+          price:
+          - name: 3
+            count: 5
+        - weight: 25
+          prize:
+            name: CeramicCompositeArmorII
+            count: 1
+            parameter: 0
+            type: 4
+          price:
+          - name: 3
+            count: 10
+        - weight: 25
+          prize:
+            name: AeroReinforceArmorII
+            count: 1
+            parameter: 0
+            type: 4
+          price:
+          - name: 3
+            count: 5
+    federgram: 71147
+    manpower: 73147
+    mantleAlloy: 99284
     aethium: 9996
     excaTeam:
       leadersUUID:
+      - value: e04b315a-fd94-473c-9b37-51658aea9d09
       - value: fbd94bd1-907f-4d7c-b475-2f2629496c2c
-      - value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
       - value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
-      - value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a7
+      - value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
       armyUUID:
         value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
       currentPrize:
-        prizeBoxes: []
+        prizeBoxes:
+        - startingTime:
+            value: 2020/9/30 17:44:31
+          prize:
+            name: reflection from Arthur Connors
+            count: 20
+            parameter: 0
+            type: 9
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 2
+              minutes: 30
+              seconds: 0
+        - startingTime:
+            value: 2020/9/30 20:14:31
+          prize:
+            name: manpower
+            count: 100
+            parameter: 200
+            type: 7
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 0
+              minutes: 15
+              seconds: 0
+        - startingTime:
+            value: 2020/9/30 20:29:31
+          prize:
+            name: AeroReinforceArmorIV
+            count: 5
+            parameter: 0
+            type: 4
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 3
+              minutes: 44
+              seconds: 44
     legions:
     - armiesUUID:
-      - value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
-      - value: 00000000-0000-0000-0000-000000000000
-      - value: 00000000-0000-0000-0000-000000000000
-      - value: 00000000-0000-0000-0000-000000000000
+      - value: 52112c80-724e-4bca-a5c2-9dbf17289460
+      - value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
+      - value: 3e684102-1973-4a78-be26-8acd8e36e5be
+      - value: a1c69613-1cca-438d-b56b-73e2c9aec777
       - value: 00000000-0000-0000-0000-000000000000
       - value: 00000000-0000-0000-0000-000000000000
     - armiesUUID:
@@ -110,9 +185,9 @@ MonoBehaviour:
     - armiesUUID:
       - value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
       - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
-      - value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
       - value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
       - value: 02c76a26-a718-4a60-9a1d-1d714f28cf0b
+      - value: 00000000-0000-0000-0000-000000000000
       - value: 00000000-0000-0000-0000-000000000000
     eventCardPiles:
     - eventCardUUID: []
@@ -234,7 +309,7 @@ MonoBehaviour:
     - protoName: Basic Infantry
       uuid:
         value: 3e684102-1973-4a78-be26-8acd8e36e5be
-      exp: 5000000
+      exp: 5002000
       floatExp: 0
       star: 2
       LeaderName: 
@@ -371,13 +446,16 @@ MonoBehaviour:
     - protoName: Basic Cavalry
       uuid:
         value: 52112c80-724e-4bca-a5c2-9dbf17289460
-      exp: 2500000
+      exp: 2502000
       floatExp: 0
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: cda180cb-fff6-4a5b-88f9-0654913cc5fd
+        - value: 30503282-c44c-4759-a897-6a96d301a5fc
+        - value: 6d96b877-4026-48eb-bc7b-fa9cf2fdec8f
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Cavalry
       uuid:
         value: 10872522-bd7d-4a11-8268-d4c05bede960
@@ -512,7 +590,7 @@ MonoBehaviour:
     - protoName: Basic Dragon
       uuid:
         value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
-      exp: 2517000
+      exp: 2519000
       floatExp: 1500
       star: 1
       LeaderName: Anexar Flotics
@@ -602,12 +680,15 @@ MonoBehaviour:
       star: 1
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: b6e14caa-da86-48a0-9a45-810b8f652e5d
+        - value: 2dcc4e21-81f2-4159-a432-6e89377f5486
+        - value: a5681839-1e2f-410a-86fc-e7b5a0b5a581
+        equipmentLimit: 030000000300000003000000
     - protoName: "\u03A3CityInfantry"
       uuid:
         value: a1c69613-1cca-438d-b56b-73e2c9aec777
-      exp: 251000
+      exp: 253000
       floatExp: 0
       star: 1
       LeaderName: Empty
@@ -785,6 +866,19 @@ MonoBehaviour:
         - value: af5842c1-2aeb-4d77-8075-26f0e6a46c91
         - value: 6d80371d-28e8-4fff-b9ed-43f795663f52
         - value: 788ad8e5-65fe-4fdd-a356-6471e1fb376f
+        equipmentLimit: 030000000300000003000000
+    - protoName: NewUtoCityInfantry
+      uuid:
+        value: 623cff12-9c30-4aae-92e4-7307cae6e144
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: fc49f390-4a88-4fdb-b4ec-977f4cdc320e
+        - value: 7899cdc9-4ed0-44b1-91dd-9312ffb012f5
+        - value: ac66c0ad-36f8-4c1a-8b73-65543dcdb949
         equipmentLimit: 030000000300000003000000
     leaders:
     - protoName: Aether Erinope
@@ -1018,6 +1112,131 @@ MonoBehaviour:
         value: b8eb6446-88e4-4e12-b438-4a98775dbcd1
       exp: 0
       floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 5684d85b-3925-4cb1-a5ff-516f201401eb
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: bcf0654c-a2a5-43e6-af5b-63760243c0d3
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 457b6303-e1d4-4e91-a6ad-7abae79e400a
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: a5122654-4539-4014-a7c9-2be515edd6fe
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: c4d5ec5f-e70e-41c2-99c9-c687db83555d
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 2b562a70-a11d-4bff-86de-10a68fac87e6
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: bf2e0c50-022a-4f3b-be62-9bb6846d869b
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: c24ec2b8-894e-4576-97ee-b2433dd4ef31
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 54e91863-e7ad-46c1-942d-64b6ee6fe179
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 94b0b35a-a98e-4fce-bd22-83ecc662e57e
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 0acd4087-b91f-4192-8de3-5cd8cca564b4
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 65570d1a-9330-4ead-aa36-e63c78c2ee13
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: d6fd36f8-2164-4121-83fd-19e801387ff6
+      exp: 0
+      floatExp: 0
+    - protoName: Rare Equipment
+      uuid:
+        value: 650fefd0-de38-4ca3-a79f-9a47cb2af7af
+      exp: 0
+      floatExp: 0
+    - protoName: Rare Equipment
+      uuid:
+        value: 0683edd4-d60e-4b02-a349-d235f8601f9a
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorII
+      uuid:
+        value: ebf65dfd-f7a4-47d5-9a92-e84a5edc1b9d
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorII
+      uuid:
+        value: 293b9f80-1ad0-4fec-9fa7-c888417c0936
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIV
+      uuid:
+        value: 2aa886ec-c26e-4787-a774-56bb88d3725d
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 1e52c1eb-91cb-4918-88d8-7e6a5a05b88d
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 1f378dcd-981f-48c6-8ca1-0e1498118987
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIV
+      uuid:
+        value: 80c3a3d0-e4ce-4438-8024-632097464343
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIV
+      uuid:
+        value: 11d7d455-3bf4-4722-b567-f0bc8d942c8a
+      exp: 0
+      floatExp: 0
+    - protoName: Legendary Equipment
+      uuid:
+        value: 6588f85e-febc-4375-8462-66ac458bc4b1
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIV
+      uuid:
+        value: 4b89c600-2f27-482b-981a-dcdf6248fd71
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIII
+      uuid:
+        value: de052be4-54a9-4e8e-ad15-5b89baa68048
+      exp: 0
+      floatExp: 0
     eventCards:
     - protoName: flashLight
       uuid:
@@ -1043,6 +1262,12 @@ MonoBehaviour:
       exp: 0
       floatExp: 0
       level: 2
+    - protoName: EnemyMove
+      uuid:
+        value: 3a65a6c1-5d70-45df-a856-0f153dc6bbb5
+      exp: 0
+      floatExp: 0
+      level: 0
     collectionStoriesID:
     - Prologue
     - Epilogue
@@ -1080,6 +1305,12 @@ MonoBehaviour:
       - MagneticGeneratorIII
       - HeavyAethiumBeamEmitterII
       - Rare Equipment
+      - EnemyMove
+      - CeramicCompositeArmorII
+      - AeroReinforceArmorII
+      - AeroReinforceArmorIV
+      - Legendary Equipment
+      - CeramicCompositeArmorIII
       leadersUnlocked:
       - Andrew Chaffin-Erinope
       - Aether Erinope

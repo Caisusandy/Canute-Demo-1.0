@@ -49,12 +49,12 @@ namespace Canute.UI.Shop
                 SHOPShelf.instance.Refresh();
                 string infoBase = "Canute.Shop.GetItem".Lang();
                 string info = infoBase.Replace("@itemName", pricePair.Prize.DisplayingName);
-                InfoWindow.CreateInfoWindow(info);
+                InfoWindow.Create(info);
             }
             else
             {
                 string info = "Canute.Shop.NoMoney".Lang();
-                InfoWindow.CreateInfoWindow(info);
+                InfoWindow.Create(info);
             }
         }
     }

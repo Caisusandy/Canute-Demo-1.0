@@ -109,7 +109,7 @@ namespace Canute.BattleSystem
             cloneResonance.Effect.SetSource(source);
             cloneResonance.Effect.SetTarget(target);
 
-            if ((cloneResonance.TriggerConditions.Count == 0) && (cloneResonance.Effect.Type != Effect.Types.tag))
+            if ((cloneResonance.TriggerConditions.Count == 0) && (cloneResonance.Effect.Type == Effect.Types.@event))
             {
                 cloneResonance.Effect.Execute();
                 cloneResonance.Effect.Type = Effect.Types.tag;

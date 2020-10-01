@@ -46,6 +46,7 @@ namespace Canute.BattleSystem
         public override void Start()
         {
             base.Start();
+            SetIcon();
         }
 
         public override void Update()
@@ -122,7 +123,10 @@ namespace Canute.BattleSystem
 
             infoDisplayer.text = data.Effect.GetDisplayingName();
             actionPointDisplayer.text = data.ActionPoint.ToString();
+        }
 
+        private void SetIcon()
+        {
             if (data.HasValidPrototype)
             {
                 if ((data.Prototype as EventCard).CardType == EventCard.Type.dragon)

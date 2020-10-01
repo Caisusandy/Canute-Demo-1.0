@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 33209009}
   - component: {fileID: 33209008}
   - component: {fileID: 33209007}
+  - component: {fileID: 33209010}
+  - component: {fileID: 33209011}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -250,6 +252,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33209005}
   m_CullTransparentMesh: 0
+--- !u!114 &33209010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33209005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.aircraftFighter
+--- !u!58 &33209011
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33209005}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
 --- !u!1 &44213343
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +383,8 @@ GameObject:
   - component: {fileID: 105656615}
   - component: {fileID: 105656614}
   - component: {fileID: 105656613}
+  - component: {fileID: 105656616}
+  - component: {fileID: 105656617}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -468,6 +502,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105656611}
   m_CullTransparentMesh: 0
+--- !u!114 &105656616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105656611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.warMachine
+--- !u!58 &105656617
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105656611}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
 --- !u!1 &114690201
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +749,8 @@ GameObject:
   - component: {fileID: 245022769}
   - component: {fileID: 245022768}
   - component: {fileID: 245022767}
+  - component: {fileID: 245022770}
+  - component: {fileID: 245022771}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -802,6 +868,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245022765}
   m_CullTransparentMesh: 0
+--- !u!114 &245022770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245022765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.infantry
+--- !u!58 &245022771
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245022765}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
 --- !u!1 &260539240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1112,7 @@ GameObject:
   - component: {fileID: 308817663}
   - component: {fileID: 308817662}
   - component: {fileID: 308817661}
+  - component: {fileID: 308817664}
   m_Layer: 5
   m_Name: Button (10)
   m_TagString: Untagged
@@ -1133,6 +1230,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308817659}
   m_CullTransparentMesh: 0
+--- !u!114 &308817664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308817659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.
 --- !u!1 &312393208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,7 +1635,7 @@ GameObject:
   - component: {fileID: 445728767}
   - component: {fileID: 445728766}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Move Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1603,6 +1714,7 @@ GameObject:
   - component: {fileID: 450457508}
   - component: {fileID: 450457507}
   - component: {fileID: 450457510}
+  - component: {fileID: 450457511}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1709,6 +1821,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game: {fileID: 11400000, guid: 460c8e612ce430a44882b7d2403d35de, type: 2}
   loadingScriptableObject: []
+--- !u!114 &450457511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450457505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c89a0d1ce862a4a9a200f7ff594628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  languagePairs:
+  - textField: {fileID: 451608087}
+    key: Canute.UI.Common.Back
+  - textField: {fileID: 2046252491}
+    key: Canute.BattleSystem.PropertyType.level
+  - textField: {fileID: 1326253826}
+    key: Canute.BattleSystem.PropertyType.damage
+  - textField: {fileID: 696897586}
+    key: Canute.BattleSystem.PropertyType.defense
+  - textField: {fileID: 842455565}
+    key: Canute.BattleSystem.PropertyType.health
+  - textField: {fileID: 445728766}
+    key: Canute.BattleSystem.PropertyType.moveRange
+  - textField: {fileID: 1008062858}
+    key: Canute.BattleSystem.PropertyType.attackRange
+  - textField: {fileID: 1451528801}
+    key: Canute.BattleSystem.PropertyType.critRate
+  - textField: {fileID: 1722568170}
+    key: Canute.BattleSystem.PropertyType.critBonus
+  - textField: {fileID: 1324734066}
+    key: Canute.BattleSystem.PropertyType.pop
 --- !u!1 &451608085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +2018,7 @@ GameObject:
   - component: {fileID: 696897587}
   - component: {fileID: 696897586}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Defense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2057,7 +2202,7 @@ GameObject:
   - component: {fileID: 842455566}
   - component: {fileID: 842455565}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2395,6 +2540,8 @@ GameObject:
   - component: {fileID: 953925774}
   - component: {fileID: 953925773}
   - component: {fileID: 953925772}
+  - component: {fileID: 953925775}
+  - component: {fileID: 953925776}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -2512,6 +2659,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953925770}
   m_CullTransparentMesh: 0
+--- !u!114 &953925775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953925770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.shielder
+--- !u!58 &953925776
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953925770}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
 --- !u!1 &1008062856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,7 +2701,7 @@ GameObject:
   - component: {fileID: 1008062859}
   - component: {fileID: 1008062858}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Attack Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2668,6 +2845,8 @@ GameObject:
   - component: {fileID: 1148708488}
   - component: {fileID: 1148708487}
   - component: {fileID: 1148708486}
+  - component: {fileID: 1148708489}
+  - component: {fileID: 1148708490}
   m_Layer: 5
   m_Name: Button (9)
   m_TagString: Untagged
@@ -2785,6 +2964,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148708484}
   m_CullTransparentMesh: 0
+--- !u!114 &1148708489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148708484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.dragon
+--- !u!58 &1148708490
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148708484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
 --- !u!1 &1171560117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2927,6 +3136,7 @@ GameObject:
   - component: {fileID: 1173417921}
   - component: {fileID: 1173417920}
   - component: {fileID: 1173417919}
+  - component: {fileID: 1173417922}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -3044,6 +3254,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173417917}
   m_CullTransparentMesh: 0
+--- !u!114 &1173417922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173417917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.
 --- !u!1 &1182804218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,7 +3946,7 @@ GameObject:
   - component: {fileID: 1324734067}
   - component: {fileID: 1324734066}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Pop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3800,7 +4024,7 @@ GameObject:
   - component: {fileID: 1326253827}
   - component: {fileID: 1326253826}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4083,7 +4307,7 @@ GameObject:
   - component: {fileID: 1451528802}
   - component: {fileID: 1451528801}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Critical Attack Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4380,7 +4604,7 @@ GameObject:
   - component: {fileID: 1722568171}
   - component: {fileID: 1722568170}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Critial Attack Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4588,6 +4812,8 @@ GameObject:
   - component: {fileID: 1793139644}
   - component: {fileID: 1793139643}
   - component: {fileID: 1793139642}
+  - component: {fileID: 1793139645}
+  - component: {fileID: 1793139646}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -4705,6 +4931,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793139640}
   m_CullTransparentMesh: 0
+--- !u!114 &1793139645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793139640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.mage
+--- !u!58 &1793139646
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793139640}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
 --- !u!1 &1897012958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4717,6 +4973,7 @@ GameObject:
   - component: {fileID: 1897012962}
   - component: {fileID: 1897012961}
   - component: {fileID: 1897012960}
+  - component: {fileID: 1897012963}
   m_Layer: 5
   m_Name: Airship
   m_TagString: Untagged
@@ -4834,6 +5091,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897012958}
   m_CullTransparentMesh: 0
+--- !u!114 &1897012963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897012958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.
 --- !u!1 &1910359979
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,6 +5117,8 @@ GameObject:
   - component: {fileID: 1910359983}
   - component: {fileID: 1910359982}
   - component: {fileID: 1910359981}
+  - component: {fileID: 1910359984}
+  - component: {fileID: 1910359985}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -4963,6 +5236,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910359979}
   m_CullTransparentMesh: 0
+--- !u!114 &1910359984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910359979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.riflerman
+--- !u!58 &1910359985
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910359979}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
 --- !u!1 &1969633566
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,7 +5367,7 @@ GameObject:
   - component: {fileID: 2046252492}
   - component: {fileID: 2046252491}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5142,6 +5445,8 @@ GameObject:
   - component: {fileID: 2052538454}
   - component: {fileID: 2052538453}
   - component: {fileID: 2052538452}
+  - component: {fileID: 2052538455}
+  - component: {fileID: 2052538456}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -5259,6 +5564,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052538450}
   m_CullTransparentMesh: 0
+--- !u!114 &2052538455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052538450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.cavalry
+--- !u!58 &2052538456
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052538450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
 --- !u!1 &2087718835
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,6 +5606,7 @@ GameObject:
   - component: {fileID: 2087718839}
   - component: {fileID: 2087718838}
   - component: {fileID: 2087718837}
+  - component: {fileID: 2087718840}
   m_Layer: 5
   m_Name: Button (11)
   m_TagString: Untagged
@@ -5388,3 +5724,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087718835}
   m_CullTransparentMesh: 0
+--- !u!114 &2087718840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087718835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Army+Types.

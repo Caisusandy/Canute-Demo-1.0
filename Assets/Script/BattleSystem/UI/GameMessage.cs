@@ -26,11 +26,11 @@ namespace Canute.BattleSystem.UI
         // Update is called once per frame
         void Update()
         {
-            transform.position += new Vector3(0, Time.deltaTime / 2, 0);
+            transform.position += new Vector3(0, Time.deltaTime / 4, 0);
             time += Time.deltaTime;
             text.color = new Color(text.color.r, text.color.g, text.color.b, Mathf.Pow(1 - time / 6, 2));
 
-            if (time > 2)
+            if (time > 4)
             {
                 Destroy(gameObject);
             }
@@ -42,7 +42,7 @@ namespace Canute.BattleSystem.UI
             gameMessage.GetComponent<Text>().font = Font.CreateDynamicFontFromOSFont("Arial", 0);
             gameMessage.GetComponent<Text>().alignment = TextAnchor.MiddleCenter;
             gameMessage.GetComponent<Text>().horizontalOverflow = HorizontalWrapMode.Overflow;
-            gameMessage.GetComponent<Text>().color = Color.black;
+            gameMessage.GetComponent<Text>().color = Color.white;
             gameMessage.GetComponent<Text>().fontSize = 24;
             return gameMessage;
         }

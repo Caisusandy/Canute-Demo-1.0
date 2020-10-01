@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Empty
   m_EditorClassIdentifier: 
   prize:
-    type: 0
     name: 
     count: 0
+    parameter: 0
+    type: 0
     leaderRequirement: []
     armyRequirement: 
-    Time:
+    time:
       hours: 0
-      minutes: 35
+      minutes: 15
       seconds: 0

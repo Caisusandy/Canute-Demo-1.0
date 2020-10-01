@@ -1,4 +1,5 @@
-﻿using Canute.Testing;
+﻿using Canute.Assets.Script.Module;
+using Canute.Testing;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +13,7 @@ namespace Canute.UI
     public class GameServer : MonoBehaviour
     {
         public GameData game;
+
         public List<ScriptableObject> loadingScriptableObject;
 
         private GameObject console;
@@ -22,6 +24,11 @@ namespace Canute.UI
             {
                 Game.ReadConfig();
                 Languages.ForceLoadLang();
+            }
+
+            if (!GameBackgroundMusic.instance)
+            {
+                Instantiate(GameData.Prefabs.GameBackgroundMusicManager);
             }
         }
 

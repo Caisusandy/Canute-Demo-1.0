@@ -38,31 +38,46 @@ namespace Canute.BattleSystem.Armies
 
         protected void SetProtection()
         {
+            RemoveProtection();
             //add protection effect to the nearby protecting cell
-            foreach (var item in GetProtectCell())
+            List<CellEntity> list = GetProtectCell();
+            foreach (var item in list)
             {
                 item.StatList.Add(GetProtectionStatus(item));
             }
 
+            Debug.Log("setting protection to near by army");
+            Debug.Log(list.Where((entity) => entity.HasArmyStandOn).Count());
             //add protection to armies that is already stand there
-            foreach (var item in GetProtectCell().Where((entity) => entity.HasArmyStandOn && entity.Owner == Owner && entity.HasArmyStandOn?.data.Type != Army.Types.shielder))
+            foreach (var item in list.Where((entity) => entity.HasArmyStandOn))
             {
-                Effect protection = new Effect(Effect.Types.tag, this, item.HasArmyStandOn, 1, 0, "name:protection");
-                protection.SetSpecialName("protection");
-                item.HasArmyStandOn.StatList.Add(new Status(protection, -1, -1, Status.StatType.perminant));
+                ArmyEntity hasArmyStandOn = item.HasArmyStandOn;
+                Debug.Log("found " + hasArmyStandOn);
 
-                Effect removeProtection = new Effect(Effect.Types.removeStatus, this, item.HasArmyStandOn, 1);
+                if (hasArmyStandOn.Owner != Owner) { continue; }
+                if (hasArmyStandOn.data.Type == Army.Types.shielder) { continue; }
+                Debug.Log("use " + hasArmyStandOn);
+
+
+                Effect protection = new Effect(Effect.Types.tag, this, hasArmyStandOn, 1, 0, "name:protection");
+                protection.SetSpecialName("protection");
+                hasArmyStandOn.StatList.Add(new Status(protection, -1, -1, Status.StatType.perminant));
+
+                Effect removeProtection = new Effect(Effect.Types.removeStatus, this, hasArmyStandOn, 1);
                 removeProtection["uuid"] = protection.UUID.ToString();
-                Status removeStat = new Status(removeProtection, 0, 1, Status.StatType.countBase, false, TriggerCondition.OnExitCell);
-                item.HasArmyStandOn.StatList.Add(removeStat);
-                StatList.Add(removeStat);
+                Status removal = new Status(removeProtection, 0, 1, Status.StatType.countBase, false, TriggerCondition.OnExitCell);
+                hasArmyStandOn.StatList.Add(removal);
+                StatList.Add(removal);
             }
         }
 
         protected void RemoveProtection()
         {
+            //Debug.Log(GetProtectCell()[0].StatList.GetAllStatus(Effect.Types.@event, "name:protection"));
+            //Debug.Log(GetProtectCell()[1].StatList.GetAllStatus(Effect.Types.@event, "name:protection"));
+            //Debug.Log(GetProtectCell()[2].StatList.GetAllStatus(Effect.Types.@event, "name:protection"));
             foreach (var (item, stat) in from item in GetProtectCell()
-                                         from stat in item.StatList.GetAllStatus(Effect.Types.tag, "name:protection")
+                                         from stat in item.StatList.GetAllStatus(Effect.Types.@event, "name:protection")
                                          where stat.Effect.Source == this
                                          select (item, stat))
             {

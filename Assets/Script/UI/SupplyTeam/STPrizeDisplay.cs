@@ -8,7 +8,6 @@ namespace Canute.UI.SupplyTeam
     {
         public static STPrizeDisplay instance;
         public List<STPrize> prizes;
-        public Text prizeInfo;
 
         public void Awake()
         {

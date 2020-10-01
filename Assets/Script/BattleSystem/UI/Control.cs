@@ -16,7 +16,7 @@ namespace Canute.BattleSystem
         public Canvas UICanvas;
 
         public static Testing.GameDebug DebugPanel => BattleUI.DebugWindow;
-        public static Testing.Console Console => BattleUI.Console;
+        //public static Testing.Console Console => BattleUI.Console;
         public static PausePanel GamePausePanel => BattleUI.PausePanel;
         public static MapEntity Map => Game.CurrentBattle.MapEntity;
         public static Vector3 UserInputPosition => Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -74,10 +74,10 @@ namespace Canute.BattleSystem
             {
                 ToggleDebugWindow();
             }
-            if (Input.GetKeyDown(KeyCode.Slash) && Game.Configuration.IsDebugMode)
-            {
-                ToggleConsole();
-            }
+            //if (Input.GetKeyDown(KeyCode.Slash) && Game.Configuration.IsDebugMode)
+            //{
+            //    ToggleConsole();
+            //}
             if (Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 ScaleMap(Input.GetAxis("Mouse ScrollWheel"));
@@ -133,14 +133,14 @@ namespace Canute.BattleSystem
             Map.transform.localScale *= 1 + (v / 3);
         }
 
-        public void ToggleConsole()
-        {
-            if (Console.input.isFocused)
-            {
-                return;
-            }
-            BattleUI.ToggleWindow(Console);
-        }
+        //public void ToggleConsole()
+        //{
+        //    if (Console.input.isFocused)
+        //    {
+        //        return;
+        //    }
+        //    BattleUI.ToggleWindow(Console);
+        //}
 
         public void ToggleDebugWindow()
         {

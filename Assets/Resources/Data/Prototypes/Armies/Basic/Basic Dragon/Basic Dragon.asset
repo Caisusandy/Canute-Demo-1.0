@@ -38,7 +38,7 @@ MonoBehaviour:
       targetCount: 1
       attackType: 6
       skill:
-        specialName: NoSkill
+        specialName: BasicDragonSkill
         count: 0
         parameter: 0
         args:
@@ -57,7 +57,7 @@ MonoBehaviour:
       targetCount: 1
       attackType: 6
       skill:
-        specialName: NoSkill
+        specialName: BasicDragonSkill
         count: 0
         parameter: 0
         args:
@@ -76,7 +76,7 @@ MonoBehaviour:
       targetCount: 1
       attackType: 6
       skill:
-        specialName: NoSkill
+        specialName: BasicDragonSkill
         count: 0
         parameter: 0
         args:

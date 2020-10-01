@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 611963417
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9dd7184dda6bc5b4f9d1a73b06166081, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e7b48d7ba4fea947ab7a93e0e2063ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -271,22 +271,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facab3a314c64c144b5dd9eb3e2d625c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6494768576080503992}
   isHighlighted: 0
   isSelected: 0
+  entityMark:
+    cellMarks: []
+    type: 0
   data:
     name: 
+    prefab: {fileID: 0}
     uuid:
       value: 4dd660b6-05c6-4d29-a27a-39e9c02f5a70
     ownerUUID:
       value: 
-    prefab: {fileID: 0}
     allowMove: 1
-    x: 0
-    y: 0
+    coordinate: {x: 0, y: 0}
     stats:
       list: []
+    localLeader:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: 0d886688-daa0-43e0-872e-dfd4d27801f2
+      ownerUUID:
+        value: 
+      allowMove: 0
+      coordinate: {x: 0, y: 0}
+      stats:
+        list: []
+      career: 0
+      leadingArmyUUID:
+        value: 
+      isViceCommander: 0
+      level: 0
+      bounes: []
+    autonomousType: 0
+    anger: 0
+    career: 0
     properties:
+      defense: 0
       critRate: 0
       critBounes: 0
       pop: 0
@@ -299,51 +321,21 @@ MonoBehaviour:
       attackType: 0
       skill:
         specialName: 
-        type: 0
         count: 0
         parameter: 0
         args:
           args: []
       addition:
         args: []
-    career: 0
-    anger: 0
-    localLeader:
-      name: 
-      uuid:
-        value: 0d886688-daa0-43e0-872e-dfd4d27801f2
-      ownerUUID:
-        value: 
-      prefab: {fileID: 0}
-      allowMove: 0
-      x: 0
-      y: 0
-      stats:
-        list: []
-      career: 0
-      leadingArmyUUID:
-        value: 
-      isViceCommander: 0
-      level: 0
-      bounes: []
-    skillPack:
-      uuid:
-        value: 761e1fca-e9ba-49a1-aae7-e29b067e99e5
-      specialName: 
-      type: 0
-      count: 0
-      parameter: 0
-      sourceEntity:
-        value: 
-      targetEntities: []
-      args:
-        list: []
     maxHealth: 0
     health: 0
-    defense: 0
     armor: 0
     damage: 0
-    canBeTargeted: 0
     type: 0
-  attackRange: []
-  moveRange: []
+  armyHealthBar: {fileID: 0}
+  attackRange:
+    cellMarks: []
+    type: 2
+  moveRange:
+    cellMarks: []
+    type: 1

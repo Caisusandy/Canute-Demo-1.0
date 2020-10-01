@@ -85,7 +85,7 @@ namespace Canute.UI.LevelStart
 
         public void GameStart()
         {
-            Debug.Log(LegionSet.Leader.Name);
+            Debug.Log(LegionSet.Leader?.Name);
             Game.LoadBattle(Level, LegionSet);
         }
     }

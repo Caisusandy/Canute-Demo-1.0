@@ -191,6 +191,7 @@ namespace Canute.BattleSystem
 
             if (effect.Type != Effect.Types.attack)
             {
+                Game.CurrentBattle.TryInNormal();
                 return effect.Execute();
             }
 

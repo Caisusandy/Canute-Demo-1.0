@@ -8,7 +8,7 @@ namespace Canute.UI
 {
     public class GameStart : MonoBehaviour
     {
-        public static bool initialized = false;
+        public static bool initialized = true;
         public GameObject bg;
         public GameObject menu;
         public AudioSource audioSource;
@@ -121,6 +121,7 @@ namespace Canute.UI
                 time += Time.deltaTime;
                 foreach (var item in MenuText)
                 {
+                    if (!item) continue;
                     var c = item.color;
                     c.a = time / 2;
                     item.color = c;

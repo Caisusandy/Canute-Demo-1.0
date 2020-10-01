@@ -22,13 +22,14 @@ Canute.Shops.Currency+Type.manpower=人力
 Canute.Shops.Currency+Type.mantleAlloy=地幔合金
 Canute.Shops.Currency+Type.aethium=辉石
 #
+Canute.BattleSystem.PropertyType.level=等级
 Canute.BattleSystem.PropertyType.damage=伤害
 Canute.BattleSystem.PropertyType.health=生命
 Canute.BattleSystem.PropertyType.defense=防御
 Canute.BattleSystem.PropertyType.moveRange=移动范围
 Canute.BattleSystem.PropertyType.attackRange=攻击范围
 Canute.BattleSystem.PropertyType.critRate=暴击概率
-Canute.BattleSystem.PropertyType.critBounes=暴击加成
+Canute.BattleSystem.PropertyType.critBonus=暴击加成
 Canute.BattleSystem.PropertyType.pop=人口
 Canute.BattleSystem.PropertyType.armor=护甲
 Canute.BattleSystem.PropertyType.anger=怒气
@@ -79,10 +80,27 @@ Canute.Army.Basic Dragon.name=Basic Dragon
 Canute.Army.CalayCityInfantry.name=喀来城防步兵
 Canute.Army.ΣCityInfantry.name=西格玛象限城防步兵
 Canute.Army.NewUtoCityInfantry.name=新犹托城防步兵
-
-
+# 
+Canute.Equipment.AeroReinforceArmorI.name=Aero Reinforce Armor Lv.I
+Canute.Equipment.AeroReinforceArmorII.name=Aero Reinforce Armor Lv.II
+Canute.Equipment.AeroReinforceArmorIII.name=Aero Reinforce Armor Lv.III
+Canute.Equipment.AeroReinforceArmorIV.name=Aero Reinforce Armor Lv.IV
+Canute.Equipment.CeramicCompositeArmorI.name=Ceramic Composite Armor Lv.I
+Canute.Equipment.CeramicCompositeArmorII.name=Ceramic Composite Armor Lv.II
+Canute.Equipment.CeramicCompositeArmorIII.name=Ceramic Composite Armor Lv.III
+Canute.Equipment.CeramicCompositeArmorIV.name=Ceramic Composite Armor Lv.IV
+Canute.Equipment.PersonalAethiumBeamEmitterI.name=Personal Aethium Beam Emitter Mk 1
+Canute.Equipment.PersonalAethiumBeamEmitterII.name=Personal Aethium Beam Emitter Mk 2
+Canute.Equipment.PersonalAethiumBeamEmitterIII.name=Personal Aethium Beam Emitter Mk 3
+Canute.Equipment.PersonalAethiumBeamEmitterIV.name=Personal Aethium Beam Emitter Mk 4
+Canute.Equipment.MagneticGeneratorI.name=Magnetic Shield Generator Lv.I
+Canute.Equipment.MagneticGeneratorII.name=Magnetic Shield Generator Lv.II
+Canute.Equipment.MagneticGeneratorIII.name=Magnetic Shield Generator Lv.III
+Canute.Equipment.MagneticGeneratorIV.name=Magnetic Shield Generator Lv.IV
 #
 Canute.Building.Campus.name=Campus
+#
+Canute.BattleSystem.Cell.name=地区
 #地形
 Canute.BattleSystem.Terrain.Plain=平原
 Canute.BattleSystem.Terrain.Forest=树林
@@ -97,15 +115,15 @@ Canute.BattleSystem.Terrain.Swamp=沼泽
 #效果
 Canute.BattleSystem.Effect+Types.none=None
 Canute.BattleSystem.Effect+Types.none.info= 
-Canute.BattleSystem.Effect+Types.move=Move
-Canute.BattleSystem.Effect+Types.move.info=Move army in an area of @param
-Canute.BattleSystem.Effect+Types.enterMove=Move Army
-Canute.BattleSystem.Effect+Types.enterMove.info=Move army in an area of @param
-Canute.BattleSystem.Effect+Types.enterAttack=Attack
-Canute.BattleSystem.Effect+Types.enterAttack.info=attack other army
-Canute.BattleSystem.Effect+Types.drawCard=Draw Card
-Canute.BattleSystem.Effect+Types.drawCard.info=Draw @param Card
-Canute.BattleSystem.Effect+Types.armySwitch=Switch Position
+Canute.BattleSystem.Effect+Types.move=移动
+Canute.BattleSystem.Effect+Types.move.info=移动目标到@param格范围内
+Canute.BattleSystem.Effect+Types.enterMove=移动
+Canute.BattleSystem.Effect+Types.enterMove.info=移动目标到@param格范围内
+Canute.BattleSystem.Effect+Types.enterAttack=攻击
+Canute.BattleSystem.Effect+Types.enterAttack.info=攻击敌方
+Canute.BattleSystem.Effect+Types.drawCard=摸牌
+Canute.BattleSystem.Effect+Types.drawCard.info=获得@param张牌
+Canute.BattleSystem.Effect+Types.armySwitch=交换
 Canute.BattleSystem.Effect+Types.armySwitch.info=交换军队位置
 Canute.BattleSystem.Effect+Types.damageIncreasePercentage=伤害增加
 Canute.BattleSystem.Effect+Types.damageIncreasePercentage.info=增加@param%伤害
@@ -125,10 +143,19 @@ Canute.BattleSystem.Effect+Types.addActionPoint=行动点
 Canute.BattleSystem.Effect+Types.addActionPoint.info=增加@param 行动点 
 Canute.BattleSystem.Effect+Types.addArmor=增加护甲
 Canute.BattleSystem.Effect+Types.addArmor.info=添加@param 护甲
+Canute.BattleSystem.Effect+Types.magePoison=Poison
+Canute.BattleSystem.Effect+Types.magePoison.info=军队每回合减少 @param HP.
+Canute.BattleSystem.Effect+Types.coma=眩晕
+Canute.BattleSystem.Effect+Types.coma.info=军队眩晕中.
+Canute.BattleSystem.Effect+Types.EMPImpact=EMP
+Canute.BattleSystem.Effect+Types.EMPImpact.info=军队瘫痪中.
+Canute.BattleSystem.Effect+Types.flashLight=闪光
+Canute.BattleSystem.Effect+Types.flashLight.info=军队眩晕中.
+Canute.BattleSystem.Effect+Types.motherOf=母舰
+Canute.BattleSystem.Effect+Types.motherOf.info=$targetName的母舰
 
 
-
-
+#resonance
 Canute.BattleSystem.Effect+Types.infantryLightness=共鸣：轻盈
 Canute.BattleSystem.Effect+Types.infantryLightness.info=每回合第一次移动时不消耗行动点
 Canute.BattleSystem.Effect+Types.infantryDamageBonus=共鸣：伤害提升
@@ -152,7 +179,6 @@ Canute.BattleSystem.Effect+Types.addDragonCard.info=获得@count张龙牌
 Canute.BattleSystem.Effect+Types.shielderPenetrate=共鸣：重甲兵穿透
 Canute.BattleSystem.Effect+Types.shielderPenetrate.info=穿透非重甲兵单位的防御，同时额外造成的敌方当前血量@param%的真实伤害
 #dragon
-
 Canute.BattleSystem.Effect+Types.dragonAttack=攻击状态（龙）
 Canute.BattleSystem.Effect+Types.dragonAttack.info=龙准备发动攻击
 Canute.BattleSystem.Effect+Types.dragonDefense=防御状态（龙）
@@ -222,23 +248,6 @@ Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: 
 Canute.BattleSystem.BattleEventError.armyCannotAttack=军队不能攻击
  
 
-#UI' 
-Canute.UI.Start.Continue=继续。。。
-Canute.UI.Start.Saves=所有进展（存档）
-Canute.UI.Start.NewGame=新开始
-Canute.UI.Start.Settings=设置
-Canute.UI.Start.Credit=制作团队
-
-Canute.UI.MainHall.Training=训练
-Canute.UI.MainHall.Basement=基地日常
-Canute.UI.MainHall.Legion=军队
-Canute.UI.MainHall.Pile=事件牌
-Canute.UI.MainHall.Exploration=物资队
-Canute.UI.MainHall.Shop=商店
-Canute.UI.MainHall.Chapter=章节
-Canute.UI.MainHall.Hallway=过道
-Canute.UI.MainHall.Quit=退出
-
 #Tips
 Canute.Tips.0=Place Card On the Army to use it.
 Canute.Tips.1=Place a card on anothor card if the card you want to use can only choose card as target.
@@ -255,3 +264,136 @@ Canute.Tips.11=Every attack would cause at least 1 damage
 Canute.Tips.12=Using the card that matched with army's career would cause 1 less action point.
 Canute.Tips.13=Dragons knows magic better than those mage, they can boot up the army for some cost...
 Canute.Tips.14=Resonance happens when more same type of army exist.
+
+
+#;
+Canute.Character.Theodore Pullan.WordLine.0=你知道重石的名字是来自于一只龙的名字吗。
+Canute.Character.Theodore Pullan.WordLine.1=辉石的意思是“光明的元素”，这个词语与以太同源。
+Canute.Character.Theodore Pullan.WordLine.2=我妹妹？我已经五年没见过她了。她早就可以自力更生了，她应该很好。但是我可以请假去看她吗？
+Canute.Character.Theodore Pullan.WordLine.3=卡努特主席，我在安卡计划里工作了这么多年都没完全认识你,除了知道你充满了理想主义以外。 
+Canute.Character.Theodore Pullan.WordLine.4=安卡？那只天上的涅槃的凤凰？最高议会希望亚尼科萨可以像凤凰一样重生。
+Canute.Character.Theodore Pullan.WordLine.5=太好了太好了芬赢了昨天的网球赛，只可惜我不关心网球。
+Canute.Character.Theodore Pullan.WordLine.6=我（），为什么辉石与重石在磁场里的反应会完全不同？（），我辞职了。没，没什么，卡努特主席，当我没说。
+Canute.Character.Theodore Pullan.WordLine.7=啥？我也不知道为什么人类喜欢研究磁力还研究了千年，反正那都是过去了，没有人可以改变他，或者有人可以？
+Canute.Character.Theodore Pullan.WordLine.8=芬你可不可以不要再来问我了，我不是台计算器。你他妈，好的，答案是42，什么，对，42，对我确定是42，不要质疑。
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithItem=卡努特主席，我们在回来时找到了写东西，以及我们现在应该又要出去了。
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithLeader=卡努特主席，我们这里来了一位新的成员，反正这是你的事情。
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithStory=卡努特主席，我们这里有一个无聊的故事。
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithLetter=卡努特主席，我们在外面找到了一些文件，估计是某些历史遗留吧。
+
+Canute.Character.Finn Herman.WordLine.0=我和亚瑟都是喀累人
+Canute.Character.Finn Herman.WordLine.1=长官，我可以出去溜达一下吗？
+Canute.Character.Finn Herman.WordLine.2=长官，我可以看我们的电视吗？好吧上面什么都没有。除了最高议会的洗脑和米埃利亚人的龙叫。
+Canute.Character.Finn Herman.WordLine.3=我上次西奥多院长在度假的时候他还在打网球的。
+Canute.Character.Finn Herman.WordLine.4=长官，你喜欢喀累还是这里？噢，我觉得你喜欢西格玛象限吧？毕竟那是你家。
+Canute.Character.Finn Herman.WordLine.5=长官你可以讲讲的留学经历吗？当然是去米埃利亚的留学经历啊！
+Canute.Character.Finn Herman.WordLine.6=长官你可以托付某人帮我整一台计算器吗？什么我可以直接用物质打印机弄一台？太感谢了！
+Canute.Character.Finn Herman.WordLine.7=长官，上次的物资车辆里只有90%的货物，我还在找另外10%去哪里了......
+Canute.Character.Finn Herman.WordLine.8=长官，我们什么时候可以回到喀累呢？我想家了......
+Canute.Character.Finn Herman.supplyTeamComeBackWithItem=长官，我给你准备了一份礼物！
+Canute.Character.Finn Herman.supplyTeamComeBackWithLeader=长官，今天我们来了一个奇怪的人......
+Canute.Character.Finn Herman.supplyTeamComeBackWithStory=长官，我们在路上听到了一个有趣的故事！
+Canute.Character.Finn Herman.supplyTeamComeBackWithLetter=长官，我这里捡到了一张纸条，你可以读给我听吗？我懒得看。。。
+
+Canute.Character.Ron Thompson.WordLine.0=我喜欢斯威士瓦吗？为什么我会不喜欢呢？金窝银窝不如自家的草窝。
+Canute.Character.Ron Thompson.WordLine.1=事情都是由决定与结果组成的。
+Canute.Character.Ron Thompson.WordLine.2=我，走私犯？当你为了活下去没有其他选择的时候，走私可能只是一件小事而已。
+Canute.Character.Ron Thompson.WordLine.3=你看见我的烟斗了吗？好吧也许我去物质打印机那打印一个新的比较现实。
+Canute.Character.Ron Thompson.WordLine.4=联邦从未改变过，我们没有过去。
+Canute.Character.Ron Thompson.WordLine.5=...
+Canute.Character.Ron Thompson.WordLine.6=...
+Canute.Character.Ron Thompson.WordLine.7=...
+Canute.Character.Ron Thompson.WordLine.8=...
+Canute.Character.Ron Thompson.supplyTeamComeBackWithItem=Canute, We picked up some supply on the way.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithLeader=Canute, We met someone who I think is reliable.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithStory=Canute, Let me tell you a tell, one even I just know.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithLetter=Canute, I found some papers, can you read for me? I can’t see those really tiny wrinkles clearly.
+
+
+Canute.Character.Shelly McMoore.WordLine.0=Thank you for getting most of us here, Mr. Chairman.
+Canute.Character.Shelly McMoore.WordLine.1=Even though you are from Sigma Quadrant, you don’t like those Quadranter.
+Canute.Character.Shelly McMoore.WordLine.2=Can I do anything for you?
+Canute.Character.Shelly McMoore.WordLine.3=As much as you know, the Federacy had two fractions before, we are the Revival Party, which today becomes the Scientific Revolution Party.
+Canute.Character.Shelly McMoore.WordLine.4=The other party? the Advance Party, which formed the Supreme Council today. Oh yes, there is a third party which we don’t admit is legal.
+Canute.Character.Shelly McMoore.WordLine.5=Determination is important, Chairman, without it, we can’t make it today and continue our work.
+Canute.Character.Shelly McMoore.WordLine.6=I have actually never been to Calay before, Chairman, I know you were the Senator of Calay, before the Supreme Council took over everything in the Federacy.
+Canute.Character.Shelly McMoore.WordLine.7=They said that the last president of the Federacy, Brittany Whitaker, ended the civil war of the Federacy by negotiating with the Supreme Council. Do you think the war is ended?
+Canute.Character.Shelly McMoore.WordLine.8=May the independence of the real Federation last forever.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithItem=Mr. Chairman, we found something on the way back.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithLeader=Mr. Chairman, we have a new member.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithStory=Mr. Chairman, there are some rumors outside and I think you are supposed to know about it.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithLetter=Mr. Chairman, we found some lost documents, and I think you should read it.
+
+
+Canute.Character.Empty.WordLine.0= 
+Canute.Character.Empty.WordLine.1= 
+Canute.Character.Empty.WordLine.2= 
+Canute.Character.Empty.WordLine.3= 
+Canute.Character.Empty.WordLine.4= 
+Canute.Character.Empty.WordLine.5= 
+Canute.Character.Empty.WordLine.6= 
+Canute.Character.Empty.WordLine.7= 
+Canute.Character.Empty.WordLine.8= 
+Canute.Character.Empty.supplyTeamComeBackWithItem= 
+Canute.Character.Empty.supplyTeamComeBackWithLeader= 
+Canute.Character.Empty.supplyTeamComeBackWithStory= 
+Canute.Character.Empty.supplyTeamComeBackWithLetter= 
+
+#SceneName
+Canute.UI.SceneName.Exploration=补给队
+Canute.UI.SceneName.Shop=商店
+Canute.UI.SceneName.Hallway=过道
+Canute.UI.SceneName.LegionSetting=军队设置
+Canute.UI.SceneName.EventCard=事件牌堆
+Canute.UI.SceneName.Settings=设置
+##UI
+Canute.UI.Common.Back=<<<
+Canute.UI.Common.LegionSetting=军队
+Canute.UI.Common.Armies=军队
+Canute.UI.Common.Equipments=装备
+Canute.UI.Common.EventCard=事件牌
+#
+Canute.UI.LegionSetting.Upgrade=升级
+Canute.UI.LegionSetting.Change=更改
+Canute.UI.LegionSetting.Left=调离
+Canute.UI.LegionSetting.Legion1=军队 1
+Canute.UI.LegionSetting.Legion2=军队 2
+Canute.UI.LegionSetting.Legion3=军队 3
+#
+Canute.UI.Start.Continue=继续。。。
+Canute.UI.Start.Saves=所有进展（存档）
+Canute.UI.Start.NewGame=新开始
+Canute.UI.Start.Settings=设置
+Canute.UI.Start.Credit=制作团队
+Canute.UI.Start.Games=其他存档
+
+Canute.UI.MainHall.Training=训练
+Canute.UI.MainHall.Basement=基地日常
+Canute.UI.MainHall.Legion=军队
+Canute.UI.MainHall.Pile=事件牌
+Canute.UI.MainHall.Exploration=物资队
+Canute.UI.MainHall.Shop=商店
+Canute.UI.MainHall.Chapter=章节
+Canute.UI.MainHall.Hallway=过道
+Canute.UI.MainHall.Quit=离开
+#
+Canute.Hallway.Explanation=基地过道上会遇到其他人。。。
+#
+Canute.Shop.BuyItem=购买 @itemName? 花费:@cost
+Canute.Shop.GetItem=获得 @itemName
+Canute.Shop.No money=我们无法支付，长官.
+Canute.Shop.Explanation=购买装备，军队
+#
+Canute.STPrizeDisplay.NewPrize=补给队获得： @name
+#
+Canute.SupplyTeam.Explanation=让你的领袖和一只保护他们的军队去获得物资维持基地
+Canute.SupplyTeam.TeamPositionInfo=补给队现在在@country的@city.
+#
+Canute.UI.Settings.Basic=基本
+Canute.UI.Settings.Basic.PlayCardDelay=出牌延迟
+Canute.UI.Settings.Basic.ShowStory=战斗显示故事
+Canute.UI.Settings.Basic.Volume=音量
+Canute.UI.Settings.Language=语言(Language)
+Canute.UI.Settings.Other=其他
+Canute.UI.Settings.Other.OpenDataFolder=打开储存文件夹
+Canute.UI.Settings.Other.Tutorial=教程关

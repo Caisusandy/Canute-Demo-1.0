@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12028c83f88db554f8948d9b4f440d00, type: 3}
   m_Name: Prefabs
   m_EditorClassIdentifier: Assembly-CSharp:Chronicle.Gam:EntityPrefab
+  gameBackgroundMusicManager: {fileID: 4205227634270057807, guid: e4731ba1f62d4ee41a0249eec547e6e3,
+    type: 3}
   defaultArmy: {fileID: 6470687005625561500, guid: e16cffabdcd4bf64d97d75f0a3759b95,
     type: 3}
   defaultBuilding: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,

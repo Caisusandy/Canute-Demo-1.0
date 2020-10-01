@@ -741,6 +741,8 @@ GameObject:
   - component: {fileID: 359934625}
   - component: {fileID: 359934627}
   - component: {fileID: 359934626}
+  - component: {fileID: 359934629}
+  - component: {fileID: 359934628}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -804,6 +806,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359934624}
   m_CullTransparentMesh: 0
+--- !u!61 &359934628
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359934624}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25, y: 25}
+  m_EdgeRadius: 0
+--- !u!114 &359934629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359934624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Shops.Currency+Type.fedgram
 --- !u!1 &399909425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0.58810097, b: 0.14542542, a: 1}
+  m_Color: {r: 0.49056602, g: 0.40008265, b: 0.09024564, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1332,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9921569, g: 0.9686275, b: 0.427451, a: 1}
+  m_Color: {r: 0.5188679, g: 0.33312166, b: 0.08566214, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1449,6 +1491,8 @@ GameObject:
   - component: {fileID: 730230117}
   - component: {fileID: 730230119}
   - component: {fileID: 730230118}
+  - component: {fileID: 730230121}
+  - component: {fileID: 730230120}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1512,6 +1556,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730230116}
   m_CullTransparentMesh: 0
+--- !u!114 &730230120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730230116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Shops.Currency+Type.manpower
+--- !u!61 &730230121
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730230116}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25, y: 25}
+  m_EdgeRadius: 0
 --- !u!1 &741985495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,7 +2448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 848, y: 318}
+  m_AnchoredPosition: {x: 807.7, y: 315.35}
   m_SizeDelta: {x: 151.9, y: 93.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &943741090
@@ -2469,6 +2553,8 @@ GameObject:
   - component: {fileID: 965981690}
   - component: {fileID: 965981692}
   - component: {fileID: 965981691}
+  - component: {fileID: 965981694}
+  - component: {fileID: 965981693}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -2532,6 +2618,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965981689}
   m_CullTransparentMesh: 0
+--- !u!114 &965981693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965981689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Shops.Currency+Type.mantleAlloy
+--- !u!61 &965981694
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965981689}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25, y: 25}
+  m_EdgeRadius: 0
 --- !u!1 &1010279764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,7 +3391,7 @@ GameObject:
   - component: {fileID: 1198821628}
   - component: {fileID: 1198821627}
   m_Layer: 5
-  m_Name: Shop (1)
+  m_Name: Hallway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4410,7 +4536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0.58810097, b: 0.14542542, a: 1}
+  m_Color: {r: 0.49056602, g: 0.40008265, b: 0.09024564, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5186,7 +5312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.43791503, g: 0.42352942, b: 0.8392157, a: 1}
+  m_Color: {r: 0.85929155, g: 0.8537736, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5264,7 +5390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7264151, g: 0.51511514, b: 0.09251513, a: 1}
+  m_Color: {r: 1, g: 0.7832533, b: 0.3537736, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5303,6 +5429,8 @@ GameObject:
   - component: {fileID: 1793561527}
   - component: {fileID: 1793561529}
   - component: {fileID: 1793561528}
+  - component: {fileID: 1793561531}
+  - component: {fileID: 1793561530}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -5366,6 +5494,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793561526}
   m_CullTransparentMesh: 0
+--- !u!114 &1793561530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793561526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 0}
+  key: Canute.Shops.Currency+Type.aethium
+--- !u!61 &1793561531
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793561526}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25, y: 25}
+  m_EdgeRadius: 0
 --- !u!1 &1817318477
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,6 +6160,8 @@ MonoBehaviour:
     key: Canute.UI.MainHall.Chapter
   - textField: {fileID: 1562676828}
     key: Canute.UI.MainHall.Quit
+  - textField: {fileID: 2005779154}
+    key: Canute.UI.MainHall.Hallway
 --- !u!114 &1966394752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6055,7 +6225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19241722, g: 0.32155827, b: 0.8679245, a: 1}
+  m_Color: {r: 0.4481132, g: 0.554162, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

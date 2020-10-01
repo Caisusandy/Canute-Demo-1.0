@@ -170,3 +170,12 @@ MonoBehaviour:
         type: 3
         default: 
         possibleValue: []
+    - name: language
+      params:
+      - key: language
+        type: 2
+        default: 
+        possibleValue:
+        - zh_cn
+        - en_us
+        - es_sp

@@ -86,7 +86,10 @@ namespace Canute.BattleSystem
                 && !other.IsPermanentStatus
                 && (other.Type != StatType.delay);
             bool effectSimilar = effect.SimilarTo(other.effect);
-            bool trigger = triggerConditions.Equals(other.TriggerConditions);
+            bool trigger;
+            if (triggerConditions == null && other.triggerConditions == null) trigger = true;
+            else if (triggerConditions == null || other.triggerConditions == null) trigger = false;
+            else trigger = triggerConditions.Equals(other.TriggerConditions);
 
             //Debug.Log(sameCount);
             //Debug.Log(effectSimilar);

@@ -55,6 +55,8 @@ namespace Canute.Testing
                         return Kill(commandParams);
                     case "lang":
                         return Lang(commandParams);
+                    case "language":
+                        return Language(commandParams);
                     case "loadStory":
                         return LoadStory(commandParams);
                     case "refreshShop":
@@ -100,6 +102,17 @@ namespace Canute.Testing
             }
 
             return false;
+        }
+
+        private static bool Language(string[] commandParams)
+        {
+            if (!Enum.TryParse<Language>(commandParams[1], true, out _))
+            {
+                return false;
+            }
+            Game.Configuration.Language = commandParams[1];
+            Languages.ForceLoadLang();
+            return true;
         }
 
         private static bool RefreshShop(string[] commandParams)

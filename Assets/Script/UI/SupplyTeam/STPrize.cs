@@ -96,13 +96,10 @@ namespace Canute.UI.SupplyTeam
             }
 
             STTeamDisplay.instance.Team.CurrentPrize.OpenNow();
-            STPrizeDisplay.instance.prizeInfo.text = "Canute.STPrizeDisplay.NewPrize".Lang().Replace("@prizeType", prizeBox.prize.PrizeType.ToString()).Replace("@name", prizeBox.prize.DisplayingName);
 
-
-            if (prizeBox.prize.PrizeType == Item.Type.currency)
-            {
-                STPrizeDisplay.instance.prizeInfo.text += ": " + prizeBox.prize.Count;
-            }
+            var info = "Canute.STPrizeDisplay.NewPrize".Lang().Replace("@prizeType", prizeBox.prize.PrizeType.ToString()).Replace("@name", prizeBox.prize.DisplayingName);
+            if (prizeBox.prize.PrizeType == Item.Type.currency) info += ": " + prizeBox.prize.Count;
+            InfoWindow.Create(info);
 
             STPrizeDisplay.instance.Start();
         }

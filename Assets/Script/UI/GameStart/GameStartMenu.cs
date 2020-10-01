@@ -19,6 +19,9 @@ namespace Canute.UI
         public Text versionDisplayer;
         [Header("")]
         public GameObject savesMenu;
+        [Header("")]
+        public AudioSource audioSource;
+        public AudioSource preAudioSource;
         private void Awake()
         {
             instance = this;
@@ -36,6 +39,8 @@ namespace Canute.UI
                 DestroyImmediate(savesButton.gameObject);
             }
             versionDisplayer.text = GameData.Version.ToString();
+            audioSource.volume = Game.Configuration.Volume;
+            preAudioSource.volume = Game.Configuration.Volume * 5;
         }
 
         // Update is called once per frame
@@ -76,7 +81,11 @@ namespace Canute.UI
 
         public void Credit()
         {
-
+            var info = "Wendell Cai (Leader, programmer, artist, story, soundtrack),\n Kira Wang (artist),\n Adelle Alexander (story), \nand Gia Khanh (programmer)\nAdvisor: David Rios";
+            var a = InfoWindow.Create(info);
+            a.transform.SetParent(transform.parent);
+            Destroy(a.gameObject.GetComponent<GraphicRaycaster>());
+            Destroy(a.gameObject.GetComponent<Canvas>());
         }
     }
 }

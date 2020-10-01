@@ -1,4 +1,5 @@
 ﻿using Canute.LevelTree;
+using Canute.UI;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -92,6 +93,7 @@ namespace Canute
         /// 
         /// <param name="ans"></param>
         public void GotoSceneImmediate(string ans) => SceneManager.LoadScene(ans);
+
 
 
         [Temporary]

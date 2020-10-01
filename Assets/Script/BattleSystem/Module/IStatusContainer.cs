@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +25,7 @@ namespace Canute.BattleSystem
 
         /// <summary> Trigger all effect that fit in a specific condition </summary>
         /// <param name="conditions"></param>
+        [Obsolete]
         public static void TriggerOf(this TriggerCondition.Conditions conditions)
         {
             foreach (IStatusContainer container in Game.CurrentBattle.StatusContainers)
@@ -52,7 +54,8 @@ namespace Canute.BattleSystem
 
         /// <summary>
         /// Try to trigger all status
-        /// </summary>
+        /// </summary> 
+        [Obsolete]
         public static void TryTriggerAll()
         {
             foreach (IStatusContainer statusContainer in Game.CurrentBattle.StatusContainers)

@@ -189,7 +189,7 @@ namespace Canute.BattleSystem.UI
             messageDisplayer.text.color = color;
         }
 
-        public static void SendMessage(BattleEventError message, Player player = null, params string[] param) => SendMessage(message.Lang(), new Color(1, 0.15f, 0.15f), player, param);
+        public static void SendMessage(BattleEventError message, Player player = null, params string[] param) => SendMessage(message.Lang(), Color.white, player, param);
 
         public static void SendMessage(BattleEvent message, Color color, Player player = null, params string[] param) => SendMessage(message.Lang(), color, player, param);
 

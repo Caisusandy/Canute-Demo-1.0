@@ -35,11 +35,12 @@ namespace Canute
         [SerializeField] protected Shop shop;
         [SerializeField] protected Levels levelStart;
         [SerializeField] protected Chapters chapters;
-        [SerializeField] protected Stories stories;
         [SerializeField] protected ResonanceSheet resonanceSheet;
         [SerializeField] protected ExcavationPrice excavationPrice;
+        [SerializeField] protected AudioClip defaultBG;
         [Header("Story Packs")]
         [SerializeField] protected StoryPacks storyPacks;
+        Stories stories;
 
         [ContextMenuItem("Save", "SavePlayerFile")]
         [Header("Player File (please save after edit)")]
@@ -64,7 +65,7 @@ namespace Canute
 
 
         ///<summary>   </summary>
-        public static CanuteVersion Version => instance.version;
+        public static string Version => Application.version;
 
         public static ResonanceSheet ResonanceSheet => instance.resonanceSheet;
 
@@ -81,8 +82,10 @@ namespace Canute
         {
             instance = this;
             Game.ReadConfig();
+
             Languages.ForceLoadLang();
-            stories = storyPacks.Get(Game.Language);
+            stories = storyPacks.Get("en_us");
+            //stories = storyPacks.Get(Game.Language);
         }
 
         public void SavePlayerFile()

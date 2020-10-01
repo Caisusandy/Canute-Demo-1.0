@@ -52,7 +52,7 @@ namespace Canute.UI
             return instance;
         }
 
-        public static InfoWindow CreateInfoWindow(string info)
+        public static InfoWindow Create(string info)
         {
             ConfirmWindow.action = () => { };
             if (instance)

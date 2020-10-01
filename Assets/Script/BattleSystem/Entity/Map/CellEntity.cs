@@ -130,14 +130,14 @@ namespace Canute.BattleSystem
         /// <summary>
         /// Triggerer of EntityArrive
         /// </summary>
-        public void Enter(OnMapEntity onMapEntity, Effect effect)
+        public void Enter(OnMapEntity onMapEntity, Effect moveEffect)
         {
             onMapEntity.transform.SetParent(transform);
             onMapEntity.OnMapData.Coordinate = Coordinate;
             onMapEntity.entityMark.Refresh(this);
             onMapEntity.entityMark.Display();
 
-            Status.TriggerOf(TriggerCondition.Conditions.entityArrive, ref effect, this, onMapEntity, Game.CurrentBattle);
+            Status.TriggerOf(TriggerCondition.Conditions.entityArrive, ref moveEffect, this, onMapEntity, Game.CurrentBattle);
             //this.TriggerOf(TriggerCondition.Conditions.entityArrive, ref effect);
             //onMapEntity.TriggerOf(TriggerCondition.Conditions.entityArrive, ref effect);
             //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.entityArrive, ref effect);
@@ -146,9 +146,9 @@ namespace Canute.BattleSystem
         /// <summary>
         /// Triggerer of EntityLeft
         /// </summary>
-        public void Leave(OnMapEntity onMapEntity, Effect effect)
+        public void Leave(OnMapEntity onMapEntity, Effect moveEffect)
         {
-            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, ref effect, this, onMapEntity, Game.CurrentBattle);
+            Status.TriggerOf(TriggerCondition.Conditions.entityLeft, ref moveEffect, this, onMapEntity, Game.CurrentBattle);
             //this.TriggerOf(TriggerCondition.Conditions.entityLeft, ref effect);
             //onMapEntity.TriggerOf(TriggerCondition.Conditions.entityLeft, ref effect);
             //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.entityLeft, ref effect);

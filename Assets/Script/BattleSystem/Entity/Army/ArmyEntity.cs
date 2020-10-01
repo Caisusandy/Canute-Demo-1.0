@@ -321,9 +321,12 @@ namespace Canute.BattleSystem
             scale.x *= isToRight ? 1 : -1;
             transform.localScale = scale;
 
-            scale = armyHealthBar.transform.localScale;
-            scale.x *= isToRight ? 1 : -1;
-            armyHealthBar.transform.localScale = scale;
+            if (armyHealthBar)
+            {
+                scale = armyHealthBar.transform.localScale;
+                scale.x *= isToRight ? 1 : -1;
+                armyHealthBar.transform.localScale = scale;
+            }
         }
 
         public override void Destroy()

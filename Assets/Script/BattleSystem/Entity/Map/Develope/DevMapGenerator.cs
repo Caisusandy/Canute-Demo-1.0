@@ -44,7 +44,7 @@ namespace Canute.BattleSystem.Develop
             }
             if (random)
             {
-                RandomMapGenerator random = useSeed ? new RandomMapGenerator(this, seed) : new RandomMapGenerator(this);
+                RandomTerrainGenerator random = useSeed ? new RandomTerrainGenerator(mapEntity, seed) : new RandomTerrainGenerator(mapEntity);
                 random.Randomize();
             }
             return mapEntity;

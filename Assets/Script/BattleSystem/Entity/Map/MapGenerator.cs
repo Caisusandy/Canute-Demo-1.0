@@ -42,7 +42,7 @@ namespace Canute.BattleSystem
             }
             if (random)
             {
-                var random = new RandomMapGenerator(this);
+                var random = new RandomTerrainGenerator(mapEntity);
                 random.Randomize();
             }
 

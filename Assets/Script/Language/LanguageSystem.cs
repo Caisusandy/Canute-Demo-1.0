@@ -1,4 +1,5 @@
 ﻿using Canute.BattleSystem;
+using Canute.Module;
 using Canute.Shops;
 using System;
 using System.Collections.Generic;
@@ -41,12 +42,18 @@ namespace Canute
                     continue;
                 }
                 string[] word = wordset.Split('=');
-                if (!Dictionary.ContainsKey(word[0]))
+                if (!Dictionary.ContainsKey(word[0]) && word.Length > 1)
                 {
                     //Debug.Log("Add " + word[0] + ":" + word[1]);
                     Dictionary.Add(word[0], word[1]);
                 }
             }
+
+            foreach (var item in LanguageLoader.loaders)
+            {
+                if (item) item.Load();
+            }
+
         }
 
         #region 基本

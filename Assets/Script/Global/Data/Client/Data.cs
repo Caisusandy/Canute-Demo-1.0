@@ -520,7 +520,7 @@ namespace Canute
             {
                 ArmyItem item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry"));
                 armies.Add(item);
-                legions[1].SetArmy(i, item);
+                //legions[1].SetArmy(i, item);
             }
             for (int i = 0; i < 3; i++)
             {

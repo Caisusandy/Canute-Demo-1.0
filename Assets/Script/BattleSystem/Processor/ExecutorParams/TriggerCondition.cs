@@ -246,15 +246,9 @@ namespace Canute.BattleSystem
             return false;
         }
 
-        public bool CanTrigger(Effect currentEffect)
-        {
-            return ConditionChecker.IsValid(this, currentEffect);
-        }
+        public bool CanTrigger(Effect currentEffect) => ConditionChecker.IsValid(this, currentEffect);
 
-        public bool CanTrigger()
-        {
-            return ConditionChecker.IsValid(this);
-        }
+        public bool CanTrigger() => ConditionChecker.IsValid(this);
 
         public TriggerConditions Clone()
         {
@@ -382,10 +376,10 @@ namespace Canute.BattleSystem
                     ans = IsPlayingCard(condition);
                     break;
                 case TriggerCondition.Conditions.entityArrive:
-                    ans = IsEntityArriving(refEffect);
+                    ans = IsEntityArriving();
                     break;
                 case TriggerCondition.Conditions.entityLeft:
-                    ans = IsEntityLeaving(refEffect);
+                    ans = IsEntityLeaving();
                     break;
                 //These conditions will be automatically recognize when the time is right
                 case TriggerCondition.Conditions.beforeAttack:
@@ -434,24 +428,28 @@ namespace Canute.BattleSystem
             return refEffect?.Type == Effect.Types.attack;
         }
 
-        private static bool IsEntityLeaving(Effect refEffect)
+        private static bool IsEntityLeaving()
         {
-            if (refEffect?.Type == Effect.Types.move)
-            {
-                ArmyEntity hasArmyStandOn = (refEffect.Target as OnMapEntity)?.OnCellOf.HasArmyStandOn;
-                return !hasArmyStandOn;
-            }
-            return false;
+            return true;
+            //if (refEffect == null) { return true; }
+            //if (refEffect?.Type == Effect.Types.move)
+            //{
+            //    ArmyEntity hasArmyStandOn = (refEffect.Target as OnMapEntity)?.OnCellOf.HasArmyStandOn;
+            //    return !hasArmyStandOn;
+            //}
+            //return false;
         }
 
-        private static bool IsEntityArriving(Effect refEffect)
+        private static bool IsEntityArriving()
         {
-            if (refEffect?.Type == Effect.Types.move)
-            {
-                ArmyEntity hasArmyStandOn = (refEffect.Target as OnMapEntity)?.OnCellOf.HasArmyStandOn;
-                return hasArmyStandOn;
-            }
-            return false;
+            return true;
+            //if (refEffect == null) { return true; }
+            //if (refEffect?.Type == Effect.Types.move)
+            //{
+            //    ArmyEntity hasArmyStandOn = (refEffect.Target as OnMapEntity)?.OnCellOf.HasArmyStandOn;
+            //    return hasArmyStandOn;
+            //}
+            //return false;
         }
 
         private static bool IsPlayingCard(TriggerCondition condition)

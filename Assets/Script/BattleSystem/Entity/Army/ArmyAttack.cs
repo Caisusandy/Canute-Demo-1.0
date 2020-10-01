@@ -246,6 +246,11 @@ namespace Canute.BattleSystem
                     cellEntities.RemoveAt(i);
                     continue;
                 }
+                else if (possibleTarget.StatList.GetTag("name:protection") != null)
+                {
+                    cellEntities.RemoveAt(i);
+                    continue;
+                }
                 else
                 {
                     possibleTargets.Add(possibleTarget);

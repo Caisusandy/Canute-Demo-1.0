@@ -8,6 +8,7 @@ namespace Canute
     [CreateAssetMenu(fileName = "EntityPrefabs", menuName = "Game Data/Entity Prefab", order = 1)]
     public class Prefabs : ScriptableObject
     {
+        [SerializeField] protected GameObject gameBackgroundMusicManager;
         [Header("Army")]
         [SerializeField] protected GameObject defaultArmy;
         [Header("Building")]
@@ -30,7 +31,7 @@ namespace Canute
         public GameObject DragonEventCard => dragonEventCardPrefab;
         public GameObject BuildingEventCard => buildingEventCardPrefab;
 
-
+        public GameObject GameBackgroundMusicManager => gameBackgroundMusicManager;
 
         public GameObject Get(string index)
         {

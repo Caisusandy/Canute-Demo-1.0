@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace Canute.UI
 {
 
-    [RequireComponent(typeof(Image), typeof(Collider2D))]
+    [RequireComponent(typeof(Image))]
     public abstract class Icon : MonoBehaviour
     {
         [HideInInspector] public GameObject label;

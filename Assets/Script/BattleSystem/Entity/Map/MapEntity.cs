@@ -13,6 +13,7 @@ namespace Canute.BattleSystem
         private static MapEntity instance;
 
         public List<ColumnEntity> columnEntities;
+        public List<FakeCell> fakeCells;
         public bool wasOnDrag;
 
         public bool isInitialized;
@@ -80,12 +81,14 @@ namespace Canute.BattleSystem
 
         private void FakeCellSetUp()
         {
-            FakeMapGenerator.instance.CreateFakeCells();
+            fakeCells = FakeMapGenerator.instance.CreateFakeCells();
             FakeMapGenerator.instance.fakeColumn.transform.position = Origin.transform.position;
 
-            Vector3 localPosition = FakeMapGenerator.instance.fakeColumn.transform.localPosition;
-            localPosition.z = 0;
+            Vector3 localPosition = FakeMapGenerator.instance.fakeColumn.transform.localPosition; localPosition.z = 0;
             FakeMapGenerator.instance.fakeColumn.transform.localPosition = localPosition;
+
+            var rmg = new RandomTerrainGenerator(this, seed);
+            rmg.RandomizeFakeCell();
         }
 
         public void MapSetUp()
@@ -588,19 +591,30 @@ namespace Canute.BattleSystem
             if (origin.y == direction.y)
             {
                 Debug.Log("Same Y");
-                d = direction.y - origin.y;
+                d = direction.x - origin.x;
                 forward = d > 0;
-                foreach (var item in this[origin.y])
+                for (int i = 0; i < Mathf.Abs(d); i++)
                 {
-                    if (item.x > origin.x && forward)
+                    ColumnEntity columnEntity = this[origin.y];
+                    int index = origin.x + (forward ? 1 : -1) * i;
+                    if (index >= 0 && index < columnEntity.cellEntities.Count)
                     {
-                        cellEntities.Add(item);
-                    }
-                    else if (item.x < origin.x && !forward)
-                    {
+                        CellEntity item = columnEntity.cellEntities[index];
                         cellEntities.Add(item);
                     }
                 }
+
+                //foreach (var item in this[origin.y])
+                //{
+                //    if (item.x > origin.x && forward)
+                //    {
+                //        cellEntities.Add(item);
+                //    }
+                //    else if (item.x < origin.x && !forward)
+                //    {
+                //        cellEntities.Add(item);
+                //    }
+                //}
             }
             else if (origin.HexCoord.x == direction.HexCoord.x || (origin.HexCoord.z == direction.HexCoord.z))
             {
@@ -625,7 +639,6 @@ namespace Canute.BattleSystem
                         }
                     }
                 }
-
             }
             else if (origin.HexCoord.z == direction.HexCoord.z)
             {

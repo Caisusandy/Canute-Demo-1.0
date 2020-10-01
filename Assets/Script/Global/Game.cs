@@ -98,7 +98,8 @@ namespace Canute
     public enum Language
     {
         en_us,
-        zh_cn
+        zh_cn,
+        es_es
     }
 
     [Serializable]
@@ -118,6 +119,7 @@ namespace Canute
         [SerializeField] private float playCardDelay = 0.25f;
         [SerializeField] private bool showStory = true;
         [SerializeField] private string language = "en_us";
+        [SerializeField] private float volume = 1;
 
         public UUID LastGame { get => lastGame; set { lastGame = value; Game.SaveConfig(); } }
         public bool IsDebugMode { get => debugMode; set { debugMode = value; Game.SaveConfig(); } }
@@ -127,7 +129,7 @@ namespace Canute
         public float PlayCardDelay { get => playCardDelay; set { playCardDelay = value; Game.SaveConfig(); } }
         public bool ShowStory { get => showStory; set { showStory = value; Game.SaveConfig(); } }
         public string Language { get => language; set { language = value; Game.SaveConfig(); } }
-
+        public float Volume { get => volume; set { volume = value; Game.SaveConfig(); } }
 
         public Config()
         {

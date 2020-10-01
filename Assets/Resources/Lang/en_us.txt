@@ -1,7 +1,7 @@
-﻿#语言文件可以用#开始来写备注，//这样也可以（不能写在文字后面）
-#(若没有星号，没有等于号也不会出事)
+﻿#can be use for write comment，//this is ok, too. but you can't use this after a line (don't use //)
+#(actually, if there are no equal sign, it will be treat as a comment)
 
-#职业
+#Career
 Canute.Career.Scholar=Scholar
 Canute.Career.Politician=Politician
 Canute.Career.General=General
@@ -22,13 +22,14 @@ Canute.Shops.Currency+Type.manpower=Manpower
 Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
 Canute.Shops.Currency+Type.aethium=Aethium
 #
+Canute.BattleSystem.PropertyType.level=level
 Canute.BattleSystem.PropertyType.damage=damage
 Canute.BattleSystem.PropertyType.health=health
 Canute.BattleSystem.PropertyType.defense=defense
 Canute.BattleSystem.PropertyType.moveRange=move range
 Canute.BattleSystem.PropertyType.attackRange=attack range
 Canute.BattleSystem.PropertyType.critRate=crit rate
-Canute.BattleSystem.PropertyType.critBounes=crit bounes
+Canute.BattleSystem.PropertyType.critBonus=crit bonus
 Canute.BattleSystem.PropertyType.pop=pop
 Canute.BattleSystem.PropertyType.armor=armor
 Canute.BattleSystem.PropertyType.anger=anger
@@ -61,8 +62,8 @@ Canute.Army+Types.shielder=Shielder
 Canute.Army+Types.cavalry=Cavalry
 Canute.Army+Types.rifleman=Rifleman
 Canute.Army+Types.aircraftFighter=AircraftFighter
-Canute.Army+Types.airship=airship
-Canute.Army+Types.dragon=dragon
+Canute.Army+Types.airship=Airship
+Canute.Army+Types.dragon=Dragon
 #
 Canute.Army.Alpha Army.name=A
 Canute.Army.Beta Army.name=B
@@ -150,6 +151,8 @@ Canute.BattleSystem.Effect+Types.EMPImpact=EMP Impact
 Canute.BattleSystem.Effect+Types.EMPImpact.info=Army cannot do anything.
 Canute.BattleSystem.Effect+Types.flashLight=Flash Light
 Canute.BattleSystem.Effect+Types.flashLight.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.motherOf=Mothership.
+Canute.BattleSystem.Effect+Types.motherOf.info=$targetName's Mothership.
 
 
 #resonance
@@ -175,7 +178,6 @@ Canute.BattleSystem.Effect+Types.addDragonCard=Resonance: Magic from Dragon
 Canute.BattleSystem.Effect+Types.addDragonCard.info=Add @count Dragon Card
 Canute.BattleSystem.Effect+Types.shielderPenetrate=Resonance: Shielder Penetrate
 Canute.BattleSystem.Effect+Types.shielderPenetrate.info=Ignore other army's defense (except for shielder), cause a another @param% of enemy's current HP's real damage (except for shielder).
-
 #dragon
 Canute.BattleSystem.Effect+Types.dragonAttack=Dragon Status:Attack
 Canute.BattleSystem.Effect+Types.dragonAttack.info=the dragon is ready to attack 
@@ -224,9 +226,7 @@ Canute.BattleSystem.Effect+Types.BasicWarMachineSkill.info=Attack the closest po
 Canute.BattleSystem.Effect+Types.BasicCavalrySkill=Cavalry Skill
 Canute.BattleSystem.Effect+Types.BasicCavalrySkill.info=When HP < 50%，move to the side of the closest enemy，otherwise attack closest enemy by 1 * damage;
 Canute.BattleSystem.Effect+Types.BasicDragonSkill=Dragon Skill
-Canute.BattleSystem.Effect+Types.BasicDragonSkill=Get 3 central deck card with no action point cost.
-
-
+Canute.BattleSystem.Effect+Types.BasicDragonSkill.info=Get 3 central deck card with no action point cost.
 
 #aircraft fighter
 Canute.BattleSystem.Effect+Types.aircraftFighterReturn=Airport
@@ -339,14 +339,34 @@ Canute.Character.Empty.supplyTeamComeBackWithLeader=
 Canute.Character.Empty.supplyTeamComeBackWithStory= 
 Canute.Character.Empty.supplyTeamComeBackWithLetter= 
 
-
-#UI
+#SceneName
+Canute.UI.SceneName.Exploration=Supply Team
+Canute.UI.SceneName.Shop=Shop
+Canute.UI.SceneName.Hallway=Hallway
+Canute.UI.SceneName.LegionSetting=Legion Setting
+Canute.UI.SceneName.EventCard=Event Card Pile
+Canute.UI.SceneName.Settings=Settings
+##UI
+Canute.UI.Common.Back=Back
+Canute.UI.Common.LegionSetting=Army
+Canute.UI.Common.Armies=Army
+Canute.UI.Common.Equipments=Equipments
+Canute.UI.Common.EventCard=EventCard
+#
+Canute.UI.LegionSetting.Upgrade=Upgrade
+Canute.UI.LegionSetting.Change=Change
+Canute.UI.LegionSetting.Left=Left
+Canute.UI.LegionSetting.Legion1=Legion 1
+Canute.UI.LegionSetting.Legion2=Legion 2
+Canute.UI.LegionSetting.Legion3=Legion 3
+#
 Canute.UI.Start.Continue=Continue
-Canute.UI.Start.Saves=Saves
+Canute.UI.Start.Saves=Other Progress
 Canute.UI.Start.NewGame=New Game
 Canute.UI.Start.Settings=Settings
 Canute.UI.Start.Credit=Credit
-
+Canute.UI.Start.Games=Other Progress
+#
 Canute.UI.MainHall.Training=Training
 Canute.UI.MainHall.Basement=Basement outside
 Canute.UI.MainHall.Legion=Legion Setting
@@ -355,14 +375,25 @@ Canute.UI.MainHall.Exploration=Supply Team
 Canute.UI.MainHall.Shop=Shop
 Canute.UI.MainHall.Chapter=Battles
 Canute.UI.MainHall.Hallway=Hallway
-Canute.UI.MainHall.Quit=Quit
-
+Canute.UI.MainHall.Quit=Start Menu
+#
+Canute.Hallway.Explanation=You might find someone on the hallway...
 #
 Canute.Shop.BuyItem=Buy @itemName?Cost:@cost
 Canute.Shop.GetItem=Get @itemName
 Canute.Shop.No money=We don't have enough money for this, sir.
+Canute.Shop.Explanation=Where we can buy army, Equipment etc.
 #
 Canute.STPrizeDisplay.NewPrize=Supply Team get @name
 #
 Canute.SupplyTeam.Explanation=Send your leaders and one protect army to get more supply for the basement
 Canute.SupplyTeam.TeamPositionInfo=The Supply Team is in @city, @country right now.
+#
+Canute.UI.Settings.Basic=Basic
+Canute.UI.Settings.Basic.PlayCardDelay=Play Card Delay
+Canute.UI.Settings.Basic.ShowStory=Show Story
+Canute.UI.Settings.Basic.Volume=Volume
+Canute.UI.Settings.Language=Language
+Canute.UI.Settings.Other=Other
+Canute.UI.Settings.Other.OpenDataFolder=Open Data Folder
+Canute.UI.Settings.Other.Tutorial=Tutorial
