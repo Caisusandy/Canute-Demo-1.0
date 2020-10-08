@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enPrologue3
+  m_EditorClassIdentifier: 
+  story:
+    id: Prologue3
+    type: 1
+    wordLines:
+    - speakerName: Canute Swenson
+      id: Prologue3.1
+      line: 'Our reinforcements only came after we have driven away all the attackers.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Finn Herman
+      id: Prologue3.2
+      line: 'Some things... happened, but who were the attackers just now?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Ron Thompson
+      id: Prologue3.3
+      line: "We don't know yet. They look like they are Swisha, but the equipment
+        is much better than what ordinary Swishese can acquire. They are only ten
+        kilometers away from our base. Where is our scientist? What are the base\u2019s
+        radars doing when they almost kiss me without any signals?\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Theodore Pullan
+      id: Prologue3.4
+      line: "There was something wrong with the electricity in the base just now,
+        and the base's radar stopped.\nFin Herman\nThe electricity in the base was
+        overloaded and tripped by Theodore's magnetic field generator test.\nTheodore
+        Plan\nTomayto Tomahto. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Canute Swenson
+      id: Prologue3.5
+      line: 'I am familiar with their equipment. . . Yeah, it''s Meialian''s, all
+        these things are new.
+
+        Fin Herman
+
+        who?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Finn Herman
+      id: Prologue3.6
+      line: 'who?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Canute Swenson
+      id: Prologue3.7
+      line: 'Meialia, their things shouldn''t appear in the hands of the Swishese,
+        let alone appear in a brand new form. The Swishese have no way to obtain
+        them since Meialia will not let them out at will.
+
+        Something is wrong.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Ron Thompson
+      id: Prologue3.8
+      line: 'Finn and I are going to the outside world to get more base supplies
+        soon, and we will investigate this incident on the way. In the meantime,
+        we might have another things these days.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Canute Swenson
+      id: Prologue3.9
+      line: 'What is it?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Ron Thompson
+      id: Prologue3.10
+      line: 'Some news from Swisha Main City, a list of prisoners, I believe.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: ===
+      id: Prologue3.11
+      line: 'Canute sees a name list.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Ron Thompson
+      id: Prologue3.12
+      line: 'You do know what this list of names is, right?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Canute Swenson
+      id: Prologue3.13
+      line: 'I do, and I see what you are talking about.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Ron Thompson
+      id: Prologue3.14
+      line: "So you do see that the name of your teacher is on the list? \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Canute Swenson
+      id: Prologue3.15
+      line: 'Yes, and we are going to rescue him.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []

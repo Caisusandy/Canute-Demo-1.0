@@ -10,5 +10,7 @@
         Mountains,
         River,
         Ocean,
+        Snow,
+        Highland
     }
 }

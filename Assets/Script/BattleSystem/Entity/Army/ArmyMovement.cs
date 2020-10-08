@@ -172,7 +172,7 @@ namespace Canute.BattleSystem
             // Cast a ray straight down.
             List<RaycastHit2D> hitObj = new List<RaycastHit2D>(10);
             ContactFilter2D contactFilter2D = new ContactFilter2D();
-            Physics2D.Raycast(Control.UserInputPosition, -Vector2.zero, contactFilter2D.NoFilter(), hitObj);
+            Physics2D.Raycast(BattleControl.UserInputPosition, -Vector2.zero, contactFilter2D.NoFilter(), hitObj);
             // If it hits something...
 
             for (int i = 0; i < hitObj.Count; i++)

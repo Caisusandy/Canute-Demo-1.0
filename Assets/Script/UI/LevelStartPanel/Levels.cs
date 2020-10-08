@@ -1,8 +1,9 @@
 ﻿using Canute.BattleSystem;
 using Canute.LevelTree;
+using Canute.UI.LevelStart;
 using UnityEngine;
 
-namespace Canute.UI.LevelStart
+namespace Canute
 {
     [CreateAssetMenu(fileName = "Level Start Panel", menuName = "Other/Level Start Panel", order = 1)]
     public class Levels : ScriptableObject
@@ -22,19 +23,29 @@ namespace Canute.UI.LevelStart
         {
             var obj = Instantiate(levelStartPanel, parent);
             var panel = obj.GetComponent<LevelStartPanel>();
-            panel.levelName = GameData.Chapters.ChapterTree.GetLevel("CalayInfinite").Name;
+            panel.levelName = GameData.Levels.GetLevel("CalayInfinite").Name;
         }
 
         public void OpenLevelPanel(string levelName)
         {
+            if (GameData.Levels.GetLevel(levelName) != null)
+            {
+                var obj = Instantiate(levelStartPanel, Camera.main.transform.GetChild(0).transform);
+                var panel = obj.GetComponent<LevelStartPanel>();
+                panel.levelName = levelName;
+            }
+        }
+
+        public void OpenLevelPanel(Level level)
+        {
             var obj = Instantiate(levelStartPanel, Camera.main.transform.GetChild(0).transform);
             var panel = obj.GetComponent<LevelStartPanel>();
-            panel.levelName = GameData.Chapters.ChapterTree.GetLevel(levelName).Name;
+            panel.levelName = level.Name;
         }
 
         public void OpenTutorial()
         {
-            Game.LoadBattle(GameData.Chapters.ChapterTree.GetLevel("Tutorial"), new LegionSet());
+            Game.LoadBattle(GameData.Levels.GetLevel("Tutorial"), new LegionSet());
         }
 
         public void OnEnable()

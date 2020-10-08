@@ -15,6 +15,7 @@ namespace Canute.UI
         public Button savesButton;
         public Button settingsButton;
         public Button creditButton;
+        public Button exitButton;
         [Header("")]
         public Text versionDisplayer;
         [Header("")]
@@ -58,15 +59,7 @@ namespace Canute.UI
         public void NewGame()
         {
             PlayerFile.CreateNewPlayerFile();
-            Game.LoadBattle(GameData.Chapters.ChapterTree.GetLevel("Tutorial"), new LegionSet(Game.PlayerData.Legions[0], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, Game.PlayerData.Leaders[0].Name));
-
-
-            //SceneControl.GotoScene(MainScene.mainHall);
-            //StorySystem.StoryDisplayer.Load(GameData.Stories.StoryTree.Get(currentFirstChat));
-            /*
-             *
-             * 
-             */
+            Game.LoadBattle(GameData.Levels.GetLevel("Tutorial"), new LegionSet(Game.PlayerData.Legions[0], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, Game.PlayerData.Leaders[0].Name));
         }
 
         public void OpenSavesMenu()
@@ -77,6 +70,11 @@ namespace Canute.UI
         public void CloseSavesMenu()
         {
             savesMenu.SetActive(false);
+        }
+
+        public void ExitGame()
+        {
+            ConfirmWindow.CreateConfirmWindow(() => Application.Quit(), "Canute.UI.Start.Quit.Check".Lang());
         }
 
         public void Credit()

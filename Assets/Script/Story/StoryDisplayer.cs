@@ -35,12 +35,15 @@ namespace Canute.StorySystem
         public string loadingLines;
         public const float charPerSecond = 0.02f;
 
-        public static bool IsWorking { get => instance?.enabled == true; set => instance.enabled = value; }
-
         private void Awake()
         {
             instance = this;
+
             timer = 0;
+            if (BattleSystem.UI.BattleUI.instance)
+            {
+                BattleSystem.UI.BattleUI.SetUICanvasActive(false);
+            }
         }
         // Use this for initialization
         private void Start()
@@ -57,9 +60,9 @@ namespace Canute.StorySystem
         // Update is called once per frame
         private void Update()
         {
-            if (!(BattleSystem.UI.BattleUI.instance is null))
+            if (BattleSystem.UI.BattleUI.instance)
             {
-                BattleSystem.UI.BattleUI.SetUIInteractive(false);
+                BattleSystem.UI.BattleUI.SetUICanvasActive(false);
             }
 
             timer += Time.deltaTime;
@@ -80,10 +83,11 @@ namespace Canute.StorySystem
 
         public void OnDestroy()
         {
-            if (!(BattleSystem.UI.BattleUI.instance is null))
+            if (BattleSystem.UI.BattleUI.instance)
             {
-                BattleSystem.UI.BattleUI.SetUIInteractive(true);
+                BattleSystem.UI.BattleUI.SetUICanvasActive(true);
             }
+
             instance = null;
         }
 
@@ -213,18 +217,22 @@ namespace Canute.StorySystem
             SceneControl.RemoveScene(MainScene.StoryDisplayer);
         }
 
-        public static void Load(Story wordLines)
+        public static void Load(Story story)
         {
+            Debug.Log(story);
+            Debug.Log(currentStory);
+            Debug.Log((bool)currentStory);
             if (currentStory)
             {
-                nextStories.Add(wordLines);
+                nextStories.Add(story);
                 return;
             }
 
             SceneControl.AddScene(MainScene.StoryDisplayer);
-            currentStory = wordLines;
-            transparentBG = wordLines.Type == StoryType.dailyConversation;
+            currentStory = story;
+            transparentBG = story.Type == StoryType.dailyConversation;
         }
+
         public static void Load(string storyName)
         {
             Load(Story.Get(storyName));

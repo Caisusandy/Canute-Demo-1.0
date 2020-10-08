@@ -12,6 +12,7 @@ namespace Canute.UI
     /// </summary>
     public class GameServer : MonoBehaviour
     {
+        public static GameServer instance;
         public GameData game;
 
         public List<ScriptableObject> loadingScriptableObject;
@@ -20,6 +21,9 @@ namespace Canute.UI
 
         public void Awake()
         {
+            //if (instance) { Destroy(this); return; }
+            //else instance = this;
+
             if (!Game.Initialized)
             {
                 Game.ReadConfig();
@@ -32,15 +36,24 @@ namespace Canute.UI
             }
         }
 
+        private void OnDestroy()
+        {
+            if (instance == this)
+            {
+                instance = null;
+            }
+        }
+
         // Start is called before the first frame update
         public void Start()
         {
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Slash))
+            if (Input.GetKeyDown(KeyCode.Slash) && Game.Configuration.IsDebugMode)
             {
                 if (!console)
                 {
@@ -49,7 +62,6 @@ namespace Canute.UI
                     var console = gameObject.GetComponent<Console>();
                     this.console = gameObject;
                 }
-
                 console.GetComponent<Console>().Open();
             }
         }

@@ -14,12 +14,14 @@ namespace Canute.LevelTree
         public string endStoryName;
 
         public string Name => data.Exist()?.Name ?? "Empty";
+        public string Title => this.Lang("title");
+        public string Subtitle => this.Lang("subtitle");
         public LevelData Data => data;
         public Story BackgroundStory => Story.Get(backgroundStoryName);
         public Story EndStory => Story.Get(endStoryName);
-        public Level LastLevel => GameData.Chapters.ChapterTree.GetLevel(lastLevel);
-        public Level Next => GameData.Chapters.ChapterTree.GetLevel(nextLevel);
-        public bool IsPassed { get { if (Name == "Empty") return true; return Game.PlayerData.PlayerChapterTreeStat.Get(Name).IsPassed; } }
+        public Level LastLevel => GameData.Levels.GetLevel(lastLevel);
+        public Level Next => GameData.Levels.GetLevel(nextLevel);
+        public bool IsPassed { get { if (Name == "Empty") return true; return Game.PlayerData.PlayerChapterTreeStat.Get(Name)?.IsPassed == true; } }
 
 
         public bool OpenBGStory()

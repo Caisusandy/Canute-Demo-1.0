@@ -159,6 +159,7 @@
     <Compile Include="Assets\Script\BattleSystem\Round.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\ArmyBar.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\ArmyInfoIcon.cs" />
+    <Compile Include="Assets\Script\BattleSystem\UI\BattleControl.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\BattleEventError.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\BattleScore.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\BattleUI.cs" />
@@ -169,7 +170,6 @@
     <Compile Include="Assets\Script\BattleSystem\UI\CommandList.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\CommandSheet.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\Console.cs" />
-    <Compile Include="Assets\Script\BattleSystem\UI\Control.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\EndPanel.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\EnemyHandCardBar.cs" />
     <Compile Include="Assets\Script\BattleSystem\UI\EnemyRightPanel.cs" />

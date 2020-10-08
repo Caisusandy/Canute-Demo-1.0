@@ -73,7 +73,7 @@ namespace Canute.BattleSystem.UI
             {
                 return;
             }
-            BattleUI.SetDownBarsActive(false);
+            BattleUI.SetPlayerDownBarsActive(false);
             endTurnButton.gameObject.SetActive(false);
         }
     }

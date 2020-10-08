@@ -16,12 +16,5 @@ namespace Canute.BattleSystem.UI
             gameObject.SetActive(false);
             transform.parent.gameObject.SetActive(false);
         }
-
-        public override void OnMouseDown()
-        {
-#if UNITY_EDITOR
-            Game.CurrentBattle.GetHandCard(Game.CurrentBattle.Enemy, 1);
-#endif
-        }
     }
 }

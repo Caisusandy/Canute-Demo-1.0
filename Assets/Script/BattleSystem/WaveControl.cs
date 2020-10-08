@@ -171,10 +171,28 @@ namespace Canute.BattleSystem
             }
         }
 
+        public void GenerateBuildingOnly(int wave)
+        {
+            if (waveInfos.Count < wave)
+            {
+                Debug.LogError("a wave that out of bound is tryed to use");
+                return;
+            }
+
+            Debug.Log("generate wave " + wave);
+            //generate wave buildings
+            foreach (var item in waveInfos[wave - 1].BattleBuildings)
+            {
+                CreateBuilding(item);
+            }
+        }
+
         public void GenerateExtraWaveEnemy(int wave)
         {
-            wave %= waveInfos.Count;
+            wave = (wave % waveInfos.Count) + 1;
             int bonus = wave / waveInfos.Count;
+
+            Debug.Log(wave);
 
             //generate first wave buildings
             foreach (var item in waveInfos[wave - 1].BattleBuildings)
@@ -185,8 +203,10 @@ namespace Canute.BattleSystem
             //generate first wave armies
             foreach (var item in waveInfos[wave - 1].BattleArmies)
             {
+                item.battleArmy.MaxHealth = item.battleArmy.MaxHealth.Bonus(20 * bonus);
                 item.battleArmy.Health = item.battleArmy.Health.Bonus(20 * bonus);
                 item.battleArmy.RawDamage = item.battleArmy.RawDamage.Bonus(20 * bonus);
+
 
                 CreateArmy(item);
             }

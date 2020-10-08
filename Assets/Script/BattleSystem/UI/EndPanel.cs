@@ -9,17 +9,10 @@ using UnityEngine.UI;
 
 namespace Canute.BattleSystem.UI
 {
+    [Obsolete]
     public class EndPanel : MonoBehaviour
     {
         public Image fadeOutImage;
-
-        public virtual void Start()
-        {
-            if (Game.CurrentBattle.CurrentStat == Battle.Stat.win)
-            {
-                Game.CurrentLevel.OpenEndStory();
-            }
-        }
 
         public void OnMouseUp()
         {

@@ -3,6 +3,8 @@ using UnityEngine;
 using Canute.StorySystem;
 using UnityEngine.UI;
 using Canute.Testing;
+using System.Collections;
+using System;
 
 namespace Canute.BattleSystem.UI
 {
@@ -39,8 +41,11 @@ namespace Canute.BattleSystem.UI
         public static PausePanel PausePanel => instance.pausePanel;
 
 
-        public ResultUI endlessEndUI;
-        public static ResultUI EndUI => instance.endlessEndUI;
+        public ResultUI endUI;
+        public static ResultUI EndUI => instance.endUI;
+
+        public Image fadeOutImage;
+        public static Image FadeOutImage => instance.fadeOutImage;
 
         public HandCardBar handCardBar;
         public static HandCardBar HandCardBar => Game.CurrentBattle.Enemy.IsInTurn ? EnemyHandCardBar : ClientHandCardBar;
@@ -56,9 +61,7 @@ namespace Canute.BattleSystem.UI
         public GameObject AIHolder;
         public List<PlayerEntity> playerEntities;
 
-        [Header("Console")]
-        public Console console;
-        public static Console Console => instance.console;
+        [Header("Debug")]
         public GameDebug debug;
         public static GameDebug DebugWindow => instance.debug;
         [Header("Camera")]
@@ -70,6 +73,13 @@ namespace Canute.BattleSystem.UI
         #endregion
 
 
+
+
+        IEnumerator InstantiateMap()
+        {
+            yield return Instantiate(Game.CurrentBattle.MapPrefab, MapAnchor.transform);
+            yield return null;
+        }
 
         public override void Awake()
         {
@@ -83,12 +93,11 @@ namespace Canute.BattleSystem.UI
                 Destroy(instance);
             }
             instance = this;
-            InitiateMapEntity();
-        }
-
-        private static void InitiateMapEntity()
-        {
-            Instantiate(Game.CurrentBattle.MapPrefab, MapAnchor.transform);
+            FadeOutImage.enabled = true;
+            var c = FadeOutImage.color;
+            c.a = 1;
+            FadeOutImage.color = c;
+            StartCoroutine(InstantiateMap());
         }
 
         // Start is called before the first frame update
@@ -107,11 +116,6 @@ namespace Canute.BattleSystem.UI
         private void Update()
         {
             Game.CurrentBattle.EndCheck();
-        }
-
-        private void OnMouseDown()
-        {
-            Game.CurrentBattle.GetHandCard(Game.CurrentBattle.Player, 1);
         }
 
         /// <summary>
@@ -135,6 +139,8 @@ namespace Canute.BattleSystem.UI
             Entity.entities.Add(aI);
             playerEntities.Add(aI);
         }
+
+        #region Messenger
 
         /// <summary>
         /// send game message, only when player is assigned to be the local player or did not assign the player can send message
@@ -193,11 +199,14 @@ namespace Canute.BattleSystem.UI
 
         public static void SendMessage(BattleEvent message, Color color, Player player = null, params string[] param) => SendMessage(message.Lang(), color, player, param);
 
+
+        #endregion
+
         /// <summary>
         /// control player's down bars(army bar, hand card bar)
         /// </summary>
         /// <param name="value"></param>
-        public static void SetDownBarsActive(bool value)
+        public static void SetPlayerDownBarsActive(bool value)
         {
             if (!instance)
             {
@@ -235,12 +244,74 @@ namespace Canute.BattleSystem.UI
             }
         }
 
+        public static void ShowEndUI()
+        {
+            instance.StartCoroutine(instance.ReadyShowEndUI());
+        }
+
+        public static Coroutine FadeOutBattle()
+        {
+            return instance.StartCoroutine(instance.FadeOut());
+        }
+
+        public static Coroutine FadeInBattle()
+        {
+            return instance.StartCoroutine(instance.FadeIn());
+        }
+
+        public IEnumerator ReadyShowEndUI()
+        {
+            while (StoryDisplayer.currentStory || LetterDisplayer.instance)
+            {
+                yield return new WaitForFixedUpdate();
+            }
+
+            EndUI.gameObject.SetActive(true);
+            yield return null;
+        }
+
+        public IEnumerator FadeOut()
+        {
+            fadeOutImage.enabled = true;
+            Color color = fadeOutImage.color;
+            color.a = 0;
+            fadeOutImage.color = color;
+
+            while (true)
+            {
+                color = fadeOutImage.color;
+                color.a += Time.deltaTime;
+                fadeOutImage.color = color;
+                if (fadeOutImage.color.a > 1) { yield break; }
+                else { yield return new WaitForEndOfFrame(); }
+            }
+        }
+
+        public IEnumerator FadeIn()
+        {
+            fadeOutImage.enabled = true;
+            Color color = fadeOutImage.color;
+            color.a = 1;
+            fadeOutImage.color = color;
+
+            while (true)
+            {
+                color = fadeOutImage.color;
+                color.a -= Time.deltaTime;
+                fadeOutImage.color = color;
+                if (fadeOutImage.color.a < 0) { break; }
+                else { yield return new WaitForEndOfFrame(); }
+            }
+            fadeOutImage.enabled = false;
+        }
+
         #region Battle UI Control
 
         /// <summary>
         /// set all ui in active
         /// </summary>
         /// <param name="value"></param>
+        [Obsolete]
         public static void SetUIActive(bool value)
         {
             if (!instance)
@@ -256,7 +327,6 @@ namespace Canute.BattleSystem.UI
             ArmyBar.enabled = value;
             PausePanel.enabled = value;
             ClientHandCardBar.enabled = value;
-            EndUI.enabled = value;
 
             if (Game.Configuration.PvP)
             {
@@ -272,19 +342,31 @@ namespace Canute.BattleSystem.UI
 
         public static void SetUIInteractive(bool value)
         {
-            if (!instance)
-            {
-                return;
-            }
-
+            if (!instance) return;
             Raycaster.enabled = value;
-            Debug.Log("Raycaster turn on: " + Raycaster.enabled);
+            //Debug.Log("Raycaster turn on: " + Raycaster.enabled);
         }
 
+        public static void SetUICanvasActive(bool value)
+        {
+            if (!instance) return;
+            Raycaster.enabled = value;
+            UICanvas.enabled = value;
+        }
+
+        public static void ToggleUICanvas()
+        {
+            Raycaster.enabled = !UICanvas.enabled;
+            UICanvas.enabled = !UICanvas.enabled;
+        }
         #endregion
 
         #region Window
 
+        /// <summary>
+        /// open a window in the battle
+        /// </summary>
+        /// <param name="window"></param>
         public static void ToggleWindow(IWindow window)
         {
             if (!window.enabled)
@@ -293,6 +375,7 @@ namespace Canute.BattleSystem.UI
                 currentWindow.Open();
                 SetUIInteractive(false);
             }
+            //if the window component is not enabled
             else
             {
                 window.Close();
@@ -301,6 +384,9 @@ namespace Canute.BattleSystem.UI
             }
         }
 
+        /// <summary>
+        /// close current window
+        /// </summary>
         public static void CloseCurrentWindow()
         {
             currentWindow?.Close();

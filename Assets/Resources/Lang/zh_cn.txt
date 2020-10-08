@@ -16,6 +16,8 @@ Canute.LevelTree.Level.1-2.subtitle=第一次遭遇色布提亚据点
 Canute.LevelTree.Level.1-2.title=1-2 色布提亚据点
 Canute.LevelTree.Level.7-inf.subtitle=日常战役
 Canute.LevelTree.Level.7-inf.title=基地外
+Canute.LevelTree.Level.Ch7-1.subtitle=Daily battle
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Basement outside
 #Currency
 Canute.Shops.Currency+Type.fedgram=联邦克
 Canute.Shops.Currency+Type.manpower=人力
@@ -246,6 +248,7 @@ Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=Card did not pla
 Canute.BattleSystem.BattleEventError.armyNoTarget=军队攻击范围内没有敌方
 Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: target is under protection
 Canute.BattleSystem.BattleEventError.armyCannotAttack=军队不能攻击
+Canute.BattleSystem.BattleEventError.ArmyNoTargetInAttackRage=No Target is in attack range
  
 
 #Tips
@@ -346,6 +349,7 @@ Canute.UI.SceneName.Hallway=过道
 Canute.UI.SceneName.LegionSetting=军队设置
 Canute.UI.SceneName.EventCard=事件牌堆
 Canute.UI.SceneName.Settings=设置
+Canute.UI.SceneName.StoryRoom=故事
 ##UI
 Canute.UI.Common.Back=<<<
 Canute.UI.Common.LegionSetting=军队
@@ -366,8 +370,11 @@ Canute.UI.Start.NewGame=新开始
 Canute.UI.Start.Settings=设置
 Canute.UI.Start.Credit=制作团队
 Canute.UI.Start.Games=其他存档
+Canute.UI.Start.Quit=退出
+Canute.UI.Start.Quit.Check=确认退出吗?
 
 Canute.UI.MainHall.Training=训练
+Canute.UI.MainHall.NextBattle=下一次战斗
 Canute.UI.MainHall.Basement=基地日常
 Canute.UI.MainHall.Legion=军队
 Canute.UI.MainHall.Pile=事件牌

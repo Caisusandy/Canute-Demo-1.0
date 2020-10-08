@@ -58,10 +58,7 @@ namespace Canute.BattleSystem
         #region Mouse operation
         public override void OnMouseDown()
         {
-            if (BattleUI.Raycaster.enabled == false)
-            {
-                return;
-            }
+            if (!BattleUI.Raycaster.enabled) return;
 
             Debug.Log("touch card");
             if (!isSelected)
@@ -79,10 +76,7 @@ namespace Canute.BattleSystem
 
         public override void OnMouseDrag()
         {
-            if (BattleUI.Raycaster.enabled == false)
-            {
-                return;
-            }
+            if (!BattleUI.Raycaster.enabled) return;
 
             isDraging = true;
             TryDrag();
@@ -90,10 +84,7 @@ namespace Canute.BattleSystem
 
         public override void OnMouseUp()
         {
-            if (BattleUI.Raycaster.enabled == false)
-            {
-                return;
-            }
+            if (!BattleUI.Raycaster.enabled) return;
 
             isDraging = false;
             if (wasSelected) Unselect();
@@ -248,7 +239,7 @@ namespace Canute.BattleSystem
                 Destroy(GetComponent<Motion>());
             //if (Game.CurrentBattle.Round.CurrentStat != Round.Stat.gameStart)
             //    InPerformingAnimation();
-            transform.position = Control.UserInputPosition + new Vector3(0, 0, 10);
+            transform.position = BattleControl.UserInputPosition + new Vector3(0, 0, 10);
             //Debug.Log(transform.position);
             //Debug.Log(Control.UserInputPosition);
         }
@@ -496,7 +487,7 @@ namespace Canute.BattleSystem
             return cardEntity;
         }
 
-        public static List<CardEntity> GetHandCard(Player player)
+        public static List<CardEntity> GetAllHandCardEntities(Player player)
         {
             List<CardEntity> cardEntities = new List<CardEntity>();
 

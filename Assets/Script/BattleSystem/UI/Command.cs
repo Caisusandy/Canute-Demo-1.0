@@ -285,17 +285,17 @@ namespace Canute.Testing
 
         private static bool OpenBattle(string[] commandParams)
         {
-            Game.LoadBattle(GameData.Chapters.ChapterTree.GetLevel(commandParams[1]), new LegionSet(Game.PlayerData.Legions[0], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, Game.PlayerData.Leaders[0].Name));
+            Game.LoadBattle(GameData.Levels.GetLevel(commandParams[1]), new LegionSet(Game.PlayerData.Legions[0], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, Game.PlayerData.Leaders[0].Name));
             return true;
         }
         private static bool OpenTutorial()
         {
-            Game.LoadBattle(GameData.Chapters.ChapterTree.GetLevel("Tutorial"), new LegionSet());
+            Game.LoadBattle(GameData.Levels.GetLevel("Tutorial"), new LegionSet());
             return true;
         }
         private static bool OpenEmptyBattle()
         {
-            Game.LoadBattle(GameData.Chapters.ChapterTree.GetLevel("Empty Battle"), new LegionSet());
+            Game.LoadBattle(GameData.Levels.GetLevel("Empty Battle"), new LegionSet());
             return true;
         }
 

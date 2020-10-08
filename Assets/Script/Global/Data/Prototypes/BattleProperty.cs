@@ -52,6 +52,7 @@ namespace Canute.BattleSystem
         [Tooltip("目标位置")] [SerializeField] private Position attackPosition;
         [Header("Target Related")]
         [Tooltip("群伤范围")] [SerializeField] private int attackArea;
+        [Tooltip("攻击次数")] [SerializeField] private int damageExtraCount;
         [Tooltip("目标选择")] [SerializeField] private int targetCount;
         [Tooltip("攻击方式")] [SerializeField] private AttackType attackType;
         [Tooltip("技能    ")] [SerializeField] private HalfSkillEffect skill;
@@ -68,6 +69,7 @@ namespace Canute.BattleSystem
         public Position StandPosition { get => standPosition; set => standPosition = value; }
         public Position AttackPosition { get => attackPosition; set => attackPosition = value; }
         public AttackType Attack { get => attackType; set => attackType = value; }
+        public int DamageExtraCount { get => damageExtraCount; set => damageExtraCount = value; }
         public int AttackArea { get => attackArea; set => attackArea = value; }
         public int TargetCount { get => targetCount; set => targetCount = value; }
         public HalfSkillEffect SkillPack => skill;
@@ -82,6 +84,7 @@ namespace Canute.BattleSystem
             moveRange = 4;
             pop = 1;
             attackArea = 1;
+            damageExtraCount = 1;
             targetCount = 1;
 
             standPosition = Position.none;
@@ -106,6 +109,7 @@ namespace Canute.BattleSystem
             attackType = armyItem.BaseProperty.Attack;
             attackArea = armyItem.BaseProperty.AttackArea;
             targetCount = armyItem.BaseProperty.TargetCount;
+            damageExtraCount = armyItem.BaseProperty.DamageExtraCount;
 
             skill = armyItem.BaseProperty.SkillPack;
             addition = armyItem.BaseProperty.Addition;
@@ -130,6 +134,7 @@ namespace Canute.BattleSystem
             attackType = armyItem.BaseProperty.Attack;
             attackArea = armyItem.BaseProperty.AttackArea;
             targetCount = armyItem.BaseProperty.TargetCount;
+            damageExtraCount = armyItem.BaseProperty.DamageExtraCount;
 
             skill = armyItem.BaseProperty.SkillPack;
             addition = armyItem.BaseProperty.Addition;

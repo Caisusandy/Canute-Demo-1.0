@@ -17,9 +17,14 @@ MonoBehaviour:
     battleType: 0
     avoidPlayerDefinedLegionSet: 1
     prizes:
-    - name: 
-      count: 5000
-      type: 8
+    - name: Prologue2
+      count: 1
+      parameter: 0
+      type: 6
+    - name: Prologue3
+      count: 1
+      parameter: 0
+      type: 6
     enemy:
       name: Anexar Flotics
       prefab: {fileID: 0}
@@ -134,12 +139,13 @@ MonoBehaviour:
         actionPoint: 0
     armies: []
     buildings: []
-    globalStatus: []
+    globalStatus:
+      list: []
     ongoingAnimation: []
     passedEffect: []
     scoreBoard:
       list: []
       allPassedEffect: []
-      totalPlayerDamage: 0
+      totalPlayerDamage: 366
       totalAirforceDefeated: 0
-      totalLandArmyDefeated: 0
+      totalLandArmyDefeated: 3

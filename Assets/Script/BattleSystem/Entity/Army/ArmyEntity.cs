@@ -65,6 +65,7 @@ namespace Canute.BattleSystem
 
         public override void OnMouseDown()
         {
+            if (!BattleUI.Raycaster.enabled) return;
             if (isSelected)
             {
                 ArmyObject.transform.localScale /= 1.1f;

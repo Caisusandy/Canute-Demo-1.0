@@ -33,7 +33,7 @@ namespace Canute.UI.LevelStart
         public Canute.Legion Legion { get => legion; set => legion = value; }
         public Canute.EventCardPile Pile { get => pile; set => pile = value; }
         private LegionSet LegionSet => new LegionSet(Legion, Pile, LeaderItem.UUID, "Canute Svensson");
-        private Level Level => GameData.Chapters.ChapterTree.GetLevel(levelName);
+        private Level Level => GameData.Levels.GetLevel(levelName);
 
 
         private void Awake()
@@ -45,8 +45,8 @@ namespace Canute.UI.LevelStart
         // Start is called before the first frame update
         void Start()
         {
-            title.text = Level.Lang("title");
-            subtitle.text = Level.Lang("subtitle");
+            title.text = Level.Title;
+            subtitle.text = Level.Subtitle;
             startButton.interactable = false;
         }
 

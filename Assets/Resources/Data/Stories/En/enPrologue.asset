@@ -16,9 +16,220 @@ MonoBehaviour:
     id: Prologue
     type: 0
     wordLines:
-    - id: 
-      speakerName: 
-      line: This is Prologue, for now
+    - id: Prologue.1
+      speakerName: Ron Thompson
+      line: 'If you only needed to force one person to work hard for everyone to
+        achieve the prosperity of all other human beings, would you do that?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.2
+      speakerName: Canute Swenson
+      line: 'I don''t see the point of the question.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.3
+      speakerName: Ron Thompson
+      line: 'I just want to ask to see what your answer is.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.4
+      speakerName: Canute Swenson
+      line: 'I will not answer.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.5
+      speakerName: Ron Thompson
+      line: 'Then you give up the interests of everyone else, and you know that being
+        rich requires someone to pay for him.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.6
+      speakerName: Canute Swenson
+      line: 'What if I say I do?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.7
+      speakerName: Ron Thompson
+      line: 'What if there were two people? Would you continue to say you would?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.8
+      speakerName: Canute Swenson
+      line: 'There is no difference between two people and one person in such a big
+        world.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.9
+      speakerName: Ron Thompson
+      line: 'So three or four makes no difference to you, right?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.10
+      speakerName: Canute Swenson
+      line: 'Almost.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.11
+      speakerName: Ron Thompson
+      line: 'What about one-third of the total human population?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.12
+      speakerName: Canute Swenson
+      line: 'I think you are changing the concept. The difference between one or
+        two people and one-third of the total population is dramatically different
+        in nature.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.13
+      speakerName: Ron Thompson
+      line: 'Would the number of people change your answer?? Is that really important
+        here?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.14
+      speakerName: Canute Swenson
+      line: 'What matters here is that it is impossible for us to enslave a person,
+        which is totally unethical. This question is also meaningless.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.15
+      speakerName: Ron Thompson
+      line: 'Maybe I exaggerated the words. Let me rephrase that a little. If you
+        can use one''s wealth to make everyone rich, what would you do?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.16
+      speakerName: Canute Swenson
+      line: 'The situation has not changed. It is impossible to rob a person''s properties.
+        This is robbery.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.17
+      speakerName: Ron Thompson
+      line: "If it\u2019s called robbery when an individual doe sit, what is it called
+        when a state does?\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.18
+      speakerName: Canute Swenson
+      line: 'War.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.19
+      speakerName: Ron Thompson
+      line: 'If one''s wealth can be used to make everyone rich, can one country''s
+        wealth be used to make another country rich?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.20
+      speakerName: Canute Swenson
+      line: 'This is total exploitation.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.21
+      speakerName: Ron Thompson
+      line: 'If someone is rich, it means that someone else is poor. There must be
+        a price to make some people rich, which is poverty for others.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.22
+      speakerName: Canute Swenson
+      line: 'The Federacy once had a golden age, and everyone was in a utopia-standard
+        life.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - id: Prologue.23
+      speakerName: Ron Thompson
+      line: 'And who is supporting the Utopia of the Human Federation?
+
+'
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0

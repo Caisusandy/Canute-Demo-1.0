@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.BattleSystem.UI;
+using System;
 using System.Linq;
 using UnityEngine;
 namespace Canute.BattleSystem

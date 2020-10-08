@@ -10,10 +10,47 @@ namespace Canute.LevelTree
     public class Chapters : ScriptableObject
     {
         #region Chapters
+        [SerializeField] protected Level tutorial;
         [SerializeField] protected ChapterTree chapterTree;
+        [SerializeField] protected Chapter Extra = new Chapter();
 
         public ChapterTree ChapterTree { get => chapterTree; set => chapterTree = value; }
 
+        public Level GetLevel(string name)
+        {
+            if (name == "Tutorial")
+            {
+                return tutorial;
+            }
+
+            foreach (Level item in ChapterTree.Levels)
+            {
+                if (item.Name == name)
+                {
+                    return item;
+                }
+            }
+            foreach (Level item in Extra)
+            {
+                if (item.Name == name)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        public Level GetNext()
+        {
+            foreach (Level item in ChapterTree.CurrentStory)
+            {
+                if (!item.IsPassed)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
         public void OnValidate()
         {
 
@@ -59,19 +96,10 @@ namespace Canute.LevelTree
             Extra = new Chapter();
         }
 
-        private IEnumerable<Level> Levels => Chapter1.Union(Chapter2).Union(Chapter3).Union(Chapter4).Union(Chapter5).Union(Chapter6).Union(Chapter7).Union(Extra);
+        public IEnumerable<Level> Levels => Chapter1.Union(Chapter2).Union(Chapter3).Union(Chapter4).Union(Chapter5).Union(Chapter6).Union(Chapter7).Union(Extra);
 
-        public Level GetLevel(string name)
-        {
-            foreach (Level item in Levels)
-            {
-                if (item.Name == name)
-                {
-                    return item;
-                }
-            }
-            return null;
-        }
+        public IEnumerable<Level> CurrentStory => Chapter7;
+
     }
 
 

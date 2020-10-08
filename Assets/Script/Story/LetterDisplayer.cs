@@ -28,6 +28,10 @@ namespace Canute.StorySystem
         {
             instance = this;
             timer = 0;
+            if (BattleSystem.UI.BattleUI.instance)
+            {
+                BattleSystem.UI.BattleUI.SetUIInteractive(false);
+            }
         }
         // Use this for initialization
         private void Start()
@@ -55,7 +59,7 @@ namespace Canute.StorySystem
         // Update is called once per frame
         private void Update()
         {
-            if (!(BattleSystem.UI.BattleUI.instance is null))
+            if (BattleSystem.UI.BattleUI.instance)
             {
                 BattleSystem.UI.BattleUI.SetUIInteractive(false);
             }
@@ -75,7 +79,7 @@ namespace Canute.StorySystem
 
         public void OnDestroy()
         {
-            if (!(BattleSystem.UI.BattleUI.instance is null))
+            if (BattleSystem.UI.BattleUI.instance)
             {
                 BattleSystem.UI.BattleUI.SetUIInteractive(true);
             }

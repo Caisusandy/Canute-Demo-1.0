@@ -19,8 +19,8 @@ namespace Canute.BattleSystem.UI
         // Start is called before the first frame update
         private void Start()
         {
-            title.text = Game.CurrentLevel.Lang("title");
-            subtitle.text = Game.CurrentLevel.Lang("subtitle");
+            title.text = Game.CurrentLevel.Title;
+            subtitle.text = Game.CurrentLevel.Subtitle;
             Close();
         }
 

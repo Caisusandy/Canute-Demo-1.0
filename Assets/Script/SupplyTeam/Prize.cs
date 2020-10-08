@@ -46,12 +46,12 @@ namespace Canute
                     Debug.LogWarning("there is something wrong with the prize");
                     break;
                 case Item.Type.story:
-                    StoryDisplayer.Load(Story.Get(name));
+                    //StoryDisplayer.Load(Story.Get(name));
                     Game.PlayerData.AddCollectionStory(name);
                     //
                     break;
                 case Item.Type.letter:
-                    LetterDisplayer.Load(Letter.Get(name));
+                    //LetterDisplayer.Load(Letter.Get(name));
                     Game.PlayerData.AddCollectionLetter(name);
                     break;
                 case Item.Type.army:

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Canute.BattleSystem.UI
 {
-    public class ResultUI : EndPanel
+    public class ResultUI : MonoBehaviour
     {
         public int playerScore;
 
@@ -24,10 +24,41 @@ namespace Canute.BattleSystem.UI
 
         public GameObject armyIcons;
 
-        // Start is called before the first frame update
-        public override void Start()
+        public void OnMouseUp()
         {
-            base.Start();
+            StartCoroutine(Fade());
+        }
+
+        public void Close()
+        {
+            StartCoroutine(Fade());
+        }
+
+        public IEnumerator Fade()
+        {
+            yield return BattleUI.FadeOutBattle();
+            yield return new EntityEventPack(Clear).Execute();
+
+            void Clear(params object[] vs)
+            {
+                Debug.Log("Clear scene");
+
+                Game.ClearBattle();
+                SceneControl.GotoScene(MainScene.mainHall);
+            }
+        }
+
+        public static void Clear(params object[] vs)
+        {
+            Debug.Log("Clear scene");
+
+            Game.ClearBattle();
+            SceneControl.GotoScene(MainScene.mainHall);
+        }
+
+        // Start is called before the first frame update
+        public void Start()
+        {
             playerScore = Game.CurrentBattle.ScoreBoard.GetScore();
 
             ShowTitle();
@@ -37,6 +68,7 @@ namespace Canute.BattleSystem.UI
             ShowArmyExpIncrease();
 
             BattleUI.SetUIInteractive(false);
+            BattleUI.SetUICanvasActive(false);
             OnMapEntity.SetAllEntityCollider(false);
         }
 
@@ -65,7 +97,11 @@ namespace Canute.BattleSystem.UI
                 icons.Add(item);
             }
 
-            for (int i = 0; i < Game.CurrentBattle.Player.LegionSet.Legion.RealArmyCount; i++)
+            int realArmyCount = 0;
+            if (Game.CurrentBattle.Player.LegionSet.Legion != null)
+                realArmyCount = Game.CurrentBattle.Player.LegionSet.Legion.RealArmyCount;
+
+            for (int i = 0; i < realArmyCount; i++)
             {
                 var item = icons[i];
                 ArmyItem armyItem = Game.CurrentBattle.Player.LegionSet.Legion.RealArmies.ToArray()[i];
@@ -79,7 +115,7 @@ namespace Canute.BattleSystem.UI
                 item.Find("add").GetComponent<Text>().text = "+" + exp;
                 item.Find("cur").GetComponent<Text>().text = armyItem.Exp + "/" + armyItem.NextLevelExp;
             }
-            for (int i = Game.CurrentBattle.Player.LegionSet.Legion.RealArmyCount; i < 6; i++)
+            for (int i = realArmyCount; i < 6; i++)
             {
                 Destroy(icons[i].gameObject);
             }

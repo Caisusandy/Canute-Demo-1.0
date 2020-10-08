@@ -83,6 +83,7 @@ namespace Canute.StorySystem
 
         public static implicit operator bool(Story story)
         {
+            if (story.Name == "Empty") return false;
             return !story.Equals(Empty);
         }
 
@@ -104,6 +105,11 @@ namespace Canute.StorySystem
         public static Story Get(string id)
         {
             return GameData.Stories.StoryTree.Get(id);
+        }
+
+        public override string ToString()
+        {
+            return id;
         }
     }
 

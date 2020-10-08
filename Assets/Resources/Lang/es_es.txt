@@ -2,11 +2,11 @@
 #(actually, if there are no equal sign, it will be treat as a comment)
 
 #Career
-Canute.Career.Scholar=Scholar
-Canute.Career.Politician=Politician
+Canute.Career.Scholar=Erudito
+Canute.Career.Politician=Político
 Canute.Career.General=General
-Canute.Career.Merchant=Merchant
-Canute.Career.None=None
+Canute.Career.Merchant=Comerciante
+Canute.Career.None=Ninguno
 #Title
 Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
@@ -16,54 +16,56 @@ Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
 Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
 Canute.LevelTree.Level.7-inf.subtitle=Daily battle
 Canute.LevelTree.Level.7-inf.title=Basement outside
+Canute.LevelTree.Level.Ch7-1.subtitle=Daily battle
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Basement outside
 #Currency
 Canute.Shops.Currency+Type.fedgram=Federgram
-Canute.Shops.Currency+Type.manpower=Manpower
-Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
+Canute.Shops.Currency+Type.manpower=Mano de Obra
+Canute.Shops.Currency+Type.mantleAlloy=Manta de Aloy
 Canute.Shops.Currency+Type.aethium=Aethium
 #
-Canute.BattleSystem.PropertyType.level=level
-Canute.BattleSystem.PropertyType.damage=damage
-Canute.BattleSystem.PropertyType.health=health
-Canute.BattleSystem.PropertyType.defense=defense
-Canute.BattleSystem.PropertyType.moveRange=move range
-Canute.BattleSystem.PropertyType.attackRange=attack range
-Canute.BattleSystem.PropertyType.critRate=crit rate
-Canute.BattleSystem.PropertyType.critBonus=crit bonus
-Canute.BattleSystem.PropertyType.pop=pop
-Canute.BattleSystem.PropertyType.armor=armor
-Canute.BattleSystem.PropertyType.anger=anger
+Canute.BattleSystem.PropertyType.level=Nivel
+Canute.BattleSystem.PropertyType.damage=Daño
+Canute.BattleSystem.PropertyType.health=Salud
+Canute.BattleSystem.PropertyType.defense=Defense
+Canute.BattleSystem.PropertyType.moveRange=Alcance de Movimiento
+Canute.BattleSystem.PropertyType.attackRange=Alacance de Attaque
+Canute.BattleSystem.PropertyType.critRate=Critical Attack Rate
+Canute.BattleSystem.PropertyType.critBonus=Critical Attack Bonus
+Canute.BattleSystem.PropertyType.pop=Population
+Canute.BattleSystem.PropertyType.armor=Armadura
+Canute.BattleSystem.PropertyType.anger=Ira
 #
-Canute.BattleSystem.BattleProperty.AttackType=Attack Type
-Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
+Canute.BattleSystem.BattleProperty.AttackType=Tipo de Attaque
+Canute.BattleSystem.BattleProperty+AttackType.none=Incapaz de Atacar
 Canute.BattleSystem.BattleProperty+AttackType.melee=Melee
-Canute.BattleSystem.BattleProperty+AttackType.projectile=Projectile
-Canute.BattleSystem.BattleProperty+AttackType.single=Single
-Canute.BattleSystem.BattleProperty+AttackType.singleMelee=Single Melee
-Canute.BattleSystem.BattleProperty+AttackType.singleProjectile=Single Projectile
+Canute.BattleSystem.BattleProperty+AttackType.projectile=Proyectil
+Canute.BattleSystem.BattleProperty+AttackType.single=Individual
+Canute.BattleSystem.BattleProperty+AttackType.singleMelee=Malee Individual 
+Canute.BattleSystem.BattleProperty+AttackType.singleProjectile=Proyectil Individual
 Canute.BattleSystem.BattleProperty+AttackType.area=Area
-Canute.BattleSystem.BattleProperty+AttackType.areaMelee=Area Melee
-Canute.BattleSystem.BattleProperty+AttackType.areaProjectile=Area Projectile 
-Canute.BattleSystem.BattleProperty+AttackType.splash=Splash
+Canute.BattleSystem.BattleProperty+AttackType.areaMelee=Area del Melee
+Canute.BattleSystem.BattleProperty+AttackType.areaProjectile=Proyectil de Area 
+Canute.BattleSystem.BattleProperty+AttackType.splash=Splash 
 Canute.BattleSystem.BattleProperty+AttackType.splashMelee=Splash Melee
 Canute.BattleSystem.BattleProperty+AttackType.splashProjectile=Splash Projectile
 #
-Canute.BattleSystem.BattleProperty.StandPosition=Stand Position
-Canute.BattleSystem.BattleProperty.AttackPosition=Attack Position
-Canute.BattleSystem.BattleProperty+Position.land=Land
-Canute.BattleSystem.BattleProperty+Position.air=Air
-Canute.BattleSystem.BattleProperty+Position.all=Any
-Canute.BattleSystem.BattleProperty+Position.none=None
+Canute.BattleSystem.BattleProperty.StandPosition=Posisión de Estado
+Canute.BattleSystem.BattleProperty.AttackPosition=Posisión de Attaque
+Canute.BattleSystem.BattleProperty+Position.land=Tierra
+Canute.BattleSystem.BattleProperty+Position.air=Aire
+Canute.BattleSystem.BattleProperty+Position.all=Cualquier
+Canute.BattleSystem.BattleProperty+Position.none=Ninguno
 #
 Canute.Army+Types.mage=Mage
-Canute.Army+Types.warMachine=War Machine
-Canute.Army+Types.infantry=Infantry
-Canute.Army+Types.shielder=Shielder
-Canute.Army+Types.cavalry=Cavalry
-Canute.Army+Types.rifleman=Rifleman
-Canute.Army+Types.aircraftFighter=AircraftFighter
-Canute.Army+Types.airship=airship
-Canute.Army+Types.dragon=dragon
+Canute.Army+Types.warMachine=Maquina de Guerra
+Canute.Army+Types.infantry=Infantería
+Canute.Army+Types.shielder=Escudo
+Canute.Army+Types.cavalry=Caballería
+Canute.Army+Types.rifleman=Fusilero
+Canute.Army+Types.aircraftFighter=Avión de Combate
+Canute.Army+Types.airship=Dirigible
+Canute.Army+Types.dragon=Dragón
 #
 Canute.Army.Alpha Army.name=A
 Canute.Army.Beta Army.name=B
@@ -151,6 +153,8 @@ Canute.BattleSystem.Effect+Types.EMPImpact=EMP Impact
 Canute.BattleSystem.Effect+Types.EMPImpact.info=Army cannot do anything.
 Canute.BattleSystem.Effect+Types.flashLight=Flash Light
 Canute.BattleSystem.Effect+Types.flashLight.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.motherOf=Mothership.
+Canute.BattleSystem.Effect+Types.motherOf.info=$targetName's Mothership.
 
 
 #resonance
@@ -244,6 +248,7 @@ Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=Card did not pla
 Canute.BattleSystem.BattleEventError.armyNoTarget=no enemy is in attack range  
 Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: target is under protection
 Canute.BattleSystem.BattleEventError.ArmyCannotAttack=it can't attack anyone 
+Canute.BattleSystem.BattleEventError.ArmyNoTargetInAttackRage=No Target is in attack range
 
 #Tips
 Canute.Tips.0=Place Card On the Army to use it.
@@ -257,7 +262,7 @@ Canute.Tips.7=Riflemen attack every enemy in a line.
 Canute.Tips.8=Aircraft Fighters have to go back to its airport at the end of the turn.
 Canute.Tips.9=Airships can sent more aircraft fighter.
 Canute.Tips.10=No army can penetrate Shielder's shield, some special event maybe.
-Canute.Tips.11=Every attack would cause at least 1 damage
+Canute.Tips.11=Every attack would cause at least 1 damage.
 Canute.Tips.12=Using the card that matched with army's career would cause 1 less action point.
 Canute.Tips.13=Dragons knows magic better than those mage, they can boot up the army for some cost...
 Canute.Tips.14=Resonance happens when more same type of army exist.
@@ -338,49 +343,62 @@ Canute.Character.Empty.supplyTeamComeBackWithStory=
 Canute.Character.Empty.supplyTeamComeBackWithLetter= 
 
 #SceneName
-Canute.UI.SceneName.Exploration=Supply Team
-Canute.UI.SceneName.Shop=Shop
-Canute.UI.SceneName.Hallway=Hallway
+Canute.UI.SceneName.Exploration=Equipo de Suministro
+Canute.UI.SceneName.Shop=Tienda
+Canute.UI.SceneName.Hallway=Pasillo
+Canute.UI.SceneName.LegionSetting=Escenario de Legión
+Canute.UI.SceneName.EventCard=Tarjetas de Eventos
 Canute.UI.SceneName.LegionSetting=Legion Setting
-Canute.UI.SceneName.EventCard=Event Card Pile
+Canute.UI.SceneName.Settings=Configuración
 ##UI
-Canute.UI.Common.Back=Back
-Canute.UI.Common.LegionSetting=Army
-Canute.UI.Common.Armies=Army
-Canute.UI.Common.Equipments=Equipments
-Canute.UI.Common.EventCard=EventCard
+Canute.UI.Common.Back=Regresar
+Canute.UI.Common.LegionSetting=Ejército
+Canute.UI.Common.Armies=Ejército
+Canute.UI.Common.Equipments=Equipo
+Canute.UI.Common.EventCard=Tarjeta de Evento
 #
-Canute.UI.LegionSetting.Upgrade=Upgrade
-Canute.UI.LegionSetting.Change=Change
-Canute.UI.LegionSetting.Left=Left
-Canute.UI.LegionSetting.Legion1=Legion 1
-Canute.UI.LegionSetting.Legion2=Legion 2
-Canute.UI.LegionSetting.Legion3=Legion 3
+Canute.UI.LegionSetting.Upgrade=Mejorar
+Canute.UI.LegionSetting.Change=Cambiar
+Canute.UI.LegionSetting.Left=Izquierda
+Canute.UI.LegionSetting.Legion1=Legión 1
+Canute.UI.LegionSetting.Legion2=Legión 2
+Canute.UI.LegionSetting.Legion3=Legión 3
 #
-Canute.UI.Start.Continue=Continue
-Canute.UI.Start.Saves=Saves
-Canute.UI.Start.NewGame=New Game
-Canute.UI.Start.Settings=Settings
-Canute.UI.Start.Credit=Credit
+Canute.UI.Start.Continue=Continuar
+Canute.UI.Start.Saves=Other Progreso
+Canute.UI.Start.NewGame=Nuevo Juego
+Canute.UI.Start.Settings=Configuración
+Canute.UI.Start.Credit=Crédito
+Canute.UI.Start.Games=Otros Progresos
 #
-Canute.UI.MainHall.Training=Training
+Canute.UI.MainHall.Training=Entrenamiento
+Canute.UI.MainHall.NextBattle=Next Battle
 Canute.UI.MainHall.Basement=Basement outside
-Canute.UI.MainHall.Legion=Legion Setting
-Canute.UI.MainHall.Pile=Card Pile Setting
-Canute.UI.MainHall.Exploration=Supply Team
-Canute.UI.MainHall.Shop=Shop
-Canute.UI.MainHall.Chapter=Battles
-Canute.UI.MainHall.Hallway=Hallway
-Canute.UI.MainHall.Quit=Quit
+Canute.UI.MainHall.Legion=Configuració de Legión
+Canute.UI.MainHall.Pile=Configuración de Tarjetas
+Canute.UI.MainHall.Exploration=Equipo de Suministro
+Canute.UI.MainHall.Shop=Tienda
+Canute.UI.MainHall.Chapter=Batallas
+Canute.UI.MainHall.Hallway=Pasillo
+Canute.UI.MainHall.Quit=Salir
 #
-Canute.Hallway.Explanation=You might find someone on the hallway...
+Canute.Hallway.Explanation=Tal vez encuentres a alguien en el pasillo....
 #
 Canute.Shop.BuyItem=Buy @itemName?Cost:@cost
 Canute.Shop.GetItem=Get @itemName
-Canute.Shop.No money=We don't have enough money for this, sir.
-Canute.Shop.Explanation=Where we can buy army, Equipment etc.
+Canute.Shop.No money=Mi Señor, no tenemos suficiente dinero.
+Canute.Shop.Explanation=Lugar para comprar ejércitos y equipos.
 #
 Canute.STPrizeDisplay.NewPrize=Supply Team get @name
 #
 Canute.SupplyTeam.Explanation=Send your leaders and one protect army to get more supply for the basement
 Canute.SupplyTeam.TeamPositionInfo=The Supply Team is in @city, @country right now.
+#
+Canute.UI.Settings.Basic=Básico
+Canute.UI.Settings.Basic.PlayCardDelay=Demora en Jugar
+Canute.UI.Settings.Basic.ShowStory=La Historia
+Canute.UI.Settings.Basic.Volume=Volume
+Canute.UI.Settings.Language=Lenguaje
+Canute.UI.Settings.Other=Otro
+Canute.UI.Settings.Other.OpenDataFolder=Abrir Folder
+Canute.UI.Settings.Other.Tutorial=Tutorial

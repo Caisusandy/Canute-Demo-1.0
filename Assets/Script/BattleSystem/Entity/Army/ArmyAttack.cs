@@ -69,7 +69,7 @@ namespace Canute.BattleSystem
             Card.LastCard.Effect.Count = 1;
             Card.LastCard.Effect.Parameter = damage;
 
-            if (attackingArmy.data.Properties.Attack.IsTypeOf(BattleProperty.AttackType.area) || attackingArmy.data.Properties.Attack.IsTypeOf(BattleProperty.AttackType.splash))
+            if (attackingArmy.data.Properties.Attack.HasFlag(BattleProperty.AttackType.area) || attackingArmy.data.Properties.Attack.HasFlag(BattleProperty.AttackType.splash))
             {
                 Card.LastCard.Effect.SetCellParam((Card.LastCard.Effect.Target as OnMapEntity).OnCellOf);
             }

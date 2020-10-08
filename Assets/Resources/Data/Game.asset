@@ -26,7 +26,7 @@ MonoBehaviour:
   chapters: {fileID: 11400000, guid: 0c5ee2335399a2147a715a19a61d75a5, type: 2}
   resonanceSheet: {fileID: 11400000, guid: 2b9677566fe85b94f863baa16160a92c, type: 2}
   excavationPrice: {fileID: 11400000, guid: ef1ff19ee3bcbc046800199ccdddf1c6, type: 2}
-  defaultBG: {fileID: 0}
+  defaultBG: {fileID: 8300000, guid: 94c23247bdbe1174682ea8f4cc00c285, type: 3}
   storyPacks:
     list:
     - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
@@ -34,21 +34,30 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/9/30 17:48:58
+      value: 2020/10/8 20:16:56
     shopInfo:
       nextRefreshTime:
-        value: 2020/9/30 7:31:42
+        value: 2020/10/8 22:11:54
       onShopArmies:
         list:
         - weight: 50
           prize:
-            name: CalayCityInfantry
+            name: "\u03A3CityInfantry"
             count: 1
             parameter: 0
             type: 2
           price:
           - name: 0
             count: 300
+        - weight: 20
+          prize:
+            name: Basic Shielder
+            count: 1
+            parameter: 0
+            type: 2
+          price:
+          - name: 0
+            count: 250
         - weight: 50
           prize:
             name: CalayCityInfantry
@@ -67,35 +76,26 @@ MonoBehaviour:
           price:
           - name: 0
             count: 300
-        - weight: 50
-          prize:
-            name: NewUtoCityInfantry
-            count: 1
-            parameter: 0
-            type: 2
-          price:
-          - name: 0
-            count: 300
       onShopEquipments:
         list:
-        - weight: 25
+        - weight: 12
           prize:
-            name: AeroReinforceArmorII
+            name: CeramicCompositeArmorIII
             count: 1
             parameter: 0
             type: 4
           price:
           - name: 3
-            count: 5
-        - weight: 25
+            count: 10
+        - weight: 50
           prize:
-            name: AeroReinforceArmorII
+            name: CeramicCompositeArmorI
             count: 1
             parameter: 0
             type: 4
           price:
           - name: 3
-            count: 5
+            count: 2
         - weight: 25
           prize:
             name: CeramicCompositeArmorII
@@ -107,29 +107,42 @@ MonoBehaviour:
             count: 10
         - weight: 25
           prize:
-            name: AeroReinforceArmorII
+            name: CeramicCompositeArmorII
             count: 1
             parameter: 0
             type: 4
           price:
           - name: 3
-            count: 5
-    federgram: 71147
-    manpower: 73147
-    mantleAlloy: 99284
+            count: 10
+    federgram: 70697
+    manpower: 73497
+    mantleAlloy: 99214
     aethium: 9996
     excaTeam:
       leadersUUID:
       - value: e04b315a-fd94-473c-9b37-51658aea9d09
-      - value: fbd94bd1-907f-4d7c-b475-2f2629496c2c
       - value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
       - value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
+      - value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
       armyUUID:
         value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
       currentPrize:
         prizeBoxes:
         - startingTime:
-            value: 2020/9/30 17:44:31
+            value: 2020/10/6 22:19:34
+          prize:
+            name: AeroReinforceArmorIII
+            count: 20
+            parameter: 0
+            type: 4
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 3
+              minutes: 4
+              seconds: 0
+        - startingTime:
+            value: 2020/10/7 1:23:34
           prize:
             name: reflection from Arthur Connors
             count: 20
@@ -142,11 +155,11 @@ MonoBehaviour:
               minutes: 30
               seconds: 0
         - startingTime:
-            value: 2020/9/30 20:14:31
+            value: 2020/10/7 3:53:34
           prize:
-            name: manpower
-            count: 100
-            parameter: 200
+            name: fedgram
+            count: 300
+            parameter: 50
             type: 7
             leaderRequirement: []
             armyRequirement: 
@@ -155,18 +168,18 @@ MonoBehaviour:
               minutes: 15
               seconds: 0
         - startingTime:
-            value: 2020/9/30 20:29:31
+            value: 2020/10/7 4:08:34
           prize:
-            name: AeroReinforceArmorIV
-            count: 5
-            parameter: 0
-            type: 4
+            name: manpower
+            count: 200
+            parameter: 100
+            type: 7
             leaderRequirement: []
             armyRequirement: 
             time:
-              hours: 3
-              minutes: 44
-              seconds: 44
+              hours: 0
+              minutes: 15
+              seconds: 0
     legions:
     - armiesUUID:
       - value: 52112c80-724e-4bca-a5c2-9dbf17289460
@@ -177,17 +190,17 @@ MonoBehaviour:
       - value: 00000000-0000-0000-0000-000000000000
     - armiesUUID:
       - value: d7de1817-696d-4933-8760-58a88831f6a9
-      - value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
+      - value: 1ae6066c-8c0d-4f4a-9689-1405aa073c4f
       - value: a038f585-42bf-4590-97f4-917614bdb7fa
       - value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
       - value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
-      - value: 00000000-0000-0000-0000-000000000000
+      - value: fd1e89aa-39f5-43cb-b023-45e409eb49b6
     - armiesUUID:
       - value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
       - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
       - value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
       - value: 02c76a26-a718-4a60-9a1d-1d714f28cf0b
-      - value: 00000000-0000-0000-0000-000000000000
+      - value: 826c6717-7099-4429-a4fe-93a427845a31
       - value: 00000000-0000-0000-0000-000000000000
     eventCardPiles:
     - eventCardUUID: []
@@ -309,13 +322,16 @@ MonoBehaviour:
     - protoName: Basic Infantry
       uuid:
         value: 3e684102-1973-4a78-be26-8acd8e36e5be
-      exp: 5002000
+      exp: 5005000
       floatExp: 0
       star: 2
       LeaderName: 
       equipments:
-        equipmentUUID: []
-        equipmentLimit: 
+        equipmentUUID:
+        - value: 9dc401ce-d680-4b55-8fcc-476ca121a082
+        - value: b606c826-8f92-4853-adfc-78ae00e0e5b0
+        - value: 4f1efc95-8efd-48ac-b902-f9eaa5d68e91
+        equipmentLimit: 030000000300000003000000
     - protoName: Basic Infantry
       uuid:
         value: f2f3e043-8965-42ed-b8a3-963e06d488b2
@@ -342,7 +358,7 @@ MonoBehaviour:
     - protoName: Basic Shielder
       uuid:
         value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
-      exp: 5003000
+      exp: 5009000
       floatExp: 0
       star: 2
       LeaderName: 
@@ -446,7 +462,7 @@ MonoBehaviour:
     - protoName: Basic Cavalry
       uuid:
         value: 52112c80-724e-4bca-a5c2-9dbf17289460
-      exp: 2502000
+      exp: 2505000
       floatExp: 0
       star: 1
       LeaderName: 
@@ -505,7 +521,7 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: a038f585-42bf-4590-97f4-917614bdb7fa
-      exp: 2509000
+      exp: 2515000
       floatExp: 0
       star: 1
       LeaderName: 
@@ -518,7 +534,7 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: d7de1817-696d-4933-8760-58a88831f6a9
-      exp: 2509000
+      exp: 2515000
       floatExp: 0
       star: 1
       LeaderName: Empty
@@ -541,7 +557,7 @@ MonoBehaviour:
     - protoName: Basic AircraftFighter
       uuid:
         value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
-      exp: 2503000
+      exp: 2509000
       floatExp: 0
       star: 1
       LeaderName: 
@@ -590,7 +606,7 @@ MonoBehaviour:
     - protoName: Basic Dragon
       uuid:
         value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
-      exp: 2519000
+      exp: 2522000
       floatExp: 1500
       star: 1
       LeaderName: Anexar Flotics
@@ -629,7 +645,7 @@ MonoBehaviour:
     - protoName: Basic Airship
       uuid:
         value: 1ae6066c-8c0d-4f4a-9689-1405aa073c4f
-      exp: 250000
+      exp: 256000
       floatExp: 0
       star: 1
       LeaderName: 
@@ -639,7 +655,7 @@ MonoBehaviour:
     - protoName: Basic Mage
       uuid:
         value: fd1e89aa-39f5-43cb-b023-45e409eb49b6
-      exp: 251000
+      exp: 254000
       floatExp: 0
       star: 1
       LeaderName: 
@@ -688,7 +704,7 @@ MonoBehaviour:
     - protoName: "\u03A3CityInfantry"
       uuid:
         value: a1c69613-1cca-438d-b56b-73e2c9aec777
-      exp: 253000
+      exp: 256000
       floatExp: 0
       star: 1
       LeaderName: Empty
@@ -880,6 +896,32 @@ MonoBehaviour:
         - value: 7899cdc9-4ed0-44b1-91dd-9312ffb012f5
         - value: ac66c0ad-36f8-4c1a-8b73-65543dcdb949
         equipmentLimit: 030000000300000003000000
+    - protoName: Basic Airship
+      uuid:
+        value: e7b5fb9d-b660-4e39-85cb-a9ffb20eafef
+      exp: 300000
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: ace9e64a-28c6-477b-990f-9df4ad136957
+        - value: 398ddae6-ebcc-4785-8e33-0a7f1f7c11ce
+        - value: 16f11962-b0e7-4c18-8802-16e9653e5837
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Mage
+      uuid:
+        value: 4d3a1bd2-7827-45bb-a101-f5ea1808ac16
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 51e1dd52-f216-4baf-ba2d-0f02cef9b0c8
+        - value: 5bedd06d-8a0b-40d4-8e53-37b68c90cd2d
+        - value: 5fe36727-bf70-425d-a995-2f9958255cc5
+        equipmentLimit: 030000000300000003000000
     leaders:
     - protoName: Aether Erinope
       uuid:
@@ -934,6 +976,11 @@ MonoBehaviour:
     - protoName: Finn Herman
       uuid:
         value: e04b315a-fd94-473c-9b37-51658aea9d09
+      exp: 0
+      floatExp: 0
+    - protoName: Ron Thompson
+      uuid:
+        value: 314bd97b-cac8-4a09-844a-1dc018cd7387
       exp: 0
       floatExp: 0
     equipments:
@@ -1237,6 +1284,31 @@ MonoBehaviour:
         value: de052be4-54a9-4e8e-ad15-5b89baa68048
       exp: 0
       floatExp: 0
+    - protoName: AeroReinforceArmorIII
+      uuid:
+        value: 0dde95ce-665f-4d9e-b126-bbd12bce07d1
+      exp: 0
+      floatExp: 0
+    - protoName: AeroReinforceArmorIV
+      uuid:
+        value: c9c67b24-10f4-4c84-acd4-0ff4befebae4
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 140dad1f-a54f-4967-96c9-5bfbcd8e536c
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 260a0f82-b17b-4374-9c95-df09e971bcc8
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: c8fdf2e1-d4c3-4427-a7f3-1fbd2ed0660f
+      exp: 0
+      floatExp: 0
     eventCards:
     - protoName: flashLight
       uuid:
@@ -1291,6 +1363,7 @@ MonoBehaviour:
       - Basic Shielder
       - Basic Infantry
       - Basic AircraftFighter
+      - Basic Airship
       equipmentsUnlocked:
       - 
       - 
@@ -1316,4 +1389,6 @@ MonoBehaviour:
       - Aether Erinope
       - Arthur Connors
       - Finn Herman
+      - Ron Thompson
       eventCardUnlocked: []
+    gameSceneBeenTo: []

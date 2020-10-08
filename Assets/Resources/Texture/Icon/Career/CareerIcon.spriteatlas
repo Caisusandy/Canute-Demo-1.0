@@ -31,17 +31,19 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: d30184c4f11955d4798e352a74f37622, type: 3}
-    totalSpriteSurfaceArea: 1048576
+    totalSpriteSurfaceArea: 1310720
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 1d4fd4c03c153664990a5decd5c07075, type: 3}
   - {fileID: 21300000, guid: c391a8a3cd8f4d347b7129fdf9b98fab, type: 3}
+  - {fileID: 21300000, guid: c43e6d99200f18542bf1c1f390f082b8, type: 3}
   - {fileID: 21300000, guid: 6befdf5ff534141498638115f76dac50, type: 3}
   - {fileID: 21300000, guid: 221723af95c38ee4b8ce51fdb9b36db5, type: 3}
   m_PackedSpriteNamesToIndex:
   - Merchant
   - General
+  - none
   - Scholar
   - Politician
   m_Tag: CareerIcon

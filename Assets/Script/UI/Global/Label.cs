@@ -43,5 +43,17 @@ namespace Canute.UI
         {
             return Instantiate(GameData.Prefabs.Get("label"), transform).GetComponent<Label>();
         }
+        public static Label GetLabelNoCanvas()
+        {
+            var l = Instantiate(GameData.Prefabs.Get("label")).GetComponent<Label>();
+            Destroy(l.GetComponent<Canvas>());
+            return l;
+        }
+        public static Label GetLabelNoCanvas(Transform transform)
+        {
+            var l = Instantiate(GameData.Prefabs.Get("label"), transform).GetComponent<Label>();
+            Destroy(l.GetComponent<Canvas>());
+            return l;
+        }
     }
 }

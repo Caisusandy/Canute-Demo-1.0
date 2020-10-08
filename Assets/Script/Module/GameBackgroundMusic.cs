@@ -39,6 +39,7 @@ namespace Canute.Assets.Script.Module
         {
             audioSource.volume = Game.Configuration.Volume;
 
+
             if (normalStatus && SceneManager.GetActiveScene().name == "Game Start")
             {
                 normalStatus = false;
@@ -68,7 +69,7 @@ namespace Canute.Assets.Script.Module
                     audioSource.enabled = false;
                     audioSource.enabled = true;
                     audioSource.clip = normal;
-                    audioSource.Play(3);
+                    audioSource.PlayDelayed(3);
                 }
             }
         }

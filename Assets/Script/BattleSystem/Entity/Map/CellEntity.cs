@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.BattleSystem.UI;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,6 +61,7 @@ namespace Canute.BattleSystem
             //SetCellSprite();
         }
 
+        [ContextMenu("reload cell sprite")]
         public void SetCellSprite()
         {
             GetComponent<SpriteRenderer>().sprite = GetCellSprite();
@@ -79,6 +81,7 @@ namespace Canute.BattleSystem
 
         public override void OnMouseDown()
         {
+            if (StorySystem.StoryDisplayer.instance) return;
             base.OnMouseDown();
             //Select();
             //TriggerSelectEvent(true);
@@ -86,11 +89,13 @@ namespace Canute.BattleSystem
 
         public override void OnMouseDrag()
         {
+            if (StorySystem.StoryDisplayer.instance) return;
             MapEntity.MoveMap();
         }
 
         public override void OnMouseUp()
         {
+            if (StorySystem.StoryDisplayer.instance) return;
             if (HasArmyStandOn)
             {
                 Unselect();

@@ -23,49 +23,6 @@ namespace Canute.BattleSystem
     {
         #region Trigger
 
-        /// <summary> Trigger all effect that fit in a specific condition </summary>
-        /// <param name="conditions"></param>
-        [Obsolete]
-        public static void TriggerOf(this TriggerCondition.Conditions conditions)
-        {
-            foreach (IStatusContainer container in Game.CurrentBattle.StatusContainers)
-            {
-                StatusList stats = container.StatList.GetAllStatus(conditions);
-                for (int i = stats.Count - 1; i >= 0; i--)
-                {
-                    Status stat = stats[i];
-
-                    if (!stat.TriggerConditions.CanTrigger())
-                    {
-                        continue;
-                    }
-                    else if (stat.Type == Status.StatType.delay && stat.TurnCount != 1)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        stat.Execute();
-                    }
-                }
-                container.StatList.ClearInvalid();
-            }
-        }
-
-        /// <summary>
-        /// Try to trigger all status
-        /// </summary> 
-        [Obsolete]
-        public static void TryTriggerAll()
-        {
-            foreach (IStatusContainer statusContainer in Game.CurrentBattle.StatusContainers)
-            {
-                statusContainer.TryTriggerAll();
-            }
-        }
-
-
-
         /// <summary>
         /// trigger with a reference effect
         /// attack triggers(4), move, entity arrive/left, adding status, play card 
@@ -120,7 +77,51 @@ namespace Canute.BattleSystem
             statusContainer.StatList.ClearInvalid();
         }
 
+
+        /// <summary> Trigger all effect that fit in a specific condition </summary>
+        /// <param name="conditions"></param>
+        [Obsolete]
+        public static void TriggerOf(this TriggerCondition.Conditions conditions)
+        {
+            foreach (IStatusContainer container in Game.CurrentBattle.StatusContainers)
+            {
+                StatusList stats = container.StatList.GetAllStatus(conditions);
+                for (int i = stats.Count - 1; i >= 0; i--)
+                {
+                    Status stat = stats[i];
+
+                    if (!stat.TriggerConditions.CanTrigger())
+                    {
+                        continue;
+                    }
+                    else if (stat.Type == Status.StatType.delay && stat.TurnCount != 1)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        stat.Execute();
+                    }
+                }
+                container.StatList.ClearInvalid();
+            }
+        }
+
+        /// <summary>
+        /// Try to trigger all status
+        /// </summary> 
+        [Obsolete]
+        public static void TryTriggerAll()
+        {
+            foreach (IStatusContainer statusContainer in Game.CurrentBattle.StatusContainers)
+            {
+                statusContainer.TryTriggerAll();
+            }
+        }
+
+
         /// <summary> try trigger all status </summary> <param name="statusContainer"></param>
+        [Obsolete]
         public static void TryTriggerAll(this IStatusContainer statusContainer)
         {
             StatusList stats = statusContainer.StatList;

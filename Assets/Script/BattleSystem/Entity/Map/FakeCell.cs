@@ -9,14 +9,13 @@ namespace Canute.BattleSystem
 {
     public class FakeCell : MonoBehaviour
     {
+        public int x => pos.x;
+        public int y => pos.y;
         public Vector2Int pos;
         public Terrain terrain;
 
-        public void Start()
-        {
-            SetCellSprite();
-        }
 
+        [ContextMenu("reload cell sprite")]
         public void SetCellSprite()
         {
             GetComponent<SpriteRenderer>().sprite = GetCellSprite();

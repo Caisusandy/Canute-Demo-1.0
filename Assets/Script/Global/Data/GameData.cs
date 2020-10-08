@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 using System.IO;
 using System;
-using Canute.UI.LevelStart;
 using Canute.SupplyTeam;
 
 namespace Canute
@@ -52,7 +51,7 @@ namespace Canute
         /// <summary> 游戏内物品的内置件 </summary>
         public static Prefabs Prefabs => instance.entityPrefabs;
         /// <summary> 章节书 </summary>
-        public static Chapters Chapters => instance.chapters;
+        public static Chapters Levels => instance.chapters;
         /// <summary> 科技系统 </summary>
         public static Technology Technology => instance.technology;
         /// <summary> 商店状态 </summary>

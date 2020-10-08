@@ -385,7 +385,7 @@ namespace Canute
 
         public string Name => name;
         public bool IsPassed => isPassed;
-        public Level Level => GameData.Chapters.ChapterTree.GetLevel(Name);
+        public Level Level => GameData.Levels.GetLevel(Name);
 
         public static implicit operator bool(LevelInfo levelInfo)
         {

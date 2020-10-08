@@ -1,6 +1,8 @@
 ﻿using Canute.LevelTree;
 using Canute.UI;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,9 +34,9 @@ namespace Canute
         public const string EquipmentList = "Equipment List";
         public const string leaderList = "Leader List";
 
-        public static string lastScene;
+        public static List<string> lastScene = new List<string>();
 
-        public static string GetName(MainScene scene)
+        private static string GetName(MainScene scene)
         {
             string ans = "";
             switch (scene)
@@ -72,29 +74,76 @@ namespace Canute
             return ans;
         }
 
-        public static void GotoScene(MainScene scene) => SceneJumper.Goto(GetName(scene));
+        public static void GotoScene(MainScene scene)
+        {
+            lastScene.Add(SceneManager.GetActiveScene().name);
+            SceneJumper.Goto(GetName(scene));
+        }
 
-        public static void GotoSceneImmediate(MainScene scene) => SceneManager.LoadScene(GetName(scene));
+        public static void GotoSceneImmediate(MainScene scene)
+        {
+            lastScene.Add(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(GetName(scene));
+        }
 
         public static void AddScene(MainScene scene) => SceneJumper.Add(GetName(scene));
 
         public static void RemoveScene(MainScene scene) => SceneJumper.Remove(GetName(scene));
 
+        //public static void GotoLastScene()
+        //{
+        //    if (lastScene.Count > 0)
+        //    {
+        //        GotoScene(lastScene.Last());
+        //    }
+        //}
+
+        //public static void GotoLastSceneImmediate()
+        //{
+        //    if (lastScene.Count > 0)
+        //    {
+        //        GotoSceneImmediate(lastScene.Last());
+        //    }
+        //}
+
+        public void GotoLastScene()
+        {
+            if (lastScene.Count > 0)
+            {
+                GotoScene(lastScene.Last());
+            }
+            else GotoScene(MainScene.gameStart);
+        }
+
+        public void GotoLastSceneImmediate()
+        {
+            if (lastScene.Count > 0)
+            {
+                GotoSceneImmediate(lastScene.Last());
+            }
+            else GotoScene(MainScene.gameStart);
+        }
 
         /// <summary>
         /// (used in UnityEditor) Goto another scene
         /// </summary>
         /// <param name="ans"></param>
-        public void GotoScene(string ans) => SceneJumper.Goto(ans);
+        public void GotoScene(string ans)
+        {
+            lastScene.Add(SceneManager.GetActiveScene().name);
+            SceneJumper.Goto(ans);
+        }
 
         /// <summary>
         /// (used in UnityEditor) Goto another scene
         /// </summary>
         /// 
         /// <param name="ans"></param>
-        public void GotoSceneImmediate(string ans) => SceneManager.LoadScene(ans);
-
-
+        public void GotoSceneImmediate(string ans)
+        {
+            lastScene.Add(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(ans);
+        }
 
         [Temporary]
         public void OpenMain()

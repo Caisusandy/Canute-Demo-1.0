@@ -11,8 +11,8 @@ namespace Canute.StorySystem
     [Serializable]
     public struct WordLine : INameable, IEquatable<WordLine>
     {
-        [SerializeField] private string id;
         [SerializeField] private string speakerName;
+        [SerializeField] private string id;
         [TextArea(3, 10), SerializeField] private string line;
         [SerializeField] private Sprite characterPortrait;
         [SerializeField] private Sprite conversationBG;

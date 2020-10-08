@@ -37,13 +37,6 @@ namespace Canute.BattleSystem.UI
             }
         }
 
-        public virtual void OnMouseDown()
-        {
-#if UNITY_EDITOR
-            Game.CurrentBattle.GetHandCard(Game.CurrentBattle.Player, 1);
-#endif
-        }
-
 
         public virtual void HideCards(bool value)
         {

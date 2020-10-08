@@ -15,7 +15,7 @@ MonoBehaviour:
   Prototype: {fileID: 0}
   spawnType: 0
   radius: 0
-  generateCount: 0
+  generateCount: 1
   battleBuilding:
     name: Campus
     prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
@@ -25,7 +25,7 @@ MonoBehaviour:
     ownerUUID:
       value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
     allowMove: 0
-    coordinate: {x: 14, y: 14}
+    coordinate: {x: 12, y: 12}
     stats:
       list: []
     localLeader:

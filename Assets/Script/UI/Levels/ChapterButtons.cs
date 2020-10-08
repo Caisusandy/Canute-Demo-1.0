@@ -15,7 +15,7 @@ namespace Canute.UI.Levels
         {
             foreach (var item in ChapterButtonPair)
             {
-                bool open = GameData.Chapters.ChapterTree.GetLevel(item.levelName)?.LastLevel?.IsPassed == true;
+                bool open = GameData.Levels.GetLevel(item.levelName)?.LastLevel?.IsPassed == true;
                 open |= Game.PlayerData.PlayerChapterTreeStat.Get(item.levelName)?.IsPassed == true;
                 item.button.interactable = open;
             }

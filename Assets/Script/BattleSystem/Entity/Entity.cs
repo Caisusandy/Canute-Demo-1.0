@@ -70,6 +70,11 @@ namespace Canute.BattleSystem
                 Debug.LogError("An non-UUIDLabled entity has spawned named:" + Name + ", An UUID is replaced for it" + Data?.ToString());
                 this.NewUUID();
             }
+            else if (Get(UUID) != this)
+            {
+                Debug.LogError("UUID crash! a new UUID is replaced for this entity " + Data.ToString());
+                this.NewUUID();
+            }
         }
 
         public virtual void Update()

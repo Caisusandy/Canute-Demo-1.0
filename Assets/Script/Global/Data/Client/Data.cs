@@ -206,7 +206,9 @@ namespace Canute
         #region Unlocked
         [Header("staticstic")]
         [SerializeField] private GameStatistic gameStatistic;
+        [SerializeField] private List<string> gameSceneBeenTo;
         public GameStatistic Statistic { get => gameStatistic; set => gameStatistic = value; }
+        public List<string> GameSceneBeenTo { get => gameSceneBeenTo; set => gameSceneBeenTo = value; }
 
         public CheckList EventCardUnlocked => GetEventTree();
 
@@ -490,6 +492,8 @@ namespace Canute
             armies = armies.Where((item) => item).ToList();
             leaders = leaders.Where((item) => item).ToList();
             equipments = equipments.Where((item) => item).ToList();
+            collectionLetterID = collectionLetterID.Where((item) => item != "").ToList();
+            CollectionStoriesID = CollectionStoriesID.Where((item) => item != "").ToList();
         }
 
         public Data()

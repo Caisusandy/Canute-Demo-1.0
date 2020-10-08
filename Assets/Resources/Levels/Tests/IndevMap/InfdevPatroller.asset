@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
   m_Name: InfdevPatroller
   m_EditorClassIdentifier: 
+  Prototype: {fileID: 0}
   spawnType: 0
   radius: 0
+  generateCount: 1
   battleArmy:
     name: BetaArmy
     prefab: {fileID: 6470687005625561500, guid: 46c2bb82f2e8fdf469cbcb41fad321e7,
@@ -23,7 +25,7 @@ MonoBehaviour:
     ownerUUID:
       value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
     allowMove: 1
-    coordinate: {x: 9, y: 10}
+    coordinate: {x: 9, y: 9}
     stats:
       list: []
     localLeader:
@@ -67,23 +69,17 @@ MonoBehaviour:
       addition:
         args:
         - key: 0
-          value: (9,10)
-        - key: 1
           value: (9,9)
-        - key: 2
+        - key: 1
           value: (10,9)
-        - key: 3
+        - key: 2
           value: (11,10)
-        - key: 4
+        - key: 3
           value: (10,11)
-        - key: 5
+        - key: 4
           value: (9,11)
-    skillPack:
-      specialName: 
-      count: 0
-      parameter: 0
-      args:
-        args: []
+        - key: 5
+          value: (9,10)
     maxHealth: 200
     health: 200
     armor: 50

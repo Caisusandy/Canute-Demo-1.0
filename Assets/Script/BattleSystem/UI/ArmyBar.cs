@@ -62,15 +62,7 @@ namespace Canute.BattleSystem.UI
 
         public void ToggleBar()
         {
-            if (Battle.Round.CurrentStat == Round.Stat.gameStart)
-            {
-                return;
-            }
-            if (BattleUI.Raycaster.enabled == false)
-            {
-                return;
-            }
-
+            //if (Battle.Round.CurrentStat == Round.Stat.gameStart) { return; }
             Debug.Log("mouse down");
 
             if (isShown) Hide();

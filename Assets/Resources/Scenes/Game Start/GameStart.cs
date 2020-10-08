@@ -8,10 +8,11 @@ namespace Canute.UI
 {
     public class GameStart : MonoBehaviour
     {
-        public static bool initialized = true;
+        public static bool initialized = false;
         public GameObject bg;
         public GameObject menu;
         public AudioSource audioSource;
+        public AudioSource pre;
 
         public Text title;
         public Text line;
@@ -22,6 +23,7 @@ namespace Canute.UI
         {
             if (initialized)
             {
+                pre.enabled = false;
                 StartCoroutine("MenuShowImmediate");
                 StartCoroutine("TitleShowImmediate");
                 menu.transform.position = Vector3.zero;

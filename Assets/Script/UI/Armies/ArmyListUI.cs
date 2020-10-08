@@ -155,7 +155,7 @@ namespace Canute.UI
                 armies.Add(armyCardUI);
                 armyCardUI.transform.localScale = Vector3.one;
                 armyCardUI.Display(item);
-                Label label = Instantiate(GameData.Prefabs.Get("label"), armyCardUI.transform).GetComponent<Label>();
+                Label label = Label.GetLabelNoCanvas(armyCardUI.transform);
                 label.image.color = new Color(0, 0, 0, 0);
                 switch (listType)
                 {
@@ -166,7 +166,7 @@ namespace Canute.UI
                         label.text.text = item.MaxHealth.ToString();
                         break;
                     case PropertyType.defense:
-                        label.text.text = item.Properties.Defense.ToString();
+                        label.text.text = ((int)item.Properties.Defense).ToString();
                         break;
                     case PropertyType.moveRange:
                         label.text.text = item.Properties.MoveRange.ToString();
@@ -176,10 +176,10 @@ namespace Canute.UI
                         break;
                     case PropertyType.critRate:
                         //Debug.Log(item.CritRate);
-                        label.text.text = item.Properties.CritRate + "%";
+                        label.text.text = ((int)item.Properties.CritRate) + "%";
                         break;
                     case PropertyType.critBonus:
-                        label.text.text = item.Properties.CritBonus + "%";
+                        label.text.text = ((int)item.Properties.CritBonus) + "%";
                         break;
                     case PropertyType.pop:
                         label.text.text = item.Properties.Pop.ToString();

@@ -66,6 +66,7 @@ namespace Canute
         /// <returns></returns>
         public static string Lang(this string key, LangType type = LangType.RawDisplay)
         {
+            List<string> commonEnding = new List<string> { "name", "info", "title", "subtitle" };
             try
             {
                 return Dictionary[key];
@@ -75,7 +76,7 @@ namespace Canute
                 Debug.LogWarning(key);
                 //Debug.LogWarning(key);
                 string[] vs = key.Split('.');
-                if (vs[vs.Length - 1] == "name" || vs[vs.Length - 1] == "info")
+                if (commonEnding.Contains(vs[vs.Length - 1]))
                 {
                     return vs[vs.Length - 2];
                 }

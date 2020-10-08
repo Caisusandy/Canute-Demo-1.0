@@ -96,6 +96,10 @@ namespace Canute
             {
                 yield return new WaitForFixedUpdate();
             }
+            if (sceneName.Length == 0 && SceneManager.sceneCount == 1)
+            {
+                sceneName = "Main";
+            }
             (async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive)).allowSceneActivation = false;
             yield return null;
             /**
@@ -108,7 +112,7 @@ namespace Canute
 
         public void LoadTip()
         {
-            int tipCount = 17;
+            int tipCount = 16;
             tip.text = ("Canute.Tips." + UnityEngine.Random.Range(0, tipCount)).Lang();
         }
 

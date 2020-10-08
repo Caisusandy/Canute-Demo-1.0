@@ -11,7 +11,7 @@ namespace Canute.BattleSystem
         public Player data;
         public override EntityData Data => data;
         public bool InPlayerTurn => Owner.IsInTurn;
-        public List<CardEntity> Cards => CardEntity.GetHandCard(Owner);
+        public List<CardEntity> Cards => CardEntity.GetAllHandCardEntities(Owner);
 
         public static PlayerEntity Create(GameObject gameObject, Player player)
         {

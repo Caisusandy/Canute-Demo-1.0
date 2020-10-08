@@ -275,6 +275,8 @@ namespace Canute.BattleSystem
                     Resonance.Resonate(enemy.BattleArmies);
                     enemy.CreateArmyCard();
                 }
+
+                waveControl.GenerateBuildingOnly(1);
                 return;
             }
 
@@ -482,7 +484,7 @@ namespace Canute.BattleSystem
 
             if (Player.IsInTurn)
             {
-                BattleUI.SetDownBarsActive(true);
+                BattleUI.SetPlayerDownBarsActive(true);
             }
         }
 
@@ -565,8 +567,10 @@ namespace Canute.BattleSystem
                     prize.Fulfill(Player.LegionSet.Legion.Armies);
                 }
             }
+            foreach (var prize in prizes) { prize.Fulfill(); }
 
-            BattleUI.EndUI.gameObject.SetActive(true);
+            Game.CurrentLevel.OpenEndStory();
+            BattleUI.ShowEndUI();
         }
 
         public void Lost()
@@ -600,8 +604,8 @@ namespace Canute.BattleSystem
             int ma = maPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.mantleAlloy);
             int mp = mpPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.manpower);
             int fg = fgPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.fedgram);
-            BattleUI.EndUI.gameObject.SetActive(true);
             BattleUI.EndUI.ShowPrize(fg, mp, ma);
+            BattleUI.ShowEndUI();
             #endregion
         }
 

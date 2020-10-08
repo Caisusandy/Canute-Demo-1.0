@@ -317,19 +317,14 @@ namespace Canute.BattleSystem
             {
                 foreach (Entity entity in effect.AllEntities)
                 {
-                    IBattleableEntity battleEntityData = entity as IBattleableEntity;
-                    if (battleEntityData is null)
+                    IBattleableEntity battleEntity = entity as IBattleableEntity;
+                    if (battleEntity is null)
                     {
                         continue;
                     }
-                    Status.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect, battleEntityData.Data, battleEntityData.Owner, Game.CurrentBattle);
-                    //battleEntityData.Data.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
-                    //battleEntityData.Owner.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
-                    //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect);
+                    Status.TriggerOf(TriggerCondition.Conditions.beforeAttack, ref effect, entity as IStatusContainer, entity.Owner, Game.CurrentBattle);
                 }
-                IAggressiveEntity agressiveEntity = effect.Source as IAggressiveEntity;
-                Status.TriggerOf(TriggerCondition.Conditions.attack, ref effect, agressiveEntity.Data, agressiveEntity.Owner, Game.CurrentBattle);
-                //agressiveEntity.Data.TriggerOf(TriggerCondition.Conditions.attack, ref effect);
+                Status.TriggerOf(TriggerCondition.Conditions.attack, ref effect, effect.Source as IStatusContainer, effect.Source.Owner, Game.CurrentBattle);
             }
 
             IAggressiveEntity aggressiveEntity = effect.Source as IAggressiveEntity;
@@ -338,10 +333,7 @@ namespace Canute.BattleSystem
                 IPassiveEntity target = item as IPassiveEntity;
                 if (!effect.Args.HasParam("avoidTrigger"))
                 {
-                    Status.TriggerOf(TriggerCondition.Conditions.defense, ref effect, target.Data, target.Owner, Game.CurrentBattle);
-                    //target.Data.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
-                    //target.Owner.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
-                    //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.defense, ref effect);
+                    Status.TriggerOf(TriggerCondition.Conditions.defense, ref effect, target, target.Owner, Game.CurrentBattle);
                 }
                 var executingEffect = effect.Clone();
                 executingEffect.Target = item;
@@ -359,15 +351,7 @@ namespace Canute.BattleSystem
             {
                 foreach (Entity entity in effect.AllEntities)
                 {
-                    IBattleableEntity battleEntity = entity as IBattleableEntity;
-                    if (battleEntity is null)
-                    {
-                        continue;
-                    }
-                    Status.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect, battleEntity.Data, battleEntity.Owner, Game.CurrentBattle);
-                    //battleEntity.Data.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
-                    //battleEntity.Data.Owner.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
-                    //Game.CurrentBattle.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect);
+                    Status.TriggerOf(TriggerCondition.Conditions.afterDefence, ref effect, entity as IStatusContainer, entity.Owner, Game.CurrentBattle);
                 }
             }
             return true;

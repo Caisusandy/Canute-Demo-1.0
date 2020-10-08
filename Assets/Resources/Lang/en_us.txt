@@ -16,23 +16,25 @@ Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
 Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
 Canute.LevelTree.Level.7-inf.subtitle=Daily battle
 Canute.LevelTree.Level.7-inf.title=Basement outside
+Canute.LevelTree.Level.Ch7-1.subtitle=Daily battle
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Basement outside
 #Currency
 Canute.Shops.Currency+Type.fedgram=Federgram
 Canute.Shops.Currency+Type.manpower=Manpower
 Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
 Canute.Shops.Currency+Type.aethium=Aethium
 #
-Canute.BattleSystem.PropertyType.level=level
-Canute.BattleSystem.PropertyType.damage=damage
-Canute.BattleSystem.PropertyType.health=health
-Canute.BattleSystem.PropertyType.defense=defense
-Canute.BattleSystem.PropertyType.moveRange=move range
-Canute.BattleSystem.PropertyType.attackRange=attack range
-Canute.BattleSystem.PropertyType.critRate=crit rate
-Canute.BattleSystem.PropertyType.critBonus=crit bonus
-Canute.BattleSystem.PropertyType.pop=pop
-Canute.BattleSystem.PropertyType.armor=armor
-Canute.BattleSystem.PropertyType.anger=anger
+Canute.BattleSystem.PropertyType.level=Level
+Canute.BattleSystem.PropertyType.damage=Damage
+Canute.BattleSystem.PropertyType.health=Health
+Canute.BattleSystem.PropertyType.defense=Defense
+Canute.BattleSystem.PropertyType.moveRange=Move range
+Canute.BattleSystem.PropertyType.attackRange=Attack range
+Canute.BattleSystem.PropertyType.critRate=Critical Attack Rate
+Canute.BattleSystem.PropertyType.critBonus=Critical Attack Bonus
+Canute.BattleSystem.PropertyType.pop=Population
+Canute.BattleSystem.PropertyType.armor=Armor
+Canute.BattleSystem.PropertyType.anger=Anger
 #
 Canute.BattleSystem.BattleProperty.AttackType=Attack Type
 Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
@@ -246,6 +248,7 @@ Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=Card did not pla
 Canute.BattleSystem.BattleEventError.armyNoTarget=no enemy is in attack range  
 Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: target is under protection
 Canute.BattleSystem.BattleEventError.ArmyCannotAttack=it can't attack anyone 
+Canute.BattleSystem.BattleEventError.ArmyNoTargetInAttackRage=No Target is in attack range
 
 #Tips
 Canute.Tips.0=Place Card On the Army to use it.
@@ -259,7 +262,7 @@ Canute.Tips.7=Riflemen attack every enemy in a line.
 Canute.Tips.8=Aircraft Fighters have to go back to its airport at the end of the turn.
 Canute.Tips.9=Airships can sent more aircraft fighter.
 Canute.Tips.10=No army can penetrate Shielder's shield, some special event maybe.
-Canute.Tips.11=Every attack would cause at least 1 damage
+Canute.Tips.11=Every attack would cause at least 1 damage.
 Canute.Tips.12=Using the card that matched with army's career would cause 1 less action point.
 Canute.Tips.13=Dragons knows magic better than those mage, they can boot up the army for some cost...
 Canute.Tips.14=Resonance happens when more same type of army exist.
@@ -346,6 +349,7 @@ Canute.UI.SceneName.Hallway=Hallway
 Canute.UI.SceneName.LegionSetting=Legion Setting
 Canute.UI.SceneName.EventCard=Event Card Pile
 Canute.UI.SceneName.Settings=Settings
+Canute.UI.SceneName.StoryRoom=Story Room
 ##UI
 Canute.UI.Common.Back=Back
 Canute.UI.Common.LegionSetting=Army
@@ -366,8 +370,11 @@ Canute.UI.Start.NewGame=New Game
 Canute.UI.Start.Settings=Settings
 Canute.UI.Start.Credit=Credit
 Canute.UI.Start.Games=Other Progress
+Canute.UI.Start.Quit=Quit
+Canute.UI.Start.Quit.Check=Are you sure about quitting?
 #
 Canute.UI.MainHall.Training=Training
+Canute.UI.MainHall.NextBattle=Next Battle
 Canute.UI.MainHall.Basement=Basement outside
 Canute.UI.MainHall.Legion=Legion Setting
 Canute.UI.MainHall.Pile=Card Pile Setting
@@ -386,7 +393,7 @@ Canute.Shop.Explanation=Where we can buy army, Equipment etc.
 #
 Canute.STPrizeDisplay.NewPrize=Supply Team get @name
 #
-Canute.SupplyTeam.Explanation=Send your leaders and one protect army to get more supply for the basement
+Canute.SupplyTeam.Explanation=Send at least one leader and/or one army that protect these leaders to get more supply for the basement.
 Canute.SupplyTeam.TeamPositionInfo=The Supply Team is in @city, @country right now.
 #
 Canute.UI.Settings.Basic=Basic

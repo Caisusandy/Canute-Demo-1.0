@@ -15,7 +15,7 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 2
+      filterMode: 0
       generateMipMaps: 0
       readable: 1
       crunchedCompression: 0
@@ -55,27 +55,36 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 43f8f017359ee34488d292986d52fe42, type: 3}
-    totalSpriteSurfaceArea: 3475796
+    totalSpriteSurfaceArea: 4545180
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 2f872c4027008cc46b56f56080a55d50, type: 3}
+  - {fileID: 21300000, guid: d8bea650b6fb75244ab1d6f9906807f1, type: 3}
   - {fileID: 21300000, guid: 2baf45c0d51b01f4990a5c6e9f1be420, type: 3}
   - {fileID: 21300000, guid: 4157a401b45f69c42a903deee441fcf5, type: 3}
   - {fileID: 21300000, guid: cc0b0bf1b52ae9742aa6d267cf8f634f, type: 3}
   - {fileID: 21300000, guid: 4e82bb92a7998ef4cb808a14eb45d7f2, type: 3}
   - {fileID: 21300000, guid: 3a251d433504afd4b862f8ab7d178e31, type: 3}
+  - {fileID: 21300000, guid: 5d7bffb3507c90b4981e7653d437cdc0, type: 3}
+  - {fileID: 21300000, guid: 381a1734ae93b0c499c910e03eb59b40, type: 3}
   - {fileID: 21300000, guid: 81620be5f320ca542bd5ffb5e97debf7, type: 3}
   - {fileID: 21300000, guid: cbcf36f5b1176fc4d8067253aaa3331d, type: 3}
+  - {fileID: 21300000, guid: 8e277126645f5bb4a826806eadde6fc7, type: 3}
+  - {fileID: 21300000, guid: a442c2e688949ed43b8d929894d1849f, type: 3}
+  - {fileID: 21300000, guid: 720dbdf6e096b714ba151bcfbfb2ba1a, type: 3}
   - {fileID: 21300000, guid: b1d390376faaeff4c96b4e924f58a8e3, type: 3}
+  - {fileID: 21300000, guid: 25b0e2183878d3545938fa72d07629dc, type: 3}
   - {fileID: 21300000, guid: 93f3ec581fecab64faa9c704170e9100, type: 3}
   - {fileID: 21300000, guid: f1c7a7f80d93b8248870584d2189e32f, type: 3}
   - {fileID: 21300000, guid: 27db328964ad2214d8b0c923eaf7d6ea, type: 3}
   - {fileID: 21300000, guid: bcb3015afbd0b5c40b3f8f4b9693bdd8, type: 3}
+  - {fileID: 21300000, guid: 6325d2daeca696e4ab07b963e7b85aa1, type: 3}
   - {fileID: 21300000, guid: 9c13137b476ad334f8c39e9f3620011d, type: 3}
   - {fileID: 21300000, guid: 986eb97b610c01b43816dd82095d2fef, type: 3}
   - {fileID: 21300000, guid: ce3dcccbb609b914499982613401f1ed, type: 3}
   - {fileID: 21300000, guid: 1e35702c3146ccf4a87e6e1e2d1a4a53, type: 3}
+  - {fileID: 21300000, guid: a3e3532c5b0b63f48bbc4b2fe1a36038, type: 3}
   - {fileID: 21300000, guid: a904cccce5e6e834da6dea4c721766b7, type: 3}
   - {fileID: 21300000, guid: 654e91dcbe78a7b478daaf576406f4ed, type: 3}
   - {fileID: 21300000, guid: d40a3adce8aad694087abba875ab52ca, type: 3}
@@ -83,35 +92,46 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5ba1130dfb5861c408c6681a1c14737b, type: 3}
   - {fileID: 21300000, guid: 0210b65dd1012f4489bec82507279e34, type: 3}
   - {fileID: 21300000, guid: 790c8f5ddc4a1494e87b81b796c11518, type: 3}
+  - {fileID: 21300000, guid: 9dfca16d46fe6ec45bfb6254baef1455, type: 3}
   - {fileID: 21300000, guid: 1cf9e98da705a2546848d0b688c77bf6, type: 3}
   - {fileID: 21300000, guid: 2ee1ceeddbf1c77409a834a9e852e501, type: 3}
   - {fileID: 21300000, guid: d76b364ef7d2f3948a8140d28be06e20, type: 3}
-  - {fileID: 21300000, guid: a0119d4ed6f67f842b858d3b9918ff27, type: 3}
   - {fileID: 21300000, guid: 8671569e0a6de584fbcb01d9ddb9e13b, type: 3}
   - {fileID: 21300000, guid: 889e19aeb1289904396a3677afbd1111, type: 3}
+  - {fileID: 21300000, guid: 63e02aaece9fb034b844bafe9af9b060, type: 3}
   - {fileID: 21300000, guid: 6bebefbe14435e242ab218ec1566411b, type: 3}
   - {fileID: 21300000, guid: c03100ceb7402ab47be87593063323c8, type: 3}
+  - {fileID: 21300000, guid: f0bd10fe5aedc5e4abc39aa0e41b23c7, type: 3}
   - {fileID: 21300000, guid: 27de306fda29cfd41bda02ab8493559e, type: 3}
   - {fileID: 21300000, guid: d9b6e16f5366ca449a067853b5a7ce4f, type: 3}
   - {fileID: 21300000, guid: 3e8ab26f0fabf3043ad90f9494f0d27a, type: 3}
   m_PackedSpriteNamesToIndex:
   - Hills2
+  - Highland2
   - Plain3
   - Ocean3
   - Plain4
   - Plain11
   - Plain7
+  - Swamp2
+  - Swamp0
   - Forest2
   - Plain1
+  - Highland1
+  - Highland3
+  - Swamp3
   - Sand3
+  - Snow2
   - Forest1
   - Hills1
   - Mountains1
   - Mountains0
+  - Snow0
   - Forest0
   - Ocean1
   - Hills0
   - River
+  - Snow3
   - Sand2
   - Ocean2
   - Plain2
@@ -119,14 +139,16 @@ SpriteAtlas:
   - Mountains3
   - Plain6
   - Forest3
+  - Highland0
   - Plain8
   - Plain0
   - Light
-  - Swamp
   - Plain10
   - Plain5
+  - Swamp1
   - Mountains2
   - Sand1
+  - Snow1
   - Sand0
   - Ocean0
   - Hills3
