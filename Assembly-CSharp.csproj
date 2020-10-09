@@ -374,6 +374,7 @@
     <None Include="Assets\Resources\Lang\zh_cn.txt" />
     <None Include="Assets\Script\Module\NewUnlitShader 1.shader" />
     <None Include="Assets\Resources\Lang\es_es.txt" />
+    <None Include="Assets\Resources\Lang\vi_vn.txt" />
     <None Include="Assets\Resources\Lang\en_us.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

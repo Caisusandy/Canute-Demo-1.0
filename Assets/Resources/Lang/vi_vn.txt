@@ -1,0 +1,406 @@
+#can be use for write comment，//this is ok, too. but you can't use this after a line (don't use //)
+#(actually, if there are no equal sign, it will be treat as a comment)
+
+#Career
+Canute.Career.Scholar=Scholar
+Canute.Career.Politician=Politician
+Canute.Career.General=General
+Canute.Career.Merchant=Merchant
+Canute.Career.None=None
+#Title skip this section
+Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
+Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
+Canute.LevelTree.Level.CalayInfinite.subtitle=infinity Map
+Canute.LevelTree.Level.CalayInfinite.title=Training Ground
+Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
+Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
+Canute.LevelTree.Level.7-inf.subtitle=Daily battle
+Canute.LevelTree.Level.7-inf.title=Basement outside
+Canute.LevelTree.Level.Ch7-1.subtitle=Daily battle
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Basement outside
+#Currency
+Canute.Shops.Currency+Type.fedgram=Federgram
+Canute.Shops.Currency+Type.manpower=Manpower
+Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
+Canute.Shops.Currency+Type.aethium=Aethium
+#
+Canute.BattleSystem.PropertyType.level=Level
+Canute.BattleSystem.PropertyType.damage=Damage
+Canute.BattleSystem.PropertyType.health=Health
+Canute.BattleSystem.PropertyType.defense=Defense
+Canute.BattleSystem.PropertyType.moveRange=Move range
+Canute.BattleSystem.PropertyType.attackRange=Attack range
+Canute.BattleSystem.PropertyType.critRate=Critical Attack Rate
+Canute.BattleSystem.PropertyType.critBonus=Critical Attack Bonus
+Canute.BattleSystem.PropertyType.pop=Population
+Canute.BattleSystem.PropertyType.armor=Armor
+Canute.BattleSystem.PropertyType.anger=Anger
+#
+Canute.BattleSystem.BattleProperty.AttackType=Attack Type
+Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
+Canute.BattleSystem.BattleProperty+AttackType.melee=Melee
+Canute.BattleSystem.BattleProperty+AttackType.projectile=Projectile
+Canute.BattleSystem.BattleProperty+AttackType.single=Single
+Canute.BattleSystem.BattleProperty+AttackType.singleMelee=Single Melee
+Canute.BattleSystem.BattleProperty+AttackType.singleProjectile=Single Projectile
+Canute.BattleSystem.BattleProperty+AttackType.area=Area
+Canute.BattleSystem.BattleProperty+AttackType.areaMelee=Area Melee
+Canute.BattleSystem.BattleProperty+AttackType.areaProjectile=Area Projectile 
+Canute.BattleSystem.BattleProperty+AttackType.splash=Splash
+Canute.BattleSystem.BattleProperty+AttackType.splashMelee=Splash Melee
+Canute.BattleSystem.BattleProperty+AttackType.splashProjectile=Splash Projectile
+#
+Canute.BattleSystem.BattleProperty.StandPosition=Stand Position
+Canute.BattleSystem.BattleProperty.AttackPosition=Attack Position
+Canute.BattleSystem.BattleProperty+Position.land=Land
+Canute.BattleSystem.BattleProperty+Position.air=Air
+Canute.BattleSystem.BattleProperty+Position.all=Any
+Canute.BattleSystem.BattleProperty+Position.none=None
+#
+Canute.Army+Types.mage=Mage
+Canute.Army+Types.warMachine=War Machine
+Canute.Army+Types.infantry=Infantry
+Canute.Army+Types.shielder=Shielder
+Canute.Army+Types.cavalry=Cavalry
+Canute.Army+Types.rifleman=Rifleman
+Canute.Army+Types.aircraftFighter=AircraftFighter
+Canute.Army+Types.airship=Airship
+Canute.Army+Types.dragon=Dragon
+#everything above
+Canute.Army.Alpha Army.name=A
+Canute.Army.Beta Army.name=B
+Canute.Army.Tutorial Canute Army.name=Canute
+Canute.Army.Basic Mage.name=Basic Mage
+Canute.Army.Basic WarMachine.name=Basic WarMachine
+Canute.Army.Basic Infantry.name=Basic Infantry
+Canute.Army.Basic Shielder.name=Basic Shielder
+Canute.Army.Basic Infantry.name=Basic Infantry
+Canute.Army.Basic Cavalry.name=Basic Cavalry
+Canute.Army.Basic Rifleman.name=Basic Rifleman
+Canute.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
+Canute.Army.Basic Dragon.name=Basic Dragon
+Canute.Army.CalayCityInfantry.name=Calay City Infantry
+Canute.Army.ΣCityInfantry.name=Σ City Infantry
+Canute.Army.NewUtoCityInfantry.name=New Uto City Infantry
+# 
+Canute.Equipment.AeroReinforceArmorI.name=Aero Reinforce Armor Lv.I
+Canute.Equipment.AeroReinforceArmorII.name=Aero Reinforce Armor Lv.II
+Canute.Equipment.AeroReinforceArmorIII.name=Aero Reinforce Armor Lv.III
+Canute.Equipment.AeroReinforceArmorIV.name=Aero Reinforce Armor Lv.IV
+Canute.Equipment.CeramicCompositeArmorI.name=Ceramic Composite Armor Lv.I
+Canute.Equipment.CeramicCompositeArmorII.name=Ceramic Composite Armor Lv.II
+Canute.Equipment.CeramicCompositeArmorIII.name=Ceramic Composite Armor Lv.III
+Canute.Equipment.CeramicCompositeArmorIV.name=Ceramic Composite Armor Lv.IV
+Canute.Equipment.PersonalAethiumBeamEmitterI.name=Personal Aethium Beam Emitter Mk 1
+Canute.Equipment.PersonalAethiumBeamEmitterII.name=Personal Aethium Beam Emitter Mk 2
+Canute.Equipment.PersonalAethiumBeamEmitterIII.name=Personal Aethium Beam Emitter Mk 3
+Canute.Equipment.PersonalAethiumBeamEmitterIV.name=Personal Aethium Beam Emitter Mk 4
+Canute.Equipment.MagneticGeneratorI.name=Magnetic Shield Generator Lv.I
+Canute.Equipment.MagneticGeneratorII.name=Magnetic Shield Generator Lv.II
+Canute.Equipment.MagneticGeneratorIII.name=Magnetic Shield Generator Lv.III
+Canute.Equipment.MagneticGeneratorIV.name=Magnetic Shield Generator Lv.IV
+#
+Canute.Building.Campus.name=Campus
+#
+Canute.BattleSystem.Cell.name=Region
+#地形
+Canute.BattleSystem.Terrain.Plain=Plain
+Canute.BattleSystem.Terrain.Forest=Forest
+Canute.BattleSystem.Terrain.Hills=Hills
+Canute.BattleSystem.Terrain.Mountains=Mountains
+Canute.BattleSystem.Terrain.River=River
+Canute.BattleSystem.Terrain.Ocean=Ocean
+Canute.BattleSystem.Terrain.Sand=Sand
+Canute.BattleSystem.Terrain.Swamp=Swamp
+ 
+
+#效果
+Canute.BattleSystem.Effect+Types.none=None
+Canute.BattleSystem.Effect+Types.none.info= 
+Canute.BattleSystem.Effect+Types.move=Move
+Canute.BattleSystem.Effect+Types.move.info=Move army in an area of @param
+Canute.BattleSystem.Effect+Types.enterMove=Move Army
+Canute.BattleSystem.Effect+Types.enterMove.info=Move army in an area of @param
+Canute.BattleSystem.Effect+Types.enterAttack=Attack
+Canute.BattleSystem.Effect+Types.enterAttack.info=attack other army
+Canute.BattleSystem.Effect+Types.drawCard=Draw Card
+Canute.BattleSystem.Effect+Types.drawCard.info=Draw @param Card
+Canute.BattleSystem.Effect+Types.armySwitch=Switch Position
+Canute.BattleSystem.Effect+Types.armySwitch.info=Switch two army's Position
+Canute.BattleSystem.Effect+Types.damageIncreasePercentage=Increase Damage
+Canute.BattleSystem.Effect+Types.damageIncreasePercentage.info=Increase @param% of the damage
+Canute.BattleSystem.Effect+Types.damageDecreasePercentage=Decrease Damage
+Canute.BattleSystem.Effect+Types.damageDecreasePercentage.info=Decrease @param% of the damage
+Canute.BattleSystem.Effect+Types.createArmy=Send army
+Canute.BattleSystem.Effect+Types.createArmy.info=Send @name to select position
+Canute.BattleSystem.Effect+Types.attackRange=Attack range bounes
+Canute.BattleSystem.Effect+Types.attackRange.info=Attack range bounes by @param 
+Canute.BattleSystem.Effect+Types.cardMinusPoint=Supply
+Canute.BattleSystem.Effect+Types.cardMinusPoint.info=-@param action point require for a card when playing the card
+Canute.BattleSystem.Effect+Types.confusion=Confusion
+Canute.BattleSystem.Effect+Types.confusion.info=Move Range and Attack Range -@param%
+Canute.BattleSystem.Effect+Types.protection=Protection
+Canute.BattleSystem.Effect+Types.protection.info=Under $sourceName's Protection (Enemy cannot attack this army)
+Canute.BattleSystem.Effect+Types.addActionPoint=Get Action Point
+Canute.BattleSystem.Effect+Types.addActionPoint.info=Add @param Action Point 
+Canute.BattleSystem.Effect+Types.addArmor=Add Armor
+Canute.BattleSystem.Effect+Types.addArmor.info=Add @param Armor to select army
+Canute.BattleSystem.Effect+Types.magePoison=Poison
+Canute.BattleSystem.Effect+Types.magePoison.info=Army will lost @param HP each turn.
+Canute.BattleSystem.Effect+Types.coma=Coma
+Canute.BattleSystem.Effect+Types.coma.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.EMPImpact=EMP Impact
+Canute.BattleSystem.Effect+Types.EMPImpact.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.flashLight=Flash Light
+Canute.BattleSystem.Effect+Types.flashLight.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.motherOf=Mothership.
+Canute.BattleSystem.Effect+Types.motherOf.info=$targetName's Mothership.
+
+
+#resonance
+Canute.BattleSystem.Effect+Types.infantryLightness=Resonance: Lightness
+Canute.BattleSystem.Effect+Types.infantryLightness.info=No action point cost when moving
+Canute.BattleSystem.Effect+Types.infantryDamageBonus=Resonance: Damage Increase
+Canute.BattleSystem.Effect+Types.infantryDamageBonus.info=Increase Damage by @param%
+Canute.BattleSystem.Effect+Types.warMachineResonance=Resonance: War Machine Enhance
+Canute.BattleSystem.Effect+Types.warMachineResonance.info=For all War Machine, Defense +@param
+Canute.BattleSystem.Effect+Types.mageResonance=Resonance: Mage Support
+Canute.BattleSystem.Effect+Types.mageResonance.info=Friendly Army in range of @distance will increase @param% damage
+Canute.BattleSystem.Effect+Types.shielderResonance=Resonance: Shielder Enhancement
+Canute.BattleSystem.Effect+Types.shielderResonance.info=Health +@param%
+Canute.BattleSystem.Effect+Types.rifleman1Resonance=Resonance: Rifleman Penetrate
+Canute.BattleSystem.Effect+Types.rifleman1Resonance.info=When Rifleman attacks，if enemy is stand on the same line，all the enemy on the same line would damage, with maximum penetrate range no more than 2 * rifleman's attack range
+Canute.BattleSystem.Effect+Types.riflemanAttackRange=Resonance: Rifleman Support
+Canute.BattleSystem.Effect+Types.riflemanAttackRange.info=For all land army, Attack Range +1
+Canute.BattleSystem.Effect+Types.rifleman2Resonance=Resonance: Rifleman Penetrate Enhance
+Canute.BattleSystem.Effect+Types.rifleman2Resonance.info=Penetrate can happen when enemy is not stand on the same line
+Canute.BattleSystem.Effect+Types.riflemanCriticalBonus=Resonance: Rifleman Focus
+Canute.BattleSystem.Effect+Types.riflemanCriticalBonus.info=Rifleman, Critical Damage Bonus +20%
+Canute.BattleSystem.Effect+Types.addDragonCard=Resonance: Magic from Dragon
+Canute.BattleSystem.Effect+Types.addDragonCard.info=Add @count Dragon Card
+Canute.BattleSystem.Effect+Types.shielderPenetrate=Resonance: Shielder Penetrate
+Canute.BattleSystem.Effect+Types.shielderPenetrate.info=Ignore other army's defense (except for shielder), cause a another @param% of enemy's current HP's real damage (except for shielder).
+#dragon
+Canute.BattleSystem.Effect+Types.dragonAttack=Dragon Status:Attack
+Canute.BattleSystem.Effect+Types.dragonAttack.info=the dragon is ready to attack 
+Canute.BattleSystem.Effect+Types.dragonDefense=Dragon Status:Defense
+Canute.BattleSystem.Effect+Types.dragonDefense.info=the dragon is ready to defense
+
+Canute.BattleSystem.Effect+Types.dragonAirAttack=Air Attack
+Canute.BattleSystem.Effect+Types.dragonAirAttack.info=Increase army damage by 10%, switch army attack position to air.
+Canute.BattleSystem.Effect+Types.dragonAttackBonus=Attack Range Bonus
+Canute.BattleSystem.Effect+Types.dragonAttackBonus.info=army attack range +1, army's move range -2
+Canute.BattleSystem.Effect+Types.dragonCritAttack=Attack Bonus
+Canute.BattleSystem.Effect+Types.dragonCritAttack.info=Hp -10% (Current), damage +20%, crit rate +100%
+Canute.BattleSystem.Effect+Types.dragonDualAttack=Dual Attack
+Canute.BattleSystem.Effect+Types.dragonDualAttack.info=damage -45%, every attack will have a bonus attack with it. 
+Canute.BattleSystem.Effect+Types.dragonMoveBonus=Move Range Bonus
+Canute.BattleSystem.Effect+Types.dragonMoveBonus.info=army move range +1, army's attack range -2
+Canute.BattleSystem.Effect+Types.dragonStrike=Strike
+Canute.BattleSystem.Effect+Types.dragonStrike.info=enemy army will go back 2 grid when the army stand by.
+
+Canute.BattleSystem.Effect+Types.addDragonAirAttack=Add Air Attack
+Canute.BattleSystem.Effect+Types.addDragonAirAttack.info=Increase army damage by 10%, switch army attack position to air.
+Canute.BattleSystem.Effect+Types.addDragonAttackBonus=Add Attack Range Bonus
+Canute.BattleSystem.Effect+Types.addDragonAttackBonus.info=army attack range +1, army's move range -2
+Canute.BattleSystem.Effect+Types.addDragonCritAttack=Add Attack Bonus
+Canute.BattleSystem.Effect+Types.addDragonCritAttack.info=Hp -10% (Current), damage +20%, crit rate +100%
+Canute.BattleSystem.Effect+Types.addDragonDualAttack=Add Dual Attack
+Canute.BattleSystem.Effect+Types.addDragonDualAttack.info=damage -45%, every attack will have a bonus attack with it. 
+Canute.BattleSystem.Effect+Types.addDragonMoveBonus=Add Move Range Bonus
+Canute.BattleSystem.Effect+Types.addDragonMoveBonus.info=army move range +1, army's attack range -2
+Canute.BattleSystem.Effect+Types.addDragonStrike=Add Strike
+Canute.BattleSystem.Effect+Types.addDragonStrike.info=enemy army will go back 2 grid when the army stand by.
+
+#skill
+Canute.BattleSystem.Effect+Types.NoSkill=---
+Canute.BattleSystem.Effect+Types.NoSkill=No Skill
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Infantry Skill
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill.info= attack twice the [closest, possible, lowest HP] target (with a 0%/40% damage decrease)
+Canute.BattleSystem.Effect+Types.BasicMageSkill=Mage Skill
+Canute.BattleSystem.Effect+Types.BasicMageSkill.info=Give a closest enemy poison. In next 3 turns, enemy would lost 40% of mage's damage every turn.
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Rifleman Skill
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill.info=to cause the [closest, possible, lowest HP] target lost 20% Current HP and 40% lost HP
+Canute.BattleSystem.Effect+Types.BasicShielderSkill=Shielder Skill
+Canute.BattleSystem.Effect+Types.BasicShielderSkill.info=Give whole legion's army 20 Armor
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill=War Machine Skill
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill.info=Attack the closest possible target, and causes a 120% damage.
+Canute.BattleSystem.Effect+Types.BasicCavalrySkill=Cavalry Skill
+Canute.BattleSystem.Effect+Types.BasicCavalrySkill.info=When HP < 50%，move to the side of the closest enemy，otherwise attack closest enemy by 1 * damage;
+Canute.BattleSystem.Effect+Types.BasicDragonSkill=Dragon Skill
+Canute.BattleSystem.Effect+Types.BasicDragonSkill.info=Get 3 central deck card with no action point cost.
+
+#aircraft fighter
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn=Airport
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn.info=Returning position: @x,@y
+Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy=After Attack Effect
+Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy.info=Aircraft will move toward to Enemy when attack.
+
+#Level State
+Canute.BattleSystem.UI.ResultUI.Passed=Succeed
+Canute.BattleSystem.UI.ResultUI.Lost=Battle Lost
+
+#错误事件
+Canute.BattleSystem.BattleEventError.CardNoSelectingEntity=Card did not played: no selecting entity
+Canute.BattleSystem.BattleEventError.CardNotValidTarget=Card did not played: not a valid target
+Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=Card did not played: no enough action point
+
+Canute.BattleSystem.BattleEventError.armyNoTarget=no enemy is in attack range  
+Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: target is under protection
+Canute.BattleSystem.BattleEventError.ArmyCannotAttack=it can't attack anyone 
+Canute.BattleSystem.BattleEventError.ArmyNoTargetInAttackRage=No Target is in attack range
+
+#Tips
+Canute.Tips.0=Place Card On the Army to use it.
+Canute.Tips.1=Place a card on anothor card if the card you want to use can only choose card as target.
+Canute.Tips.2=Some Leader have a better bonus than others.
+Canute.Tips.3=Some army are on the sky, and some are not.
+Canute.Tips.4=Please don't try to command your infantry to attack an aircraft.
+Canute.Tips.5=Equipment can give your army a better performance on the battle.
+Canute.Tips.6=Mages have a special attack method: There will be a bonus splash attack within 1 cell.
+Canute.Tips.7=Riflemen attack every enemy in a line.
+Canute.Tips.8=Aircraft Fighters have to go back to its airport at the end of the turn.
+Canute.Tips.9=Airships can sent more aircraft fighter.
+Canute.Tips.10=No army can penetrate Shielder's shield, some special event maybe.
+Canute.Tips.11=Every attack would cause at least 1 damage.
+Canute.Tips.12=Using the card that matched with army's career would cause 1 less action point.
+Canute.Tips.13=Dragons knows magic better than those mage, they can boot up the army for some cost...
+Canute.Tips.14=Resonance happens when more same type of army exist.
+Canute.Tips.15=Careers are Scientist, Politician, Military, and Merchant.
+Canute.Tips.16=Fantarium is larger than what you think.
+
+#;
+Canute.Character.Theodore Pullan.WordLine.0=It is funny that where the name of "Avgium" can from, so the scientist name it after Aether’s step father, which was the dragon king Avgas.
+Canute.Character.Theodore Pullan.WordLine.1=Since aethium means "light" and it has the same origin as the king Aether Erinope, and the Avgium was discovered in a huge mine of aethium.
+Canute.Character.Theodore Pullan.WordLine.2=Hmm… My sister? I haven’t met her for five years; she is a grown up already. I mean, all Pullans are strong and independent, she will be fine. But anyway, can I have a vacation, just to see how is she doing?
+Canute.Character.Theodore Pullan.WordLine.3=Chairman Canute, even though you are part of the Project Ankaa, I don’t really know much about you before. 
+Canute.Character.Theodore Pullan.WordLine.4=Ankaa? The firebird on the sky that can reborn, they name is project as they want Anexar also reborn.
+Canute.Character.Theodore Pullan.WordLine.5=Wow, Finn won the tennis competition yesterday. I am totally not interested in this competition.
+Canute.Character.Theodore Pullan.WordLine.6=If… How can Aethium and Avgium have so much reaction to magnetic fields? This is it! I am done with this stupid stone. No, I am just kidding, Mr. Chairman.
+Canute.Character.Theodore Pullan.WordLine.7=Nah, I don’t know why we are so focused on Magnetics for thousands of years, we can’t change the history of that after all, or can we?
+Canute.Character.Theodore Pullan.WordLine.8=How many times I have told you, I am not a calculator, Finn! Ok, what? The answer is 42, yes, 42, still, yes all answers are 42.
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithItem=Chairman Canute, we found soemthing on the way back, I think now it's time to go out again.
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithLeader=Chairman Canute, I think we have a new member. Anyway, It is your stuff, not mine.
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithStory=Chairman Canute, there are some tales I heard on the way back, not really interesting...
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithLetter=Chairman Canute, I picked up some papers outside, probably some history document you might like.
+
+Canute.Character.Finn Herman.WordLine.0=Both the old teacher and I are from Calay.
+Canute.Character.Finn Herman.WordLine.1=Sir, Can I go outside to take a walk?
+Canute.Character.Finn Herman.WordLine.2=Sir, Can I watch the television? ok you are right, nothing interesting about the Council’s Propaganda, and Meialian Channel which only speak Meialian, they sound like dragon roar.
+Canute.Character.Finn Herman.WordLine.3=Last time I saw Theodore on a vacation, he was playing tennis.
+Canute.Character.Finn Herman.WordLine.4=Sir, do you like Calay more or here? Oh, I think you like Sigma Quadrant more because that was your home.
+Canute.Character.Finn Herman.WordLine.5=Sir, can you tell me more about your experience when you are studying abroad? Where? Of course I am talking about Meialia
+Canute.Character.Finn Herman.WordLine.6=Sir, can you tell someone who is going outside to get a simple calculator for me? What? You mean I can just use the Material printers to print one? Yeah!
+Canute.Character.Finn Herman.WordLine.7=Sir, last time one of the supply vehicles brought only 90% of the cargo. I am still investigating where the other 10% goes...
+Canute.Character.Finn Herman.WordLine.8=Sir, when can we go back to Calay, I missed home?
+Canute.Character.Finn Herman.supplyTeamComeBackWithItem=Sir, I found a give for you!
+Canute.Character.Finn Herman.supplyTeamComeBackWithLeader=Sir, there is a stranger who wants to be a new member...
+Canute.Character.Finn Herman.supplyTeamComeBackWithStory=Sir! I heard an interesting tale on the way this time!
+Canute.Character.Finn Herman.supplyTeamComeBackWithLetter=Sir, I found some papers, can you read for me? I don’t like to read.
+
+Canute.Character.Ron Thompson.WordLine.0=Do I like to be in Swisha? Why don’t I like to be at home? People said nothing is better than Home.
+Canute.Character.Ron Thompson.WordLine.1=Actions and Consequences, they formed everything.
+Canute.Character.Ron Thompson.WordLine.2=Why did I become a smuggler? When we don’t have choices, we do everything possible to live, smuggling is just one thing.
+Canute.Character.Ron Thompson.WordLine.3=Did you see my pipe? I think it is in the main hall. Well, I think just use the Material Printer to print another one.
+Canute.Character.Ron Thompson.WordLine.4=Federacy never changed, just as there never had a past to be remembered. We are in a world without yesterday.
+Canute.Character.Ron Thompson.WordLine.5=...
+Canute.Character.Ron Thompson.WordLine.6=...
+Canute.Character.Ron Thompson.WordLine.7=...
+Canute.Character.Ron Thompson.WordLine.8=...
+Canute.Character.Ron Thompson.supplyTeamComeBackWithItem=Canute, We picked up some supply on the way.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithLeader=Canute, We met someone who I think is reliable.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithStory=Canute, Let me tell you a tell, one even I just know.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithLetter=Canute, I found some papers, can you read for me? I can’t see those really tiny wrinkles clearly.
+
+
+Canute.Character.Shelly McMoore.WordLine.0=Thank you for getting most of us here, Mr. Chairman.
+Canute.Character.Shelly McMoore.WordLine.1=Even though you are from Sigma Quadrant, you don’t like those Quadranter.
+Canute.Character.Shelly McMoore.WordLine.2=Can I do anything for you?
+Canute.Character.Shelly McMoore.WordLine.3=As much as you know, the Federacy had two fractions before, we are the Revival Party, which today becomes the Scientific Revolution Party.
+Canute.Character.Shelly McMoore.WordLine.4=The other party? the Advance Party, which formed the Supreme Council today. Oh yes, there is a third party which we don’t admit is legal.
+Canute.Character.Shelly McMoore.WordLine.5=Determination is important, Chairman, without it, we can’t make it today and continue our work.
+Canute.Character.Shelly McMoore.WordLine.6=I have actually never been to Calay before, Chairman, I know you were the Senator of Calay, before the Supreme Council took over everything in the Federacy.
+Canute.Character.Shelly McMoore.WordLine.7=They said that the last president of the Federacy, Brittany Whitaker, ended the civil war of the Federacy by negotiating with the Supreme Council. Do you think the war is ended?
+Canute.Character.Shelly McMoore.WordLine.8=May the independence of the real Federation last forever.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithItem=Mr. Chairman, we found something on the way back.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithLeader=Mr. Chairman, we have a new member.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithStory=Mr. Chairman, there are some rumors outside and I think you are supposed to know about it.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithLetter=Mr. Chairman, we found some lost documents, and I think you should read it.
+//everything under this
+
+Canute.Character.Empty.WordLine.0= 
+Canute.Character.Empty.WordLine.1= 
+Canute.Character.Empty.WordLine.2= 
+Canute.Character.Empty.WordLine.3= 
+Canute.Character.Empty.WordLine.4= 
+Canute.Character.Empty.WordLine.5= 
+Canute.Character.Empty.WordLine.6= 
+Canute.Character.Empty.WordLine.7= 
+Canute.Character.Empty.WordLine.8= 
+Canute.Character.Empty.supplyTeamComeBackWithItem= 
+Canute.Character.Empty.supplyTeamComeBackWithLeader= 
+Canute.Character.Empty.supplyTeamComeBackWithStory= 
+Canute.Character.Empty.supplyTeamComeBackWithLetter= 
+
+#SceneName
+Canute.UI.SceneName.Exploration=Supply Team
+Canute.UI.SceneName.Shop=Shop
+Canute.UI.SceneName.Hallway=Hallway
+Canute.UI.SceneName.LegionSetting=Legion Setting
+Canute.UI.SceneName.EventCard=Event Card Pile
+Canute.UI.SceneName.Settings=Settings
+Canute.UI.SceneName.StoryRoom=Story Room
+##UI
+Canute.UI.Common.Back=Back
+Canute.UI.Common.LegionSetting=Army
+Canute.UI.Common.Armies=Army
+Canute.UI.Common.Equipments=Equipments
+Canute.UI.Common.EventCard=EventCard
+#
+Canute.UI.LegionSetting.Upgrade=Upgrade
+Canute.UI.LegionSetting.Change=Change
+Canute.UI.LegionSetting.Left=Left
+Canute.UI.LegionSetting.Legion1=Legion 1
+Canute.UI.LegionSetting.Legion2=Legion 2
+Canute.UI.LegionSetting.Legion3=Legion 3
+#
+Canute.UI.Start.Continue=Continue
+Canute.UI.Start.Saves=Other Progress
+Canute.UI.Start.NewGame=New Game
+Canute.UI.Start.Settings=Settings
+Canute.UI.Start.Credit=Credit
+Canute.UI.Start.Games=Other Progress
+Canute.UI.Start.Quit=Quit
+Canute.UI.Start.Quit.Check=Are you sure about quitting?
+#
+Canute.UI.MainHall.Training=Training
+Canute.UI.MainHall.NextBattle=Next Battle
+Canute.UI.MainHall.Basement=Basement outside
+Canute.UI.MainHall.Legion=Legion Setting
+Canute.UI.MainHall.Pile=Card Pile Setting
+Canute.UI.MainHall.Exploration=Supply Team
+Canute.UI.MainHall.Shop=Shop
+Canute.UI.MainHall.Chapter=Battles
+Canute.UI.MainHall.Hallway=Hallway
+Canute.UI.MainHall.Quit=Start Menu
+#
+Canute.Hallway.Explanation=You might find someone on the hallway...
+#
+Canute.Shop.BuyItem=Buy @itemName?Cost:@cost
+Canute.Shop.GetItem=Get @itemName
+Canute.Shop.No money=We don't have enough money for this, sir.
+Canute.Shop.Explanation=Where we can buy army, Equipment etc.
+#
+Canute.STPrizeDisplay.NewPrize=Supply Team get @name
+#
+Canute.SupplyTeam.Explanation=Send at least one leader and/or one army that protect these leaders to get more supply for the basement.
+Canute.SupplyTeam.TeamPositionInfo=The Supply Team is in @city, @country right now.
+#
+Canute.UI.Settings.Basic=Basic
+Canute.UI.Settings.Basic.PlayCardDelay=Play Card Delay
+Canute.UI.Settings.Basic.ShowStory=Show Story
+Canute.UI.Settings.Basic.Volume=Volume
+Canute.UI.Settings.Language=Language
+Canute.UI.Settings.Other=Other
+Canute.UI.Settings.Other.OpenDataFolder=Open Data Folder
+Canute.UI.Settings.Other.Tutorial=Tutorial

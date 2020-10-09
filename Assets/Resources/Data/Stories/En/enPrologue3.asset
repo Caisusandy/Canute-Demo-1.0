@@ -56,14 +56,8 @@ MonoBehaviour:
       selections: []
     - speakerName: Canute Swenson
       id: Prologue3.5
-      line: 'I am familiar with their equipment. . . Yeah, it''s Meialian''s, all
-        these things are new.
-
-        Fin Herman
-
-        who?
-
-'
+      line: I am familiar with their equipment. . . Yeah, it's Meialian's, all these
+        things are new.
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0

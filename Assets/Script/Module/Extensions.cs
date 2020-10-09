@@ -10,9 +10,11 @@ namespace Canute
     {
         public static T Exist<T>(this T instance) where T : UnityEngine.Object
         {
+            GameObject a;
             return instance ? instance : null;
         }
 
+        [Obsolete]
         public static string GenerateName(int num)
         {
             int number;
