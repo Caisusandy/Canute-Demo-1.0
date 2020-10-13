@@ -140,6 +140,20 @@ namespace Canute.BattleSystem
     [Serializable]
     public class BattleBuilding : BattleEntityData
     {
+        public BattleBuilding(GameObject prefab, Building prototype)
+        {
+            this.prefab = prefab;
+            this.properties = prototype.Property;
+            this.name = prototype.Name;
+        }
+        public BattleBuilding(GameObject prefab, Building prototype, UUID ownerUUID)
+        {
+            this.prefab = prefab;
+            this.properties = prototype.Property;
+            this.name = prototype.Name;
+            base.ownerUUID = ownerUUID;
+        }
+
         public override GameObject Prefab { get => prefab.Exist() ?? GameData.Prefabs.DefaultBuilding; set => prefab = value; }
         public override Prototype Prototype { get => GameData.Prototypes.GetBuildingPrototype(name); set => base.Prototype = value; }
         public new BuildingEntity Entity => base.Entity as BuildingEntity;

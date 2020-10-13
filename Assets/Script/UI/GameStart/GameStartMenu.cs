@@ -79,7 +79,12 @@ namespace Canute.UI
 
         public void Credit()
         {
-            var info = "Wendell Cai (Leader, programmer, artist, story, soundtrack),\n Kira Wang (artist),\n Adelle Alexander (story), \nand Gia Khanh (programmer)\nAdvisor: David Rios";
+            var info = "Wendell Cai (Leader, programmer, artist, story, soundtrack)," +
+                "\n Kira Wang (artist)," +
+                "\n Adelle Alexander (story), " +
+                "\nand Gia Khanh (programmer)" +
+                "\nAdvisor: David Rios" +
+                "\nThis is a demo version of the game.";
             var a = InfoWindow.Create(info);
             a.transform.SetParent(transform.parent);
             Destroy(a.gameObject.GetComponent<GraphicRaycaster>());

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enSceneIntroHallway
+  m_EditorClassIdentifier: 
+  story:
+    id: SceneIntroHallway
+    type: 1
+    wordLines:
+    - speakerName: Theodore Pullan
+      id: SceneIntroHallway.1
+      line: Here you are, Mr. Canute Svensson. Are you come and check for all the
+        armies and equipments?
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections:
+      - toWordLineId: SceneIntroHallway.2
+        selectionInfo: Yes
+      - toWordLineId: SceneIntroHallway.3
+        selectionInfo: No
+      nextLineID: 
+    - speakerName: Theodore Pullan
+      id: SceneIntroHallway.2
+      line: Well, have a great day then!
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: SceneIntroHallway.4
+    - speakerName: Theodore Pullan
+      id: SceneIntroHallway.3
+      line: Well, I don't think it is a great idea to stand on the hall way for a
+        long time, it might blocks someone. Anyway, we can have some great conversations
+        if you like.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: 
+      id: SceneIntroHallway.4
+      line: You can meet all the leaders in the basement here. Meanwhile, you can
+        see all your armies and quipments on the left
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

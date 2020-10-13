@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc7ee739f28e864385839830141b45b, type: 3}
+  m_Name: A Story Converter
+  m_EditorClassIdentifier: 
+  storyName: Ch7-4Pro
+  charaterNames:
+  - Ron Thompson
+  - Canute Svensson
+  - ===
+  - Finn Herman
+  - Theodore Pullan
+  - Shelly McMoore
+  - Grey-haired woman
+  - ' '
+  - The Woman
+  - '?'
+  - Evelyn Burke
+  - Gang of Thieves
+  - Riots
+  input: "===\r\nThe next morning, a humbled group of men and women took down their
+    tents and carried on. Canute was able to breathe a little easier when they left
+    the scrappy little town behind them. As they travelled, the line was quiet. Even
+    Finn had nothing to say, and for once, Canute would have welcomed the sound of
+    his chatter. \r\n===\r\nAnything to take his mind off of the stifling shroud
+    of guilt covering it. Looking back on what had happened the night before, there
+    wasn\u2019t anything he could\u2019ve done to prevent it, but somehow, his head
+    persuaded him into thinking all of it was his fault. He clenched his hands into
+    fists for a moment then rubbed them off on his pants in an attempt to rid them
+    of the invisible blood.\r\n===\r\nHe wished that Arthur could be there to help
+    him. His teacher had always known what to say when Canute came back from another
+    lesson with a bloody nose or black eye. He had been one of the smallest students,
+    but somehow he managed to get into fights. You don\u2019t know when to quit,
+    Arthur would say. \r\n===\r\nCanute shook his head at his younger self and laughed.
+    Look where that got me. The rest of the afternoon passed in silence, and as the
+    sun was beginning to set, they could see what looked like a fallen star in the
+    distance. Canute shielded his eyes from the sun\u2019s glare in order to get
+    a better look at the strange vision. As he squinted, the rays of light coming
+    from the star resolved themselves into buildings that sprawled out across the
+    empty plains for miles. \r\n===\r\nThe city resembled all of the others they\u2019d
+    been through so far, except their separate details had been combined into one
+    cosmopolitan mess. The outside was a bristling thicket of crumbling buildings
+    and smog, occasionally rocked by random explosions, while the inner circle was
+    polished, sleek, and looked rather expensive.\r\n===\r\nCanute felt like he was
+    seeing all of their world\u2019s problems summed up in one city. Those in power
+    taxed the poor to afford their own petty luxuries, leading to vast disparities
+    in quality of life. The idea made his stomach twist and gave him new resolve.
+    This rescue is just the first step, he thought. Once we rescue Arthur, we can
+    do so much more. We can change the way these people are living. \r\n===\r\nHis
+    courage strengthened, he lead his team closer to the city. They were a few hundred
+    yards within reach of the outskirts when Finn stopped walking. Canute turned
+    around to reprimand him, but stopped when he noticed the look on his younger
+    friend\u2019s face.\r\nRon Thompson\r\nDo you hear that?\r\n===\r\nFinn\u2019s
+    face paled as he spoke, glancing at the sky above them. Canute listened and realized
+    Finn was right. He could hear the whirr of helicopter blades approaching, and
+    it didn\u2019t take long for his questions to be answered. Out of the tall spires
+    of the wealthy side of Swisha Main City came three hovercraft.\r\n===\r\nAs they
+    approached, he could make out the symbol of the Supreme Council on their sides.
+    They cleared the edge of the city and stopped, forming a dark line. Transport
+    beams shot out of their bellies in glowing columns. It was too far away to make
+    out details, but soldiers descended the hovercrafts and assembled on the plains
+    across from the team. Having deposited their cargo, the helicopters retracted
+    their transport beams and returned the way they had come.\r\n===\r\nCanute watched
+    them go and joined Ron in giving orders to his meager forces. The other soldiers
+    started forward in stiff uniform squads. Gradually, Canute could make out the
+    details of their faces and felt a chill slip into the pit of his stomach. These
+    were no ordinary soldiers. Their eyes glowed neon green and held no mercy, and
+    under their armor, harsh black metal gleamed. \r\n===\r\nThese were the prize
+    warrior robots of the Swisha, equipped with artificial intelligence and superior
+    weaponry. Time seemed to slow down. There was no sound except for the mechanical
+    whir of the approaching troops and the wind in Canute\u2019s ears. He looked
+    at the group around him and his heart swelled with pride. If this was how his
+    life ended, he would be proud to fight alongside companions like these. \r\n"
+  output: {fileID: 11400000, guid: 2ab9d2b3cd3f70a4cbbfc8444c1ed1cb, type: 2}

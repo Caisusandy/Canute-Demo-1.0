@@ -53,7 +53,7 @@ namespace Canute.UI.Legion
             }
             label = Instantiate(GameData.Prefabs.Get("label"), transform).GetComponent<Label>();
             label.text.text = ((Status)ResonancePair.Resonance).Info();
-            var canvas = label.gameObject.AddComponent<Canvas>();
+            var canvas = label.gameObject.GetComponent<Canvas>().Exist() ?? label.gameObject.AddComponent<Canvas>();
 
             canvas.overrideSorting = true;
             canvas.sortingLayerName = "UI";

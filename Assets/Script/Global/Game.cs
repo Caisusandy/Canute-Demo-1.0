@@ -99,7 +99,8 @@ namespace Canute
     {
         en_us,
         zh_cn,
-        es_es
+        es_es,
+        vi_vn
     }
 
     [Serializable]

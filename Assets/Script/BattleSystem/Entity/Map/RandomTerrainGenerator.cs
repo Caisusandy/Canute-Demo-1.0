@@ -32,7 +32,7 @@ namespace Canute.BattleSystem
         //x=>moisture
         //y=>temperature
 
-        private TerrainRange swamp = new TerrainRange(new Vector2(0.75f, 0.5f), new Vector2(1f, 1f), Terrain.Swamp);
+        private TerrainRange swamp = new TerrainRange(new Vector2(0.7f, 0.5f), new Vector2(1f, 1f), Terrain.Swamp);
         private TerrainRange sand = new TerrainRange(new Vector2(0, 0.7f), new Vector2(0.3f, 1), Terrain.Sand);
         private TerrainRange mountains = new TerrainRange(new Vector2(0.25f, 0.1f), new Vector2(0.35f, 0.45f), Terrain.Mountains);
         private TerrainRange highland = new TerrainRange(new Vector2(0.25f, 0.25f), new Vector2(0.45f, 0.5f), Terrain.Highland);
@@ -79,6 +79,9 @@ namespace Canute.BattleSystem
                 foreach (var cell in column)
                 {
                     //Debug.Log(cell.Coordinate);
+                    Vector2 p = PerlinV2(cell.x, cell.y, seed);
+                    cell.data.humidity = (int)(100 * p.x);
+                    cell.data.temperature = (int)(87.5 * (p.y - 0.2) * (300f / 175f - p.y)) - 8;
                     cell.data.terrain = GetTerrain(cell.x, cell.y);
                     cell.SetCellSprite();
                 }

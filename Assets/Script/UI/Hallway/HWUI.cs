@@ -30,6 +30,7 @@ namespace Canute.UI.Hallway
             }
 
             StartCoroutine("BackgroundMotion");
+
         }
 
         private IEnumerator BackgroundMotion()

@@ -80,6 +80,7 @@
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\ΣCityInfantry\SigmaQuadrantCityDefenseInfantry.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Buildings\Camp\CampusEntity.cs" />
     <Compile Include="Assets\Resources\Levels\1-2\C1L2.cs" />
+    <Compile Include="Assets\Resources\Levels\Ch7\7-2\C7L2.cs" />
     <Compile Include="Assets\Resources\Levels\Tutorials\Trial 2\Tutorial.cs" />
     <Compile Include="Assets\Resources\Scenes\Credit\Credit.cs" />
     <Compile Include="Assets\Resources\Scenes\Factory\BuildTest.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\CellEntity.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\CellMark.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\ColumnEntity.cs" />
+    <Compile Include="Assets\Script\BattleSystem\Entity\Map\Develope\CellSizeDefault.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\Develope\DevMapGenerator.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\FakeCell.cs" />
     <Compile Include="Assets\Script\BattleSystem\Entity\Map\FakeMapGenerator.cs" />
@@ -201,11 +203,13 @@
     <Compile Include="Assets\Script\Chapters\Story.cs" />
     <Compile Include="Assets\Script\Chapters\StoryContainer.cs" />
     <Compile Include="Assets\Script\Chapters\StoryConverter.cs" />
+    <Compile Include="Assets\Script\Chapters\WordLines.cs" />
     <Compile Include="Assets\Script\Global\CanuteVersion.cs" />
     <Compile Include="Assets\Script\Global\Data\BounesTypes.cs" />
     <Compile Include="Assets\Script\Global\Data\Client\Data.cs" />
     <Compile Include="Assets\Script\Global\Data\Client\GameStatistic.cs" />
     <Compile Include="Assets\Script\Global\Data\Client\Legion.cs" />
+    <Compile Include="Assets\Script\Global\Data\Client\LevelInfo.cs" />
     <Compile Include="Assets\Script\Global\Data\Client\PlayerData.cs" />
     <Compile Include="Assets\Script\Global\Data\Client\PlayerFile.cs" />
     <Compile Include="Assets\Script\Global\Data\EventTree.cs" />
@@ -258,6 +262,7 @@
     <Compile Include="Assets\Script\Global\SceneControl.cs" />
     <Compile Include="Assets\Script\Global\SceneJumper.cs" />
     <Compile Include="Assets\Script\Global\SpriteLoader.cs" />
+    <Compile Include="Assets\Script\Global\TipDisplayer.cs" />
     <Compile Include="Assets\Script\Language\Language.cs" />
     <Compile Include="Assets\Script\Language\LanguageSystem.cs" />
     <Compile Include="Assets\Script\Mode\PrototypeLoader.cs" />
@@ -314,6 +319,8 @@
     <Compile Include="Assets\Script\UI\Armies\AttackTypeIcon.cs" />
     <Compile Include="Assets\Script\UI\Armies\Icon.cs" />
     <Compile Include="Assets\Script\UI\Armies\StandPostionIcon.cs" />
+    <Compile Include="Assets\Script\UI\Chapter\ChapterInfo.cs" />
+    <Compile Include="Assets\Script\UI\Chapter\ChapterUI.cs" />
     <Compile Include="Assets\Script\UI\Equipments\EquipmentListUI.cs" />
     <Compile Include="Assets\Script\UI\Equipments\EquipmentUI.cs" />
     <Compile Include="Assets\Script\UI\EventCardPile\ECPAddCard.cs" />
@@ -353,6 +360,7 @@
     <Compile Include="Assets\Script\UI\Levels\ChapterButtons.cs" />
     <Compile Include="Assets\Script\UI\PlayerCurrencyDisplayer.cs" />
     <Compile Include="Assets\Script\UI\RandomOAW.cs" />
+    <Compile Include="Assets\Script\UI\SceneExplanation.cs" />
     <Compile Include="Assets\Script\UI\Settings\SettingUI.cs" />
     <Compile Include="Assets\Script\UI\Settings\SettingUIBasic.cs" />
     <Compile Include="Assets\Script\UI\Settings\SettingUIDebug.cs" />

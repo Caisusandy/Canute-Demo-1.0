@@ -560,6 +560,7 @@ namespace Canute.Testing
                 Game.PlayerData.AddLeaderItem(new LeaderItem(item));
             }
 
+            PlayerFile.SaveCurrentData();
             return true;
         }
 

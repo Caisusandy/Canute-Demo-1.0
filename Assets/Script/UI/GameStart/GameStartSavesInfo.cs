@@ -20,8 +20,8 @@ namespace Canute.UI
 
         public void Select()
         {
-            PlayerFile.LoadData(playerData.uuid);
-
+            bool s = PlayerFile.LoadData(playerData.uuid);
+            if (s) SceneControl.GotoScene(MainScene.mainHall);
         }
     }
 }

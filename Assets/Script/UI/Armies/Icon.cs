@@ -12,13 +12,13 @@ namespace Canute.UI
         protected Image IconImage => GetComponent<Image>();
         protected Text Label => label.GetComponent<Label>().text;
 
-        public void OnMouseOver() { DisplayInfo(); }
+        public virtual void OnMouseOver() { DisplayInfo(); }
 
-        public void OnMouseDown() { DisplayInfo(); }
+        public virtual void OnMouseDown() { DisplayInfo(); }
 
-        public void OnMouseExit() { HideInfo(); }
+        public virtual void OnMouseExit() { HideInfo(); }
 
-        public void OnMouseUp() { HideInfo(); }
+        public virtual void OnMouseUp() { HideInfo(); }
 
         public virtual void DisplayInfo()
         {

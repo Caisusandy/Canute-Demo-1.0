@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 732c2c3c72ac27842bc140ee0ed6d795, type: 3}
+  m_Name: Ch7-4 Campus
+  m_EditorClassIdentifier: 
+  Prototype: {fileID: 11400000, guid: 3c89cfb6209195d48b215c0c00af3005, type: 2}
+  spawnType: 0
+  radius: 0
+  generateCount: 0
+  battleBuilding:
+    name: Campus
+    prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
+      type: 3}
+    uuid:
+      value: b76edb5c-7fde-4d0a-8b4c-e069bf3cc045
+    ownerUUID:
+      value: 63c5918a-5aad-45ae-8bab-1b681601289b
+    allowMove: 0
+    coordinate: {x: 0, y: 0}
+    stats:
+      list: []
+    localLeader:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: 651cbf6f-1f6a-4436-a76c-cad034646cad
+      ownerUUID:
+        value: 
+      allowMove: 0
+      coordinate: {x: 0, y: 0}
+      stats:
+        list: []
+      career: 0
+      leadingArmyUUID:
+        value: 
+      isViceCommander: 0
+      level: 0
+      bounes: []
+    autonomousType: 0
+    anger: 0
+    career: 0
+    properties:
+      defense: 0
+      critRate: 0
+      critBonus: 0
+      critBounes: 0
+      pop: 0
+      attackRange: 4
+      moveRange: 0
+      standPosition: 0
+      attackPosition: 0
+      attackArea: 0
+      damageExtraCount: 0
+      targetCount: 0
+      attackType: 0
+      skill:
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []
+    maxHealth: -1
+    health: -1
+    armor: 0
+    damage: 0

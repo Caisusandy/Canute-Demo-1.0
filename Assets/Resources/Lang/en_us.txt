@@ -8,16 +8,44 @@ Canute.Career.General=General
 Canute.Career.Merchant=Merchant
 Canute.Career.None=None
 #Title
-Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
-Canute.LevelTree.Level.CalayInfinite.subtitle=infinity Map
+Canute.LevelTree.Level.TestingLevel.description=Testing Map description
 Canute.LevelTree.Level.CalayInfinite.title=Training Ground
-Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
+Canute.LevelTree.Level.CalayInfinite.description=infinity Map
 Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
-Canute.LevelTree.Level.7-inf.subtitle=Daily battle
-Canute.LevelTree.Level.7-inf.title=Basement outside
-Canute.LevelTree.Level.Ch7-1.subtitle=Daily battle
-Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Basement outside
+Canute.LevelTree.Level.1-2.description=First encounter Septian
+
+Canute.LevelTree.Level.Training.name=Training
+Canute.LevelTree.Level.Training.description=Command Training
+
+Canute.LevelTree.Level.Ch1.name=Germination
+Canute.LevelTree.Level.Ch1.description=Under piles of rocks, City of Calay is changing...
+
+Canute.LevelTree.Level.Ch7.name=Rescue Mission
+Canute.LevelTree.Level.Ch7.description=When it is time to restart something unfinished...
+Canute.LevelTree.Level.Ch7-0.title=Basement outside
+Canute.LevelTree.Level.Ch7-0.description=Daily battle
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Outside Basement
+Canute.LevelTree.Level.Ch7-1.description=Defeat: defeat all enemies on the field
+Canute.LevelTree.Level.Ch7-2.title=Rescue Mission: The Secret Police
+Canute.LevelTree.Level.Ch7-2.description=Retreat: retreat to the hills
+Canute.LevelTree.Level.Ch7-3.title=Rescue Mission: The Gang of Thieves
+Canute.LevelTree.Level.Ch7-3.description=Defeat: defeat all enemies on the field
+Canute.LevelTree.Level.Ch7-4.title=Rescue Mission: Squads of Supreme Council
+Canute.LevelTree.Level.Ch7-4.description=Defeat: defeat all Squads on the field
+Canute.LevelTree.Level.Ch7-5.title=Rescue Mission: Riot of Swisha
+Canute.LevelTree.Level.Ch7-5.description=Defeat: defeat all riot on the field
+Canute.LevelTree.Level.Ch7-6.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-6.description=Defeat:
+Canute.LevelTree.Level.Ch7-7.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-7.description=Defeat:
+Canute.LevelTree.Level.Ch7-8.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-8.description=Defeat:
+Canute.LevelTree.Level.Ch7-9.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-9.description=Defeat:
+Canute.LevelTree.Level.Ch7-10.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-10.description=Defeat:
+
 #Currency
 Canute.Shops.Currency+Type.fedgram=Federgram
 Canute.Shops.Currency+Type.manpower=Manpower
@@ -343,13 +371,14 @@ Canute.Character.Empty.supplyTeamComeBackWithStory=
 Canute.Character.Empty.supplyTeamComeBackWithLetter= 
 
 #SceneName
-Canute.UI.SceneName.Exploration=Supply Team
+Canute.UI.SceneName.SupplyTeam=Supply Team
 Canute.UI.SceneName.Shop=Shop
 Canute.UI.SceneName.Hallway=Hallway
 Canute.UI.SceneName.LegionSetting=Legion Setting
 Canute.UI.SceneName.EventCard=Event Card Pile
 Canute.UI.SceneName.Settings=Settings
 Canute.UI.SceneName.StoryRoom=Story Room
+Canute.UI.SceneName.ChapterSelection=Chapters-Battles
 ##UI
 Canute.UI.Common.Back=Back
 Canute.UI.Common.LegionSetting=Army
@@ -386,7 +415,7 @@ Canute.UI.MainHall.Quit=Start Menu
 #
 Canute.Hallway.Explanation=You might find someone on the hallway...
 #
-Canute.Shop.BuyItem=Buy @itemName?Cost:@cost
+Canute.Shop.BuyItem=Buy @itemName? Cost:@cost
 Canute.Shop.GetItem=Get @itemName
 Canute.Shop.No money=We don't have enough money for this, sir.
 Canute.Shop.Explanation=Where we can buy army, Equipment etc.
@@ -404,3 +433,5 @@ Canute.UI.Settings.Language=Language
 Canute.UI.Settings.Other=Other
 Canute.UI.Settings.Other.OpenDataFolder=Open Data Folder
 Canute.UI.Settings.Other.Tutorial=Tutorial
+#
+Canute.Demo.Unfinished.info=This is a demo version of the game Canute. This section is not available in the Demo.

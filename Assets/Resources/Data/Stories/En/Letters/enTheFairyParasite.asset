@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e105c90ab52da45aaa0e5bc375ab50, type: 3}
+  m_Name: enTheFairyParasite
+  m_EditorClassIdentifier: 
+  letter:
+    id: TheFairyParasite
+    author: Sun Xiao
+    title: The Fairy Parasite
+    background: {fileID: 0}
+    text: "The \"fairy\" parasite, the scientific name OP (Olfactory Parasite)-\u03B2
+      is a deadly burrowing parasite that has existed before the signing of the Second
+      Pan-Land War Peace Treaty. They are mainly distributed in the underground caves
+      of the West Continent, And paleontologists believe that this creature has existed
+      for at least 10,000 years. With the great mobilization before the Flood, many
+      human refugees have arrived in the Eastern Continent with these parasitic worms,
+      spreading these parasitic worms In the entire Great Enchantment. According
+      to the annual statistical report of the Epidemiology Branch of the Academy
+      of Human Sciences in 1021, the deaths of OP-\u03B2 accounted for 53.92% of
+      all human deaths from parasites each year. Due to the unique symptoms of OP-\u03B2,
+      OP -\u03B2 is basically unable to be cured by normal methods in the final host
+      stage, but OP- \u03B2 has very strict environmental requirements at the larval
+      stage, so all cities in the Human Federation have a complete OP- \u03B2 epidemic
+      prevention system.\r\nOP-\u03B2 is mutated from OE (Olfactory Ectoparasite)-\u03B1.
+      OE-\u03B1 is a parasitic worm that hosts burrowing cold-blooded creatures with
+      a length of 30 microns. OE-\u03B1 is mainly distributed near pyroxene veins.
+      The specific reason is that Pyroxene is one of the essential nutrients for
+      the reproduction of OE-\u03B1. It is pyroxene that has nurtured the colorful
+      creatures on the Western Continent. Some biologists even suspect that humans
+      and dragons, such as intelligent creatures, are also affected by pyroxene.
+      In order to develop civilization (<Dragon, Human, Pyroxene> by Antonio Rand).
+      In the larval egg stage, OE-\u03B1 will stay in place until the larva has absorbed
+      enough pyroxene radiation to grow into OE- \u03B11, at which time OE -\u03B11
+      will extend a pair of appendages on both sides of the limbs. This pair of appendages
+      give OE- \u03B11 the ability to float briefly in the cave. In the cave environment
+      where the air is almost difficult to circulate, OE- \u03B11 can be relaxed
+      and not affected. Interferingly adsorbs inside the host's respiratory tract.
+      However, OE-\u03B11 alone can hardly affect any creatures underground, so OE-\u03B11
+      will release pheromone after adsorbing to the host's respiratory tract, attracting
+      surrounding OE-\u03B11 to parasitize.\r\n If a large amount of OE-\u03B11 successfully
+      roots in the host's respiratory tract, in fact, even if it fails to parasitize,
+      as long as any OE-\u03B11 larva survives in the host's respiratory tract, they
+      will gather together to form OE-\u03B12, surrounding OE-\u03B11 Gather together
+      and secrete a layer of membrane to wrap up all the OE-\u03B11 inside, and inside
+      the membrane, OE-\u03B11 will degrade and reassemble your body into the next
+      stage of the organism, OE-\u03B12. It will last from 1 week to 2 weeks. This
+      layer of membrane can easily be mistaken for a pustule in the respiratory tract.
+      After OE-\u03B12 breaks the pupae (OE-\u03B12 has a long and slender body shape
+      but has a very critical point in the middle of the body OE-\u03B12 will use
+      its own unique microbial structure to emit pyroxene radiation to the surrounding
+      cell tissues and carry out a targeted gene mutation called pyroxene dependence.
+      The specific characteristics are The host can \"sniff\" the pyroxene veins
+      within one kilometer and is very eager to contact pyroxene. This is because
+      OE-\u03B12 stimulates a desire to return to the host, which is very obvious
+      in the burrowing creature burrow mole, but there is no return. Habitual creatures
+      think that there is food in that direction. Pyroxene dependence is actually
+      the reproductive behavior of OE-\u03B11. When the host reaches the pyroxene
+      vein, OE-\u03B12 will lay eggs and throw them out of the respiratory tract
+      or stay in the host. While stimulating pyroxene dependence, a large amount
+      of pyroxene radiation will cause the host's respiratory tract to grow a large
+      number of pyroxene crystals ranging from 1cm to 10cm. These stones will cause
+      great harm to the host, and the specific harm will not be here. To repeat.
+      Then OE-\u03B12 will live on the pyroxene crystals produced by pyroxene radiation,
+      and repeat this reproductive behavior until the host dies or the pyroxene is
+      exhausted.\r\nTherefore, the life of OE- \u03B1 is divided into three stages:
+      eggs, larvae OE- \u03B11, and adults OE- \u03B12. These three stages of OE-
+      \u03B1 feed on the parasitic cave mole in the underground caves of the West
+      Continent, at least in the Pan-Continent countries. This was the case before
+      the development of pyroxene.\r\nAfter the Second Pan-Continent War, due to
+      the monopolization of excellent magicians and cutting-edge magic technology
+      by Miella, the First Human Autonomous Government issued a number of applications
+      for the rapid development of pyroxene application technology and magic theories,
+      which were considered by later generations. It is a policy to encourage pyroxene,
+      including a policy to purchase pyroxene at a high price. Although this policy
+      has stimulated the development of the pyroxene market, the equipment and knowledge
+      required to mine pyroxene are scarce by some speculators. Most of the hui Stone
+      veins are excavated by miners who are low in productivity and do not understand
+      any common sense of hygiene. Naturally, most of these miners are infected with
+      OE-\u03B1, but OE-\u03B1 is only an intermediate host in the human respiratory
+      tract, OE -\u03B1 will only be adsorbed in the respiratory tract for a period
+      of time, and then it will detach. If OE- \u03B1 tries to enter the adult state,
+      OE- \u03B1 will be cleaned up by the body's immune system. However, there are
+      some miners with poor immunity in some An unknown time was used as a savings
+      host by OE-\u03B1 and these miners were regarded as a miracle because of their
+      ability to perceive pyroxene veins, so their pyroxene dependence and pyroxene
+      hobby were regarded as a sacrifice, Speculators think this disease, no, at
+      the time it was not even regarded as a disease, but a kind of progress and
+      this kind of progress is good for their income. (<Analysis of historical data-first
+      The History of Magical Theory of Human Self-Government> by Serena Arthur) These
+      infected miners are called shining angels, not only because they can quickly
+      find mineral veins, but also because their stones are shining in the sunlight
+      and kerosene lamps. It is bright and named. As the condition of these miners
+      became more and more serious, OE-\u03B1 slowly developed a phenomenon of continuous
+      human-to-human transmission, infecting miners throughout the mining area. When
+      people in an entire mining area were trying to gnaw pyroxene At the time, the
+      image of the shining angels also collapsed, but when the prosecutors of the
+      First Human Autonomous Government entered the mining area to try to investigate,
+      they found that some of the shining angels could use magic to resist the soldiers
+      who tried to burn them. OE-\u03B1 The second effect was revealed, enhancing
+      the magician\u2019s pyroxene affinity. The pyroxene calculus produced by pyroxene
+      dependence allows the host to use magic better. Due to the poor scientific
+      theory and the first human autonomous government, The foundation is simply
+      not enough to support such in-depth biological and magical framework research,
+      so even if the progress brought by this parasite is very tempting, they have
+      not succeeded in discovering how to use these aethium radiations or Harmless
+      aethium dependence.\r\nUntil the human autonomy treaty was signed, a large
+      number of dungeons joined together to form the first human federation. At that
+      time, people remembered the great potential of OE-\u03B1, and slowly revealed
+      the tip of pyroxene genetics. The principles unearthed from OE-\u03B1 are applied
+      to urban agriculture, and the agricultural defects of underground cities are
+      also filled by the strange element of pyroxene. The prosperity brought about
+      by agricultural progress is well known. In the middle part of federal history,
+      people who yearn for progress tried to harmlessize aethium dependence and regain
+      the challenges of the old age. Even though several years of research, people
+      have developed a method to increase the addiction rate with a slightly lower
+      addiction rate, which has benefited a lot of benefits. A magician post, but
+      pyroxene dependence has not been eradicated.\r\n\r\nA very strange mental illness
+      suddenly appeared in the First Human Federation at some time. It is said that
+      the patients have a solid foundation in magic, and they claim that they have
+      seen goblins, and their magic skills have also improved. The patients are the
+      same. In addition to communicating with the sick, they will not communicate
+      with any humans but will take care of some wild animals suffering from primitive
+      dependence. A few months later, the patients spontaneously gathered in the
+      underground city \"Jita\" and declared independence and control The entire
+      dungeon government. Due to the closed nature of the dungeon, the guitar soon
+      fell. When the federal government intervened, the whole city was a follower
+      of goblins. The disease was later discovered to be caused by the OE-\u03B1
+      mutation. , Became what is now known as OP-\u03B2. Because patients are obsessed
+      with \"fairies\", they are known as fairy parasites.\r\nOP-\u03B2 is after
+      OE-\u03B1 is mutated, OE-\u03B1 1 enters the brain of the host along the blood
+      vessels and develops into adult worms in the brain. After developing into adults,
+      it affects the thalamus of the brain, so that the host can understand that
+      only OE-\u03B1 originally After analyzing the pheromone, the host will have
+      hallucinations, thinking that he has seen the goblins and knows where they
+      are. From this step, OP-\u03B2 separates OP-\u03B2 and becomes a new parasitic
+      worm, and OP-\u03B2 also Qiu Jue, who will gradually replace the host, becomes
+      the new owner of this body. OP-\u03B2, like its predecessor, can improve the
+      host\u2019s magic skills, so everyone parasitized by OP-\u03B2 will be taken
+      by OP-\u03B2 Replacement and must be a powerful magician. The First Human Federation
+      made a huge sacrifice when trying to clear the Jita dungeon because they thought
+      there was a survivor in the city. At this time, the President of the Federation
+      realized the weaponization of these creatures. Potential, but later studies
+      have shown that they are completely ineffective against dragons because the
+      control of magic in the dragon body makes it impossible for fairies to use
+      magic to influence them. But these deadly creatures are a huge threat to humans
+      because they are the first generation of The host is humans. Fortunately, OP-\u03B2
+      has stricter requirements for the environment. In the year of the outbreak,
+      the underground city immediately upgraded the sewer filtration and microbial
+      monitoring at the time, but the continued spread of human-to-human transmission
+      It still exists. With the unremitting efforts of the government, before the
+      start of the third Pan-Land War, the parasitism rate of OP-\u03B2 was not high,
+      but they knew how to parasitize some wild underground organisms, which made
+      OP-\u03B2 more difficult to eradicate.\r\nWhen the Sigma Quadrant landed on
+      the plateau of the Eastern Continent, the organisms parasitized by OP-\u03B2
+      also spread to the interior of the illusion following the incomplete review
+      of the Noah Project, and it still troubles people to this day. \r\n\r\nEra
+      of Fantarium 1332.10.23 FF\r\r\nPresident of the Fantarium Natural Ecological
+      Protection Association"

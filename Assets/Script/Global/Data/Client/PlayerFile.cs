@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Canute.UI;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Canute
 {
@@ -24,7 +26,7 @@ namespace Canute
         /// </summary>
         public static bool SaveCurrentData()
         {
-            Data.LastOperationTime = DateTime.UtcNow;
+            Data.LastOperationTime = DateTime.Now;
             string json = JsonUtility.ToJson(Data);
             string filePath = DataPath + data.UUID;
             string savePath = filePath + "/Data.json";
@@ -50,7 +52,7 @@ namespace Canute
         /// </summary>
         public static bool SaveData(Data data)
         {
-            data.LastOperationTime = DateTime.UtcNow;
+            data.LastOperationTime = DateTime.Now;
             string json = JsonUtility.ToJson(data);
             string filePath = DataPath + data.UUID;
             string savePath = filePath + "/Data.json";
@@ -89,9 +91,17 @@ namespace Canute
             }
 
             string json = File.ReadAllText(path, Encoding.UTF8);
-            Data = JsonUtility.FromJson<Data>(json); ;
-            if (Data is null)
+            var data = JsonUtility.FromJson<Data>(json);
+            if (data is null) { return false; };
+            if (((DateTime)data.LastOperationTime).ToUniversalTime() > DateTime.UtcNow)
+            {
+                var info = InfoWindow.Create(GameServer.instance.transform, "This player file seems to have an inappropriate time! Tried to reload this in " + ((int)(data.LastOperationTime - DateTime.UtcNow).TotalHours) + " hours");
+                UnityEngine.Object.Destroy(info.GetComponent<GraphicRaycaster>());
+                UnityEngine.Object.Destroy(info.GetComponent<Canvas>());
                 return false;
+
+            }
+            Data = data;
 
             Data.ClearInvalidInfo();
             Game.Configuration.LastGame = Data.UUID;

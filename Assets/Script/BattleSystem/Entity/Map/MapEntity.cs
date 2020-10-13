@@ -14,13 +14,16 @@ namespace Canute.BattleSystem
     {
         private static MapEntity instance;
 
+
         public List<ColumnEntity> columnEntities;
         public List<FakeCell> fakeCells;
         public bool wasOnDrag;
 
-        public bool isInitialized;
-        public bool isRandomMap;
-        public int seed;
+        [Tooltip("is map initialized")] public bool isInitialized;
+        [Tooltip("is map random generated")] public bool isRandomMap;
+        [Tooltip("is map has only one terrain")] public bool isSingleTerrainMap;
+        [Tooltip("is map drew already")] public bool isDrew;
+        [Tooltip("seed of the random map [also the fake cells]")] public int seed;
 
         public static MapEntity CurrentMap => instance;
         public static bool WasOnDrag { get => instance.wasOnDrag; set { instance.wasOnDrag = value; SetCellCollider(!value); } }
@@ -46,9 +49,21 @@ namespace Canute.BattleSystem
             name = "Map";
             instance = this;
             transform.localScale = Vector3.one;
+
             if (!isInitialized) BattleMapSetUp();
-            if (!(Game.CurrentBattle is null))
-                Game.CurrentBattle.MapEntity = this;
+            if (!(Game.CurrentBattle is null)) Game.CurrentBattle.MapEntity = this;
+            if (columnEntities.Count > 0) FixColumnPosition();
+        }
+
+        private void FixColumnPosition()
+        {
+            for (int i = 0; i < columnEntities.Count; i++)
+            {
+                ColumnEntity item = columnEntities[i];
+                var pos = item.transform.localPosition;
+                pos.y = i * CellSize.y;
+                item.transform.localPosition = pos;
+            }
         }
 
         public override void Start()
@@ -56,7 +71,7 @@ namespace Canute.BattleSystem
             base.Start();
 
             SetPlayerCameraToPosition();
-            FakeCellSetupAndColor();
+            CellSetupAndColor();
         }
 
         private void SetPlayerCameraToPosition()
@@ -82,19 +97,22 @@ namespace Canute.BattleSystem
             }
         }
 
-        private void FakeCellSetupAndColor()
+        private void CellSetupAndColor()
         {
             StartCoroutine(SetUpEnumerator());
+            IEnumerator SetUpEnumerator()
+            {
+                yield return BattleUI.ShowRotator(true);
+                yield return FakeMapGenerator.instance.CreateFakeCells();
+                yield return FakeCellSetUp();
+
+                CellColoration cellColoration = new CellColoration(this);
+                yield return cellColoration.Color();
+                yield return BattleUI.ShowRotator(false);
+                BattleUI.FadeInBattle();
+            }
         }
 
-        private IEnumerator SetUpEnumerator()
-        {
-            yield return FakeMapGenerator.instance.CreateFakeCells();
-            yield return FakeCellSetUp();
-            CellColoration cellColoration = new CellColoration(this);
-            yield return cellColoration.Color();
-            BattleUI.FadeInBattle();
-        }
 
         private IEnumerator FakeCellSetUp()
         {
@@ -104,8 +122,18 @@ namespace Canute.BattleSystem
             Vector3 localPosition = FakeMapGenerator.instance.fakeColumn.transform.localPosition; localPosition.z = 0;
             FakeMapGenerator.instance.fakeColumn.transform.localPosition = localPosition;
 
-            var rmg = new RandomTerrainGenerator(this, seed);
-            rmg.RandomizeFakeCellTerrain();
+            if (!isSingleTerrainMap)
+            {
+                var rmg = new RandomTerrainGenerator(this, seed);
+                rmg.RandomizeFakeCellTerrain();
+            }
+            else
+            {
+                foreach (var item in fakeCells)
+                {
+                    item.terrain = Origin.data.terrain;
+                }
+            }
             yield return null;
         }
 

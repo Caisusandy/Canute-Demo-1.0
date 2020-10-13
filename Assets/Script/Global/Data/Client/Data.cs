@@ -73,7 +73,7 @@ namespace Canute
                     return false;
             }
 
-            PlayerFile.SaveCurrentData(); Debug.Log("Currency Spent");
+            Debug.Log("Currency Spent");
             return true;
         }
 
@@ -96,6 +96,7 @@ namespace Canute
             return true;
 
         }
+
         public bool CanSpent(params Currency[] currency)
         {
             int federgram = 0, manpower = 0, mantleAlloy = 0, aethium = 0;
@@ -159,7 +160,6 @@ namespace Canute
                     Aethium += amount;
                     break;
             }
-            PlayerFile.SaveCurrentData();
         }
         #endregion
 
@@ -209,7 +209,6 @@ namespace Canute
         [SerializeField] private List<string> gameSceneBeenTo;
         public GameStatistic Statistic { get => gameStatistic; set => gameStatistic = value; }
         public List<string> GameSceneBeenTo { get => gameSceneBeenTo; set => gameSceneBeenTo = value; }
-
         public CheckList EventCardUnlocked => GetEventTree();
 
         public bool IsArmyUnlocked(string name)
@@ -257,6 +256,11 @@ namespace Canute
             }
 
             return new EventTree(Cards);
+        }
+
+        public void AddSceneBeenTo(string name)
+        {
+            gameSceneBeenTo.Add(name);
         }
 
         #endregion
@@ -415,7 +419,6 @@ namespace Canute
             }
 
             armies.Add(item);
-            PlayerFile.SaveCurrentData();
         }
 
         public void AddLeaderItem(LeaderItem item)
@@ -425,7 +428,6 @@ namespace Canute
                 Statistic.LeadersUnlocked.Add(item.Name);
             }
             leaders.Add(item);
-            PlayerFile.SaveCurrentData();
         }
 
         public void AddEquipmentItem(EquipmentItem item)
@@ -436,7 +438,6 @@ namespace Canute
             }
 
             equipments.Add(item);
-            PlayerFile.SaveCurrentData();
         }
 
         public void AddEventCardItem(EventCardItem item)
@@ -447,20 +448,18 @@ namespace Canute
             }
 
             eventCards.Add(item);
-            PlayerFile.SaveCurrentData();
         }
 
         public void AddCollectionStory(string name)
         {
             if (!collectionStoriesID.Contains(name))
                 collectionStoriesID.Add(name);
-            PlayerFile.SaveCurrentData();
         }
+
         public void AddCollectionLetter(string name)
         {
             if (!collectionLetterID.Contains(name))
                 collectionLetterID.Add(name);
-            PlayerFile.SaveCurrentData();
         }
         #endregion
 
@@ -468,21 +467,18 @@ namespace Canute
         public bool RemoveArmyItem(ArmyItem item)
         {
             bool ret = armies.Remove(item);
-            PlayerFile.SaveCurrentData();
             return ret;
         }
 
         public bool RemoveLeaderItem(LeaderItem item)
         {
             bool ret = leaders.Remove(item);
-            PlayerFile.SaveCurrentData();
             return ret;
         }
 
         public bool RemoveEquipmentItem(EquipmentItem item)
         {
             bool ret = equipments.Remove(item);
-            PlayerFile.SaveCurrentData();
             return ret;
         }
         #endregion
@@ -504,6 +500,10 @@ namespace Canute
         public Data(Guid guid)
         {
             uuid = guid;
+            manpower = 10000;
+            federgram = 10000;
+            mantleAlloy = 500;
+            aethium = 100;
             shopInfo = new ShopInfo();
             Legions = new List<Legion>() { new Legion(), new Legion(), new Legion() };
             EventCardPiles = new List<EventCardPile>() { new EventCardPile(), new EventCardPile(), new EventCardPile() };
@@ -519,12 +519,16 @@ namespace Canute
             collectionStoriesID = new List<string>();
 
             excaTeam = new ExplorationTeam();
+            GetDefaultItem();
+        }
 
+        private void GetDefaultItem()
+        {
             for (int i = 0; i < 3; i++)
             {
                 ArmyItem item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry"));
                 armies.Add(item);
-                //legions[1].SetArmy(i, item);
+                legions[0].armiesUUID[i] = item.UUID;
             }
             for (int i = 0; i < 3; i++)
             {

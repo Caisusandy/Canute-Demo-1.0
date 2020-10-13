@@ -70,12 +70,28 @@ namespace Canute.UI.StoryRoom
             roomType = StoryRoomType.blocks;
             spawnAnchor.gameObject.GetComponent<GridLayoutGroup>().cellSize = new Vector2(150, 150);
             spawnAnchor.gameObject.GetComponent<GridLayoutGroup>().constraintCount = 5;
+
             foreach (var item in Game.PlayerData.CollectionStoriesID)
             {
                 var block = Instantiate(storyBlockUIPrefab, spawnAnchor).GetComponent<SRStoryBlockUI>();
                 block.Display(item);
                 blocks.Add(block.gameObject);
             }
+
+            foreach (var level in GameData.Levels.ChapterTree.Levels)
+            {
+                if (level.IsPassed)
+                {
+                    var block = Instantiate(storyBlockUIPrefab, spawnAnchor).GetComponent<SRStoryBlockUI>();
+                    block.Display(level.backgroundStoryName);
+                    blocks.Add(block.gameObject);
+
+                    block = Instantiate(storyBlockUIPrefab, spawnAnchor).GetComponent<SRStoryBlockUI>();
+                    block.Display(level.endStoryName);
+                    blocks.Add(block.gameObject);
+                }
+            }
+
             Debug.Log("load block complete");
         }
 

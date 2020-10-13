@@ -8,16 +8,44 @@ Canute.Career.General=军人
 Canute.Career.Merchant=商人
 Canute.Career.None=无
 #Title
-Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
+Canute.LevelTree.Level.TestingLevel.description=Testing Map description
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
-Canute.LevelTree.Level.CalayInfinite.subtitle=无限战役
+Canute.LevelTree.Level.CalayInfinite.description=无限战役
 Canute.LevelTree.Level.CalayInfinite.title=训练营
-Canute.LevelTree.Level.1-2.subtitle=第一次遭遇色布提亚据点
+Canute.LevelTree.Level.1-2.description=第一次遭遇色布提亚据点
 Canute.LevelTree.Level.1-2.title=1-2 色布提亚据点
-Canute.LevelTree.Level.7-inf.subtitle=日常战役
-Canute.LevelTree.Level.7-inf.title=基地外
-Canute.LevelTree.Level.Ch7-1.subtitle=Daily battle
-Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Basement outside
+
+Canute.LevelTree.Level.Training.name=Training
+Canute.LevelTree.Level.Training.description=Command Training
+
+Canute.LevelTree.Level.Ch1.name=Germination
+Canute.LevelTree.Level.Ch1.description=Under piles of rocks, City of Calay is changing...
+
+Canute.LevelTree.Level.Ch7.name=斯威士瓦营救行动
+Canute.LevelTree.Level.Ch7.description=在寒冷的幻境里，我应该开始完成一些未完成的事情...
+Canute.LevelTree.Level.Ch7-0.description=日常战役
+Canute.LevelTree.Level.Ch7-0.title=基地外
+Canute.LevelTree.Level.Ch7-1.description=Daily battle
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Outside BasementCanute.LevelTree.Level.Ch7.name=Rescue Mission
+Canute.LevelTree.Level.Ch7-2.title=Rescue Mission: The Secret Police
+Canute.LevelTree.Level.Ch7-2.description=Retreat: retreat to the hills
+Canute.LevelTree.Level.Ch7-3.title=Rescue Mission: The Gang of Thieves
+Canute.LevelTree.Level.Ch7-3.description=Defeat: defeat all enemies on the field
+Canute.LevelTree.Level.Ch7-4.title=Rescue Mission: Squads of Supreme Council
+Canute.LevelTree.Level.Ch7-4.description=Defeat: defeat all Squads on the field
+Canute.LevelTree.Level.Ch7-5.title=Rescue Mission: Riot of Swisha
+Canute.LevelTree.Level.Ch7-5.description=Defeat: defeat all riot on the field
+Canute.LevelTree.Level.Ch7-6.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-6.description=Defeat:
+Canute.LevelTree.Level.Ch7-7.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-7.description=Defeat:
+Canute.LevelTree.Level.Ch7-8.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-8.description=Defeat:
+Canute.LevelTree.Level.Ch7-9.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-9.description=Defeat:
+Canute.LevelTree.Level.Ch7-10.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-10.description=Defeat:
+
 #Currency
 Canute.Shops.Currency+Type.fedgram=联邦克
 Canute.Shops.Currency+Type.manpower=人力
@@ -343,13 +371,14 @@ Canute.Character.Empty.supplyTeamComeBackWithStory=
 Canute.Character.Empty.supplyTeamComeBackWithLetter= 
 
 #SceneName
-Canute.UI.SceneName.Exploration=补给队
+Canute.UI.SceneName.SupplyTeam=补给队
 Canute.UI.SceneName.Shop=商店
 Canute.UI.SceneName.Hallway=过道
 Canute.UI.SceneName.LegionSetting=军队设置
 Canute.UI.SceneName.EventCard=事件牌堆
 Canute.UI.SceneName.Settings=设置
 Canute.UI.SceneName.StoryRoom=故事
+Canute.UI.SceneName.ChapterSelection=章节
 ##UI
 Canute.UI.Common.Back=<<<
 Canute.UI.Common.LegionSetting=军队

@@ -190,6 +190,7 @@ namespace Canute.Testing
             {
                 ArmyItem newArmy = new ArmyItem(army, 2500000);
                 Game.PlayerData.AddArmyItem(newArmy);
+                PlayerFile.SaveCurrentData();
             }
         }
     }

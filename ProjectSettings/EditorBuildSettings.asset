@@ -48,7 +48,7 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/Leader List/Leader List.unity
     guid: 5c139969cd9cd1d419a810fd1cf78bc4
   - enabled: 1
-    path: Assets/Resources/Scenes/Exploration.unity
+    path: Assets/Resources/Scenes/SupplyTeam.unity
     guid: d3f10740b75798e4ca2bba64c76b5072
   - enabled: 1
     path: Assets/Resources/Scenes/Equipment List/Equipment List.unity

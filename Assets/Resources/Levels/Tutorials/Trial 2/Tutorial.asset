@@ -69,7 +69,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 7631f120a7ace9a4a83c88017aa4105d, type: 2}
       - {fileID: 11400000, guid: c81bffc3560054040858c22af3bc6431, type: 2}
       battleBuildings: []
-    mapPrefab: {fileID: 3325747296231779710, guid: 617018560e8c4884989096463986dcce,
+    mapPrefab: {fileID: 5453923031753641623, guid: fec7bc5467c79ea4581306a53146779b,
       type: 3}
     player:
       name: 

@@ -16,6 +16,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17d7f7f5fd67e414089ffbdacc598c92, type: 2}
   - {fileID: 11400000, guid: 99f6f1fac784a0a43bf935a9dc5d7efe, type: 2}
   - {fileID: 11400000, guid: bc3b36bf0cfa42c47a3f3b91631eed05, type: 2}
+  - {fileID: 11400000, guid: bbf71c1458bf87f4bb463fec41994208, type: 2}
+  - {fileID: 11400000, guid: a55ee702781d76d4ea64d0b121d414ca, type: 2}
+  - {fileID: 11400000, guid: b6262df0376711c4eb724f2b3ee55f6e, type: 2}
   armyPrizes:
   - {fileID: 11400000, guid: ef70973596ee413469f47337cf935051, type: 2}
   - {fileID: 11400000, guid: ae2832a9bf31ffb43976b636e570b0e7, type: 2}

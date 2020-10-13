@@ -101,7 +101,6 @@ namespace Canute
             Game.PlayerData.RemoveArmyItem(left);
             Game.PlayerData.RemoveArmyItem(right);
             AddStar();
-
             PlayerFile.SaveCurrentData();
             return true;
         }

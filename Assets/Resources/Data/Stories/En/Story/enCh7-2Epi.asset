@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-2Epi
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-2Epi
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-2Epi.1
+      line: "The team barely escaped from the police and fled to the closest safe
+        house they could reach. Throughout the night they could hear the police sirens
+        roving back and forth searching for them. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Epi.2
+      line: "Canute looked across the room in the dark. The faces of everyone else
+        seemed to be floating there, pale as ghosts. Some looked afraid, while others
+        rested a quiet hand on their weapon of choice, stern and ready. He kept watch
+        through the night, but things still hadn\u2019t calmed down. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Epi.3
+      line: "They left town a few hours later when it was safer and kept a faster
+        pace than usual to outrun anyone who might be following them. Town by town
+        they came closer to Swisha Main City. Finn\u2019s leg healed until he could
+        walk with only a hint of a limp. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Epi.4
+      line: "Canute noticed with pride the way that the journey had changed his young
+        friend. Some of the boyishness left his face and was replaced by stubble
+        and a grim expression that floated between his eyebrows and vanished when
+        he smiled. This was no longer a fun adventure, a new experience. The life
+        of a real human being was in the balance, and they were depending on Canute
+        and his team to save them even if they didn\u2019t know the team was coming.
+        \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

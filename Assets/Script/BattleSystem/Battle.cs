@@ -569,6 +569,7 @@ namespace Canute.BattleSystem
             }
             foreach (var prize in prizes) { prize.Fulfill(); }
 
+            Game.CurrentLevel.Pass();
             Game.CurrentLevel.OpenEndStory();
             BattleUI.ShowEndUI();
         }
@@ -577,6 +578,9 @@ namespace Canute.BattleSystem
         {
             InLosing();
             Round.GameEnd();
+            Game.CurrentLevel.NotPass();
+
+            BattleUI.ShowEndUI();
             Debug.Log("player lost");
         }
 
@@ -586,6 +590,12 @@ namespace Canute.BattleSystem
             Round.GameEnd();
             Debug.Log("player win");
 
+            FulfillPrize();
+            BattleUI.ShowEndUI();
+        }
+
+        public void FulfillPrize()
+        {
             foreach (var prize in prizes)
             {
                 prize.Fulfill(Player.LegionSet.Legion.Armies);
@@ -605,7 +615,6 @@ namespace Canute.BattleSystem
             int mp = mpPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.manpower);
             int fg = fgPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.fedgram);
             BattleUI.EndUI.ShowPrize(fg, mp, ma);
-            BattleUI.ShowEndUI();
             #endregion
         }
 

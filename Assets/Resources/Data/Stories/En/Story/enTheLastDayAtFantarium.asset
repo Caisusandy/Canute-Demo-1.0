@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enTheLastDayAtFantarium
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: theLastDayAtFantarium
+    type: 0
+    wordLines:
+    - speakerName: Canute Svenssen
+      id: theLastDayAtFantarium.1
+      line: This is probably the last day, it is?
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svenssen
+      id: theLastDayAtFantarium.2
+      line: Both Confederacy and Kingdom are looking for me. It is better to leave
+        here as soon as possible.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svenssen
+      id: theLastDayAtFantarium.3
+      line: 'Before I left, I should tell you everything from the past.
+
+        Including
+        where I from, where I was, and who am I. From my first day in Calay, to my
+        last day at a frontline of Stellar Revolution.'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svenssen
+      id: theLastDayAtFantarium.4
+      line: ...
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

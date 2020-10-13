@@ -12,9 +12,10 @@ namespace Canute.UI.LevelStart
     public class LevelStartPanel : MonoBehaviour
     {
         public string levelName;
+        public ChapterTree.Chapters chapter;
         [Header("UI")]
         public Text title;
-        public Text subtitle;
+        public Text description;
         public LeaderScroll leaderScroll;
 
         public LSLegionSmallIcon selectingLegion;
@@ -34,6 +35,7 @@ namespace Canute.UI.LevelStart
         public Canute.EventCardPile Pile { get => pile; set => pile = value; }
         private LegionSet LegionSet => new LegionSet(Legion, Pile, LeaderItem.UUID, "Canute Svensson");
         private Level Level => GameData.Levels.GetLevel(levelName);
+        private Canute.LevelTree.Chapter Chapter => GameData.Levels.GetChapter(chapter);
 
 
         private void Awake()
@@ -46,14 +48,24 @@ namespace Canute.UI.LevelStart
         void Start()
         {
             title.text = Level.Title;
-            subtitle.text = Level.Subtitle;
+            description.text = Level.Description;
             startButton.interactable = false;
+            SetLevelChangeButton();
+        }
+
+        private void SetLevelChangeButton()
+        {
+            next.gameObject.SetActive(Level.IsPassed && Level.Next != null);
+            last.gameObject.SetActive(Level.LastLevel != null);
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                DestroyImmediate(gameObject);
+            }
         }
 
         public void SelectLegion(int id)
@@ -87,6 +99,23 @@ namespace Canute.UI.LevelStart
         {
             Debug.Log(LegionSet.Leader?.Name);
             Game.LoadBattle(Level, LegionSet);
+        }
+
+        public void Next()
+        {
+            if (Level.IsPassed && Level.Next != null)
+            {
+                levelName = Level.nextLevel;
+                Start();
+            }
+        }
+        public void Last()
+        {
+            if (Level.LastLevel != null)
+            {
+                levelName = Level.lastLevel;
+                Start();
+            }
         }
     }
 }

@@ -34,33 +34,33 @@ MonoBehaviour:
     uuid:
       value: 6864b372-2319-44f3-bbe3-01d672217e0c
     playerLastOperationTime:
-      value: 2020/10/8 20:16:56
+      value: 2020/10/12 1:59:03
     shopInfo:
       nextRefreshTime:
-        value: 2020/10/8 22:11:54
+        value: 2020/10/12 3:01:55
       onShopArmies:
         list:
         - weight: 50
           prize:
-            name: "\u03A3CityInfantry"
+            name: CalayCityInfantry
             count: 1
             parameter: 0
             type: 2
           price:
           - name: 0
             count: 300
-        - weight: 20
+        - weight: 50
           prize:
-            name: Basic Shielder
+            name: Basic Infantry
             count: 1
             parameter: 0
             type: 2
           price:
           - name: 0
-            count: 250
+            count: 100
         - weight: 50
           prize:
-            name: CalayCityInfantry
+            name: NewUtoCityInfantry
             count: 1
             parameter: 0
             type: 2
@@ -78,15 +78,15 @@ MonoBehaviour:
             count: 300
       onShopEquipments:
         list:
-        - weight: 12
+        - weight: 25
           prize:
-            name: CeramicCompositeArmorIII
+            name: AeroReinforceArmorII
             count: 1
             parameter: 0
             type: 4
           price:
           - name: 3
-            count: 10
+            count: 5
         - weight: 50
           prize:
             name: CeramicCompositeArmorI
@@ -96,27 +96,27 @@ MonoBehaviour:
           price:
           - name: 3
             count: 2
-        - weight: 25
+        - weight: 50
           prize:
-            name: CeramicCompositeArmorII
+            name: AeroReinforceArmorI
             count: 1
             parameter: 0
             type: 4
           price:
           - name: 3
-            count: 10
-        - weight: 25
+            count: 2
+        - weight: 50
           prize:
-            name: CeramicCompositeArmorII
+            name: AeroReinforceArmorI
             count: 1
             parameter: 0
             type: 4
           price:
           - name: 3
-            count: 10
-    federgram: 70697
-    manpower: 73497
-    mantleAlloy: 99214
+            count: 2
+    federgram: 70747
+    manpower: 74397
+    mantleAlloy: 99194
     aethium: 9996
     excaTeam:
       leadersUUID:
@@ -129,35 +129,9 @@ MonoBehaviour:
       currentPrize:
         prizeBoxes:
         - startingTime:
-            value: 2020/10/6 22:19:34
+            value: 2020/10/12 1:59:03
           prize:
-            name: AeroReinforceArmorIII
-            count: 20
-            parameter: 0
-            type: 4
-            leaderRequirement: []
-            armyRequirement: 
-            time:
-              hours: 3
-              minutes: 4
-              seconds: 0
-        - startingTime:
-            value: 2020/10/7 1:23:34
-          prize:
-            name: reflection from Arthur Connors
-            count: 20
-            parameter: 0
-            type: 9
-            leaderRequirement: []
-            armyRequirement: 
-            time:
-              hours: 2
-              minutes: 30
-              seconds: 0
-        - startingTime:
-            value: 2020/10/7 3:53:34
-          prize:
-            name: fedgram
+            name: manpower
             count: 300
             parameter: 50
             type: 7
@@ -168,9 +142,22 @@ MonoBehaviour:
               minutes: 15
               seconds: 0
         - startingTime:
-            value: 2020/10/7 4:08:34
+            value: 2020/10/12 2:14:03
           prize:
-            name: manpower
+            name: ReflectionFromTheodorePullan
+            count: 1
+            parameter: 0
+            type: 9
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 2
+              minutes: 30
+              seconds: 0
+        - startingTime:
+            value: 2020/10/12 4:44:03
+          prize:
+            name: fedgram
             count: 200
             parameter: 100
             type: 7
@@ -179,6 +166,19 @@ MonoBehaviour:
             time:
               hours: 0
               minutes: 15
+              seconds: 0
+        - startingTime:
+            value: 2020/10/12 4:59:03
+          prize:
+            name: TheFairyParasite
+            count: 1
+            parameter: 0
+            type: 9
+            leaderRequirement: []
+            armyRequirement: 
+            time:
+              hours: 2
+              minutes: 30
               seconds: 0
     legions:
     - armiesUUID:
@@ -322,7 +322,7 @@ MonoBehaviour:
     - protoName: Basic Infantry
       uuid:
         value: 3e684102-1973-4a78-be26-8acd8e36e5be
-      exp: 5005000
+      exp: 5019800
       floatExp: 0
       star: 2
       LeaderName: 
@@ -358,7 +358,7 @@ MonoBehaviour:
     - protoName: Basic Shielder
       uuid:
         value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
-      exp: 5009000
+      exp: 5010400
       floatExp: 0
       star: 2
       LeaderName: 
@@ -462,7 +462,7 @@ MonoBehaviour:
     - protoName: Basic Cavalry
       uuid:
         value: 52112c80-724e-4bca-a5c2-9dbf17289460
-      exp: 2505000
+      exp: 2519800
       floatExp: 0
       star: 1
       LeaderName: 
@@ -521,7 +521,7 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: a038f585-42bf-4590-97f4-917614bdb7fa
-      exp: 2515000
+      exp: 2516400
       floatExp: 0
       star: 1
       LeaderName: 
@@ -534,7 +534,7 @@ MonoBehaviour:
     - protoName: Basic Rifleman
       uuid:
         value: d7de1817-696d-4933-8760-58a88831f6a9
-      exp: 2515000
+      exp: 2516400
       floatExp: 0
       star: 1
       LeaderName: Empty
@@ -557,7 +557,7 @@ MonoBehaviour:
     - protoName: Basic AircraftFighter
       uuid:
         value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
-      exp: 2509000
+      exp: 2510400
       floatExp: 0
       star: 1
       LeaderName: 
@@ -606,7 +606,7 @@ MonoBehaviour:
     - protoName: Basic Dragon
       uuid:
         value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
-      exp: 2522000
+      exp: 2536800
       floatExp: 1500
       star: 1
       LeaderName: Anexar Flotics
@@ -645,7 +645,7 @@ MonoBehaviour:
     - protoName: Basic Airship
       uuid:
         value: 1ae6066c-8c0d-4f4a-9689-1405aa073c4f
-      exp: 256000
+      exp: 257400
       floatExp: 0
       star: 1
       LeaderName: 
@@ -655,7 +655,7 @@ MonoBehaviour:
     - protoName: Basic Mage
       uuid:
         value: fd1e89aa-39f5-43cb-b023-45e409eb49b6
-      exp: 254000
+      exp: 255400
       floatExp: 0
       star: 1
       LeaderName: 
@@ -704,7 +704,7 @@ MonoBehaviour:
     - protoName: "\u03A3CityInfantry"
       uuid:
         value: a1c69613-1cca-438d-b56b-73e2c9aec777
-      exp: 256000
+      exp: 270800
       floatExp: 0
       star: 1
       LeaderName: Empty
@@ -921,6 +921,19 @@ MonoBehaviour:
         - value: 51e1dd52-f216-4baf-ba2d-0f02cef9b0c8
         - value: 5bedd06d-8a0b-40d4-8e53-37b68c90cd2d
         - value: 5fe36727-bf70-425d-a995-2f9958255cc5
+        equipmentLimit: 030000000300000003000000
+    - protoName: Basic Shielder
+      uuid:
+        value: 9e139137-a2f9-407b-a1b9-115a053556bb
+      exp: 0
+      floatExp: 0
+      star: 1
+      LeaderName: 
+      equipments:
+        equipmentUUID:
+        - value: 96990e54-dec1-42cf-9f24-fb37f64bee60
+        - value: d28c1024-40fb-435b-a64f-66a3597dc99c
+        - value: 9f2fae84-d7b3-473a-b627-bd81839fd269
         equipmentLimit: 030000000300000003000000
     leaders:
     - protoName: Aether Erinope
@@ -1309,6 +1322,21 @@ MonoBehaviour:
         value: c8fdf2e1-d4c3-4427-a7f3-1fbd2ed0660f
       exp: 0
       floatExp: 0
+    - protoName: AeroReinforceArmorIII
+      uuid:
+        value: b7a9b04c-c503-4c9a-a1d2-cfc0ce688f53
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: ea148cf4-b817-406f-b2fd-1441c9547eba
+      exp: 0
+      floatExp: 0
+    - protoName: CeramicCompositeArmorIV
+      uuid:
+        value: 2fb5d27b-062a-4eed-b159-499ce0be0fab
+      exp: 0
+      floatExp: 0
     eventCards:
     - protoName: flashLight
       uuid:
@@ -1343,13 +1371,22 @@ MonoBehaviour:
     collectionStoriesID:
     - Prologue
     - Epilogue
+    - Prologue2
+    - Prologue3
     collectionLetterID:
     - Amlos1
-    - reflection from Arthur Connors
+    - ReflectionFromArthurConnors
+    - TheFairyParasite
     countableItems:
       list: []
     gameProgree:
-      list: []
+      list:
+      - name: Ch7-1
+        isPassed: 1
+      - name: Ch7-2
+        isPassed: 1
+      - name: Ch7-3
+        isPassed: 0
     gameStatistic:
       armiesUnlocked:
       - T1
@@ -1391,4 +1428,18 @@ MonoBehaviour:
       - Finn Herman
       - Ron Thompson
       eventCardUnlocked: []
-    gameSceneBeenTo: []
+    gameSceneBeenTo:
+    - Main
+    - Hallway
+    - Exploration
+    - SupplyTeam
+    - Legion
+    - StoryLineLoader
+    - Shop
+    - StoryRoom
+    - Game Start
+    - EventCardPile
+    - Flipped Forest
+    - Battle
+    - TrainingBattleMenu
+    - Ch7

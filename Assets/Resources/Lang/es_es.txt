@@ -8,16 +8,39 @@ Canute.Career.General=General
 Canute.Career.Merchant=Comerciante
 Canute.Career.None=Ninguno
 #Title
-Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
+Canute.LevelTree.Level.TestingLevel.description=Testing Map description
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
-Canute.LevelTree.Level.CalayInfinite.subtitle=infinity Map
+Canute.LevelTree.Level.CalayInfinite.description=infinity Map
 Canute.LevelTree.Level.CalayInfinite.title=Training Ground
-Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
+Canute.LevelTree.Level.1-2.description=First encounter Septian
 Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
-Canute.LevelTree.Level.7-inf.subtitle=Daily battle
-Canute.LevelTree.Level.7-inf.title=Basement outside
-Canute.LevelTree.Level.Ch7-1.subtitle=Daily battle
-Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Basement outside
+
+Canute.LevelTree.Level.Training.name=Training
+Canute.LevelTree.Level.Training.description=Command Training
+Canute.LevelTree.Level.Ch7.name=Rescue Mission
+Canute.LevelTree.Level.Ch7.description=When it is time to restart something unfinished...
+Canute.LevelTree.Level.Ch7-0.title=Basement outside
+Canute.LevelTree.Level.Ch7-0.description=Daily battle
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Outside Basement
+Canute.LevelTree.Level.Ch7-1.description=Defeat: defeat all enemies on the field
+Canute.LevelTree.Level.Ch7-2.title=Rescue Mission: The Secret Police
+Canute.LevelTree.Level.Ch7-2.description=Retreat: retreat to the hills
+Canute.LevelTree.Level.Ch7-3.title=Rescue Mission: The Gang of Thieves
+Canute.LevelTree.Level.Ch7-3.description=Defeat: defeat all enemies on the field
+Canute.LevelTree.Level.Ch7-4.title=Rescue Mission: Squads of Supreme Council
+Canute.LevelTree.Level.Ch7-4.description=Defeat: defeat all Squads on the field
+Canute.LevelTree.Level.Ch7-5.title=Rescue Mission: Riot of Swisha
+Canute.LevelTree.Level.Ch7-5.description=Defeat: defeat all riot on the field
+Canute.LevelTree.Level.Ch7-6.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-6.description=Defeat:
+Canute.LevelTree.Level.Ch7-7.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-7.description=Defeat:
+Canute.LevelTree.Level.Ch7-8.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-8.description=Defeat:
+Canute.LevelTree.Level.Ch7-9.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-9.description=Defeat:
+Canute.LevelTree.Level.Ch7-10.title=Rescue Mission:
+Canute.LevelTree.Level.Ch7-10.description=Defeat:
 #Currency
 Canute.Shops.Currency+Type.fedgram=Federgram
 Canute.Shops.Currency+Type.manpower=Mano de Obra
@@ -343,13 +366,14 @@ Canute.Character.Empty.supplyTeamComeBackWithStory=
 Canute.Character.Empty.supplyTeamComeBackWithLetter= 
 
 #SceneName
-Canute.UI.SceneName.Exploration=Equipo de Suministro
+Canute.UI.SceneName.SupplyTeam=Equipo de Suministro
 Canute.UI.SceneName.Shop=Tienda
 Canute.UI.SceneName.Hallway=Pasillo
 Canute.UI.SceneName.LegionSetting=Escenario de Legión
 Canute.UI.SceneName.EventCard=Tarjetas de Eventos
-Canute.UI.SceneName.LegionSetting=Legion Setting
+Canute.UI.SceneName.LegionSetting=Configuració de Legión
 Canute.UI.SceneName.Settings=Configuración
+Canute.UI.SceneName.ChapterSelection=Chapters-Battles
 ##UI
 Canute.UI.Common.Back=Regresar
 Canute.UI.Common.LegionSetting=Ejército

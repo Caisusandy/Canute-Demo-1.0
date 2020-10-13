@@ -67,7 +67,7 @@ namespace Canute.BattleSystem.UI
             ShowLevelPassStatus();
             ShowArmyExpIncrease();
 
-            BattleUI.SetUIInteractive(false);
+            BattleUI.SetUIInteractable(false);
             BattleUI.SetUICanvasActive(false);
             OnMapEntity.SetAllEntityCollider(false);
         }
@@ -90,6 +90,9 @@ namespace Canute.BattleSystem.UI
 
         public void ShowArmyExpIncrease()
         {
+            if (Game.CurrentBattle.CurrentStat != Battle.Stat.win)
+            {
+            }
             int exp = Game.CurrentBattle.Prizes.GetPrizes(Item.Type.exp).Sum((e) => e.Count);
             List<Transform> icons = new List<Transform>();
             foreach (Transform item in armyIcons.transform)
@@ -110,10 +113,11 @@ namespace Canute.BattleSystem.UI
                     Destroy(icons[icons.Count - 1].gameObject);
                     continue;
                 }
+
                 item.Find("icon").GetComponent<Image>().sprite = armyItem.Icon;
                 item.Find("lvl").GetComponent<Text>().text = "Lv." + armyItem.Level;
-                item.Find("add").GetComponent<Text>().text = "+" + exp;
                 item.Find("cur").GetComponent<Text>().text = armyItem.Exp + "/" + armyItem.NextLevelExp;
+                item.Find("add").GetComponent<Text>().text = Game.CurrentBattle.CurrentStat != Battle.Stat.win ? "+0" : "+" + exp;
             }
             for (int i = realArmyCount; i < 6; i++)
             {
@@ -123,6 +127,8 @@ namespace Canute.BattleSystem.UI
 
         public void ShowPrize()
         {
+            if (Game.CurrentBattle.CurrentStat != Battle.Stat.win) { return; }
+
             fg.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.fedgram).ToString();
             mp.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.manpower).ToString();
             ma.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.mantleAlloy).ToString();

@@ -43,6 +43,7 @@ namespace Canute.BattleSystem
         [Header("Properties")]
         [Tooltip("暴击概率")] [SerializeField] private double defense;
         [Tooltip("暴击概率")] [SerializeField] private double critRate;
+        [Tooltip("暴击加成")] [SerializeField] private double critBonus;
         [Tooltip("暴击加成")] [SerializeField] private double critBounes;
         [Tooltip("军队人口")] [SerializeField] private int pop;
         [Header("Map related")]
@@ -62,7 +63,7 @@ namespace Canute.BattleSystem
 
         public double Defense { get => defense; set => defense = value; }
         public double CritRate { get => critRate; set => critRate = value; }
-        public double CritBonus { get => critBounes; set => critBounes = value; }
+        public double CritBonus { get { critBonus = critBounes; return critBonus; } set => critBonus = value; }
         public int Pop { get => pop; set => pop = value; }
         public int AttackRange { get => attackRange; set => attackRange = value; }
         public int MoveRange { get => moveRange; set => moveRange = value; }
@@ -79,6 +80,7 @@ namespace Canute.BattleSystem
         {
             defense = 0;
             critRate = 20;
+            critBonus = 50;
             critBounes = 50;
             attackRange = 3;
             moveRange = 4;
@@ -99,7 +101,8 @@ namespace Canute.BattleSystem
         {
             defense = armyItem.BaseProperty.Defense;
             critRate = armyItem.BaseProperty.CritRate;
-            critBounes = armyItem.BaseProperty.CritBonus;
+            critBonus = armyItem.BaseProperty.CritBonus;
+            critBounes = 50;
             attackRange = armyItem.BaseProperty.AttackRange;
             moveRange = armyItem.BaseProperty.MoveRange;
             pop = armyItem.BaseProperty.Pop;
@@ -124,7 +127,8 @@ namespace Canute.BattleSystem
         {
             defense = armyItem.BaseProperty.Defense.Bonus(armyItem.LevelBonus);
             critRate = armyItem.BaseProperty.CritRate;
-            critBounes = armyItem.BaseProperty.CritBonus;
+            critBonus = armyItem.BaseProperty.CritBonus;
+            critBounes = 50;
             attackRange = armyItem.BaseProperty.AttackRange;
             moveRange = armyItem.BaseProperty.MoveRange;
             pop = armyItem.BaseProperty.Pop;

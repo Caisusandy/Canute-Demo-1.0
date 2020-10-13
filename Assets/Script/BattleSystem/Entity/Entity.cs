@@ -1,4 +1,5 @@
-﻿using Canute.LanguageSystem;
+﻿using Canute.BattleSystem.UI;
+using Canute.LanguageSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -272,11 +273,9 @@ namespace Canute.BattleSystem
 
         public static void Initialize()
         {
-            foreach (var item in entities)
-            {
-                if (item)
-                    item.Destroy();
-            }
+            foreach (var item in MapEntity.CurrentMap.fakeCells) { Destroy(item.gameObject); }
+            foreach (var item in entities) { if (item) item.Destroy(); }
+
             entities.Clear();
             ArmyEntity.onMap.Clear();
             BuildingEntity.onMap.Clear();
@@ -400,7 +399,7 @@ namespace Canute.BattleSystem
 
         public virtual void OnMouseDrag() { }
 
-        public virtual void OnMouseUp() { ToggleSelect(); TriggerSelectEvent(IsSelected); }
+        public virtual void OnMouseUp() { if (!BattleUI.Raycaster.enabled) return; ToggleSelect(); TriggerSelectEvent(IsSelected); }
 
     }
 

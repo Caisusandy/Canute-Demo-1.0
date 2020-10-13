@@ -18,10 +18,8 @@ namespace Canute.LevelTree
 
         public Level GetLevel(string name)
         {
-            if (name == "Tutorial")
-            {
-                return tutorial;
-            }
+            if (name == "Empty") { return null; }
+            if (name == "Tutorial") { return tutorial; }
 
             foreach (Level item in ChapterTree.Levels)
             {
@@ -51,6 +49,24 @@ namespace Canute.LevelTree
             }
             return null;
         }
+
+        public Chapter GetChapter(ChapterTree.Chapters chapter)
+        {
+            switch (chapter)
+            {
+                case ChapterTree.Chapters.None: return null;
+                case ChapterTree.Chapters.CH1: return chapterTree.Chapter1;
+                case ChapterTree.Chapters.CH2: return chapterTree.Chapter2;
+                case ChapterTree.Chapters.CH3: return chapterTree.Chapter3;
+                case ChapterTree.Chapters.CH4: return chapterTree.Chapter4;
+                case ChapterTree.Chapters.CH5: return chapterTree.Chapter5;
+                case ChapterTree.Chapters.CH6: return chapterTree.Chapter6;
+                case ChapterTree.Chapters.CH7: return chapterTree.Chapter7;
+                case ChapterTree.Chapters.Extra: return null;
+                default: return null;
+            }
+        }
+
         public void OnValidate()
         {
 

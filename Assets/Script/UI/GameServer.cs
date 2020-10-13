@@ -1,9 +1,11 @@
 ﻿using Canute.Assets.Script.Module;
+using Canute.StorySystem;
 using Canute.Testing;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Canute.UI
 {
@@ -21,9 +23,7 @@ namespace Canute.UI
 
         public void Awake()
         {
-            //if (instance) { Destroy(this); return; }
-            //else instance = this;
-
+            instance = this;
             if (!Game.Initialized)
             {
                 Game.ReadConfig();
@@ -53,6 +53,21 @@ namespace Canute.UI
         // Update is called once per frame
         void Update()
         {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if (!Game.PlayerData.GameSceneBeenTo.Contains(currentSceneName))
+            {
+                if (currentSceneName == "Settings" || currentSceneName == "Loading" || currentSceneName == "Game Start")
+                {
+                    return;
+                }
+                StoryDisplayer.LoadSceneIntro("SceneIntro" + currentSceneName);
+                Game.PlayerData.GameSceneBeenTo.Add(currentSceneName);
+                PlayerFile.SaveCurrentData();
+            }
+
+
+
+
             if (Input.GetKeyDown(KeyCode.Slash) && Game.Configuration.IsDebugMode)
             {
                 if (!console)

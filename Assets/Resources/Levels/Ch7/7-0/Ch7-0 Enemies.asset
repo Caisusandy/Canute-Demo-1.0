@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
+  m_Name: Ch7-0 Enemies
+  m_EditorClassIdentifier: 
+  Prototype: {fileID: 0}
+  spawnType: 1
+  radius: 3
+  generateCount: 5
+  battleArmy:
+    name: Basic Infantry
+    prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
+      type: 3}
+    uuid:
+      value: cb8d430c-1c33-4af7-b36d-6f6319264dd9
+    ownerUUID:
+      value: 40268869-5f5c-4ace-a404-e956228a7e93
+    allowMove: 1
+    coordinate: {x: 8, y: 8}
+    stats:
+      list: []
+    localLeader:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: d4c8f76d-271f-409b-af29-d32bb9be4bb3
+      ownerUUID:
+        value: 
+      allowMove: 0
+      coordinate: {x: 0, y: 0}
+      stats:
+        list: []
+      career: 0
+      leadingArmyUUID:
+        value: 
+      isViceCommander: 0
+      level: 0
+      bounes: []
+    autonomousType: 2
+    anger: 0
+    career: 0
+    properties:
+      defense: 0
+      critRate: 20
+      critBonus: 0
+      critBounes: 20
+      pop: 5
+      attackRange: 2
+      moveRange: 4
+      standPosition: 1
+      attackPosition: 1
+      attackArea: 1
+      damageExtraCount: 0
+      targetCount: 1
+      attackType: 5
+      skill:
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []
+    maxHealth: 100
+    health: 100
+    armor: 0
+    damage: 25
+    type: 0

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Canute.Testing;
 using System.Collections;
 using System;
+using Canute.Module;
 
 namespace Canute.BattleSystem.UI
 {
@@ -24,6 +25,7 @@ namespace Canute.BattleSystem.UI
         public GameObject undersideAnchor;
         public GameObject messageAnchor;
 
+        #region UI components
         [Header("UI components")]
         public HighBar highBar;
         public static HighBar HighBar => instance.highBar;
@@ -57,6 +59,9 @@ namespace Canute.BattleSystem.UI
         #endregion
         public RightPanel enemyRightPanel;
         public static RightPanel EnemyRightPanel => instance.enemyRightPanel;
+        [Header("Rotator")]
+        public GameObject rotator;
+        public static GameObject Rotator { get => instance.rotator; set => instance.rotator = value; }
         [Header("AI")]
         public GameObject AIHolder;
         public List<PlayerEntity> playerEntities;
@@ -67,9 +72,11 @@ namespace Canute.BattleSystem.UI
         [Header("Camera")]
         public Camera secondCamera;
 
+        #endregion
 
         #region Anchors 
         public static Vector3 UndersideAnchor => instance.undersideAnchor.transform.position;
+
         #endregion
 
 
@@ -305,6 +312,21 @@ namespace Canute.BattleSystem.UI
             fadeOutImage.enabled = false;
         }
 
+        public static IEnumerator ShowRotator(bool value)
+        {
+            Rotator.SetActive(value);
+            if (value)
+            {
+                Rotator.transform.localEulerAngles = Vector3.zero;
+                Rotation.SetRotation(Rotator, 10);
+            }
+            else
+            {
+                Destroy(Rotator.GetComponent<Rotation>());
+            }
+            yield return null;
+        }
+
         #region Battle UI Control
 
         /// <summary>
@@ -319,7 +341,7 @@ namespace Canute.BattleSystem.UI
                 return;
             }
 
-            SetUIInteractive(value);
+            SetUIInteractable(value);
             UICanvas.enabled = value;
             HighBar.enabled = value;
             RightPanel.enabled = value;
@@ -340,7 +362,11 @@ namespace Canute.BattleSystem.UI
             }
         }
 
-        public static void SetUIInteractive(bool value)
+        /// <summary>
+        /// set ui Interactable
+        /// </summary>
+        /// <param name="value"></param>
+        public static void SetUIInteractable(bool value)
         {
             if (!instance) return;
             Raycaster.enabled = value;
@@ -350,7 +376,7 @@ namespace Canute.BattleSystem.UI
         public static void SetUICanvasActive(bool value)
         {
             if (!instance) return;
-            Raycaster.enabled = value;
+            SetUIInteractable(value);
             UICanvas.enabled = value;
         }
 
@@ -373,13 +399,13 @@ namespace Canute.BattleSystem.UI
             {
                 currentWindow = window;
                 currentWindow.Open();
-                SetUIInteractive(false);
+                SetUIInteractable(false);
             }
             //if the window component is not enabled
             else
             {
                 window.Close();
-                SetUIInteractive(true);
+                SetUIInteractable(true);
                 currentWindow = null;
             }
         }
@@ -390,7 +416,7 @@ namespace Canute.BattleSystem.UI
         public static void CloseCurrentWindow()
         {
             currentWindow?.Close();
-            SetUIInteractive(true);
+            SetUIInteractable(true);
             currentWindow = null;
         }
 

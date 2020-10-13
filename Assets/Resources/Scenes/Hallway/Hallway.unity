@@ -1322,11 +1322,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595158811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc7c4fcea5b4f8d4f906dcd0bc034a5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 679e6efd4e549db4e82143808a534a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   label: {fileID: 0}
-  key: Canute.Hallway.Explanation
 --- !u!58 &1595158814
 CircleCollider2D:
   m_ObjectHideFlags: 0

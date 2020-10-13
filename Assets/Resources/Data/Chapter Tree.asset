@@ -43,38 +43,58 @@ MonoBehaviour:
       list: []
     Chapter7:
       list:
-      - backgroundStoryName: 
+      - backgroundStoryName: Ch7-1Pro
         lastLevel: Empty
         data: {fileID: 11400000, guid: ec3cb5de883c8fc4daad39515e3d080e, type: 2}
         nextLevel: Ch7-2
-        endStoryName: 
+        endStoryName: Ch7-1Epi
+      - backgroundStoryName: Ch7-2Pro
+        lastLevel: Ch7-1
+        data: {fileID: 11400000, guid: f1523276f1fe18a47b124d94c615571d, type: 2}
+        nextLevel: Ch7-3
+        endStoryName: Ch7-2Epi
+      - backgroundStoryName: Ch7-3Pro
+        lastLevel: Ch7-2
+        data: {fileID: 11400000, guid: c9e1ee6ae9c07e14387c0ec58bec1e37, type: 2}
+        nextLevel: Ch7-4
+        endStoryName: Ch7-3Epi
+      - backgroundStoryName: Ch7-4Pro
+        lastLevel: Ch7-3
+        data: {fileID: 11400000, guid: 8e00a1f5fc5f1a34d9d9c63592d8a05e, type: 2}
+        nextLevel: Ch7-5
+        endStoryName: Ch7-4Epi
+      - backgroundStoryName: Ch7-5Pro
+        lastLevel: Ch7-4
+        data: {fileID: 11400000, guid: bb19a6bec3fa7174a83744197305a870, type: 2}
+        nextLevel: Ch7-6
+        endStoryName: Ch7-5Epi
+      - backgroundStoryName: Ch7-6Pro
+        lastLevel: Ch7-5
+        data: {fileID: 11400000, guid: 1bbf7e551469bd1468b74ba81fd459a3, type: 2}
+        nextLevel: Ch7-7
+        endStoryName: Ch7-6Epi
+      - backgroundStoryName: Ch7-7Pro
+        lastLevel: Ch7-6
+        data: {fileID: 11400000, guid: 7fb53a7cd3d1c11478c65139f01d5773, type: 2}
+        nextLevel: Ch7-8
+        endStoryName: Ch7-7Epi
+      - backgroundStoryName: Ch7-8Pro
+        lastLevel: Ch7-7
+        data: {fileID: 11400000, guid: b4d1124a500e0d14e92aab7a653816fb, type: 2}
+        nextLevel: Ch7-9
+        endStoryName: Ch7-8Epi
+      - backgroundStoryName: Ch7-9Pro
+        lastLevel: Ch7-8
+        data: {fileID: 11400000, guid: 0dcd40ce6fcc31646b40a4bbeb6d9032, type: 2}
+        nextLevel: Ch7-10
+        endStoryName: Ch7-9Epi
+      - backgroundStoryName: Ch7-10Pro
+        lastLevel: Ch7-9
+        data: {fileID: 11400000, guid: 7c04de16fc9a3fd43887c5b346fb704e, type: 2}
+        nextLevel: 
+        endStoryName: Ch7-10Epi
       - backgroundStoryName: 
         lastLevel: Ch7-1
-        data: {fileID: 0}
-        nextLevel: Ch7-3
-        endStoryName: 
-      - backgroundStoryName: 
-        lastLevel: Ch7-2
-        data: {fileID: 0}
-        nextLevel: Ch7-4
-        endStoryName: 
-      - backgroundStoryName: 
-        lastLevel: Ch7-3
-        data: {fileID: 0}
-        nextLevel: Ch7-5
-        endStoryName: 
-      - backgroundStoryName: 
-        lastLevel: Ch7-4
-        data: {fileID: 0}
-        nextLevel: Ch7-6
-        endStoryName: 
-      - backgroundStoryName: 
-        lastLevel: Ch7-5
-        data: {fileID: 0}
-        nextLevel: Ch7-7
-        endStoryName: 
-      - backgroundStoryName: 
-        lastLevel: 
         data: {fileID: 11400000, guid: 0659d0fb27536d94486cc4c2db728c16, type: 2}
         nextLevel: 
         endStoryName: 

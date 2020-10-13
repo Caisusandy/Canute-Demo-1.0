@@ -72,5 +72,12 @@ namespace Canute.Module
 
             (obj.GetComponent<Rotation>() ?? obj.AddComponent<Rotation>()).finalAngle = finalAngle;
         }
+
+        public static void SetRotation(GameObject obj, int speed = 20)
+        {
+            var c = (obj.GetComponent<Rotation>() ?? obj.AddComponent<Rotation>());
+            c.constant = true;
+            c.Speed = speed;
+        }
     }
 }
