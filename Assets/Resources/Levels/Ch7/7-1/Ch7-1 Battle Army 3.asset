@@ -25,7 +25,7 @@ MonoBehaviour:
     ownerUUID:
       value: ab711845-592f-4d0f-bfd8-632a1b408f07
     allowMove: 1
-    coordinate: {x: 7, y: 7}
+    coordinate: {x: 8, y: 8}
     stats:
       list: []
     localLeader:
@@ -61,7 +61,7 @@ MonoBehaviour:
       attackArea: 1
       damageExtraCount: 0
       targetCount: 1
-      attackType: 0
+      attackType: 5
       skill:
         specialName: 
         count: 0
@@ -72,6 +72,6 @@ MonoBehaviour:
         args: []
     maxHealth: 50
     health: 50
-    armor: 10
-    damage: 35
+    armor: 0
+    damage: 30
     type: 0

@@ -71,3 +71,27 @@ MonoBehaviour:
       position: 0
       selections: []
       nextLineID: 
+    - speakerName: 
+      id: Tutorial.5
+      line: 'Marks on the map:
+
+        Yellow: Selected Army Move Range
+
+        Red:
+        Selected Army Attack Range
+
+        White: Selected Cell'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: 
+      id: Tutorial.5
+      line: In a round builidng, you can let your army move to the other side of
+        by across the border of the map
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

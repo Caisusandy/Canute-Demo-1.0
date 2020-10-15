@@ -61,7 +61,7 @@ MonoBehaviour:
       attackArea: 1
       damageExtraCount: 0
       targetCount: 1
-      attackType: 0
+      attackType: 5
       skill:
         specialName: 
         count: 0
@@ -70,8 +70,8 @@ MonoBehaviour:
           args: []
       addition:
         args: []
-    maxHealth: 50
-    health: 50
-    armor: 10
-    damage: 35
+    maxHealth: 55
+    health: 55
+    armor: 15
+    damage: 38
     type: 0

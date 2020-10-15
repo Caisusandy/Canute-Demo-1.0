@@ -47,27 +47,35 @@ namespace Canute.UI
         // Start is called before the first frame update
         public void Start()
         {
+            LoadSceneIntro();
+        }
 
+        private static void LoadSceneIntro()
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if (currentSceneName == "Settings" || currentSceneName == "Loading" || currentSceneName == "Game Start") { return; }
+            if (!Game.PlayerData.GameSceneBeenTo.Contains(currentSceneName))
+            {
+                Debug.Log(currentSceneName);
+                StoryDisplayer.LoadSceneIntro("SceneIntro" + currentSceneName);
+                Game.PlayerData.GameSceneBeenTo.Add(currentSceneName);
+                PlayerFile.SaveCurrentData();
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            if (!Game.PlayerData.GameSceneBeenTo.Contains(currentSceneName))
+            LoadSceneIntro();
+            FunctionKey();
+        }
+
+        private void FunctionKey()
+        {
+            if (!Game.Configuration.IsDebugMode)
             {
-                if (currentSceneName == "Settings" || currentSceneName == "Loading" || currentSceneName == "Game Start")
-                {
-                    return;
-                }
-                StoryDisplayer.LoadSceneIntro("SceneIntro" + currentSceneName);
-                Game.PlayerData.GameSceneBeenTo.Add(currentSceneName);
-                PlayerFile.SaveCurrentData();
+                return;
             }
-
-
-
-
             if (Input.GetKeyDown(KeyCode.Slash) && Game.Configuration.IsDebugMode)
             {
                 if (!console)

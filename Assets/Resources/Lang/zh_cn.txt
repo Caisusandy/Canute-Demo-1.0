@@ -8,12 +8,16 @@ Canute.Career.General=军人
 Canute.Career.Merchant=商人
 Canute.Career.None=无
 #Title
-Canute.LevelTree.Level.TestingLevel.description=Testing Map description
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
-Canute.LevelTree.Level.CalayInfinite.description=无限战役
+Canute.LevelTree.Level.TestingLevel.description=Testing Map description
+Canute.LevelTree.Level.Basic Training.title=基础训练营
+Canute.LevelTree.Level.Basic Training.description=无限战役
+Canute.LevelTree.Level.Advance Training.title=高级训练营
+Canute.LevelTree.Level.Advance Training.description=无限战役
 Canute.LevelTree.Level.CalayInfinite.title=训练营
-Canute.LevelTree.Level.1-2.description=第一次遭遇色布提亚据点
+Canute.LevelTree.Level.CalayInfinite.description=无限战役
 Canute.LevelTree.Level.1-2.title=1-2 色布提亚据点
+Canute.LevelTree.Level.1-2.description=第一次遭遇色布提亚据点
 
 Canute.LevelTree.Level.Training.name=Training
 Canute.LevelTree.Level.Training.description=Command Training
@@ -25,26 +29,26 @@ Canute.LevelTree.Level.Ch7.name=斯威士瓦营救行动
 Canute.LevelTree.Level.Ch7.description=在寒冷的幻境里，我应该开始完成一些未完成的事情...
 Canute.LevelTree.Level.Ch7-0.description=日常战役
 Canute.LevelTree.Level.Ch7-0.title=基地外
-Canute.LevelTree.Level.Ch7-1.description=Daily battle
-Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Outside BasementCanute.LevelTree.Level.Ch7.name=Rescue Mission
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Outside Basement
+Canute.LevelTree.Level.Ch7-1.description=Defeat: defeat all enemies on the field
 Canute.LevelTree.Level.Ch7-2.title=Rescue Mission: The Secret Police
-Canute.LevelTree.Level.Ch7-2.description=Retreat: retreat to the hills
+Canute.LevelTree.Level.Ch7-2.description=Retreat: at least one army retreat to the hills
 Canute.LevelTree.Level.Ch7-3.title=Rescue Mission: The Gang of Thieves
 Canute.LevelTree.Level.Ch7-3.description=Defeat: defeat all enemies on the field
 Canute.LevelTree.Level.Ch7-4.title=Rescue Mission: Squads of Supreme Council
 Canute.LevelTree.Level.Ch7-4.description=Defeat: defeat all Squads on the field
 Canute.LevelTree.Level.Ch7-5.title=Rescue Mission: Riot of Swisha
 Canute.LevelTree.Level.Ch7-5.description=Defeat: defeat all riot on the field
-Canute.LevelTree.Level.Ch7-6.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-6.description=Defeat:
-Canute.LevelTree.Level.Ch7-7.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-7.description=Defeat:
-Canute.LevelTree.Level.Ch7-8.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-8.description=Defeat:
-Canute.LevelTree.Level.Ch7-9.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-9.description=Defeat:
-Canute.LevelTree.Level.Ch7-10.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-10.description=Defeat:
+Canute.LevelTree.Level.Ch7-6.title=Rescue Mission: Swisha Prison
+Canute.LevelTree.Level.Ch7-6.description=Defeat: defeat security droids [In a round building]
+Canute.LevelTree.Level.Ch7-7.title=Rescue Mission: The Child
+Canute.LevelTree.Level.Ch7-7.description=Defeat: defeat guards in front of Finn Herman's cell
+Canute.LevelTree.Level.Ch7-8.title=Rescue Mission: The Advisor
+Canute.LevelTree.Level.Ch7-8.description=Defeat: defeat guards in front of Ron Thompson's cell
+Canute.LevelTree.Level.Ch7-9.title=Rescue Mission: Anexar and the Supreme Council
+Canute.LevelTree.Level.Ch7-9.description=Retreat: at least one army arrived on the right side of the battlefield.
+Canute.LevelTree.Level.Ch7-10.title=Rescue Mission: Old Friend
+Canute.LevelTree.Level.Ch7-10.description=Defeat: defeat Anexar and all squads
 
 #Currency
 Canute.Shops.Currency+Type.fedgram=联邦克
@@ -127,7 +131,12 @@ Canute.Equipment.MagneticGeneratorI.name=Magnetic Shield Generator Lv.I
 Canute.Equipment.MagneticGeneratorII.name=Magnetic Shield Generator Lv.II
 Canute.Equipment.MagneticGeneratorIII.name=Magnetic Shield Generator Lv.III
 Canute.Equipment.MagneticGeneratorIV.name=Magnetic Shield Generator Lv.IV
-#
+#eventcard name
+Canute.EventCard.eventDrawCard.name=Draw Card
+Canute.EventCard.addActionPoint.name=Action Point
+Canute.EventCard.enemyMove.name=Enemy Move
+Canute.EventCard.flashLight.name=Flash Light
+#building name
 Canute.Building.Campus.name=Campus
 #
 Canute.BattleSystem.Cell.name=地区
@@ -181,6 +190,8 @@ Canute.BattleSystem.Effect+Types.EMPImpact=EMP
 Canute.BattleSystem.Effect+Types.EMPImpact.info=军队瘫痪中.
 Canute.BattleSystem.Effect+Types.flashLight=闪光
 Canute.BattleSystem.Effect+Types.flashLight.info=军队眩晕中.
+Canute.BattleSystem.Effect+Types.enemyMove=移动
+Canute.BattleSystem.Effect+Types.enemyMove.info=移动敌方军队
 Canute.BattleSystem.Effect+Types.motherOf=母舰
 Canute.BattleSystem.Effect+Types.motherOf.info=$targetName的母舰
 
@@ -343,7 +354,7 @@ Canute.Character.Ron Thompson.supplyTeamComeBackWithLetter=Canute, I found some 
 
 Canute.Character.Shelly McMoore.WordLine.0=Thank you for getting most of us here, Mr. Chairman.
 Canute.Character.Shelly McMoore.WordLine.1=Even though you are from Sigma Quadrant, you don’t like those Quadranter.
-Canute.Character.Shelly McMoore.WordLine.2=Can I do anything for you?
+Canute.Character.Shelly McMoore.WordLine.2=我可以为你做什么吗
 Canute.Character.Shelly McMoore.WordLine.3=As much as you know, the Federacy had two fractions before, we are the Revival Party, which today becomes the Scientific Revolution Party.
 Canute.Character.Shelly McMoore.WordLine.4=The other party? the Advance Party, which formed the Supreme Council today. Oh yes, there is a third party which we don’t admit is legal.
 Canute.Character.Shelly McMoore.WordLine.5=Determination is important, Chairman, without it, we can’t make it today and continue our work.
@@ -354,6 +365,21 @@ Canute.Character.Shelly McMoore.supplyTeamComeBackWithItem=Mr. Chairman, we foun
 Canute.Character.Shelly McMoore.supplyTeamComeBackWithLeader=Mr. Chairman, we have a new member.
 Canute.Character.Shelly McMoore.supplyTeamComeBackWithStory=Mr. Chairman, there are some rumors outside and I think you are supposed to know about it.
 Canute.Character.Shelly McMoore.supplyTeamComeBackWithLetter=Mr. Chairman, we found some lost documents, and I think you should read it.
+
+
+Canute.Character.Amlos.WordLine.0=幻境没有历史，只有历史小说。
+Canute.Character.Amlos.WordLine.1=历史和历史小说的区别就是历史小说有虚构的，而历史是现实的返照。
+Canute.Character.Amlos.WordLine.2=历史禁不起修改，现在的这些不过就是故事。
+Canute.Character.Amlos.WordLine.3=真的历史可能已经消失在历史中了，你不觉得吗？
+Canute.Character.Amlos.WordLine.4=觉得我说话怪怪的吗？龙说话就是这样的。。。我会试图按照你们的说话方式看看.
+Canute.Character.Amlos.WordLine.5=龙只能听从于它们的国王，很遗憾我不能对你表示忠诚
+Canute.Character.Amlos.WordLine.6=我不知道我能在这里多久，我可能马上就要被我的国王叫走。
+Canute.Character.Amlos.WordLine.7=你觉得我们还能回到瓦索莱纳的那个夜晚吗？只是想想而已
+Canute.Character.Amlos.WordLine.8=不，不要把手放在我头上！！！好吧。。。不要让其他人看到。
+Canute.Character.Amlos.supplyTeamComeBackWithItem=卡努特, 你的礼物.
+Canute.Character.Amlos.supplyTeamComeBackWithLeader=卡努特, 这个新人可能是一个朋友.
+Canute.Character.Amlos.supplyTeamComeBackWithStory=卡努特, 这个新闻是我最近听到的.
+Canute.Character.Amlos.supplyTeamComeBackWithLetter=卡努特, 这个信件是我找到的.
 
 
 Canute.Character.Empty.WordLine.0= 
@@ -401,7 +427,7 @@ Canute.UI.Start.Credit=制作团队
 Canute.UI.Start.Games=其他存档
 Canute.UI.Start.Quit=退出
 Canute.UI.Start.Quit.Check=确认退出吗?
-
+#
 Canute.UI.MainHall.Training=训练
 Canute.UI.MainHall.NextBattle=下一次战斗
 Canute.UI.MainHall.Basement=基地日常
@@ -433,3 +459,10 @@ Canute.UI.Settings.Language=语言(Language)
 Canute.UI.Settings.Other=其他
 Canute.UI.Settings.Other.OpenDataFolder=打开储存文件夹
 Canute.UI.Settings.Other.Tutorial=教程关
+#
+Canute.BattleSystem.UI.PausePanel.Tutorial=教程
+Canute.BattleSystem.UI.PausePanel.Quit=退出
+Canute.BattleSystem.UI.PausePanel.Back=返回
+Canute.BattleSystem.UI.PausePanel.Settings=设置
+#
+Canute.Demo.Unfinished.info=这是一个演示版，部分内容暂时不公布

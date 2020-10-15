@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
   m_Name: enSceneIntroLegion
   m_EditorClassIdentifier: 
+  language: 0
   story:
     id: SceneIntroLegion
     type: 1
     wordLines:
     - speakerName: Finn Herman
-      id: 
+      id: SceneIntroLegion.1
       line: 'Sir, this is where you can set up your legion.
 
         Every legion
@@ -26,17 +27,29 @@ MonoBehaviour:
       conversationBG: {fileID: 0}
       position: 0
       selections: []
+      nextLineID: 
     - speakerName: Finn Herman
-      id: 
+      id: SceneIntroLegion.2
       line: We can have 3 template of Legion, and each legion can has 6 armies limit.
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
+      nextLineID: 
     - speakerName: Finn Herman
-      id: 
+      id: SceneIntroLegion.3
       line: We can also gives the armies equipment and a small army leader!
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: SceneIntroLegion.4
+      line: By the way, same type of armies have resonance, which can gives armies
+        additional bonus!
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

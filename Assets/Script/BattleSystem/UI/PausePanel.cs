@@ -74,6 +74,12 @@ namespace Canute.BattleSystem.UI
         {
             StartCoroutine(Fade());
         }
+
+        public void OpenTutorialInfo()
+        {
+            Close();
+            StorySystem.StoryDisplayer.Load("Tutorial");
+        }
         public IEnumerator Fade()
         {
             yield return BattleUI.FadeOutBattle();

@@ -16,18 +16,18 @@ namespace Canute
         [SerializeField] protected Item.Type type;
 
         public string Name => name;
-        public int Count { get => count; }
-        public int Parameter { get => parameter; }
+        public int Count { get => count; set => count = value; }
+        public int Parameter { get => parameter; set => parameter = value; }
         public Item.Type PrizeType { get => type; set => type = value; }
         public string DisplayingName => GetDisplayingName();
         public Sprite Icon => GetIcon();
         public Rarity Rarity => GetRarity();
 
-        public Prize(string name, int count, Item.Type type)
+        public Prize(string name, int parameter, Item.Type type)
         {
             this.type = type;
             this.name = name;
-            this.count = count;
+            this.parameter = parameter;
         }
         public Prize()
         {
@@ -61,6 +61,8 @@ namespace Canute
                     break;
                 case Item.Type.leader:
                     Leader leader = GameData.Prototypes.GetLeaderPrototype(Name);
+                    Debug.LogWarning(leader);
+                    Debug.LogWarning(leader.Name);
                     if (!leader) return false;
                     if (Game.PlayerData.IsLeaderUnlocked(leader.Name)) return false;
                     Game.PlayerData.AddLeaderItem(new LeaderItem(leader));
@@ -81,6 +83,7 @@ namespace Canute
                     {
                         return false;
                     }
+                    Debug.Log(Parameter);
                     Game.PlayerData.Earned(type, Parameter);
                     break;
                 default:
@@ -207,7 +210,7 @@ namespace Canute
 
         public Prize Clone()
         {
-            return new Prize(name, count, type);
+            return new Prize() { name = name, type = type, count = count, parameter = parameter };
         }
     }
 

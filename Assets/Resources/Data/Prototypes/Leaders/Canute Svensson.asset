@@ -12,12 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c60caa65246bd804a8a164ad96819de3, type: 3}
   m_Name: Canute Svensson
   m_EditorClassIdentifier: 
+  isTemporaryPrototype: 0
   prototype:
     name: Canute Svensson
     rarity: 2
     icon: {fileID: 0}
     sprite: {fileID: 0}
-    protrait: {fileID: 0}
-    prefab: {fileID: 0}
-    career: 2
-    bounes: []
+    portrait: {fileID: 0}
+    career: 3
+    bounes:
+    - type: 1
+      bonusType: 1
+      value: 30
+      growth: 0
+    - type: 4
+      bonusType: 1
+      value: 20
+      growth: 0
+    skill:
+      specialName: 
+      count: 0
+      parameter: 0
+      args:
+        args: []
+    hasAssociateCharacter: 0

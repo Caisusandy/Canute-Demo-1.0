@@ -54,7 +54,7 @@ namespace Canute.BattleSystem
             //Debug.Log(x1);
             //Debug.Log(y1);
             var a = Mathf.PerlinNoise(x1 * scale, y1 * scale);
-            a = a < 0 ? 0 : (a > 1 ? 0.9999f : a);
+            a = a < 0 ? 0 : (a > 1 ? 1f : a);
             return a;
         }
     }

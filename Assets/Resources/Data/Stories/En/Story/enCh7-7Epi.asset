@@ -14,20 +14,118 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 0
   story:
-    id: Ch7-1Epi
+    id: Ch7-7Epi
     type: 0
     wordLines:
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: ===
+      id: Ch7-7Epi.1
+      line: "When they opened the door with the keys they\u2019d found on one of
+        the guards, Finn had an empty tray raised over his head, ready to fight whoever
+        was coming. His face relaxed a little when he saw Canute, then scrunched
+        up when he saw Evelyn.\n"
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
       nextLineID: 
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: Finn Herman
+      id: Ch7-7Epi.2
+      line: "Canute! You have no idea how bad you scared me. What\u2019s she doing
+        here?\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-7Epi.3
+      line: "Not sure yet. We\u2019ll walk and talk.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Epi.4
+      line: "Canute grabbed Finn by the elbow and towed him out into the hall. They
+        walked in silence for a while, but eventually Finn couldn\u2019t stand the
+        quiet anymore. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: Ch7-7Epi.5
+      line: 'This...changes things a little.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-7Epi.6
+      line: "You think I don\u2019t know that?\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: Ch7-7Epi.7
+      line: 'I was just saying!
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Epi.8
+      line: "Finn put his hands up defensively. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: Ch7-7Epi.9
+      line: "Now we don\u2019t really have a firm idea of where Mr. Connors is. We\u2019ll
+        have to return to base before we can even do anything about this change of
+        events. And don\u2019t even get me started on how mad McMoore is going to
+        be that we went on this wild goose chase and got ourselves imprisoned.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Epi.10
+      line: "Everything that he said was true, but Canute didn\u2019t want to give
+        up now that they had a chance of escaping.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-7Epi.11
+      line: 'We may get out of this yet, Finn.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Epi.12
+      line: "Finn fell silent after that. Evelyn smiled at Canute and nodded her
+        silent approval of his words. When they reached Ron\u2019s glowing dot, It
+        appeared that breaking Finn out had been a simple warm up.\n"
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0

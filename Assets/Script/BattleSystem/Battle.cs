@@ -24,6 +24,7 @@ namespace Canute.BattleSystem
         [Header("Settings")]
         [SerializeField] protected Type battleType;
         [SerializeField] protected bool avoidPlayerDefinedLegionSet;
+        [Space(5), SerializeField] protected List<Prize> firstTimePrize;
         [Space(5), SerializeField] protected List<Prize> prizes;
         [Space(5), SerializeField] protected Player enemy;
         [Space(5), SerializeField] protected List<Player> thirdParties = new List<Player>();
@@ -63,6 +64,7 @@ namespace Canute.BattleSystem
         public List<Effect> PassingEffect { get => passedEffect; set => passedEffect = value; }
         public StatusList GlobalStatus { get => globalStatus; set => globalStatus = value; }
         public CentralDeck CentralDeck { get => centralDeck; set => centralDeck = value; }
+        public List<Prize> FirstTimePrize { get => firstTimePrize; set => firstTimePrize = value; }
         public List<Prize> Prizes { get => prizes; set => prizes = value; }
         public GameObject MapPrefab { get => mapPrefab; set => mapPrefab = value; }
         public MapEntity MapEntity { get => mapEntity; set => mapEntity = value; }
@@ -87,7 +89,7 @@ namespace Canute.BattleSystem
             return stats;
         }
         #region Minor Properties
-        public bool IsFreeTime => (CurrentStat == Stat.normal && Round.CurrentStat == Round.Stat.normal) || (CurrentStat == Stat.begin && Round.CurrentStat == Round.Stat.gameStart);
+        public bool IsFreeTime => ((CurrentStat == Stat.waitForAnimationEnd || CurrentStat == Stat.normal) && Round.CurrentStat == Round.Stat.normal) || (CurrentStat == Stat.begin && Round.CurrentStat == Round.Stat.gameStart);
         public bool HasAnimation => !TryEndAnimation();
 
         protected bool UsePlayerDefinedLegionSet { get => !avoidPlayerDefinedLegionSet; set => avoidPlayerDefinedLegionSet = !value; }
@@ -560,16 +562,8 @@ namespace Canute.BattleSystem
             Round.GameEnd();
             Debug.Log("player win");
 
-            if (Player.LegionSet.Legion != null)
-            {
-                foreach (var prize in prizes)
-                {
-                    prize.Fulfill(Player.LegionSet.Legion.Armies);
-                }
-            }
-            foreach (var prize in prizes) { prize.Fulfill(); }
+            FulfillPrize();
 
-            Game.CurrentLevel.Pass();
             Game.CurrentLevel.OpenEndStory();
             BattleUI.ShowEndUI();
         }
@@ -578,7 +572,6 @@ namespace Canute.BattleSystem
         {
             InLosing();
             Round.GameEnd();
-            Game.CurrentLevel.NotPass();
 
             BattleUI.ShowEndUI();
             Debug.Log("player lost");
@@ -591,30 +584,43 @@ namespace Canute.BattleSystem
             Debug.Log("player win");
 
             FulfillPrize();
+            Game.CurrentLevel.OpenEndStory();
             BattleUI.ShowEndUI();
         }
 
         public void FulfillPrize()
         {
-            foreach (var prize in prizes)
-            {
-                prize.Fulfill(Player.LegionSet.Legion.Armies);
-            }
+            if (Player.LegionSet.Legion != null) foreach (var prize in prizes) { prize.Fulfill(Player.LegionSet.Legion.Armies); }
+            IEnumerable<Prize> enumerable = prizes.Where((p) => p.PrizeType != Item.Type.currency);
+            foreach (var prize in enumerable) { prize.Fulfill(); }
+            if (!Game.CurrentLevel.IsPassed) foreach (var prize in firstTimePrize) { prize.Fulfill(); }
 
             int score = ScoreBoard.GetScore();
 
             var fgPrize = new Prize(Currency.Type.fedgram.ToString(), score / 400, Item.Type.currency);
             var mpPrize = new Prize(Currency.Type.manpower.ToString(), score / 400, Item.Type.currency);
             var maPrize = new Prize(Currency.Type.mantleAlloy.ToString(), (int)(ScoreBoard.TotalAirforceDefeated * (UnityEngine.Random.value + 1) / 1.5f), Item.Type.currency);
+
+            fgPrize.Parameter += Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.fedgram);
+            mpPrize.Parameter += Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.manpower);
+            maPrize.Parameter += Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.mantleAlloy);
+
+            if (!Game.CurrentLevel.IsPassed)
+            {
+                fgPrize.Parameter += Game.CurrentBattle.FirstTimePrize.GetCurrencyCount(Currency.Type.fedgram);
+                mpPrize.Parameter += Game.CurrentBattle.FirstTimePrize.GetCurrencyCount(Currency.Type.manpower);
+                maPrize.Parameter += Game.CurrentBattle.FirstTimePrize.GetCurrencyCount(Currency.Type.mantleAlloy);
+            }
+
+            Debug.Log(fgPrize.Parameter);
+
             fgPrize.Fulfill();
             mpPrize.Fulfill();
             maPrize.Fulfill();
 
             #region Display Info 
-            int ma = maPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.mantleAlloy);
-            int mp = mpPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.manpower);
-            int fg = fgPrize.Count + Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.fedgram);
-            BattleUI.EndUI.ShowPrize(fg, mp, ma);
+
+            BattleUI.EndUI.ShowPrize(fgPrize.Parameter, mpPrize.Parameter, maPrize.Parameter);
             #endregion
         }
 
@@ -634,6 +640,7 @@ namespace Canute.BattleSystem
                 avoidPlayerDefinedLegionSet = avoidPlayerDefinedLegionSet,
                 battleType = battleType,
                 prizes = prizes.Clone(),
+                firstTimePrize = firstTimePrize.Clone(),
                 Enemy = enemy.Clone() as Player,
                 Player = Player.Clone() as Player,
                 thirdParties = thirdParties.Clone(),

@@ -13,7 +13,7 @@ namespace Canute.StorySystem
     {
         [SerializeField] private string speakerName;
         [SerializeField] private string id;
-        [TextArea(3, 10), SerializeField] private string line;
+        [TextArea(5, 20), SerializeField] private string line;
         [SerializeField] private Sprite characterPortrait;
         [SerializeField] private Sprite conversationBG;
         [SerializeField] private StoryDisplayer.SpeakerStandPosition position;

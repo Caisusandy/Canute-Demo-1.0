@@ -14,24 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Ch7-9
   battle:
-    battleType: 0
+    battleType: 3
     avoidPlayerDefinedLegionSet: 0
+    firstTimePrize: []
     prizes:
     - name: Exp
       count: 100
       parameter: 0
       type: 8
     - name: fedgram
-      count: 200
-      parameter: 0
+      count: 1
+      parameter: 400
       type: 7
     - name: manpower
-      count: 200
-      parameter: 0
+      count: 1
+      parameter: 400
       type: 7
     - name: mantleAlloy
-      count: 10
-      parameter: 0
+      count: 1
+      parameter: 20
       type: 7
     enemy:
       name: 
@@ -76,12 +77,13 @@ MonoBehaviour:
     thirdParties: []
     waveInfo:
     - battleArmies:
-      - {fileID: 11400000, guid: 869b345d8141b914b89db49017289a78, type: 2}
-      - {fileID: 11400000, guid: 8e2d3c37ae215bd47b0cbc2037ac7506, type: 2}
-      - {fileID: 11400000, guid: 5c4639316941cd545a79f5fdb14b993b, type: 2}
+      - {fileID: 11400000, guid: 8d05fe505d98c76438301e4aee70a512, type: 2}
+      - {fileID: 11400000, guid: 2b1eb772d9d648d41b33104684d565f6, type: 2}
+      - {fileID: 11400000, guid: 95c343f17c756e947ad8458aa1abdffb, type: 2}
+      - {fileID: 11400000, guid: 8b7e2ea29b72b4f44b1e2f59d2d9039f, type: 2}
       battleBuildings:
-      - {fileID: 11400000, guid: cefebf8cf75c9c54e969e1f5ec9924cb, type: 2}
-    mapPrefab: {fileID: 7708394150650815201, guid: f789ddfdf8eec984fb56a05f76b0c054,
+      - {fileID: 11400000, guid: 5248df3ac5953164e911420e0a23dc24, type: 2}
+    mapPrefab: {fileID: 75687999552781515, guid: b7e39bf6ac1b5634e93bf65c02dcef2b,
       type: 3}
     player:
       name: 
@@ -142,6 +144,6 @@ MonoBehaviour:
     scoreBoard:
       list: []
       allPassedEffect: []
-      totalPlayerDamage: 288
+      totalPlayerDamage: 1016
       totalAirforceDefeated: 0
-      totalLandArmyDefeated: 3
+      totalLandArmyDefeated: 5

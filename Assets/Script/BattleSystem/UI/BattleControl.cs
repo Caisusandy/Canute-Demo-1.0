@@ -108,6 +108,7 @@ namespace Canute.BattleSystem
             if (Map.transform.localScale.x > maxMapScale && v > 0) return;
             if (Map.transform.localScale.x < minMaxScale && v < 0) return;
             if (StorySystem.StoryDisplayer.instance) return;
+            if (PausePanel.instance.Exist()?.enabled == true) return;
 
             Map.transform.localScale *= 1 + (v / 3);
         }

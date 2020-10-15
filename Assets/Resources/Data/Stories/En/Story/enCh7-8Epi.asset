@@ -14,20 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 0
   story:
-    id: Ch7-1Epi
+    id: Ch7-8Epi
     type: 0
     wordLines:
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: ===
+      id: Ch7-8Epi.1
+      line: "With Ron and Finn freed, it was easy to find the other crew members
+        and free them as well. The scrappy team made quite the scene as they marched
+        down the white hallway in their dirty street clothes. Canute couldn\u2019t
+        help but feel proud. \r"
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
       nextLineID: 
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: ===
+      id: Ch7-8Epi.2
+      line: "They weren\u2019t out of the woods yet by any means, but they had better
+        information than they\u2019d had going in. They\u2019d managed to discover
+        a complete list of all of the prisoners in the facility. While Canute\u2019s
+        heart sunk when he didn\u2019t see Arthur\u2019s name, the thought also brought
+        him comfort. Arthur was out there. They just needed to keep looking.\r"
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0

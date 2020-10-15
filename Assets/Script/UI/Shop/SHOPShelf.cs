@@ -13,6 +13,7 @@ namespace Canute.UI.Shop
 
         public GameObject ArmyShelfItemPrefab;
         public GameObject EquipmentShelfItemPrefab;
+        public GameObject EventCardShelfItemPrefab;
 
         private TimeSpan nextRefreshTime;
         private void OnDestroy()
@@ -27,7 +28,7 @@ namespace Canute.UI.Shop
         {
             if (Game.PlayerData.ShopInfo.NextRefreshTime == null)
             {
-
+                Game.PlayerData.ShopInfo.Refresh();
             }
             if (Game.PlayerData.ShopInfo.NextRefreshTime < DateTime.Now)
             {
@@ -72,6 +73,12 @@ namespace Canute.UI.Shop
             {
                 SHOPOnShelfItem sHOPOnShelfItem = Instantiate(EquipmentShelfItemPrefab, itemAnchor).GetComponent<SHOPOnShelfItem>();
                 sHOPOnShelfItem.Display(shopInfo.OnShopEquipments[i]);
+            }
+
+            for (int i = 0; i < shopInfo.OnShopEventCard.Count; i++)
+            {
+                SHOPOnShelfItem sHOPOnShelfItem = Instantiate(EventCardShelfItemPrefab, itemAnchor).GetComponent<SHOPOnShelfItem>();
+                sHOPOnShelfItem.Display(shopInfo.OnShopEventCard[i]);
             }
         }
     }

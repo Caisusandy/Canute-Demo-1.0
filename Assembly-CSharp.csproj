@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Data\Prototypes\Armies\Amlos\Amlos.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic\Basic AircraftFighter\BasicAircraftFighter.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic\Basic Airship\BasicAirship.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic\Basic Airship\Carrier\BasicAirshipAircraftFighter.cs" />
@@ -75,12 +76,14 @@
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic\Basic WarMachine\BasicWarMachine.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic\Old\BetaArmy\BetaArmy.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\Basic\Old\FirstArmy\AlphaArmy.cs" />
+    <Compile Include="Assets\Resources\Data\Prototypes\Armies\Boss Anexar Flotics\BossAnexarFlotics.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\CalayCityInfantry\CalayCityInfantry.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\NewUtoCityInfantry\NewUtoCityInfantry.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Armies\ΣCityInfantry\SigmaQuadrantCityDefenseInfantry.cs" />
     <Compile Include="Assets\Resources\Data\Prototypes\Buildings\Camp\CampusEntity.cs" />
     <Compile Include="Assets\Resources\Levels\1-2\C1L2.cs" />
     <Compile Include="Assets\Resources\Levels\Ch7\7-2\C7L2.cs" />
+    <Compile Include="Assets\Resources\Levels\Ch7\7-9\C7L9.cs" />
     <Compile Include="Assets\Resources\Levels\Tutorials\Trial 2\Tutorial.cs" />
     <Compile Include="Assets\Resources\Scenes\Credit\Credit.cs" />
     <Compile Include="Assets\Resources\Scenes\Factory\BuildTest.cs" />
@@ -353,6 +356,7 @@
     <Compile Include="Assets\Script\UI\Legion\LSResonanceInfo.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSScroll.cs" />
     <Compile Include="Assets\Script\UI\Legion\LSSingleArmyPanel.cs" />
+    <Compile Include="Assets\Script\UI\LevelStartPanel\LSPExplanation.cs" />
     <Compile Include="Assets\Script\UI\LevelStartPanel\LeaderScroll.cs" />
     <Compile Include="Assets\Script\UI\LevelStartPanel\LevelStartPanel.cs" />
     <Compile Include="Assets\Script\UI\LevelStartPanel\Levels.cs" />

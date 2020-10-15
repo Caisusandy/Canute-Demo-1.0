@@ -142,3 +142,13 @@ MonoBehaviour:
       data: {fileID: 11400000, guid: 63b4a37e6aa67ab4689eb6dbb6dedc34, type: 2}
       nextLevel: 
       endStoryName: 
+    - backgroundStoryName: 
+      lastLevel: 
+      data: {fileID: 11400000, guid: 4d05749a0f199344bb86cd785ec00c63, type: 2}
+      nextLevel: 
+      endStoryName: 
+    - backgroundStoryName: 
+      lastLevel: 
+      data: {fileID: 11400000, guid: a88897bd0cd449d499c8a130e45cd2f0, type: 2}
+      nextLevel: 
+      endStoryName: 

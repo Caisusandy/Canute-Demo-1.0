@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
   m_Name: Ch7-9 Battle Army 2
   m_EditorClassIdentifier: 
-  Prototype: {fileID: 11400000, guid: 661266bcfe7bb044a9b22e1eb2f6ea4b, type: 2}
-  spawnType: 0
-  radius: 0
-  generateCount: 1
+  Prototype: {fileID: 11400000, guid: 87f5a9df883c41a448f0eb06d9cb1dce, type: 2}
+  spawnType: 1
+  radius: 3
+  generateCount: 3
   battleArmy:
-    name: Meialian Infantry
+    name: Supreme Council's Squads
     prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
       type: 3}
     uuid:
@@ -25,7 +25,7 @@ MonoBehaviour:
     ownerUUID:
       value: ab711845-592f-4d0f-bfd8-632a1b408f07
     allowMove: 1
-    coordinate: {x: 5, y: 6}
+    coordinate: {x: 12, y: 3}
     stats:
       list: []
     localLeader:
@@ -54,14 +54,14 @@ MonoBehaviour:
       critBonus: 50
       critBounes: 50
       pop: 0
-      attackRange: 4
-      moveRange: 2
+      attackRange: 2
+      moveRange: 4
       standPosition: 1
       attackPosition: 3
       attackArea: 1
       damageExtraCount: 0
       targetCount: 1
-      attackType: 0
+      attackType: 5
       skill:
         specialName: 
         count: 0
@@ -70,8 +70,8 @@ MonoBehaviour:
           args: []
       addition:
         args: []
-    maxHealth: 50
-    health: 50
-    armor: 10
-    damage: 35
+    maxHealth: 80
+    health: 80
+    armor: 0
+    damage: 40
     type: 0

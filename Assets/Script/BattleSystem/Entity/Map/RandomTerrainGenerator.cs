@@ -114,7 +114,7 @@ namespace Canute.BattleSystem
                     return item.terrain;
                 }
             }
-            Debug.Log(value);
+            //            Debug.Log(value);
             return Terrain.Plain;
             throw new ArgumentOutOfRangeException(nameof(value), value, "value: " + value + " is not a valid value");
         }

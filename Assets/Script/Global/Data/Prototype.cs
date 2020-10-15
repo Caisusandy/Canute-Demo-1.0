@@ -93,11 +93,13 @@ namespace Canute
 
         private void OnEnable()
         {
-            if (isTemporaryPrototype)
-            {
-                return;
-            }
-            GameData.Prototypes.Add<PrototypeContainer<T>, T>(this);
+            AddToPrototypeFactory();
+        }
+
+        public virtual void AddToPrototypeFactory()
+        {
+            if (isTemporaryPrototype) { return; }
+            GameData.Prototypes.Add(this);
         }
 
         public static implicit operator T(PrototypeContainer<T> prototypeContainer)

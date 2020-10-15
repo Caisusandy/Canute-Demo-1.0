@@ -36,14 +36,14 @@ namespace Canute.UI
                 leaderName.text = leaderItem.DisplayingName;
                 career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, leaderItem.Career.ToString());
                 nameBG.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, leaderItem.Rarity.ToString());
-                //nameBG.sprite =
-                //portrait.sprite = leaderItem.Prototype.Portrait;
+                portrait.sprite = leaderItem.Prototype.Portrait;
             }
             else
             {
-                leaderName.text = "";
+                leaderName.text = "None";
                 career.sprite = GameData.SpriteLoader.Get(SpriteAtlases.careerIcon, Career.none.ToString());
                 nameBG.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, Rarity.none.ToString());
+                portrait.sprite = null;
             }
         }
     }

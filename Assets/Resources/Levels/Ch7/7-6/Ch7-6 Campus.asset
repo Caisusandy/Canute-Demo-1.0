@@ -25,7 +25,7 @@ MonoBehaviour:
     ownerUUID:
       value: 63c5918a-5aad-45ae-8bab-1b681601289b
     allowMove: 0
-    coordinate: {x: 0, y: 0}
+    coordinate: {x: 5, y: 5}
     stats:
       list: []
     localLeader:

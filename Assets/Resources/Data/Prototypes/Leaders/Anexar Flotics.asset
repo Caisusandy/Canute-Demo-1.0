@@ -25,6 +25,10 @@ MonoBehaviour:
       bonusType: 0
       value: 2
       growth: 0
+    - type: 1
+      bonusType: 1
+      value: -10
+      growth: 0
     skill:
       specialName: 
       count: 0

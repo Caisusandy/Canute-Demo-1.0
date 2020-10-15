@@ -10,7 +10,11 @@ Canute.Career.None=None
 #Title
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
 Canute.LevelTree.Level.TestingLevel.description=Testing Map description
-Canute.LevelTree.Level.CalayInfinite.title=Training Ground
+Canute.LevelTree.Level.Basic Training.title=Basic Trainin
+Canute.LevelTree.Level.Basic Training.description=Infinity Battle
+Canute.LevelTree.Level.Advance Training.title=Advance Training
+Canute.LevelTree.Level.Advance Training.description=Infinity Battle
+Canute.LevelTree.Level.CalayInfinite.title=Infinity Battle
 Canute.LevelTree.Level.CalayInfinite.description=infinity Map
 Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
 Canute.LevelTree.Level.1-2.description=First encounter Septian
@@ -28,23 +32,23 @@ Canute.LevelTree.Level.Ch7-0.description=Daily battle
 Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Outside Basement
 Canute.LevelTree.Level.Ch7-1.description=Defeat: defeat all enemies on the field
 Canute.LevelTree.Level.Ch7-2.title=Rescue Mission: The Secret Police
-Canute.LevelTree.Level.Ch7-2.description=Retreat: retreat to the hills
+Canute.LevelTree.Level.Ch7-2.description=Retreat: at least one army retreat to the hills
 Canute.LevelTree.Level.Ch7-3.title=Rescue Mission: The Gang of Thieves
 Canute.LevelTree.Level.Ch7-3.description=Defeat: defeat all enemies on the field
 Canute.LevelTree.Level.Ch7-4.title=Rescue Mission: Squads of Supreme Council
 Canute.LevelTree.Level.Ch7-4.description=Defeat: defeat all Squads on the field
 Canute.LevelTree.Level.Ch7-5.title=Rescue Mission: Riot of Swisha
 Canute.LevelTree.Level.Ch7-5.description=Defeat: defeat all riot on the field
-Canute.LevelTree.Level.Ch7-6.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-6.description=Defeat:
-Canute.LevelTree.Level.Ch7-7.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-7.description=Defeat:
-Canute.LevelTree.Level.Ch7-8.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-8.description=Defeat:
-Canute.LevelTree.Level.Ch7-9.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-9.description=Defeat:
-Canute.LevelTree.Level.Ch7-10.title=Rescue Mission:
-Canute.LevelTree.Level.Ch7-10.description=Defeat:
+Canute.LevelTree.Level.Ch7-6.title=Rescue Mission: Swisha Prison
+Canute.LevelTree.Level.Ch7-6.description=Defeat: defeat security droids [In a round building]
+Canute.LevelTree.Level.Ch7-7.title=Rescue Mission: The Child
+Canute.LevelTree.Level.Ch7-7.description=Defeat: defeat guards in front of Finn Herman's cell
+Canute.LevelTree.Level.Ch7-8.title=Rescue Mission: The Advisor
+Canute.LevelTree.Level.Ch7-8.description=Defeat: defeat guards in front of Ron Thompson's cell
+Canute.LevelTree.Level.Ch7-9.title=Rescue Mission: Anexar and the Supreme Council
+Canute.LevelTree.Level.Ch7-9.description=Retreat: at least one army arrived on the right side of the battlefield.
+Canute.LevelTree.Level.Ch7-10.title=Rescue Mission: Old Friend
+Canute.LevelTree.Level.Ch7-10.description=Defeat: defeat Anexar and all squads
 
 #Currency
 Canute.Shops.Currency+Type.fedgram=Federgram
@@ -127,7 +131,12 @@ Canute.Equipment.MagneticGeneratorI.name=Magnetic Shield Generator Lv.I
 Canute.Equipment.MagneticGeneratorII.name=Magnetic Shield Generator Lv.II
 Canute.Equipment.MagneticGeneratorIII.name=Magnetic Shield Generator Lv.III
 Canute.Equipment.MagneticGeneratorIV.name=Magnetic Shield Generator Lv.IV
-#
+#eventcard name
+Canute.EventCard.eventDrawCard.name=Draw Card
+Canute.EventCard.addActionPoint.name=Action Point
+Canute.EventCard.enemyMove.name=Enemy Move
+Canute.EventCard.flashLight.name=Flash Light
+#building name
 Canute.Building.Campus.name=Campus
 #
 Canute.BattleSystem.Cell.name=Region
@@ -181,6 +190,8 @@ Canute.BattleSystem.Effect+Types.EMPImpact=EMP Impact
 Canute.BattleSystem.Effect+Types.EMPImpact.info=Army cannot do anything.
 Canute.BattleSystem.Effect+Types.flashLight=Flash Light
 Canute.BattleSystem.Effect+Types.flashLight.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.enemyMove=Enemy Move
+Canute.BattleSystem.Effect+Types.enemyMove.info=Move Enemy Army
 Canute.BattleSystem.Effect+Types.motherOf=Mothership.
 Canute.BattleSystem.Effect+Types.motherOf.info=$targetName's Mothership.
 
@@ -356,6 +367,21 @@ Canute.Character.Shelly McMoore.supplyTeamComeBackWithStory=Mr. Chairman, there 
 Canute.Character.Shelly McMoore.supplyTeamComeBackWithLetter=Mr. Chairman, we found some lost documents, and I think you should read it.
 
 
+Canute.Character.Amlos.WordLine.0=No book of history of Fantarium anywhere in Fantarium have found by me, they are all past stories of Fantarium. 
+Canute.Character.Amlos.WordLine.1=The difference between history and past story is story can be somehow fictional but history is the reality itself. 
+Canute.Character.Amlos.WordLine.2=When they modify even one section of history, the only thing left is just a story.
+Canute.Character.Amlos.WordLine.3=The real history we are looking for, might have already disappeared, don't you think?
+Canute.Character.Amlos.WordLine.4=Feel weird of the word come from me? this is how dragons speak... I will tried to say something more natural for you.
+Canute.Character.Amlos.WordLine.5=However, dragons are only loyal to our king, I can't said I will be loyal to you, Canute.
+Canute.Character.Amlos.WordLine.6=I don't know how long I can be here, my king will summon me soon.
+Canute.Character.Amlos.WordLine.7=Sorry, but do you think there is any chance that we can go back to the last day we had in Vasolina?
+Canute.Character.Amlos.WordLine.8=No... Don't put your hand on my head. Ok fine... Just hope no one see this.
+Canute.Character.Amlos.supplyTeamComeBackWithItem=Canute, this gift is for you.
+Canute.Character.Amlos.supplyTeamComeBackWithLeader=Canute, the leader following is a new friend I believe.
+Canute.Character.Amlos.supplyTeamComeBackWithStory=Canute, this news is discovered by me.
+Canute.Character.Amlos.supplyTeamComeBackWithLetter=Canute, this letter is discovered by me.
+
+
 Canute.Character.Empty.WordLine.0= 
 Canute.Character.Empty.WordLine.1= 
 Canute.Character.Empty.WordLine.2= 
@@ -433,5 +459,10 @@ Canute.UI.Settings.Language=Language
 Canute.UI.Settings.Other=Other
 Canute.UI.Settings.Other.OpenDataFolder=Open Data Folder
 Canute.UI.Settings.Other.Tutorial=Tutorial
+#
+Canute.BattleSystem.UI.PausePanel.Tutorial=Tutorial
+Canute.BattleSystem.UI.PausePanel.Quit=Quit
+Canute.BattleSystem.UI.PausePanel.Back=Back
+Canute.BattleSystem.UI.PausePanel.Settings=Settings
 #
 Canute.Demo.Unfinished.info=This is a demo version of the game Canute. This section is not available in the Demo.

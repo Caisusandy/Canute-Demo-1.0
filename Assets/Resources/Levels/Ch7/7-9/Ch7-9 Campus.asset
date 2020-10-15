@@ -25,7 +25,7 @@ MonoBehaviour:
     ownerUUID:
       value: 63c5918a-5aad-45ae-8bab-1b681601289b
     allowMove: 0
-    coordinate: {x: 0, y: 0}
+    coordinate: {x: 0, y: 3}
     stats:
       list: []
     localLeader:
@@ -54,7 +54,7 @@ MonoBehaviour:
       critBonus: 0
       critBounes: 0
       pop: 0
-      attackRange: 4
+      attackRange: 2
       moveRange: 0
       standPosition: 0
       attackPosition: 0

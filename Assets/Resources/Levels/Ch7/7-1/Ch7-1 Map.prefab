@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 7540948199326451860}
   - component: {fileID: 7540948199326451858}
   m_Layer: 5
-  m_Name: Map(Clone)
+  m_Name: Ch7-1 Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6238,8 +6238,8 @@ SpriteRenderer:
   m_SortingLayerID: -672141101
   m_SortingLayer: -1
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: 25b0e2183878d3545938fa72d07629dc, type: 3}
-  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f0bd10fe5aedc5e4abc39aa0e41b23c7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -6287,7 +6287,7 @@ MonoBehaviour:
     stats:
       list: []
     terrain: 8
-    canStandOn: 0
+    canStandOn: 1
     hide: 0
     temperature: 29
     humidity: 87
@@ -6836,8 +6836,8 @@ SpriteRenderer:
   m_SortingLayerID: -672141101
   m_SortingLayer: -1
   m_SortingOrder: -6
-  m_Sprite: {fileID: 21300000, guid: 25b0e2183878d3545938fa72d07629dc, type: 3}
-  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f0bd10fe5aedc5e4abc39aa0e41b23c7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -6885,7 +6885,7 @@ MonoBehaviour:
     stats:
       list: []
     terrain: 8
-    canStandOn: 0
+    canStandOn: 1
     hide: 0
     temperature: 34
     humidity: 60
@@ -11110,8 +11110,8 @@ SpriteRenderer:
   m_SortingLayerID: -672141101
   m_SortingLayer: -1
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: 25b0e2183878d3545938fa72d07629dc, type: 3}
-  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f0bd10fe5aedc5e4abc39aa0e41b23c7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -11159,7 +11159,7 @@ MonoBehaviour:
     stats:
       list: []
     terrain: 8
-    canStandOn: 0
+    canStandOn: 1
     hide: 0
     temperature: 37
     humidity: 50

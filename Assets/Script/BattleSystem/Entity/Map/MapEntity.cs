@@ -23,6 +23,7 @@ namespace Canute.BattleSystem
         [Tooltip("is map random generated")] public bool isRandomMap;
         [Tooltip("is map has only one terrain")] public bool isSingleTerrainMap;
         [Tooltip("is map drew already")] public bool isDrew;
+        [Tooltip("is map round? end->origin")] public bool isRound;
         [Tooltip("seed of the random map [also the fake cells]")] public int seed;
 
         public static MapEntity CurrentMap => instance;
@@ -63,6 +64,13 @@ namespace Canute.BattleSystem
                 var pos = item.transform.localPosition;
                 pos.y = i * CellSize.y;
                 item.transform.localPosition = pos;
+                for (int j = 0; j < item.cellEntities.Count; j++)
+                {
+                    var cell = item.cellEntities[j];
+                    pos = cell.transform.localPosition;
+                    pos.x = j * CellSize.x;
+                    cell.transform.localPosition = pos;
+                }
             }
         }
 
@@ -245,10 +253,10 @@ namespace Canute.BattleSystem
         public CellEntity GetCell(int x, int y)
         {
             //Debug.Log(x + "," + y);
-            if (y < 0 || x < 0)
-            {
-                return null;
-            }
+            //if (y < 0 || x < 0)
+            //{
+            //    return null;
+            //}
             //if (columnEntities.Count > y)
             //{
             //    if (this[y].cellEntities.Count > x)
@@ -263,7 +271,17 @@ namespace Canute.BattleSystem
 
                 return cellEntity;
             }
-            catch { }
+            catch
+            {
+                if (isRound)
+                {
+                    if (x < 0) x += Size.x;
+                    if (x >= Size.x) x -= Size.x;
+                    if (y < 0) y += Size.y;
+                    if (y >= Size.y) y -= Size.y;
+                    return GetCell(x, y);
+                }
+            }
             //    }
             //}
             return null;
@@ -857,6 +875,46 @@ namespace Canute.BattleSystem
                     cell.SetCellSprite();
                 }
             }
+        }
+
+
+        [ContextMenu("Horizontal Flip")]
+        public void HorizontalFlip()
+        {
+            for (int i = 0; i < columnEntities.Count; i++)
+            {
+                List<Vector3> pos = new List<Vector3>();
+                int cellCount = columnEntities[i].cellEntities.Count;
+                for (int j = 0; j < cellCount; j++)
+                {
+                    CellEntity cellEntity = columnEntities[i].cellEntities[j];
+                    pos.Add(cellEntity.transform.position);
+                }
+                for (int j = cellCount - 1; j >= 0; j--)
+                {
+                    columnEntities[i].cellEntities[j].transform.position = pos[cellCount - j - 1];
+                    columnEntities[i].cellEntities[j].transform.SetAsLastSibling();
+                }
+                columnEntities[i].cellEntities.Reverse();
+            }
+        }
+
+        [ContextMenu("Vertical Flip")]
+        public void VerticalFlip()
+        {
+            List<Vector3> pos = new List<Vector3>();
+            int columnCount = columnEntities.Count;
+            for (int j = 0; j < columnCount; j++)
+            {
+                var cellEntity = columnEntities[j];
+                pos.Add(cellEntity.transform.position);
+            }
+            for (int j = columnCount - 1; j >= 0; j--)
+            {
+                columnEntities[j].transform.position = pos[columnCount - j - 1];
+                columnEntities[j].transform.SetAsLastSibling();
+            }
+            columnEntities.Reverse();
         }
     }
 

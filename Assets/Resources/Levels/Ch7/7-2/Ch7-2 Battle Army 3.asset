@@ -61,7 +61,7 @@ MonoBehaviour:
       attackArea: 1
       damageExtraCount: 0
       targetCount: 1
-      attackType: 0
+      attackType: 4
       skill:
         specialName: 
         count: 0

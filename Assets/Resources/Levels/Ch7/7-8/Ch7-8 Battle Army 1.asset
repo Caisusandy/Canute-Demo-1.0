@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
   m_Name: Ch7-8 Battle Army 1
   m_EditorClassIdentifier: 
-  Prototype: {fileID: 11400000, guid: 661266bcfe7bb044a9b22e1eb2f6ea4b, type: 2}
+  Prototype: {fileID: 11400000, guid: b202e25bb1bf64c418aa5e0f037b1918, type: 2}
   spawnType: 0
   radius: 0
   generateCount: 1
   battleArmy:
-    name: Meialian Infantry
+    name: Prison Squad
     prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
       type: 3}
     uuid:
@@ -25,7 +25,7 @@ MonoBehaviour:
     ownerUUID:
       value: ab711845-592f-4d0f-bfd8-632a1b408f07
     allowMove: 1
-    coordinate: {x: 6, y: 5}
+    coordinate: {x: 3, y: 2}
     stats:
       list: []
     localLeader:
@@ -61,7 +61,7 @@ MonoBehaviour:
       attackArea: 1
       damageExtraCount: 0
       targetCount: 1
-      attackType: 0
+      attackType: 5
       skill:
         specialName: 
         count: 0
@@ -70,8 +70,8 @@ MonoBehaviour:
           args: []
       addition:
         args: []
-    maxHealth: 50
-    health: 50
-    armor: 10
-    damage: 35
+    maxHealth: 60
+    health: 60
+    armor: 15
+    damage: 40
     type: 0

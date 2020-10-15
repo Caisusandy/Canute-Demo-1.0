@@ -14,20 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 0
   story:
-    id: Ch7-1Pro
+    id: Ch7-9Pro
     type: 0
     wordLines:
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: ===
+      id: Ch7-9Pro.1
+      line: "===\r\nThe triumphant team turned the corner into the front hall of
+        the prison. They were so close to the outside, and yet so far. Only one obstacle
+        stood in their way. A stiff line of guards blocked the front doors, guns
+        at the ready. Canute felt like turning around and giving up. He was tired
+        of fighting, but he couldn\u2019t stop now. \r"
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
       nextLineID: 
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: ===
+      id: Ch7-9Pro.2
+      line: "They all had to keep going. Even though his motivational speech all
+        those hours ago had been heavily caffeinated, he had spoken the truth. This
+        wasn\u2019t about them. Somehow, it had taken him this long to see that,
+        but now, everything was as plain as day. They\u2019d all started this journey
+        together. That\u2019s how they were going to finish it. "
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0

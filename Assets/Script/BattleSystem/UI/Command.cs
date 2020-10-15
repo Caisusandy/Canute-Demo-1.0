@@ -81,6 +81,8 @@ namespace Canute.Testing
                         return BattleStatus(commandParams);
                     case "setProperty":
                         return SetProperty(commandParams);
+                    case "verifyAllItem":
+                        return VerifyAllItem();
                     case "arcefia":
                         return SecretlyAddAllItem();
                     default:
@@ -102,6 +104,12 @@ namespace Canute.Testing
             }
 
             return false;
+        }
+
+        private static bool VerifyAllItem()
+        {
+            Game.PlayerData.RemoveInvalid(true);
+            return true;
         }
 
         private static bool Language(string[] commandParams)

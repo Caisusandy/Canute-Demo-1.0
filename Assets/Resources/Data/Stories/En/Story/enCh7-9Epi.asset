@@ -14,20 +14,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 0
   story:
-    id: Ch7-1Epi
+    id: Ch7-9Epi
     type: 0
     wordLines:
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: ===
+      id: Ch7-9Epi.1
+      line: "They broke through the last scraps of the prison's defenses and the
+        night air had never felt so good on Canute\u2019s face. Evelyn lead the charge
+        back to their safe place. Everyone was glowing, victory shining through their
+        faces even though they hadn\u2019t accomplished what they\u2019d originally
+        intended.\n"
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
       nextLineID: 
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: ===
+      id: Ch7-9Epi.2
+      line: 'Canute burst through the hotel door to a defeated scene. The tech team
+        were strewn across the couch, empty coffee cups around them. They awoke with
+        a start at the sudden noise, then grumbled when they saw Canute,
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: Ch7-9Epi.3
+      line: "You\u2019ve got to be joking, sir. With all due respect, you gave us
+        quite the scare.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-9Epi.4
+      line: "But we\u2019re back, aren\u2019t we? And we\u2019ve got information
+        we didn\u2019t have before! We can still rescue Arthur.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-9Epi.5
+      line: 'Evelyn perched on the counter and rolled her eyes.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-9Epi.6
+      line: "We\u2019re all going to need rescuing if we don\u2019t get out of here.
+        Those prison wardens aren\u2019t going to let us keep wandering the city
+        for long.\u201D\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-9Epi.7
+      line: 'Ron nodded.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-9Epi.8
+      line: "Evelyn\u2019s right. Heading back to base is the safest thing for now.
+        Everyone was in agreement, and they headed out of the city as soon as possible.
+        \n"
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0

@@ -9,7 +9,7 @@ namespace Canute.StorySystem
     {
         public string storyName;
         public List<string> charaterNames;
-        [TextArea(5, 20)]
+        [TextArea(5, 50)]
         public string input;
         public StoryContainer output;
 

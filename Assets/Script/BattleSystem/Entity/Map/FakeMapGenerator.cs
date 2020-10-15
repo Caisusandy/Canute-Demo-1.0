@@ -35,7 +35,7 @@ namespace Canute.BattleSystem
                 //y
                 for (int y = -fakeLevelY; y < MapEntity.CurrentMap.columnEntities.Count + fakeLevelY; y++)
                 {
-                    if (!MapEntity.CurrentMap.GetCell(x, y))
+                    if (!MapEntity.CurrentMap.GetCell(x, y) || (MapEntity.CurrentMap.GetCell(x, y) && MapEntity.CurrentMap.GetCell(x, y).Exist()?.x != x) || (MapEntity.CurrentMap.GetCell(x, y) && MapEntity.CurrentMap.GetCell(x, y).Exist()?.y != y))
                     {
                         GameObject fakeCellObject;
                         yield return fakeCellObject = Instantiate(fakeCellPrefab, fakeColumn.transform);

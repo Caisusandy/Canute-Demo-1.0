@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
+  m_Name: BTAttacker3
+  m_EditorClassIdentifier: 
+  Prototype: {fileID: 0}
+  spawnType: 1
+  radius: 1
+  generateCount: 3
+  battleArmy:
+    name: Basic Cavalry
+    prefab: {fileID: 6470687005625561500, guid: 8155f07e8c7c2d24a9d984f3c92f3ea6,
+      type: 3}
+    uuid:
+      value: 0269ed49-857b-4728-b216-d54000463884
+    ownerUUID:
+      value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+    allowMove: 1
+    coordinate: {x: 8, y: 8}
+    stats:
+      list: []
+    localLeader:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: c3397712-4282-41fb-8cf4-4b8ae27e57b3
+      ownerUUID:
+        value: 
+      allowMove: 0
+      coordinate: {x: 0, y: 0}
+      stats:
+        list: []
+      career: 0
+      leadingArmyUUID:
+        value: 
+      isViceCommander: 0
+      level: 0
+      bounes: []
+    autonomousType: 2
+    anger: 0
+    career: 1
+    properties:
+      defense: 0
+      critRate: 20
+      critBonus: 0
+      critBounes: 20
+      pop: 5
+      attackRange: 3
+      moveRange: 4
+      standPosition: 1
+      attackPosition: 3
+      attackArea: 0
+      damageExtraCount: 0
+      targetCount: 1
+      attackType: 6
+      skill:
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args:
+        - key: 
+          value: 
+        - key: 
+          value: 
+        - key: 
+          value: 
+        - key: 
+          value: 
+        - key: 
+          value: 
+        - key: 
+          value: 
+    maxHealth: 75
+    health: 75
+    armor: 0
+    damage: 24
+    type: 5

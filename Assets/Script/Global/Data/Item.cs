@@ -122,19 +122,35 @@ namespace Canute
 
         public static int GetLevel(int @base, double multiple, int currentExp, int maxLevel = 60)
         {
-            double curLevel = @base;
-            for (int i = 0; i < maxLevel - 1; i++)
+            int curLevelExp = @base;
+            for (int i = 1; i < maxLevel; i++)
             {
-                if (currentExp > curLevel)
+                if (currentExp > curLevelExp)
                 {
-                    curLevel = (1d - Math.Pow(multiple, i + 1)) / (1d - multiple) * @base;
+                    curLevelExp = (int)((1d - Math.Pow(multiple, i + 1)) / (1d - multiple) * @base);
+                }
+                else return i;
+            }
+            return maxLevel;
+        }
+
+        public int GetTotalExpInThisLevel(int @base, double multiple, int maxLevel = 60)
+        {
+            int curLevel = (int)(@base * multiple);
+            for (int i = 1; i < maxLevel - 1; i++)
+            {
+                if (Exp < curLevel)
+                {
+                    Debug.Log(Exp);
+                    Debug.Log(curLevel);
+                    return (int)((1d - Math.Pow(multiple, i - 1)) / (1d - multiple) * @base);
                 }
                 else
                 {
-                    return i + 1;
+                    curLevel = (int)((1d - Math.Pow(multiple, i + 1)) / (1d - multiple) * @base);
                 }
             }
-            return maxLevel;
+            return 0;
         }
 
 

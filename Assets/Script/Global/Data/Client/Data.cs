@@ -199,8 +199,8 @@ namespace Canute
 
         #region Player's Chapter Progress
         [Header("Chapter Progress")]
-        [SerializeField] protected PlayerChapterTree gameProgree;
-        public PlayerChapterTree PlayerChapterTreeStat { get => gameProgree; set => gameProgree = value; }
+        [SerializeField] protected PlayerChapterTree gameProgress;
+        public PlayerChapterTree PlayerChapterTreeStat { get => gameProgress; set => gameProgress = value; }
         #endregion
 
         #region Unlocked
@@ -413,10 +413,7 @@ namespace Canute
         #region Give Player Item
         public void AddArmyItem(ArmyItem item)
         {
-            if (!Statistic.ArmiesUnlocked.Contains(item.Name))
-            {
-                Statistic.ArmiesUnlocked.Add(item.Name);
-            }
+            if (!Statistic.ArmiesUnlocked.Contains(item.Name)) { Statistic.ArmiesUnlocked.Add(item.Name); }
 
             armies.Add(item);
         }
@@ -426,27 +423,19 @@ namespace Canute
             if (!Statistic.LeadersUnlocked.Contains(item.Name))
             {
                 Statistic.LeadersUnlocked.Add(item.Name);
+                leaders.Add(item);
             }
-            leaders.Add(item);
         }
 
         public void AddEquipmentItem(EquipmentItem item)
         {
-            if (!Statistic.EquipmentsUnlocked.Contains(item.Name))
-            {
-                Statistic.EquipmentsUnlocked.Add(item.Name);
-            }
-
+            if (!Statistic.EquipmentsUnlocked.Contains(item.Name)) { Statistic.EquipmentsUnlocked.Add(item.Name); }
             equipments.Add(item);
         }
 
         public void AddEventCardItem(EventCardItem item)
         {
-            if (!Statistic.EventCardUnlocked.Contains(item.Name))
-            {
-                Statistic.EquipmentsUnlocked.Add(item.Name);
-            }
-
+            if (!Statistic.EventCardUnlocked.Contains(item.Name)) { Statistic.EquipmentsUnlocked.Add(item.Name); }
             eventCards.Add(item);
         }
 
@@ -483,11 +472,22 @@ namespace Canute
         }
         #endregion
 
-        public void ClearInvalidInfo()
+        public void RemoveInvalid(bool totalRemove = false)
         {
+            if (totalRemove)
+            {
+                armies = armies.Where((item) => item.Prototype).ToList();
+                leaders = leaders.Where((item) => item.Prototype).ToList();
+                equipments = equipments.Where((item) => item.Prototype).ToList();
+                eventCards = eventCards.Where((item) => item.Prototype).ToList();
+                collectionLetterID = collectionLetterID.Where((item) => item != "").ToList();
+                CollectionStoriesID = CollectionStoriesID.Where((item) => item != "").ToList();
+                return;
+            }
             armies = armies.Where((item) => item).ToList();
             leaders = leaders.Where((item) => item).ToList();
             equipments = equipments.Where((item) => item).ToList();
+            eventCards = eventCards.Where((item) => item).ToList();
             collectionLetterID = collectionLetterID.Where((item) => item != "").ToList();
             CollectionStoriesID = CollectionStoriesID.Where((item) => item != "").ToList();
         }
@@ -512,7 +512,7 @@ namespace Canute
             equipments = new List<EquipmentItem>();
             eventCards = new List<EventCardItem>();
 
-            gameProgree = new PlayerChapterTree();
+            gameProgress = new PlayerChapterTree();
             gameStatistic = new GameStatistic();
             countableItems = new ItemList();
             collectionLetterID = new List<string>();
@@ -524,18 +524,40 @@ namespace Canute
 
         private void GetDefaultItem()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
-                ArmyItem item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry"));
-                armies.Add(item);
-                legions[0].armiesUUID[i] = item.UUID;
+                var it = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry"));
+                armies.Add(it);
+                legions[0].armiesUUID[i] = it.UUID;
             }
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
-                ArmyItem item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry"));
-                armies.Add(item);
+                var it = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Infantry"));
+                armies.Add(it);
             }
             Statistic.ArmiesUnlocked.Add("Basic Infantry");
+
+            var item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Shielder"));
+            armies.Add(item);
+            Statistic.ArmiesUnlocked.Add("Basic Shielder");
+            item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Rifleman"));
+            armies.Add(item);
+            Statistic.ArmiesUnlocked.Add("Basic Rifleman");
+            item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Cavalry"));
+            armies.Add(item);
+            Statistic.ArmiesUnlocked.Add("Basic Cavalry");
+            item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic WarMachine"));
+            armies.Add(item);
+            Statistic.ArmiesUnlocked.Add("Basic WarMachine");
+            item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Mage"));
+            armies.Add(item);
+            Statistic.ArmiesUnlocked.Add("Basic Mage");
+            item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic Dragon"));
+            armies.Add(item);
+            Statistic.ArmiesUnlocked.Add("Basic Dragon");
+            item = new ArmyItem(GameData.Prototypes.GetArmyPrototype("Basic AircraftFighter"));
+            armies.Add(item);
+            Statistic.ArmiesUnlocked.Add("Basic AircraftFighter");
 
 
             leaders.Add(new LeaderItem(GameData.Prototypes.GetLeaderPrototype("Canute Svensson")));

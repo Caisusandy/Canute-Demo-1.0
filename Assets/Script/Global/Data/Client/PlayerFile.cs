@@ -103,7 +103,7 @@ namespace Canute
             }
             Data = data;
 
-            Data.ClearInvalidInfo();
+            Data.RemoveInvalid();
             Game.Configuration.LastGame = Data.UUID;
             Game.SaveConfig();
             return true;
@@ -170,6 +170,12 @@ namespace Canute
     {
         public UUID uuid;
         public WorldTime playerLastOperationTime;
+        public int federgram;
+        public int manpower;
+        public int mantleAlloy;
+        public int aethium;
+        public PlayerChapterTree gameProgress;
+
         public string filePath;
 
         public DateTime LastOperationTime => playerLastOperationTime;
@@ -193,11 +199,25 @@ namespace Canute
             if (LastOperationTime < other.LastOperationTime) { return -1; }
             return 0;
         }
+
         public int CompareTo(Data other)
         {
             if (LastOperationTime > other.LastOperationTime) { return 1; }
             if (LastOperationTime < other.LastOperationTime) { return -1; }
             return 0;
+        }
+
+        public string NextLevelName()
+        {
+            foreach (var item in GameData.Levels.ChapterTree.CurrentStory)
+            {
+                if (gameProgress.Contains(item))
+                {
+                    continue;
+                }
+                return item.Name;
+            }
+            return string.Empty;
         }
     }
 }

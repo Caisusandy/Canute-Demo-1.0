@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
   m_Name: Ch7-4 Battle Army 2
   m_EditorClassIdentifier: 
-  Prototype: {fileID: 11400000, guid: 7a27502256fd2c8468e0d4b76086a65e, type: 2}
-  spawnType: 0
-  radius: 0
-  generateCount: 1
+  Prototype: {fileID: 11400000, guid: 87f5a9df883c41a448f0eb06d9cb1dce, type: 2}
+  spawnType: 1
+  radius: 2
+  generateCount: 2
   battleArmy:
-    name: Meialian Infantry
+    name: Supreme Council's Squad
     prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
       type: 3}
     uuid:
@@ -61,7 +61,7 @@ MonoBehaviour:
       attackArea: 1
       damageExtraCount: 0
       targetCount: 1
-      attackType: 0
+      attackType: 5
       skill:
         specialName: 
         count: 0

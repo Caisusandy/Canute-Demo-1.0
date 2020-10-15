@@ -14,6 +14,7 @@ namespace Canute
         public const float LevelMultiple = 1.1f;
         public const int ExpBase = 100;
         public const int MaxArmyEquipmentCount = 2;
+        public const int MaximumLevel = 30;
         public static ArmyItem Empty => new ArmyItem() { protoName = "Empty" };
 
         [SerializeField] protected int star = 1;
@@ -22,8 +23,9 @@ namespace Canute
 
         public Army Prototype { get => GameData.Prototypes.GetArmyPrototype(protoName); private set => protoName = value?.Name; }
         public override Prototype Proto => Prototype;
-        public override int Level => GetLevel(ExpBase, LevelMultiple, Exp);
-        public int NextLevelExp => (int)(ExpBase * Mathf.Pow(LevelMultiple, Level + 1) - ExpBase * Mathf.Pow(LevelMultiple, Level));
+        public override int Level => GetLevel(ExpBase, LevelMultiple, Exp, MaximumLevel);
+        public int NextLevelExp => (int)(ExpBase * Mathf.Pow(LevelMultiple, Level + 1));
+        public int CurExp => Exp - GetTotalExpInThisLevel(ExpBase, LevelMultiple, MaximumLevel);
         public override Type ItemType => Item.Type.army;
 
         /// <summary> Star(1,2,3) </summary>
@@ -37,7 +39,7 @@ namespace Canute
         /// <summary>
         /// bonus of level and star
         /// </summary>
-        public double LevelBonus => Mathf.Pow(1.3f, Star - 1) * Mathf.Pow(1.005f, Level) * 100; //2.2795
+        public double LevelBonus => Mathf.Pow(1.3f, Star - 1) * (2.2795f * (Level / (float)MaximumLevel)) * 100; //2.2795
         public BattleProperty BaseProperty => Prototype.Properties[Star - 1];
 
 

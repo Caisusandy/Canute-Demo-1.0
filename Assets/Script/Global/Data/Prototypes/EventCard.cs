@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Canute.BattleSystem;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Canute.BattleSystem
+namespace Canute
 {
     [Serializable]
     public class EventCard : Prototype
@@ -28,7 +29,6 @@ namespace Canute.BattleSystem
         public Career Career { get => career; set => career = value; }
     }
 
-
     [Serializable]
     public class EventCardPropertyList
     {
@@ -40,7 +40,6 @@ namespace Canute.BattleSystem
             set => properties[index] = value;
         }
     }
-
     [Serializable]
     public struct EventCardProperty
     {

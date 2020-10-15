@@ -16,9 +16,9 @@ namespace Canute
         public override int Level => level + 1;
         public override Type ItemType => Type.eventCard;
 
-        public int Cost => Prototype.EventCardProperty[level].Cost;
-        public Effect Effect => Prototype.EventCardProperty[level].Effect;
-        public TargetType Target => Prototype.EventCardProperty[level].TargetType;
+        public int Cost => Prototype.EventCardProperty[0].Cost;
+        public Effect Effect => Prototype.EventCardProperty[0].Effect;
+        public TargetType Target => Prototype.EventCardProperty[0].TargetType;
         public Career Career => Prototype.Career;
 
         public EventCardItem()

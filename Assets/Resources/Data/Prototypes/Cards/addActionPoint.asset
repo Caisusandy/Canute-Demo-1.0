@@ -15,7 +15,7 @@ MonoBehaviour:
   isTemporaryPrototype: 0
   prototype:
     name: addActionPoint
-    rarity: 1
+    rarity: 2
     icon: {fileID: 21300000, guid: 9dd7184dda6bc5b4f9d1a73b06166081, type: 3}
     sprite: {fileID: 0}
     prefab: {fileID: 0}
