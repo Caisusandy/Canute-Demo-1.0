@@ -261,7 +261,7 @@ Canute.BattleSystem.Effect+Types.BasicMageSkill.info=对最近敌方单位造成
 Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Basic Rifleman Skill
 Canute.BattleSystem.Effect+Types.BasicRiflemanSkill.info=to cause the [closest, possible, lowest HP] target lost 20% Current HP and 40% lost HP
 Canute.BattleSystem.Effect+Types.BasicShielderSkill=Basic Shielder Skill
-Canute.BattleSystem.Effect+Types.BasicShielderSkill.info=Give whole legion‘s army 20 Armor
+Canute.BattleSystem.Effect+Types.BasicShielderSkill.info=Give whole legion's army 20 Armor
 Canute.BattleSystem.Effect+Types.BasicWarMachineSkill=Basic War Machine Skill
 Canute.BattleSystem.Effect+Types.BasicWarMachineSkill.info=Attack the closest possible target, and causes a 140% damage.
 Canute.BattleSystem.Effect+Types.BasicCavalrySkill=Basic Cavalry Skill
@@ -411,6 +411,8 @@ Canute.UI.Common.LegionSetting=军队
 Canute.UI.Common.Armies=军队
 Canute.UI.Common.Equipments=装备
 Canute.UI.Common.EventCard=事件牌
+Canute.UI.Common.Story=故事
+Canute.UI.Common.Letter=信件
 #
 Canute.UI.LegionSetting.Upgrade=升级
 Canute.UI.LegionSetting.Change=更改

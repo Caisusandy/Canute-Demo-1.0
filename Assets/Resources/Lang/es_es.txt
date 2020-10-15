@@ -407,6 +407,8 @@ Canute.UI.Common.LegionSetting=Ejército
 Canute.UI.Common.Armies=Ejército
 Canute.UI.Common.Equipments=Equipo
 Canute.UI.Common.EventCard=Tarjeta de Evento
+Canute.UI.Common.Story=Historia
+Canute.UI.Common.Letter=Letra
 #
 Canute.UI.LegionSetting.Upgrade=Mejorar
 Canute.UI.LegionSetting.Change=Cambiar

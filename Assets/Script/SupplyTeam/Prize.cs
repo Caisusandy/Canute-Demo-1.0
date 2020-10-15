@@ -145,7 +145,9 @@ namespace Canute
                 case Item.Type.eventCard:
                     return GameData.Prototypes.GetEventCardPrototype(Name).DisplayingName;
                 case Item.Type.story:
-                    break;
+                    return "Canute.UI.Common.Story".Lang() + "-" + Name;
+                case Item.Type.letter:
+                    return "Canute.UI.Common.Letter".Lang() + "-" + Name;
                 case Item.Type.currency:
                     Debug.Log(Name);
                     return ((Enum)Enum.Parse(typeof(Currency.Type), Name)).Lang();
