@@ -78,11 +78,6 @@ namespace Canute.BattleSystem
             }
         }
 
-        public virtual void Update()
-        {
-
-        }
-
         public virtual void OnDestroy()
         {
             Animator.RemoveFromBattle();
@@ -227,6 +222,11 @@ namespace Canute.BattleSystem
 
         #region Static Methods
 
+        /// <summary>
+        /// （避免使用）获得实体
+        /// </summary> 
+        /// <param name="sourceEntity"></param>
+        /// <returns></returns>
         public static Entity Get(UUID sourceEntity)
         {
             foreach (Entity item in entities)
@@ -239,6 +239,12 @@ namespace Canute.BattleSystem
             return null;
         }
 
+        /// <summary>
+        /// （避免使用）获得实体
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sourceEntity"></param>
+        /// <returns></returns>
         public static T Get<T>(UUID sourceEntity) where T : Entity
         {
             foreach (Entity item in entities)
@@ -251,6 +257,11 @@ namespace Canute.BattleSystem
             return null;
         }
 
+        /// <summary>
+        /// （避免使用）获得实体
+        /// </summary> 
+        /// <param name="sourceEntity"></param>
+        /// <returns></returns>
         public static List<Entity> Get(List<UUID> sourceEntity)
         {
             List<Entity> entities = new List<Entity>();
@@ -261,6 +272,12 @@ namespace Canute.BattleSystem
             return entities;
         }
 
+        /// <summary>
+        /// （避免使用）获得实体
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sourceEntity"></param>
+        /// <returns></returns>
         public static List<T> Get<T>(List<UUID> sourceEntity) where T : Entity
         {
             List<T> entities = new List<T>();

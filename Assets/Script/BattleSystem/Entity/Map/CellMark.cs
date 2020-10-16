@@ -75,6 +75,8 @@ namespace Canute.BattleSystem
         {
             markRenderer = GetComponent<SpriteRenderer>();
             markRenderer.size = GetMarkSize();
+            markRenderer.sortingLayerName = CellEntity.GetComponent<SpriteRenderer>().sortingLayerName;
+            markRenderer.sortingOrder = CellEntity.GetComponent<SpriteRenderer>().sortingOrder;
             CellEntity.Marks.Add(this);
         }
 

@@ -81,6 +81,8 @@ namespace Canute.Testing
                         return BattleStatus(commandParams);
                     case "setProperty":
                         return SetProperty(commandParams);
+                    case "unlockAllLevel":
+                        return UnlockAllLevel();
                     case "verifyAllItem":
                         return VerifyAllItem();
                     case "arcefia":
@@ -106,9 +108,20 @@ namespace Canute.Testing
             return false;
         }
 
+        private static bool UnlockAllLevel()
+        {
+            foreach (var item in GameData.Levels.ChapterTree.Levels)
+            {
+                item.Pass();
+            }
+            Console.WriteLine("Unlock all levels");
+            return true;
+        }
+
         private static bool VerifyAllItem()
         {
             Game.PlayerData.RemoveInvalid(true);
+            Console.WriteLine("all invalid item has been removed");
             return true;
         }
 

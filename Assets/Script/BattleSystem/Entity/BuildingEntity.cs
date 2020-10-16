@@ -15,6 +15,11 @@ namespace Canute.BattleSystem
         public override BattleProperty.Position StandPostion => data.StandPosition;
 
 
+        public virtual void Update()
+        {
+
+        }
+
         public abstract float AttackAtionDuration { get; }
         public abstract float SkillDuration { get; }
         public abstract float DefeatedDuration { get; }

@@ -16,6 +16,8 @@ MonoBehaviour:
   battle:
     battleType: 0
     avoidPlayerDefinedLegionSet: 1
+    avoidResonance: 1
+    firstTimePrize: []
     prizes:
     - name: Prologue2
       count: 1
@@ -114,29 +116,7 @@ MonoBehaviour:
         value: 
     stat: 0
     centralDeck:
-      list:
-      - name: 
-        prefab: {fileID: 0}
-        uuid:
-          value: b3a8cd14-dd01-4822-b96a-901460b5d3af
-        ownerUUID:
-          value: 
-        effect:
-          uuid:
-            value: 9dd2bebc-95e6-478a-a964-2e0bb7e9d73f
-          specialName: 
-          type: 1
-          count: 1
-          parameter: 0
-          sourceEntity:
-            value: 
-          targetEntities: []
-          args:
-            list: []
-        career: 0
-        type: 0
-        target: 0
-        actionPoint: 0
+      list: []
     armies: []
     buildings: []
     globalStatus:
@@ -146,6 +126,6 @@ MonoBehaviour:
     scoreBoard:
       list: []
       allPassedEffect: []
-      totalPlayerDamage: 366
+      totalPlayerDamage: 0
       totalAirforceDefeated: 0
-      totalLandArmyDefeated: 3
+      totalLandArmyDefeated: 0

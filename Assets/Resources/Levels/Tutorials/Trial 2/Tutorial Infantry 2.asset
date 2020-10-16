@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
-  m_Name: Player Infantry 1
+  m_Name: Tutorial Infantry 2
   m_EditorClassIdentifier: 
   Prototype: {fileID: 0}
   spawnType: 0
@@ -21,11 +21,11 @@ MonoBehaviour:
     prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
       type: 3}
     uuid:
-      value: e2b88ad7-d808-4d22-a86f-4f20a2a25029
+      value: 062f1d75-5731-4056-b27a-ff9d7449ad03
     ownerUUID:
       value: 63c5918a-5aad-45ae-8bab-1b681601289b
     allowMove: 1
-    coordinate: {x: 5, y: 1}
+    coordinate: {x: 1, y: 4}
     stats:
       list: []
     localLeader:
@@ -51,13 +51,15 @@ MonoBehaviour:
     properties:
       defense: 0
       critRate: 20
+      critBonus: 0
       critBounes: 20
-      pop: 10
+      pop: 0
       attackRange: 2
       moveRange: 4
       standPosition: 1
       attackPosition: 1
       attackArea: 0
+      damageExtraCount: 0
       targetCount: 1
       attackType: 5
       skill:

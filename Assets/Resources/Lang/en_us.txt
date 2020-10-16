@@ -25,6 +25,21 @@ Canute.LevelTree.Level.Training.description=Command Training
 Canute.LevelTree.Level.Ch1.name=Germination
 Canute.LevelTree.Level.Ch1.description=Under piles of rocks, City of Calay is changing...
 
+Canute.LevelTree.Level.Ch2.name=???
+Canute.LevelTree.Level.Ch2.description=???
+
+Canute.LevelTree.Level.Ch3.name=???
+Canute.LevelTree.Level.Ch3.description=???
+
+Canute.LevelTree.Level.Ch4.name=???
+Canute.LevelTree.Level.Ch4.description=???
+
+Canute.LevelTree.Level.Ch5.name=???
+Canute.LevelTree.Level.Ch5.description=???
+
+Canute.LevelTree.Level.Ch6.name=???
+Canute.LevelTree.Level.Ch6.description=???
+
 Canute.LevelTree.Level.Ch7.name=Rescue Mission
 Canute.LevelTree.Level.Ch7.description=When it is time to restart something unfinished...
 Canute.LevelTree.Level.Ch7-0.title=Basement outside
@@ -111,6 +126,8 @@ Canute.Army.Basic Cavalry.name=Basic Cavalry
 Canute.Army.Basic Rifleman.name=Basic Rifleman
 Canute.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
 Canute.Army.Basic Dragon.name=Basic Dragon
+Canute.Army.Amlos.name=Amlos
+Canute.Army.AnexarFlotics.name=Anexar Flotics
 Canute.Army.CalayCityInfantry.name=Calay City Infantry
 Canute.Army.ΣCityInfantry.name=Σ City Infantry
 Canute.Army.NewUtoCityInfantry.name=New Uto City Infantry

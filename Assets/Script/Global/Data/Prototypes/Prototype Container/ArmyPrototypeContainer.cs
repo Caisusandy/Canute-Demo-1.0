@@ -7,9 +7,10 @@ namespace Canute.BattleSystem
     [CreateAssetMenu(fileName = "Army", menuName = "Prototype/Army Prototype")]
     public class ArmyPrototypeContainer : PrototypeContainer<Army>
     {
-        public void OnEnable()
+        [ContextMenu("Add To Prototype Factory")]
+        public override void AddToPrototypeFactory()
         {
-            //Debug.Log(prototype.Properties[2].Skill);
+            base.AddToPrototypeFactory();
         }
     }
 

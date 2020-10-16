@@ -28,13 +28,15 @@ MonoBehaviour:
     properties:
     - defense: 0
       critRate: 20
+      critBonus: 0
       critBounes: 50
       pop: 8
       attackRange: 2
-      moveRange: 4
+      moveRange: 3
       standPosition: 1
       attackPosition: 1
       attackArea: 0
+      damageExtraCount: 0
       targetCount: 1
       attackType: 5
       skill:
@@ -49,13 +51,15 @@ MonoBehaviour:
         args: []
     - defense: 0
       critRate: 20
+      critBonus: 0
       critBounes: 50
       pop: 8
       attackRange: 2
-      moveRange: 4
+      moveRange: 3
       standPosition: 1
       attackPosition: 1
       attackArea: 0
+      damageExtraCount: 0
       targetCount: 1
       attackType: 5
       skill:
@@ -70,13 +74,15 @@ MonoBehaviour:
         args: []
     - defense: 0
       critRate: 20
+      critBonus: 0
       critBounes: 50
       pop: 8
       attackRange: 2
-      moveRange: 4
+      moveRange: 3
       standPosition: 1
       attackPosition: 1
       attackArea: 0
+      damageExtraCount: 0
       targetCount: 1
       attackType: 5
       skill:

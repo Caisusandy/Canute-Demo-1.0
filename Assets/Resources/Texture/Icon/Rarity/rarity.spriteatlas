@@ -31,17 +31,21 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 2cdc2e82dab67654ea91aeb0ecbc1ec7, type: 3}
-    totalSpriteSurfaceArea: 1310720
+    totalSpriteSurfaceArea: 1835008
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 53800c224bd8a2d47bbc649470e7f89a, type: 3}
   - {fileID: 21300000, guid: fc26e8449f22ec44f955d2ea8915fa70, type: 3}
+  - {fileID: 21300000, guid: 4fe29cf697d85c348bc801c69eae53cb, type: 3}
   - {fileID: 21300000, guid: 1d0dbbb9740f01e478746df7dba47e5f, type: 3}
   - {fileID: 21300000, guid: 58f2f3baf80d49e47afd7463d8d29b42, type: 3}
   - {fileID: 21300000, guid: af6ee8fc9fa75964a9474b722c6c5777, type: 3}
   - {fileID: 21300000, guid: d8f9675d9b18680419a9fe6f96d9c94f, type: 3}
   m_PackedSpriteNamesToIndex:
+  - unknown 2
   - none
+  - unknown
   - common
   - legendary
   - epic

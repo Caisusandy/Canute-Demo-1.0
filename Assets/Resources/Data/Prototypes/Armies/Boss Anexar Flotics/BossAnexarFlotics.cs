@@ -24,10 +24,10 @@ namespace Canute.BattleSystem.Armies
 
             time += Time.deltaTime;
 
-            if (time > 1 && Game.CurrentBattle.CurrentStat == Battle.Stat.normal)
+            if (time > 1 && Game.CurrentBattle.IsFreeTime && Game.CurrentBattle.CurrentStat != Battle.Stat.begin)
             {
                 List<CellEntity> nearByCells = OnCellOf.NearByCells.Where((c) => c.data.canStandOn).ToList();
-                CellEntity destination = nearByCells[UnityEngine.Random.Range(0, nearByCells.Count)];
+                CellEntity destination = nearByCells[Random.Range(0, nearByCells.Count)];
                 if (destination.HasArmyStandOn && destination.HasArmyStandOn.Exist()?.Owner != Owner)
                 {
                     new Effect(Effect.Types.@event, this, destination.HasArmyStandOn, 1, data.Damage, "name:" + EventName.damage).Execute();

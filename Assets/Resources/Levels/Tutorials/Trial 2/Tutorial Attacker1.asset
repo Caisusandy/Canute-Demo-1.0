@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
-  m_Name: InfdevAttacker2
+  m_Name: Tutorial Attacker1
   m_EditorClassIdentifier: 
   Prototype: {fileID: 0}
   spawnType: 0
@@ -21,11 +21,11 @@ MonoBehaviour:
     prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
       type: 3}
     uuid:
-      value: 0269ed49-857b-4728-b216-d54000463884
+      value: e1781edc-91f8-477a-b664-b5828509f73a
     ownerUUID:
       value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
     allowMove: 1
-    coordinate: {x: 5, y: 12}
+    coordinate: {x: 12, y: 3}
     stats:
       list: []
     localLeader:
@@ -51,6 +51,7 @@ MonoBehaviour:
     properties:
       defense: 0
       critRate: 20
+      critBonus: 0
       critBounes: 20
       pop: 5
       attackRange: 2
@@ -58,6 +59,7 @@ MonoBehaviour:
       standPosition: 1
       attackPosition: 1
       attackArea: 0
+      damageExtraCount: 0
       targetCount: 1
       attackType: 5
       skill:

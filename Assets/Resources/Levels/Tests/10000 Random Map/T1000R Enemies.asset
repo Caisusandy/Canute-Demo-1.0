@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
-  m_Name: InfdevAttacker3
+  m_Name: T1000R Enemies
   m_EditorClassIdentifier: 
   Prototype: {fileID: 0}
-  spawnType: 0
-  radius: 0
-  generateCount: 0
+  spawnType: 1
+  radius: 3
+  generateCount: 5
   battleArmy:
     name: Basic Infantry
     prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
       type: 3}
     uuid:
-      value: e9f68687-3de0-491f-b427-167f75dde9ad
+      value: cb8d430c-1c33-4af7-b36d-6f6319264dd9
     ownerUUID:
-      value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+      value: 40268869-5f5c-4ace-a404-e956228a7e93
     allowMove: 1
-    coordinate: {x: 4, y: 12}
+    coordinate: {x: 8, y: 8}
     stats:
       list: []
     localLeader:
       name: 
       prefab: {fileID: 0}
       uuid:
-        value: c3397712-4282-41fb-8cf4-4b8ae27e57b3
+        value: d4c8f76d-271f-409b-af29-d32bb9be4bb3
       ownerUUID:
         value: 
       allowMove: 0
@@ -47,17 +47,19 @@ MonoBehaviour:
       bounes: []
     autonomousType: 2
     anger: 0
-    career: 1
+    career: 0
     properties:
       defense: 0
       critRate: 20
+      critBonus: 0
       critBounes: 20
       pop: 5
       attackRange: 2
       moveRange: 4
       standPosition: 1
       attackPosition: 1
-      attackArea: 0
+      attackArea: 1
+      damageExtraCount: 0
       targetCount: 1
       attackType: 5
       skill:
@@ -68,8 +70,8 @@ MonoBehaviour:
           args: []
       addition:
         args: []
-    maxHealth: 80
-    health: 80
+    maxHealth: 100
+    health: 100
     armor: 0
-    damage: 30
+    damage: 25
     type: 0

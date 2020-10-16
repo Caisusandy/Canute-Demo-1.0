@@ -333,7 +333,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 2143808594}
   des: {fileID: 1628295176}
-  chapterName: 
+  chapterNameDisplay: {fileID: 0}
+  chapterName: Ch3
 --- !u!61 &70171515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -341,7 +342,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70171509}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -550,7 +551,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 2143808594}
   des: {fileID: 1628295176}
-  chapterName: 
+  chapterNameDisplay: {fileID: 0}
+  chapterName: Ch2
 --- !u!61 &149077025
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -558,7 +560,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149077019}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -797,6 +799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 2143808594}
   des: {fileID: 1628295176}
+  chapterNameDisplay: {fileID: 1516720040}
   chapterName: Ch1
 --- !u!61 &209695163
 BoxCollider2D:
@@ -1044,6 +1047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 2143808594}
   des: {fileID: 1628295176}
+  chapterNameDisplay: {fileID: 881558450}
   chapterName: Ch7
 --- !u!61 &270353800
 BoxCollider2D:
@@ -1217,7 +1221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 2143808594}
   des: {fileID: 1628295176}
-  chapterName: 
+  chapterNameDisplay: {fileID: 0}
+  chapterName: Ch6
 --- !u!61 &288613974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1225,7 +1230,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288613968}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1368,7 +1373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &355348448
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1524,7 +1529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &431302968
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2377,7 +2382,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 182748162}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.382798
+  m_Size: 0.40677974
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2525,7 +2530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &984686828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2888,7 +2893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1153893830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3095,7 +3100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 2143808594}
   des: {fileID: 1628295176}
-  chapterName: 
+  chapterNameDisplay: {fileID: 0}
+  chapterName: Ch4
 --- !u!61 &1334202593
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3103,7 +3109,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334202587}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3468,6 +3474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 2143808594}
   des: {fileID: 1628295176}
+  chapterNameDisplay: {fileID: 731591396}
   chapterName: Training
 --- !u!61 &1466722594
 BoxCollider2D:
@@ -4429,7 +4436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1938160236
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4855,7 +4862,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 2143808594}
   des: {fileID: 1628295176}
-  chapterName: 
+  chapterNameDisplay: {fileID: 0}
+  chapterName: Ch5
 --- !u!61 &2062212464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4863,7 +4871,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062212458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

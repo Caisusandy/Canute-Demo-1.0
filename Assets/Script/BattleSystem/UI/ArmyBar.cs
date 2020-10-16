@@ -10,6 +10,7 @@ namespace Canute.BattleSystem.UI
         public GameObject attackingArmyAttackButton;
         public GameObject infosAnchor;
         public GameObject infoPrefab;
+        public Transform anchor;
         public List<ArmyInfoIcon> armyInfos = new List<ArmyInfoIcon>();
 
         public override void Awake()
@@ -53,6 +54,17 @@ namespace Canute.BattleSystem.UI
             Motion.SetMotion(gameObject, BattleUI.UndersideAnchor, true);
             Motion.SetMotion(gameObject, BattleUI.UndersideAnchor, true);
             isShown = false;
+        }
+
+        public override void Show()
+        {
+            if (isShown)
+            {
+                return;
+            }
+            isShown = true;
+            gameObject.SetActive(true);
+            Module.Motion.SetMotion(gameObject, anchor.position, true);
         }
 
         private void OnMouseDown()

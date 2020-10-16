@@ -127,6 +127,11 @@ MonoBehaviour:
         endStoryName: 
       - backgroundStoryName: 
         lastLevel: 
+        data: {fileID: 11400000, guid: 476d1177918fca143a6b5269f06fa78a, type: 2}
+        nextLevel: 
+        endStoryName: 
+      - backgroundStoryName: 
+        lastLevel: 
         data: {fileID: 11400000, guid: 373fb71bc345551449b35aa581113c79, type: 2}
         nextLevel: 
         endStoryName: 

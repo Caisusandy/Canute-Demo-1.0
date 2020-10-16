@@ -49,7 +49,7 @@ namespace Canute.BattleSystem
             SetIcon();
         }
 
-        public override void Update()
+        public virtual void Update()
         {
             Display();
             DragCardDeleyAdd();
@@ -426,8 +426,8 @@ namespace Canute.BattleSystem
             int cardcount = cardEntities.Count;
             float StartingAngle = 90 + (cardcount - 1) * AnglePerCard / 2;
             float angle = StartingAngle - card.id * AnglePerCard;
-            float degreeX = Mathf.Cos(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 6.25f;
-            float degreeY = Mathf.Sin(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 1.2f;
+            float degreeX = Mathf.Cos(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 6.25f * Camera.main.orthographicSize / 5f;
+            float degreeY = Mathf.Sin(angle * Mathf.Deg2Rad) * DistanceFromDeckParam * 1.2f * Camera.main.orthographicSize / 5f;
 
             return new Vector3(degreeX, degreeY) * (card.IsSelected ? 1.25f : 1f);
 

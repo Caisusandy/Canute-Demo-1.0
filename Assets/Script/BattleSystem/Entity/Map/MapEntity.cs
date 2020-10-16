@@ -26,6 +26,11 @@ namespace Canute.BattleSystem
         [Tooltip("is map round? end->origin")] public bool isRound;
         [Tooltip("seed of the random map [also the fake cells]")] public int seed;
 
+        static float maxX;
+        static float maxY;
+        static float minX;
+        static float minY;
+
         public static MapEntity CurrentMap => instance;
         public static bool WasOnDrag { get => instance.wasOnDrag; set { instance.wasOnDrag = value; SetCellCollider(!value); } }
 
@@ -36,7 +41,7 @@ namespace Canute.BattleSystem
         public float MapRadius => ((Vector2)Origin.transform.position - (Vector2)Center.transform.position).magnitude * ((Center.x - 1) / Center.x);
         public CellEntity Origin => this[0][0];
         public CellEntity Center { get => GetCenter(); }
-        public CellEntity End { get => GetEndCell(); }
+        public CellEntity End { get => columnEntities.Last().Last(); }
 
         public ColumnEntity this[int index] => columnEntities[index];
         public CellEntity this[Vector2Int pos] => GetCell(pos);
@@ -80,6 +85,11 @@ namespace Canute.BattleSystem
 
             SetPlayerCameraToPosition();
             CellSetupAndColor();
+
+            maxX = End.transform.position.x;
+            maxY = End.transform.position.y;
+            minX = Origin.transform.position.x;
+            minY = Origin.transform.position.y;
         }
 
         private void SetPlayerCameraToPosition()
@@ -206,17 +216,6 @@ namespace Canute.BattleSystem
         {
             int y = columnEntities.Count / 2;
             int x = columnEntities[y].cellEntities.Count / 2;
-            CellEntity cellEntity = this[y][x];
-            return cellEntity;
-        }
-        /// <summary>
-        /// return the end cell of the map, whether the cell is reachable for the player or not.
-        /// </summary>
-        /// <returns></returns>
-        private CellEntity GetEndCell()
-        {
-            int y = columnEntities.Count - 1;
-            int x = columnEntities[y].cellEntities.Count - 1;
             CellEntity cellEntity = this[y][x];
             return cellEntity;
         }
@@ -797,10 +796,6 @@ namespace Canute.BattleSystem
             Vector2 newPos = Camera.main.transform.position - delta;
             float magnitude = (new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y) - newPos).magnitude;
 
-            float maxX = CurrentMap.End.transform.position.x;
-            float maxY = CurrentMap.End.transform.position.y;
-            float minX = CurrentMap.Origin.transform.position.x;
-            float minY = CurrentMap.Origin.transform.position.y;
 
             //Debug.Log(maxX);
             //Debug.Log(maxY);
@@ -814,10 +809,10 @@ namespace Canute.BattleSystem
             }
             else
             {
-                Vector2 oldPos = Camera.main.transform.position;
-                float oldMagnitude = (new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y) - oldPos).magnitude;
-                if (magnitude > oldMagnitude) { return; }
-                Camera.main.transform.position -= delta;
+                //Vector2 oldPos = Camera.main.transform.position;
+                //float oldMagnitude = (new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y) - oldPos).magnitude;
+                //if (magnitude > oldMagnitude) { return; }
+                //Camera.main.transform.position -= delta;
             }
             WasOnDrag = true;
             //if (magnitude > CurrentMap.MapRadius)

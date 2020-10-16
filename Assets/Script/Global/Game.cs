@@ -98,9 +98,10 @@ namespace Canute
     public enum Language
     {
         en_us,
-        zh_cn,
         es_es,
-        vi_vn
+        vi_vn,
+        zh_tw,
+        zh_cn,
     }
 
     [Serializable]

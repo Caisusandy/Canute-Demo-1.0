@@ -90,6 +90,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 62da6d3288e869747a46ff219e5a216c, type: 2}
     - {fileID: 11400000, guid: 7740fbaedb1a3414f8f2c3e38a83c9d2, type: 2}
     - {fileID: 11400000, guid: 7e4985686b96b344187656c94126b1c2, type: 2}
+    - {fileID: 11400000, guid: c1711677b8e11114da9e3c17632b25c7, type: 2}
   dragonEventCardPrototypes:
     list:
     - {fileID: 11400000, guid: 6f76a305f0f580042b5afb7d969f7771, type: 2}

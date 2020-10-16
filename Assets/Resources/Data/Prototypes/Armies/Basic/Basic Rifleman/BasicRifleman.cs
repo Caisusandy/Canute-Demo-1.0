@@ -37,14 +37,14 @@ namespace Canute.BattleSystem.Armies
             base.Attack(vs);
 
             Effect effect = vs[0] as Effect;
-            GameObject gameObject = new GameObject();
-            gameObject.transform.SetParent(transform);
-            gameObject.AddComponent<Image>();
-            gameObject.transform.localScale = Vector3.one;
-            var motion = gameObject.AddComponent<LinearMotion>();
-            motion.MotionEndEvent += Destroy;
-            motion.finalPos = effect.Target.transform.position;
-            motion.second = 1;
+            //GameObject gameObject = new GameObject();
+            //gameObject.transform.SetParent(transform);
+            //gameObject.AddComponent<Image>();
+            //gameObject.transform.localScale = Vector3.one;
+            //var motion = gameObject.AddComponent<LinearMotion>();
+            //motion.MotionEndEvent += Destroy;
+            //motion.finalPos = effect.Target.transform.position;
+            //motion.second = 1;
 
 
             void Destroy()

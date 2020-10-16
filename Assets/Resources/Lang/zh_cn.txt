@@ -19,36 +19,51 @@ Canute.LevelTree.Level.CalayInfinite.description=无限战役
 Canute.LevelTree.Level.1-2.title=1-2 色布提亚据点
 Canute.LevelTree.Level.1-2.description=第一次遭遇色布提亚据点
 
-Canute.LevelTree.Level.Training.name=Training
-Canute.LevelTree.Level.Training.description=Command Training
+Canute.LevelTree.Level.Training.name=训练项目
+Canute.LevelTree.Level.Training.description=日常训练
 
-Canute.LevelTree.Level.Ch1.name=Germination
-Canute.LevelTree.Level.Ch1.description=Under piles of rocks, City of Calay is changing...
+Canute.LevelTree.Level.Ch1.name=启蒙
+Canute.LevelTree.Level.Ch1.description=喀来城的岩石之下，一切开始改变...
+
+Canute.LevelTree.Level.Ch2.name=???
+Canute.LevelTree.Level.Ch2.description=???
+
+Canute.LevelTree.Level.Ch3.name=???
+Canute.LevelTree.Level.Ch3.description=???
+
+Canute.LevelTree.Level.Ch4.name=???
+Canute.LevelTree.Level.Ch4.description=???
+
+Canute.LevelTree.Level.Ch5.name=???
+Canute.LevelTree.Level.Ch5.description=???
+
+Canute.LevelTree.Level.Ch6.name=???
+Canute.LevelTree.Level.Ch6.description=???
 
 Canute.LevelTree.Level.Ch7.name=斯威士瓦营救行动
 Canute.LevelTree.Level.Ch7.description=在寒冷的幻境里，我应该开始完成一些未完成的事情...
 Canute.LevelTree.Level.Ch7-0.description=日常战役
 Canute.LevelTree.Level.Ch7-0.title=基地外
-Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Outside Basement
-Canute.LevelTree.Level.Ch7-1.description=Defeat: defeat all enemies on the field
-Canute.LevelTree.Level.Ch7-2.title=Rescue Mission: The Secret Police
-Canute.LevelTree.Level.Ch7-2.description=Retreat: at least one army retreat to the hills
-Canute.LevelTree.Level.Ch7-3.title=Rescue Mission: The Gang of Thieves
-Canute.LevelTree.Level.Ch7-3.description=Defeat: defeat all enemies on the field
-Canute.LevelTree.Level.Ch7-4.title=Rescue Mission: Squads of Supreme Council
-Canute.LevelTree.Level.Ch7-4.description=Defeat: defeat all Squads on the field
-Canute.LevelTree.Level.Ch7-5.title=Rescue Mission: Riot of Swisha
-Canute.LevelTree.Level.Ch7-5.description=Defeat: defeat all riot on the field
-Canute.LevelTree.Level.Ch7-6.title=Rescue Mission: Swisha Prison
-Canute.LevelTree.Level.Ch7-6.description=Defeat: defeat security droids [In a round building]
-Canute.LevelTree.Level.Ch7-7.title=Rescue Mission: The Child
-Canute.LevelTree.Level.Ch7-7.description=Defeat: defeat guards in front of Finn Herman's cell
-Canute.LevelTree.Level.Ch7-8.title=Rescue Mission: The Advisor
-Canute.LevelTree.Level.Ch7-8.description=Defeat: defeat guards in front of Ron Thompson's cell
-Canute.LevelTree.Level.Ch7-9.title=Rescue Mission: Anexar and the Supreme Council
-Canute.LevelTree.Level.Ch7-9.description=Retreat: at least one army arrived on the right side of the battlefield.
-Canute.LevelTree.Level.Ch7-10.title=Rescue Mission: Old Friend
-Canute.LevelTree.Level.Ch7-10.description=Defeat: defeat Anexar and all squads
+Canute.LevelTree.Level.Ch7-1.title=营救行动: 基地之外
+Canute.LevelTree.Level.Ch7-1.description=胜利：击败所有敌方
+Canute.LevelTree.Level.Ch7-2.title=营救行动: 不明来历的警察
+Canute.LevelTree.Level.Ch7-2.description=撤退：至少有一支军队抵达地图右侧.
+Canute.LevelTree.Level.Ch7-3.title=营救行动: 劫匪
+Canute.LevelTree.Level.Ch7-3.description=胜利：击败所有敌方
+Canute.LevelTree.Level.Ch7-4.title=营救行动: 最高议会的小队
+Canute.LevelTree.Level.Ch7-4.description=胜利：击败所有敌方
+Canute.LevelTree.Level.Ch7-5.title=营救行动: 暴徒
+Canute.LevelTree.Level.Ch7-5.description=胜利：击败所有敌方
+Canute.LevelTree.Level.Ch7-6.title=营救行动: 斯威士瓦监狱
+Canute.LevelTree.Level.Ch7-6.description=胜利：击败所有敌方 [注意：环形地图]
+Canute.LevelTree.Level.Ch7-7.title=营救行动: 孩子
+Canute.LevelTree.Level.Ch7-7.description=胜利：击败所有敌方
+Canute.LevelTree.Level.Ch7-8.title=营救行动: 内阁
+Canute.LevelTree.Level.Ch7-8.description=胜利：击败所有敌方
+Canute.LevelTree.Level.Ch7-9.title=营救行动: 亚尼科萨和最高议会
+Canute.LevelTree.Level.Ch7-9.description=撤退：至少有一支军队抵达地图右侧.
+Canute.LevelTree.Level.Ch7-10.title=营救行动: 老朋友
+Canute.LevelTree.Level.Ch7-10.description=胜利：击败亚尼科萨和所有敌方
 
 #Currency
 Canute.Shops.Currency+Type.fedgram=联邦克
@@ -69,7 +84,7 @@ Canute.BattleSystem.PropertyType.armor=护甲
 Canute.BattleSystem.PropertyType.anger=怒气
 #
 Canute.BattleSystem.BattleProperty.AttackType=攻击方式
-Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
+Canute.BattleSystem.BattleProperty+AttackType.none=无法攻击
 Canute.BattleSystem.BattleProperty+AttackType.melee=近战
 Canute.BattleSystem.BattleProperty+AttackType.projectile=远程
 Canute.BattleSystem.BattleProperty+AttackType.single=单一目标
@@ -87,7 +102,7 @@ Canute.BattleSystem.BattleProperty.AttackPosition=攻击位置
 Canute.BattleSystem.BattleProperty+Position.land=地面
 Canute.BattleSystem.BattleProperty+Position.air=空中
 Canute.BattleSystem.BattleProperty+Position.all=任何
-Canute.BattleSystem.BattleProperty+Position.none=None
+Canute.BattleSystem.BattleProperty+Position.none=虚空？
 #
 Canute.Army+Types.mage=法师
 Canute.Army+Types.warMachine=战场
@@ -99,47 +114,48 @@ Canute.Army+Types.aircraftFighter=战机
 Canute.Army+Types.airship=空艇
 Canute.Army+Types.dragon=龙
 #
-Canute.Army.Alpha Army.name=A
-Canute.Army.Beta Army.name=B
-Canute.Army.Tutorial Canute Army.name=Canute
-Canute.Army.Basic Mage.name=Basic Mage
-Canute.Army.Basic WarMachine.name=Basic WarMachine
-Canute.Army.Basic Infantry.name=Basic Infantry
-Canute.Army.Basic Shielder.name=Basic Shielder
-Canute.Army.Basic Infantry.name=Basic Infantry
-Canute.Army.Basic Cavalry.name=Basic Cavalry
-Canute.Army.Basic Rifleman.name=Basic Rifleman
-Canute.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
-Canute.Army.Basic Dragon.name=Basic Dragon
+Canute.Army.AlphaArmy.name=A
+Canute.Army.BetaArmy.name=B
+Canute.Army.Basic Mage.name=基础法师
+Canute.Army.Basic WarMachine.name=基础战车
+Canute.Army.Basic Infantry.name=基础士兵
+Canute.Army.Basic Shielder.name=基础重甲兵
+Canute.Army.Basic Cavalry.name=基础骑兵
+Canute.Army.Basic Rifleman.name=基础火枪手
+Canute.Army.Basic AircraftFighter.name=基础战机
+Canute.Army.Basic Airship.name=基础空艇
+Canute.Army.Basic Dragon.name=龙
+Canute.Army.Amlos.name=阿米罗斯
+Canute.Army.AnexarFlotics.name=亚尼科萨·弗罗提克斯
 Canute.Army.CalayCityInfantry.name=喀来城防步兵
 Canute.Army.ΣCityInfantry.name=西格玛象限城防步兵
 Canute.Army.NewUtoCityInfantry.name=新犹托城防步兵
 # 
-Canute.Equipment.AeroReinforceArmorI.name=Aero Reinforce Armor Lv.I
-Canute.Equipment.AeroReinforceArmorII.name=Aero Reinforce Armor Lv.II
-Canute.Equipment.AeroReinforceArmorIII.name=Aero Reinforce Armor Lv.III
-Canute.Equipment.AeroReinforceArmorIV.name=Aero Reinforce Armor Lv.IV
-Canute.Equipment.CeramicCompositeArmorI.name=Ceramic Composite Armor Lv.I
-Canute.Equipment.CeramicCompositeArmorII.name=Ceramic Composite Armor Lv.II
-Canute.Equipment.CeramicCompositeArmorIII.name=Ceramic Composite Armor Lv.III
-Canute.Equipment.CeramicCompositeArmorIV.name=Ceramic Composite Armor Lv.IV
-Canute.Equipment.PersonalAethiumBeamEmitterI.name=Personal Aethium Beam Emitter Mk 1
-Canute.Equipment.PersonalAethiumBeamEmitterII.name=Personal Aethium Beam Emitter Mk 2
-Canute.Equipment.PersonalAethiumBeamEmitterIII.name=Personal Aethium Beam Emitter Mk 3
-Canute.Equipment.PersonalAethiumBeamEmitterIV.name=Personal Aethium Beam Emitter Mk 4
-Canute.Equipment.MagneticGeneratorI.name=Magnetic Shield Generator Lv.I
-Canute.Equipment.MagneticGeneratorII.name=Magnetic Shield Generator Lv.II
-Canute.Equipment.MagneticGeneratorIII.name=Magnetic Shield Generator Lv.III
-Canute.Equipment.MagneticGeneratorIV.name=Magnetic Shield Generator Lv.IV
+Canute.Equipment.AeroReinforceArmorI.name=航空级护甲 Lv.I
+Canute.Equipment.AeroReinforceArmorII.name=航空级护甲 Lv.II
+Canute.Equipment.AeroReinforceArmorIII.name=航空级护甲 Lv.III
+Canute.Equipment.AeroReinforceArmorIV.name=航空级护甲 Lv.IV
+Canute.Equipment.CeramicCompositeArmorI.name=陶瓷复合护甲 Lv.I
+Canute.Equipment.CeramicCompositeArmorII.name=陶瓷复合护甲 Lv.II
+Canute.Equipment.CeramicCompositeArmorIII.name=陶瓷复合护甲 Lv.III
+Canute.Equipment.CeramicCompositeArmorIV.name=陶瓷复合护甲 Lv.IV
+Canute.Equipment.PersonalAethiumBeamEmitterI.name=单兵辉石束发射器 Mk 1
+Canute.Equipment.PersonalAethiumBeamEmitterII.name=单兵辉石束发射器 Mk 2
+Canute.Equipment.PersonalAethiumBeamEmitterIII.name=单兵辉石束发射器 Mk 3
+Canute.Equipment.PersonalAethiumBeamEmitterIV.name=单兵辉石束发射器 Mk 4
+Canute.Equipment.MagneticGeneratorI.name=电磁护盾发射器 Lv.I
+Canute.Equipment.MagneticGeneratorII.name=电磁护盾发射器 Lv.II
+Canute.Equipment.MagneticGeneratorIII.name=电磁护盾发射器 Lv.III
+Canute.Equipment.MagneticGeneratorIV.name=电磁护盾发射器 Lv.IV
 #eventcard name
-Canute.EventCard.eventDrawCard.name=Draw Card
-Canute.EventCard.addActionPoint.name=Action Point
-Canute.EventCard.enemyMove.name=Enemy Move
-Canute.EventCard.flashLight.name=Flash Light
+Canute.EventCard.eventDrawCard.name=摸牌
+Canute.EventCard.addActionPoint.name=行动点加成
+Canute.EventCard.enemyMove.name=敌军移动
+Canute.EventCard.flashLight.name=闪光弹
 #building name
-Canute.Building.Campus.name=Campus
+Canute.Building.Campus.name=营地
 #
-Canute.BattleSystem.Cell.name=地区
+Canute.BattleSystem.Cell.name=区域
 #地形
 Canute.BattleSystem.Terrain.Plain=平原
 Canute.BattleSystem.Terrain.Forest=树林
@@ -152,7 +168,7 @@ Canute.BattleSystem.Terrain.Swamp=沼泽
  
 
 #效果
-Canute.BattleSystem.Effect+Types.none=None
+Canute.BattleSystem.Effect+Types.none=无
 Canute.BattleSystem.Effect+Types.none.info= 
 Canute.BattleSystem.Effect+Types.move=移动
 Canute.BattleSystem.Effect+Types.move.info=移动目标到@param格范围内
@@ -280,33 +296,34 @@ Canute.BattleSystem.UI.ResultUI.Passed=战斗结束
 Canute.BattleSystem.UI.ResultUI.Lost=战斗失败
 
 #错误事件
-Canute.BattleSystem.BattleEventError.CardNoSelectingEntity=Card did not played: no selecting entity
-Canute.BattleSystem.BattleEventError.CardNotValidTarget=Card did not played: not a valid target
-Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=Card did not played: no enough action point
+Canute.BattleSystem.BattleEventError.CardNoSelectingEntity=没有选择目标！
+Canute.BattleSystem.BattleEventError.CardNotValidTarget=不是一个有效目标！
+Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=没有足够多的行动点！
 
-Canute.BattleSystem.BattleEventError.armyNoTarget=军队攻击范围内没有敌方
-Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=Cannot attack: target is under protection
-Canute.BattleSystem.BattleEventError.armyCannotAttack=军队不能攻击
-Canute.BattleSystem.BattleEventError.ArmyNoTargetInAttackRage=No Target is in attack range
+Canute.BattleSystem.BattleEventError.armyNoTarget=军队攻击范围内没有敌方！
+Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=目标受到保护！
+Canute.BattleSystem.BattleEventError.armyCannotAttack=军队不能攻击！
+Canute.BattleSystem.BattleEventError.ArmyNoTargetInAttackRage=军队攻击范围内没有敌军！
  
 
 #Tips
-Canute.Tips.0=Place Card On the Army to use it.
-Canute.Tips.1=Place a card on anothor card if the card you want to use can only choose card as target.
-Canute.Tips.2=Some Leader have a better bonus than others.
-Canute.Tips.3=Some army are on the sky, and some are not.
-Canute.Tips.4=Please don't try to command your infantry to attack an aircraft.
-Canute.Tips.5=Equipment can give your army a better performance on the battle.
-Canute.Tips.6=Mages have a special attack method: There will be a bonus splash attack within 1 cell.
-Canute.Tips.7=Riflemen attack every enemy in a line.
-Canute.Tips.8=Aircraft Fighters have to go back to its airport at the end of the turn.
-Canute.Tips.9=Airships can sent more aircraft fighter.
-Canute.Tips.10=No army can penetrate Shielder's shield, some special event maybe.
-Canute.Tips.11=Every attack would cause at least 1 damage
-Canute.Tips.12=Using the card that matched with army's career would cause 1 less action point.
-Canute.Tips.13=Dragons knows magic better than those mage, they can boot up the army for some cost...
-Canute.Tips.14=Resonance happens when more same type of army exist.
-
+Canute.Tips.0=将卡放在军队上以使用它。
+Canute.Tips.1=如果要使用的卡只能选择该卡作为目标，则将该卡放置在其他卡上。
+Canute.Tips.2=某些领袖提供的军队加成比其他领袖提供的加成更好。
+Canute.Tips.3=有些军队在空中，有些则地面。
+Canute.Tips.4=请不要尝试命令步兵攻击飞机。
+Canute.Tips.5=装备可以使您的军队在战斗中有更好的表现。
+Canute.Tips.6=法师有一种特殊的攻击方法：1个格内的所有敌方会受到一个额外的溅射攻击。
+Canute.Tips.7=火枪手可以攻击在一条线上的所有敌人。
+Canute.Tips.8=战斗机必须在回合结束时返回机场。
+Canute.Tips.9=飞艇可以派遣更多的战斗机。
+Canute.Tips.10=没有军队可以穿透重甲兵的重甲，除了一些特殊事件...
+Canute.Tips.11=每次攻击都会造成至少1点伤害
+Canute.Tips.12=使用与军队的职业相匹配的卡片会减少1点行动力。
+Canute.Tips.13=龙比魔法师更懂魔法，他们可以让你花费一些代价来提升军队...
+Canute.Tips.14=当存在多支同类型军队时会发生共鸣。
+Canute.Tips.15=领袖职业有：学，政，军，商。
+Canute.Tips.16=幻境比您想象的要大。
 
 #;
 Canute.Character.Theodore Pullan.WordLine.0=你知道重石的名字是来自于一只龙的名字吗。

@@ -9,30 +9,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
-  m_Name: InfdevAttacker1
+  m_Script: {fileID: 11500000, guid: 732c2c3c72ac27842bc140ee0ed6d795, type: 3}
+  m_Name: T10000R Campus
   m_EditorClassIdentifier: 
-  Prototype: {fileID: 0}
+  Prototype: {fileID: 11400000, guid: 3c89cfb6209195d48b215c0c00af3005, type: 2}
   spawnType: 0
   radius: 0
   generateCount: 0
-  battleArmy:
-    name: Basic Infantry
-    prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
+  battleBuilding:
+    name: Campus
+    prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
       type: 3}
     uuid:
-      value: e1781edc-91f8-477a-b664-b5828509f73a
+      value: b76edb5c-7fde-4d0a-8b4c-e069bf3cc045
     ownerUUID:
-      value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
-    allowMove: 1
-    coordinate: {x: 3, y: 12}
+      value: 63c5918a-5aad-45ae-8bab-1b681601289b
+    allowMove: 0
+    coordinate: {x: 0, y: 0}
     stats:
       list: []
     localLeader:
       name: 
       prefab: {fileID: 0}
       uuid:
-        value: c3397712-4282-41fb-8cf4-4b8ae27e57b3
+        value: 651cbf6f-1f6a-4436-a76c-cad034646cad
       ownerUUID:
         value: 
       allowMove: 0
@@ -45,21 +45,23 @@ MonoBehaviour:
       isViceCommander: 0
       level: 0
       bounes: []
-    autonomousType: 2
+    autonomousType: 0
     anger: 0
-    career: 1
+    career: 0
     properties:
       defense: 0
-      critRate: 20
-      critBounes: 20
-      pop: 5
-      attackRange: 2
-      moveRange: 4
-      standPosition: 1
-      attackPosition: 1
+      critRate: 0
+      critBonus: 0
+      critBounes: 0
+      pop: 0
+      attackRange: 4
+      moveRange: 0
+      standPosition: 0
+      attackPosition: 0
       attackArea: 0
-      targetCount: 1
-      attackType: 5
+      damageExtraCount: 0
+      targetCount: 0
+      attackType: 0
       skill:
         specialName: 
         count: 0
@@ -68,8 +70,7 @@ MonoBehaviour:
           args: []
       addition:
         args: []
-    maxHealth: 80
-    health: 80
+    maxHealth: -1
+    health: -1
     armor: 0
-    damage: 30
-    type: 0
+    damage: 0

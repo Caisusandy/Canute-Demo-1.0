@@ -3,8 +3,9 @@ using UnityEngine.UI;
 
 namespace Canute.BattleSystem.UI
 {
-    public class LeftPanel : BattleUIBase
+    public class LeftPanel : MonoBehaviour
     {
+        public bool isShown;
         public Text nameDisplayer;
 
         public Image typeBG;
@@ -13,6 +14,7 @@ namespace Canute.BattleSystem.UI
         public Image attackPos;
         public Image standPos;
 
+        public Transform anchor;
         public InfoPanel infoPanel;
 
         [Header("Prefabs")]
@@ -24,10 +26,9 @@ namespace Canute.BattleSystem.UI
         public OnMapEntity SelectingEntity { get; set; }
 
 
-        public override void Awake()
+        public void Awake()
         {
             isShown = false;
-            originalPos = transform.position;
             SetPanelActive(true);
         }
 
@@ -139,21 +140,27 @@ namespace Canute.BattleSystem.UI
             }
         }
 
-        public override void Hide()
+        public void Show()
+        {
+            LastEntity = null;
+            if (isShown)
+            {
+                return;
+            }
+            isShown = true;
+            gameObject.SetActive(true);
+            Module.Motion.SetMotion(gameObject, anchor.position, true);
+        }
+
+        public void Hide()
         {
             if (!isShown)
             {
                 return;
             }
             LastEntity = null;
-            Module.Motion.SetMotion(gameObject, transform.position - new Vector3(3, 0, 0), true);
+            Module.Motion.SetMotion(gameObject, transform.position - new Vector3(3 * Camera.main.orthographicSize / 7.5f, 0, 0), true);
             isShown = false;
-        }
-
-        public override void Show()
-        {
-            LastEntity = null;
-            base.Show();
         }
 
         public void Select(Entity entity)

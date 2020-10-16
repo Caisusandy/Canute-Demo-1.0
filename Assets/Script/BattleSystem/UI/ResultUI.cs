@@ -68,6 +68,11 @@ namespace Canute.BattleSystem.UI
         // Start is called before the first frame update
         public void Start()
         {
+            //if (Game.CurrentBattle.CurrentStat != Battle.Stat.win || Game.CurrentBattle.CurrentStat != Battle.Stat.lose)
+            //{
+            //    throw new Exception("Unable to determine");
+            //}
+
             playerScore = Game.CurrentBattle.ScoreBoard.GetScore();
 
             ShowLevelPassStatus();
@@ -80,8 +85,8 @@ namespace Canute.BattleSystem.UI
             BattleUI.SetUICanvasActive(false);
             OnMapEntity.SetAllEntityCollider(false);
 
-            if (Game.CurrentBattle.CurrentStat == Battle.Stat.win) Game.CurrentLevel.Pass();
-            else Game.CurrentLevel.NotPass();
+            if (Game.CurrentBattle.CurrentStat != Battle.Stat.win) Game.CurrentLevel.NotPass();
+            else Game.CurrentLevel.Pass();
         }
 
         public void ShowScore()
@@ -92,8 +97,8 @@ namespace Canute.BattleSystem.UI
 
         public void ShowLevelPassStatus()
         {
-            if (Game.CurrentBattle.CurrentStat == Battle.Stat.win) passed.text = "Canute.BattleSystem.UI.ResultUI.Passed".Lang();
-            else passed.text = "Canute.BattleSystem.UI.ResultUI.Lost".Lang();
+            if (Game.CurrentBattle.CurrentStat != Battle.Stat.win) passed.text = "Canute.BattleSystem.UI.ResultUI.Lost".Lang();
+            else passed.text = "Canute.BattleSystem.UI.ResultUI.Passed".Lang();
         }
 
         public void ShowArmyExpIncrease()
@@ -121,7 +126,7 @@ namespace Canute.BattleSystem.UI
                 item.Find("icon").GetComponent<Image>().sprite = armyItem.Icon;
                 item.Find("lvl").GetComponent<Text>().text = "Lv." + armyItem.Level;
                 item.Find("cur").GetComponent<Text>().text = armyItem.CurExp + "/" + armyItem.NextLevelExp;
-                item.Find("add").GetComponent<Text>().text = Game.CurrentBattle.CurrentStat == Battle.Stat.win ? ("+" + exp) : "+ 0";
+                item.Find("add").GetComponent<Text>().text = Game.CurrentBattle.CurrentStat != Battle.Stat.win ? "+ 0" : ("+" + exp);
             }
             for (int i = realArmyCount; i < 6; i++)
             {

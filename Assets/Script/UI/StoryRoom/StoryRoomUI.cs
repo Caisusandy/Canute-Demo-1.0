@@ -63,33 +63,33 @@ namespace Canute.UI.StoryRoom
 
         public void DisplayBlock()
         {
-            if (roomType == StoryRoomType.blocks)
-                return;
+            if (roomType == StoryRoomType.blocks) return;
 
             ClearDisplay();
             roomType = StoryRoomType.blocks;
             spawnAnchor.gameObject.GetComponent<GridLayoutGroup>().cellSize = new Vector2(150, 150);
             spawnAnchor.gameObject.GetComponent<GridLayoutGroup>().constraintCount = 5;
 
-            foreach (var item in Game.PlayerData.CollectionStoriesID)
-            {
-                var block = Instantiate(storyBlockUIPrefab, spawnAnchor).GetComponent<SRStoryBlockUI>();
-                block.Display(item);
-                blocks.Add(block.gameObject);
-            }
+            List<string> stories = new List<string>();
+
+            foreach (var item in Game.PlayerData.CollectionStoriesID) if (!stories.Contains(item)) stories.Add(item);
 
             foreach (var level in GameData.Levels.ChapterTree.Levels)
             {
                 if (level.IsPassed)
                 {
-                    var block = Instantiate(storyBlockUIPrefab, spawnAnchor).GetComponent<SRStoryBlockUI>();
-                    block.Display(level.backgroundStoryName);
-                    blocks.Add(block.gameObject);
-
-                    block = Instantiate(storyBlockUIPrefab, spawnAnchor).GetComponent<SRStoryBlockUI>();
-                    block.Display(level.endStoryName);
-                    blocks.Add(block.gameObject);
+                    if (!stories.Contains(level.backgroundStoryName)) stories.Add(level.backgroundStoryName);
+                    if (!stories.Contains(level.endStoryName)) stories.Add(level.endStoryName);
                 }
+            }
+
+            stories.Remove("");
+
+            foreach (var item in stories)
+            {
+                var block = Instantiate(storyBlockUIPrefab, spawnAnchor).GetComponent<SRStoryBlockUI>();
+                block.Display(item);
+                blocks.Add(block.gameObject);
             }
 
             Debug.Log("load block complete");

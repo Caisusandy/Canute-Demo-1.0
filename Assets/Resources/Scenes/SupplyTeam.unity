@@ -3212,7 +3212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   languagePairs:
   - textField: {fileID: 1242610131}
-    key: Canute.UI.SceneName.Exploration
+    key: Canute.UI.SceneName.SupplyTeam
   - textField: {fileID: 1740410937}
     key: Canute.UI.Common.Back
 --- !u!1 &977176224

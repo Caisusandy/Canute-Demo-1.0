@@ -26,6 +26,7 @@ namespace Canute.Shops
             int totalWeight = WeightOf(itemWeights);
             if (totalWeight == 0)
             {
+                Debug.LogError("Weight is 0!");
                 return default;
             }
             if (position > 1 && position < 0)

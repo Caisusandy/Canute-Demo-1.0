@@ -21,28 +21,34 @@ namespace Canute.BattleSystem
             special,
         }
 
-        [Header("Settings")]
-        [SerializeField] protected Type battleType;
-        [SerializeField] protected bool avoidPlayerDefinedLegionSet;
-        [Space(5), SerializeField] protected List<Prize> firstTimePrize;
-        [Space(5), SerializeField] protected List<Prize> prizes;
-        [Space(5), SerializeField] protected Player enemy;
-        [Space(5), SerializeField] protected List<Player> thirdParties = new List<Player>();
-        [Space(5), SerializeField] protected List<WaveInfo> waveInfo = new List<WaveInfo>();
-        [Space(5), SerializeField] protected GameObject mapPrefab;
+        [Header("Basic Settings")]
+        [SerializeField] private Type battleType;
+        [SerializeField] private bool avoidPlayerDefinedLegionSet;
+        [SerializeField] private bool avoidResonance;
+        [Header("Prizes")]
+        [SerializeField] private List<Prize> firstTimePrize;
+        [SerializeField] private List<Prize> prizes;
+        [Header("Enemy and 3rd party")]
+        [SerializeField] private Player enemy;
+        [SerializeField] private List<Player> thirdParties = new List<Player>();
+        [Header("Wave Info")]
+        [SerializeField] private List<WaveInfo> waveInfo = new List<WaveInfo>();
+        [Header("Map Prefab")]
+        [SerializeField] private GameObject mapPrefab;
 
         [Header("In-battle infomations")]
-        [SerializeField] protected Player player;
-        [SerializeField] protected Round round;
-        [SerializeField] protected Stat stat;
-        [SerializeField] protected CentralDeck centralDeck;
-        [SerializeField] protected List<BattleArmy> armies = new List<BattleArmy>();
-        [SerializeField] protected List<BattleBuilding> buildings = new List<BattleBuilding>();
-        [SerializeField] protected StatusList globalStatus = new List<Status>();
+        [Header("======================================")]
+        [SerializeField] private Player player;
+        [SerializeField] private Round round;
+        [SerializeField] private Stat stat;
+        [SerializeField] private CentralDeck centralDeck;
+        [SerializeField] private List<BattleArmy> armies = new List<BattleArmy>();
+        [SerializeField] private List<BattleBuilding> buildings = new List<BattleBuilding>();
+        [SerializeField] private StatusList globalStatus = new List<Status>();
 
-        [SerializeField] protected List<Animator> ongoingAnimation = new List<Animator>();
-        [SerializeField] protected List<Effect> passedEffect = new List<Effect>();
-        [SerializeField] protected ScoreBoard scoreBoard;
+        [SerializeField] private List<Animator> ongoingAnimation = new List<Animator>();
+        [SerializeField] private List<Effect> passedEffect = new List<Effect>();
+        [SerializeField] private ScoreBoard scoreBoard;
 
         [NonSerialized] protected WaveControl waveControl;
         [NonSerialized] protected MapEntity mapEntity;
@@ -51,6 +57,7 @@ namespace Canute.BattleSystem
         #region Properties  
         public string Name => player.Name + " vs." + enemy.Name;
         public bool AvoidPlayerLegion => avoidPlayerDefinedLegionSet;
+        public bool AvoidResonance => avoidResonance;
         public Type BattleType { get => battleType; set => battleType = value; }
         public Player Enemy { get => enemy; set => enemy = value; }
         public List<Player> ThirdParties => thirdParties;
@@ -91,8 +98,6 @@ namespace Canute.BattleSystem
         #region Minor Properties
         public bool IsFreeTime => ((CurrentStat == Stat.waitForAnimationEnd || CurrentStat == Stat.normal) && Round.CurrentStat == Round.Stat.normal) || (CurrentStat == Stat.begin && Round.CurrentStat == Round.Stat.gameStart);
         public bool HasAnimation => !TryEndAnimation();
-
-        protected bool UsePlayerDefinedLegionSet { get => !avoidPlayerDefinedLegionSet; set => avoidPlayerDefinedLegionSet = !value; }
 
 
         #endregion
@@ -236,45 +241,33 @@ namespace Canute.BattleSystem
         /// </summary>
         public void Prepare()
         {
-            //Player
-            foreach (Player item in OtherPlayers)
-            {
-                if (item.UUID == UUID.Empty)
-                    item.NewUUID();
-                Debug.Log(item.Name);
-            }
+            //other players
+            foreach (Player item in OtherPlayers) { if (item.UUID == UUID.Empty) item.NewUUID(); }
 
-            ScoreBoard = new ScoreBoard();
-            waveControl = new WaveControl(waveInfo, this);
-            round = new Round(this);
-            centralDeck = new CentralDeck();
-
+            Initialize();
             InBeginning();
 
-            //geneate playerEntity
-            BattleUI.instance.CreatePlayerEntity(player);
-
-            //generate AI
-            foreach (Player item in OtherPlayers)
             {
-                BattleUI.instance.CreateAI(item);
-                Debug.Log(item.Name);
+                //geneate playerEntity
+                BattleUI.instance.CreatePlayerEntity(player);
+                //generate AI
+                foreach (Player item in OtherPlayers) BattleUI.instance.CreateAI(item);
             }
 
-            if (UsePlayerDefinedLegionSet)
-                player.CreateArmyCard();
+            Debug.Log(player.BattleArmies.Count);
+            if (!AvoidPlayerLegion) player.CreateArmyCard();
 
+            #region Pvp
             if (Game.Configuration.PvP)
             {
                 LegionSet legionSet = new LegionSet(Game.PlayerData.Legions[1], Game.PlayerData.EventCardPiles[0], Game.PlayerData.Leaders[0].UUID, " ");
                 enemy = new Player("Anexar", legionSet, enemy.UUID);
 
-                if (UsePlayerDefinedLegionSet)
+                if (!AvoidPlayerLegion)
                 {
                     enemy.SetupLeader(legionSet.Leader);
                     enemy.SetupLegion(legionSet.Legion);
                     enemy.SetupEventCardPile(legionSet.EventCardPile);
-                    Resonance.Resonate(enemy.BattleArmies);
                     enemy.CreateArmyCard();
                 }
 
@@ -282,7 +275,21 @@ namespace Canute.BattleSystem
                 return;
             }
 
+            #endregion
+
             waveControl.GenerateEnemy(1);
+        }
+
+        /// <summary>
+        /// initialize battle
+        /// </summary>
+        public void Initialize()
+        {
+            centralDeck = centralDeck ?? new CentralDeck();
+
+            ScoreBoard = new ScoreBoard();
+            waveControl = new WaveControl(waveInfo, this);
+            round = new Round(this);
         }
 
         /// <summary> 
@@ -290,7 +297,8 @@ namespace Canute.BattleSystem
         /// </summary>
         public void Start()
         {
-            Resonance.Resonate(player.BattleArmies);
+            if (!AvoidResonance) ResonateArmies();
+
             Round.TurnBegin();
             foreach (Player player in AllPlayers)
             {
@@ -301,10 +309,19 @@ namespace Canute.BattleSystem
             InNormal();
         }
 
+        private void ResonateArmies()
+        {
+            if (!AvoidResonance)
+            {
+                Resonance.Resonate(player.BattleArmies);
+                Resonance.Resonate(enemy.BattleArmies);
+            }
+        }
+
         public void SetPlayer(LegionSet playerLegion)
         {
             player = new Player("Canute Svensson", playerLegion);
-            if (UsePlayerDefinedLegionSet)
+            if (!AvoidPlayerLegion)
             {
                 player.SetupLeader(playerLegion.Leader);
                 player.SetupLegion(playerLegion.Legion);
@@ -637,18 +654,25 @@ namespace Canute.BattleSystem
         {
             Battle battleCopy = new Battle
             {
-                avoidPlayerDefinedLegionSet = avoidPlayerDefinedLegionSet,
                 battleType = battleType,
+                avoidPlayerDefinedLegionSet = avoidPlayerDefinedLegionSet,
+                avoidResonance = avoidResonance,
+
                 prizes = prizes.Clone(),
                 firstTimePrize = firstTimePrize.Clone(),
-                Enemy = enemy.Clone() as Player,
-                Player = Player.Clone() as Player,
-                thirdParties = thirdParties.Clone(),
-                waveInfo = waveInfo.Clone(),
-                armies = new List<BattleArmy>(),
-                buildings = new List<BattleBuilding>(),
-                MapPrefab = MapPrefab,
 
+                enemy = enemy.Clone() as Player,
+                thirdParties = thirdParties.Clone(),
+
+                waveInfo = waveInfo.Clone(),
+
+                //.....................................
+                player = Player.Clone() as Player,
+
+                armies = armies.Clone() ?? new List<BattleArmy>(),
+                buildings = buildings.Clone() ?? new List<BattleBuilding>(),
+
+                mapPrefab = mapPrefab,
             };
             return battleCopy;
         }

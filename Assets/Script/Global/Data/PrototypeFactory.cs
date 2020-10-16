@@ -18,13 +18,15 @@ namespace Canute.BattleSystem
     [CreateAssetMenu(fileName = "Game Data", menuName = "Game Data/Prototype Factory", order = 3)]
     public class PrototypeFactory : ScriptableObject
     {
+        [Header("Prototypes")]
         [SerializeField] private ArmyPrototypes armyPrototypes = new ArmyPrototypes();
         [SerializeField] private LeaderPrototypes leaderPrototypes = new LeaderPrototypes();
         [SerializeField] private EquipmentPrototypes equipmentPrototypes = new EquipmentPrototypes();
-        [SerializeField] private EventCardPrototypes eventCardPrototypes = new EventCardPrototypes();
-        [SerializeField] private EventCardPrototypes dragonEventCardPrototypes = new EventCardPrototypes();
         [SerializeField] private BuildingPrototypes buildingPrototypes = new BuildingPrototypes();
         [SerializeField] private CharacterContainerList characterList = new CharacterContainerList();
+        [Header("Event Cardss")]
+        [SerializeField] private EventCardPrototypes eventCardPrototypes = new EventCardPrototypes();
+        [SerializeField] private EventCardPrototypes dragonEventCardPrototypes = new EventCardPrototypes();
 
 
         [Header("Default")]

@@ -47,7 +47,7 @@ namespace Canute.BattleSystem
             //color.a = 0.4f;
         }
 
-        public override void Update()
+        public virtual void Update()
         {
             if (transform.localPosition != Vector3.zero && !GetComponent<EntityOnCellMotion>())
             {

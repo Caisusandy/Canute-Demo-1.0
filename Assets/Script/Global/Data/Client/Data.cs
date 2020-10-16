@@ -484,6 +484,7 @@ namespace Canute
                 CollectionStoriesID = CollectionStoriesID.Where((item) => item != "").ToList();
                 return;
             }
+
             armies = armies.Where((item) => item).ToList();
             leaders = leaders.Where((item) => item).ToList();
             equipments = equipments.Where((item) => item).ToList();

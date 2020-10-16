@@ -179,5 +179,7 @@ MonoBehaviour:
         type: 3
         default: 
         possibleValue: []
+    - name: unlockAllLevel
+      params: []
     - name: verifyAllItem
       params: []
