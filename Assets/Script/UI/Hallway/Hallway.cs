@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace Canute
 {
+    [Obsolete]
     public static class Hallway
     {
         public static List<Character> GetPlayersTeam()
@@ -10,6 +11,7 @@ namespace Canute
             return Game.PlayerData.Leaders.Where((l) => l.Prototype.HasAssociateCharacter).Select((l) => l.Prototype.Character).ToList();
         }
 
+        [Obsolete]
         public static List<Character> CameOut()
         {
             List<Character> characters = new List<Character>();

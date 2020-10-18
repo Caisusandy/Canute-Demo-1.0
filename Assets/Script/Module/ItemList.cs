@@ -20,6 +20,7 @@ namespace Canute
         public string Name { get => name; set => name = value; }
         public int Count { get => count; set => count = value; }
 
+        [Obsolete]
         public static implicit operator CountableItem(KeyValuePair<string, int> keyValuePair)
         {
             return new CountableItem(keyValuePair.Key, keyValuePair.Value);
@@ -44,6 +45,7 @@ namespace Canute
             }
             return a?.Equals(b) == true;
         }
+        [Obsolete]
         public static bool operator !=(CountableItem a, CountableItem b)
         {
             return !(a == b);
@@ -53,12 +55,14 @@ namespace Canute
     }
 
     [Serializable]
+    [Obsolete]
     public class ItemList : DataList<CountableItem>, IDictionary<string, int>
     {
         public ICollection<string> Keys => GetKeys();
+        [Obsolete]
         public ICollection<int> Values => GetValues();
 
-
+        [Obsolete]
         public ItemList() : base()
         {
 
@@ -70,6 +74,7 @@ namespace Canute
             set => SetParam(index, value);
         }
 
+        [Obsolete]
         public ItemList(IEnumerable<CountableItem> args)
         {
             foreach (var item in args)
@@ -78,6 +83,7 @@ namespace Canute
             }
         }
 
+        [Obsolete]
         public int TryGet(string key)
         {
             if (ContainsKey(key))
@@ -102,6 +108,7 @@ namespace Canute
             return false;
         }
 
+        [Obsolete]
         public bool TryGet(string key, out int value)
         {
             foreach (var item in list)
@@ -126,6 +133,7 @@ namespace Canute
             base.Add(new CountableItem(key, value));
         }
 
+        [Obsolete]
         public bool Remove(string key)
         {
             try
@@ -161,6 +169,7 @@ namespace Canute
             return a;
         }
 
+        [Obsolete]
         public bool TryGetValue(string key, out int value)
         {
             try

@@ -9,13 +9,15 @@ namespace Canute
     public class Args : DataList<Arg>, IDictionary<string, string>
     {
         public ICollection<string> Keys => GetKeys();
-        public ICollection<string> Values => GetValues();
-
+        [Obsolete]
+        public ICollection<string> Values => GetValues(); 
 
         /// <summary>
         /// add args to the effect
         /// </summary>
         /// <param name="args"></param>
+        
+        [Obsolete]
         public void AddParams(params Arg[] args)
         {
             foreach (var item in args)
@@ -29,6 +31,8 @@ namespace Canute
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
+        
+        [Obsolete]
         public int GetIntParam(string key)
         {
             try
@@ -47,6 +51,8 @@ namespace Canute
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
+        
+        [Obsolete]
         public bool GetBoolParam(string key)
         {
             try
@@ -65,6 +71,8 @@ namespace Canute
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
+        
+        [Obsolete]
         public double GetDoubleParam(string key)
         {
             try
@@ -82,7 +90,9 @@ namespace Canute
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public UUID GetUUIDParam(string key)
+        
+        [Obsolete]
+            public UUID GetUUIDParam(string key)
         {
             try
             {
@@ -101,6 +111,8 @@ namespace Canute
         /// <typeparam name="T">enum type</typeparam>
         /// <param name="key"></param>
         /// <returns></returns>
+        
+        [Obsolete]
         public T GetEnumParam<T>(string key) where T : Enum
         {
             try
@@ -119,6 +131,8 @@ namespace Canute
         /// </summary>
         /// <param name="key">key of the arg</param>
         /// <returns></returns>
+       
+        [Obsolete]
         public bool HasParam(string key)
         {
             return Keys.Contains(key);
@@ -130,6 +144,8 @@ namespace Canute
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <returns></returns>
+        
+        [Obsolete]
         public bool HasParam(string key, string value)
         {
             return this[key] == value;
@@ -137,7 +153,7 @@ namespace Canute
 
 
 
-
+        [Obsolete]
         public Args() : base()
         {
 
@@ -157,6 +173,7 @@ namespace Canute
             }
         }
 
+        [Obsolete]
         public string TryGet(string key)
         {
             if (ContainsKey(key))
@@ -181,6 +198,7 @@ namespace Canute
             return false;
         }
 
+        [Obsolete]
         public bool TryGet(string key, out string value)
         {
             foreach (var item in list)
@@ -203,12 +221,14 @@ namespace Canute
             RemoveAt(v);
             Insert(v, arg);
         }
-
+       
+        [Obsolete]
         public void Add(string key, string value)
         {
             base.Add(new Arg(key, value));
         }
 
+        [Obsolete]
         public bool Remove(string key)
         {
             try
@@ -244,6 +264,7 @@ namespace Canute
             return a;
         }
 
+        [Obsolete]
         public bool TryGetValue(string key, out string value)
         {
             try
@@ -269,11 +290,13 @@ namespace Canute
             return base.Contains(item);
         }
 
+        [Obsolete]
         public void CopyTo(KeyValuePair<string, string>[] array, int arrayIndex)
         {
             throw new NotImplementedException();
         }
 
+        [Obsolete]
         public bool Remove(KeyValuePair<string, string> item)
         {
             throw new NotImplementedException();
@@ -302,7 +325,7 @@ namespace Canute
             return ans;
         }
 
-
+        [Obsolete]
         public static implicit operator ArgList(Args args)
         {
             return new ArgList(args);

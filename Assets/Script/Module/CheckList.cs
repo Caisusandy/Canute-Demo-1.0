@@ -10,13 +10,15 @@ namespace Canute
     /// can construct a full list and check on the list  
     /// </summary>
     [Serializable]
+    [Obsolete]
     public class CheckList : DataList<Check>, IDictionary<string, bool>
     {
         public ICollection<string> Keys => GetKeys();
 
+        [Obsolete]
         public ICollection<bool> Values => GetValues();
 
-
+        [Obsolete]
         public CheckList() : base()
         {
 
@@ -27,7 +29,8 @@ namespace Canute
             get => base[index].Value;
             set => SetParam(index, value);
         }
-
+        
+        [Obsolete]
         public CheckList(IEnumerable<Check> args)
         {
             foreach (var item in args)
@@ -35,7 +38,8 @@ namespace Canute
                 Add(item);
             }
         }
-
+ 
+        [Obsolete]
         public bool TryGet(string key)
         {
             if (ContainsKey(key))
@@ -60,6 +64,7 @@ namespace Canute
             return false;
         }
 
+        [Obsolete]
         public bool TryGet(string key, out bool value)
         {
             foreach (var item in list)
@@ -88,6 +93,7 @@ namespace Canute
             base.Add(new Check(key, value));
         }
 
+        [Obsolete]
         public bool Remove(string key)
         {
             try
@@ -123,6 +129,7 @@ namespace Canute
             return a;
         }
 
+        [Obsolete]
         public bool TryGetValue(string key, out bool value)
         {
             try
@@ -148,11 +155,13 @@ namespace Canute
             return Contains((Check)item);
         }
 
+        
         public void CopyTo(KeyValuePair<string, bool>[] array, int arrayIndex)
         {
             throw new NotImplementedException();
         }
 
+        
         public bool Remove(KeyValuePair<string, bool> item)
         {
             throw new NotImplementedException();
@@ -163,6 +172,7 @@ namespace Canute
             throw new NotImplementedException();
         }
 
+        [Obsolete]
         public CheckList(IEnumerable<INameable> fullList, IEnumerable<INameable> check)
         {
             foreach (INameable item in fullList)
@@ -175,6 +185,7 @@ namespace Canute
             }
         }
 
+        [Obsolete]
         public CheckList(IEnumerable<INameable> fullList, IEnumerable<string> check)
         {
             foreach (INameable item in fullList)
@@ -196,6 +207,7 @@ namespace Canute
 
         public string Key { get => key; set => key = value; }
         public bool Value { get => value; set => this.value = value; }
+        [Obsolete]
         public string Name => Key;
 
         public Check(string key, bool value)
@@ -209,20 +221,24 @@ namespace Canute
             return new KeyValuePair<string, bool>(arg.key, arg.value);
         }
 
+        [Obsolete]
         public static implicit operator Check(KeyValuePair<string, bool> arg)
         {
             return new Check(arg.Key, arg.Value);
         }
+        [Obsolete]
         public static implicit operator Arg(Check arg)
         {
             return new KeyValuePair<string, string>(arg.key, arg.value.ToString());
         }
 
+        [Obsolete]
         public static implicit operator Check(Arg arg)
         {
             return new Check(arg.Key, bool.Parse(arg.Value));
         }
 
+        [Obsolete]
         public static implicit operator Check(string arg)
         {
             if (arg is null)
@@ -243,7 +259,7 @@ namespace Canute
             }
             return arg1;
         }
-
+         
         public bool Equals(Check other)
         {
             return other.value == value && other.key == key;
@@ -264,6 +280,7 @@ namespace Canute
             return left.Equals(right);
         }
 
+        [Obsolete]
         public static bool operator !=(Check left, Check right)
         {
             return !(left == right);

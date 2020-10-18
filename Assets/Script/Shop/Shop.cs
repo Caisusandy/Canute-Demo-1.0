@@ -18,7 +18,7 @@ namespace Canute.Shops
         public PriceList OnShopEquipments { get => onShopEquipments; set => onShopEquipments = value; }
         public DateTime NextRefreshTime { get => nextRefreshTime; set => nextRefreshTime = value; }
 
-
+        [Obsolete]
         public void Refresh()
         {
             GameData.Shop.Refresh(this);
@@ -33,6 +33,7 @@ namespace Canute.Shops
             onShopEquipments.Clear();
         }
 
+        [Obsolete]
         public void Remove(PricePair price)
         {
             onShopArmies.Remove(price);
@@ -43,6 +44,7 @@ namespace Canute.Shops
 
     [Serializable]
     [CreateAssetMenu(fileName = "Shop", menuName = "Game Data/Shop", order = 4)]
+    [Obsolete]
     public class Shop : ScriptableObject
     {
         [Header("Weight List")]
@@ -67,6 +69,7 @@ namespace Canute.Shops
         /// <summary>
         /// Shop Reflesh
         /// </summary>
+        [Obsolete]
         public void Refresh(ShopInfo shopInfo)
         {
             if (shopInfo.NextRefreshTime > DateTime.Now)

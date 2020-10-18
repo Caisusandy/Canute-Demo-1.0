@@ -2,70 +2,70 @@
 #(actually, if there are no equal sign, it will be treat as a comment)
 
 #Career
-Canute.Career.Scholar=Scholar
-Canute.Career.Politician=Politician
-Canute.Career.General=General
-Canute.Career.Merchant=Merchant
+Canute.Career.Scholar=Học giả
+Canute.Career.Politician=Chính trị gia
+Canute.Career.General=Tướng
+Canute.Career.Merchant=Thương nhân
 Canute.Career.None=None
 #Title skip this section
 Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
-Canute.LevelTree.Level.CalayInfinite.subtitle=infinity Map
-Canute.LevelTree.Level.CalayInfinite.title=Training Ground
+Canute.LevelTree.Level.CalayInfinite.subtitle=Bản đồ vô cực
+Canute.LevelTree.Level.CalayInfinite.title=Khu vực tập luyện
 Canute.LevelTree.Level.1-2.subtitle=First encounter Septian
 Canute.LevelTree.Level.1-2.title=1-2 Septian Logement
-Canute.LevelTree.Level.7-inf.subtitle=Daily battle
-Canute.LevelTree.Level.7-inf.title=Basement outside
-Canute.LevelTree.Level.Ch7-1.subtitle=Daily battle
-Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Basement outside
+Canute.LevelTree.Level.7-inf.subtitle=Trận chiến mỗi ngày
+Canute.LevelTree.Level.7-inf.title=Tầng hầm ngoài
+Canute.LevelTree.Level.Ch7-1.subtitle=Trận chiến mỗi ngày
+Canute.LevelTree.Level.Ch7-1.title=Rescue Mission: Tầng hầm ngoài
 #Currency
 Canute.Shops.Currency+Type.fedgram=Federgram
 Canute.Shops.Currency+Type.manpower=Manpower
 Canute.Shops.Currency+Type.mantleAlloy=Mantle Alloy
 Canute.Shops.Currency+Type.aethium=Aethium
 #
-Canute.BattleSystem.PropertyType.level=Level
-Canute.BattleSystem.PropertyType.damage=Damage
-Canute.BattleSystem.PropertyType.health=Health
-Canute.BattleSystem.PropertyType.defense=Defense
-Canute.BattleSystem.PropertyType.moveRange=Move range
-Canute.BattleSystem.PropertyType.attackRange=Attack range
-Canute.BattleSystem.PropertyType.critRate=Critical Attack Rate
-Canute.BattleSystem.PropertyType.critBonus=Critical Attack Bonus
-Canute.BattleSystem.PropertyType.pop=Population
-Canute.BattleSystem.PropertyType.armor=Armor
-Canute.BattleSystem.PropertyType.anger=Anger
+Canute.BattleSystem.PropertyType.level=Cấp
+Canute.BattleSystem.PropertyType.damage=Tổn thương
+Canute.BattleSystem.PropertyType.health=Sức khỏe
+Canute.BattleSystem.PropertyType.defense=Phòng thủ
+Canute.BattleSystem.PropertyType.moveRange=Phạm vi di chuyển
+Canute.BattleSystem.PropertyType.attackRange=Phạm vi tấn công
+Canute.BattleSystem.PropertyType.critRate=Tỉ lệ chí mạng
+Canute.BattleSystem.PropertyType.critBonus=Bonus chí mạng
+Canute.BattleSystem.PropertyType.pop=Dân số
+Canute.BattleSystem.PropertyType.armor=Giáp
+Canute.BattleSystem.PropertyType.anger=Độ tức giận
 #
-Canute.BattleSystem.BattleProperty.AttackType=Attack Type
-Canute.BattleSystem.BattleProperty+AttackType.none=Unable to attack
+Canute.BattleSystem.BattleProperty.AttackType=Dạng tấn công
+Canute.BattleSystem.BattleProperty+AttackType.none=Không thể tấn công
 Canute.BattleSystem.BattleProperty+AttackType.melee=Melee
-Canute.BattleSystem.BattleProperty+AttackType.projectile=Projectile
+Canute.BattleSystem.BattleProperty+AttackType.projectile=Đạn
 Canute.BattleSystem.BattleProperty+AttackType.single=Single
 Canute.BattleSystem.BattleProperty+AttackType.singleMelee=Single Melee
 Canute.BattleSystem.BattleProperty+AttackType.singleProjectile=Single Projectile
-Canute.BattleSystem.BattleProperty+AttackType.area=Area
+Canute.BattleSystem.BattleProperty+AttackType.area=Khu vực
 Canute.BattleSystem.BattleProperty+AttackType.areaMelee=Area Melee
 Canute.BattleSystem.BattleProperty+AttackType.areaProjectile=Area Projectile 
 Canute.BattleSystem.BattleProperty+AttackType.splash=Splash
 Canute.BattleSystem.BattleProperty+AttackType.splashMelee=Splash Melee
 Canute.BattleSystem.BattleProperty+AttackType.splashProjectile=Splash Projectile
 #
-Canute.BattleSystem.BattleProperty.StandPosition=Stand Position
-Canute.BattleSystem.BattleProperty.AttackPosition=Attack Position
-Canute.BattleSystem.BattleProperty+Position.land=Land
-Canute.BattleSystem.BattleProperty+Position.air=Air
-Canute.BattleSystem.BattleProperty+Position.all=Any
+Canute.BattleSystem.BattleProperty.StandPosition=Vị trí đứng
+Canute.BattleSystem.BattleProperty.AttackPosition=Vị trí tấn công
+Canute.BattleSystem.BattleProperty+Position.land=Mặt đất
+Canute.BattleSystem.BattleProperty+Position.air=Trên không
+Canute.BattleSystem.BattleProperty+Position.all=Bất kì
 Canute.BattleSystem.BattleProperty+Position.none=None
 #
-Canute.Army+Types.mage=Mage
-Canute.Army+Types.warMachine=War Machine
-Canute.Army+Types.infantry=Infantry
-Canute.Army+Types.shielder=Shielder
+Canute.Army+Types.mage=Pháp sư
+Canute.Army+Types.warMachine=Cỗ máy chiến tranh
+Canute.Army+Types.infantry=Bộ binh
+Canute.Army+Types.shielder=Người bảo vệ
 Canute.Army+Types.cavalry=Cavalry
-Canute.Army+Types.rifleman=Rifleman
-Canute.Army+Types.aircraftFighter=AircraftFighter
-Canute.Army+Types.airship=Airship
-Canute.Army+Types.dragon=Dragon
+Canute.Army+Types.rifleman=Lính súng trường
+Canute.Army+Types.aircraftFighter=Lính không quân
+Canute.Army+Types.airship=Khí cầu
+Canute.Army+Types.dragon=Rồng
 #everything above
 Canute.Army.Alpha Army.name=A
 Canute.Army.Beta Army.name=B
@@ -343,64 +343,64 @@ Canute.Character.Empty.supplyTeamComeBackWithStory=
 Canute.Character.Empty.supplyTeamComeBackWithLetter= 
 
 #SceneName
-Canute.UI.SceneName.Exploration=Supply Team
-Canute.UI.SceneName.Shop=Shop
-Canute.UI.SceneName.Hallway=Hallway
-Canute.UI.SceneName.LegionSetting=Legion Setting
-Canute.UI.SceneName.EventCard=Event Card Pile
-Canute.UI.SceneName.Settings=Settings
-Canute.UI.SceneName.StoryRoom=Story Room
+Canute.UI.SceneName.Exploration=Đội thám hiểm
+Canute.UI.SceneName.Shop=Cửa hàng
+Canute.UI.SceneName.Hallway=Đại sảnh
+Canute.UI.SceneName.LegionSetting=Quân đoàn
+Canute.UI.SceneName.EventCard=Thẻ sự kiện
+Canute.UI.SceneName.Settings=Tùy chỉnh
+Canute.UI.SceneName.StoryRoom=Phòng cốt truyện
 ##UI
-Canute.UI.Common.Back=Back
-Canute.UI.Common.LegionSetting=Army
-Canute.UI.Common.Armies=Army
-Canute.UI.Common.Equipments=Equipments
-Canute.UI.Common.EventCard=EventCard
+Canute.UI.Common.Back=Trở về
+Canute.UI.Common.LegionSetting=Quân đoàn
+Canute.UI.Common.Armies=Quân đội
+Canute.UI.Common.Equipments=Dụng cụ
+Canute.UI.Common.EventCard=Thẻ sự kiện
 #
-Canute.UI.LegionSetting.Upgrade=Upgrade
-Canute.UI.LegionSetting.Change=Change
-Canute.UI.LegionSetting.Left=Left
-Canute.UI.LegionSetting.Legion1=Legion 1
-Canute.UI.LegionSetting.Legion2=Legion 2
-Canute.UI.LegionSetting.Legion3=Legion 3
+Canute.UI.LegionSetting.Upgrade=Nâng cấp
+Canute.UI.LegionSetting.Change=Thay đổi
+Canute.UI.LegionSetting.Left=Trái
+Canute.UI.LegionSetting.Legion1=Quân đoàn 1
+Canute.UI.LegionSetting.Legion2=Quân đoàn 2
+Canute.UI.LegionSetting.Legion3=Quân đoàn 3
 #
-Canute.UI.Start.Continue=Continue
-Canute.UI.Start.Saves=Other Progress
-Canute.UI.Start.NewGame=New Game
-Canute.UI.Start.Settings=Settings
+Canute.UI.Start.Continue=Tiếp tục
+Canute.UI.Start.Saves=Quá trình khác
+Canute.UI.Start.NewGame=Game mới
+Canute.UI.Start.Settings=Tùy chỉnh
 Canute.UI.Start.Credit=Credit
-Canute.UI.Start.Games=Other Progress
-Canute.UI.Start.Quit=Quit
-Canute.UI.Start.Quit.Check=Are you sure about quitting?
+Canute.UI.Start.Games=Quá trình khác
+Canute.UI.Start.Quit=Thoát
+Canute.UI.Start.Quit.Check=Bạn có chắc chắn muốn thoát trò chơi?
 #
-Canute.UI.MainHall.Training=Training
-Canute.UI.MainHall.NextBattle=Next Battle
-Canute.UI.MainHall.Basement=Basement outside
-Canute.UI.MainHall.Legion=Legion Setting
-Canute.UI.MainHall.Pile=Card Pile Setting
-Canute.UI.MainHall.Exploration=Supply Team
-Canute.UI.MainHall.Shop=Shop
-Canute.UI.MainHall.Chapter=Battles
-Canute.UI.MainHall.Hallway=Hallway
-Canute.UI.MainHall.Quit=Start Menu
+Canute.UI.MainHall.Training=Tập luyện
+Canute.UI.MainHall.NextBattle=Trận tiếp theo
+Canute.UI.MainHall.Basement=Tầng hầm ngoài
+Canute.UI.MainHall.Legion=Quân đoàn
+Canute.UI.MainHall.Pile= Thẻ
+Canute.UI.MainHall.Exploration=Đội cung cấp
+Canute.UI.MainHall.Shop=Cửa hàng
+Canute.UI.MainHall.Chapter=Trận chiến
+Canute.UI.MainHall.Hallway=Đại sảnh
+Canute.UI.MainHall.Quit=Trang chủ
 #
-Canute.Hallway.Explanation=You might find someone on the hallway...
+Canute.Hallway.Explanation=Bạn có thể gặp ai đó trên đại sảnh...
 #
-Canute.Shop.BuyItem=Buy @itemName?Cost:@cost
-Canute.Shop.GetItem=Get @itemName
-Canute.Shop.No money=We don't have enough money for this, sir.
-Canute.Shop.Explanation=Where we can buy army, Equipment etc.
+Canute.Shop.BuyItem=Mua @itemName?Cost:@cost
+Canute.Shop.GetItem=Nhận @itemName
+Canute.Shop.No money=Chúng ta không đủ tiền cho cái này, thưa ngài.
+Canute.Shop.Explanation=Nơi mad chúng ta có thể mua quân đội, dụng cụ, vũ khí etc.
 #
-Canute.STPrizeDisplay.NewPrize=Supply Team get @name
+Canute.STPrizeDisplay.NewPrize=Đội thám hiểm nhận được @name
 #
-Canute.SupplyTeam.Explanation=Send at least one leader and/or one army that protect these leaders to get more supply for the basement.
-Canute.SupplyTeam.TeamPositionInfo=The Supply Team is in @city, @country right now.
+Canute.SupplyTeam.Explanation=Gửi ít nhất một chỉ huy và/ hoặc một quân đội bảo vệ chỉ huy để lấy thêm đồ cung cấp cho tầng hầm. 
+Canute.SupplyTeam.TeamPositionInfo=Đội thám hiểm đang ở @city, @country ngay bây giờ.
 #
-Canute.UI.Settings.Basic=Basic
-Canute.UI.Settings.Basic.PlayCardDelay=Play Card Delay
-Canute.UI.Settings.Basic.ShowStory=Show Story
-Canute.UI.Settings.Basic.Volume=Volume
-Canute.UI.Settings.Language=Language
-Canute.UI.Settings.Other=Other
-Canute.UI.Settings.Other.OpenDataFolder=Open Data Folder
-Canute.UI.Settings.Other.Tutorial=Tutorial
+Canute.UI.Settings.Basic=Cơ bản
+Canute.UI.Settings.Basic.PlayCardDelay=Trì hoãn thẻ hành động
+Canute.UI.Settings.Basic.ShowStory=Xem cốt truyện
+Canute.UI.Settings.Basic.Volume=Âm lượng
+Canute.UI.Settings.Language=Ngôn Ngữ (Language)
+Canute.UI.Settings.Other=Khác
+Canute.UI.Settings.Other.OpenDataFolder=Mở file dữ liệu
+Canute.UI.Settings.Other.Tutorial=Hướng dẫn

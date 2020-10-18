@@ -21,11 +21,13 @@ namespace Canute
         public int Minutes { get => minutes; set => minutes = value; }
         public int Seconds { get => seconds; set => seconds = value; }
 
+        // [Obsolete]
         public static implicit operator TimeSpan(TimeInterval timeInterval)
         {
             return new TimeSpan(timeInterval.Hours, timeInterval.Minutes, timeInterval.Seconds);
         }
 
+        // [Obsolete]
         public static implicit operator TimeInterval(TimeSpan timeInterval)
         {
             return new TimeInterval(timeInterval.Hours, timeInterval.Minutes, timeInterval.Seconds);

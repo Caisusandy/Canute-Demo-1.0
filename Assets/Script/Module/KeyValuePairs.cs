@@ -4,20 +4,26 @@ using UnityEngine;
 namespace System.Collections.Generic
 {
     [Serializable]
+    [Obsolete]
     public class KeyValuePairs<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
     {
         [SerializeField] protected bool allowSerialization = true;
         [SerializeField] protected List<TKey> keys = new List<TKey>();
         [SerializeField] protected List<TValue> values = new List<TValue>();
 
+        [Obsolete]
         public new ICollection<TKey> Keys => keys.Union(base.Keys).ToList();
 
+        [Obsolete]
         public new ICollection<TValue> Values => values.Union(base.Values).ToList();
 
+        [Obsolete]
         public new int Count => keys.Count + base.Keys.Count;
 
+        [Obsolete]
         public new TValue this[TKey key] { get { Reorganize(); return base[key]; } set { base[key] = value; Reorganize(); } }
 
+        [Obsolete]
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
             if (!allowSerialization)
@@ -46,6 +52,7 @@ namespace System.Collections.Generic
             }
         }
 
+        [Obsolete]
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
             foreach (KeyValuePair<TKey, TValue> keyValuePair in this)
@@ -100,12 +107,14 @@ namespace System.Collections.Generic
             return base.ContainsKey(key);
         }
 
+        [Obsolete]
         public new bool Remove(TKey key)
         {
             Reorganize();
             return base.Remove(key);
         }
 
+        [Obsolete]
         public new bool TryGetValue(TKey key, out TValue value)
         {
             Reorganize();
@@ -117,6 +126,7 @@ namespace System.Collections.Generic
             Add(item.Key, item.Value);
         }
 
+        [Obsolete]
         public new void Clear()
         {
             base.Clear();
@@ -124,6 +134,7 @@ namespace System.Collections.Generic
             keys.Clear();
         }
 
+        [Obsolete]
         public bool Contains(KeyValuePair<TKey, TValue> item)
         {
             foreach (var pair in this)
@@ -137,12 +148,13 @@ namespace System.Collections.Generic
         }
 
 
-
+        [Obsolete]
         public KeyValuePairs() : base()
         {
 
         }
 
+        [Obsolete]
         public KeyValuePairs(IDictionary<TKey, TValue> keyValuePairs)
         {
             foreach (var item in keyValuePairs)
@@ -156,8 +168,11 @@ namespace System.Collections.Generic
     public class InValidKeyValuePairException : Exception
     {
         public InValidKeyValuePairException() { }
-        public InValidKeyValuePairException(string message) : base(message) { }
-        public InValidKeyValuePairException(string message, Exception inner) : base(message, inner) { }
+        [Obsolete]
+        public InValidKeyValuePairException(string message) : base(message) { } 
+        [Obsolete]
+        public InValidKeyValuePairException(string message, Exception inner) : base(message, inner) { } 
+       [Obsolete]
         protected InValidKeyValuePairException(
           Runtime.Serialization.SerializationInfo info,
           Runtime.Serialization.StreamingContext context) : base(info, context) { }

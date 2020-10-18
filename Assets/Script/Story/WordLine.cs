@@ -20,12 +20,15 @@ namespace Canute.StorySystem
         [SerializeField] private List<Selection> selections;
 
         public string Name { get => id; set => id = value; }
+        [Obsolete]
         public string ID { get => id; set => id = value; }
         public string SpeakerName { get => speakerName; set => speakerName = value; }
         public string Line { get => line; set => line = value; }
+        [Obsolete]
         public bool HasSelection => selections is null ? false : selections.Count != 0;
         public StoryDisplayer.SpeakerStandPosition Position { get => position; set => position = value; }
         public Sprite CharacterPortrait { get => characterPortrait; set => characterPortrait = value; }
+        [Obsolete]
         public List<Selection> Selections { get => selections; set => selections = value; }
         public Sprite ConversationBG { get => conversationBG; set => conversationBG = value; }
 
@@ -48,6 +51,7 @@ namespace Canute.StorySystem
             return left.Equals(right);
         }
 
+        [Obsolete]
         public static bool operator !=(WordLine left, WordLine right)
         {
             return !(left == right);
@@ -62,7 +66,9 @@ namespace Canute.StorySystem
     [Serializable]
     public struct Selection
     {
+        [Obsolete]
         public string toWordLineId;
+        [Obsolete]
         public string selectionInfo;
     }
 }

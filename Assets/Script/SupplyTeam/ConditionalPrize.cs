@@ -22,15 +22,17 @@ namespace Canute
             this.time = time;
         }
 
-
+        [Obsolete]
         public new ConditionalPrize Clone()
         {
             return new ConditionalPrize(name, count, type, leaderRequirement.Clone(), armyRequirement, time);
         }
 
-
+        [Obsolete]
         public List<string> LeaderRequirement { get => leaderRequirement; set => leaderRequirement = value; }
+        [Obsolete]
         public string ArmyRequirement { get => armyRequirement; set => armyRequirement = value; }
+        [Obsolete]
         public TimeInterval Time { get => time; set => time = value; }
 
     }

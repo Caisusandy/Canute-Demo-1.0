@@ -6,7 +6,7 @@ namespace Canute.SupplyTeam
     public class ItemPrizeSheet : ScriptableObject
     {
         public ItemPrize prize;
-
+        [Obsolete]
         public static implicit operator ItemPrize(ItemPrizeSheet prize)
         {
             return prize.prize;

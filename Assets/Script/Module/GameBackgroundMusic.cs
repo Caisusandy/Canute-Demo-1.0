@@ -12,13 +12,14 @@ namespace Canute.Assets.Script.Module
     {
         public static GameBackgroundMusic instance;
         public AudioSource audioSource;
-
+       
         public AudioClip start;
         public AudioClip normal;
         public AudioClip battle;
 
         public bool normalStatus = true;
 
+      
         public void Awake()
         {
             if (!instance)
@@ -30,11 +31,13 @@ namespace Canute.Assets.Script.Module
             }
         }
 
+        
         public void Start()
         {
             DontDestroyOnLoad(this);
         }
 
+       
         public void Update()
         {
             audioSource.volume = Game.Configuration.Volume;

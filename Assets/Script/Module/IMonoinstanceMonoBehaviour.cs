@@ -1,5 +1,6 @@
 ﻿namespace Canute.UI
 {
+    
     public interface IMonoinstanceMonoBehaviour
     {
         void Awake();

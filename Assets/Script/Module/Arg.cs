@@ -7,6 +7,7 @@ using System.Collections;
 namespace Canute
 {
     [Serializable]
+    // Dictionary
     public struct Arg : INameable, IEquatable<Arg>
     {
         [SerializeField] private string key;
@@ -14,6 +15,7 @@ namespace Canute
 
         public string Key { get => key; set => key = value; }
         public string Value { get => value; set => this.value = value; }
+         [Obsolete]
         public string Name => Key;
 
         public Arg(string key, string value)
@@ -27,18 +29,21 @@ namespace Canute
             return new KeyValuePair<string, string>(arg.key, arg.value);
         }
 
+        [Obsolete]
         public static implicit operator Arg(KeyValuePair<string, string> arg)
-        {
+        { 
             return new Arg(arg.Key, arg.Value);
         }
 
+        [Obsolete]
         public static implicit operator ArgType<string>(Arg arg)
-        {
+        { 
             return new ArgType<string>(arg.Key, arg.Value);
         }
 
+        [Obsolete]
         public static implicit operator Arg(string @string)
-        {
+        { 
             string[] vs;
             Arg arg;
 
@@ -82,6 +87,7 @@ namespace Canute
             return left.Equals(right);
         }
 
+        [Obsolete]
         public static bool operator !=(Arg left, Arg right)
         {
             return !(left == right);
@@ -97,8 +103,9 @@ namespace Canute
     {
         [SerializeField] private Arg[] args;
 
+        [Obsolete]
         public string this[string index]
-        {
+        { 
             get { return Get(index); }
             set { Set(index, value); }
         }
@@ -116,6 +123,7 @@ namespace Canute
             return null;
         }
 
+        [Obsolete]
         public List<string> FindAll(string key)
         {
             List<string> vs = new List<string>();
@@ -148,8 +156,9 @@ namespace Canute
             Add(index, value);
         }
 
+        
         public ArgList(IEnumerable<Arg> args)
-        {
+        { 
             this.args = args.ToArray();
         }
 
@@ -173,6 +182,7 @@ namespace Canute
             return ((IEnumerable<Arg>)args).GetEnumerator();
         }
 
+        [Obsolete]
         public static implicit operator Args(ArgList args)
         {
             return new Args(args);

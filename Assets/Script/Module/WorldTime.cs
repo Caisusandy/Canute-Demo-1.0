@@ -8,6 +8,7 @@ namespace Canute
     {
         [SerializeField]
         private string value;
+        [Obsolete]
         public static implicit operator DateTime(WorldTime time)
         {
             try
@@ -19,6 +20,7 @@ namespace Canute
                 return DateTime.MinValue;
             }
         }
+        [Obsolete]
         public static implicit operator WorldTime(DateTime time)
         {
             return new WorldTime() { value = time.ToString() };
@@ -41,7 +43,7 @@ namespace Canute
         {
             return left.Equals(right);
         }
-
+        [Obsolete]
         public static bool operator !=(WorldTime left, WorldTime right)
         {
             return !(left == right);

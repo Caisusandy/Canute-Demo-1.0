@@ -8,6 +8,7 @@ namespace Canute.StorySystem
     {
         public enum SpeakerStandPosition
         {
+           
             none,
             left,
             middle,
@@ -24,6 +25,7 @@ namespace Canute.StorySystem
         public Image rightPerson;
         public Image middlePerson;
         public Image bg;
+        
         public List<Image> People => new List<Image>() { leftPerson, middlePerson, rightPerson };
 
         public Text speakerName;
@@ -35,6 +37,7 @@ namespace Canute.StorySystem
         public string loadingLines;
         public const float charPerSecond = 0.02f;
 
+       
         private void Awake()
         {
             instance = this;
@@ -45,6 +48,8 @@ namespace Canute.StorySystem
                 BattleSystem.UI.BattleUI.SetUICanvasActive(false);
             }
         }
+        
+     
         // Use this for initialization
         private void Start()
         {
@@ -57,6 +62,7 @@ namespace Canute.StorySystem
             LoadFirstLine();
         }
 
+     
         // Update is called once per frame
         private void Update()
         {
@@ -81,6 +87,7 @@ namespace Canute.StorySystem
             }
         }
 
+   
         public void OnDestroy()
         {
             if (BattleSystem.UI.BattleUI.instance)

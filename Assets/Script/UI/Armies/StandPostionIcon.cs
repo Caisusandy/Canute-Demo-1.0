@@ -2,6 +2,7 @@
 
 namespace Canute.UI
 {
+    [Obsolete]
     public class StandPostionIcon : ArmyPropertyInfoIcon
     {
         public override void DisplayInfo()

@@ -12,6 +12,7 @@ namespace Canute
 
         public GameObject levelStartPanel;
 
+        [Obsolete]
         public static void OpenLevelPanel(Level level, Transform parent)
         {
             var obj = Instantiate(instance.levelStartPanel, parent);
@@ -19,6 +20,7 @@ namespace Canute
             panel.levelName = level.Name;
         }
 
+        [Obsolete]
         public void OpenLevelPanel(Transform parent)
         {
             var obj = Instantiate(levelStartPanel, parent);
@@ -26,6 +28,7 @@ namespace Canute
             panel.levelName = GameData.Levels.GetLevel("CalayInfinite").Name;
         }
 
+        [Obsolete]
         public void OpenLevelPanel(string levelName)
         {
             if (GameData.Levels.GetLevel(levelName) != null)
@@ -36,6 +39,7 @@ namespace Canute
             }
         }
 
+        [Obsolete]
         public void OpenLevelPanel(Level level)
         {
             var obj = Instantiate(levelStartPanel, Camera.main.transform.GetChild(0).transform);
@@ -43,11 +47,13 @@ namespace Canute
             panel.levelName = level.Name;
         }
 
+        [Obsolete]
         public void OpenTutorial()
         {
             Game.LoadBattle(GameData.Levels.GetLevel("Tutorial"), new LegionSet());
         }
 
+        [Obsolete]
         public void OnEnable()
         {
             instance = this;

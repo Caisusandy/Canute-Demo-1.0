@@ -18,10 +18,13 @@ namespace Canute.Shops
     //}
 
     [Serializable]
+    [Obsolete]
     public class PriceList : DataList<PricePair>
     {
+        [Obsolete]
         public int TotalWeight => WeightItem.WeightOf(ToArray());
         public PricePair InWeightOf(float weight) => WeightItem.Get(weight, ToArray());
+        [Obsolete]
         public PricePair RandomOut()
         {
             PricePair pricePair = InWeightOf(UnityEngine.Random.value);
@@ -38,11 +41,15 @@ namespace Canute.Shops
         [SerializeField] protected Currency[] price;
 
         public string Name => Prize.Name;
+        [Obsolete]
         public int Count { get => weight; set => weight = value; }
         public Prize Prize { get => prize; set => prize = value; }
+        [Obsolete]
         public Currency[] Price { get => price; set => price = value; }
+        [Obsolete]
         public Item.Type ItemType { get => Prize.PrizeType; set => Prize.PrizeType = value; }
 
+        [Obsolete]
         public bool Buy()
         {
             if (Game.PlayerData.Spent(price))

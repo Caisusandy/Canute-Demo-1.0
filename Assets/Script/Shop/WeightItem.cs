@@ -12,9 +12,11 @@ namespace Canute.Shops
         public string itemName;
         public int weight;
 
+        [Obsolete]
         public string Name => itemName;
         public int Count { get => weight; set => weight = value; }
 
+        [Obsolete]
         public WeightItem(int weight, string itemName)
         {
             this.weight = weight;
@@ -61,6 +63,7 @@ namespace Canute.Shops
             return cur;
         }
 
+        [Obsolete]
         public static IWeightable[] Shuffle(IWeightable[] itemWeights)
         {
             List<IWeightable> ans = itemWeights.ToList();
@@ -95,6 +98,7 @@ namespace Canute.Shops
             return left.Equals(right);
         }
 
+        [Obsolete]
         public static bool operator !=(WeightItem left, WeightItem right)
         {
             return !(left == right);
