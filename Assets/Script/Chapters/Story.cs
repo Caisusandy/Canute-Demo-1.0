@@ -1,24 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Canute.StorySystem
 {
-    [Serializable]
-    public struct WordLines
-    {
-        [SerializeField] private string[] line;
-
-        public static implicit operator WordLines(Story story)
-        {
-            List<string> strings = new List<string>();
-            foreach (var item in story.WordLines)
-            {
-                strings.Add(item.Line);
-            }
-            return new WordLines() { line = strings.ToArray() };
-        }
-    }
 
     [Serializable]
     public struct Story : INameable, IEquatable<Story>
@@ -59,27 +43,67 @@ namespace Canute.StorySystem
 
         public WordLine Next()
         {
+            if (CurrentLine.NextLineID != string.Empty)
+            {
+                if (CurrentLine.NextLineID == "End")
+                {
+                    return WordLine.Empty;
+                }
+                else
+                {
+                    CurrentLine = Find(CurrentLine.NextLineID);
+                    return CurrentLine;
+                }
+            }
             int nextIndex = Array.IndexOf(WordLines, CurrentLine) + 1;
+
             //Debug.Log(nextIndex);
             if (nextIndex < WordLines.Length)
             {
                 CurrentLine = WordLines[nextIndex];
-                return WordLines[nextIndex];
+                return CurrentLine;
             }
             else
             {
                 return WordLine.Empty;
             }
         }
-        public override bool Equals(object obj)
+
+        public WordLine Find(string id)
         {
-            return obj is Story story && Equals(story);
+            foreach (var item in WordLines)
+            {
+                if (item.ID == id) { return item; }
+            }
+            return WordLine.Empty;
+        }
+
+        public WordLine ContinueFrom(string id)
+        {
+            CurrentLine = Find(id);
+            return CurrentLine;
         }
 
         public bool Equals(Story story)
         {
             return id == story.id;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Story story && Equals(story);
+        }
+
+        public override int GetHashCode()
+        {
+            return id.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return id;
+        }
+
 
         public static implicit operator bool(Story story)
         {
@@ -97,19 +121,9 @@ namespace Canute.StorySystem
             return !(left == right);
         }
 
-        public override int GetHashCode()
-        {
-            return id.GetHashCode();
-        }
-
         public static Story Get(string id)
         {
-            return GameData.Stories.StoryTree.Get(id);
-        }
-
-        public override string ToString()
-        {
-            return id;
+            return GameData.Stories.Get(id);
         }
     }
 

@@ -50,8 +50,10 @@ namespace Canute.BattleSystem
             {
                 case "dragonDefense":
                     property.Defense *= 8;
+                    property.StandPosition = BattleProperty.Position.land;
                     break;
                 case "dragonAttack":
+                    property.StandPosition = BattleProperty.Position.air;
                     property.AttackRange += 2;
                     property.MoveRange += 4;
                     break;

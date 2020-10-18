@@ -32,7 +32,7 @@ namespace Canute.StorySystem
             timer = 0;
             if (BattleSystem.UI.BattleUI.instance)
             {
-                BattleSystem.UI.BattleUI.SetUIInteractive(false);
+                BattleSystem.UI.BattleUI.SetUIInteractable(false);
             }
         }
       
@@ -65,7 +65,7 @@ namespace Canute.StorySystem
         {
             if (BattleSystem.UI.BattleUI.instance)
             {
-                BattleSystem.UI.BattleUI.SetUIInteractive(false);
+                BattleSystem.UI.BattleUI.SetUIInteractable(false);
             }
 
             timer += Time.deltaTime;
@@ -86,7 +86,7 @@ namespace Canute.StorySystem
         {
             if (BattleSystem.UI.BattleUI.instance)
             {
-                BattleSystem.UI.BattleUI.SetUIInteractive(true);
+                BattleSystem.UI.BattleUI.SetUIInteractable(true);
             }
             instance = null;
         }

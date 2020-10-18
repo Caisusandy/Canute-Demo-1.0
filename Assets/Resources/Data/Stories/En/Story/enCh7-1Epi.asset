@@ -1,0 +1,284 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-1Epi
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-1Epi
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-1Epi.1
+      line: "The irony of the situation wasn\u2019t lost on Canute as they recovered
+        from the battle. All traces of annoyance had disappeared as he knelt to help
+        Finn. The young man winced when Canute tried to examine his leg.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Epi.2
+      line: "Is it bad?\u201D"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.3
+      line: 'Canute shrugged, trying to break the news kindly. '
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Epi.4
+      line: "You\u2019ll live.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.5
+      line: "Finn\u2019s eyes widened.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: Ch7-1Epi.6
+      line: "What d\u2019you mean, I\u2019ll live? My leg feels like it\u2019s on
+        fire!\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Epi.7
+      line: "That\u2019s just the water. Now hold still.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.8
+      line: "Finn laid back and squeezed his eyes shut. When the wound had been taken
+        care of, they lifted him onto a stretcher and continued to the next town,
+        where one of Ron\u2019 smuggler friends would be waiting for them. Finn got
+        tired of being on a stretcher and insisted on making himself a crutch. It
+        helped them speed up a little, but not much. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.9
+      line: 'By nightfall, they had made it to the outskirts of a small town. Despite
+        its size, the town was bustling with people, including Meialian patrols.
+        The team managed to coax their vehicles through the traffic until they reached
+        a tangled slum on the opposite edge of town. Ron led the group up to a towering
+        apartment complex and waited for them to get their vehicles taken care of
+        before he headed up the stairs.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.10
+      line: "The lights overhead were constantly flickering as they walked down the
+        hallway, and the air smelled vaguely smoky. Ron knocked on the door at the
+        very end of the hall and stood back, fixing his hair a little. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.11
+      line: "Canute raised an eyebrow at that but decided not to say anything. After
+        a few moments, he heard several chains being taken off the door on the other
+        side, and it cracked open. All Canute could see was half of a woman\u2019s
+        face. The first things he noticed were her pale skin, sprinkled with freckles,
+        and her flaming red hair. She glared at Ron with a surprising amount of hate
+        for someone of her short stature. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: The Woman
+      id: Ch7-1Epi.12
+      line: 'What do you want?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-1Epi.13
+      line: "Hello to you too, Evie. We\u2019ve got someone here who\u2019s wounded,
+        and since we were in the neighborhood, we were wondering if you could help
+        us out.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.14
+      line: 'Evie stuck her head out into the hall. When she saw the battle-worn
+        team, her eyes softened a little, but they became hard as flint when she
+        looked back at Ron.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-1Epi.15
+      line: "One night. That\u2019s it. I can\u2019t tell you how many times I\u2019ve
+        had to avoid patrols in the past week. Having you all here won\u2019t be
+        any help.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.16
+      line: 'She waved them inside and disappeared into her apartment. Canute took
+        a quick glance around the room as he entered. There were plants everywhere,
+        suspended from the ceiling, drooping off of tables, and sitting in old terracotta
+        pots on the immaculate kitchen counter. In a flash, Evie had whipped up a
+        hearty stew for everyone and set coffee to brew while they ate. She sat on
+        the arm of an old armchair with a mug of hot tea and watched them with a
+        vague air of disgust. Canute finished first and set aside the bowl.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Epi.17
+      line: "Thank you for sheltering us, Miss\u2026\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-1Epi.18
+      line: "Burke, Evelyn Burke. \nWho might you be?\u201D\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.19
+      line: 'She said curtly. Canute hesitated a moment, wondering if she could keep
+        a secret. If Ron trusts her, so do I. He sat up a little straighter.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Epi.20
+      line: Canute Svensson
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.22
+      line: "He noticed one of her eyebrows shot up at that, but she let his introduction
+        pass without comment. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Epi.23
+      line: "If you don\u2019t mind me asking, how do you know Ron?\u201D\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.24
+      line: "Canute could\u2019ve sworn he saw Ron\u2019s face gain a little color.
+        Evie rolled her eyes and gave a short laugh.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-1Epi.25
+      line: "It\u2019s a long story, but we\u2019ve been\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.26
+      line: 'she searched for the right word
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-1Epi.27
+      line: 'friends for a long time.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Epi.28
+      line: "The concealed venom in her voice didn\u2019t match the word she used,
+        and it made Canute wonder.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

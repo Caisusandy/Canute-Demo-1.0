@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canute.Shops;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,14 +15,15 @@ namespace Canute.UI
 
         public void Start()
         {
-            levelName.text = (playerData.LastOperationTime).ToShortDateString();
+            levelName.text = playerData.NextLevelName();
+            lastTime.text = (playerData.LastOperationTime).ToShortDateString() + "\t" + Currency.Type.fedgram.Lang() + ": " + playerData.federgram;
             //lastTime.text = ((DateTime)playerData.playerLastOperationTime).ToShortDateString();
         }
 
         public void Select()
         {
-            PlayerFile.LoadData(playerData.uuid);
-
+            bool s = PlayerFile.LoadData(playerData.uuid);
+            if (s) SceneControl.GotoScene(MainScene.mainHall);
         }
     }
 }

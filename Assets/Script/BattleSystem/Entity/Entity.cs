@@ -1,4 +1,5 @@
-﻿using Canute.LanguageSystem;
+﻿using Canute.BattleSystem.UI;
+using Canute.LanguageSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -75,11 +76,6 @@ namespace Canute.BattleSystem
                 Debug.LogError("UUID crash! a new UUID is replaced for this entity " + Data.ToString());
                 this.NewUUID();
             }
-        }
-
-        public virtual void Update()
-        {
-
         }
 
         public virtual void OnDestroy()
@@ -226,6 +222,11 @@ namespace Canute.BattleSystem
 
         #region Static Methods
 
+        /// <summary>
+        /// （避免使用）获得实体
+        /// </summary> 
+        /// <param name="sourceEntity"></param>
+        /// <returns></returns>
         public static Entity Get(UUID sourceEntity)
         {
             foreach (Entity item in entities)
@@ -238,6 +239,12 @@ namespace Canute.BattleSystem
             return null;
         }
 
+        /// <summary>
+        /// （避免使用）获得实体
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sourceEntity"></param>
+        /// <returns></returns>
         public static T Get<T>(UUID sourceEntity) where T : Entity
         {
             foreach (Entity item in entities)
@@ -250,6 +257,11 @@ namespace Canute.BattleSystem
             return null;
         }
 
+        /// <summary>
+        /// （避免使用）获得实体
+        /// </summary> 
+        /// <param name="sourceEntity"></param>
+        /// <returns></returns>
         public static List<Entity> Get(List<UUID> sourceEntity)
         {
             List<Entity> entities = new List<Entity>();
@@ -260,6 +272,12 @@ namespace Canute.BattleSystem
             return entities;
         }
 
+        /// <summary>
+        /// （避免使用）获得实体
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sourceEntity"></param>
+        /// <returns></returns>
         public static List<T> Get<T>(List<UUID> sourceEntity) where T : Entity
         {
             List<T> entities = new List<T>();
@@ -272,11 +290,9 @@ namespace Canute.BattleSystem
 
         public static void Initialize()
         {
-            foreach (var item in entities)
-            {
-                if (item)
-                    item.Destroy();
-            }
+            foreach (var item in MapEntity.CurrentMap.fakeCells) { Destroy(item.gameObject); }
+            foreach (var item in entities) { if (item) item.Destroy(); }
+
             entities.Clear();
             ArmyEntity.onMap.Clear();
             BuildingEntity.onMap.Clear();
@@ -400,7 +416,7 @@ namespace Canute.BattleSystem
 
         public virtual void OnMouseDrag() { }
 
-        public virtual void OnMouseUp() { ToggleSelect(); TriggerSelectEvent(IsSelected); }
+        public virtual void OnMouseUp() { if (!BattleUI.Raycaster.enabled) return; ToggleSelect(); TriggerSelectEvent(IsSelected); }
 
     }
 

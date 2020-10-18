@@ -20,5 +20,14 @@ namespace Canute.BattleSystem
         {
             return Instantiate(this);
         }
+
+        [ContextMenu("Set as Campus")]
+        public void SetAsCampus()
+        {
+            Building campus = GameData.Prototypes.GetBuildingPrototype("Campus");
+            battleBuilding = new BattleBuilding(campus.Prefab, campus, UUID.Player);
+            battleBuilding.coordinate = Vector2Int.zero;
+
+        }
     }
 }

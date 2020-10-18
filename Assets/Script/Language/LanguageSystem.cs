@@ -165,7 +165,7 @@ namespace Canute
                     var raw = Lang(vs.ToArray());
                     int value = propertyBonus.GetValue(level);
 
-                    ret += value >= 0 ? "+" : "-";
+                    ret += value >= 0 ? "+" : "";
                     ret += value;
                     ret += propertyBonus.BonusType == BonusType.percentage ? "% " : " ";
                     ret += raw + "\n";

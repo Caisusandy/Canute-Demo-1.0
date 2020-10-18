@@ -33,6 +33,7 @@ namespace Canute
         {
             if (GameData.Levels.GetLevel(levelName) != null)
             {
+                Debug.Log(levelName);
                 var obj = Instantiate(levelStartPanel, Camera.main.transform.GetChild(0).transform);
                 var panel = obj.GetComponent<LevelStartPanel>();
                 panel.levelName = levelName;

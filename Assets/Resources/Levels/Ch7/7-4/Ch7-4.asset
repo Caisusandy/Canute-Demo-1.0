@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a598e8f8415514cb46cd2ad10bcb73, type: 3}
+  m_Name: Ch7-4
+  m_EditorClassIdentifier: 
+  levelName: Ch7-4
+  battle:
+    battleType: 0
+    avoidPlayerDefinedLegionSet: 0
+    firstTimePrize: []
+    prizes:
+    - name: Exp
+      count: 200
+      parameter: 0
+      type: 8
+    - name: fedgram
+      count: 1
+      parameter: 300
+      type: 7
+    - name: manpower
+      count: 1
+      parameter: 300
+      type: 7
+    - name: mantleAlloy
+      count: 1
+      parameter: 300
+      type: 7
+    enemy:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: ab711845-592f-4d0f-bfd8-632a1b408f07
+      ownerUUID:
+        value: ab711845-592f-4d0f-bfd8-632a1b408f07
+      personality: -1
+      viceCommander:
+        name: 
+        prefab: {fileID: 0}
+        uuid:
+          value: 8b2b04dc-7ede-4e61-8d10-fff8723da3e0
+        ownerUUID:
+          value: 
+        allowMove: 0
+        coordinate: {x: 0, y: 0}
+        stats:
+          list: []
+        career: 0
+        leadingArmyUUID:
+          value: 
+        isViceCommander: 0
+        level: 0
+        bounes: []
+      pile:
+        eventCardUUID:
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+      maxHandCardCount: 5
+      maxArmyCount: 0
+      actionPoint: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+    thirdParties: []
+    waveInfo:
+    - battleArmies:
+      - {fileID: 11400000, guid: 0cc94051c9d06a942974a41543ca5c2f, type: 2}
+      - {fileID: 11400000, guid: 4810753e3b36cd542b0a1206bc31e019, type: 2}
+      - {fileID: 11400000, guid: 65014712583180f4bb633a753cf84603, type: 2}
+      battleBuildings:
+      - {fileID: 11400000, guid: 88fabf5517cde9043a5f7b79212f162b, type: 2}
+    mapPrefab: {fileID: 7540948199326451861, guid: 2b9e74dc4b468384ea1eb50056c7d91c,
+      type: 3}
+    player:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: 9611a3e9-c737-40ba-aeb1-1196981e85a2
+      ownerUUID:
+        value: 
+      personality: 0
+      viceCommander:
+        name: 
+        prefab: {fileID: 0}
+        uuid:
+          value: 757079a3-9a50-44be-b51f-ecfcc343c7ee
+        ownerUUID:
+          value: 
+        allowMove: 0
+        coordinate: {x: 0, y: 0}
+        stats:
+          list: []
+        career: 0
+        leadingArmyUUID:
+          value: 
+        isViceCommander: 0
+        level: 0
+        bounes: []
+      pile:
+        eventCardUUID:
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+      maxHandCardCount: 5
+      maxArmyCount: 0
+      actionPoint: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+    round:
+      wave: 0
+      round: 0
+      turn: 0
+      stat: 0
+      currentPlayerUUID:
+        value: 
+    stat: 0
+    centralDeck:
+      list: []
+    armies: []
+    buildings: []
+    globalStatus:
+      list: []
+    ongoingAnimation: []
+    passedEffect: []
+    scoreBoard:
+      list: []
+      allPassedEffect: []
+      totalPlayerDamage: 288
+      totalAirforceDefeated: 0
+      totalLandArmyDefeated: 3

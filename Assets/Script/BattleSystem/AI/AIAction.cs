@@ -15,6 +15,11 @@ namespace Canute.BattleSystem.AI
             }
 
             IPassiveEntity closestTarget = entity.GetClosestTarget();
+            if (closestTarget == null)
+            {
+                Debug.Log("no target?");
+                return;
+            }
             CellEntity destination = null;
             foreach (var item in entity.data.GetMoveArea())
             {

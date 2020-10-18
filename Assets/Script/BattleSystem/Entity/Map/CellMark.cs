@@ -43,7 +43,7 @@ namespace Canute.BattleSystem
                         color = new Color(1f, 1f, 1, 0.8f);
                         break;
                     case Type.path:
-                        color = new Color(1f, 0.9f, 0.6f);
+                        color = Color.green;
                         break;
                     case Type.protectCell:
                         color = new Color(0, 0.9f, 1);
@@ -75,6 +75,8 @@ namespace Canute.BattleSystem
         {
             markRenderer = GetComponent<SpriteRenderer>();
             markRenderer.size = GetMarkSize();
+            markRenderer.sortingLayerName = CellEntity.GetComponent<SpriteRenderer>().sortingLayerName;
+            markRenderer.sortingOrder = CellEntity.GetComponent<SpriteRenderer>().sortingOrder;
             CellEntity.Marks.Add(this);
         }
 

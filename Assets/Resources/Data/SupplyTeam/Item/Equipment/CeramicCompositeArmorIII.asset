@@ -21,5 +21,5 @@ MonoBehaviour:
     armyRequirement: 
     time:
       hours: 3
-      minutes: 55
-      seconds: 55
+      minutes: 27
+      seconds: 0

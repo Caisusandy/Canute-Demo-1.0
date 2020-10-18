@@ -19,29 +19,26 @@ namespace Canute.BattleSystem
 
         public IEnumerator Color()
         {
-            foreach (var column in mapEntity)
-            {
-                foreach (var cell in column)
+            if (!mapEntity.isDrew)
+                foreach (var column in mapEntity)
                 {
-                    if (cell.data.terrain != Terrain.Plain)
-                        cell.SetCellSprite();
-                    else
-                        cell.SetCellSprite(GameData.SpriteLoader.Get(SpriteAtlases.cells, Terrain.Plain.ToString() + PerlinInt(cell.x, cell.y)));
+                    foreach (var cell in column)
+                    {
+                        int max = cell.data.terrain != Terrain.Plain ? 4 : 12;
+                        cell.SetCellSprite(GameData.SpriteLoader.Get(SpriteAtlases.cells, cell.data.terrain.ToString() + PerlinInt(cell.x, cell.y, max)));
+                    }
                 }
-            }
             foreach (var cell in mapEntity.fakeCells)
             {
-                if (cell.terrain != Terrain.Plain)
-                    cell.SetCellSprite();
-                else
-                    cell.SetCellSprite(GameData.SpriteLoader.Get(SpriteAtlases.cells, Terrain.Plain.ToString() + PerlinInt(cell.x, cell.y)));
+                int max = cell.terrain != Terrain.Plain ? 4 : 12;
+                cell.SetCellSprite(GameData.SpriteLoader.Get(SpriteAtlases.cells, cell.terrain.ToString() + PerlinInt(cell.x, cell.y, max)));
             }
             yield return null;
         }
 
-        public int PerlinInt(float x, float y)
+        public int PerlinInt(float x, float y, int max)
         {
-            return (int)(Perlin(x, y, mapEntity.seed) * 12);
+            return (int)(Perlin(x, y, mapEntity.seed) * max);
         }
 
         public float Perlin(float x, float y, int seed)
@@ -57,7 +54,7 @@ namespace Canute.BattleSystem
             //Debug.Log(x1);
             //Debug.Log(y1);
             var a = Mathf.PerlinNoise(x1 * scale, y1 * scale);
-            a = a < 0 ? 0 : (a > 1 ? 0.9999f : a);
+            a = a < 0 ? 0 : (a > 1 ? 1f : a);
             return a;
         }
     }

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enSceneIntroLevelStartPanel
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: SceneIntroLevelStartPanel
+    type: 1
+    wordLines:
+    - speakerName: Finn Herman
+      id: SceneIntroLevelStartPanel.1
+      line: Sir, on the left side is our legions. We need to select one legion template
+        that we build to enter the battle.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: SceneIntroLevelStartPanel.2
+      line: On the right side is our event card piles template. We need to select
+        one pile template that we build to enter the battle.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: SceneIntroLevelStartPanel.3
+      line: 'On the middle is the leader scroll. We can select a leader for the battle.
+        We should have one leader leading us.
+
+        We can also select no leader
+        to lead if you don''t scroll to another leader at all.'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

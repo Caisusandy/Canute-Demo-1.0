@@ -32,1363 +32,203 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 6cfa25b1f2d45ff4ba11baf49f8be098, type: 2}
   data:
     uuid:
-      value: 6864b372-2319-44f3-bbe3-01d672217e0c
+      value: 9f357a5a-9ba2-480b-920d-6c084b9b34ab
     playerLastOperationTime:
-      value: 2020/10/8 20:16:56
+      value: 2020/10/14 5:02:46
     shopInfo:
       nextRefreshTime:
-        value: 2020/10/8 22:11:54
+        value: 2020/10/8 21:06:54
       onShopArmies:
-        list:
-        - weight: 50
-          prize:
-            name: "\u03A3CityInfantry"
-            count: 1
-            parameter: 0
-            type: 2
-          price:
-          - name: 0
-            count: 300
-        - weight: 20
-          prize:
-            name: Basic Shielder
-            count: 1
-            parameter: 0
-            type: 2
-          price:
-          - name: 0
-            count: 250
-        - weight: 50
-          prize:
-            name: CalayCityInfantry
-            count: 1
-            parameter: 0
-            type: 2
-          price:
-          - name: 0
-            count: 300
-        - weight: 50
-          prize:
-            name: "\u03A3CityInfantry"
-            count: 1
-            parameter: 0
-            type: 2
-          price:
-          - name: 0
-            count: 300
+        list: []
       onShopEquipments:
-        list:
-        - weight: 12
-          prize:
-            name: CeramicCompositeArmorIII
-            count: 1
-            parameter: 0
-            type: 4
-          price:
-          - name: 3
-            count: 10
-        - weight: 50
-          prize:
-            name: CeramicCompositeArmorI
-            count: 1
-            parameter: 0
-            type: 4
-          price:
-          - name: 3
-            count: 2
-        - weight: 25
-          prize:
-            name: CeramicCompositeArmorII
-            count: 1
-            parameter: 0
-            type: 4
-          price:
-          - name: 3
-            count: 10
-        - weight: 25
-          prize:
-            name: CeramicCompositeArmorII
-            count: 1
-            parameter: 0
-            type: 4
-          price:
-          - name: 3
-            count: 10
-    federgram: 70697
-    manpower: 73497
-    mantleAlloy: 99214
-    aethium: 9996
+        list: []
+      onShopEventCard:
+        list: []
+    federgram: 2800
+    manpower: 2800
+    mantleAlloy: 140
+    aethium: 0
     excaTeam:
-      leadersUUID:
-      - value: e04b315a-fd94-473c-9b37-51658aea9d09
-      - value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
-      - value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
-      - value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
+      leadersUUID: []
       armyUUID:
-        value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
+        value: 
       currentPrize:
-        prizeBoxes:
-        - startingTime:
-            value: 2020/10/6 22:19:34
-          prize:
-            name: AeroReinforceArmorIII
-            count: 20
-            parameter: 0
-            type: 4
-            leaderRequirement: []
-            armyRequirement: 
-            time:
-              hours: 3
-              minutes: 4
-              seconds: 0
-        - startingTime:
-            value: 2020/10/7 1:23:34
-          prize:
-            name: reflection from Arthur Connors
-            count: 20
-            parameter: 0
-            type: 9
-            leaderRequirement: []
-            armyRequirement: 
-            time:
-              hours: 2
-              minutes: 30
-              seconds: 0
-        - startingTime:
-            value: 2020/10/7 3:53:34
-          prize:
-            name: fedgram
-            count: 300
-            parameter: 50
-            type: 7
-            leaderRequirement: []
-            armyRequirement: 
-            time:
-              hours: 0
-              minutes: 15
-              seconds: 0
-        - startingTime:
-            value: 2020/10/7 4:08:34
-          prize:
-            name: manpower
-            count: 200
-            parameter: 100
-            type: 7
-            leaderRequirement: []
-            armyRequirement: 
-            time:
-              hours: 0
-              minutes: 15
-              seconds: 0
+        prizeBoxes: []
     legions:
     - armiesUUID:
-      - value: 52112c80-724e-4bca-a5c2-9dbf17289460
-      - value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
-      - value: 3e684102-1973-4a78-be26-8acd8e36e5be
-      - value: a1c69613-1cca-438d-b56b-73e2c9aec777
+      - value: adca6780-19c4-4dc0-9457-adc43b994501
+      - value: 83de6a6d-c992-49bc-9a6f-da388dfa7de2
+      - value: 6d5130b0-2f6e-4dcc-b2e6-db42854bc1f3
+      - value: d978ba7f-0bc9-4413-9589-5ec29eb70574
+      - value: 492ea323-66ae-4aba-b71d-f7a0b20fe579
+      - value: f443c4ea-63ca-447e-abba-c4d41d31e489
+    - armiesUUID:
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
       - value: 00000000-0000-0000-0000-000000000000
       - value: 00000000-0000-0000-0000-000000000000
     - armiesUUID:
-      - value: d7de1817-696d-4933-8760-58a88831f6a9
-      - value: 1ae6066c-8c0d-4f4a-9689-1405aa073c4f
-      - value: a038f585-42bf-4590-97f4-917614bdb7fa
-      - value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
-      - value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
-      - value: fd1e89aa-39f5-43cb-b023-45e409eb49b6
-    - armiesUUID:
-      - value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
-      - value: 848a4828-f08c-48bd-9ed6-fde8de74f386
-      - value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
-      - value: 02c76a26-a718-4a60-9a1d-1d714f28cf0b
-      - value: 826c6717-7099-4429-a4fe-93a427845a31
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
       - value: 00000000-0000-0000-0000-000000000000
     eventCardPiles:
-    - eventCardUUID: []
-    - eventCardUUID: []
-    - eventCardUUID: []
+    - eventCardUUID:
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+    - eventCardUUID:
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+    - eventCardUUID:
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
+      - value: 00000000-0000-0000-0000-000000000000
     armies:
-    - protoName: AlphaArmy
+    - protoName: Basic Infantry
       uuid:
-        value: 7b73caad-b105-41b7-8b87-220a84b9d5d0
-      exp: 250638
+        value: f443c4ea-63ca-447e-abba-c4d41d31e489
+      exp: 800
       floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: AlphaArmy
-      uuid:
-        value: 25d97017-9226-4833-bb2d-2369347fd414
-      exp: 1018
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: AlphaArmy
-      uuid:
-        value: 5140d5d2-0791-4aa0-8fad-1c2c9048db62
-      exp: 3611
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: AlphaArmy
-      uuid:
-        value: a9ab9245-a213-4aef-a952-e204fbd53e93
-      exp: 10497
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic WarMachine
-      uuid:
-        value: 5fb2fff2-d0d4-42c8-8841-560f63e3d7f6
-      exp: 4947
-      floatExp: 6659
-      star: 2
+      star: 1
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: e4de8d9e-19f2-4534-a763-65df0894f38a
-        - value: 11939062-eaf0-4e84-804b-d438ca4544e3
-        - value: d8d2bc8e-cbeb-4259-afdc-50829fd7d39e
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic WarMachine
-      uuid:
-        value: 6c92bd05-e004-44be-acd8-e2eaff608993
-      exp: 0
-      floatExp: 25164
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: ba32de70-0b69-4e9d-99f3-ef00886dcecc
-        - value: b310917a-a07e-4556-9e86-ae0480f5a4f5
-        - value: 20435197-3cf5-41e0-a6b3-c3641be7c166
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic WarMachine
-      uuid:
-        value: 541becd1-fb72-407c-b1a1-fe7b5bf34303
-      exp: 19513
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 824ba807-ef4b-4cc9-b33f-2fb2bc721f33
-        - value: cdedd6a4-66ad-4542-8f99-5e695ff285b9
-        - value: 367d8ff9-d9bd-49e6-bc8e-d27033c702fa
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic WarMachine
-      uuid:
-        value: 02c76a26-a718-4a60-9a1d-1d714f28cf0b
-      exp: 5000000
-      floatExp: 0
-      star: 2
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: a3168da4-7cc8-486a-8408-76065679895f
-        - value: 659900c3-4034-483c-a407-a859aee3b378
-        - value: 3ebe7ea1-6ad3-48ab-b887-c38483eb2871
+        - value: 9f44e01b-ed93-44fc-a053-51fb61e5f8a0
+        - value: 544efe61-92ac-42ca-9d2d-05a19ff708aa
+        - value: 7de27eb6-6b72-41bf-b5f3-f1658dbc6b36
         equipmentLimit: 030000000300000003000000
     - protoName: Basic Infantry
       uuid:
-        value: dca9dce4-4965-4406-9ff0-66184dcd2eec
-      exp: 5000000
+        value: d978ba7f-0bc9-4413-9589-5ec29eb70574
+      exp: 800
       floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic Infantry
-      uuid:
-        value: bbfa6c3d-7064-49ef-ba61-2d9d285b72cd
-      exp: 5000000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic Infantry
-      uuid:
-        value: 3e684102-1973-4a78-be26-8acd8e36e5be
-      exp: 5005000
-      floatExp: 0
-      star: 2
+      star: 1
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: 9dc401ce-d680-4b55-8fcc-476ca121a082
-        - value: b606c826-8f92-4853-adfc-78ae00e0e5b0
-        - value: 4f1efc95-8efd-48ac-b902-f9eaa5d68e91
+        - value: 29631bd7-8dbc-4832-ac34-dff8841a3116
+        - value: 032db631-5a2d-4846-966d-64a379e10bda
+        - value: 50d65360-4047-4ee9-b4eb-383e11594fa8
         equipmentLimit: 030000000300000003000000
     - protoName: Basic Infantry
       uuid:
-        value: f2f3e043-8965-42ed-b8a3-963e06d488b2
-      exp: 5000000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic Shielder
-      uuid:
-        value: 69ce46eb-31e8-4d0f-8dfa-14ef87dbfc56
-      exp: 5000000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 00000000-0000-0000-0000-000000000000
-        - value: 00000000-0000-0000-0000-000000000000
-        - value: e0374d21-e259-4e04-872f-ada09795d5ab
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Shielder
-      uuid:
-        value: 07d378c7-0b04-4ae1-9b70-497d211f0c05
-      exp: 5009000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 00000000-0000-0000-0000-000000000000
-        - value: 00000000-0000-0000-0000-000000000000
-        - value: cde9cf1a-5572-4b65-a444-9209cc79c7f1
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Shielder
-      uuid:
-        value: 848a4828-f08c-48bd-9ed6-fde8de74f386
-      exp: 5000000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 00000000-0000-0000-0000-000000000000
-        - value: 38c66678-ee80-475b-8a13-4223d1733500
-        - value: be424fe4-0db3-4f17-88dc-a031bd0e2a0e
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Shielder
-      uuid:
-        value: 71f4765b-dcdd-44e9-a50a-fc1e419010b1
-      exp: 5001000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 69d6ff33-0aa4-4928-93d0-3f89dc0be63c
-        - value: 144dc316-71d6-4354-a976-9e53b4f5c1dc
-        - value: 3d16c405-6036-46a4-a1db-180764d72f6b
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Mage
-      uuid:
-        value: 25ee4ff2-2f46-496a-a119-a4f9c55c277d
-      exp: 5001000
-      floatExp: 0
-      star: 2
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: 1334281c-ffae-4875-8cb8-84caaa36cb08
-        - value: 8344ac2a-8b32-49a0-b77c-7edac54a1b7b
-        - value: 63508374-a4c2-457d-8892-78e5a557605c
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Mage
-      uuid:
-        value: ca74d413-d28a-4d56-a700-38944c197165
-      exp: 5001000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 0d227e6c-8536-40c4-a1b8-ac53b089deb7
-        - value: bd973fec-c6ac-4f9d-a2e8-993ea6892238
-        - value: 59f98846-dabf-4aba-8adc-66a64c8d4d82
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Mage
-      uuid:
-        value: 2be597d2-643f-4040-8c59-a6fd0b42c900
-      exp: 5018000
-      floatExp: 1500
-      star: 2
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: 
-        - value: 
-        - value: 
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Mage
-      uuid:
-        value: cdf5e408-f852-458c-ba30-c4f1bc6b98b6
-      exp: 5001000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 6c564ecb-8eaf-47aa-8742-7e1f039466d0
-        - value: 95df306a-0dbb-4c87-8ae7-9be45a4ff0d8
-        - value: eda1b281-fe82-4de7-b35f-fdaca77a97c0
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Cavalry
-      uuid:
-        value: 826c6717-7099-4429-a4fe-93a427845a31
-      exp: 2511000
-      floatExp: 1500
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 56a2321d-2742-4df5-9df3-0fd7cc708957
-        - value: 6384e86f-55fc-4ff8-8998-f3348d4e1f52
-        - value: a645795d-d048-4296-8c5c-4881b896f6e8
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Cavalry
-      uuid:
-        value: 52112c80-724e-4bca-a5c2-9dbf17289460
-      exp: 2505000
+        value: 6d5130b0-2f6e-4dcc-b2e6-db42854bc1f3
+      exp: 800
       floatExp: 0
       star: 1
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: cda180cb-fff6-4a5b-88f9-0654913cc5fd
-        - value: 30503282-c44c-4759-a897-6a96d301a5fc
-        - value: 6d96b877-4026-48eb-bc7b-fa9cf2fdec8f
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Cavalry
-      uuid:
-        value: 10872522-bd7d-4a11-8268-d4c05bede960
-      exp: 2500000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic Cavalry
-      uuid:
-        value: 2537f87a-0b5c-400e-be78-5568373e63bf
-      exp: 2500000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic Rifleman
-      uuid:
-        value: cb4df744-8fbb-49b9-abc8-94d2faf1a4d1
-      exp: 2520000
-      floatExp: 0
-      star: 1
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: 12b7905b-1617-4ec2-a0db-577591c94eb2
-        - value: 2cceaed2-ca28-4bf5-b4b2-9c11fa611760
-        - value: 1ed21af8-30e9-4c4e-94f0-16f874457764
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Rifleman
-      uuid:
-        value: 5471b989-7bb1-4a99-82cf-9822db0d954a
-      exp: 2517000
-      floatExp: 3000
-      star: 1
-      LeaderName: Arthur Connors
-      equipments:
-        equipmentUUID:
-        - value: c473c6c0-60e2-40b6-a18c-600efb8b5cfb
-        - value: cde9cf1a-5572-4b65-a444-9209cc79c7f1
-        - value: 55f37982-7b9c-4c65-9fdf-80ef1861d39d
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Rifleman
-      uuid:
-        value: a038f585-42bf-4590-97f4-917614bdb7fa
-      exp: 2515000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: dd438bc7-e1bc-4696-81a5-10426e166055
-        - value: 838da216-42c2-41da-b8c7-741132c17f3e
-        - value: 2b4771f1-1595-43a3-acb9-ada9c9cea397
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Rifleman
-      uuid:
-        value: d7de1817-696d-4933-8760-58a88831f6a9
-      exp: 2515000
-      floatExp: 0
-      star: 1
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: 
-        - value: 0d2c033e-e0d4-47be-9aa3-d0481d088e41
-        - value: 6cdf38b7-1bfb-4451-aa99-37242a4f634c
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic AircraftFighter
-      uuid:
-        value: a59032d1-b9fb-4359-ae7a-74150cfe0c47933-8760-58a88831f6a9
-      exp: 2500000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic AircraftFighter
-      uuid:
-        value: 642e105a-6ab8-4b96-b434-f2b15e99be3f
-      exp: 2509000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 00000000-0000-0000-0000-000000000000
-        - value: 1c4cd8a8-f44d-42b1-a200-25a6dae44569
-        - value: f2144592-5e40-4be4-a820-632f2f60feb1
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic AircraftFighter
-      uuid:
-        value: dc25bffa-3f71-4b37-9f53-f62a1907990c
-      exp: 2500000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 97ba9a11-871d-44b0-8295-894f2274ea00
-        - value: 2b5f0ad5-8a2b-45c8-a47b-13ba0306cd0b
-        - value: d283affa-a6f9-4acc-b04c-0a7896182486
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic AircraftFighter
-      uuid:
-        value: fb5b2cbd-d1d1-4ae5-8dc3-75e6612241af
-      exp: 2500000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic Dragon
-      uuid:
-        value: ec651cad-f113-4aef-83ae-ea817093f79c
-      exp: 2500000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 65306223-27c8-447b-9072-d08bff7402a7
-        - value: 3262215f-0450-45bd-880c-5a245ed7e9f5
-        - value: 4f6ca90e-0dda-4db1-92ba-c60350d1ef66
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Dragon
-      uuid:
-        value: 1cbcf0f1-be40-4ea0-818e-51f232fd6cc4
-      exp: 2522000
-      floatExp: 1500
-      star: 1
-      LeaderName: Anexar Flotics
-      equipments:
-        equipmentUUID:
-        - value: 
-        - value: 
-        - value: 
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Dragon
-      uuid:
-        value: 84f0b70f-5b39-4d27-9cf4-ecbf4481890e
-      exp: 2500000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: e5063489-b2c7-4a3b-835a-edfcbcfde2bd
-        - value: 3b9e9a2c-74dd-4768-baac-8690bf9bb0ee
-        - value: 80d3ed09-500d-4267-8383-30f4241b1447
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Dragon
-      uuid:
-        value: 81ee59aa-733c-4288-a8cd-203f14fa00ba
-      exp: 2511000
-      floatExp: 1500
-      star: 1
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: 
-        - value: 
-        - value: 
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Airship
-      uuid:
-        value: 1ae6066c-8c0d-4f4a-9689-1405aa073c4f
-      exp: 256000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic Mage
-      uuid:
-        value: fd1e89aa-39f5-43cb-b023-45e409eb49b6
-      exp: 254000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 18588a49-c423-4ff3-9f91-e36bfe09f3bb
-        - value: 32edd844-5dd3-445f-bb5c-ee31d7773979
-        - value: a1ed711e-c55c-426e-ad71-1b2dd7b50c9c
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Mage
-      uuid:
-        value: 481d22a0-4373-4b80-88ff-964f523716bb
-      exp: 251000
-      floatExp: 0
-      star: 1
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: 3b4231ca-dfab-45c6-a676-ae272792cc37
-        - value: 0c68a862-1cce-49d0-a7dd-6c2c3d727b4e
-        - value: 7f2a5e72-ac85-4758-ad64-bf0f495feb2c
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Dragon
-      uuid:
-        value: e82787e4-34eb-4015-8a86-69e0e8dfa43d
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID: []
-        equipmentLimit: 
-    - protoName: Basic Dragon
-      uuid:
-        value: ebd580ef-1c7b-408c-9e47-dbbdbe08eb89
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: b6e14caa-da86-48a0-9a45-810b8f652e5d
-        - value: 2dcc4e21-81f2-4159-a432-6e89377f5486
-        - value: a5681839-1e2f-410a-86fc-e7b5a0b5a581
-        equipmentLimit: 030000000300000003000000
-    - protoName: "\u03A3CityInfantry"
-      uuid:
-        value: a1c69613-1cca-438d-b56b-73e2c9aec777
-      exp: 256000
-      floatExp: 0
-      star: 1
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: ab6e0c7b-43a8-427c-b9ed-e64fda0f353f
-        - value: b56a4ae1-73bc-4572-8520-36f11ddffd44
-        - value: b56a4ae1-73bc-4572-8520-36f11ddffd44
-        equipmentLimit: 030000000300000003000000
-    - protoName: CalayCityInfantry
-      uuid:
-        value: 37cff0d2-b620-4a44-9919-aef955e132f5
-      exp: 300000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 7784ada0-e49b-4299-a25f-e803def21295
-        - value: 5cb30833-6dbb-451b-979a-6c519623509c
-        - value: 0f153cac-7ed4-4c4d-b77b-7120fd8ce233
-        equipmentLimit: 030000000300000003000000
-    - protoName: CalayCityInfantry
-      uuid:
-        value: e232fb80-08fe-402d-9a59-25f5e396391e
-      exp: 301000
-      floatExp: 0
-      star: 2
-      LeaderName: Empty
-      equipments:
-        equipmentUUID:
-        - value: 
-        - value: 
-        - value: 
-        equipmentLimit: 030000000300000003000000
-    - protoName: NewUtoCityInfantry
-      uuid:
-        value: 1d58336d-de5d-4c39-8cb4-e6e8627ac486
-      exp: 300000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: ca3f2a1b-2583-4ce4-aaac-5eda9ce0a45b
-        - value: 38cb6a50-98bc-4b8e-a5cf-7255f56b6de2
-        - value: c240666c-c835-46d8-b143-d5c0dca0bcf3
-        equipmentLimit: 030000000300000003000000
-    - protoName: NewUtoCityInfantry
-      uuid:
-        value: 49fb7494-a193-41fd-b6f7-7f38e91f906c
-      exp: 300000
-      floatExp: 0
-      star: 2
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 
-        - value: 
-        - value: 
-        equipmentLimit: 030000000300000003000000
-    - protoName: NewUtoCityInfantry
-      uuid:
-        value: 34109417-3b58-4aeb-92a2-14ae5031cd21
-      exp: 300000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 9ba0dac2-8f6e-4faf-906c-e5db27e46cf4
-        - value: bc473818-6f38-4a01-80a4-ec36f9fa2a41
-        - value: d7270c48-ffb3-48a6-bb8f-eb93b92c3956
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Shielder
-      uuid:
-        value: 81377706-f6e6-436f-85f7-c7a5ab0bdfed
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: fca49c46-611f-4fbb-a345-ad668c6630a0
-        - value: f259d5a0-49ae-413c-a0a3-da1829c5edb6
-        - value: 9a0bcf88-f835-4c4e-b988-86686f139fc1
+        - value: a6b90fa1-e5ce-4e88-81f9-d85a52ff8d04
+        - value: 5bfb120a-2848-4ceb-82cb-a2477e8a4081
+        - value: 9dd9c5d4-ebfd-4e85-8530-c866fdbccb9f
         equipmentLimit: 030000000300000003000000
     - protoName: Basic Infantry
       uuid:
-        value: 5f3df38f-c279-4d0d-9861-997d39e1606b
-      exp: 0
+        value: 83de6a6d-c992-49bc-9a6f-da388dfa7de2
+      exp: 800
       floatExp: 0
       star: 1
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: 3412d34f-d5c5-41ae-94cc-dfb38a9f18de
-        - value: 237adf44-0e5b-4700-900d-a20e8e5700c0
-        - value: a6da2b4c-3282-4fa5-ac47-c8c2a0e455be
+        - value: bd8288e0-f1fa-4831-ae70-2470c8f7e6f1
+        - value: c48475dd-496e-43e5-b183-2a70c76985c1
+        - value: 9a57c985-5868-4892-9739-8e0f82931a7c
         equipmentLimit: 030000000300000003000000
     - protoName: Basic Infantry
       uuid:
-        value: 380fdff9-dba9-475b-8f84-ad77304c694a
-      exp: 0
+        value: 492ea323-66ae-4aba-b71d-f7a0b20fe579
+      exp: 800
       floatExp: 0
       star: 1
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: 415dd947-caf5-4fd3-a095-671689743575
-        - value: 5fd559a2-fa18-44f0-ab5e-c620be593edb
-        - value: 63421aff-60dc-4a05-bffe-5ab4f166a09e
+        - value: 2c3377f8-70b1-47b1-be32-4d618214f2ff
+        - value: 91d446fc-4b0f-43a4-b715-e8d4f458632e
+        - value: 6e4ecc76-6789-4b66-9b96-c1e80672d187
         equipmentLimit: 030000000300000003000000
     - protoName: Basic Infantry
       uuid:
-        value: db68f120-b2a4-42d7-a77e-d2228cf31164
-      exp: 0
+        value: adca6780-19c4-4dc0-9457-adc43b994501
+      exp: 800
       floatExp: 0
       star: 1
       LeaderName: 
       equipments:
         equipmentUUID:
-        - value: a1fa8e97-6a24-43ca-b9da-70babf556e7e
-        - value: 2fb15989-a82a-4b45-b905-75cc7d81b786
-        - value: 6ac61474-4be9-4e65-a7cb-9f8bc40051ab
-        equipmentLimit: 030000000300000003000000
-    - protoName: CalayCityInfantry
-      uuid:
-        value: d3561710-a385-4e07-a4ab-4f074047b44a
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 35050cf7-d3bc-438b-8cf2-cfdd56a55bdc
-        - value: 1ce9f33e-1ad9-4859-8121-3ff10e06ae41
-        - value: fd7767dc-9ee9-4cf1-ab94-1b42998b146e
-        equipmentLimit: 030000000300000003000000
-    - protoName: CalayCityInfantry
-      uuid:
-        value: 88fbe7b7-d902-4981-bde1-45309f3d7b24
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 1bd50ba4-275d-478b-abf8-91a8ff637b80
-        - value: fe04f5f6-6328-4f7c-b5dc-0d088da2a325
-        - value: a28305e6-4cca-4b64-9954-9975fc2623ca
-        equipmentLimit: 030000000300000003000000
-    - protoName: CalayCityInfantry
-      uuid:
-        value: 2e8f9b78-5b5d-4af2-8167-fdb9b60d0f22
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 2f88d1f2-6d77-4465-97eb-afb8b294aec0
-        - value: e2226c5e-5863-4730-8e4d-bfb5e1ba2be0
-        - value: 059e58cd-8d2b-436e-ab87-4d11b5bc04d0
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic AircraftFighter
-      uuid:
-        value: de99e4c7-5a4e-41eb-9793-58b27f02288b
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: af5842c1-2aeb-4d77-8075-26f0e6a46c91
-        - value: 6d80371d-28e8-4fff-b9ed-43f795663f52
-        - value: 788ad8e5-65fe-4fdd-a356-6471e1fb376f
-        equipmentLimit: 030000000300000003000000
-    - protoName: NewUtoCityInfantry
-      uuid:
-        value: 623cff12-9c30-4aae-92e4-7307cae6e144
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: fc49f390-4a88-4fdb-b4ec-977f4cdc320e
-        - value: 7899cdc9-4ed0-44b1-91dd-9312ffb012f5
-        - value: ac66c0ad-36f8-4c1a-8b73-65543dcdb949
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Airship
-      uuid:
-        value: e7b5fb9d-b660-4e39-85cb-a9ffb20eafef
-      exp: 300000
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: ace9e64a-28c6-477b-990f-9df4ad136957
-        - value: 398ddae6-ebcc-4785-8e33-0a7f1f7c11ce
-        - value: 16f11962-b0e7-4c18-8802-16e9653e5837
-        equipmentLimit: 030000000300000003000000
-    - protoName: Basic Mage
-      uuid:
-        value: 4d3a1bd2-7827-45bb-a101-f5ea1808ac16
-      exp: 0
-      floatExp: 0
-      star: 1
-      LeaderName: 
-      equipments:
-        equipmentUUID:
-        - value: 51e1dd52-f216-4baf-ba2d-0f02cef9b0c8
-        - value: 5bedd06d-8a0b-40d4-8e53-37b68c90cd2d
-        - value: 5fe36727-bf70-425d-a995-2f9958255cc5
+        - value: a85047c9-bb6b-4490-8dc7-754ae7752254
+        - value: 71b54247-466d-4f92-8789-b50bde97ebb3
+        - value: 5e9c15f1-6e00-405a-9fcc-02ab54100620
         equipmentLimit: 030000000300000003000000
     leaders:
-    - protoName: Aether Erinope
-      uuid:
-        value: 211d9535-c411-4b9a-a8ba-33b8809f4c0a
-      exp: 6000
-      floatExp: 0
-    - protoName: Anexar Flotics
-      uuid:
-        value: d7c07b72-ed02-4c19-afb0-666e85e198a2
-      exp: 250000
-      floatExp: 0
-    - protoName: Arthur Connors
-      uuid:
-        value: 9cbeb4b3-9bac-4f1c-ba9a-56a1a16dda84
-      exp: 250000
-      floatExp: 0
     - protoName: Canute Svensson
       uuid:
-        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a9
-      exp: 250000
-      floatExp: 0
-    - protoName: Kathakria
-      uuid:
-        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a8
-      exp: 250000
-      floatExp: 0
-    - protoName: Phil Erinope VI
-      uuid:
-        value: 62ad9ae3-bb94-4290-9ca6-59b7564f99a7
-      exp: 250000
-      floatExp: 0
-    - protoName: Andrew Chaffin-Erinope
-      uuid:
-        value: 7a101737-8f6f-4223-85c0-e7c6cd23516a
-      exp: 0
-      floatExp: 0
-    - protoName: Aether Erinope
-      uuid:
-        value: ff85234d-8ac1-4af6-bcce-3294ed9ab5ba
-      exp: 0
-      floatExp: 0
-    - protoName: Theodore Pullan
-      uuid:
-        value: fbd94bd1-907f-4d7c-b475-2f2629496c2c
-      exp: 0
-      floatExp: 0
-    - protoName: Arthur Connors
-      uuid:
-        value: 1b979fa7-0655-4a56-86d6-7484c04a6776
-      exp: 0
-      floatExp: 0
-    - protoName: Finn Herman
-      uuid:
-        value: e04b315a-fd94-473c-9b37-51658aea9d09
+        value: 0f9913fe-d1cc-474c-a486-357f5eb14778
       exp: 0
       floatExp: 0
     - protoName: Ron Thompson
       uuid:
-        value: 314bd97b-cac8-4a09-844a-1dc018cd7387
+        value: 68bef5c7-b8d9-48ce-b754-20dc49f7468d
       exp: 0
       floatExp: 0
-    equipments:
-    - protoName: CeramicCompositeArmorIV
+    - protoName: Finn Herman
       uuid:
-        value: 456e53b3-d5d7-45fb-843f-c0f7808685d8
+        value: 9fc7b0aa-f2fc-4ab2-b26d-8bc7571b00da
       exp: 0
       floatExp: 0
-    - protoName: Epic Equipment
+    - protoName: Shelly McMoore
       uuid:
-        value: 4512f02c-1489-4bcc-a99d-5985c7d0c398
+        value: 9fc7b0aa-f2fc-4ab2-b26d-8bc7571b00d5
       exp: 0
       floatExp: 0
-    - protoName: Epic Equipment
+    - protoName: Evelyn Burke
       uuid:
-        value: 1f4ed2bb-4f18-4e5a-a1b1-1f90e71e02e0
+        value: 12c021dd-e04f-41b7-992b-9fcf9e1dd02d
       exp: 0
       floatExp: 0
-    - protoName: Common Equipment
-      uuid:
-        value: 825a0f13-57c5-4db2-a306-fa1dc4c3ba29
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 9b97a89d-f7e9-4ae2-aefb-e7fe34dd1d34
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 144dc316-71d6-4354-a976-9e53b4f5c1dc
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 764c8a3b-54ec-4a8f-8917-57c936a290e0
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 3ebe7ea1-6ad3-48ab-b887-c38483eb2871
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: a3168da4-7cc8-486a-8408-76065679895f
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterIV
-      uuid:
-        value: 234f0b90-1775-46e5-ba9b-74776d88fe3e
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterIV
-      uuid:
-        value: 9bd89bf8-7700-4fd5-94fc-045468fca289
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterIV
-      uuid:
-        value: d7df1ab5-8f9f-4849-904c-c925cb9403d7
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterIV
-      uuid:
-        value: 5d199a2a-bfe6-4221-8271-60b30cd41475
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterIV
-      uuid:
-        value: c668c26f-2639-4f82-a36f-77411f515b2b
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterII
-      uuid:
-        value: 6e754108-a880-44e0-b01d-209b3fe8286e
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterII
-      uuid:
-        value: 19ad9c58-91d3-41cd-b6bc-43a1d456075e
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterII
-      uuid:
-        value: 9062d171-f7de-488e-9974-c0fc365eaf72
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterII
-      uuid:
-        value: ff75e08a-4bd1-4566-a29b-3adcc474fa5a
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterI
-      uuid:
-        value: 7092ac42-84c0-46bd-ba6a-4dd5daf5a42e
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterI
-      uuid:
-        value: 33707d4f-1434-4b2a-8222-0da0c8b9fdc7
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterI
-      uuid:
-        value: 69246565-f6c2-4827-855b-82791e48ee21
-      exp: 0
-      floatExp: 0
-    - protoName: PersonalAethiumBeamEmitterI
-      uuid:
-        value: 6c9432e7-843b-4e8a-8d8b-dda82a512f21
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIII
-      uuid:
-        value: 99d039c6-051f-40c4-9e01-b592796db823
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIII
-      uuid:
-        value: a8a4bfb9-7545-4aef-adc3-3e04f877929e
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIII
-      uuid:
-        value: b141751a-8468-4d97-8fba-764aab5eb4e5
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIII
-      uuid:
-        value: c818853c-5a03-4ee5-abe1-f6012f2baf72
-      exp: 0
-      floatExp: 0
-    - protoName: MagneticGeneratorIII
-      uuid:
-        value: 659900c3-4034-483c-a407-a859aee3b378
-      exp: 0
-      floatExp: 0
-    - protoName: MagneticGeneratorIII
-      uuid:
-        value: 380e561a-affd-4899-993b-b1fa663f5dd2
-      exp: 0
-      floatExp: 0
-    - protoName: MagneticGeneratorIII
-      uuid:
-        value: 151da67e-567f-4976-8e2d-f7efc725f57a
-      exp: 0
-      floatExp: 0
-    - protoName: MagneticGeneratorIII
-      uuid:
-        value: 3d16c405-6036-46a4-a1db-180764d72f6b
-      exp: 0
-      floatExp: 0
-    - protoName: HeavyAethiumBeamEmitterII
-      uuid:
-        value: 3e6e10c6-5712-4cd4-a807-f8f3cde478a3
-      exp: 0
-      floatExp: 0
-    - protoName: HeavyAethiumBeamEmitterII
-      uuid:
-        value: f1ee8029-c7a0-4dfb-a44c-ecc79a6d7de0
-      exp: 0
-      floatExp: 0
-    - protoName: HeavyAethiumBeamEmitterII
-      uuid:
-        value: 8f1fc96e-e4bf-41fd-b998-97ae262023af
-      exp: 0
-      floatExp: 0
-    - protoName: HeavyAethiumBeamEmitterII
-      uuid:
-        value: 69d6ff33-0aa4-4928-93d0-3f89dc0be63c
-      exp: 0
-      floatExp: 0
-    - protoName: Rare Equipment
-      uuid:
-        value: b8eb6446-88e4-4e12-b438-4a98775dbcd1
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 5684d85b-3925-4cb1-a5ff-516f201401eb
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: bcf0654c-a2a5-43e6-af5b-63760243c0d3
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 457b6303-e1d4-4e91-a6ad-7abae79e400a
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: a5122654-4539-4014-a7c9-2be515edd6fe
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: c4d5ec5f-e70e-41c2-99c9-c687db83555d
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 2b562a70-a11d-4bff-86de-10a68fac87e6
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: bf2e0c50-022a-4f3b-be62-9bb6846d869b
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: c24ec2b8-894e-4576-97ee-b2433dd4ef31
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 54e91863-e7ad-46c1-942d-64b6ee6fe179
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 94b0b35a-a98e-4fce-bd22-83ecc662e57e
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 0acd4087-b91f-4192-8de3-5cd8cca564b4
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 65570d1a-9330-4ead-aa36-e63c78c2ee13
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: d6fd36f8-2164-4121-83fd-19e801387ff6
-      exp: 0
-      floatExp: 0
-    - protoName: Rare Equipment
-      uuid:
-        value: 650fefd0-de38-4ca3-a79f-9a47cb2af7af
-      exp: 0
-      floatExp: 0
-    - protoName: Rare Equipment
-      uuid:
-        value: 0683edd4-d60e-4b02-a349-d235f8601f9a
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorII
-      uuid:
-        value: ebf65dfd-f7a4-47d5-9a92-e84a5edc1b9d
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorII
-      uuid:
-        value: 293b9f80-1ad0-4fec-9fa7-c888417c0936
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIV
-      uuid:
-        value: 2aa886ec-c26e-4787-a774-56bb88d3725d
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 1e52c1eb-91cb-4918-88d8-7e6a5a05b88d
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 1f378dcd-981f-48c6-8ca1-0e1498118987
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIV
-      uuid:
-        value: 80c3a3d0-e4ce-4438-8024-632097464343
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIV
-      uuid:
-        value: 11d7d455-3bf4-4722-b567-f0bc8d942c8a
-      exp: 0
-      floatExp: 0
-    - protoName: Legendary Equipment
-      uuid:
-        value: 6588f85e-febc-4375-8462-66ac458bc4b1
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIV
-      uuid:
-        value: 4b89c600-2f27-482b-981a-dcdf6248fd71
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIII
-      uuid:
-        value: de052be4-54a9-4e8e-ad15-5b89baa68048
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIII
-      uuid:
-        value: 0dde95ce-665f-4d9e-b126-bbd12bce07d1
-      exp: 0
-      floatExp: 0
-    - protoName: AeroReinforceArmorIV
-      uuid:
-        value: c9c67b24-10f4-4c84-acd4-0ff4befebae4
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 140dad1f-a54f-4967-96c9-5bfbcd8e536c
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: 260a0f82-b17b-4374-9c95-df09e971bcc8
-      exp: 0
-      floatExp: 0
-    - protoName: CeramicCompositeArmorIV
-      uuid:
-        value: c8fdf2e1-d4c3-4427-a7f3-1fbd2ed0660f
-      exp: 0
-      floatExp: 0
-    eventCards:
-    - protoName: flashLight
-      uuid:
-        value: d23512f8-861e-4ae3-9ebb-4d552d0b926f
-      exp: 0
-      floatExp: 0
-      level: 0
-    - protoName: Trick
-      uuid:
-        value: f67edbd2-19ab-4297-8696-330f63af2b48
-      exp: 0
-      floatExp: 0
-      level: 0
-    - protoName: Oppotunity
-      uuid:
-        value: 275c835b-f1bb-4fa4-be54-b6ad43e45595
-      exp: 0
-      floatExp: 0
-      level: 0
-    - protoName: addActionPoint
-      uuid:
-        value: 9a5f367a-319b-4c5e-9ad5-ce605e5f6452
-      exp: 0
-      floatExp: 0
-      level: 2
-    - protoName: EnemyMove
-      uuid:
-        value: 3a65a6c1-5d70-45df-a856-0f153dc6bbb5
-      exp: 0
-      floatExp: 0
-      level: 0
+    equipments: []
+    eventCards: []
     collectionStoriesID:
-    - Prologue
-    - Epilogue
-    collectionLetterID:
-    - Amlos1
-    - reflection from Arthur Connors
+    - Prologue2
+    - Prologue3
+    collectionLetterID: []
     countableItems:
       list: []
-    gameProgree:
+    gameProgress:
       list: []
     gameStatistic:
       armiesUnlocked:
-      - T1
-      - T2
-      - Empty
-      - Basic Mage
-      - Basic Dragon
-      - "\u03A3CityInfantry"
-      - CalayCityInfantry
-      - NewUtoCityInfantry
-      - Basic Shielder
       - Basic Infantry
-      - Basic AircraftFighter
-      - Basic Airship
-      equipmentsUnlocked:
-      - 
-      - 
-      - 
-      - Common Equipment
-      - Epic Equipment
-      - CeramicCompositeArmorIV
-      - PersonalAethiumBeamEmitterIV
-      - PersonalAethiumBeamEmitterII
-      - PersonalAethiumBeamEmitterI
-      - AeroReinforceArmorIII
-      - MagneticGeneratorIII
-      - HeavyAethiumBeamEmitterII
-      - Rare Equipment
-      - EnemyMove
-      - CeramicCompositeArmorII
-      - AeroReinforceArmorII
-      - AeroReinforceArmorIV
-      - Legendary Equipment
-      - CeramicCompositeArmorIII
+      equipmentsUnlocked: []
       leadersUnlocked:
-      - Andrew Chaffin-Erinope
-      - Aether Erinope
-      - Arthur Connors
-      - Finn Herman
+      - Canute Svensson
+      - Shelly McMoore
       - Ron Thompson
+      - Finn Herman
+      - Evelyn Burke
       eventCardUnlocked: []
-    gameSceneBeenTo: []
+    gameSceneBeenTo:
+    - Main
+    - Legion
+    - StoryLineLoader
+    - Battle
+    - Hallway
+    - EventCardPile
+    - ChapterSelection

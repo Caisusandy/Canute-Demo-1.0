@@ -15,13 +15,13 @@ namespace Canute.LevelTree
 
         public string Name => data.Exist()?.Name ?? "Empty";
         public string Title => this.Lang("title");
-        public string Subtitle => this.Lang("subtitle");
+        public string Description => this.Lang("description");
         public LevelData Data => data;
         public Story BackgroundStory => Story.Get(backgroundStoryName);
         public Story EndStory => Story.Get(endStoryName);
         public Level LastLevel => GameData.Levels.GetLevel(lastLevel);
         public Level Next => GameData.Levels.GetLevel(nextLevel);
-        public bool IsPassed { get { if (Name == "Empty") return true; return Game.PlayerData.PlayerChapterTreeStat.Get(Name)?.IsPassed == true; } }
+        public bool IsPassed { get { if (Name == "Empty") return true; return Game.PlayerData.PlayerChapterTreeStat.Get(Name).IsPassed; } }
 
 
         public bool OpenBGStory()
@@ -56,15 +56,25 @@ namespace Canute.LevelTree
 
         public void Pass()
         {
-            Game.PlayerData.PlayerChapterTreeStat.Add(this);
+            LevelInfo pass = new LevelInfo(Name, true);
+            if (Game.PlayerData.PlayerChapterTreeStat.Contains(pass)) return;
+
+            LevelInfo notPass = new LevelInfo(Name, false);
+            if (Game.PlayerData.PlayerChapterTreeStat.Contains(notPass)) Game.PlayerData.PlayerChapterTreeStat.Remove(notPass);
+            Game.PlayerData.PlayerChapterTreeStat.Add(pass);
+
+            PlayerFile.SaveCurrentData();
         }
 
         public void NotPass()
         {
-            if (Game.PlayerData.PlayerChapterTreeStat.Contains(new LevelInfo(Name, true)))
-                return;
-            if (!Game.PlayerData.PlayerChapterTreeStat.Contains(new LevelInfo(Name, false)))
-                Game.PlayerData.PlayerChapterTreeStat.Add(new LevelInfo(Name, false));
+            LevelInfo pass = new LevelInfo(Name, true);
+            if (Game.PlayerData.PlayerChapterTreeStat.Contains(pass)) return;
+
+            LevelInfo notPass = new LevelInfo(Name, false);
+            if (Game.PlayerData.PlayerChapterTreeStat.Contains(notPass)) return;
+            Game.PlayerData.PlayerChapterTreeStat.Add(notPass);
+            PlayerFile.SaveCurrentData();
         }
 
         public bool Equals(Level level)

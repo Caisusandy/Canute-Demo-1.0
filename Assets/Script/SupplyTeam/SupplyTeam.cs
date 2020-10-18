@@ -209,6 +209,7 @@ namespace Canute.SupplyTeam
                     {
                         ItemPrize armyPrize = WeightItem.Get(UnityEngine.Random.value, possiblePrize.ToArray());
                         //Debug.Log(armyPrize);
+                        if (armyPrize == null) continue;
                         if (armyPrize.LeaderRequirement != null)
                             foreach (var name in armyPrize.LeaderRequirement)
                             {
@@ -231,6 +232,7 @@ namespace Canute.SupplyTeam
                     {
                         ItemPrize equipment = WeightItem.Get(UnityEngine.Random.value, possiblePrize.ToArray());
                         //Debug.Log(equipment);
+                        if (equipment == null) continue;
                         if (equipment.LeaderRequirement != null)
                             foreach (var name in equipment.LeaderRequirement)
                             {
@@ -259,6 +261,7 @@ namespace Canute.SupplyTeam
 
                         ItemPrize leaderPrize = WeightItem.Get(UnityEngine.Random.value, possiblePrize.ToArray());
                         //Debug.Log(leaderPrize);
+                        if (leaderPrize == null) continue;
                         if (leaderPrize.LeaderRequirement != null)
                             foreach (var name in leaderPrize.LeaderRequirement)
                             {

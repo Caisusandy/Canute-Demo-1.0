@@ -1,0 +1,343 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-1Pro
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-1Pro
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-1Pro.1
+      line: "When Canute woke up the next morning, his brain was fuzzy for the first
+        few moments, letting him forget what had happened. After a few bleary seconds,
+        it all came roaring back and brought him to his senses. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.2
+      line: "His teacher\u2019s face flashed through his head as he put on his uniform.
+        He said a polite good morning to everyone as he walked down the halls, but
+        his mind was storming. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.3
+      line: "After the battle with the Swishese, Finn and Ron had called a meeting
+        of all the other superiors to decide what they were going to do about the
+        prisoner list from Swisha Main City. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.4
+      line: "It would probably be a long ordeal with plenty of arguments; the thought
+        of it made Canute roll his eyes at the ceiling. Just because I\u2019m a leader
+        doesn\u2019t mean I enjoy bickering over details. He turned into the meeting
+        room, where a grim sight awaited him. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.5
+      line: "All of the leaders were arranged around an oval table. Ron was there,
+        Finn perched nervously beside him, along with all of the heads of departments.
+        A few of them, mostly older women, shot him cold glances as he sank into
+        his chair at the head, silently chastising him for being late. \nCanute ignored
+        them and waited for the others to stop talking. Once the room quieted, you
+        could\u2019ve heard a pin drop. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Pro.6
+      line: "Good morning, everyone.\nThank you for being here on such short notice.
+        As I\u2019m sure you\u2019ve all heard by now, we received some important,
+        but concerning, information from Swisha Main City.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.7
+      line: "With a click of button, the list of prisoners was displayed on a holographic
+        projector in the center of the table. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Pro.8
+      line: 'Arthur Connors has been captured. He is being held in Swisha Main City,
+        and I intend to assemble a team to rescue him.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.9
+      line: 'Whispers spread across the room at his words, and Canute steeled himself
+        for the rapid-fire questions. A grey-haired woman further down the table
+        raised her hand politely.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Grey-haired woman
+      id: Ch7-1Pro.10
+      line: 'How do we know this list is trustworthy?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.11
+      line: "Ron Thompson sat forward. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-1Pro.12
+      line: "I\u2019ll have you know my sources are nothing but the best. This is
+        a real list of prisoners, and we can sit here and pick over minor issues
+        all day, or we can actually do something about it.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.13
+      line: "Hear, hear! \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.14
+      line: "Several people spoke out across the table and nodded their heads when
+        he had finished. Ron sat back, satisfied. Canute shook his head at his mentor\u2019s
+        strong spirit and continued.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Pro.15
+      line: 'Are there other questions?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.16
+      line: 'At the opposite end of the table, a well-dressed woman raised one finger.
+        Her pixie-cut silver hair, combined with her startling blue eyes, gave her
+        an intimidating appearance. Shelly McMoore was, in truth, a kind woman, but
+        she knew how to command a room.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Shelly McMoore
+      id: Ch7-1Pro.17
+      line: 'Have you considered the implications of the Swishese attack? Now may
+        not be the best time to attempt something like this.
+
+        Canute opened
+        his mouth to disagree, but he knew in his mind that her words held truth.
+        He decided to take a more diplomatic approach.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Pro.18
+      line: "With all due respect, Commander, Connors is not a young man. The prison
+        conditions in Swisha Main City aren\u2019t exactly going to be beneficial.
+        We need to act before something happens to him.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.19
+      line: "Shelly\u2019s mouth tilted up a little on one side. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Shelly McMoore
+      id: Ch7-1Pro.20
+      line: "\u201CI admire your ambition and loyalty, General, but you would do
+        well to leave your emotions out of the equation this time.\u201D Her words
+        were carefully chosen, but they had a powerful impact. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.21
+      line: 'Canute itched to say something back, but he controlled himself and took
+        a small breath.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Pro.22
+      line: 'Thank you for sharing your perspective, Ms. McMoore. Is anyone against
+        taking a vote about this?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.23
+      line: "He paused, listening for objections. When no one spoke, he continued
+        with his idea. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Pro.24
+      line: 'All in favor of the rescue mission, raise your hands.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.25
+      line: 'A little more than half the room, including Finn and Ron, raised their
+        hands. Most of them, Canute realized, had known Arthur personally.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Pro.26
+      line: 'Thank you. All opposed?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.27
+      line: Everyone else raised their hands. McMoore locked eyes with Canute for
+        a moment as she did so. Canute counted those opposed and sat down.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-1Pro.28
+      line: 'The vote appears to be in favor of the rescue mission. In that case,
+        we will proceed with planning.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.29
+      line: "By the end of the meeting, a team of men and women had been put together.
+        It was a motley group, made up of skilled marksman, scouts, and one of Theodore\u2019s
+        best hackers, along with Canute, Ron, and Finn. Towards the end, Finn had
+        spoken up after a lot of thought and announced that he wanted to come along
+        as well.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.30
+      line: "Canute couldn\u2019t think of any reasons why not, so when the day came
+        for them to depart for Swisha, Finn was standing beside him at the launch
+        bay, chattering his ear off and munching loudly on a bag of chips. Canute
+        thanked Aethium when the racket of all the engines drowned him out, but that
+        didn\u2019t stop Finn. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-1Pro.31
+      line: "They had travelled across the plains for a few hours, and he was still
+        talking. Canute\u2019s head felt like it was spinning, and he didn\u2019t
+        notice the squad of soldiers waiting for them until it was too late. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

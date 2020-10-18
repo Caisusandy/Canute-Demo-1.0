@@ -6,13 +6,14 @@ using Canute.Shops;
 using Canute.LanguageSystem;
 using System;
 using Canute.Module;
+using Canute.BattleSystem;
 
 namespace Canute.UI.Shop
 {
     public class SHOPOnShelfItem : MonoBehaviour
     {
         public Button button => GetComponent<Button>();
-        public Text name;
+        public new Text name;
         public Text cost;
         public Image icon;
         public Image rarity;
@@ -92,6 +93,8 @@ namespace Canute.UI.Shop
                     info = equipment.DisplayingName + "\n" + equipment.Bonus.ToArray().Lang();
                     break;
                 case Item.Type.eventCard:
+                    EventCard eventCard = GameData.Prototypes.GetEventCardPrototype(pricePair.Prize.Name);
+                    info = eventCard.DisplayingName + "\n" + eventCard.Effect.Info();
                     break;
                 default:
                     break;

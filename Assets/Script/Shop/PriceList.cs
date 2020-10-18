@@ -58,6 +58,7 @@ namespace Canute.Shops
                 return true;
             }
 
+            PlayerFile.SaveCurrentData();
             return false;
         }
 

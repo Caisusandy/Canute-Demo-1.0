@@ -82,6 +82,7 @@ namespace Canute.BattleSystem
         public override void OnMouseDown()
         {
             if (StorySystem.StoryDisplayer.instance) return;
+            if (PausePanel.instance.enabled) return;
             base.OnMouseDown();
             //Select();
             //TriggerSelectEvent(true);
@@ -90,12 +91,14 @@ namespace Canute.BattleSystem
         public override void OnMouseDrag()
         {
             if (StorySystem.StoryDisplayer.instance) return;
+            if (PausePanel.instance.enabled) return;
             MapEntity.MoveMap();
         }
 
         public override void OnMouseUp()
         {
             if (StorySystem.StoryDisplayer.instance) return;
+            if (PausePanel.instance.enabled) return;
             if (HasArmyStandOn)
             {
                 Unselect();

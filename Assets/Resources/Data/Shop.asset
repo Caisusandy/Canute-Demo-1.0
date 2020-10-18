@@ -12,177 +12,206 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4154cae96aafe14daf275218b5a96cf, type: 3}
   m_Name: Shop
   m_EditorClassIdentifier: 
-  army:
-  - itemName: Basic Mage
-    weight: 10
-  - itemName: Basic Infantry
-    weight: 20
-  - itemName: Basic Shielder
-    weight: 10
-  - itemName: Basic WarMachine
-    weight: 10
-  - itemName: Basic Cavalry
-    weight: 10
-  - itemName: Basic Rifleman
-    weight: 10
-  leader: []
-  equipment: []
   ArmyPriceList:
     list:
-    - prize:
+    - weight: 10
+      prize:
         name: Basic Mage
         count: 1
         parameter: 0
         type: 2
-      weight: 10
       price:
       - name: 0
         count: 500
-    - prize:
+    - weight: 50
+      prize:
         name: Basic Infantry
         count: 1
         parameter: 0
         type: 2
-      weight: 50
       price:
       - name: 0
         count: 100
-    - prize:
+    - weight: 20
+      prize:
         name: Basic Shielder
         count: 1
         parameter: 0
         type: 2
-      weight: 20
       price:
       - name: 0
         count: 250
-    - prize:
+    - weight: 20
+      prize:
         name: Basic Cavalry
         count: 1
         parameter: 0
         type: 2
-      weight: 20
       price:
       - name: 0
         count: 250
-    - prize:
+    - weight: 10
+      prize:
         name: Basic Rifleman
         count: 0
         parameter: 0
         type: 2
-      weight: 10
       price:
       - name: 0
         count: 500
-    - prize:
+    - weight: 16
+      prize:
         name: Basic WarMachine
         count: 1
         parameter: 0
         type: 2
-      weight: 16
       price:
       - name: 0
         count: 300
-    - prize:
+    - weight: 50
+      prize:
         name: "\u03A3CityInfantry"
         count: 1
         parameter: 0
         type: 2
-      weight: 50
       price:
       - name: 0
         count: 300
-    - prize:
+    - weight: 50
+      prize:
         name: CalayCityInfantry
         count: 1
         parameter: 0
         type: 2
-      weight: 50
       price:
       - name: 0
         count: 300
-    - prize:
+    - weight: 50
+      prize:
         name: NewUtoCityInfantry
         count: 1
         parameter: 0
         type: 2
-      weight: 50
       price:
       - name: 0
         count: 300
-  LeaderPriceList:
-    list: []
+  EventCardPriceList:
+    list:
+    - weight: 50
+      prize:
+        name: eventDrawCard
+        count: 1
+        parameter: 0
+        type: 5
+      price:
+      - name: 0
+        count: 2000
+      - name: 1
+        count: 2000
+    - weight: 50
+      prize:
+        name: addActionPoint
+        count: 1
+        parameter: 0
+        type: 5
+      price:
+      - name: 0
+        count: 2000
+      - name: 1
+        count: 2000
+    - weight: 50
+      prize:
+        name: enemyMove
+        count: 1
+        parameter: 0
+        type: 5
+      price:
+      - name: 0
+        count: 2000
+      - name: 1
+        count: 2000
+    - weight: 50
+      prize:
+        name: flashLight
+        count: 1
+        parameter: 0
+        type: 5
+      price:
+      - name: 0
+        count: 2000
+      - name: 1
+        count: 2000
   EquipementPriceList:
     list:
-    - prize:
+    - weight: 50
+      prize:
         name: AeroReinforceArmorI
         count: 1
         parameter: 0
         type: 4
-      weight: 50
       price:
       - name: 3
         count: 2
-    - prize:
+    - weight: 25
+      prize:
         name: AeroReinforceArmorII
         count: 1
         parameter: 0
         type: 4
-      weight: 25
       price:
       - name: 3
         count: 5
-    - prize:
+    - weight: 12
+      prize:
         name: AeroReinforceArmorIII
         count: 1
         parameter: 0
         type: 4
-      weight: 12
       price:
       - name: 3
         count: 10
-    - prize:
+    - weight: 5
+      prize:
         name: AeroReinforceArmorIV
         count: 1
         parameter: 0
         type: 4
-      weight: 5
       price:
       - name: 3
         count: 20
-    - prize:
+    - weight: 50
+      prize:
         name: CeramicCompositeArmorI
         count: 1
         parameter: 0
         type: 4
-      weight: 50
       price:
       - name: 3
         count: 2
-    - prize:
+    - weight: 25
+      prize:
         name: CeramicCompositeArmorII
         count: 1
         parameter: 0
         type: 4
-      weight: 25
       price:
       - name: 3
         count: 10
-    - prize:
+    - weight: 12
+      prize:
         name: CeramicCompositeArmorIII
         count: 1
         parameter: 0
         type: 4
-      weight: 12
       price:
       - name: 3
         count: 10
-    - prize:
+    - weight: 5
+      prize:
         name: CeramicCompositeArmorIV
         count: 1
         parameter: 0
         type: 4
-      weight: 5
       price:
       - name: 3
         count: 20

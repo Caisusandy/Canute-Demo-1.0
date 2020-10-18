@@ -14,13 +14,22 @@ namespace Canute.BattleSystem
     {
         private static MapEntity instance;
 
+
         public List<ColumnEntity> columnEntities;
         public List<FakeCell> fakeCells;
         public bool wasOnDrag;
 
-        public bool isInitialized;
-        public bool isRandomMap;
-        public int seed;
+        [Tooltip("is map initialized")] public bool isInitialized;
+        [Tooltip("is map random generated")] public bool isRandomMap;
+        [Tooltip("is map has only one terrain")] public bool isSingleTerrainMap;
+        [Tooltip("is map drew already")] public bool isDrew;
+        [Tooltip("is map round? end->origin")] public bool isRound;
+        [Tooltip("seed of the random map [also the fake cells]")] public int seed;
+
+        static float maxX;
+        static float maxY;
+        static float minX;
+        static float minY;
 
         public static MapEntity CurrentMap => instance;
         public static bool WasOnDrag { get => instance.wasOnDrag; set { instance.wasOnDrag = value; SetCellCollider(!value); } }
@@ -32,7 +41,7 @@ namespace Canute.BattleSystem
         public float MapRadius => ((Vector2)Origin.transform.position - (Vector2)Center.transform.position).magnitude * ((Center.x - 1) / Center.x);
         public CellEntity Origin => this[0][0];
         public CellEntity Center { get => GetCenter(); }
-        public CellEntity End { get => GetEndCell(); }
+        public CellEntity End { get => columnEntities.Last().Last(); }
 
         public ColumnEntity this[int index] => columnEntities[index];
         public CellEntity this[Vector2Int pos] => GetCell(pos);
@@ -46,9 +55,28 @@ namespace Canute.BattleSystem
             name = "Map";
             instance = this;
             transform.localScale = Vector3.one;
+
             if (!isInitialized) BattleMapSetUp();
-            if (!(Game.CurrentBattle is null))
-                Game.CurrentBattle.MapEntity = this;
+            if (!(Game.CurrentBattle is null)) Game.CurrentBattle.MapEntity = this;
+            if (columnEntities.Count > 0) FixColumnPosition();
+        }
+
+        private void FixColumnPosition()
+        {
+            for (int i = 0; i < columnEntities.Count; i++)
+            {
+                ColumnEntity item = columnEntities[i];
+                var pos = item.transform.localPosition;
+                pos.y = i * CellSize.y;
+                item.transform.localPosition = pos;
+                for (int j = 0; j < item.cellEntities.Count; j++)
+                {
+                    var cell = item.cellEntities[j];
+                    pos = cell.transform.localPosition;
+                    pos.x = j * CellSize.x;
+                    cell.transform.localPosition = pos;
+                }
+            }
         }
 
         public override void Start()
@@ -56,7 +84,12 @@ namespace Canute.BattleSystem
             base.Start();
 
             SetPlayerCameraToPosition();
-            FakeCellSetupAndColor();
+            CellSetupAndColor();
+
+            maxX = End.transform.position.x;
+            maxY = End.transform.position.y;
+            minX = Origin.transform.position.x;
+            minY = Origin.transform.position.y;
         }
 
         private void SetPlayerCameraToPosition()
@@ -82,19 +115,22 @@ namespace Canute.BattleSystem
             }
         }
 
-        private void FakeCellSetupAndColor()
+        private void CellSetupAndColor()
         {
             StartCoroutine(SetUpEnumerator());
+            IEnumerator SetUpEnumerator()
+            {
+                yield return BattleUI.ShowRotator(true);
+                yield return FakeMapGenerator.instance.CreateFakeCells();
+                yield return FakeCellSetUp();
+
+                CellColoration cellColoration = new CellColoration(this);
+                yield return cellColoration.Color();
+                yield return BattleUI.ShowRotator(false);
+                BattleUI.FadeInBattle();
+            }
         }
 
-        private IEnumerator SetUpEnumerator()
-        {
-            yield return FakeMapGenerator.instance.CreateFakeCells();
-            yield return FakeCellSetUp();
-            CellColoration cellColoration = new CellColoration(this);
-            yield return cellColoration.Color();
-            BattleUI.FadeInBattle();
-        }
 
         private IEnumerator FakeCellSetUp()
         {
@@ -104,8 +140,18 @@ namespace Canute.BattleSystem
             Vector3 localPosition = FakeMapGenerator.instance.fakeColumn.transform.localPosition; localPosition.z = 0;
             FakeMapGenerator.instance.fakeColumn.transform.localPosition = localPosition;
 
-            var rmg = new RandomTerrainGenerator(this, seed);
-            rmg.RandomizeFakeCellTerrain();
+            if (!isSingleTerrainMap)
+            {
+                var rmg = new RandomTerrainGenerator(this, seed);
+                rmg.RandomizeFakeCellTerrain();
+            }
+            else
+            {
+                foreach (var item in fakeCells)
+                {
+                    item.terrain = Origin.data.terrain;
+                }
+            }
             yield return null;
         }
 
@@ -173,17 +219,6 @@ namespace Canute.BattleSystem
             CellEntity cellEntity = this[y][x];
             return cellEntity;
         }
-        /// <summary>
-        /// return the end cell of the map, whether the cell is reachable for the player or not.
-        /// </summary>
-        /// <returns></returns>
-        private CellEntity GetEndCell()
-        {
-            int y = columnEntities.Count - 1;
-            int x = columnEntities[y].cellEntities.Count - 1;
-            CellEntity cellEntity = this[y][x];
-            return cellEntity;
-        }
 
 
         public static implicit operator List<ColumnEntity>(MapEntity mapEntity)
@@ -217,10 +252,10 @@ namespace Canute.BattleSystem
         public CellEntity GetCell(int x, int y)
         {
             //Debug.Log(x + "," + y);
-            if (y < 0 || x < 0)
-            {
-                return null;
-            }
+            //if (y < 0 || x < 0)
+            //{
+            //    return null;
+            //}
             //if (columnEntities.Count > y)
             //{
             //    if (this[y].cellEntities.Count > x)
@@ -235,7 +270,17 @@ namespace Canute.BattleSystem
 
                 return cellEntity;
             }
-            catch { }
+            catch
+            {
+                if (isRound)
+                {
+                    if (x < 0) x += Size.x;
+                    if (x >= Size.x) x -= Size.x;
+                    if (y < 0) y += Size.y;
+                    if (y >= Size.y) y -= Size.y;
+                    return GetCell(x, y);
+                }
+            }
             //    }
             //}
             return null;
@@ -751,10 +796,6 @@ namespace Canute.BattleSystem
             Vector2 newPos = Camera.main.transform.position - delta;
             float magnitude = (new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y) - newPos).magnitude;
 
-            float maxX = CurrentMap.End.transform.position.x;
-            float maxY = CurrentMap.End.transform.position.y;
-            float minX = CurrentMap.Origin.transform.position.x;
-            float minY = CurrentMap.Origin.transform.position.y;
 
             //Debug.Log(maxX);
             //Debug.Log(maxY);
@@ -768,10 +809,10 @@ namespace Canute.BattleSystem
             }
             else
             {
-                Vector2 oldPos = Camera.main.transform.position;
-                float oldMagnitude = (new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y) - oldPos).magnitude;
-                if (magnitude > oldMagnitude) { return; }
-                Camera.main.transform.position -= delta;
+                //Vector2 oldPos = Camera.main.transform.position;
+                //float oldMagnitude = (new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y) - oldPos).magnitude;
+                //if (magnitude > oldMagnitude) { return; }
+                //Camera.main.transform.position -= delta;
             }
             WasOnDrag = true;
             //if (magnitude > CurrentMap.MapRadius)
@@ -829,6 +870,46 @@ namespace Canute.BattleSystem
                     cell.SetCellSprite();
                 }
             }
+        }
+
+
+        [ContextMenu("Horizontal Flip")]
+        public void HorizontalFlip()
+        {
+            for (int i = 0; i < columnEntities.Count; i++)
+            {
+                List<Vector3> pos = new List<Vector3>();
+                int cellCount = columnEntities[i].cellEntities.Count;
+                for (int j = 0; j < cellCount; j++)
+                {
+                    CellEntity cellEntity = columnEntities[i].cellEntities[j];
+                    pos.Add(cellEntity.transform.position);
+                }
+                for (int j = cellCount - 1; j >= 0; j--)
+                {
+                    columnEntities[i].cellEntities[j].transform.position = pos[cellCount - j - 1];
+                    columnEntities[i].cellEntities[j].transform.SetAsLastSibling();
+                }
+                columnEntities[i].cellEntities.Reverse();
+            }
+        }
+
+        [ContextMenu("Vertical Flip")]
+        public void VerticalFlip()
+        {
+            List<Vector3> pos = new List<Vector3>();
+            int columnCount = columnEntities.Count;
+            for (int j = 0; j < columnCount; j++)
+            {
+                var cellEntity = columnEntities[j];
+                pos.Add(cellEntity.transform.position);
+            }
+            for (int j = columnCount - 1; j >= 0; j--)
+            {
+                columnEntities[j].transform.position = pos[columnCount - j - 1];
+                columnEntities[j].transform.SetAsLastSibling();
+            }
+            columnEntities.Reverse();
         }
     }
 

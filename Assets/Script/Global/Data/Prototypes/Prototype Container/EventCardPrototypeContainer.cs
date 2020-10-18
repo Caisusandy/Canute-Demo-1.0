@@ -68,6 +68,12 @@ namespace Canute.BattleSystem
                 }
             };
         }
+
+        [ContextMenu("Add To Prototype Factory")]
+        public override void AddToPrototypeFactory()
+        {
+            base.AddToPrototypeFactory();
+        }
     }
 
 

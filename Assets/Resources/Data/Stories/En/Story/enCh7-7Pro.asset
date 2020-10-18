@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-7Pro
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-7Pro
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-7Pro.1
+      line: "There was a clock on the wall, but Canute could have forgotten what
+        day it was and it wouldn't have mattered. His spirit had crumbled when that
+        door slammed. All of the hardship in the world couldn\u2019t cure him of
+        his idealistic streak, and now he was paying for it. Eventually he lost track
+        of how long he stared at that door, ingraining every detail into his mind
+        until he went numb.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Pro.2
+      line: "Canute woke a few hours later. Somewhere, his eyes had closed, and he
+        found himself slumped against the bottom bunk. He picked himself up and straightened
+        his uniform. Even though he didn\u2019t want to admit it, his mind was significantly
+        clearer. The more he thought, the more he realized how foolish he had been
+        to throw himself a pity party like this. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Pro.3
+      line: "If he had done that at any other point in their mission to rescue Arthur,
+        he certainly wouldn\u2019t have made it to this point in time. Maybe it would
+        have been better if I wasn\u2019t here. Canute stopped that idea right where
+        it stood, standing up and pacing back and forth. He remembered the speech
+        he had given the rest of the team the morning of their first breakout attempt.
+        You are all here for a reason. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Pro.4
+      line: "And so am I, Canute realized, his eyes glowing with new resolve. As
+        if his change of heart had summoned the opportunity, his cell door hissed
+        open. Canute looked up, uncertain. For a moment, the bright rectangle of
+        light was empty, then a figure stepped into it. They were rather short, and
+        it took a moment for Canute\u2019s eyes to adjust. Then he noticed the red
+        hair.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-7Pro.5
+      line: 'Evelyn?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-7Pro.6
+      line: 'No time to explain. Come with me.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Pro.7
+      line: 'She shoved a blaster at his chest and began making her way down the
+        hall at a swift pace. Canute, more than a little shocked, went after her.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-7Pro.8
+      line: "How did you know we were here?\u201D\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-7Pro.9
+      line: 'I have my ways.
+
+        Her mouth curled up in a slight smile.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-7Pro.10
+      line: "Do you have any way to find the others?\u201D\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-7Pro.11
+      line: 'The tech team insisted on installing trackers in each of our jackets
+        so we could find each other if we got separated.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Pro.12
+      line: "He pulled a small device out of his pocket and began fiddling with it.
+        Soon, multicolored dots showed up on the screen, marking the location of
+        each of the team members. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-7Pro.13
+      line: "They came to a slow stop around the corner from Finn\u2019s cell. A
+        quick glance revealed four robotic guards outside of it. Evelyn looked at
+        Canute and raised three fingers. One, she mouthed, two, three. The pair jumped
+        around the corner and opened fire.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

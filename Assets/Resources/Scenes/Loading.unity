@@ -406,7 +406,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.5
 --- !u!222 &359155413
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1138,6 +1138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06339371c502714a874dfc38a20bd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progress: 0
+  initialPosition: {x: 0, y: 0, z: 0}
   background: {fileID: 7214319244052323081}
   processing: {fileID: 7062230971724262587}
 --- !u!114 &7219895397103488724

@@ -8,7 +8,6 @@ namespace Canute.UI
 {
     public class GameStartMenu : MonoBehaviour
     {
-        public const string currentFirstChat = "theLastDayAtFantarium";
         public static GameStartMenu instance;
         public Button continueButton;
         public Button newGameButton;
@@ -79,7 +78,13 @@ namespace Canute.UI
 
         public void Credit()
         {
-            var info = "Wendell Cai (Leader, programmer, artist, story, soundtrack),\n Kira Wang (artist),\n Adelle Alexander (story), \nand Gia Khanh (programmer)\nAdvisor: David Rios";
+            var info = "Minerva Studio" +
+                "\nWendell Cai (Leader, programmer, artist, story, soundtrack)," +
+                "\nKira Wang (artist)," +
+                "\nAdelle Alexander (story), " +
+                "\nGia Khanh (programmer)" +
+                "\nAdvisor: David Rios" +
+                "\nThis is the demo version of the game";
             var a = InfoWindow.Create(info);
             a.transform.SetParent(transform.parent);
             Destroy(a.gameObject.GetComponent<GraphicRaycaster>());

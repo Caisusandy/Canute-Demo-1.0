@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 732c2c3c72ac27842bc140ee0ed6d795, type: 3}
+  m_Name: BTEnemyCampus
+  m_EditorClassIdentifier: 
+  Prototype: {fileID: 0}
+  spawnType: 0
+  radius: 0
+  generateCount: 1
+  battleBuilding:
+    name: Campus
+    prefab: {fileID: 4389890953154326045, guid: f2f2300a4046d8441b7322b6e51e3199,
+      type: 3}
+    uuid:
+      value: d7ba28e4-9bab-432a-9b11-fdb6c116ba44
+    ownerUUID:
+      value: fb0e9c51-50b9-4727-85e0-1f0858d8e59a
+    allowMove: 0
+    coordinate: {x: 12, y: 12}
+    stats:
+      list: []
+    localLeader:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: 23acdc8b-bdb7-4cf8-915e-ad4fde334379
+      ownerUUID:
+        value: 
+      allowMove: 0
+      coordinate: {x: 0, y: 0}
+      stats:
+        list: []
+      career: 0
+      leadingArmyUUID:
+        value: 
+      isViceCommander: 0
+      level: 0
+      bounes: []
+    autonomousType: 0
+    anger: 0
+    career: 0
+    properties:
+      defense: 0
+      critRate: 0
+      critBonus: 0
+      critBounes: 0
+      pop: 0
+      attackRange: 4
+      moveRange: 0
+      standPosition: 0
+      attackPosition: 0
+      attackArea: 0
+      damageExtraCount: 0
+      targetCount: 0
+      attackType: 0
+      skill:
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []
+    maxHealth: -1
+    health: -1
+    armor: 0
+    damage: 0

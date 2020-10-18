@@ -7,8 +7,7 @@ Canute.Career.Politician=Chính trị gia
 Canute.Career.General=Tướng
 Canute.Career.Merchant=Thương nhân
 Canute.Career.None=None
-#Title skip this section
-Canute.LevelTree.Level.TestingLevel.subtitle=Testing Map Subtitle
+#Title
 Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
 Canute.LevelTree.Level.CalayInfinite.subtitle=Bản đồ vô cực
 Canute.LevelTree.Level.CalayInfinite.title=Khu vực tập luyện
@@ -79,6 +78,8 @@ Canute.Army.Basic Cavalry.name=Basic Cavalry
 Canute.Army.Basic Rifleman.name=Basic Rifleman
 Canute.Army.Basic AircraftFighter.name=Basic Aircraft Fighter
 Canute.Army.Basic Dragon.name=Basic Dragon
+Canute.Army.Amlos.name=Amlos
+Canute.Army.AnexarFlotics.name=Anexar Flotics
 Canute.Army.CalayCityInfantry.name=Calay City Infantry
 Canute.Army.ΣCityInfantry.name=Σ City Infantry
 Canute.Army.NewUtoCityInfantry.name=New Uto City Infantry
@@ -99,7 +100,12 @@ Canute.Equipment.MagneticGeneratorI.name=Magnetic Shield Generator Lv.I
 Canute.Equipment.MagneticGeneratorII.name=Magnetic Shield Generator Lv.II
 Canute.Equipment.MagneticGeneratorIII.name=Magnetic Shield Generator Lv.III
 Canute.Equipment.MagneticGeneratorIV.name=Magnetic Shield Generator Lv.IV
-#
+#eventcard name
+Canute.EventCard.eventDrawCard.name=Draw Card
+Canute.EventCard.addActionPoint.name=Action Point
+Canute.EventCard.enemyMove.name=Enemy Move
+Canute.EventCard.flashLight.name=Flash Light
+#building name
 Canute.Building.Campus.name=Campus
 #
 Canute.BattleSystem.Cell.name=Region
@@ -153,6 +159,8 @@ Canute.BattleSystem.Effect+Types.EMPImpact=EMP Impact
 Canute.BattleSystem.Effect+Types.EMPImpact.info=Army cannot do anything.
 Canute.BattleSystem.Effect+Types.flashLight=Flash Light
 Canute.BattleSystem.Effect+Types.flashLight.info=Army cannot do anything.
+Canute.BattleSystem.Effect+Types.enemyMove=Enemy Move
+Canute.BattleSystem.Effect+Types.enemyMove.info=Move Enemy Army
 Canute.BattleSystem.Effect+Types.motherOf=Mothership.
 Canute.BattleSystem.Effect+Types.motherOf.info=$targetName's Mothership.
 
@@ -326,7 +334,22 @@ Canute.Character.Shelly McMoore.supplyTeamComeBackWithItem=Mr. Chairman, we foun
 Canute.Character.Shelly McMoore.supplyTeamComeBackWithLeader=Mr. Chairman, we have a new member.
 Canute.Character.Shelly McMoore.supplyTeamComeBackWithStory=Mr. Chairman, there are some rumors outside and I think you are supposed to know about it.
 Canute.Character.Shelly McMoore.supplyTeamComeBackWithLetter=Mr. Chairman, we found some lost documents, and I think you should read it.
-//everything under this
+
+
+Canute.Character.Amlos.WordLine.0=No book of history of Fantarium anywhere in Fantarium have found by me, they are all past stories of Fantarium. 
+Canute.Character.Amlos.WordLine.1=The difference between history and past story is story can be somehow fictional but history is the reality itself. 
+Canute.Character.Amlos.WordLine.2=When they modify even one section of history, the only thing left is just a story.
+Canute.Character.Amlos.WordLine.3=The real history we are looking for, might have already disappeared, don't you think?
+Canute.Character.Amlos.WordLine.4=Feel weird of the word come from me? this is how dragons speak... I will tried to say something more natural for you.
+Canute.Character.Amlos.WordLine.5=However, dragons are only loyal to our king, I can't said I will be loyal to you, Canute.
+Canute.Character.Amlos.WordLine.6=I don't know how long I can be here, my king will summon me soon.
+Canute.Character.Amlos.WordLine.7=Sorry, but do you think there is any chance that we can go back to the last day we had in Vasolina?
+Canute.Character.Amlos.WordLine.8=No... Don't put your hand on my head. Ok fine... Just hope no one see this.
+Canute.Character.Amlos.supplyTeamComeBackWithItem=Canute, this gift is for you.
+Canute.Character.Amlos.supplyTeamComeBackWithLeader=Canute, the leader following is a new friend I believe.
+Canute.Character.Amlos.supplyTeamComeBackWithStory=Canute, this news is discovered by me.
+Canute.Character.Amlos.supplyTeamComeBackWithLetter=Canute, this letter is discovered by me.
+
 
 Canute.Character.Empty.WordLine.0= 
 Canute.Character.Empty.WordLine.1= 

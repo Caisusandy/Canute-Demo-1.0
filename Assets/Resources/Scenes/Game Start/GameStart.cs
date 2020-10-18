@@ -24,17 +24,17 @@ namespace Canute.UI
             if (initialized)
             {
                 pre.enabled = false;
-                StartCoroutine("MenuShowImmediate");
-                StartCoroutine("TitleShowImmediate");
+                StartCoroutine(MenuShowImmediate());
+                StartCoroutine(TitleShowImmediate());
                 menu.transform.position = Vector3.zero;
                 audioSource.enabled = true;
             }
             else
             {
-                StartCoroutine("StartShowMenu");
-                StartCoroutine("MenuShow");
-                StartCoroutine("TitleShow");
-                StartCoroutine("LineShowAndHide");
+                StartCoroutine(StartShowMenu());
+                StartCoroutine(MenuShow());
+                StartCoroutine(TitleShow());
+                StartCoroutine(LineShowAndHide());
                 initialized = true;
             }
         }
@@ -44,7 +44,7 @@ namespace Canute.UI
             return () =>
             {
                 audioSource.enabled = true;
-                StartCoroutine("BackgroundMotion");
+                StartCoroutine(BackgroundMotion());
             };
         }
 
@@ -65,8 +65,10 @@ namespace Canute.UI
                     yield return new WaitForFixedUpdate();
                 else break;
             }
-
-            var motion = Module.LinearMotion.SetMotion(menu, Vector3.zero, EndMotion());
+            var pos = menu.transform.position;
+            pos.x = 0;
+            pos.y = 0;
+            var motion = LinearMotion.SetMotion(menu, pos, EndMotion());
             motion.second = 7.3f;
         }
 

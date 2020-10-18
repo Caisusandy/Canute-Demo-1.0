@@ -1,0 +1,485 @@
+#語言文件可以用#開始來寫備註，//這樣也可以（不能寫在文字後面）
+#(若沒有星號，沒有等於號也不會出事)
+
+#職業
+Canute.Career.Scholar=學者
+Canute.Career.Politician=政客
+Canute.Career.General=軍人
+Canute.Career.Merchant=商人
+Canute.Career.None=無
+#Title
+Canute.LevelTree.Level.TestingLevel.title=Calay 1-1 (Testing Map Title)
+Canute.LevelTree.Level.TestingLevel.description=Testing Map description
+Canute.LevelTree.Level.Basic Training.title=基礎訓練營
+Canute.LevelTree.Level.Basic Training.description=無限戰役
+Canute.LevelTree.Level.Advance Training.title=高級訓練營
+Canute.LevelTree.Level.Advance Training.description=無限戰役
+Canute.LevelTree.Level.CalayInfinite.title=訓練營
+Canute.LevelTree.Level.CalayInfinite.description=無限戰役
+Canute.LevelTree.Level.1-2.title=1-2 色布提亞據點
+Canute.LevelTree.Level.1-2.description=第一次遭遇色布提亞據點
+
+Canute.LevelTree.Level.Training.name=訓練項目
+Canute.LevelTree.Level.Training.description=日常訓練
+
+Canute.LevelTree.Level.Ch1.name=啟蒙
+Canute.LevelTree.Level.Ch1.description=喀來城的巖石之下，一切開始改變...
+
+Canute.LevelTree.Level.Ch2.name=???
+Canute.LevelTree.Level.Ch2.description=???
+
+Canute.LevelTree.Level.Ch3.name=???
+Canute.LevelTree.Level.Ch3.description=???
+
+Canute.LevelTree.Level.Ch4.name=???
+Canute.LevelTree.Level.Ch4.description=???
+
+Canute.LevelTree.Level.Ch5.name=???
+Canute.LevelTree.Level.Ch5.description=???
+
+Canute.LevelTree.Level.Ch6.name=???
+Canute.LevelTree.Level.Ch6.description=???
+
+Canute.LevelTree.Level.Ch7.name=斯威士瓦營救行動
+Canute.LevelTree.Level.Ch7.description=在寒冷的幻境裏，我應該開始完成一些未完成的事情...
+Canute.LevelTree.Level.Ch7-0.description=日常戰役
+Canute.LevelTree.Level.Ch7-0.title=基地外
+Canute.LevelTree.Level.Ch7-1.title=營救行動: 基地之外
+Canute.LevelTree.Level.Ch7-1.description=勝利：擊敗所有敵方
+Canute.LevelTree.Level.Ch7-2.title=營救行動: 不明來歷的警察
+Canute.LevelTree.Level.Ch7-2.description=撤退：至少有一支軍隊抵達地圖右側.
+Canute.LevelTree.Level.Ch7-3.title=營救行動: 劫匪
+Canute.LevelTree.Level.Ch7-3.description=勝利：擊敗所有敵方
+Canute.LevelTree.Level.Ch7-4.title=營救行動: 最高議會的小隊
+Canute.LevelTree.Level.Ch7-4.description=勝利：擊敗所有敵方
+Canute.LevelTree.Level.Ch7-5.title=營救行動: 暴徒
+Canute.LevelTree.Level.Ch7-5.description=勝利：擊敗所有敵方
+Canute.LevelTree.Level.Ch7-6.title=營救行動: 斯威士瓦監獄
+Canute.LevelTree.Level.Ch7-6.description=勝利：擊敗所有敵方 [註意：環形地圖]
+Canute.LevelTree.Level.Ch7-7.title=營救行動: 孩子
+Canute.LevelTree.Level.Ch7-7.description=勝利：擊敗所有敵方
+Canute.LevelTree.Level.Ch7-8.title=營救行動: 內閣
+Canute.LevelTree.Level.Ch7-8.description=勝利：擊敗所有敵方
+Canute.LevelTree.Level.Ch7-9.title=營救行動: 亞尼科薩和最高議會
+Canute.LevelTree.Level.Ch7-9.description=撤退：至少有一支軍隊抵達地圖右側.
+Canute.LevelTree.Level.Ch7-10.title=營救行動: 老朋友
+Canute.LevelTree.Level.Ch7-10.description=勝利：擊敗亞尼科薩和所有敵方
+
+#Currency
+Canute.Shops.Currency+Type.fedgram=聯邦克
+Canute.Shops.Currency+Type.manpower=人力
+Canute.Shops.Currency+Type.mantleAlloy=地幔合金
+Canute.Shops.Currency+Type.aethium=輝石
+#
+Canute.BattleSystem.PropertyType.level=等級
+Canute.BattleSystem.PropertyType.damage=傷害
+Canute.BattleSystem.PropertyType.health=生命
+Canute.BattleSystem.PropertyType.defense=防禦
+Canute.BattleSystem.PropertyType.moveRange=移動範圍
+Canute.BattleSystem.PropertyType.attackRange=攻擊範圍
+Canute.BattleSystem.PropertyType.critRate=暴擊概率
+Canute.BattleSystem.PropertyType.critBonus=暴擊加成
+Canute.BattleSystem.PropertyType.pop=人口
+Canute.BattleSystem.PropertyType.armor=護甲
+Canute.BattleSystem.PropertyType.anger=怒氣
+#
+Canute.BattleSystem.BattleProperty.AttackType=攻擊方式
+Canute.BattleSystem.BattleProperty+AttackType.none=無法攻擊
+Canute.BattleSystem.BattleProperty+AttackType.melee=近戰
+Canute.BattleSystem.BattleProperty+AttackType.projectile=遠程
+Canute.BattleSystem.BattleProperty+AttackType.single=單一目標
+Canute.BattleSystem.BattleProperty+AttackType.singleMelee=單一目標，近戰
+Canute.BattleSystem.BattleProperty+AttackType.singleProjectile=單一目標，遠程
+Canute.BattleSystem.BattleProperty+AttackType.area=範圍
+Canute.BattleSystem.BattleProperty+AttackType.areaMelee=範圍，近戰
+Canute.BattleSystem.BattleProperty+AttackType.areaProjectile=範圍，遠程
+Canute.BattleSystem.BattleProperty+AttackType.splash=濺射
+Canute.BattleSystem.BattleProperty+AttackType.splashMelee=濺射，近戰
+Canute.BattleSystem.BattleProperty+AttackType.splashProjectile=濺射，遠程
+#
+Canute.BattleSystem.BattleProperty.StandPosition=位置
+Canute.BattleSystem.BattleProperty.AttackPosition=攻擊位置
+Canute.BattleSystem.BattleProperty+Position.land=地面
+Canute.BattleSystem.BattleProperty+Position.air=空中
+Canute.BattleSystem.BattleProperty+Position.all=任何
+Canute.BattleSystem.BattleProperty+Position.none=虛空？
+#
+Canute.Army+Types.mage=法師
+Canute.Army+Types.warMachine=戰場
+Canute.Army+Types.infantry=士兵
+Canute.Army+Types.shielder=重甲兵
+Canute.Army+Types.cavalry=騎兵
+Canute.Army+Types.rifleman=火槍手
+Canute.Army+Types.aircraftFighter=戰機
+Canute.Army+Types.airship=空艇
+Canute.Army+Types.dragon=龍
+#
+Canute.Army.AlphaArmy.name=A
+Canute.Army.BetaArmy.name=B
+Canute.Army.Basic Mage.name=基礎法師
+Canute.Army.Basic WarMachine.name=基礎戰車
+Canute.Army.Basic Infantry.name=基礎士兵
+Canute.Army.Basic Shielder.name=基礎重甲兵
+Canute.Army.Basic Cavalry.name=基礎騎兵
+Canute.Army.Basic Rifleman.name=基礎火槍手
+Canute.Army.Basic AircraftFighter.name=基礎戰機
+Canute.Army.Basic Airship.name=基礎空艇
+Canute.Army.Basic Dragon.name=龍
+Canute.Army.CalayCityInfantry.name=喀來城防步兵
+Canute.Army.ΣCityInfantry.name=西格瑪象限城防步兵
+Canute.Army.NewUtoCityInfantry.name=新猶托城防步兵
+# 
+Canute.Equipment.AeroReinforceArmorI.name=航空級護甲 Lv.I
+Canute.Equipment.AeroReinforceArmorII.name=航空級護甲 Lv.II
+Canute.Equipment.AeroReinforceArmorIII.name=航空級護甲 Lv.III
+Canute.Equipment.AeroReinforceArmorIV.name=航空級護甲 Lv.IV
+Canute.Equipment.CeramicCompositeArmorI.name=陶瓷復合護甲 Lv.I
+Canute.Equipment.CeramicCompositeArmorII.name=陶瓷復合護甲 Lv.II
+Canute.Equipment.CeramicCompositeArmorIII.name=陶瓷復合護甲 Lv.III
+Canute.Equipment.CeramicCompositeArmorIV.name=陶瓷復合護甲 Lv.IV
+Canute.Equipment.PersonalAethiumBeamEmitterI.name=單兵輝石束發射器 Mk 1
+Canute.Equipment.PersonalAethiumBeamEmitterII.name=單兵輝石束發射器 Mk 2
+Canute.Equipment.PersonalAethiumBeamEmitterIII.name=單兵輝石束發射器 Mk 3
+Canute.Equipment.PersonalAethiumBeamEmitterIV.name=單兵輝石束發射器 Mk 4
+Canute.Equipment.MagneticGeneratorI.name=電磁護盾發射器 Lv.I
+Canute.Equipment.MagneticGeneratorII.name=電磁護盾發射器 Lv.II
+Canute.Equipment.MagneticGeneratorIII.name=電磁護盾發射器 Lv.III
+Canute.Equipment.MagneticGeneratorIV.name=電磁護盾發射器 Lv.IV
+#eventcard name
+Canute.EventCard.eventDrawCard.name=摸牌
+Canute.EventCard.addActionPoint.name=行動點加成
+Canute.EventCard.enemyMove.name=敵軍移動
+Canute.EventCard.flashLight.name=閃光彈
+#building name
+Canute.Building.Campus.name=營地
+#
+Canute.BattleSystem.Cell.name=區域
+#地形
+Canute.BattleSystem.Terrain.Plain=平原
+Canute.BattleSystem.Terrain.Forest=樹林
+Canute.BattleSystem.Terrain.Hills=丘陵
+Canute.BattleSystem.Terrain.Mountains=高山
+Canute.BattleSystem.Terrain.River=河流
+Canute.BattleSystem.Terrain.Ocean=海洋
+Canute.BattleSystem.Terrain.Sand=沙地
+Canute.BattleSystem.Terrain.Swamp=沼澤
+ 
+
+#效果
+Canute.BattleSystem.Effect+Types.none=無
+Canute.BattleSystem.Effect+Types.none.info= 
+Canute.BattleSystem.Effect+Types.move=移動
+Canute.BattleSystem.Effect+Types.move.info=移動目標到@param格範圍內
+Canute.BattleSystem.Effect+Types.enterMove=移動
+Canute.BattleSystem.Effect+Types.enterMove.info=移動目標到@param格範圍內
+Canute.BattleSystem.Effect+Types.enterAttack=攻擊
+Canute.BattleSystem.Effect+Types.enterAttack.info=攻擊敵方
+Canute.BattleSystem.Effect+Types.drawCard=摸牌
+Canute.BattleSystem.Effect+Types.drawCard.info=獲得@param張牌
+Canute.BattleSystem.Effect+Types.armySwitch=交換
+Canute.BattleSystem.Effect+Types.armySwitch.info=交換軍隊位置
+Canute.BattleSystem.Effect+Types.damageIncreasePercentage=傷害增加
+Canute.BattleSystem.Effect+Types.damageIncreasePercentage.info=增加@param%傷害
+Canute.BattleSystem.Effect+Types.damageDecreasePercentage=傷害減少
+Canute.BattleSystem.Effect+Types.damageDecreasePercentage.info=減少@param%傷害
+Canute.BattleSystem.Effect+Types.createArmy=派出軍隊
+Canute.BattleSystem.Effect+Types.createArmy.info=將@name 派往選定地塊
+Canute.BattleSystem.Effect+Types.attackRange=攻擊範圍加成
+Canute.BattleSystem.Effect+Types.attackRange.info=攻擊範圍+@param 
+Canute.BattleSystem.Effect+Types.cardMinusPoint=補給
+Canute.BattleSystem.Effect+Types.cardMinusPoint.info=使一張牌需要的行動點數-@param
+Canute.BattleSystem.Effect+Types.confusion=幹擾
+Canute.BattleSystem.Effect+Types.confusion.info=使一只軍隊移動距離與攻擊距離降低@param%
+Canute.BattleSystem.Effect+Types.protection=保護
+Canute.BattleSystem.Effect+Types.protection.info=受到 $sourceName 的保護
+Canute.BattleSystem.Effect+Types.addActionPoint=行動點
+Canute.BattleSystem.Effect+Types.addActionPoint.info=增加@param 行動點 
+Canute.BattleSystem.Effect+Types.addArmor=增加護甲
+Canute.BattleSystem.Effect+Types.addArmor.info=添加@param 護甲
+Canute.BattleSystem.Effect+Types.magePoison=Poison
+Canute.BattleSystem.Effect+Types.magePoison.info=軍隊每回合減少 @param HP.
+Canute.BattleSystem.Effect+Types.coma=眩暈
+Canute.BattleSystem.Effect+Types.coma.info=軍隊眩暈中.
+Canute.BattleSystem.Effect+Types.EMPImpact=EMP
+Canute.BattleSystem.Effect+Types.EMPImpact.info=軍隊癱瘓中.
+Canute.BattleSystem.Effect+Types.flashLight=閃光
+Canute.BattleSystem.Effect+Types.flashLight.info=軍隊眩暈中.
+Canute.BattleSystem.Effect+Types.enemyMove=移動
+Canute.BattleSystem.Effect+Types.enemyMove.info=移動敵方軍隊
+Canute.BattleSystem.Effect+Types.motherOf=母艦
+Canute.BattleSystem.Effect+Types.motherOf.info=$targetName的母艦
+
+
+#resonance
+Canute.BattleSystem.Effect+Types.infantryLightness=共鳴：輕盈
+Canute.BattleSystem.Effect+Types.infantryLightness.info=每回合第一次移動時不消耗行動點
+Canute.BattleSystem.Effect+Types.infantryDamageBonus=共鳴：傷害提升
+Canute.BattleSystem.Effect+Types.infantryDamageBonus.info=造出的傷害提升@param%
+Canute.BattleSystem.Effect+Types.mageResonance=共鳴：法師增援
+Canute.BattleSystem.Effect+Types.mageResonance.info=@distance格範圍內友軍造出的傷害提升@param%
+Canute.BattleSystem.Effect+Types.warMachineResonance=共鳴:戰車加固
+Canute.BattleSystem.Effect+Types.warMachineResonance.info=戰車增加@param防禦
+Canute.BattleSystem.Effect+Types.shielderResonance=共鳴:重甲加厚
+Canute.BattleSystem.Effect+Types.shielderResonance.info=血量提升@param%
+Canute.BattleSystem.Effect+Types.rifleman1Resonance=共鳴：火槍手穿透
+Canute.BattleSystem.Effect+Types.rifleman1Resonance.info=火槍手攻擊時，若火槍手與目標處於同一條線上，相同方向的敵方軍隊受到穿透攻擊，傷害隨距離衰減，最遠為火槍手的攻擊範圍的2倍
+Canute.BattleSystem.Effect+Types.riflemanAttackRange=共鳴：範圍提升
+Canute.BattleSystem.Effect+Types.riflemanAttackRange.info=地面單位攻擊距離+1
+Canute.BattleSystem.Effect+Types.rifleman2Resonance=共鳴：穿透增強
+Canute.BattleSystem.Effect+Types.rifleman2Resonance.info=穿透能在非一線時觸發
+Canute.BattleSystem.Effect+Types.riflemanCriticalBonus=共鳴：爆傷提升
+Canute.BattleSystem.Effect+Types.riflemanCriticalBonus.info=火槍手增加暴擊傷害20%
+Canute.BattleSystem.Effect+Types.addDragonCard=共鳴：龍法術
+Canute.BattleSystem.Effect+Types.addDragonCard.info=獲得@count張龍牌
+Canute.BattleSystem.Effect+Types.shielderPenetrate=共鳴：重甲兵穿透
+Canute.BattleSystem.Effect+Types.shielderPenetrate.info=穿透非重甲兵單位的防禦，同時額外造成的敵方當前血量@param%的真實傷害
+#dragon
+Canute.BattleSystem.Effect+Types.dragonAttack=攻擊狀態（龍）
+Canute.BattleSystem.Effect+Types.dragonAttack.info=龍準備發動攻擊
+Canute.BattleSystem.Effect+Types.dragonDefense=防禦狀態（龍）
+Canute.BattleSystem.Effect+Types.dragonDefense.info=龍準備應敵
+
+Canute.BattleSystem.Effect+Types.dragonAirAttack=空中打擊
+Canute.BattleSystem.Effect+Types.dragonAirAttack.info=提升 10% 攻擊, 但是被選中軍隊的攻擊目標被切換為空中.
+Canute.BattleSystem.Effect+Types.dragonAttackBonus=遠程打擊
+Canute.BattleSystem.Effect+Types.dragonAttackBonus.info=攻擊範圍 +1， 但是被選中軍隊移動距離 -2
+Canute.BattleSystem.Effect+Types.dragonCritAttack=致命一擊
+Canute.BattleSystem.Effect+Types.dragonCritAttack.info=提升 20% 攻擊, 100% 暴擊率，但是被選中軍隊當前血量-10%
+Canute.BattleSystem.Effect+Types.dragonDualAttack=多重打擊
+Canute.BattleSystem.Effect+Types.dragonDualAttack.info=每次攻擊造成 2 次傷害，但是被選中軍隊攻擊降低 45%
+Canute.BattleSystem.Effect+Types.dragonMoveBonus=快速移動
+Canute.BattleSystem.Effect+Types.dragonMoveBonus.info=移動距離 +1， 但是被選中軍隊攻擊範圍 -2
+Canute.BattleSystem.Effect+Types.dragonStrike=猛力沖擊
+Canute.BattleSystem.Effect+Types.dragonStrike.info=移動後，目的地敵方會被向後推 2 格, 但是被選中軍隊無法攻擊
+
+Canute.BattleSystem.Effect+Types.addDragonAirAttack=空中打擊
+Canute.BattleSystem.Effect+Types.addDragonAirAttack.info=提升 10% 攻擊, 但是被選中軍隊的攻擊目標被切換為空中.
+Canute.BattleSystem.Effect+Types.addDragonAttackBonus=遠程打擊
+Canute.BattleSystem.Effect+Types.addDragonAttackBonus.info=攻擊範圍 +1， 但是被選中軍隊移動距離 -2
+Canute.BattleSystem.Effect+Types.addDragonCritAttack=致命一擊
+Canute.BattleSystem.Effect+Types.addDragonCritAttack.info=提升 20% 攻擊, 100% 暴擊率，但是被選中軍隊當前血量-10%
+Canute.BattleSystem.Effect+Types.addDragonDualAttack=多重打擊
+Canute.BattleSystem.Effect+Types.addDragonDualAttack.info=每次攻擊造成 2 次傷害，但是被選中軍隊攻擊降低 45% 
+Canute.BattleSystem.Effect+Types.addDragonMoveBonus=快速移動
+Canute.BattleSystem.Effect+Types.addDragonMoveBonus.info=移動距離 +1， 但是被選中軍隊攻擊範圍 -2
+Canute.BattleSystem.Effect+Types.addDragonStrike=猛力沖擊
+Canute.BattleSystem.Effect+Types.addDragonStrike.info=移動後，目的地敵方會被向後推 2 格, 但是被選中軍隊無法攻擊
+
+
+Canute.BattleSystem.Effect+Types.NoSkill=---
+Canute.BattleSystem.Effect+Types.NoSkill=無技能
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill=Basic Infantry Skill
+Canute.BattleSystem.Effect+Types.BasicInfantrySkill.info= attack twice the [closest, possible, lowest HP] target (with a 0%/40% damage decrease)
+Canute.BattleSystem.Effect+Types.BasicMageSkill=Mage Skill
+Canute.BattleSystem.Effect+Types.BasicMageSkill.info=對最近敵方單位造成3回合的法師的40%傷害的生命值損失.
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill=Basic Rifleman Skill
+Canute.BattleSystem.Effect+Types.BasicRiflemanSkill.info=to cause the [closest, possible, lowest HP] target lost 20% Current HP and 40% lost HP
+Canute.BattleSystem.Effect+Types.BasicShielderSkill=Basic Shielder Skill
+Canute.BattleSystem.Effect+Types.BasicShielderSkill.info=Give whole legion's army 20 Armor
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill=Basic War Machine Skill
+Canute.BattleSystem.Effect+Types.BasicWarMachineSkill.info=Attack the closest possible target, and causes a 140% damage.
+Canute.BattleSystem.Effect+Types.BasicCavalrySkill=Basic Cavalry Skill
+Canute.BattleSystem.Effect+Types.BasicCavalrySkill.info=當血量高於50%時，移動到最近敵方面前，若小於50%則對最近敵方並造成1倍傷害
+Canute.BattleSystem.Effect+Types.BasicDragonSkill=Dragon Skill
+Canute.BattleSystem.Effect+Types.BasicDragonSkill=獲取3張中央牌堆的手牌，並且這些手牌不消耗任何行動點數
+
+#aircraft fighter
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn=機場位置
+Canute.BattleSystem.Effect+Types.aircraftFighterReturn.info=軍隊機場位置： @x,@y
+Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy=戰機：前進
+Canute.BattleSystem.Effect+Types.aircreaftFighterTowardEnemy.info=戰機在攻擊後會移動到敵方面前，直到本回合結束後回到上一次主動移動的目的地。
+
+#Level State
+Canute.BattleSystem.UI.ResultUI.Passed=戰鬥結束
+Canute.BattleSystem.UI.ResultUI.Lost=戰鬥失敗
+
+#錯誤事件
+Canute.BattleSystem.BattleEventError.CardNoSelectingEntity=沒有選擇目標！
+Canute.BattleSystem.BattleEventError.CardNotValidTarget=不是一個有效目標！
+Canute.BattleSystem.BattleEventError.CardPlayerHasNoActionPoint=沒有足夠多的行動點！
+
+Canute.BattleSystem.BattleEventError.armyNoTarget=軍隊攻擊範圍內沒有敵方！
+Canute.BattleSystem.BattleEventError.ArmyUnderShielderProtection=目標受到保護！
+Canute.BattleSystem.BattleEventError.armyCannotAttack=軍隊不能攻擊！
+Canute.BattleSystem.BattleEventError.ArmyNoTargetInAttackRage=軍隊攻擊範圍內沒有敵軍！
+ 
+
+#Tips
+Canute.Tips.0=將卡放在軍隊上以使用它。
+Canute.Tips.1=如果要使用的卡只能選擇該卡作為目標，則將該卡放置在其他卡上。
+Canute.Tips.2=某些領袖提供的軍隊加成比其他領袖提供的加成更好。
+Canute.Tips.3=有些軍隊在空中，有些則地面。
+Canute.Tips.4=請不要嘗試命令步兵攻擊飛機。
+Canute.Tips.5=裝備可以使您的軍隊在戰鬥中有更好的表現。
+Canute.Tips.6=法師有一種特殊的攻擊方法：1個格內的所有敵方會受到一個額外的濺射攻擊。
+Canute.Tips.7=火槍手可以攻擊在一條線上的所有敵人。
+Canute.Tips.8=戰鬥機必須在回合結束時返回機場。
+Canute.Tips.9=飛艇可以派遣更多的戰鬥機。
+Canute.Tips.10=沒有軍隊可以穿透重甲兵的重甲，除了一些特殊事件...
+Canute.Tips.11=每次攻擊都會造成至少1點傷害
+Canute.Tips.12=使用與軍隊的職業相匹配的卡片會減少1點行動力。
+Canute.Tips.13=龍比魔法師更懂魔法，他們可以讓妳花費一些代價來提升軍隊...
+Canute.Tips.14=當存在多支同類型軍隊時會發生共鳴。
+Canute.Tips.15=領袖職業有：學，政，軍，商。
+Canute.Tips.16=幻境比您想象的要大。
+
+#;
+Canute.Character.Theodore Pullan.WordLine.0=妳知道重石的名字是來自於一只龍的名字嗎。
+Canute.Character.Theodore Pullan.WordLine.1=輝石的意思是“光明的元素”，這個詞語與以太同源。
+Canute.Character.Theodore Pullan.WordLine.2=我妹妹？我已經五年沒見過她了。她早就可以自力更生了，她應該很好。但是我可以請假去看她嗎？
+Canute.Character.Theodore Pullan.WordLine.3=卡努特主席，我在安卡計劃裏工作了這麽多年都沒完全認識妳,除了知道妳充滿了理想主義以外。 
+Canute.Character.Theodore Pullan.WordLine.4=安卡？那只天上的涅槃的鳳凰？最高議會希望亞尼科薩可以像鳳凰一樣重生。
+Canute.Character.Theodore Pullan.WordLine.5=太好了太好了芬贏了昨天的網球賽，只可惜我不關心網球。
+Canute.Character.Theodore Pullan.WordLine.6=我（），為什麽輝石與重石在磁場裏的反應會完全不同？（），我辭職了。沒，沒什麽，卡努特主席，當我沒說。
+Canute.Character.Theodore Pullan.WordLine.7=啥？我也不知道為什麽人類喜歡研究磁力還研究了千年，反正那都是過去了，沒有人可以改變他，或者有人可以？
+Canute.Character.Theodore Pullan.WordLine.8=芬妳可不可以不要再來問我了，我不是臺計算器。妳他媽，好的，答案是42，什麽，對，42，對我確定是42，不要質疑。
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithItem=卡努特主席，我們在回來時找到了寫東西，以及我們現在應該又要出去了。
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithLeader=卡努特主席，我們這裏來了一位新的成員，反正這是妳的事情。
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithStory=卡努特主席，我們這裏有一個無聊的故事。
+Canute.Character.Theodore Pullan.supplyTeamComeBackWithLetter=卡努特主席，我們在外面找到了一些文件，估計是某些歷史遺留吧。
+
+Canute.Character.Finn Herman.WordLine.0=我和亞瑟都是喀累人
+Canute.Character.Finn Herman.WordLine.1=長官，我可以出去溜達一下嗎？
+Canute.Character.Finn Herman.WordLine.2=長官，我可以看我們的電視嗎？好吧上面什麽都沒有。除了最高議會的洗腦和米埃利亞人的龍叫。
+Canute.Character.Finn Herman.WordLine.3=我上次西奧多院長在度假的時候他還在打網球的。
+Canute.Character.Finn Herman.WordLine.4=長官，妳喜歡喀累還是這裏？噢，我覺得妳喜歡西格瑪象限吧？畢竟那是妳家。
+Canute.Character.Finn Herman.WordLine.5=長官妳可以講講的留學經歷嗎？當然是去米埃利亞的留學經歷啊！
+Canute.Character.Finn Herman.WordLine.6=長官妳可以托付某人幫我整一臺計算器嗎？什麽我可以直接用物質打印機弄一臺？太感謝了！
+Canute.Character.Finn Herman.WordLine.7=長官，上次的物資車輛裏只有90%的貨物，我還在找另外10%去哪裏了......
+Canute.Character.Finn Herman.WordLine.8=長官，我們什麽時候可以回到喀累呢？我想家了......
+Canute.Character.Finn Herman.supplyTeamComeBackWithItem=長官，我給妳準備了一份禮物！
+Canute.Character.Finn Herman.supplyTeamComeBackWithLeader=長官，今天我們來了一個奇怪的人......
+Canute.Character.Finn Herman.supplyTeamComeBackWithStory=長官，我們在路上聽到了一個有趣的故事！
+Canute.Character.Finn Herman.supplyTeamComeBackWithLetter=長官，我這裏撿到了一張紙條，妳可以讀給我聽嗎？我懶得看。。。
+
+Canute.Character.Ron Thompson.WordLine.0=我喜歡斯威士瓦嗎？為什麽我會不喜歡呢？金窩銀窩不如自家的草窩。
+Canute.Character.Ron Thompson.WordLine.1=事情都是由決定與結果組成的。
+Canute.Character.Ron Thompson.WordLine.2=我，走私犯？當妳為了活下去沒有其他選擇的時候，走私可能只是一件小事而已。
+Canute.Character.Ron Thompson.WordLine.3=妳看見我的煙鬥了嗎？好吧也許我去物質打印機那打印一個新的比較現實。
+Canute.Character.Ron Thompson.WordLine.4=聯邦從未改變過，我們沒有過去。
+Canute.Character.Ron Thompson.WordLine.5=...
+Canute.Character.Ron Thompson.WordLine.6=...
+Canute.Character.Ron Thompson.WordLine.7=...
+Canute.Character.Ron Thompson.WordLine.8=...
+Canute.Character.Ron Thompson.supplyTeamComeBackWithItem=Canute, We picked up some supply on the way.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithLeader=Canute, We met someone who I think is reliable.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithStory=Canute, Let me tell you a tell, one even I just know.
+Canute.Character.Ron Thompson.supplyTeamComeBackWithLetter=Canute, I found some papers, can you read for me? I can’t see those really tiny wrinkles clearly.
+
+
+Canute.Character.Shelly McMoore.WordLine.0=Thank you for getting most of us here, Mr. Chairman.
+Canute.Character.Shelly McMoore.WordLine.1=Even though you are from Sigma Quadrant, you don’t like those Quadranter.
+Canute.Character.Shelly McMoore.WordLine.2=我可以為妳做什麽嗎
+Canute.Character.Shelly McMoore.WordLine.3=As much as you know, the Federacy had two fractions before, we are the Revival Party, which today becomes the Scientific Revolution Party.
+Canute.Character.Shelly McMoore.WordLine.4=The other party? the Advance Party, which formed the Supreme Council today. Oh yes, there is a third party which we don’t admit is legal.
+Canute.Character.Shelly McMoore.WordLine.5=Determination is important, Chairman, without it, we can’t make it today and continue our work.
+Canute.Character.Shelly McMoore.WordLine.6=I have actually never been to Calay before, Chairman, I know you were the Senator of Calay, before the Supreme Council took over everything in the Federacy.
+Canute.Character.Shelly McMoore.WordLine.7=They said that the last president of the Federacy, Brittany Whitaker, ended the civil war of the Federacy by negotiating with the Supreme Council. Do you think the war is ended?
+Canute.Character.Shelly McMoore.WordLine.8=May the independence of the real Federation last forever.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithItem=Mr. Chairman, we found something on the way back.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithLeader=Mr. Chairman, we have a new member.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithStory=Mr. Chairman, there are some rumors outside and I think you are supposed to know about it.
+Canute.Character.Shelly McMoore.supplyTeamComeBackWithLetter=Mr. Chairman, we found some lost documents, and I think you should read it.
+
+
+Canute.Character.Amlos.WordLine.0=幻境沒有歷史，只有歷史小說。
+Canute.Character.Amlos.WordLine.1=歷史和歷史小說的區別就是歷史小說有虛構的，而歷史是現實的返照。
+Canute.Character.Amlos.WordLine.2=歷史禁不起修改，現在的這些不過就是故事。
+Canute.Character.Amlos.WordLine.3=真的歷史可能已經消失在歷史中了，妳不覺得嗎？
+Canute.Character.Amlos.WordLine.4=覺得我說話怪怪的嗎？龍說話就是這樣的。。。我會試圖按照妳們的說話方式看看.
+Canute.Character.Amlos.WordLine.5=龍只能聽從於它們的國王，很遺憾我不能對妳表示忠誠
+Canute.Character.Amlos.WordLine.6=我不知道我能在這裏多久，我可能馬上就要被我的國王叫走。
+Canute.Character.Amlos.WordLine.7=妳覺得我們還能回到瓦索萊納的那個夜晚嗎？只是想想而已
+Canute.Character.Amlos.WordLine.8=不，不要把手放在我頭上！！！好吧。。。不要讓其他人看到。
+Canute.Character.Amlos.supplyTeamComeBackWithItem=卡努特, 妳的禮物.
+Canute.Character.Amlos.supplyTeamComeBackWithLeader=卡努特, 這個新人可能是一個朋友.
+Canute.Character.Amlos.supplyTeamComeBackWithStory=卡努特, 這個新聞是我最近聽到的.
+Canute.Character.Amlos.supplyTeamComeBackWithLetter=卡努特, 這個信件是我找到的.
+
+
+Canute.Character.Empty.WordLine.0= 
+Canute.Character.Empty.WordLine.1= 
+Canute.Character.Empty.WordLine.2= 
+Canute.Character.Empty.WordLine.3= 
+Canute.Character.Empty.WordLine.4= 
+Canute.Character.Empty.WordLine.5= 
+Canute.Character.Empty.WordLine.6= 
+Canute.Character.Empty.WordLine.7= 
+Canute.Character.Empty.WordLine.8= 
+Canute.Character.Empty.supplyTeamComeBackWithItem= 
+Canute.Character.Empty.supplyTeamComeBackWithLeader= 
+Canute.Character.Empty.supplyTeamComeBackWithStory= 
+Canute.Character.Empty.supplyTeamComeBackWithLetter= 
+
+#SceneName
+Canute.UI.SceneName.SupplyTeam=補給隊
+Canute.UI.SceneName.Shop=商店
+Canute.UI.SceneName.Hallway=過道
+Canute.UI.SceneName.LegionSetting=軍隊設置
+Canute.UI.SceneName.EventCard=事件牌堆
+Canute.UI.SceneName.Settings=設置
+Canute.UI.SceneName.StoryRoom=故事
+Canute.UI.SceneName.ChapterSelection=章節
+##UI
+Canute.UI.Common.Back=<<<
+Canute.UI.Common.LegionSetting=軍隊
+Canute.UI.Common.Armies=軍隊
+Canute.UI.Common.Equipments=裝備
+Canute.UI.Common.EventCard=事件牌
+Canute.UI.Common.Story=故事
+Canute.UI.Common.Letter=信件
+#
+Canute.UI.LegionSetting.Upgrade=升級
+Canute.UI.LegionSetting.Change=更改
+Canute.UI.LegionSetting.Left=調離
+Canute.UI.LegionSetting.Legion1=軍隊 1
+Canute.UI.LegionSetting.Legion2=軍隊 2
+Canute.UI.LegionSetting.Legion3=軍隊 3
+#
+Canute.UI.Start.Continue=繼續。。。
+Canute.UI.Start.Saves=所有進展（存檔）
+Canute.UI.Start.NewGame=新開始
+Canute.UI.Start.Settings=設置
+Canute.UI.Start.Credit=制作團隊
+Canute.UI.Start.Games=其他存檔
+Canute.UI.Start.Quit=退出
+Canute.UI.Start.Quit.Check=確認退出嗎?
+#
+Canute.UI.MainHall.Training=訓練
+Canute.UI.MainHall.NextBattle=下一次戰鬥
+Canute.UI.MainHall.Basement=基地日常
+Canute.UI.MainHall.Legion=軍隊
+Canute.UI.MainHall.Pile=事件牌
+Canute.UI.MainHall.Exploration=物資隊
+Canute.UI.MainHall.Shop=商店
+Canute.UI.MainHall.Chapter=章節
+Canute.UI.MainHall.Hallway=過道
+Canute.UI.MainHall.Quit=離開
+#
+Canute.Hallway.Explanation=基地過道上會遇到其他人。。。
+#
+Canute.Shop.BuyItem=購買 @itemName? 花費:@cost
+Canute.Shop.GetItem=獲得 @itemName
+Canute.Shop.No money=我們無法支付，長官.
+Canute.Shop.Explanation=購買裝備，軍隊
+#
+Canute.STPrizeDisplay.NewPrize=補給隊獲得： @name
+#
+Canute.SupplyTeam.Explanation=讓妳的領袖和一只保護他們的軍隊去獲得物資維持基地
+Canute.SupplyTeam.TeamPositionInfo=補給隊現在在@country的@city.
+#
+Canute.UI.Settings.Basic=基本
+Canute.UI.Settings.Basic.PlayCardDelay=出牌延遲
+Canute.UI.Settings.Basic.ShowStory=戰鬥顯示故事
+Canute.UI.Settings.Basic.Volume=音量
+Canute.UI.Settings.Language=語言(Language)
+Canute.UI.Settings.Other=其他
+Canute.UI.Settings.Other.OpenDataFolder=打開儲存文件夾
+Canute.UI.Settings.Other.Tutorial=教程關
+#
+Canute.BattleSystem.UI.PausePanel.Tutorial=教程
+Canute.BattleSystem.UI.PausePanel.Quit=退出
+Canute.BattleSystem.UI.PausePanel.Back=返回
+Canute.BattleSystem.UI.PausePanel.Settings=設置
+#
+Canute.Demo.Unfinished.info=這是一個演示版，部分內容暫時不公布

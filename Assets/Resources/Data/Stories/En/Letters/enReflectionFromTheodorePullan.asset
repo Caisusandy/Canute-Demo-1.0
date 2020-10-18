@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e105c90ab52da45aaa0e5bc375ab50, type: 3}
+  m_Name: enReflectionFromTheodorePullan
+  m_EditorClassIdentifier: 
+  letter:
+    id: ReflectionFromTheodorePullan
+    author: Theodore Pullan
+    title: Reflection From Theodore Pullan
+    background: {fileID: 0}
+    text: "When I visited the Federal Academy of Human Sciences for the first time,
+      it was actually empty. The new building was built after the Civil War. I told
+      other colleagues that this was fine, and the government gave us a big whiteboard.
+      Fortunately, at least the previous scientific data are still there. I have
+      all the experimental data I want.\r\nI have been joking with my colleagues
+      about one thing: \"Do you know why the Meialian can\u2019t understand the existence
+      of friction? Because they rely on dragons for fire.\" Of course, I wouldn't
+      tell this joke when the Meialians are by my side. Besides, their previous technological
+      level is not bad.\r\nI still remember that when I was young, I opened a cabinet
+      at home. It was full of antiques from a thousand years ago. In particular,
+      there was a ticket for entering the Sigma Quadrant. I was quite shocked at
+      the time. I checked all the books related to the Sigma Quadrant and found out
+      that the Sigma Quadrant was a giant space city that was launched magnetically.
+      This shocked me. How do we drive such a heavy thing into the sky with a magnetic
+      field?\r\nThen I learned later that our ancestors discovered magnetism as early
+      as ten thousand years ago. They knew the relationship between electricity and
+      magnetism eight thousand years ago. Three thousand years ago, they built a
+      spacecraft that could be lifted off by a giant magnetic levitation method.
+      The reason why we can create the Sigma Quadrant two thousand years ago is that
+      we have never tried to stop moving forward.\r\nWhen the Supreme Council repaired
+      the central AI in the Sigma Quadrant for me, I was also thinking about why
+      we didn\u2019t get more AI to work for us. After I looked through the compilation
+      records of this AI, I found that the old AI is a bit different. Believe it,
+      he compiled it long before the Sigma Quadrant was built. Our ancestors of two
+      thousand years have known how to create artificial intelligence. In fact, three
+      thousand years ago, they built the machines that can pass the Turing test.\r\nI
+      have no idea what I just said. After all, our generation is doing what we are
+      doing and what we want to do, studying what I want to study, we are free from
+      any threat on this continent.\r\nBut looking around us, there is nothing here
+      that is not created by our ancestors. Everything we study is actually research
+      on top of our ancestors. Our ancestors took the first step of research, and
+      then the offspring of our ancestors took the second step, and then the offspring
+      of our ancestors\u2019 offspring took the third step, and we just stepped into
+      the future we were after.\r\nWe humans don't know magic, and I don't care about
+      that. The important thing is that we have the technology. Science can guide
+      us humanity forward. Those of us are finding the end of science that does not
+      exist. We are here to explore boundless science.\r\n"

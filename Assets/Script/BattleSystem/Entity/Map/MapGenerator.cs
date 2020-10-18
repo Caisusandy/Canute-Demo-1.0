@@ -30,7 +30,7 @@ namespace Canute.BattleSystem
                 mapEntity.columnEntities.Add(column);
 
                 column.name = "Column(" + i + ")";
-                column.transform.position = new Vector3((i % 2) * CellSizeDefault.dist_x / 2, CellSizeDefault.dist_y * i, 0);
+                column.transform.position = new Vector3((i % 2) * CellSize.x / 2, CellSize.y * i, 0);
                 column.transform.localPosition = new Vector3(column.transform.localPosition.x * transform.lossyScale.x, column.transform.localPosition.y * transform.lossyScale.y, 0);
 
                 for (int j = 0; j < rect_x; j++)
@@ -54,7 +54,7 @@ namespace Canute.BattleSystem
         {
             var cellEntity = Instantiate(cellPrefab, column);
 
-            Vector3 pos = new Vector3(CellSizeDefault.dist_x * x, 0, 0);
+            Vector3 pos = new Vector3(CellSize.x * x, 0, 0);
 
             cellEntity.transform.localPosition = pos;
             cellEntity.name = "Cell(" + x + ")";

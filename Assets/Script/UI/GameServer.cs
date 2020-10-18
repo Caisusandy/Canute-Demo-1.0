@@ -1,9 +1,11 @@
 ﻿using Canute.Assets.Script.Module;
+using Canute.StorySystem;
 using Canute.Testing;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Canute.UI
 {
@@ -21,9 +23,7 @@ namespace Canute.UI
 
         public void Awake()
         {
-            //if (instance) { Destroy(this); return; }
-            //else instance = this;
-
+            instance = this;
             if (!Game.Initialized)
             {
                 Game.ReadConfig();
@@ -47,12 +47,36 @@ namespace Canute.UI
         // Start is called before the first frame update
         public void Start()
         {
+            LoadSceneIntro();
+        }
 
+        private static void LoadSceneIntro()
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if (currentSceneName == "Settings" || currentSceneName == "Loading" || currentSceneName == "Game Start") { return; }
+            if (currentSceneName == "Equipment List" || currentSceneName == "Army List") { return; }
+            if (!Game.PlayerData.GameSceneBeenTo.Contains(currentSceneName))
+            {
+                Debug.Log(currentSceneName);
+                StoryDisplayer.LoadSceneIntro("SceneIntro" + currentSceneName);
+                Game.PlayerData.GameSceneBeenTo.Add(currentSceneName);
+                PlayerFile.SaveCurrentData();
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
+            LoadSceneIntro();
+            FunctionKey();
+        }
+
+        private void FunctionKey()
+        {
+            if (!Game.Configuration.IsDebugMode)
+            {
+                return;
+            }
             if (Input.GetKeyDown(KeyCode.Slash) && Game.Configuration.IsDebugMode)
             {
                 if (!console)

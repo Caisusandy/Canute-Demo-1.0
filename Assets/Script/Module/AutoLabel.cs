@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Canute.Module
 {
     [Obsolete]
-    class AutoLabel : Icon
+    public class AutoLabel : Icon
     {
         public string key;
         [Obsolete]

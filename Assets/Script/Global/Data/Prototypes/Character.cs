@@ -14,10 +14,10 @@ namespace Canute
         [SerializeField] protected Sprite portrait;
 
         public string DisplayingName => this.Lang("name");
-        public Story SupplyTeamComeBackItem => new Story("", new WordLine() { SpeakerName = DisplayingName, CharacterPortrait = Portrait, Line = this.Lang("supplyTeamComeBackWithItem"), Position = StoryDisplayer.SpeakerStandPosition.middle }) { Type = StoryType.dailyConversation };
-        public Story SupplyTeamComeBackLeader => new Story("", new WordLine() { SpeakerName = DisplayingName, CharacterPortrait = Portrait, Line = this.Lang("supplyTeamComeBackWithLeader"), Position = StoryDisplayer.SpeakerStandPosition.middle }) { Type = StoryType.dailyConversation };
-        public Story SupplyTeamComeBackStory => new Story("", new WordLine() { SpeakerName = DisplayingName, CharacterPortrait = Portrait, Line = this.Lang("supplyTeamComeBackWithStory"), Position = StoryDisplayer.SpeakerStandPosition.middle }) { Type = StoryType.dailyConversation };
-        public Story SupplyTeamComeBackLetter => new Story("", new WordLine() { SpeakerName = DisplayingName, CharacterPortrait = Portrait, Line = this.Lang("supplyTeamComeBackWithLetter"), Position = StoryDisplayer.SpeakerStandPosition.middle }) { Type = StoryType.dailyConversation };
+        public Story SupplyTeamComeBackItem => new Story("", new WordLine() { SpeakerName = DisplayingName, CharacterPortrait = Portrait, Line = this.Lang("supplyTeamComeBackWithItem"), Position = StoryDisplayer.SpeakerStandPosition.right, NextLineID = "" }) { Type = StoryType.dailyConversation };
+        public Story SupplyTeamComeBackLeader => new Story("", new WordLine() { SpeakerName = DisplayingName, CharacterPortrait = Portrait, Line = this.Lang("supplyTeamComeBackWithLeader"), Position = StoryDisplayer.SpeakerStandPosition.right, NextLineID = "" }) { Type = StoryType.dailyConversation };
+        public Story SupplyTeamComeBackStory => new Story("", new WordLine() { SpeakerName = DisplayingName, CharacterPortrait = Portrait, Line = this.Lang("supplyTeamComeBackWithStory"), Position = StoryDisplayer.SpeakerStandPosition.right, NextLineID = "" }) { Type = StoryType.dailyConversation };
+        public Story SupplyTeamComeBackLetter => new Story("", new WordLine() { SpeakerName = DisplayingName, CharacterPortrait = Portrait, Line = this.Lang("supplyTeamComeBackWithLetter"), Position = StoryDisplayer.SpeakerStandPosition.right, NextLineID = "" }) { Type = StoryType.dailyConversation };
         public string Name => name;
         public Sprite Icon => icon;
         public Sprite Portrait => portrait;

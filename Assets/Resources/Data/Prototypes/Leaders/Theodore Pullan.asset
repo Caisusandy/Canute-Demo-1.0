@@ -19,9 +19,20 @@ MonoBehaviour:
     icon: {fileID: 0}
     sprite: {fileID: 0}
     portrait: {fileID: 0}
-    prefab: {fileID: 0}
     career: 1
-    bounes: []
+    bounes:
+    - type: 1
+      bonusType: 1
+      value: 20
+      growth: 0
+    - type: 2
+      bonusType: 1
+      value: 15
+      growth: 0
+    - type: 16
+      bonusType: 0
+      value: 1
+      growth: 0
     skill:
       specialName: 
       count: 0

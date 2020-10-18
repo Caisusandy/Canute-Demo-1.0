@@ -1,5 +1,4 @@
 ﻿using Canute.BattleSystem;
-using Canute.LevelTree;
 using Canute.Module;
 using Canute.Shops;
 using System;
@@ -364,38 +363,6 @@ namespace Canute
 
         //    playerLastOperationTime = DateTime.UtcNow;
         //}
-    }
-
-
-
-    [Serializable]
-    public class LevelInfo : INameable, IEquatable<LevelInfo>
-    {
-        [SerializeField] protected string name;
-        [SerializeField] protected bool isPassed = true;
-
-        public LevelInfo(string name, bool isPassed)
-        {
-            this.name = name;
-            this.isPassed = isPassed;
-        }
-        public LevelInfo()
-        {
-        }
-
-        public string Name => name;
-        public bool IsPassed => isPassed;
-        public Level Level => GameData.Levels.GetLevel(Name);
-
-        public static implicit operator bool(LevelInfo levelInfo)
-        {
-            return !(levelInfo.Level is null);
-        }
-
-        public bool Equals(LevelInfo other)
-        {
-            return other.name == name ? (other.isPassed && isPassed) : false;
-        }
     }
 
     [Serializable]

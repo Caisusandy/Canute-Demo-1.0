@@ -24,11 +24,6 @@ namespace Canute.BattleSystem.AI
 
         }
 
-        public override void Update()
-        {
-
-        }
-
         public IEnumerator Run(object[] vs)
         {
             //Debug.LogError(Game.CurrentBattle.CurrentStat);

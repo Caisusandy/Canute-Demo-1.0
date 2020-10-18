@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-3Epi
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-3Epi
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-3Epi.1
+      line: "A determined, ready team went through that door, and a haggard group
+        of tired soldiers came out. Most sported bruises and cuts, while others were
+        worse off and had to be supported by their comrades. Canute held Ron up under
+        his shoulder despite the older man\u2019s protests. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Epi.2
+      line: "They made their way out of the city as an agonizingly slow pace and
+        set up camp in the barren land around it. Canute found the spirit to admire
+        the sunset even though they\u2019d barely made it out of that room with their
+        lives. Behind him, sounds of pain came from the medic tent and it made him
+        wince. He was a general, yes, but he had feelings even if they were deeply
+        buried. He hated to see his companions like this. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Epi.3
+      line: "Ron stuck his head out of the medicine tent and looked around the camp.
+        When he saw Canute, he made his way slowly over. Every step looked like it
+        was costing him all of his energy to keep from falling. Canute stood to help
+        him, but Ron raised a hand and lowered himself to the ground without help.
+        The two men sat in silence for a while before Ron came out of his stewing
+        thoughts. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-3Epi.4
+      line: 'That was stupid of me to go blindly into that room.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-3Epi.5
+      line: 
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron
+      id: Ch7-3Epi.6
+      line: 
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Epi.7
+      line: "Canute started, but the older man didn\u2019t let him finish.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-3Epi.8
+      line: "I could\u2019ve gotten all of us killed.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-3Epi.9
+      line: "We made it out, though. Mistakes were made and we\u2019re dealing with
+        the consequences, but we\u2019re alive.\nCanute took a sip from his canteen
+        and passed it to Ron, who shook his head.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-3Epi.10
+      line: 'Not all of us.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Epi.11
+      line: "The thought killed Canute\u2019s attempts at a positive outlook. There
+        was no way to tame death. Ron sat for a bit longer, then clapped Canute on
+        the shoulder and wandered off to his tent. Canute stayed put, watching as
+        the stars rose into the sky one by one. For each new star he saw, he lifted
+        up a prayer for those they had lost.  \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

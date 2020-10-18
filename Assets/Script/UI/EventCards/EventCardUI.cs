@@ -30,9 +30,10 @@ namespace Canute.UI
             {
                 if (cardName) cardName.text = item.DisplayingName;
                 if (cost) cost.text = item.Level.ToString();
-                if (frame) frame.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, item.Rarity.ToString());
+                //if (frame) frame.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, item.Rarity.ToString());
                 if (rarity) rarity.sprite = GameData.SpriteLoader.Get(SpriteAtlases.rarity, item.Rarity.ToString());
                 if (chart) chart.sprite = item.Prototype.Sprite;
+                if (description) description.text = item.Effect.Info();
             }
 
         }

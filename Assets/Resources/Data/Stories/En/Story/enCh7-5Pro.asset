@@ -1,0 +1,287 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-5Pro
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-5Pro
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-5Pro.1
+      line: "The next morning after a quick breakfast, the team laid out their plans
+        on the tiny kitchen table. Once the scouts had returned, their meeting began.
+        During the quiet parts of the journey, Canute had been able to think over
+        how they were going to rescue his teacher, and his plan had been almost complete
+        until he was shown the scans the scouts had taken of the prison. The security
+        systems were fairly advanced, but that wasn\u2019t anything they couldn\u2019t
+        handle. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.2
+      line: "After watching how the changing of the guard worked, the plan changed
+        to match the prison. The team would don prison guard uniforms and come in
+        for the next shift. Ron used yet another one of his many contacts and found
+        an inside man who could get them Arthur\u2019s cell number and a map of the
+        prison. It was a crazy idea, but it could work. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.3
+      line: 'After many hours of planning and arguing and a ridiculous amount of
+        cheap coffee, Canute was proud of the plan they had constructed. It was the
+        closest thing to foolproof they could manage with their current resources.
+        Before he could get a grasp on time, it slipped out of his hands and another
+        day had gone by.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.4
+      line: 'Someone, most likely Ron, ordered takeout, and the mood in the room
+        was much lighter than it had been when they had arrived. Everyone from the
+        other two rooms piled into their own. Canute leaned back against the wall
+        and watched the festivities unfold, guiltily enjoying the unhealthily delicious
+        food someone had forced upon him.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.5
+      line: "He tried to stay in shape, he really did, but spontaneous decisions
+        like this made his strict mindset a little more difficult to maintain. He
+        realized how he was thinking and laughed at himself. Lighten up, Svensson.
+        You\u2019ve gotten this far. Live a little. So he ate his greasy takeout
+        food and let himself smile and laugh with the others, knowing in his heart
+        of hearts that they might not all be together for much longer.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.6
+      line: "The day of the breakout dawned cloudy. The light joyful air went out
+        with the empty takeout containers as everyone prepared themselves for the
+        mission at hand. Only a few would be actually entering the prison to rescue
+        Arthur. The others would stay at the motel and keep in touch, ready to flee
+        at a moment\u2019s notice if anything went wrong. Once everyone was ready,
+        Canute turned around from his place at the front of the line, trying to muster
+        anything resembling a motivational speech. His words were halting and far
+        from eloquent, but he spoke them with all of this heart.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-5Pro.7
+      line: "Today is an important day. Each of you has been able to come this far
+        for a reason, and I am pleased to be your general. Arthur Connors means a
+        great deal to me, as I\u2019m sure he does to some of you.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.8
+      line: 'He made eye contact with Ron, Finn, and several others. They looked
+        back unflinching.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-5Pro.9
+      line: "At the end of the day, this isn\u2019t about us. We may come out of
+        this as heroes. There is also the distinct possibility we may fail, but that
+        is outside of our control. This is about Arthur, and all of the other lives
+        that we can help once we\u2019ve saved him. Once again, I am proud, and beyond
+        honored, to have all of you as my comrades for this mission. Stay sharp.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.10
+      line: 'There were nods and murmurs across the room, then they headed out in
+        one long silent line. The morning air was still, filled with an eerie quiet
+        and a slight fog as they rolled out. Once they reached the border between
+        the impoverished district and the center of the city, their surroundings
+        changed.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.11
+      line: "Large screens advertised messages on the side of the tall sleek buildings
+        they passed. Canute could see the needle sharp spire of the Capitol Building
+        looming over the others. It was so tall that the very tip of it vanished
+        into the clouds. Despite the early hour, there were a remarkable number of
+        people in the streets. Many were carrying signs, and their clothes were threadbare
+        and dirty. Canute and his team turned a corner to be met with an incredible
+        scene in front of them. The sidewalk at the base of the Capitol Building
+        was cluttered with hundreds of people. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.12
+      line: "They had gotten up early and marched all the way from the outskirts
+        to protest. Law enforcement held them back with their shields, but armed
+        men and women stood on the steps of the huge building in case anything went
+        wrong. Shouts broke the morning silence. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.13
+      line: "Canute stopped, taken aback. He had definitely not counted on this when
+        they had been planning his teacher\u2019s rescue. This protest could be the
+        exact diversion they needed to get into the prison. They shoved their way
+        closer, pushing through the crowds to the front, but a cluster of particularly
+        zealous protestors got in their way. Finn moved forward to speak to them.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: Ch7-5Pro.14
+      line: "\u201CExcuse me. I admire your cause, but could you please let us pass?\u201D\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.15
+      line: 'One of the other men turned around, looked him up and down, and spat
+        at his feet.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Riots
+      id: Ch7-5Pro.16
+      line: "I don\u2019t think so, city boy. What we\u2019s doing here is much more
+        important than any appointment you\u2019re late for. Now move it.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.17
+      line: 'Finn opened his mouth again and spoke before Canute could stop him.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: Ch7-5Pro.18
+      line: "I\u2019ve asked you once, and I\u2019ll ask you again. Let us pass.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.19
+      line: "The man got up in Finn\u2019s face then, an evil glint in his eye.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Riots
+      id: Ch7-5Pro.20
+      line: 'I already told you no.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.21
+      line: "One of the man\u2019s friends tried to pull him back, but he waved them
+        off.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Riots
+      id: Ch7-5Pro.22
+      line: 'You got a problem, bud?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Riots
+      id: Ch7-5Pro.23
+      line: "I might if you don\u2019t let us by.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-5Pro.24
+      line: "Finn\u2019s hand moved to the inside pocket of his jacket. The other
+        man\u2019s eyes widened and he jumped on Finn, arms swinging. The two groups
+        smashed together in a thunderstorm of fists.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

@@ -9,7 +9,7 @@ namespace Canute.BattleSystem.UI
     /// </summary>
     public class ArmyInfoIcon : MonoBehaviour
     {
-        public UUID connectedArmyEntityUUID = UUID.Empty;
+        //public UUID connectedArmyEntityUUID = UUID.Empty;
 
         public ProgressBar health;
         public ProgressBar anger;
@@ -18,7 +18,7 @@ namespace Canute.BattleSystem.UI
         public Text angerInfo;
         public Image icon;
 
-        public ArmyEntity ArmyEntity => Entity.Get<ArmyEntity>(connectedArmyEntityUUID);
+        public ArmyEntity armyEntity;// => Entity.Get<ArmyEntity>(connectedArmyEntityUUID);
 
         private void Awake()
         {
@@ -34,7 +34,7 @@ namespace Canute.BattleSystem.UI
         // Update is called once per frame
         private void Update()
         {
-            if (ArmyEntity)
+            if (armyEntity)
             {
                 UpdateInfo();
             }
@@ -42,30 +42,30 @@ namespace Canute.BattleSystem.UI
 
         public void UpdateInfo()
         {
-            healthInfo.text = ArmyEntity.data.Health + "/" + ArmyEntity.data.MaxHealth;
-            health.SetProgress((float)ArmyEntity.data.Health / ArmyEntity.data.MaxHealth);
-            angerInfo.text = ArmyEntity.data.Anger + "/100";
-            anger.SetProgress(ArmyEntity.data.Anger / 100f);
-            icon.sprite = ArmyEntity.data.Icon;
+            healthInfo.text = armyEntity.data.Health + "/" + armyEntity.data.MaxHealth;
+            health.SetProgress((float)armyEntity.data.Health / armyEntity.data.MaxHealth);
+            angerInfo.text = armyEntity.data.Anger + "/100";
+            anger.SetProgress(armyEntity.data.Anger / 100f);
+            icon.sprite = armyEntity.data.Icon;
         }
 
 
         public void Connect(ArmyEntity armyEntity)
         {
-            Debug.Log(name + " connected to army " + ArmyEntity?.Name);
+            Debug.Log(name + " connected to army " + this.armyEntity.Exist()?.Name);
             //Debug.Log(armyEntity.UUID);
             //Debug.Log(connectedArmyEntityUUID);
-            connectedArmyEntityUUID = armyEntity.UUID;
+            this.armyEntity = armyEntity;
         }
 
         public void Goto()
         {
-            if (!ArmyEntity)
+            if (!armyEntity)
             {
                 return;
             }
-            ArmyEntity.OnMouseDown();
-            ArmyEntity.OnMouseUp();
+            armyEntity.OnMouseDown();
+            armyEntity.OnMouseUp();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Canute.UI.Hallway
         public GameObject talkPrefab;
         public bool isTalking;
         public float time;
+        public int speakDuration;
 
         public void Start()
         {
@@ -21,26 +22,29 @@ namespace Canute.UI.Hallway
                 return;
             }
 
+            gameObject.name = character.Name;
             characterImage.sprite = character.Portrait;
+            speakDuration = Random.Range(4, 15);
         }
 
         public void Update()
         {
-            if (isTalking)
+            time += Time.deltaTime;
+            if (time > speakDuration)
             {
-                time += Time.deltaTime;
-                if (time > 10)
-                {
-                    time = 0;
-                    EndTalk();
-                }
+                if (isTalking) EndTalk();
+                else Talk();
+
+                speakDuration = Random.Range(4, 15);
+                time = 0;
             }
         }
 
 
         public void OnMouseDown()
         {
-            Talk();
+            if (isTalking) EndTalk();
+            else Talk();
         }
 
         public virtual void Talk()
@@ -73,6 +77,7 @@ namespace Canute.UI.Hallway
         public virtual void EndTalk()
         {
             Destroy(talk);
+            isTalking = false;
             talk = null;
         }
     }

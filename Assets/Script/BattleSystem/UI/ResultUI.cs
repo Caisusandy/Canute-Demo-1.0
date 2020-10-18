@@ -10,6 +10,13 @@ namespace Canute.BattleSystem.UI
 {
     public class ResultUI : MonoBehaviour
     {
+        [Serializable]
+        public class ResultItem
+        {
+            public Image icon;
+            public Text text;
+        }
+
         public int playerScore;
 
         public Text title;
@@ -21,6 +28,8 @@ namespace Canute.BattleSystem.UI
         public Text fg;
         public Text mp;
         public Text ma;
+
+        public List<ResultItem> resultItems;
 
         public GameObject armyIcons;
 
@@ -59,47 +68,50 @@ namespace Canute.BattleSystem.UI
         // Start is called before the first frame update
         public void Start()
         {
+            //if (Game.CurrentBattle.CurrentStat != Battle.Stat.win || Game.CurrentBattle.CurrentStat != Battle.Stat.lose)
+            //{
+            //    throw new Exception("Unable to determine");
+            //}
+
             playerScore = Game.CurrentBattle.ScoreBoard.GetScore();
 
+            ShowLevelPassStatus();
+            ShowArmyExpIncrease();
             ShowTitle();
             ShowScore();
             ShowPrize();
-            ShowLevelPassStatus();
-            ShowArmyExpIncrease();
 
-            BattleUI.SetUIInteractive(false);
+            BattleUI.SetUIInteractable(false);
             BattleUI.SetUICanvasActive(false);
             OnMapEntity.SetAllEntityCollider(false);
+
+            if (Game.CurrentBattle.CurrentStat != Battle.Stat.win) Game.CurrentLevel.NotPass();
+            else Game.CurrentLevel.Pass();
         }
 
         public void ShowScore()
         {
-            if (Game.CurrentBattle.BattleType == Battle.Type.endless)
-                score.text = playerScore.ToString();
-            else
-                Destroy(score.gameObject);
+            if (Game.CurrentBattle.BattleType == Battle.Type.endless) score.text = playerScore.ToString();
+            else Destroy(score.gameObject);
         }
 
         public void ShowLevelPassStatus()
         {
-            if (Game.CurrentBattle.CurrentStat == Battle.Stat.win)
-                passed.text = "Canute.BattleSystem.UI.ResultUI.Passed".Lang();
-            else
-                passed.text = "Canute.BattleSystem.UI.ResultUI.Lost".Lang();
+            if (Game.CurrentBattle.CurrentStat != Battle.Stat.win) passed.text = "Canute.BattleSystem.UI.ResultUI.Lost".Lang();
+            else passed.text = "Canute.BattleSystem.UI.ResultUI.Passed".Lang();
         }
 
         public void ShowArmyExpIncrease()
         {
+            Debug.Log(Game.CurrentBattle.Prizes.GetPrizes(Item.Type.exp).Count());
             int exp = Game.CurrentBattle.Prizes.GetPrizes(Item.Type.exp).Sum((e) => e.Count);
+            Debug.Log(exp);
+
             List<Transform> icons = new List<Transform>();
-            foreach (Transform item in armyIcons.transform)
-            {
-                icons.Add(item);
-            }
+            foreach (Transform item in armyIcons.transform) { icons.Add(item); }
 
             int realArmyCount = 0;
-            if (Game.CurrentBattle.Player.LegionSet.Legion != null)
-                realArmyCount = Game.CurrentBattle.Player.LegionSet.Legion.RealArmyCount;
+            if (Game.CurrentBattle.Player.LegionSet.Legion != null) realArmyCount = Game.CurrentBattle.Player.LegionSet.Legion.RealArmyCount;
 
             for (int i = 0; i < realArmyCount; i++)
             {
@@ -110,10 +122,11 @@ namespace Canute.BattleSystem.UI
                     Destroy(icons[icons.Count - 1].gameObject);
                     continue;
                 }
+
                 item.Find("icon").GetComponent<Image>().sprite = armyItem.Icon;
                 item.Find("lvl").GetComponent<Text>().text = "Lv." + armyItem.Level;
-                item.Find("add").GetComponent<Text>().text = "+" + exp;
-                item.Find("cur").GetComponent<Text>().text = armyItem.Exp + "/" + armyItem.NextLevelExp;
+                item.Find("cur").GetComponent<Text>().text = armyItem.CurExp + "/" + armyItem.NextLevelExp;
+                item.Find("add").GetComponent<Text>().text = Game.CurrentBattle.CurrentStat != Battle.Stat.win ? "+ 0" : ("+" + exp);
             }
             for (int i = realArmyCount; i < 6; i++)
             {
@@ -123,9 +136,30 @@ namespace Canute.BattleSystem.UI
 
         public void ShowPrize()
         {
-            fg.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.fedgram).ToString();
-            mp.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.manpower).ToString();
-            ma.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.mantleAlloy).ToString();
+            if (Game.CurrentBattle.CurrentStat != Battle.Stat.win) { return; }
+
+            int count = 0;
+            IEnumerable<Prize> prizes = Game.CurrentBattle.Prizes.Where((p) => !(p.PrizeType == Item.Type.currency || p.PrizeType == Item.Type.exp || p.PrizeType == Item.Type.commonItem));
+            if (!Game.CurrentLevel.IsPassed) prizes = prizes.Union(Game.CurrentBattle.FirstTimePrize);
+
+            foreach (var item in prizes)
+            {
+                if (count < resultItems.Count)
+                {
+                    resultItems[count].icon.sprite = item.Icon;
+                    resultItems[count].text.text = item.Name;
+                    count++;
+                }
+                else { break; }
+            }
+
+            for (; count < resultItems.Count; count++)
+            {
+                resultItems[count].icon.transform.parent.gameObject.SetActive(false);
+            }
+            //fg.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.fedgram).ToString();
+            //mp.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.manpower).ToString();
+            //ma.text = Game.CurrentBattle.Prizes.GetCurrencyCount(Currency.Type.mantleAlloy).ToString();
         }
 
         public void ShowPrize(int fgPrize, int mpPrize, int maPrize)
@@ -133,6 +167,7 @@ namespace Canute.BattleSystem.UI
             fg.text = fgPrize.ToString();
             mp.text = mpPrize.ToString();
             ma.text = maPrize.ToString();
+            Debug.Log("Set prize " + fgPrize + " " + mpPrize + " " + maPrize + " ");
         }
 
         // Update is called once per frame

@@ -104,6 +104,15 @@ MonoBehaviour:
         type: 0
         default: 
         possibleValue: []
+    - name: language
+      params:
+      - key: language
+        type: 2
+        default: 
+        possibleValue:
+        - zh_cn
+        - en_us
+        - es_sp
     - name: loadStory
       params:
       - key: id
@@ -170,12 +179,7 @@ MonoBehaviour:
         type: 3
         default: 
         possibleValue: []
-    - name: language
-      params:
-      - key: language
-        type: 2
-        default: 
-        possibleValue:
-        - zh_cn
-        - en_us
-        - es_sp
+    - name: unlockAllLevel
+      params: []
+    - name: verifyAllItem
+      params: []

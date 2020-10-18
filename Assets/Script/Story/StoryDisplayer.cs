@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,13 @@ namespace Canute.StorySystem
 {
     public class StoryDisplayer : MonoBehaviour
     {
+        [Serializable]
+        class Selection
+        {
+            public Button button;
+            public Text info;
+        }
+
         public enum SpeakerStandPosition
         {
            
@@ -15,18 +23,25 @@ namespace Canute.StorySystem
             right
         }
 
+        internal static void LoadSceneIntro(object p)
+        {
+            throw new NotImplementedException();
+        }
+
         public static StoryDisplayer instance;
         public static Story currentStory;
         public static List<Story> nextStories = new List<Story>();
         public static bool transparentBG;
         #region Component
+        public Image bg;
 
         public Image leftPerson;
         public Image rightPerson;
         public Image middlePerson;
-        public Image bg;
-        
         public List<Image> People => new List<Image>() { leftPerson, middlePerson, rightPerson };
+
+        public GameObject selectionPanel;
+        [SerializeField] private List<Selection> selections = new List<Selection>();
 
         public Text speakerName;
         public Text word;
@@ -105,6 +120,7 @@ namespace Canute.StorySystem
             if (word.text.Length >= loadingLines.Length)
             {
                 timer = 0;
+                if (currentStory.CurrentLine.HasSelection && !selectionPanel.activeSelf) LoadSelection(currentStory.CurrentLine);
                 return;
             }
             if (timer >= charPerSecond)
@@ -133,25 +149,49 @@ namespace Canute.StorySystem
             bg.color = transparentBG ? new Color(0, 0, 0, 0) : new Color(0, 0, 0, 1);
             bg.sprite = wordLine.ConversationBG;
             speakerName.text = wordLine.SpeakerName;
+            CloseSelection();
+            NormalWordline(wordLine);
+            SetSpeaker(wordLine);
+        }
+
+        private void NormalWordline(WordLine wordLine)
+        {
             word.text = string.Empty;
             loadingLines = wordLine.Line;
+        }
 
-            if (leftPerson.sprite)
-                leftPerson.color = new Color(0.8f, 0.8f, 0.8f);
-            else
-                leftPerson.enabled = false;
+        private void LoadSelection(WordLine wordLine)
+        {
+            selectionPanel.SetActive(true);
+
+            for (int i = 0; i < wordLine.Selections.Count; i++)
+            {
+                selections[i].button.gameObject.SetActive(true);
+                selections[i].info.text = wordLine.Selections[i].selectionInfo;
+            }
+            for (int i = wordLine.Selections.Count; i < 4; i++)
+            {
+                selections[i].button.gameObject.SetActive(false);
+            }
+        }
+
+        private void CloseSelection()
+        {
+            selectionPanel.SetActive(false);
+        }
+
+        private void SetSpeaker(WordLine wordLine)
+        {
+            if (leftPerson.sprite) leftPerson.color = new Color(0.8f, 0.8f, 0.8f);
+            else leftPerson.enabled = false;
 
 
-            if (middlePerson.sprite)
-                middlePerson.color = new Color(0.8f, 0.8f, 0.8f);
-            else
-                middlePerson.enabled = false;
+            if (middlePerson.sprite) middlePerson.color = new Color(0.8f, 0.8f, 0.8f);
+            else middlePerson.enabled = false;
 
 
-            if (rightPerson.sprite)
-                rightPerson.color = new Color(0.8f, 0.8f, 0.8f);
-            else
-                rightPerson.enabled = false;
+            if (rightPerson.sprite) rightPerson.color = new Color(0.8f, 0.8f, 0.8f);
+            else rightPerson.enabled = false;
 
 
             switch (wordLine.Position)
@@ -176,9 +216,17 @@ namespace Canute.StorySystem
             }
         }
 
+        public void SelectOption(int index)
+        {
+            var id = currentStory.CurrentLine.Selections[index].toWordLineId;
+            var wordLine = currentStory.ContinueFrom(id);
+            LoadLine(wordLine);
+        }
+
         /// <summary> 进行下一个对话 </summary>
         public void Next()
         {
+            Debug.Log(nextStories.Count);
             if (!currentStory)
             {
                 TryQuit();
@@ -229,6 +277,7 @@ namespace Canute.StorySystem
             Debug.Log(story);
             Debug.Log(currentStory);
             Debug.Log((bool)currentStory);
+
             if (currentStory)
             {
                 nextStories.Add(story);
@@ -244,5 +293,20 @@ namespace Canute.StorySystem
         {
             Load(Story.Get(storyName));
         }
+
+        public static void LoadSceneIntro(Story story)
+        {
+            if (currentStory)
+            {
+                nextStories.Add(story);
+                return;
+            }
+
+            SceneControl.AddScene(MainScene.StoryDisplayer);
+            currentStory = story;
+            transparentBG = true;
+        }
+
+        public static void LoadSceneIntro(string storyName) { LoadSceneIntro(Story.Get(storyName)); }
     }
 }

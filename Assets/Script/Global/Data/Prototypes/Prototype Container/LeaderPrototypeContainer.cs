@@ -8,6 +8,12 @@ namespace Canute.BattleSystem
     public class LeaderPrototypeContainer : PrototypeContainer<Leader>
     {
 
+
+        [ContextMenu("Add To Prototype Factory")]
+        public override void AddToPrototypeFactory()
+        {
+            base.AddToPrototypeFactory();
+        }
     }
 
     [Serializable]

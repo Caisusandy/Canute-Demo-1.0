@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enSceneIntroEventCardPile
+  m_EditorClassIdentifier: 
+  story:
+    id: SceneIntroEventCardPile
+    type: 1
+    wordLines:
+    - speakerName: Finn Herman
+      id: 
+      line: Sir, this is where you can set up your event cards when we are in a battle.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Finn Herman
+      id: 
+      line: We can have 3 template of event card piles, and each  event card pile
+        can has 24 cards limit. One "card" might be a pack of more than 1 event card!
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Finn Herman
+      id: 
+      line: You can also upgrade them (not available in demo)
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []

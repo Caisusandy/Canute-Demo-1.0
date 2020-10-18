@@ -18,13 +18,15 @@ namespace Canute.BattleSystem
     [CreateAssetMenu(fileName = "Game Data", menuName = "Game Data/Prototype Factory", order = 3)]
     public class PrototypeFactory : ScriptableObject
     {
+        [Header("Prototypes")]
         [SerializeField] private ArmyPrototypes armyPrototypes = new ArmyPrototypes();
         [SerializeField] private LeaderPrototypes leaderPrototypes = new LeaderPrototypes();
         [SerializeField] private EquipmentPrototypes equipmentPrototypes = new EquipmentPrototypes();
-        [SerializeField] private EventCardPrototypes eventCardPrototypes = new EventCardPrototypes();
-        [SerializeField] private EventCardPrototypes dragonEventCardPrototypes = new EventCardPrototypes();
         [SerializeField] private BuildingPrototypes buildingPrototypes = new BuildingPrototypes();
         [SerializeField] private CharacterContainerList characterList = new CharacterContainerList();
+        [Header("Event Cardss")]
+        [SerializeField] private EventCardPrototypes eventCardPrototypes = new EventCardPrototypes();
+        [SerializeField] private EventCardPrototypes dragonEventCardPrototypes = new EventCardPrototypes();
 
 
         [Header("Default")]
@@ -179,9 +181,10 @@ namespace Canute.BattleSystem
             return characterList.Get(name).Exist()?.character ?? defaultCharacter.character;
         }
 
-        public void Add<T1, T2>(T1 item, bool isMainPrototype = false) where T1 : PrototypeContainer<T2> where T2 : Prototype
+        public void Add<T1>(T1 item, bool isMainPrototype = false) where T1 : PrototypeContainer
         {
-            if (item.Prototype is Army)
+            Prototype prototype = item.GetPrototype();
+            if (prototype is Army)
             {
                 ArmyPrototypeContainer container = item as ArmyPrototypeContainer;
                 if (Armies.Contains(container) || TempArmies.Contains(container))
@@ -191,7 +194,7 @@ namespace Canute.BattleSystem
                 else
                     TempArmies.Add(container);
             }
-            if (item.Prototype is Building)
+            else if (prototype is Building)
             {
                 BuildingPrototypeContainer container = item as BuildingPrototypeContainer;
                 if (Buildings.Contains(container) || TempBuildings.Contains(container))
@@ -201,7 +204,7 @@ namespace Canute.BattleSystem
                 else
                     TempBuildings.Add(container);
             }
-            if (item.Prototype is Leader)
+            else if (prototype is Leader)
             {
                 LeaderPrototypeContainer container = item as LeaderPrototypeContainer;
                 if (Leaders.Contains(container) || TempLeaders.Contains(container))
@@ -211,7 +214,7 @@ namespace Canute.BattleSystem
                 else
                     TempLeaders.Add(container);
             }
-            if (item.Prototype is Equipment)
+            else if (prototype is Equipment)
             {
                 EquipmentPrototypeContainer container = item as EquipmentPrototypeContainer;
                 if (Equipments.Contains(container))
@@ -225,7 +228,7 @@ namespace Canute.BattleSystem
                 else
                     TempEquipments.Add(container);
             }
-            if (item.Prototype is EventCard)
+            else if (prototype is EventCard)
             {
                 EventCardPrototypeContainer container = item as EventCardPrototypeContainer;
                 if (EventCards.Contains(container))

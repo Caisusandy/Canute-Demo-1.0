@@ -35,11 +35,11 @@ namespace Canute.BattleSystem
                 //y
                 for (int y = -fakeLevelY; y < MapEntity.CurrentMap.columnEntities.Count + fakeLevelY; y++)
                 {
-                    if (!MapEntity.CurrentMap.GetCell(x, y))
+                    if (!MapEntity.CurrentMap.GetCell(x, y) || (MapEntity.CurrentMap.GetCell(x, y) && MapEntity.CurrentMap.GetCell(x, y).Exist()?.x != x) || (MapEntity.CurrentMap.GetCell(x, y) && MapEntity.CurrentMap.GetCell(x, y).Exist()?.y != y))
                     {
                         GameObject fakeCellObject;
                         yield return fakeCellObject = Instantiate(fakeCellPrefab, fakeColumn.transform);
-                        Vector3 pos = new Vector3(CellSizeDefault.dist_x * x + y % 2 * CellSizeDefault.dist_x / 2, CellSizeDefault.dist_y * y, 0);
+                        Vector3 pos = new Vector3(CellSize.x * x + y % 2 * CellSize.x / 2, CellSize.y * y, 0);
                         fakeCellObject.transform.localPosition = pos;
 
                         //cellEntity.transform.localPosition = new Vector3(cellEntity.transform.localPosition.x, cellEntity.transform.localPosition.y, 0);
@@ -66,7 +66,7 @@ namespace Canute.BattleSystem
         {
             var fakeCellObject = Instantiate(fakeCellPrefab, fakeColumn.transform);
 
-            Vector3 pos = new Vector3(CellSizeDefault.dist_x * x + y % 2 * CellSizeDefault.dist_x / 2, CellSizeDefault.dist_y * y, 0);
+            Vector3 pos = new Vector3(CellSize.x * x + y % 2 * CellSize.x / 2, CellSize.y * y, 0);
             fakeCellObject.transform.localPosition = pos;
 
             //cellEntity.transform.localPosition = new Vector3(cellEntity.transform.localPosition.x, cellEntity.transform.localPosition.y, 0);

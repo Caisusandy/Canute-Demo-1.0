@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-4Epi
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-4Epi
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-4Epi.1
+      line: "When the dust had cleared, the team struggled through the rubble and
+        made their way into the city. Canute took a quick count and was relieved
+        to see that they\u2019d all survived. Once they\u2019d found their quarters
+        for the night, Ron took Canute aside. Quite honestly, Canute was expected
+        to be severely chastised for the way he\u2019d handled the battle earlier.
+        \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-4Epi.2
+      line: 'You wanted to speak with me, sir?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-4Epi.3
+      line: 'Ron nodded gravely.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-4Epi.4
+      line: "You can\u2019t keep pushing them like this, General. We\u2019ve all
+        been through a lot in the past couple of days. I admire your fire, but we
+        need to stop. Look at them.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-4Epi.5
+      line: "Canute turned around discreetly. They\u2019d rented a few rooms in a
+        mostly unnoticed motel. They had very basic layouts, enabling someone to
+        see everyone in the room from the kitchen. From his point of view, Canute
+        saw a defeated group of people. Most were leaned up against the wall or strewn
+        out across the couch. Dark circles under eyes and worn expressions were common.
+        \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-4Epi.6
+      line: 'He sighed and turned back towards Ron.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-4Epi.7
+      line: 'I apologize. You were right to make us stay here tonight.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-4Epi.8
+      line: "Ron didn\u2019t take a smug air like he would\u2019ve with most people.
+        Instead, his voice lowered, and he put a hand on Canute\u2019s shoulder.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-4Epi.9
+      line: "Don\u2019t beat yourself up for your mistakes, Canute. This had been
+        a tough assignment, but you\u2019ve handled it just like Arthur taught you.
+        He\u2019d be right proud of you if he could see you now.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-4Epi.10
+      line: "He left Canute in the kitchen to ponder his words. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

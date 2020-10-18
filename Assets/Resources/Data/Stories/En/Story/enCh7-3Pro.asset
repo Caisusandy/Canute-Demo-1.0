@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-3Pro
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-3Pro
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-3Pro.1
+      line: "They stopped again in another town, one much scrappier than any they\u2019d
+        visited before. Canute thought they\u2019d descended into some dark mixture
+        of their land and the dark place underneath it. There was a constant choking
+        smoke in the air and eerie noises echoed in the narrow streets. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Pro.2
+      line: "Canute glanced over at Ron to see how he was handling it. Ron\u2019s
+        eyes darted side to side, and his hand was in his pocket fidgeting with something.
+        Canute looked around at everyone else, noting similar reactions to the atmosphere,
+        and took a calming breath. He regretted it as the stench of the town clung
+        to his nostrils, and coughed. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Pro.3
+      line: "They hid their vehicles and headed up the side of an apartment building
+        on a crumbling rusty fire escape. This time, there were almost no working
+        lights in the hallways. Music thumped behind some of the closed doors as
+        they walked single file to the end of the hallway. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Pro.4
+      line: "Ron took a key ring out of his pocket and unlocked the multiple locks
+        on the outside of the door before letting the seemingly normal peephole scan
+        his eye. A chorus of mechanical noises ensued and he let them in, closing
+        the door quickly behind them. The inside wasn\u2019t much better than the
+        hallway, but the scraggly group sitting at the table under the singular ceiling
+        light was much worse.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Pro.5
+      line: "There were only one or two women among the other men. As a whole, they
+        were all either muscular, angry, holding some form of weaponry, or a terrifying
+        combination of all three. \nRon let out a breath through his nose.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-3Pro.6
+      line: 'Well, it looks like this room has changed hands a few times since the
+        last time I was here.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-3Pro.7
+      line: 'The most rugged of the men, their leader, smiled from his chair.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Gang of Thieves
+      id: Ch7-3Pro.8
+      line: 'Hello, Ron.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

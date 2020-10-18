@@ -16,6 +16,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17d7f7f5fd67e414089ffbdacc598c92, type: 2}
   - {fileID: 11400000, guid: 99f6f1fac784a0a43bf935a9dc5d7efe, type: 2}
   - {fileID: 11400000, guid: bc3b36bf0cfa42c47a3f3b91631eed05, type: 2}
+  - {fileID: 11400000, guid: bbf71c1458bf87f4bb463fec41994208, type: 2}
+  - {fileID: 11400000, guid: a55ee702781d76d4ea64d0b121d414ca, type: 2}
+  - {fileID: 11400000, guid: b6262df0376711c4eb724f2b3ee55f6e, type: 2}
   armyPrizes:
   - {fileID: 11400000, guid: ef70973596ee413469f47337cf935051, type: 2}
   - {fileID: 11400000, guid: ae2832a9bf31ffb43976b636e570b0e7, type: 2}
@@ -31,6 +34,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ed550b631ec6b44f9c4556bc527f174, type: 2}
   - {fileID: 11400000, guid: 72923b99365de874c8b221b93763fcdd, type: 2}
   - {fileID: 11400000, guid: cd89c7568169cde45a95f7ba9f68556e, type: 2}
+  - {fileID: 11400000, guid: 4f36d7de3c4661a478f91c296ca4b58c, type: 2}
+  - {fileID: 11400000, guid: 908666e3b365d6a4f9e5a47b5f23805d, type: 2}
+  - {fileID: 11400000, guid: 8ce697d80c45adc43918b74a7c627290, type: 2}
+  - {fileID: 11400000, guid: 3b30b69ca29a92b4aa0bdbbde5c6619c, type: 2}
   leaderPrizes:
   - {fileID: 11400000, guid: b50cb081ccd8c544ebbb8e952d6fbb3b, type: 2}
   - {fileID: 11400000, guid: c363f5bb71c4f6f448525f36094c2cfa, type: 2}

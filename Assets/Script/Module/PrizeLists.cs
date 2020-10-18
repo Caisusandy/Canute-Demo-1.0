@@ -15,7 +15,9 @@ namespace Canute
         [Obsolete]
         public static int GetCurrencyCount(this IEnumerable<Prize> prizes, Currency.Type type)
         {
-            return prizes.Where((p) => p.PrizeType == Item.Type.currency).Where((p) => p.Name == type.ToString()).Sum((p) => p.Count);
+            if (prizes == null) return 0;
+            int v = prizes.Where((p) => p.PrizeType == Item.Type.currency && p.Name == type.ToString()).Sum((p) => p.Parameter);
+            return v > 0 ? v : 0;
 
         }
     }

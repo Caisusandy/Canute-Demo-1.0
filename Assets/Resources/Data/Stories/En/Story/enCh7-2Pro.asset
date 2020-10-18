@@ -1,0 +1,256 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-2Pro
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-2Pro
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-2Pro.1
+      line: "After they\u2019d eaten, the team medic and Evelyn examined Finn\u2019s
+        wound. He was pleased to hear that he\u2019d survive the night and quickly
+        fell asleep from exhaustion after his bandages were changed. One by one,
+        the team members settled down across the room, using their packs or each
+        other as pillows. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.2
+      line: "Eventually, Canute, Ron, and Evelyn were the only ones awake. There
+        couldn\u2019t have been a stonier silence than there was between Evelyn and
+        Ron. Canute tried to break the silence, but he felt like he was only making
+        it worse, so he simply sat there and nursed his coffee, enjoying the warmth
+        on his icy fingers. Evelyn eventually spoke up, her voice a little softer
+        and less stressed than it was before. It sounded like she was trying to make
+        an attempt to bury the hatchet. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-2Pro.3
+      line: 'How have the past few years been treating you?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.4
+      line: 'Ron knocked back the rest of his coffee, chuckling quietly.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-2Pro.5
+      line: "You know me. I\u2019m always getting into trouble of some kind or other.
+        It\u2019s been getting more difficult. I\u2019m not as young as I used to
+        be.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.6
+      line: "Evie smiled a little. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-2Pro.7
+      line: "It\u2019s good to know you haven\u2019t changed.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.8
+      line: "Her happy expression melted into a mournful one that somehow made the
+        dark circles under her eyes seem even larger. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-2Pro.9
+      line: 'So many people have died, Ron. People that were dear to us.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.10
+      line: "She fell silent. Ron nodded. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.11
+      line: 'Death is a terrible thing.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.12
+      line: "Canute moved away to an empty corner and molded his pack into a slightly
+        more comfortable pillow. He listened to the old friends talk until he drifted
+        off to sleep. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.13
+      line: "The next morning was a quiet one as everyone woke up and collected their
+        supplies. Finn was feeling much better after a good night\u2019s sleep and
+        decided it was best to continue on despite his wounded leg. Evie shared what
+        little food she could with the team and sent them off. Canute tried to thank
+        her, but she shook her head and smiled.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Evelyn Burke
+      id: Ch7-2Pro.14
+      line: "Don\u2019t mention it. Good luck with your mission, and keep Ron from
+        doing anything ridiculous.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.15
+      line: "Canute nodded. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-2Pro.16
+      line: "Will do, ma\u2019am.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.17
+      line: "They retrieved their vehicles and left town. For the next couple of
+        days, they hopped from town to town, staying the night in abandoned warehouses
+        or whatever establishment that would have them. Ron\u2019s secret network
+        of smugglers was put to the test as they tried to find safe houses. Unfortunately,
+        some of their arrangements fell through.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.18
+      line: "One night, they had stopped outside a bar. Ron had gone inside for whatever
+        reason, leaving Canute and the others waiting awkwardly outside the front
+        door. Canute\u2019s sixth sense was telling him that something wasn\u2019t
+        right. Out of nowhere, Ron stumbled out of the bar door, blood running from
+        his nose and hair disheveled. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Ron Thompson
+      id: Ch7-2Pro.19
+      line: "We gotta get out of here! We\u2019ve been double-crossed.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: '?'
+      id: Ch7-2Pro.20
+      line: "I\u2019ll say.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.21
+      line: "A woman sauntered out the door behind him, tall and dark-skinned and
+        dressed in mostly black leather. Under her jacket, a map of tattoos peeked
+        out of her tank top around her shoulders, and when she leaned against the
+        wall, Canute saw a gun holstered on one hip. She blew a bubble of gum, popped
+        it, and bared her teeth in a smile. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: '?'
+      id: Ch7-2Pro.22
+      line: 'Hands up in the name of the law.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-2Pro.23
+      line: 'At that moment, a squad of law enforcement officers pulled up behind
+        them. Canute groaned and gritted his teeth.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-2Pro.24
+      line: "You\u2019ve got to be joking.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

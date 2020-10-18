@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbb305ac11b2d14a8c6c5639fb34b36, type: 3}
+  m_Name: Tutorial Infantry 3
+  m_EditorClassIdentifier: 
+  Prototype: {fileID: 0}
+  spawnType: 0
+  radius: 0
+  generateCount: 0
+  battleArmy:
+    name: Basic Infantry
+    prefab: {fileID: 6470687005625561500, guid: ba5c08244dff89c4d9ddf4272326234d,
+      type: 3}
+    uuid:
+      value: 360d2906-2f37-42b9-bfec-24228240ef0a
+    ownerUUID:
+      value: 63c5918a-5aad-45ae-8bab-1b681601289b
+    allowMove: 1
+    coordinate: {x: 1, y: 3}
+    stats:
+      list: []
+    localLeader:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: d72525cf-a6a9-4306-8705-bb7a2d7e60d6
+      ownerUUID:
+        value: 
+      allowMove: 0
+      coordinate: {x: 0, y: 0}
+      stats:
+        list: []
+      career: 0
+      leadingArmyUUID:
+        value: 
+      isViceCommander: 0
+      level: 0
+      bounes: []
+    autonomousType: 0
+    anger: 0
+    career: 1
+    properties:
+      defense: 0
+      critRate: 20
+      critBonus: 0
+      critBounes: 20
+      pop: 0
+      attackRange: 2
+      moveRange: 4
+      standPosition: 1
+      attackPosition: 1
+      attackArea: 0
+      damageExtraCount: 0
+      targetCount: 1
+      attackType: 5
+      skill:
+        specialName: 
+        count: 0
+        parameter: 0
+        args:
+          args: []
+      addition:
+        args: []
+    maxHealth: 100
+    health: 100
+    armor: 0
+    damage: 50
+    type: 0

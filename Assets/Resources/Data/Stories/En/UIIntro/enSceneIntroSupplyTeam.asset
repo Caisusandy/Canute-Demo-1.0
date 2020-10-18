@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enSceneIntroSupplyTeam
+  m_EditorClassIdentifier: 
+  story:
+    id: SceneIntroSupplyTeam
+    type: 1
+    wordLines:
+    - speakerName: Finn Herman
+      id: 
+      line: Sir, we need to have more resource from outside of base. So we need to
+        send some people to go outside to get some.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Finn Herman
+      id: 
+      line: Even though outisde is dangerous, it is possible to get plenty resources,
+        including some abandoned armies and equipments. We might meet some friends
+        who might come back with us!
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+    - speakerName: Finn Herman
+      id: 
+      line: Yet we still need one army to protect the leaders... I don't want to
+        get hurt on the way to outside.
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []

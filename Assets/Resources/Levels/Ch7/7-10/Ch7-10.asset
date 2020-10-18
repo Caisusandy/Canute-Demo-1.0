@@ -1,0 +1,2831 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a598e8f8415514cb46cd2ad10bcb73, type: 3}
+  m_Name: Ch7-10
+  m_EditorClassIdentifier: 
+  levelName: Ch7-10
+  battle:
+    battleType: 0
+    avoidPlayerDefinedLegionSet: 0
+    avoidResonance: 0
+    firstTimePrize:
+    - name: Amlos
+      count: 1
+      parameter: 0
+      type: 3
+    prizes:
+    - name: Exp
+      count: 500
+      parameter: 0
+      type: 8
+    - name: fedgram
+      count: 1
+      parameter: 800
+      type: 7
+    - name: manpower
+      count: 1
+      parameter: 800
+      type: 7
+    - name: mantleAlloy
+      count: 1
+      parameter: 50
+      type: 7
+    enemy:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: ab711845-592f-4d0f-bfd8-632a1b408f07
+      ownerUUID:
+        value: ab711845-592f-4d0f-bfd8-632a1b408f07
+      personality: -1
+      viceCommander:
+        name: 
+        prefab: {fileID: 0}
+        uuid:
+          value: 8b2b04dc-7ede-4e61-8d10-fff8723da3e0
+        ownerUUID:
+          value: 
+        allowMove: 0
+        coordinate: {x: 0, y: 0}
+        stats:
+          list: []
+        career: 0
+        leadingArmyUUID:
+          value: 
+        isViceCommander: 0
+        level: 0
+        bounes: []
+      pile:
+        eventCardUUID:
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+      maxHandCardCount: 5
+      maxArmyCount: 0
+      actionPoint: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+    thirdParties: []
+    waveInfo:
+    - battleArmies:
+      - {fileID: 11400000, guid: 1cd2a7ee3bf87cf408ba74dbd36e92dc, type: 2}
+      - {fileID: 11400000, guid: 7f04a91b145e5984c90c2c0f3da99f2d, type: 2}
+      - {fileID: 11400000, guid: a7de606869cc5504796bfce450aa9bda, type: 2}
+      - {fileID: 11400000, guid: 1d8718edad8e8ae468fabe229e7ebab4, type: 2}
+      - {fileID: 11400000, guid: 5d845d108b0f32541881d779c164ffb3, type: 2}
+      battleBuildings:
+      - {fileID: 11400000, guid: 8364171ed5cd2fd459a79e48936fdb70, type: 2}
+    mapPrefab: {fileID: 7540948199326451861, guid: 584c6097a54e3d1488e807c650d787fe,
+      type: 3}
+    player:
+      name: 
+      prefab: {fileID: 0}
+      uuid:
+        value: 9611a3e9-c737-40ba-aeb1-1196981e85a2
+      ownerUUID:
+        value: 
+      personality: 0
+      viceCommander:
+        name: 
+        prefab: {fileID: 0}
+        uuid:
+          value: 757079a3-9a50-44be-b51f-ecfcc343c7ee
+        ownerUUID:
+          value: 
+        allowMove: 0
+        coordinate: {x: 0, y: 0}
+        stats:
+          list: []
+        career: 0
+        leadingArmyUUID:
+          value: 
+        isViceCommander: 0
+        level: 0
+        bounes: []
+      pile:
+        eventCardUUID:
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+        - value: 00000000-0000-0000-0000-000000000000
+      maxHandCardCount: 5
+      maxArmyCount: 0
+      actionPoint: 0
+      eventCardPile: []
+      handCard: []
+      stats:
+        list: []
+    round:
+      wave: 0
+      round: 0
+      turn: 0
+      stat: 0
+      currentPlayerUUID:
+        value: 
+    stat: 0
+    centralDeck:
+      list:
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: b412c67b-3aa3-4d94-8e61-0671204a7269
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 79f7a864-475a-4667-87e6-537eb7b97b2f
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 7bae7deb-ee76-42ec-9147-f662922d5715
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 43545407-2eae-482e-a8de-149f12a8101e
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: bbd37f75-9db2-4323-a435-3f3b4546b50a
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: e2babd66-b7b6-4a99-aba7-f4089912e7a6
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 493d380a-af88-453f-a70a-3f7b1fd7f3c5
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: cf202493-3198-45b2-9419-fde7863a85c7
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 50e86063-a90a-4b54-b169-750059f7e4ab
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 4c5c8bf4-621d-46ae-83a4-0dd5a7cb60af
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: a392896b-f363-46ef-a075-f0da43a745af
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: f465e78e-07ed-461c-a3be-a2b41ce14564
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: df07068c-5beb-4c2b-8638-209e4acd7d70
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: a95526ab-badd-4d53-af7d-c06d809be314
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 8e5e430d-02bd-48b5-81ac-3b44283f725a
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: c03caf21-b737-4d5c-9b4d-e18492f74787
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 34e9c767-7818-45a6-80a2-a0f74d825d96
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 01a022e0-167b-4f2b-9816-530fd255e3ca
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: armySwitch
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 19c1ac78-116c-4477-8b26-da272b051857
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: cd1f2806-d281-4382-bc98-29aea713c2f4
+          specialName: armySwitch
+          type: 13
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: armySwitch
+        career: 0
+        type: 1
+        target: 8
+        actionPoint: 1
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: ea72ff3b-8a35-485b-b959-7975a9cc3e61
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 05623af5-6e0f-43f1-b898-8689658de6a3
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 021d1045-8a33-48d0-a2ad-aaff196484bc
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: d238e6df-84c5-46d6-a898-b6b03ff79df0
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: ca82491f-3855-4280-a27e-58bfcc102df9
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: a3c090ed-4e8f-458f-9c50-59a3a7ce60c4
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 39e5fb91-01d0-48a2-9fde-c3db6d528615
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 591fdc24-c896-42f3-bdb2-8a7f4c356cdf
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: f0349355-2c84-418f-be77-09e47c227327
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: cb16b845-d73e-4f06-babe-2908f52f55fc
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 927ed60b-5081-4300-8b47-25b1a0dedf6c
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ac620572-28b2-40c3-aafc-bcb6f2384443
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 380ba86c-d12f-46e1-b781-a27952f0225c
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 0817a623-4b26-4470-9cf5-527773ccded7
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 3a47db87-4a81-4c6b-b55d-4baf7dbcd461
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ace509cc-9a1c-4f5d-9403-7d3950593a7c
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: armySwitch
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 3629f3a2-5c6e-4338-b2fd-510a4e83d8e5
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: d05648c6-c5dc-443a-b998-8736e4af65a1
+          specialName: armySwitch
+          type: 13
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: armySwitch
+        career: 0
+        type: 1
+        target: 8
+        actionPoint: 1
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: d997b04e-8780-4252-b7af-157900943908
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 4689a873-7704-4153-a88e-a8bd1cf6ac56
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: cardMinusPoint
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 81123aff-3fdc-4349-b264-e5660e8b77c7
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: cad34edb-9b5b-4bcb-a91e-50be0d54427f
+          specialName: cardMinusPoint
+          type: 13
+          count: 1
+          parameter: -3
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: addActionPoint
+        career: 0
+        type: 1
+        target: 65
+        actionPoint: 1
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 75971908-abc8-4196-8187-5db0e2e7090a
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 42bc94dd-be51-4c36-a1ab-1fc71703c385
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: dbc61278-96a7-4b3a-91af-58f3cb5707b2
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 151af5ab-d024-468d-b546-26fa644ede18
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: b9d3286c-6683-42a3-b99a-76256f3967c4
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 539cd2a6-bc04-4d3d-a3d4-a97ddb811842
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: drawCard
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 2382478f-d822-469d-af8c-5b1a9360aa69
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 4cdb1557-1967-44d8-af91-b50ad92a70be
+          specialName: drawCard
+          type: 13
+          count: 1
+          parameter: 2
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: drawCard
+        career: 0
+        type: 1
+        target: 4
+        actionPoint: 1
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: a9a43223-8edb-4694-832a-406a01bdb0b9
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ec45c5c1-9523-42ff-8008-dd0002c97806
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 9b48c41d-cf97-4d16-8feb-1865148fd1f4
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ff2b6caf-5dd4-456c-8ec9-98837e27bc7b
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 598d9111-e071-4fe5-a7af-9f8df1bff825
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 63138ada-6cb1-4318-9d05-45c4656590a6
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 829e4c67-d0bc-44bf-a90e-a084fa227911
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: adb0d488-a93a-4138-920e-0d0e18757015
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 432059eb-1326-41e6-8493-dcfef981d313
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 04654680-e32c-475c-a442-703ee6c323f0
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: confusion
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: daef6c48-163f-4b74-bd67-c7bac37f347f
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 9f582c08-8a2c-423b-bde2-29e3b352b223
+          specialName: confusion
+          type: 11
+          count: 1
+          parameter: 50
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyType
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty
+            - key: statType
+              value: turnBase
+            - key: specialName
+              value: confusion
+        career: 0
+        type: 1
+        target: 10
+        actionPoint: 1
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 8fab265f-4c13-4c6f-a96f-515904beface
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 6a227450-d36b-42d9-ab0b-005dc7717ee7
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: d5342b3f-4c52-47bd-9f14-55757ab9ec4b
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: dbd1a03f-45f2-4f62-b97f-7e4ef14eacb4
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: f0801f9e-fd43-4f34-8e12-d684eec0337a
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: a7800268-e4b8-4c51-a537-94659b5e76a0
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 699dee3b-6cec-43e7-84d6-0ae08a9b8174
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ebf57b5e-7557-4ca9-8944-73fe0882c319
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: cardMinusPoint
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: cc411314-bfd5-4156-b540-f87b0241f1d5
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 4799c10f-ca48-4e5a-a039-01e26143cd88
+          specialName: cardMinusPoint
+          type: 13
+          count: 1
+          parameter: -3
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: addActionPoint
+        career: 0
+        type: 1
+        target: 65
+        actionPoint: 1
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: d68b8ebf-fd94-4ab7-8a16-ebfcbdefc6c3
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 10058253-e26c-4ae6-8ef9-acf12c07d585
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 1758e6be-ef48-413a-9478-f707679a11b7
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: b4775a15-0638-4a60-9012-783d56009c5c
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: e7c19eb2-5c44-48db-9f34-55df120c8139
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 75af8243-bb61-40a5-ac07-20762835673e
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 4ee2ba57-d2ea-4798-9bc2-0d4315a56f15
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 33272083-7d7a-46ca-ad49-8bdb6d581ad0
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 880e7f5f-e2f3-4110-b54d-c13101a2a2c8
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 809f46f1-7a54-43f4-8e07-5ef5c78895a4
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 0a2646f2-71d1-4ef8-8651-30f77f874f02
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: cda6f193-d931-4daa-b873-012675cf243f
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: armySwitch
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 3460723a-85f3-4109-a297-035538f1bd62
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 10a99696-87df-4ee2-a27b-a8c8317a3cb3
+          specialName: armySwitch
+          type: 13
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: armySwitch
+        career: 0
+        type: 1
+        target: 8
+        actionPoint: 1
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 2e588e30-e0e5-4e1e-a304-6b5886c6a825
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 4da91ba1-5510-4801-921b-95a65b3d694f
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: b4adcab8-b0ea-4dc3-8d22-6072e552d564
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 65eb4443-7c8c-4708-8e8f-6feffd59e14e
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: confusion
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 17465dc5-6241-479a-a47a-7f6310be8e2c
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 2166e9b4-2838-4ab8-b710-d007ca08edc4
+          specialName: confusion
+          type: 11
+          count: 1
+          parameter: 50
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyType
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty
+            - key: statType
+              value: turnBase
+            - key: specialName
+              value: confusion
+        career: 0
+        type: 1
+        target: 10
+        actionPoint: 1
+      - name: confusion
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: d7ec8a45-2b74-41d0-a892-e1c1398bc42f
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: c79ae3bd-11a4-4af9-80b1-baa60a3ce988
+          specialName: confusion
+          type: 11
+          count: 1
+          parameter: 50
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyType
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty
+            - key: statType
+              value: turnBase
+            - key: specialName
+              value: confusion
+        career: 0
+        type: 1
+        target: 10
+        actionPoint: 1
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 9f625141-fe7f-4cba-b21a-e6fc5184eb23
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 1c685120-bd86-4e0c-868a-6b81f93952cb
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: eeca7e2e-aad7-40ad-bacd-ac63d3c314f9
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: d7dcc747-2350-40ef-9209-b7d951b863c5
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 2f947efe-ed40-40f1-bb7b-8a700e1ebcd2
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: b849bd4a-59ce-40cf-bcf4-d7c0c51d33c5
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: c5e51c37-4512-4ae8-bb61-2ddc9fabd6ea
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 4b462486-d767-4603-922b-4662741a2c23
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: armySwitch
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: ef4d896e-ab3f-4857-b5b9-e61014e6dd09
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 9c2e9fcc-31bf-4379-adf8-9ce523dc8daf
+          specialName: armySwitch
+          type: 13
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: armySwitch
+        career: 0
+        type: 1
+        target: 8
+        actionPoint: 1
+      - name: armySwitch
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 6603778c-db95-4df7-8bea-004ab45ffb0e
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 669428dc-4cac-4b54-a119-43235461ebba
+          specialName: armySwitch
+          type: 13
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: armySwitch
+        career: 0
+        type: 1
+        target: 8
+        actionPoint: 1
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 5d716add-fa8f-43f2-b73c-a8649b3d717f
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 1c11720f-1bbf-4371-ab26-733bdc3b30f8
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: c3b6c94b-e18a-473d-8f74-b2566baa4e56
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 0b5183d1-c5eb-4a06-8761-12dbb4d520dd
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: confusion
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 20ca10e1-9e62-4177-9224-5df704299f29
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 7046f072-6f81-4954-bf18-928e538a3493
+          specialName: confusion
+          type: 11
+          count: 1
+          parameter: 50
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyType
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty
+            - key: statType
+              value: turnBase
+            - key: specialName
+              value: confusion
+        career: 0
+        type: 1
+        target: 10
+        actionPoint: 1
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: a039c374-5834-42dd-8dce-c6a35391a6e6
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 389e86f3-1362-4031-ad86-f1616186c774
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 53ffa804-ed73-4579-9a6b-56c14bb42851
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 3ff0d527-3bd6-4d29-a09f-2cc3c12b2e19
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: drawCard
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: c227aa60-5f64-4bbd-a48f-086dc43f98ec
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: bd49c7ce-2cc0-45eb-90ad-0264f95f1d4d
+          specialName: drawCard
+          type: 13
+          count: 1
+          parameter: 2
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: drawCard
+        career: 0
+        type: 1
+        target: 4
+        actionPoint: 1
+      - name: confusion
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: d4fae06a-5a18-4af3-879d-47bc9cdb24c9
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 20a5497b-1225-4cb8-b509-42722b99b29d
+          specialName: confusion
+          type: 11
+          count: 1
+          parameter: 50
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyType
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty
+            - key: statType
+              value: turnBase
+            - key: specialName
+              value: confusion
+        career: 0
+        type: 1
+        target: 10
+        actionPoint: 1
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: a2529b84-6f97-4cc0-952b-4c7d41058545
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: f50d3f8e-a5e6-4cc0-896e-1cea328f99e3
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 811b5db9-e513-4edd-b22d-50111b91a829
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 0fd0f3a7-b9e6-44d1-bde3-5b945741b59d
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: armySwitch
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 573f1116-604d-4558-957b-7a2518414be3
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: b10ebcea-8b11-4be1-b15a-4f747d83ae00
+          specialName: armySwitch
+          type: 13
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: armySwitch
+        career: 0
+        type: 1
+        target: 8
+        actionPoint: 1
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 7d434b3a-78f9-4ca0-a90b-ce4d520ececf
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 2a6577ed-8c6d-4648-abf7-a617cb22c060
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 4889680a-8d63-4714-b40b-ab1f3d7ff11d
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 63247ea6-194b-4400-8b71-2ed8e144e364
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: ce104e96-ab68-4667-824a-283ae88f622c
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 6625b4c5-3aad-4c0f-adb9-a8cf35891d1c
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 936bcef2-e05a-40ab-8ade-d9b52c3c91d1
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: f27f1215-f0d7-4623-9576-b443a329982b
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 22199d56-6f1c-4507-875c-b325f1c5e454
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 6aec599d-596c-46e2-9349-2ea5832c49a3
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: cardMinusPoint
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 4c3b26c9-0f9c-4f87-96c8-c21421003827
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 1f54b9bb-d4cc-4022-a413-8e2480f1779c
+          specialName: cardMinusPoint
+          type: 13
+          count: 1
+          parameter: -3
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: addActionPoint
+        career: 0
+        type: 1
+        target: 65
+        actionPoint: 1
+      - name: armySwitch
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 085615a2-5271-4ee0-bc82-63941aab1387
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ee9c3649-6f8f-443f-9fde-1f12d308ed65
+          specialName: armySwitch
+          type: 13
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: armySwitch
+        career: 0
+        type: 1
+        target: 8
+        actionPoint: 1
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: c66e03e4-8c05-4271-8633-86f62fc3efc1
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: b33ed51a-5cd1-44b1-9e32-93adc47ba82d
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: e66286f6-5298-43b1-9081-b5e5d0f52e22
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 1172d6d9-d62f-4395-81be-2b0053745c5c
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: e18aee33-b46a-4eaa-83cb-63c234862756
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 8741a63b-6727-417c-9400-0f9e05199e24
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 68407605-1c26-4bdb-8b2c-bc9d7420ef1b
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: a9ae4de5-3517-4b50-8969-4ade05486655
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: cardMinusPoint
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 2f4205aa-bcd3-4519-b4ae-f862ffd7bef0
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ae271760-3b5c-4256-b63f-e1d32671a913
+          specialName: cardMinusPoint
+          type: 13
+          count: 1
+          parameter: -3
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: addActionPoint
+        career: 0
+        type: 1
+        target: 65
+        actionPoint: 1
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: ef9a2942-612d-44d2-a5f2-7f94189c324b
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 99b5106d-3a06-4c64-92aa-a39c93c7e8cf
+          specialName: 
+          type: 1
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 2
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: e3165883-e604-4375-8094-8d3691eb289c
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: a66d8515-1889-474c-bf04-d320e1459445
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: cardMinusPoint
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: d605d371-7f95-4fb3-8cfa-03cfadcb2f8f
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 0b7c2b43-367a-46cf-addb-8e15e302b651
+          specialName: cardMinusPoint
+          type: 13
+          count: 1
+          parameter: -3
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: addActionPoint
+        career: 0
+        type: 1
+        target: 65
+        actionPoint: 1
+      - name: drawCard
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 5ccb064a-d44c-4479-a4bc-97183133500e
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 6414c9ff-75dd-448d-9167-820297bca618
+          specialName: drawCard
+          type: 13
+          count: 1
+          parameter: 2
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: drawCard
+        career: 0
+        type: 1
+        target: 4
+        actionPoint: 1
+      - name: armySwitch
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 8a4222ba-a441-42da-ab0a-1e70dc3768b6
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: b865d62f-afec-4d03-aa16-fa0df4520efc
+          specialName: armySwitch
+          type: 13
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: armySwitch
+        career: 0
+        type: 1
+        target: 8
+        actionPoint: 1
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 6a0111d4-2d06-42e2-9143-8f555a8f1e7f
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ed67b4ed-5a68-4701-9fc1-949e5b3c7647
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: c877fe37-23d7-49be-9038-3011972d7986
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 957eb2f1-3e40-4ee7-ba56-04a318f549a3
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: a3e010c1-038a-434e-8fac-1e3ff2affeec
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: d6de6d5c-a2f3-4a4f-89b7-007b4598159b
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: drawCard
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 3b41b285-df67-4ce4-9cbc-7f9fd6d8d9df
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ad09e7f2-41ca-4a5f-8daf-8868199f0c8b
+          specialName: drawCard
+          type: 13
+          count: 1
+          parameter: 2
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: drawCard
+        career: 0
+        type: 1
+        target: 4
+        actionPoint: 1
+      - name: confusion
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 21b37fc8-b216-403e-869d-8ab82efae360
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 5d6fccd6-0c90-4737-b713-53b6b19ef6e8
+          specialName: confusion
+          type: 11
+          count: 1
+          parameter: 50
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyType
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty
+            - key: statType
+              value: turnBase
+            - key: specialName
+              value: confusion
+        career: 0
+        type: 1
+        target: 10
+        actionPoint: 1
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 02c65445-d2f9-42a7-8d81-0c3cd012145c
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 6c1b6382-bc2a-4ba7-8723-99751f9f1cff
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 06df7411-0011-4eaa-b4bc-787c4e3ad017
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 77a10a6b-c42a-49ad-9652-e77cff8bd257
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 26348c5f-8d84-4d37-9a47-5039bbd411e3
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: be3becc2-b82c-4004-8471-6dd120905b15
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: cardMinusPoint
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: a8732564-2dc4-4f0a-a35a-8bcb8fc305d8
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: a4b214b0-67b6-4000-939d-5ffb6ef1f7fb
+          specialName: cardMinusPoint
+          type: 13
+          count: 1
+          parameter: -3
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: addActionPoint
+        career: 0
+        type: 1
+        target: 65
+        actionPoint: 1
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: cc6f76a2-21cd-4790-a01e-588e93c95954
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ffb7ae94-aaf1-45bc-b160-faa87a8e538b
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 27d78026-a2df-4ab7-afbc-3abbc539f7e2
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 2a60a58e-6d3b-46b5-bcfb-8d9f68f37059
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 098bbd79-8675-410d-be3d-d7e0ee21eb47
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 16571ce8-66e0-4a5d-bbce-80d75282b3c8
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: cardMinusPoint
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 50dfcae2-2f3e-4ae5-a59e-2f5bafe4d7f2
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 43d73472-4808-4a8c-a5a1-ebf8c4d1cbe5
+          specialName: cardMinusPoint
+          type: 13
+          count: 1
+          parameter: -3
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: addActionPoint
+        career: 0
+        type: 1
+        target: 65
+        actionPoint: 1
+      - name: normal-politician
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 522b9abb-f75b-42ea-8984-7eb98f41b969
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 78bbcc1f-8613-456e-b6e7-5c400cd061f9
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 2
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 36eacd3f-6bbe-4e5a-9d56-3475a29aa687
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: b21a2914-42f8-4b68-bf68-250f14f8035d
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: confusion
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 813335d5-1060-4929-aed7-087848c723b3
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 5ec4056e-790b-4761-b983-b20e2573a57c
+          specialName: confusion
+          type: 11
+          count: 1
+          parameter: 50
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyType
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty
+            - key: statType
+              value: turnBase
+            - key: specialName
+              value: confusion
+        career: 0
+        type: 1
+        target: 10
+        actionPoint: 1
+      - name: normal-general
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: a27fd77b-a6d0-431e-a69f-8b1737efa1b4
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: db99b9b8-8660-49a9-ac57-c7fbf7de8d74
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 3
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: cardMinusPoint
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 364474e7-5004-4b8a-81b5-eabc002942db
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 20411711-c2f8-4e22-94d4-65dc283cb2a2
+          specialName: cardMinusPoint
+          type: 13
+          count: 1
+          parameter: -3
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: addActionPoint
+        career: 0
+        type: 1
+        target: 65
+        actionPoint: 1
+      - name: drawCard
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: aaa8567a-08d3-4d43-9916-d33e48df2e02
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: f956a512-38cf-4114-a3db-4d7e7c079acd
+          specialName: drawCard
+          type: 13
+          count: 1
+          parameter: 2
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: drawCard
+        career: 0
+        type: 1
+        target: 4
+        actionPoint: 1
+      - name: drawCard
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: aa74d452-6c1c-4a0d-b84e-3effe9e7a56b
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 3070fd7a-1994-4921-97fb-afc2290ca874
+          specialName: drawCard
+          type: 13
+          count: 1
+          parameter: 2
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: drawCard
+        career: 0
+        type: 1
+        target: 4
+        actionPoint: 1
+      - name: drawCard
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 9fd33dc8-b1a1-4a33-b84d-d1bd76c59099
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: f4c0ee13-38a6-4e0d-9bd1-677e741a3281
+          specialName: drawCard
+          type: 13
+          count: 1
+          parameter: 2
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: drawCard
+        career: 0
+        type: 1
+        target: 4
+        actionPoint: 1
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 5016f213-8137-4267-9efc-50f398686431
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 6c60f2e0-9a6c-4659-a0a0-40eefe88f2ca
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 45a0ba01-56f9-445c-8b37-14a0b71c1995
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 6a784333-cdf1-4c47-bfb6-ca4f98b2baa9
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: confusion
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: 1eb56676-9c8f-4ad9-904e-cdad868e1e7e
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 08e2778c-ff2e-4047-ad4f-7172ca99e9b3
+          specialName: confusion
+          type: 11
+          count: 1
+          parameter: 50
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: tc
+              value: 1
+            - key: sc
+              value: 0
+            - key: onMove
+              value: true
+            - key: propertyType
+              value: attackRange, moveRange
+            - key: bonusType
+              value: percentage
+            - key: name
+              value: confusion
+            - key: effectType
+              value: propertyPanalty
+            - key: statType
+              value: turnBase
+            - key: specialName
+              value: confusion
+        career: 0
+        type: 1
+        target: 10
+        actionPoint: 1
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 6d91cd9e-82db-4fbd-bf87-fb215df01f7d
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: db6fb582-c8a4-4607-b4dc-9c0e0623aa0f
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-scholar
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 1f558e62-ef5b-45a7-ad13-5900e15111e7
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 0afdd507-0d25-4754-8ef8-a3e1fdd44214
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 1
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: normal-merchant
+        prefab: {fileID: 4382801775652925750, guid: b22909f977e412a4b9835a6aa3782a28,
+          type: 3}
+        uuid:
+          value: 6fb1a453-18f2-41c8-ba7e-c3e6e0018fcc
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: ffa0e9da-b660-4ca9-a3bb-c02bd29ce496
+          specialName: 
+          type: 3
+          count: 1
+          parameter: 0
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list: []
+        career: 4
+        type: 0
+        target: 9
+        actionPoint: 3
+      - name: drawCard
+        prefab: {fileID: 4382801775652925750, guid: 881340178cdf47042908308a4980b08b,
+          type: 3}
+        uuid:
+          value: e5b0ba9f-ac1b-4f84-b478-24bc3b0f3acc
+        ownerUUID:
+          value: 
+        effect:
+          uuid:
+            value: 8c813d8a-1bc4-4474-9b41-fe0479327c2a
+          specialName: drawCard
+          type: 13
+          count: 1
+          parameter: 2
+          sourceEntity:
+            value: 
+          targetEntities: []
+          args:
+            list:
+            - key: name
+              value: drawCard
+        career: 0
+        type: 1
+        target: 4
+        actionPoint: 1
+    armies: []
+    buildings: []
+    globalStatus:
+      list: []
+    ongoingAnimation: []
+    passedEffect: []
+    scoreBoard:
+      list: []
+      allPassedEffect: []
+      totalPlayerDamage: 1527
+      totalAirforceDefeated: 0
+      totalLandArmyDefeated: 21

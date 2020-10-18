@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384adb7105296545b9a4e64ed63e0df, type: 3}
+  m_Name: enCh7-6Epi
+  m_EditorClassIdentifier: 
+  language: 0
+  story:
+    id: Ch7-6Epi
+    type: 0
+    wordLines:
+    - speakerName: ===
+      id: Ch7-6Epi.1
+      line: "Their companions in street clothes had stayed to fight the droids and
+        pretended to be riotous citizens while the others continued on, saying they\u2019d
+        return with \u201Cbackup.\u201D A thread of guilt grew in Canute\u2019s stomach,
+        but he acknowledged it and shoved it down. The people they\u2019d left behind
+        were more than capable of handling those chunks of metal. They\u2019d already
+        proved their strength in the battle outside Swisha Main City. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-6Epi.2
+      line: "He sent up a prayer for them, hoping they were okay, and put the matter
+        out of his mind. After the scuffle with the droids, they hurried to reach
+        Arthur\u2019s cell in time before someone had a chance to raise the alarm.
+        Canute had to contain his nervous energy as their lockpicker worked on the
+        door. It slid open with a hiss, and lights turned on automatically.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-6Epi.3
+      line: "Two bunks stuck out from the opposite wall. The pillow on the bottom
+        bunk had been used recently, and the blanket was wrinkled, as if someone
+        had kicked it aside when they\u2019d woken up that morning. Other than that,
+        the cell was empty. Canute rushed in, looking around for any signs of a struggle,
+        but there were none. Before he could react, more security droids had swarmed
+        out of nowhere.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-6Epi.4
+      line: "Ron and Finn were surrounded and quickly subdued. Canute sprang at his
+        door with a roar, but it shut in his face, leaving him there pounding on
+        the unforgiving steel and screaming. \n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 

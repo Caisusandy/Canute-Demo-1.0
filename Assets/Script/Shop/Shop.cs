@@ -13,9 +13,12 @@ namespace Canute.Shops
         [Header("On Shop Item")]
         [SerializeField] private PriceList onShopArmies = new PriceList();
         [SerializeField] private PriceList onShopEquipments = new PriceList();
+        [SerializeField] private PriceList onShopEventCard = new PriceList();
 
         public PriceList OnShopArmies { get => onShopArmies; set => onShopArmies = value; }
         public PriceList OnShopEquipments { get => onShopEquipments; set => onShopEquipments = value; }
+        public PriceList OnShopEventCard { get => onShopEventCard; set => onShopEventCard = value; }
+
         public DateTime NextRefreshTime { get => nextRefreshTime; set => nextRefreshTime = value; }
 
         [Obsolete]
@@ -31,6 +34,7 @@ namespace Canute.Shops
         {
             onShopArmies.Clear();
             onShopEquipments.Clear();
+            onShopEventCard.Clear();
         }
 
         [Obsolete]
@@ -38,6 +42,7 @@ namespace Canute.Shops
         {
             onShopArmies.Remove(price);
             onShopEquipments.Remove(price);
+            onShopEventCard.Remove(price);
             PlayerFile.SaveCurrentData();
         }
     }
@@ -47,7 +52,6 @@ namespace Canute.Shops
     [Obsolete]
     public class Shop : ScriptableObject
     {
-        [Header("Weight List")]
         //[SerializeField] private List<WeightItem> army;
         //[SerializeField] private List<WeightItem> leader;
         //[SerializeField] private List<WeightItem> equipment;
@@ -59,11 +63,11 @@ namespace Canute.Shops
         private readonly TimeSpan RefleshDurationHour = new TimeSpan(6, 0, 0);
         private const int armyOnShopCount = 4;
         private const int equipmentOnShopCount = 4;
-        //private const int leaderOnShopCount = 4;
+        private const int eventCardOnShopCount = 4;
 
         [Header("Possible Item")]
         [SerializeField] protected PriceList ArmyPriceList;
-        [SerializeField] protected PriceList LeaderPriceList;
+        [SerializeField] protected PriceList EventCardPriceList;
         [SerializeField] protected PriceList EquipementPriceList;
 
         /// <summary>
@@ -77,7 +81,7 @@ namespace Canute.Shops
                 return;
             }
 
-            shopInfo.NextRefreshTime = ((DateTime.Now)).Add(RefleshDurationHour);
+            shopInfo.NextRefreshTime = DateTime.Now.Add(RefleshDurationHour);
             shopInfo.Clear();
             GetNewItems(shopInfo);
             PlayerFile.SaveCurrentData();
@@ -95,6 +99,10 @@ namespace Canute.Shops
             for (int i = 0; i < equipmentOnShopCount; i++)
             {
                 shopInfo.OnShopEquipments.Add(EquipementPriceList.RandomOut());
+            }
+            for (int i = 0; i < eventCardOnShopCount; i++)
+            {
+                shopInfo.OnShopEventCard.Add(EventCardPriceList.RandomOut());
             }
         }
 

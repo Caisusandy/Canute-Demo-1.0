@@ -2,6 +2,7 @@
 {
     public enum Terrain
     {
+        none = -1,
         Plain,
         Forest,
         Hills,

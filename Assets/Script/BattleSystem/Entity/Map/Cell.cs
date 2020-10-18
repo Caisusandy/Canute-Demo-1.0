@@ -14,6 +14,11 @@ namespace Canute.BattleSystem
         [Tooltip("not to show this cell when map is loaded, also there will be no access to this cell on the map")]
         public bool hide = false;
 
+        [Tooltip("temperature shown for this cell")]
+        public int temperature = 25;
+        [Tooltip("humidity shown for this cell")]
+        public int humidity = 50;
+
         public override bool HasValidPrototype => false;
         public override Prototype Prototype { get => null; set { } }
         public override string Name => base.Name + Coordinate;

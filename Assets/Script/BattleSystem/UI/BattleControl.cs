@@ -8,10 +8,11 @@ namespace Canute.BattleSystem
 {
     public class BattleControl : MonoBehaviour
     {
-        private const double maxMapScale = 1.6;
-        private const double minMaxScale = 0.8;
+        private const double maxMapScale = 8.5;
+        private const double minMaxScale = 1;
 
         public static BattleControl instance;
+
         public Vector3 inputPos;
 
         public static GameDebug DebugPanel => BattleUI.DebugWindow;
@@ -108,8 +109,24 @@ namespace Canute.BattleSystem
             if (Map.transform.localScale.x > maxMapScale && v > 0) return;
             if (Map.transform.localScale.x < minMaxScale && v < 0) return;
             if (StorySystem.StoryDisplayer.instance) return;
+            if (PausePanel.instance.Exist()?.enabled == true) return;
 
-            Map.transform.localScale *= 1 + (v / 3);
+            //Map.transform.localScale *= 1 + (v / 3); Zoom out
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                if (Camera.main.orthographicSize <= maxMapScale)
+                {
+                    Camera.main.orthographicSize += 0.3f;
+                }
+            }
+            //Zoom in
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                if (Camera.main.orthographicSize >= minMaxScale)
+                {
+                    Camera.main.orthographicSize -= 0.3f;
+                }
+            }
         }
 
         public void ToggleDebugWindow()
