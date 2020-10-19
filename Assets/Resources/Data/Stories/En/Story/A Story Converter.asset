@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc7ee739f28e864385839830141b45b, type: 3}
   m_Name: A Story Converter
   m_EditorClassIdentifier: 
-  storyName: Ch7-10Pro
+  storyName: Ch7-9Epi
   charaterNames:
   - Ron Thompson
   - Canute Svensson
@@ -29,54 +29,20 @@ MonoBehaviour:
   - Riots
   - Droids
   - Captain
-  - Amlos
-  input: "===\r\nThe next morning, they headed out early to get the most out of the
-    day. As they rode, Canute couldn\u2019t help but feel as though something was
-    a bit off. Ever since they\u2019d escaped from the prison, there hadn\u2019t
-    been too many people searching for them. That was odd considering the disturbance
-    they\u2019d made breaking out. There had to be something else going on. He sped
-    up until he was even with Ron and contacted him by radio.\r\nRon Thompson\r\nWhat\u2019s
-    on your mind, General?\r\n===\r\nRon\u2019s voice came through before Canute
-    could pull his words together.\r\nRon Thompson \r\nDon\u2019t act surprised.
-    You\u2019ve been puzzling over something the whole ride.\r\nCanute Svesson\r\nDon\u2019t
-    you think something\u2019s not right? We only escaped from Swisha Main City\u2019s
-    prison and there hasn\u2019t been anyone searching for us.\r\nRon Thompson\r\nWe
-    vanished so thoroughly they gave up.\r\n===\r\nRon laughed, then turned serious.\r\nRon
-    Thompson \r\nI\u2019ve been thinking about that, too. Do you have a plan?\r\nCanute
-    Svesson\r\nI was thinking we could change course and go to the decoy base instead.
-    If we radio ahead, they could have reinforcements waiting for us, just in case.\r\nRon
-    Thompson \r\nExcellent idea.\r\n===\r\nRon drove up to the front of the party
-    to speak with some of the other leaders. Meanwhile, Canute stayed where he was.
-    He needed to make a few calls. \r\n===\r\nThe sun was beginning to set as they
-    crested a hill. Their fake base lay before them. In every detail, it resembled
-    their real base, but there were a few small differences that only someone on
-    their side would notice. The plain was clear, but as they drove closer, Canute
-    could make out a figure standing between them and the base. I should\u2019ve
-    known. \r\n===\r\nHe signaled, and the group pulled to a stop. He dismounted
-    and walked forward alone. Even though he were wearing a long sleeved black coat,
-    the exposed skin of the man standing across from Canute glowed silver in the
-    dying sun. His calculating blue eyes observed every detail, taking in Canute\u2019s
-    worn clothing and making him feel small and insignificant. Canute straightened
-    up and looked the man, no, the robot in the eyes.\r\nCanute Svensson\r\nAnexar.
-    What a pleasant surprise.\r\n===\r\nAnexar\u2019s laugh grated across the ears
-    of everyone who heard it.\r\nAnexar Flotics\r\nThe pleasure is mine. I will enjoy
-    destroying you and your pathetic little allies.\r\n===\r\nFrom behind them all,
-    Canute could hear the whirr of approaching helicopters and the marching feet
-    of soldiers. He closed his eyes tight for a moment and prayed his call had gone
-    through. Without warning, something darkened the sun. He opened his eyes and
-    almost laughed in delight. Something long and thin was winging its way toward
-    them across the empty plains. It pulled to a stop just above the base, lit from
-    behind by the setting sun that illuminated its every scale. \r\nCanute Svensson\r\nAmlos!\r\n===\r\nCanute
-    noticed something, a dragon is coming from the sky, and he shouted to it. \r\nCanute
-    Svensson\r\nGlad you could make it.\r\n===\r\nThe dragon roared in response.
-    The sound rolled across the plain and struck fear into the hearts of everyone
-    who heard it.\r\nAnexar Flotics\r\nThe time has come for me to collect my revenge.\r\n===\r\nHe
-    shot forward towards the helicopters, fire blazing out of his mouth. Anexar took
-    all of this in with a calculating gaze, shaking his head. \r\nAnexar Flotics\r\nYou
-    will regret this day, Canute.\r\n===\r\nA helicopter flew overhead and let down
-    its beam to pick Anexar up. Canute rushed back to his team, ready for whatever
-    could happen. \r\nCanute Svensson\r\nThis is not about us. This is about the
-    future. This is about Arthur. This is about all of the people who need us to
-    take a stand so they can have a better life. This is dangerous, and we may die,
-    but this is worth it. \r\n===\r\nThe two armies crashed together like an earthquake.\r\n"
-  output: {fileID: 11400000, guid: 500e96497ec236d41af3791620181eef, type: 2}
+  input: "===\r\nThey broke through the last scraps of the prison's defenses and
+    the night air had never felt so good on Canute\u2019s face. Evelyn lead the charge
+    back to their safe place. Everyone was glowing, victory shining through their
+    faces even though they hadn\u2019t accomplished what they\u2019d originally intended.\r\n===\r\nCanute
+    burst through the hotel door to a defeated scene. The tech team were strewn across
+    the couch, empty coffee cups around them. They awoke with a start at the sudden
+    noise, then grumbled when they saw Canute,\r\nFinn Herman\r\nYou\u2019ve got
+    to be joking, sir. With all due respect, you gave us quite the scare.\r\nCanute
+    Svensson\r\nBut we\u2019re back, aren\u2019t we? And we\u2019ve got information
+    we didn\u2019t have before! We can still rescue Arthur.\r\n===\r\nEvelyn perched
+    on the counter and rolled her eyes.\r\nEvelyn Burke\r\nWe\u2019re all going to
+    need rescuing if we don\u2019t get out of here. Those prison wardens aren\u2019t
+    going to let us keep wandering the city for long.\u201D\r\n===\r\nRon nodded.\r\nRon
+    Thompson\r\nEvelyn\u2019s right. Heading back to base is the safest thing for
+    now. Everyone was in agreement, and they headed out of the city as soon as possible.
+    \r\n"
+  output: {fileID: 11400000, guid: baa085e140be1a843a7a8287a309154e, type: 2}

@@ -95,14 +95,3 @@ MonoBehaviour:
       position: 0
       selections: []
       nextLineID: 
-    - speakerName: 
-      id: Tutorial.5
-      line: 'You can review the tutorial in battle setting.
-
-        (upper left,
-        in the top bar)'
-      characterPortrait: {fileID: 0}
-      conversationBG: {fileID: 0}
-      position: 0
-      selections: []
-      nextLineID: 

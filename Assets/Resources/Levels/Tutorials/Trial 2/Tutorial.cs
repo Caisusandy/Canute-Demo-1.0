@@ -24,13 +24,13 @@ namespace Canute.BattleSystem
 
         IEnumerator OpenTutorial()
         {
-            while (StoryDisplayer.instance)
+            while (StoryDisplayer.currentStory)
             {
                 yield return new WaitForFixedUpdate();
             }
             StoryDisplayer.Load("Prologue2");
 
-            while (StoryDisplayer.instance)
+            while (StoryDisplayer.currentStory)
             {
                 yield return new WaitForFixedUpdate();
             }

@@ -121,7 +121,7 @@ namespace Canute
         [SerializeField] private float playCardDelay = 0.25f;
         [SerializeField] private bool showStory = true;
         [SerializeField] private string language = "en_us";
-        [SerializeField] private float volume = 0.25f;
+        [SerializeField] private float volume = 1;
 
         public UUID LastGame { get => lastGame; set { lastGame = value; Game.SaveConfig(); } }
         public bool IsDebugMode { get => debugMode; set { debugMode = value; Game.SaveConfig(); } }
@@ -141,7 +141,6 @@ namespace Canute
             useCustomDefaultPrototype = false;
             showStory = true;
             playCardDelay = 0.25f;
-            volume = 0.25f;
             language = "en_us";
         }
 

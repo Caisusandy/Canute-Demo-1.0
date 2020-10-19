@@ -19,7 +19,7 @@ namespace Canute
 
         [SerializeField] protected int star = 1;
         [SerializeField] protected string LeaderName;
-        [SerializeField] protected ArmyItemEquipmentSlot equipments = new ArmyItemEquipmentSlot();
+        [SerializeField] protected ArmyItemEquipmentSlot equipments;
 
         public Army Prototype { get => GameData.Prototypes.GetArmyPrototype(protoName); private set => protoName = value?.Name; }
         public override Prototype Proto => Prototype;
@@ -120,7 +120,6 @@ namespace Canute
         }
 
         public List<EquipmentItem> Equipments => GetEquipments();
-
         public EquipmentItem this[int index]
         {
             get => GetEquipment(index);

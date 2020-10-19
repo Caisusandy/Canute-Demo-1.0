@@ -518,7 +518,6 @@ namespace Canute
             countableItems = new ItemList();
             collectionLetterID = new List<string>();
             collectionStoriesID = new List<string>();
-            gameSceneBeenTo = new List<string>();
 
             excaTeam = new ExplorationTeam();
             GetDefaultItem();

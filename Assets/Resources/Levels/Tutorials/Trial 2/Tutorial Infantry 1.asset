@@ -53,7 +53,7 @@ MonoBehaviour:
       critRate: 20
       critBonus: 0
       critBounes: 20
-      pop: 8
+      pop: 10
       attackRange: 2
       moveRange: 4
       standPosition: 1

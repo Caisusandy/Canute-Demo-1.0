@@ -269,11 +269,7 @@ namespace Canute.StorySystem
         public void Quit()
         {
             currentStory = Story.Empty;
-            if (nextStories.Count > 0)
-            {
-                NextStory();
-            }
-            else SceneControl.RemoveScene(MainScene.StoryDisplayer);
+            SceneControl.RemoveScene(MainScene.StoryDisplayer);
         }
 
         public static void Load(Story story)

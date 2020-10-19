@@ -22,10 +22,6 @@ MonoBehaviour:
       count: 1
       parameter: 0
       type: 3
-    - name: Epilogue
-      count: 1
-      parameter: 0
-      type: 9
     prizes:
     - name: Exp
       count: 500

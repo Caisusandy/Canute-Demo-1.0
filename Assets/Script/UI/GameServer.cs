@@ -53,11 +53,8 @@ namespace Canute.UI
         private static void LoadSceneIntro()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
-
-            if (currentSceneName == "Battle") { return; }
             if (currentSceneName == "Settings" || currentSceneName == "Loading" || currentSceneName == "Game Start") { return; }
             if (currentSceneName == "Equipment List" || currentSceneName == "Army List") { return; }
-
             if (!Game.PlayerData.GameSceneBeenTo.Contains(currentSceneName))
             {
                 Debug.Log(currentSceneName);

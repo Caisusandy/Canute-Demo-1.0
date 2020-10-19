@@ -15,7 +15,7 @@ MonoBehaviour:
   isTemporaryPrototype: 0
   prototype:
     name: Shelly McMoore
-    rarity: 2
+    rarity: 3
     icon: {fileID: 0}
     sprite: {fileID: 0}
     portrait: {fileID: 0}
