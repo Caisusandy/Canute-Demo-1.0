@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e105c90ab52da45aaa0e5bc375ab50, type: 3}
+  m_Name: enEpilogue
+  m_EditorClassIdentifier: 
+  letter:
+    id: Epilogue
+    author: 
+    title: Epilogue
+    background: {fileID: 0}
+    text: "It is winter again.\r\nIt has been a long time since the Fantarium Weather
+      Console has worked seriously about weather management. In the past two years,
+      the area around them has not had a few sunny days, most of the time it is shrouded
+      in black clouds, and the temperature has constantly hovered near polar temperatures.
+      There is only a white snowfield outside, and most vegetation has frozen to
+      death. And on this rare sunny day, Canute noticed something. The sky is cloudless
+      now.\r\nMaybe this winter is coming to an end.\r\nHe checked the calendar.
+      It was March now; maybe spring was finally coming.\r\nIt might be that someone
+      finally realized that no one was managing the weather console. Or, in such
+      a chaotic age, even if someone noticed it, they couldn't tell everyone. He
+      has not paid attention to many outside affairs in two years. Since living in
+      seclusion here, management of all contacts with the outside world has been
+      handed over to Finn.\r\nHe walked out of the base and found that the temperature
+      outside was already higher than it had imagined. At the foot of the mountain
+      in the distance, he saw a group of people walking towards the base. Their dresses
+      are heavy, as white as snow. Among them, one person took out a red flag and
+      held it, while the others were trying to carry something. Canute decided to
+      walk towards them.\r\n\"Sir! We are back.\" The man holding the banner was
+      also approaching Canute, shouting excitedly in the snow. He trots in the snow,
+      holding a flagpole as a cane. The snow was so slippery that he eventually fell
+      to the ground, then got up and continued to walk towards Canute.\r\n\"How many
+      supplies did you bring back this time?\" Canute didn't pay much attention to
+      his excitement.\r\n\"A lot, it could be said that there is too many, the kind
+      that is close to infinite!\"\r\n\"What?\"\r\n\"Actually, as usual, three vehicles
+      of normal supplies.\" A man walked off the freight car. He was already quite
+      old, a his hair color already capable  of blending into the snow. \"Finn means
+      that this is a big deal. Let\u2019s go indoors first, it\u2019s too cold out
+      here, Canute.\"\r\n\r\n\r\nThe base was built into the mountains. Canute and
+      others discovered this forgotten mine shaft a long time ago. After it was modified,
+      it became the headquarters of the Scientific Revolutionary Party. The walls
+      are made of thick enough stone  mixed with  reinforcement materials. There
+      is sufficient heating technology inside, as well as various facilities such
+      as greenhouses and research stations. It is hard to imagine the world inside.\r\nWhile
+      Canute and the others were walking down the hallway, they saw a person in the
+      nearby research room, fiddling  with the same large equipment. He used dozens
+      of devices on one side to connect the test together. The magnetic field generator
+      had a radius equal to his height. He saw Canute and everyone outside but did
+      not say hello. On the contrary, he pressed the unknown remote control in his
+      hand, and the machine beside him began to roar. It resounded through the entire
+      base, then stopped in an instant like the closing of a chorus.\r\nThe man dropped
+      the remote control on the side table and walked out of the laboratory.\r\n\"Welcome
+      Ron Thompson. Our famous aethium smuggler has returned to the headquarters
+      of the Scientific Revolutionary Party.\" He spoke to the white-headed man,
+      a smile slowly spreading across his face.\r\n\"Congratulations, Theodore Pullan,
+      the famous privacy peeper, whoseaethium institute completed the chorus performance
+      and only sang for two or three seconds.\"\r\n\"These two or three seconds are
+      the best progress so far. If I can, I hope I can go outside.\"\r\nEveryone
+      looked at the instrument that Theodore had just operated. Behind the magnetic
+      field generator, there was a big black box connected to it, which occasionally
+      revealed some light. Theodore looked unhappy. He walked to the front and explained
+      to everyone, \"As you can see, we can only activate the magnetic field generator
+      for about two or three seconds, because I can\u2019t find a component that
+      can fit the one from Sigma Quadrant. For this part, I could only remake a new
+      one or find one from outside.\"\r\n\"So we can actually make one by ourselves?
+      Then why did you let me and Mr. Thompson stroll in the arctic for three months?\"
+      Finn rushed to the front of the crowd after hearing Theodore mumble the last
+      sentence. \"Do you know that there are almost all Meialians and Swishese out
+      there now? What else would you study if we were discovered? Do you plan to
+      give them a concert with your choir when they find us?\"\r\n\"It's not impossible,\"
+      Theodore didn't particularly pay attention to Finn's anger, but spoke with
+      a smile, \"If it was easier to make one myself than to ask you to find one
+      outside, I would have done it myself a long time ago. Anyway, did you bring
+      back the parts I wanted?\"\r\n\"Go to the logistics department to find it yourself,
+      third car.\" Finn glared at Theodore, still very upset. \"The things we brought
+      back this time still include a lot of food. I said, can our greenhouse efficiently
+      feed us now?\"\r\n\"The progress of the greenhouse is much better than this
+      broken generator. If it weren't for it, we would have starved to death at the
+      base about two weeks ago. I am rather curious, how did you go out for so long
+      this trip?  Do you like the new arctic-like Fantarium?\"\r\n\"That's what I
+      want to say,\" Ron inserted into the conversation. \"We tried to come back
+      a few weeks ago. But on our way back, we found a group of Meialians camping
+      at the intersection here. \"\r\n\"How many people?\" Theodore leaned on one
+      hand and pretended that he was concerned about Ron's condition at the time.\r\n\"It's
+      impossible to let us come here like blind men. In fact, we could have made
+      detours, but who knew that one of our cars would happen to have a malfunction
+      We got stuck there until we were caught by those Meialians.\"\r\n\"You were
+      discovered by the Meialians.\"\r\n\"That's it. We had to try to use the badge
+      that they gave us when we worked with them so they wouldbelieve that we were
+      friendly.\"\r\n\"And they believed it?\"\r\n\"Yes. It can only be said that
+      there are no dragons in their troops. Anyway, they tried to help us fix the
+      vehicle, but while they were trying to accomplish that, we found other things.\"\r\n\"What?\"\r\n\"It's
+      not just them, Meialia also sent a lot of troops to Swisha! I accidentally
+      fell for their plan!\" Finn snarled. \" Meialia is sending them back. The rest
+      of the army goes to Swisha!\"\r\n\"As far as I know, they have not even recovered
+      Saint Vasolina,\" Canute voiced his doubts about this plan. \"For them, Saint
+      Vasolina is thousand times more important than a slum.\" \r\n\"Yeah.\" Ron
+      coughed.\r\n\"Sorry, just an example.\u201D\r\n\"It's okay, anyway, they are
+      really moving to Swisha. We left that team as soon as possible, but we discovered
+      that there were many teams nearby. They were all the elites of Meialia, dragons,
+      and other creatures you have never seen before. We had to find a way around
+      them.\"\r\n\"It took you a month?\"\r\n\"They are stationed there and won't
+      move. We had to try to wait for them to leave. My original plan was try ot
+      get a car through but they seemed very strict.\"\r\n\"Wow, our big smuggler
+      can't escape the customs.\" Theodore moved his hand closer to the door of the
+      laboratory.\r\n\"We had to go back to Swisha first. Although we still have
+      to face other enemies, at least there will be reinforcements. Later, someone
+      gave me some news. The Supreme Council is now trying to get through the tunnels
+      established by the Septian people, but this time it leads to Swisha.\"\r\n\"They
+      have always wanted to build a tunnel to Swisha. This is not a big project.\"\r\n\"If
+      they can fix it, they will be able to quickly deploy troops on the west side
+      of the Black Mountain Range.\"\r\n\"I guess this is why the Meialians are now
+      trying to take Swisha, but the Supreme Council has been able to transport troops
+      from near the City of Anexar to the west side of the mountain range for a while
+      now.\"\r\n\"Canute, times have changed. The Meialians have already regained
+      the City of Aether. Although this has caused them to suffer further losses
+      based on a heavier loss.\"\r\n\"This...\" Canute is surprised. He doesn't expect
+      Meialia to be able to hold on for so long. In his imagination, maybe Meialia
+      has been destroyed, and it might be a few years later that the Supreme Council
+      is eliminated.\r\n\"Open the map of Fantarium, Theodore.\" Canute glanced around
+      at the glass walls of the laboratory. \"These walls should be all screen, right?\"\r\nTheodore
+      walked directly into the room after hearing Canute's request. After displaying
+      the map on the glass, he did not come out, and continued to play with his \"chorus.\"\r\n\"As
+      I said, Meialia has the ability to regain most of the land, except for Saint
+      Vasolina.\"\r\n\"Is the local garrison strong?\"\r\n\"You should remember,
+      there is something in Vasolina.\"\r\n\"The Portal.\"\r\n\"Yes, they have sufficient
+      supply lines into the city. This is not a siege, Canute.\"\r\n\"But they keep
+      standing there. Are they just there to humiliate Meialians?\"\r\n\"They may
+      still be looking for the Avgium.\"\r\n\"Ha! Good luck to them!\" Theodore shouted
+      in the room, \"Although I often suspect that this is a fake Avgium, it will
+      be the end of the world if they find it. No, then the world will be peaceful,
+      as quiet as no one has ever lived before.\"\r\n\"But the important thing is
+      that the Meialians had already taken Swisha two or three days ago. They formed
+      an agency and established so-called 'Independent Swisha', so we\u2019ll come
+      back from the chaos.\"\r\nCanute glanced at the map of Fantarium, roughly out
+      of the control area of \u200B\u200BMeialia and the Supreme Council.\r\nThis
+      is not the end for him, is it?\r\n"

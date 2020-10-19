@@ -59,7 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/ChapterSelection/Ch1.unity
     guid: 9d65c6fcf526fd44d8aa99e1cd56308f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Resources/Scenes/Credit/Credit.unity
     guid: 510d58c7e0dec9440a0f34cce1c6f70a
   - enabled: 1

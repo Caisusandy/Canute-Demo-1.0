@@ -14,20 +14,207 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 0
   story:
-    id: Ch7-1Epi
+    id: Ch7-10Epi
     type: 0
     wordLines:
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.1
+      line: 'Amlos.
+
+'
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0
       selections: []
       nextLineID: 
-    - speakerName: 
-      id: 
-      line: 
+    - speakerName: ===
+      id: Ch7-10Epi.2
+      line: 'The dragon close to Canute, it put its head toward him.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Amlos
+      id: Ch7-10Epi.3
+      line: 'Yes.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-10Epi.4
+      line: "The dragon knows how to speak Human\u2019s language.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.5
+      line: "You should not be here\u2026\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Amlos
+      id: Ch7-10Epi.6
+      line: 'I was not escaped, my king sent me here, for giving you a message.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.7
+      line: "We all knows what the message is, and the answer is no, I can\u2019t
+        give the Avgium back.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Amlos
+      id: Ch7-10Epi.8
+      line: 'And I have to give my king an answer.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.9
+      line: 'And I have to give all creatures in Fantarium a chance to leave.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-10Epi.10
+      line: 'Silent
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.11
+      line: 'Then said, you know what are we doing, we are creating a better world,
+        not just for us, also for the Federacy, Meialia, Swisha, the whole Fantarium.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Amlos
+      id: Ch7-10Epi.12
+      line: 'Dragons have to live with their pack.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.13
+      line: 'Then are you going to kill me?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Amlos
+      id: Ch7-10Epi.14
+      line: "No\u2026 Unless this is an order from the king. I will tell you if this
+        is true.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.15
+      line: 'Then what are you going to do?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Amlos
+      id: Ch7-10Epi.16
+      line: "Back to Meialia.\nJust let you know\u2026 my king is preparing everything
+        he could to defeat the Council and leave this place, including occupying
+        the whole Fantarium to defeat the Council.\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.17
+      line: 'Will we meet again?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Amlos
+      id: Ch7-10Epi.18
+      line: "In battlefield? Hopefully not\u2026\nWe will someday, in a nice spring
+        where no one is limited by the shield of Fantarium, hopefully\n"
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: ===
+      id: Ch7-10Epi.19
+      line: 'The dragon flies away. And Canute still looking at the direction he
+        left for half hour.
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Finn Herman
+      id: Ch7-10Epi.20
+      line: 'Are you ok, sir?
+
+'
+      characterPortrait: {fileID: 0}
+      conversationBG: {fileID: 0}
+      position: 0
+      selections: []
+      nextLineID: 
+    - speakerName: Canute Svensson
+      id: Ch7-10Epi.21
+      line: "Let\u2019s go back\u2026 We have a lot of thing no done yet\u2026\n"
       characterPortrait: {fileID: 0}
       conversationBG: {fileID: 0}
       position: 0

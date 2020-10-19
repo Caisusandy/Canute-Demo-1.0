@@ -47,13 +47,13 @@ MonoBehaviour:
       bounes: []
     autonomousType: 0
     anger: 0
-    career: 1
+    career: 2
     properties:
       defense: 0
       critRate: 20
       critBonus: 0
       critBounes: 20
-      pop: 0
+      pop: 8
       attackRange: 2
       moveRange: 4
       standPosition: 1
