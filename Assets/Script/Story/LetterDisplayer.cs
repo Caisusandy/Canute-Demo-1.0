@@ -22,8 +22,10 @@ namespace Canute.StorySystem
         public string loadingLines;
         public const float charPerSecond = 0.05f;
 
+        
         public static bool IsWorking { get => instance?.enabled == true; set => instance.enabled = value; }
 
+        
         private void Awake()
         {
             instance = this;
@@ -33,6 +35,7 @@ namespace Canute.StorySystem
                 BattleSystem.UI.BattleUI.SetUIInteractable(false);
             }
         }
+      
         // Use this for initialization
         private void Start()
         {
@@ -56,6 +59,7 @@ namespace Canute.StorySystem
             ScrollRect.content.transform.position = pos;
         }
 
+      
         // Update is called once per frame
         private void Update()
         {
@@ -68,6 +72,7 @@ namespace Canute.StorySystem
             LoadWord();
         }
 
+        
         public void OnMouseUp()
         {
             if (text.text != loadingLines)
@@ -118,11 +123,13 @@ namespace Canute.StorySystem
         }
 
         /// <summary> 进行下一个对话 </summary>
+        
         public void Next()
         {
         }
 
         /// <summary> 关闭剧情窗口 </summary>
+       
         public void Quit()
         {
             SceneControl.RemoveScene(MainScene.letterDisplayer);

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 namespace Canute.Module
 {
     [RequireComponent(typeof(InputField))]
+   
     public class NumberInputField : MonoBehaviour
     {
         public int step;
@@ -15,6 +16,7 @@ namespace Canute.Module
         public bool hasMin;
         public InputField InputField => GetComponent<InputField>();
 
+        
         public void Add()
         {
             int newValue = GetValue() + step;
@@ -22,6 +24,7 @@ namespace Canute.Module
             InputField.onEndEdit?.Invoke(InputField.text);
         }
 
+       
         public void Minus()
         {
             int newValue = GetValue() - step;

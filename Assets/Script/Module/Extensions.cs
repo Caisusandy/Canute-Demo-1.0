@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Canute
 {
+    [Obsolete]
     public static class Extensions
     {
         public static T Exist<T>(this T instance) where T : UnityEngine.Object
@@ -16,6 +17,7 @@ namespace Canute
 
         [Obsolete]
         public static string GenerateName(int num)
+        
         {
             int number;
             char code;
@@ -55,6 +57,7 @@ namespace Canute
         /// </summary>
         /// <param name="CardEntities">手牌的Entity</param>
         /// <returns></returns>
+        [Obsolete]
         public static List<Card> GetData(this List<CardEntity> CardEntities)
         {
             List<Card> Cards = new List<Card>();
@@ -66,6 +69,7 @@ namespace Canute
             return Cards;
         }
 
+        [Obsolete]
         public static List<T> Clone<T>(this List<T> ts) where T : ICloneable
         {
             if (ts is null)
@@ -80,7 +84,7 @@ namespace Canute
             return newList;
         }
 
-
+        [Obsolete]
         public static List<T> ShallowClone<T>(this List<T> ts)
         {
             if (ts is null)
@@ -95,6 +99,7 @@ namespace Canute
             return newList;
         }
 
+        [Obsolete]
         public static IEnumerable<T> Clone<T>(this IEnumerable<T> ts) where T : ICloneable
         {
             List<T> newList = new List<T>();
@@ -105,10 +110,12 @@ namespace Canute
             return newList;
         }
 
+        [Obsolete]
         public static DataList<T> ToDataList<T>(this IEnumerable<T> ts) where T : class, INameable
         {
             return new DataList<T>(ts);
         }
+        [Obsolete]
         public static List<UUID> ToUUIDList<T>(this List<T> ts) where T : class, IUUIDLabeled
         {
             List<UUID> uUIDs = new List<UUID>();
@@ -119,7 +126,8 @@ namespace Canute
             return uUIDs;
         }
 
-
+        
+        [Obsolate]
         public static void Switch<T>(this T item1, T item2)
         {
             ref T var1 = ref item1;
@@ -130,6 +138,7 @@ namespace Canute
             var2 = tmp;
         }
 
+        [Obsolete]
         public static List<T1> Finds<T1, T2>(this IEnumerable<T1> list, T2[] findList) where T1 : INameable where T2 : INameable
         {
             List<T1> find = new List<T1>();
@@ -146,6 +155,7 @@ namespace Canute
             return find;
         }
 
+        [Obsolete]
         public static T Parse<T>(this string str, bool ignoreCase = true) where T : struct
         {
             if (str is null)
@@ -163,12 +173,14 @@ namespace Canute
             }
         }
 
+        [Obsolete]
         public static StatusList ToStatList(this IEnumerable<Status> stats)
         {
             return new StatusList(stats);
         }
 
-
+        
+        [Obsolete]
         public static string Color(this string message, Career career)
         {
             string colorName;
@@ -196,10 +208,12 @@ namespace Canute
         {
             return "<color=" + colorName + ">" + message + "</color>";
         }
+        [Obsolete]
         public static string Color(this string message, int color)
         {
             return "<color=" + Convert.ToString(color, 16) + ">" + message + "</color>";
         }
+        [Obsolete]
         public static string AutoColor(this string message)
         {
             int lastIndex = 0;
@@ -239,6 +253,7 @@ namespace Canute
             return ret + remaining;
         }
 
+        [Obsolete]
         public static Color GetColor(this Career career)
         {
             switch (career)
@@ -255,6 +270,7 @@ namespace Canute
                     return UnityEngine.Color.white;
             }
         }
+        [Obsolete]
         public static Color GetColor(this Rarity rarity)
         {
             switch (rarity)
@@ -272,6 +288,7 @@ namespace Canute
             }
         }
 
+        [Obsolete]
         public static T[] GetAllValue<T>() where T : Enum
         {
             return Enum.GetValues(typeof(T)) as T[];
@@ -298,6 +315,7 @@ namespace Canute
             return result;
         }
 
+        [Obsolete]
         public static bool IsVector2(this string sVector)
         {
             try
@@ -329,6 +347,8 @@ namespace Canute
 
             return result;
         }
+
+        [Obsolete]
         public static Vector3Int ToVector3Int(this string sVector)
         {
             // Remove the parentheses
@@ -349,6 +369,7 @@ namespace Canute
             return result;
         }
 
+        [Obsolete]
         public static bool IsVector3(this string sVector)
         {
             try
@@ -362,6 +383,7 @@ namespace Canute
             }
         }
 
+        [Obsolete]
         public static Vector2Int ToVector2Int(this string sVector)
         {
             // Remove the parentheses
@@ -382,8 +404,10 @@ namespace Canute
         }
     }
 
+    [Obsolete]
     public static class Extensions2
     {
+        [Obsolete]
         public static List<T> Clone<T>(this List<T> ts) where T : struct
         {
             if (ts is null)

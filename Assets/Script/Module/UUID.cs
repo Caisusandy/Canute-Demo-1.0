@@ -14,11 +14,13 @@ namespace Canute
             this.value = value;
         }
 
+        [Obsolete]
         public static implicit operator UUID(Guid guid)
         {
             return new UUID(guid.ToString());
         }
 
+        [Obsolete]
         public static implicit operator Guid(UUID uuid)
         {
             if (string.IsNullOrEmpty(uuid.value) || uuid.value == null) { return Guid.Empty; }
@@ -28,6 +30,7 @@ namespace Canute
             }
         }
 
+        [Obsolete]
         public int CompareTo(object value)
         {
             if (value == null)
@@ -44,6 +47,7 @@ namespace Canute
             return guid.value == this.value ? 0 : 1;
         }
 
+        [Obsolete]
         public int CompareTo(UUID other)
         {
             return other.value == value ? 0 : 1;
@@ -70,10 +74,12 @@ namespace Canute
         }
 
 
+        [Obsolete]
         public static UUID Empty = Guid.Empty;
         /// <summary> A special UUID for player's object </summary>
+        [Obsolete]
         public static UUID Player = new UUID("63c5918a-5aad-45ae-8bab-1b681601289b");
-
+        [Obsolete]
         public static UUID NewUUID()
         {
             return Guid.NewGuid();
@@ -83,11 +89,13 @@ namespace Canute
         {
             return u1.Equals(u2);
         }
+        [Obsolete]
         public static bool operator !=(UUID u1, UUID u2)
         {
             return !(u1 == u2);
         }
 
+        [Obsolete]
         public static implicit operator string(UUID u)
         {
             return u.value;

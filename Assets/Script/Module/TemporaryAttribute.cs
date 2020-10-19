@@ -12,7 +12,9 @@ namespace Canute
         //  http://go.microsoft.com/fwlink/?LinkId=85236
         private readonly string positionalString;
 
+     
         // This is a positional argument
+        [Obsolete]
         public TemporaryAttribute(string positionalString = "This is a temporary method") : this()
         {
             this.positionalString = positionalString;
@@ -26,9 +28,11 @@ namespace Canute
             Debug.Log(positionalString);
         }
 
+        [Obsolete]
         public string PositionalString => positionalString;
 
-        // This is a named argument
+      // This is a named argument
+       [Obsolete]
         public int NamedInt { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Canute.UI
         [HideInInspector] public ArmyItem displayingArmy;
 
         public void Display(ArmyItem armyItem)
-        {
+        {  // display the army item
             displayingArmy = armyItem;
             if (displayingArmy)
             {
@@ -43,7 +43,7 @@ namespace Canute.UI
         }
 
         public void Select()
-        {
+        { 
             selectEvent?.Invoke(displayingArmy);
             ArmyListUI.SelectEvent?.Invoke(displayingArmy);
         }

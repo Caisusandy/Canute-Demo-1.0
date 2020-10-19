@@ -14,18 +14,21 @@ namespace Canute.Module
         public float speed = 6;
         public float minimumDistance = 1;
 
+        
         // Start is called before the first frame update
         private void Start()
         {
             startingPos = curPos = transform.position;
         }
 
+        
         // Update is called once per frame
         private void Update()
         {
             LinearFollow();
         }
 
+       
         public virtual void Move()
         {
             LinearFollow();
@@ -48,12 +51,14 @@ namespace Canute.Module
         {
         }
 
+       
         public static void SetFollow(GameObject obj, GameObject followTo)
         {
             Follow follow = obj.GetComponent<Follow>() ? obj.GetComponent<Follow>() : obj.AddComponent<Follow>();
             follow.followTo = followTo;
         }
 
+       
         public static void StopFollow(GameObject gameObject)
         {
             if (gameObject.GetComponent<Follow>())

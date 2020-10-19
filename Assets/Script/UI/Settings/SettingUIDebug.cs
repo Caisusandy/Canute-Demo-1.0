@@ -9,6 +9,7 @@ namespace Canute.UI.GlobalSetting
         public Toggle pvP;
         public Toggle playerAutoSwitch;
         public Toggle useCustomDefaultPrototype;
+        [Obsolete]
         public override string Name => nameof(SettingUIDebug);
 
         public bool IsDebugMode { get => Game.Configuration.IsDebugMode; set => Game.Configuration.IsDebugMode = value; }
@@ -16,6 +17,7 @@ namespace Canute.UI.GlobalSetting
         public bool PlayerAutoSwitch { get => Game.Configuration.PlayerAutoSwitch; set => Game.Configuration.PlayerAutoSwitch = value; }
         public bool UseCustomDefaultPrototype { get => Game.Configuration.UseCustomDefaultPrototype; set => Game.Configuration.UseCustomDefaultPrototype = value; }
 
+        [Obsolete]
         public void Start()
         {
             debugMode.isOn = IsDebugMode;

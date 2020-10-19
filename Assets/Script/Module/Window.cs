@@ -22,23 +22,26 @@ namespace Canute
         public Window InnerWindow { get => innerWindow; set => innerWindow = value; }
         public Window OuterWindow { get => outerWindow; set => outerWindow = value; }
 
-
+      
         protected virtual void Awake()
         {
             windows.Add(this);
         }
+      
         // Use this for initialization
         public virtual void Start()
         {
 
         }
 
+     
         // Update is called once per frame
         public virtual void Update()
         {
             ESCClose();
         }
 
+     
         protected virtual void OnDestroy()
         {
             windows.Remove(this);
@@ -57,22 +60,26 @@ namespace Canute
             OuterWindow.Exist()?.InnerWindowClosed();
             gameObject.SetActive(false);
         }
+    
         public virtual void Open()
         {
             gameObject.SetActive(true);
         }
 
+   
         public virtual void OpenAsInnerWindow(Window window)
         {
             InnerWindow = window;
             window.OuterWindow = this;
         }
 
+      
         public virtual void OnDisable()
         {
             windows.Remove(this);
         }
 
+    
         public virtual void OnEnable()
         {
             windows.Add(this);

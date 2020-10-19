@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Canute.Module
 {
+    [Obsolete]
     public class AutoLabel : Icon
     {
         public string key;
+        [Obsolete]
         public override void DisplayInfo()
         {
             base.DisplayInfo();

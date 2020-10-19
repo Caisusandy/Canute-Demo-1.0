@@ -14,6 +14,7 @@ namespace Canute.Module
 
         public List<LanguagePair> languagePairs;
 
+        
         public void Start()
         {
             Load();
@@ -28,16 +29,19 @@ namespace Canute.Module
             }
         }
 
+        
         public void Awake()
         {
             loaders.Add(this);
         }
 
+       
         public void OnDestroy()
         {
             loaders.Remove(this);
         }
 
+        
         public static void ReloadLanguage()
         {
             foreach (var item in loaders)

@@ -5,8 +5,10 @@ using UnityEngine;
 
 namespace Canute.UI
 {
+    [Obsolete]
     public class AttackTypeIcon : ArmyPropertyInfoIcon
     {
+        [Obsolete]
         public override void DisplayInfo()
         {
             base.DisplayInfo();

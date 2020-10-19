@@ -10,11 +10,13 @@ namespace Canute.Technologies
     [CreateAssetMenu(fileName = "Technology", menuName = "Game Data/Technology", order = 6)]
     public class Technology : ScriptableObject
     {
+        // [Obsolete]
         public static Technology instance;
 
         #region TechnologyInfo
 
         [SerializeField] protected ArmyTree prototypeArmyTree;
+        // [Obsolete]
         public ArmyTree PrototypeArmyTree => prototypeArmyTree;
 
         #endregion
@@ -27,6 +29,7 @@ namespace Canute.Technologies
 
         public static List<string> PlayerUnlocked => Game.PlayerData.Statistic.ArmiesUnlocked;
 
+        // [Obsolete]
         public List<ArmyTreeInfo> PossibleNextArmies()
         {
             List<ArmyTreeInfo> possibleArmies = new List<ArmyTreeInfo>();
@@ -57,6 +60,7 @@ namespace Canute.Technologies
             return false;
         }
 
+        // [Obsolete]
         public bool Contains(Army army)
         {
             return !(this[army] is null);
@@ -72,6 +76,7 @@ namespace Canute.Technologies
         public List<string> requires;
 
         public string Name => name;
+        // [Obsolete]
         public Army Army => GameData.Prototypes.GetArmyPrototype(name);
         public List<Army> Requires => GameData.Prototypes.GetArmyPrototypes(requires.ToArray());
     }

@@ -30,13 +30,15 @@ namespace Canute.Module
 
         public virtual T this[int index] { get => list[index]; set => list[index] = value; }
         public virtual T this[string name] { get => Get(name); set => list[list.IndexOf(Get(name))] = value; }
-        object IDataList.this[int index] { get => list[index]; set => list[index] = (T)value; }
+        [Obsolete]
+        object IDataList.this[int index] { get => list[index]; set => list[index] = (T)value; } 
 
         public virtual void Add(T item)
         {
             list.Add(item);
         }
 
+        [Obsolete]
         public virtual void AddRange(IEnumerable<T> enumerable)
         {
             list.AddRange(enumerable);
@@ -88,13 +90,16 @@ namespace Canute.Module
 
         public virtual int Count => list.Count;
 
+        [Obsolete]
         public virtual bool IsReadOnly { get; set; }
 
+        [Obsolete]
         public virtual T[] ToArray()
         {
             return list.ToArray();
         }
 
+        [Obsolete]
         object IDataList.Get(string name)
         {
             return Get(name);
@@ -110,6 +115,7 @@ namespace Canute.Module
             this.list = list.ToList();
         }
 
+        [Obsolete]
         public DataList(int capacity)
         {
             list.Capacity = capacity;
@@ -138,7 +144,9 @@ namespace Canute.Module
 
     public interface IDataList
     {
+        [Obsolete]
         object this[int id] { get; set; }
+        [Obsolete]
         object Get(string name);
     }
 }

@@ -3,9 +3,12 @@ using UnityEngine;
 
 namespace Canute.UI.GlobalSetting
 {
+    [Obsolete]
     public class SettingUIOther : SettingUISection
     {
+        [Obsolete]
         public override string Name => nameof(SettingUIDebug);
+        [Obsolete]
         public void OpenPlayerDataFolder()
         {
             switch (Application.platform)

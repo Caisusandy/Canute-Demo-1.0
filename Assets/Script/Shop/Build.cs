@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace Canute.Shops
 {
+    [Obsolete]
     public static class Build
     {
         //public static Prize BuildPrize(uint aethium, uint mantleAlloy, uint manpower, uint federgram)
@@ -144,7 +145,7 @@ namespace Canute.Shops
     //        this.name = name;
     //    }
     //}
-
+    [Obsolete]
     public class ItemWeightList : ScriptableObject
     {
     }
